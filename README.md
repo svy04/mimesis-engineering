@@ -32,8 +32,8 @@ Then use those standards to critique and transform my current work.
 
 ## Use It Now
 
-1. Read the [Working Spec](docs/WORKING-SPEC.md).
-2. Read the [Framework](FRAMEWORK.md).
+1. Read the [5-minute quickstart](docs/QUICKSTART.md).
+2. Read the [Working Spec](docs/WORKING-SPEC.md).
 3. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
 4. Compare your work with cases in [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
 5. Open a workflow case or risk check issue when the method needs improvement.
@@ -46,6 +46,7 @@ Then use those standards to critique and transform my current work.
 - [FRAMEWORK.md](FRAMEWORK.md) — the MIMESIS loop.
 - [GLOSSARY.md](GLOSSARY.md) — key terms.
 - [PROOF-BOUNDARY.md](PROOF-BOUNDARY.md) — what this repo does and does not claim.
+- [docs/QUICKSTART.md](docs/QUICKSTART.md) — 5-minute first use.
 - [docs/WORKING-SPEC.md](docs/WORKING-SPEC.md) — current operating spec.
 
 ### Build and Launch System
@@ -106,7 +107,7 @@ Attention should come from real use, honest feedback, and clear proof boundaries
 
 ## Start
 
-1. Read [MANIFESTO.md](MANIFESTO.md).
+1. Read [docs/QUICKSTART.md](docs/QUICKSTART.md).
 2. Use [prompts/02-master-artifact-analysis.md](prompts/02-master-artifact-analysis.md).
 3. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
 4. Publish a case note using [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
