@@ -1,0 +1,64 @@
+name: Workflow Case
+
+description: Share a before/after case using Mimesis Engineering.
+
+title: "[Case] "
+
+labels: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when you applied Mimesis Engineering to a real artifact or workflow.
+
+  - type: textarea
+    id: starting-artifact
+    attributes:
+      label: Starting artifact
+      description: What did you start with?
+      placeholder: Link, screenshot description, README, landing page, blog draft, product flow, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference-artifacts
+    attributes:
+      label: Reference artifacts
+      description: What strong artifacts did you compare against?
+      placeholder: Products, papers, repos, blogs, layouts, flows, cases.
+    validations:
+      required: true
+
+  - type: textarea
+    id: extracted-structure
+    attributes:
+      label: Extracted structure
+      description: What structure did you extract?
+      placeholder: Knowledge structure, visual structure, user flow, proof surface, failure handling, claim boundary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: transformation
+    attributes:
+      label: What changed?
+      description: Describe the before/after difference.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proof-boundary
+    attributes:
+      label: Proof boundary
+      description: What is proven, and what is still unproven?
+    validations:
+      required: true
+
+  - type: textarea
+    id: next-proof
+    attributes:
+      label: Next proof artifact
+      description: What would make this case stronger next?
+    validations:
+      required: false
