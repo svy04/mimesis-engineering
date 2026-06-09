@@ -1,0 +1,53 @@
+name: Risk Check
+
+description: Report where Mimesis is confusing, unclear, risky, or needs stronger proof.
+
+title: "[Risk Check] "
+
+labels: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the method needs clearer wording, better examples, stronger proof, or a clearer boundary.
+
+  - type: dropdown
+    id: risk-type
+    attributes:
+      label: Risk type
+      options:
+        - Confusing explanation
+        - Looks too close to prompt engineering
+        - Needs clearer originality boundary
+        - Weak proof
+        - Overclaiming
+        - Missing example
+        - Hard to apply
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: where
+    attributes:
+      label: Where is the issue?
+      description: Link the file, line, section, prompt, or case.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this need improvement?
+      description: Explain the issue in plain language.
+    validations:
+      required: true
+
+  - type: textarea
+    id: better
+    attributes:
+      label: What would make it better?
+      description: Suggest a fix, example, boundary, or rewrite.
+    validations:
+      required: false
