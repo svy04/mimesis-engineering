@@ -4,7 +4,11 @@ Do not ask AI to pretend to be an expert.
 
 Show it what experts actually made.
 
-**Mimesis Engineering** is artifact-level imitation for AI-native work. It uses real products, papers, books, blogs, layouts, visual systems, user flows, and decision loops as standards for AI-assisted creation.
+**Mimesis Engineering** is artifact-level imitation for AI-native work. It uses real products, papers, books, blogs, layouts, visual systems, user flows, proof surfaces, and decision loops as standards for AI-assisted creation.
+
+한국어로 말하면:
+
+> AI에게 전문가인 척하라고 시키는 게 아니라, 전문가들이 실제로 만든 결과물의 구조를 기준으로 내 작업을 바꾸는 방법입니다.
 
 ## Core Idea
 
@@ -26,15 +30,41 @@ Decompose their knowledge structure, visual structure, user flow, trust devices,
 Then use those standards to critique and transform my current work.
 ```
 
+## Use It Now
+
+1. Read the [Working Spec](docs/WORKING-SPEC.md).
+2. Read the [Framework](FRAMEWORK.md).
+3. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
+4. Compare your work with cases in [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
+5. Open a workflow case or risk check issue when the method needs improvement.
+
 ## Repository Map
+
+### Core Method
 
 - [MANIFESTO.md](MANIFESTO.md) — the public thesis.
 - [FRAMEWORK.md](FRAMEWORK.md) — the MIMESIS loop.
 - [GLOSSARY.md](GLOSSARY.md) — key terms.
 - [PROOF-BOUNDARY.md](PROOF-BOUNDARY.md) — what this repo does and does not claim.
+- [docs/WORKING-SPEC.md](docs/WORKING-SPEC.md) — current operating spec.
+
+### Build and Launch System
+
+- [docs/INITIAL-IMPLEMENTATION-STRATEGY.md](docs/INITIAL-IMPLEMENTATION-STRATEGY.md) — how this repo becomes a usable public system.
+- [docs/LAUNCH-STRATEGY.md](docs/LAUNCH-STRATEGY.md) — the Mimesis Drop plan.
+- [docs/TRAFFIC-ABSORPTION-SYSTEM.md](docs/TRAFFIC-ABSORPTION-SYSTEM.md) — how attention becomes cases, issues, contributors, and relationships.
+
+### Templates
+
+- [templates/codex-master-task.md](templates/codex-master-task.md) — Codex implementation prompt.
+- [templates/hermes-launch-operator.md](templates/hermes-launch-operator.md) — Hermes daily operator prompt.
 - [prompts/](prompts/) — prompt templates.
+
+### Proof Surfaces
+
 - [examples/](examples/) — applied templates.
 - [cases/](cases/) — public case notes.
+- [mimesis-casebook](https://github.com/svy04/mimesis-casebook) — public casebook.
 
 ## MIMESIS Loop
 
@@ -45,15 +75,41 @@ Then use those standards to critique and transform my current work.
 | M | Model their structure | What knowledge, visual, user-flow, and proof structures make them work? |
 | E | Extract patterns | What can be transferred, transformed, or rejected? |
 | S | Synthesize variation | What should your version become under your constraints? |
-| I | Inspect failure modes | Where can imitation become copying, fantasy, or weak proof? |
+| I | Inspect risk | Where can imitation become shallow, unclear, or weak? |
 | S | Ship and revise | What evidence decides the next move? |
+
+## Operator Layer
+
+Mimesis Engineering is also being built as a work operating system.
+
+| Actor | Role |
+|---|---|
+| Human operator | Direction, taste, final judgment |
+| GPT | Strategy, writing, synthesis |
+| Gemini | Skeptic, comparison, critique |
+| Codex | Repository and implementation builder |
+| Hermes | Daily operator, memory log, backlog, launch control |
+
+Memory categories:
+
+- **Sensation** — what people reacted to
+- **Knowledge** — what became reliable
+- **Wisdom** — what should guide the next move
+
+## Launch Principle
+
+The launch goal is compressed discovery:
+
+> many real people finding one real artifact in one visible window.
+
+Attention should come from real use, honest feedback, and clear proof boundaries.
 
 ## Start
 
 1. Read [MANIFESTO.md](MANIFESTO.md).
 2. Use [prompts/02-master-artifact-analysis.md](prompts/02-master-artifact-analysis.md).
 3. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
-4. Publish a case note in the shape of [cases/quantflow-alpha-court.md](cases/quantflow-alpha-court.md).
+4. Publish a case note using [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
 
 ## Related
 
