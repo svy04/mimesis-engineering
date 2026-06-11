@@ -10,7 +10,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 9
+- changed tracked files: 8
 - untracked files: 0
 
 ## Conclusion
@@ -28,12 +28,11 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/current-gateboard.md
+ M .mimesis/run_ledger.md
  M README.md
  M docs/GAP-REGISTER.md
- M docs/RELEASE-CHECK-ORDER.md
- M tools/README.md
- M tools/audit-gap-register-sync-closure.mjs
- M tools/audit-gap-register.mjs
- M tools/create-gap-register.mjs
+ M docs/GATEBOARD.md
+ M tools/audit-gateboard.mjs
+ M tools/create-gateboard.mjs
 ```

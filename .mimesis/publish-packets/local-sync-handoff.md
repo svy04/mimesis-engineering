@@ -9,9 +9,9 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `c6677489a825fb43ad7d9b72a8f8067d485d356e`
-- upstream head: `c6677489a825fb43ad7d9b72a8f8067d485d356e`
-- tracked changed entries: 10
+- head: `187f4cca4720556b90f30e4471a2e3852d204459`
+- upstream head: `187f4cca4720556b90f30e4471a2e3852d204459`
+- tracked changed entries: 9
 - untracked entries: 0
 
 Conclusion:
@@ -22,45 +22,42 @@ local worktree is not publish-ready because it has unpublished local changes or 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/current-gateboard.md
+ M .mimesis/run_ledger.md
  M .mimesis/sync-status.md
  M README.md
  M docs/GAP-REGISTER.md
- M docs/RELEASE-CHECK-ORDER.md
- M tools/README.md
- M tools/audit-gap-register-sync-closure.mjs
- M tools/audit-gap-register.mjs
- M tools/create-gap-register.mjs
+ M docs/GATEBOARD.md
+ M tools/audit-gateboard.mjs
+ M tools/create-gateboard.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md | 32 ---------
- .mimesis/gaps/current-gap-register.json         |  6 +-
- .mimesis/sync-status.md                         | 91 ++++---------------------
- README.md                                       |  5 +-
- docs/GAP-REGISTER.md                            |  9 +--
- docs/RELEASE-CHECK-ORDER.md                     |  4 +-
- tools/README.md                                 |  4 +-
- tools/audit-gap-register-sync-closure.mjs       | 45 ++++++------
- tools/audit-gap-register.mjs                    | 21 +++---
- tools/create-gap-register.mjs                   | 10 +--
- 10 files changed, 67 insertions(+), 160 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md | 32 -------------
+ .mimesis/gates/current-gateboard.md             | 62 ++++---------------------
+ .mimesis/run_ledger.md                          | 37 +++++++++++++++
+ .mimesis/sync-status.md                         | 13 +++---
+ README.md                                       |  3 +-
+ docs/GAP-REGISTER.md                            |  3 +-
+ docs/GATEBOARD.md                               |  6 ++-
+ tools/audit-gateboard.mjs                       | 26 +++++++++--
+ tools/create-gateboard.mjs                      | 56 +++++-----------------
+ 9 files changed, 96 insertions(+), 142 deletions(-)
 ```
 
 ## Tracked Changes
 
 - `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/gaps/current-gap-register.json`
+- ` M .mimesis/gates/current-gateboard.md`
+- ` M .mimesis/run_ledger.md`
 - ` M .mimesis/sync-status.md`
 - ` M README.md`
 - ` M docs/GAP-REGISTER.md`
-- ` M docs/RELEASE-CHECK-ORDER.md`
-- ` M tools/README.md`
-- ` M tools/audit-gap-register-sync-closure.mjs`
-- ` M tools/audit-gap-register.mjs`
-- ` M tools/create-gap-register.mjs`
+- ` M docs/GATEBOARD.md`
+- ` M tools/audit-gateboard.mjs`
+- ` M tools/create-gateboard.mjs`
 
 ## Untracked Entries
 
@@ -80,7 +77,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 9
+- changed tracked files: 8
 - untracked files: 0
 
 ## Conclusion
@@ -98,14 +95,13 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/current-gateboard.md
+ M .mimesis/run_ledger.md
  M README.md
  M docs/GAP-REGISTER.md
- M docs/RELEASE-CHECK-ORDER.md
- M tools/README.md
- M tools/audit-gap-register-sync-closure.mjs
- M tools/audit-gap-register.mjs
- M tools/create-gap-register.mjs
+ M docs/GATEBOARD.md
+ M tools/audit-gateboard.mjs
+ M tools/create-gateboard.mjs
 ```
 
 

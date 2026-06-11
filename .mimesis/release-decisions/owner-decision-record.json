@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.release-decision-record.v0.1",
-  "generatedAt": "2026-06-11T04:06:30.824Z",
+  "generatedAt": "2026-06-11T04:15:41.182Z",
   "status": "owner_decision_required",
   "package": {
     "name": "mimesis-engineering",
@@ -10,11 +10,11 @@
   },
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
-    "head": "c6677489a825fb43ad7d9b72a8f8067d485d356e",
+    "head": "187f4cca4720556b90f30e4471a2e3852d204459",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "upstreamHead": "c6677489a825fb43ad7d9b72a8f8067d485d356e",
+    "upstreamHead": "187f4cca4720556b90f30e4471a2e3852d204459",
     "cleanAndSynced": false,
-    "trackedChangedCount": 14,
+    "trackedChangedCount": 12,
     "untrackedCount": 0
   },
   "license": {

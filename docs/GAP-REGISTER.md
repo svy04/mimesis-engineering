@@ -56,7 +56,8 @@ The audit checks:
 ## Required Gap IDs
 
 The register currently tracks open gaps.
-The strict sync gap remains visible in committed gap-register snapshots because `.mimesis/sync-status.md` and `.mimesis/gates/current-gateboard.md` are local report artifacts that can become stale after commit or push.
+The strict sync gap remains visible in committed gap-register snapshots because `.mimesis/sync-status.md` is a local report artifact that can become stale after commit or push.
+The committed gate board avoids volatile sync snapshot lines and points to the runtime-only strict sync audit instead.
 
 `npm run audit:gap-register-sync-closure` checks this runtime-only boundary.
 Use the non-writing strict sync check, `npm run audit:sync:strict`, as the current runtime proof of local upstream sync.

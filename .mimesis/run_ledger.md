@@ -2321,3 +2321,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Mimesis can now represent strict sync as a closable gate instead of a permanently open gap.
 - Future publish work should commit/push the reviewed local framework changes, refresh the sync report and gate board on the synced branch, rerun `gap:register`, and verify that `strict_publish_sync` leaves the open gap list.
 - Remaining real gates after sync publication will still include owner license decision, permissioned external weak artifact, completed before/after external case, package/action/plugin publication evidence, benchmark evidence, and adoption proof.
+
+## 2026-06-11 - Runtime-Only Gateboard Sync Boundary Slice
+
+## Import
+
+- Re-read the current PR state, gap register, gate board, ecosystem resource packet, package scripts, gateboard generator/audit, sync audit, and public gateboard/gap-register docs.
+- Confirmed the PR is open as draft, mergeable, and CI is passing, while the committed gate board still embedded a stale git snapshot and stale sync report from an older dirty worktree.
+
+## Distill
+
+- Keep the gate board as a stable local owner/proof/publication summary.
+- Move current branch/head/upstream/dirty-worktree proof back to the runtime-only `npm run audit:sync:strict` path.
+- Preserve the boundary that this slice does not close owner, external proof, publication, benchmark, adoption, or active-goal completion gates.
+
+## Capsule
+
+- RED: strengthened `tools/audit-gateboard.mjs` first so the existing committed board failed for missing runtime sync gate text and for embedding volatile sync snapshot sections.
+- GREEN: changed `tools/create-gateboard.mjs` to emit a `Runtime Sync Gate` section, remove volatile git snapshot and embedded sync report text, and classify strict sync as `requires runtime audit`.
+- UPDATED: aligned `docs/GATEBOARD.md`, `docs/GAP-REGISTER.md`, and `README.md` with the runtime-only sync boundary.
+
+## Shard
+
+- `.mimesis/gates/current-gateboard.md` now points operators to `npm run audit:sync:strict` instead of presenting stale branch/head/dirty evidence as committed proof.
+- `tools/audit-gateboard.mjs` now rejects volatile sync snapshot text inside the committed gate board.
+- Public docs now state that `.mimesis/sync-status.md` is a local report that can become stale, while strict sync proof is runtime-only.
+
+## Verify
+
+- The first `npm run audit:gateboard` run failed for the expected missing runtime-only sync boundary and forbidden volatile snapshot text.
+- After implementation, `npm run gate:board` regenerated `.mimesis/gates/current-gateboard.md`.
+- `npm run audit:gateboard` passed after regeneration.
+
+## Remember
+
+- Future gate board work should avoid committed branch/head/upstream/dirty-worktree snapshots.
+- Use `npm run audit:sync` only when a local sync report file is needed.
+- Use `npm run audit:sync:strict` as the current non-writing sync proof after the intended branch is clean and pushed.

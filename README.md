@@ -801,7 +801,8 @@ npm run audit:gap-register-sync-closure
 ```
 
 This writes `.mimesis/gaps/current-gap-register.json`.
-The strict sync gap stays visible in the committed register because `.mimesis/sync-status.md` and gate-board snapshots can become stale after commit or push.
+The strict sync gap stays visible in the committed register because `.mimesis/sync-status.md` is a local report that can become stale after commit or push.
+The committed gate board avoids volatile sync snapshot lines and points to the runtime-only strict sync audit instead.
 Use the non-writing strict sync check, `npm run audit:sync:strict`, as the runtime-only proof of current local upstream sync.
 It does not prove completion, publish, choose a license, create external proof, or prove adoption.
 

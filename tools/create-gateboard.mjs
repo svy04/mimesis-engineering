@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,19 +9,6 @@ const outputPath = path.join(root, ".mimesis", "gates", "current-gateboard.md");
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
-}
-
-function git(args) {
-  const result = spawnSync("git", args, {
-    cwd: root,
-    encoding: "utf8",
-  });
-
-  if (result.status !== 0) {
-    return (result.stderr || result.stdout || result.error?.message || "").trim();
-  }
-
-  return result.stdout.trim();
 }
 
 function has(text, pattern) {
@@ -51,19 +37,6 @@ const packageCandidate = read("docs/PACKAGE-RELEASE-CANDIDATE.md");
 const actionCandidate = read("docs/ACTION-RELEASE-CANDIDATE.md");
 const pluginPacket = read("docs/PLUGIN-RELEASE-PACKET.md");
 const benchmarkPacket = read("docs/BENCHMARK-PACKET.md");
-const syncStatus = fs.existsSync(path.join(root, ".mimesis", "sync-status.md"))
-  ? read(".mimesis/sync-status.md")
-  : "Run npm run audit:sync to generate sync status.";
-
-const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]) || "unknown";
-const head = git(["rev-parse", "HEAD"]) || "unknown";
-const upstreamResult = git(["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]);
-const upstream = upstreamResult.includes("fatal") ? "none" : upstreamResult || "none";
-const upstreamHead = upstream === "none" ? "unknown" : git(["rev-parse", upstream]) || "unknown";
-const statusShort = git(["status", "--short"]);
-const dirtyEntries = statusShort ? statusShort.split(/\r?\n/).filter(Boolean).length : 0;
-const syncedCommit = head !== "unknown" && upstreamHead !== "unknown" && head === upstreamHead;
-const cleanAndSynced = dirtyEntries === 0 && syncedCommit;
 
 const gates = [
   {
@@ -79,10 +52,10 @@ const gates = [
   },
   {
     name: "strict publish sync",
-    status: cleanAndSynced ? "ready locally" : "blocked by dirty worktree or upstream sync",
-    evidence: ".mimesis/sync-status.md, npm run audit:sync:strict",
-    next: "Commit or discard intended local changes, then verify upstream sync.",
-    boundary: "The gate board does not stage, commit, push, tag, or release.",
+    status: "requires runtime audit",
+    evidence: "npm run audit:sync:strict; optional report: npm run audit:sync",
+    next: "Run the runtime-only strict sync audit after the intended branch is clean and pushed.",
+    boundary: "The committed gate board is not a sync proof and does not stage, commit, push, tag, or release.",
   },
   {
     name: "owner license decision",
@@ -142,14 +115,13 @@ Generated from the current local repository state for Mimesis Engineering v${pac
 
 Status: local gate board, not completion proof.
 
-## Git Snapshot
+## Runtime Sync Gate
 
-- branch: \`${branch}\`
-- upstream: \`${upstream}\`
-- head: \`${head}\`
-- upstream head: \`${upstreamHead}\`
-- dirty worktree entries: ${dirtyEntries}
-- clean and synced: ${cleanAndSynced ? "yes" : "no"}
+- authoritative check: \`npm run audit:sync:strict\`
+- optional report file: \`npm run audit:sync\` writes \`.mimesis/sync-status.md\`
+- committed gate board is not a sync proof
+- runtime-only strict sync audit is required after the intended branch is clean and pushed
+- this board intentionally avoids branch, commit hash, upstream head, and dirty-worktree snapshot lines
 
 ## Gate Table
 
@@ -157,21 +129,17 @@ Status: local gate board, not completion proof.
 | --- | --- | --- | --- | --- |
 ${gates.map((gate) => `| ${gate.name} | ${gate.status} | ${gate.evidence} | ${gate.next} | ${gate.boundary} |`).join("\n")}
 
-## Current Sync Report
-
-${syncStatus}
-
 ## Allowed Claim
 
 The repository has a local gate board that summarizes remaining owner, proof, sync, package, action, plugin, benchmark, and adoption gates.
 
 ## Disallowed Claim
 
-This board does not prove that the framework is externally adopted, benchmarked, legally licensed for reuse, published to npm, published as a GitHub Marketplace action, shipped as a plugin, remotely fresh, or production-ready.
+This board does not prove that the framework is externally adopted, benchmarked, legally licensed for reuse, published to npm, published as a GitHub Marketplace action, shipped as a plugin, remotely fresh, synced to upstream, or production-ready.
 
 ## Boundary
 
-This gate board does not choose a license, create external proof, run a transformation, stage files, create a commit, push, tag, create a pull request, publish to npm, publish a GitHub Marketplace action, prove remote freshness, prove benchmarked productivity, or prove external adoption.
+This gate board does not choose a license, create external proof, run a transformation, stage files, create a commit, push, tag, create a pull request, publish to npm, publish a GitHub Marketplace action, prove remote freshness, close the runtime-only strict sync audit, prove benchmarked productivity, or prove external adoption.
 
 Source boundaries:
 

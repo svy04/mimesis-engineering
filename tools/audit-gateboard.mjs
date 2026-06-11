@@ -33,7 +33,12 @@ for (const command of ["gate:board", "audit:gateboard"]) {
   }
 }
 
-for (const text of ["does not choose a license", "does not", "prove external adoption"]) {
+for (const text of [
+  "does not choose a license",
+  "does not",
+  "prove external adoption",
+  "runtime-only strict sync audit",
+]) {
   if (!gateDoc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/GATEBOARD.md missing boundary text: ${text}`);
   }
@@ -45,9 +50,8 @@ if (!fs.existsSync(packetPath)) {
   const board = fs.readFileSync(packetPath, "utf8");
   const requiredSections = [
     "# Mimesis Current Gate Board",
-    "## Git Snapshot",
+    "## Runtime Sync Gate",
     "## Gate Table",
-    "## Current Sync Report",
     "## Allowed Claim",
     "## Disallowed Claim",
     "## Boundary",
@@ -76,6 +80,9 @@ if (!fs.existsSync(packetPath)) {
 
   for (const boundaryText of [
     "local gate board, not completion proof",
+    "committed gate board is not a sync proof",
+    "runtime-only strict sync audit",
+    "npm run audit:sync:strict",
     "does not choose a license",
     "create external proof",
     "stage files",
@@ -90,6 +97,19 @@ if (!fs.existsSync(packetPath)) {
   ]) {
     if (!board.toLowerCase().includes(boundaryText.toLowerCase())) {
       failures.push(`gate board missing boundary text: ${boundaryText}`);
+    }
+  }
+
+  for (const forbiddenText of [
+    "## Git Snapshot",
+    "## Current Sync Report",
+    "- head: `",
+    "- upstream head: `",
+    "dirty worktree entries:",
+    "## Branch Status",
+  ]) {
+    if (board.includes(forbiddenText)) {
+      failures.push(`gate board must not embed volatile sync snapshot text: ${forbiddenText}`);
     }
   }
 }
