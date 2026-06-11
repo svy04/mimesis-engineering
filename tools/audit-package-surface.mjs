@@ -237,6 +237,12 @@ for (const scriptName of ["owner:proof-handoff", "audit:owner-proof-handoff"]) {
   }
 }
 
+for (const scriptName of ["owner:proof-input-template", "owner:proof-input-check", "audit:owner-proof-input"]) {
+  if (!packageJson.scripts?.[scriptName]) {
+    failures.push(`package.json missing script: ${scriptName}`);
+  }
+}
+
 for (const scriptName of ["owner:decision-intake", "audit:owner-decision-intake"]) {
   if (!packageJson.scripts?.[scriptName]) {
     failures.push(`package.json missing script: ${scriptName}`);
@@ -490,6 +496,7 @@ if (!failures.length) {
       "docs/RELEASE-EVIDENCE-REPORT.md",
       "docs/OWNER-ACTION-QUEUE.md",
       "docs/OWNER-PROOF-HANDOFF.md",
+      "docs/OWNER-PROOF-INPUT.md",
       "docs/OWNER-DECISION-INTAKE.md",
       "docs/OWNER-DECISION-ANSWER-RECORD.md",
       "docs/OWNER-ANSWER-REVIEW.md",
@@ -508,6 +515,10 @@ if (!failures.length) {
       "docs/PERMISSIONED-CASE-CHECK.md",
       "docs/PERMISSIONED-CASE-FIXTURE.md",
       "docs/REMOTE-ECOSYSTEM-AUDIT.md",
+      "spec/owner-proof-input.schema.json",
+      "tools/create-owner-proof-input-template.mjs",
+      "tools/check-owner-proof-input-record.mjs",
+      "tools/audit-owner-proof-input.mjs",
       "docs/PUBLISH-SYNC-GATE.md",
       "plugins/mimesis-codex/.codex-plugin/plugin.json",
       "plugins/mimesis-codex/README.md",

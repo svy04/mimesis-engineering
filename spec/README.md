@@ -22,6 +22,7 @@ Status: spec index, not proof.
 - [owner-decision-answer.schema.json](owner-decision-answer.schema.json) — JSON Schema for pending owner decision answers, not owner decision
 - [owner-evidence-intake.schema.json](owner-evidence-intake.schema.json) — JSON Schema for pending owner evidence requirements, not evidence
 - [owner-evidence-submission.schema.json](owner-evidence-submission.schema.json) — JSON Schema for owner evidence submission state, not submitted evidence
+- [owner-proof-input.schema.json](owner-proof-input.schema.json) — JSON Schema for owner proof input records, not owner decisions or proof
 - [quality-bar.md](quality-bar.md) — the checks every public artifact must pass
 - [adapter-contract.md](adapter-contract.md) — how tools should integrate with Mimesis
 
@@ -42,6 +43,7 @@ Use the schema files to check shape and boundary language only:
 - `owner-decision-answer.schema.json` checks the owner decision answer record shape for pending owner answers, not owner decision.
 - `owner-evidence-intake.schema.json` checks the owner evidence intake record shape for pending owner evidence requirements, not evidence.
 - `owner-evidence-submission.schema.json` checks the owner evidence submission record shape for `not_submitted_owner_evidence`, not submitted evidence.
+- `owner-proof-input.schema.json` checks the minimum owner proof input record shape for `license_or_no_reuse` and `weak_artifact_permission`, not a license choice, submitted artifact, permission grant, external proof, proof approval, publication, or gate closure.
 - `proof-execution-record.schema.json` checks an operator-supplied proof execution record shape, not proof approval, publication, closed gates, adoption proof, or benchmark proof.
 
 ## Core Lines

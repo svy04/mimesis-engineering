@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T07:19:02.911Z",
+  "generatedAt": "2026-06-11T07:47:35.034Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "613065d8df5af10e76cc9c844bc75b96425781d6",
+    "head": "32676744859ab7dc937775ade28b9c78219634ab",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 4
+    "trackedChangedCount": 38,
+    "untrackedCount": 7
   },
   "trackedChanges": [
     {
@@ -119,6 +119,10 @@
     },
     {
       "status": "M",
+      "path": "spec/README.md"
+    },
+    {
+      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -140,6 +144,10 @@
     {
       "status": "M",
       "path": "tools/audit-release-readiness.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-spec-index.mjs"
     },
     {
       "status": "M",
@@ -265,6 +273,10 @@
     },
     {
       "status": "M",
+      "path": "spec/README.md"
+    },
+    {
+      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -286,6 +298,10 @@
     {
       "status": "M",
       "path": "tools/audit-release-readiness.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-spec-index.mjs"
     },
     {
       "status": "M",
@@ -332,12 +348,14 @@
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M package.json",
+    " M spec/README.md",
     " M tools/README.md",
     " M tools/audit-cli.mjs",
     " M tools/audit-completion-matrix.mjs",
     " M tools/audit-package-surface.mjs",
     " M tools/audit-release-check-order.mjs",
     " M tools/audit-release-readiness.mjs",
+    " M tools/audit-spec-index.mjs",
     " M tools/audit-status-roadmap-sync.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
@@ -346,22 +364,29 @@
   "untrackedRoots": [
     {
       "root": ".mimesis/owner-actions",
-      "count": 1
+      "count": 2
     },
     {
       "root": "docs",
       "count": 1
     },
     {
+      "root": "spec",
+      "count": 1
+    },
+    {
       "root": "tools",
-      "count": 2
+      "count": 3
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/proof-run-handoff.md",
-    "docs/OWNER-PROOF-HANDOFF.md",
-    "tools/audit-owner-proof-handoff.mjs",
-    "tools/create-owner-proof-handoff.mjs"
+    ".mimesis/owner-actions/fixture-proof-input-check.md",
+    ".mimesis/owner-actions/proof-input-template.json",
+    "docs/OWNER-PROOF-INPUT.md",
+    "spec/owner-proof-input.schema.json",
+    "tools/audit-owner-proof-input.mjs",
+    "tools/check-owner-proof-input-record.mjs",
+    "tools/create-owner-proof-input-template.mjs"
   ],
   "sourceCommands": [
     "git status --short",

@@ -62,6 +62,7 @@ Includes:
 - owner decision answer record
 - owner answer review
 - owner proof handoff
+- owner proof input
 - owner evidence attachment form
 - owner evidence submission record
 - owner evidence submission check
@@ -150,6 +151,7 @@ Candidate work:
 - generated license decision from owner answer bridge before treating a reviewed `license_or_no_reuse` answer as a release decision record candidate
 - generated owner evidence attachment form before asking owner-provided evidence to move gates
 - generated owner proof handoff before treating `license_or_no_reuse` and `weak_artifact_permission` as submitted owner inputs
+- generated owner proof input template/check before treating the minimum owner proof inputs as reviewed, submitted, or ready for downstream conversion
 - generated owner evidence submission record before treating missing owner evidence as submitted evidence
 - generated owner evidence submission check before treating an owner evidence submission record as gate-moving evidence
 - generated goal completion audit before treating the active objective as complete

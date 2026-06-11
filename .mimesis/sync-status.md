@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 37
-- untracked files: 4
+- changed tracked files: 39
+- untracked files: 7
 
 ## Conclusion
 
@@ -54,18 +54,23 @@ It does not publish, push, tag, release, or create a pull request.
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
+ M spec/README.md
  M tools/README.md
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
  M tools/audit-package-surface.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-release-readiness.mjs
+ M tools/audit-spec-index.mjs
  M tools/audit-status-roadmap-sync.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/proof-run-handoff.md
-?? docs/OWNER-PROOF-HANDOFF.md
-?? tools/audit-owner-proof-handoff.mjs
-?? tools/create-owner-proof-handoff.mjs
+?? .mimesis/owner-actions/fixture-proof-input-check.md
+?? .mimesis/owner-actions/proof-input-template.json
+?? docs/OWNER-PROOF-INPUT.md
+?? spec/owner-proof-input.schema.json
+?? tools/audit-owner-proof-input.mjs
+?? tools/check-owner-proof-input-record.mjs
+?? tools/create-owner-proof-input-template.mjs
 ```

@@ -1809,6 +1809,64 @@ npm run cli -- audit:owner-proof-handoff
 
 This checks package script wiring, CLI exposure, release preflight order, generated handoff sections, source packet coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
 
+## Create Owner Proof Input Template
+
+Run:
+
+```bash
+npm run owner:proof-input-template
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-template
+```
+
+This writes `.mimesis/owner-actions/proof-input-template.json`.
+It gives the owner one schema-shaped place to fill `license_or_no_reuse` and `weak_artifact_permission`.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, close gates, or prove completion.
+
+## Check Owner Proof Input
+
+Run:
+
+```bash
+npm run owner:proof-input-check
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-check .mimesis/owner-actions/proof-input-template.json --write-report .mimesis/owner-actions/fixture-proof-input-check.md
+```
+
+For a real owner-filled record, require downstream readiness:
+
+```bash
+npm run cli -- owner:proof-input-check path/to/owner-proof-input.json --require-ready
+```
+
+This writes `.mimesis/owner-actions/fixture-proof-input-check.md`.
+The default fixture remains not ready until both owner inputs are reviewed and submitted.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input
+
+Run:
+
+```bash
+npm run audit:owner-proof-input
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated template/report sections, schema fields, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, ready-check failure behavior, and no-decision/no-proof boundaries.
+
 ## Create Owner Evidence Submission Record
 
 Run:

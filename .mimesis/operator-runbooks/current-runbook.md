@@ -195,6 +195,7 @@ Do not publish a stronger claim if:
 - worktree review packet is described as publication, remote freshness proof, strict sync closure, commit, push, tag, release, owner decision, external proof, or adoption evidence
 - release review bundle is described as commit, push, tag, release, publication, license choice, remote freshness proof, strict sync closure, owner decision, external proof, or adoption evidence
 - owner proof handoff is described as license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
+- owner proof input is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - release artifact manifest is described as publication, sync, license choice, external proof, legal originality proof, or adoption evidence
 - status roadmap sync is described as completion proof, publication, owner decision, external proof, legal originality proof, or adoption evidence
 - public claim pack is described as publication, adoption proof, benchmark proof, legal proof, or certification

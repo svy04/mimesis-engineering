@@ -67,6 +67,7 @@ const requiredSpecFiles = [
   "owner-decision-answer.schema.json",
   "owner-evidence-intake.schema.json",
   "owner-evidence-submission.schema.json",
+  "owner-proof-input.schema.json",
   "quality-bar.md",
   "adapter-contract.md",
 ];
@@ -83,6 +84,7 @@ for (const text of [
   "owner decision answer record",
   "owner evidence intake record",
   "owner evidence submission record",
+  "owner proof input record",
   "proof execution record",
   "gate closure readiness",
   "worktree review packet",

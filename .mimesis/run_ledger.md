@@ -2791,3 +2791,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use the owner proof handoff as the first owner-facing packet for closing the license/no-reuse and weak artifact permission blockers.
 - Treat it as a handoff only; real progress still requires owner-supplied evidence and later proof execution/review records.
 - Keep the remaining v0.2 gates open until direct license, artifact, publication, benchmark, adoption, and sync evidence exists.
+
+## 2026-06-11 - Owner Proof Input Record Slice
+
+## Import
+
+- Re-read the owner proof handoff, owner evidence submission path, release-check order, CLI, validator, framework manifest generator, release artifact manifest generator, README, tools README, status, roadmap, spec index, completion audit, release packet, and current gap register.
+- Found that the handoff named the two minimum proof blockers, but there was no single schema-shaped owner-fillable record before downstream owner decision/evidence conversion.
+
+## Distill
+
+- Add one owner proof input template and checker for `license_or_no_reuse` and `weak_artifact_permission`.
+- Keep the default fixture deliberately not ready until the owner reviews and submits both minimum inputs.
+- Preserve the boundary that this template/check does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, prove adoption, prove completion, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input.mjs`, which failed before the docs, schema, generated template, generated check report, package scripts, CLI commands, validator coverage, manifests, public docs, and release order existed.
+- GREEN: added `spec/owner-proof-input.schema.json`, `docs/OWNER-PROOF-INPUT.md`, `tools/create-owner-proof-input-template.mjs`, and `tools/check-owner-proof-input-record.mjs`.
+- GREEN: wired `owner:proof-input-template`, `owner:proof-input-check`, and `audit:owner-proof-input` through CLI, package scripts, release check, validate, framework manifest, release artifact manifest, completion audit, status, roadmap, release packet, release order, README, tools README, and spec index.
+
+## Shard
+
+- `npm run owner:proof-input-template` writes `.mimesis/owner-actions/proof-input-template.json`.
+- `npm run owner:proof-input-check` writes `.mimesis/owner-actions/fixture-proof-input-check.md` and passes for the local not-ready template.
+- `npm run cli -- owner:proof-input-check path/to/owner-proof-input.json --require-ready` fails until the owner-filled record is reviewed and both minimum inputs are submitted.
+
+## Verify
+
+- `node tools/audit-owner-proof-input.mjs` failed first for the expected missing owner proof input surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run audit:spec-index`, `npm run audit:cli`, `npm run validate`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:package`, `npm run audit:release`, and `npm run release:check` passed.
+- `node tools/check-owner-proof-input-record.mjs .mimesis/owner-actions/proof-input-template.json --require-ready` failed as expected with `not ready` for the default template.
+
+## Remember
+
+- Use the owner proof input record as the first owner-fillable checkpoint after the proof handoff and before owner evidence submission records.
+- Treat owner proof input readiness as downstream conversion readiness only, not proof approval or gate closure.
+- Keep all remaining v0.2 gates open until owner-supplied license/no-reuse, permissioned weak artifact, publication, benchmark, adoption, and strict sync evidence exists.

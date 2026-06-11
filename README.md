@@ -238,6 +238,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/GOAL-COMPLETION-AUDIT.md](docs/GOAL-COMPLETION-AUDIT.md) - generated active-goal completion audit without completion proof
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
+- [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
 - [docs/OWNER-DECISION-INTAKE.md](docs/OWNER-DECISION-INTAKE.md) - generated owner decision intake
 - [docs/OWNER-DECISION-ANSWER-RECORD.md](docs/OWNER-DECISION-ANSWER-RECORD.md) - generated schema-shaped owner decision answer record
 - [docs/OWNER-ANSWER-REVIEW.md](docs/OWNER-ANSWER-REVIEW.md) - generated owner answer review
@@ -349,6 +350,9 @@ npm run cli -- audit:goal-completion-audit
 npm run cli -- owner:queue
 npm run cli -- owner:proof-handoff
 npm run cli -- audit:owner-proof-handoff
+npm run cli -- owner:proof-input-template
+npm run cli -- owner:proof-input-check
+npm run cli -- audit:owner-proof-input
 npm run cli -- owner:decision-intake
 npm run cli -- owner:decision-answer-record
 npm run cli -- owner:answer-review
@@ -430,6 +434,9 @@ It does not prove npm package release.
 `audit:owner-queue` checks the owner action queue and no-decision/no-proof boundary.
 `owner:proof-handoff` creates the minimum owner proof handoff for `license_or_no_reuse` and `weak_artifact_permission`, not owner decision, permission grant, proof approval, publication, or gate closure.
 `audit:owner-proof-handoff` checks the owner proof handoff and no-decision/no-proof boundary.
+`owner:proof-input-template` creates a schema-shaped owner proof input template for `license_or_no_reuse` and `weak_artifact_permission`, not an owner decision, submitted artifact, permission grant, publication, external proof, proof approval, or gate closure.
+`owner:proof-input-check` checks that owner proof input record before downstream conversion; `--require-ready` fails until the owner has reviewed and submitted both minimum inputs.
+`audit:owner-proof-input` checks the template, checker, CLI, docs, manifests, release order, and no-decision/no-proof boundary.
 `owner:decision-intake` creates an owner decision intake form, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
 `audit:owner-decision-intake` checks the owner decision intake form and no-decision/no-proof boundary.
 `owner:decision-answer-record` creates a schema-shaped pending owner answer fixture, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
@@ -1026,6 +1033,18 @@ This writes `.mimesis/owner-actions/proof-run-handoff.md`.
 Audit it with `npm run audit:owner-proof-handoff`.
 It narrows the owner ask to `license_or_no_reuse` and `weak_artifact_permission`.
 It does not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, close gates, or prove completion.
+
+Generate and check the owner proof input template:
+
+```bash
+npm run owner:proof-input-template
+npm run owner:proof-input-check
+npm run audit:owner-proof-input
+```
+
+This writes `.mimesis/owner-actions/proof-input-template.json` and `.mimesis/owner-actions/fixture-proof-input-check.md`.
+It keeps both minimum inputs pending until the owner reviews and submits them.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
 
 Generate an owner evidence submission record:
 

@@ -204,6 +204,11 @@
       "command": "npm run owner:proof-handoff"
     },
     {
+      "name": "owner proof input template",
+      "path": ".mimesis/owner-actions/proof-input-template.json",
+      "command": "npm run owner:proof-input-template"
+    },
+    {
       "name": "owner decision intake",
       "path": ".mimesis/owner-actions/decision-intake.md",
       "command": "npm run owner:decision-intake"
@@ -532,6 +537,18 @@
       "purpose": "Check the owner proof handoff, source coverage, and no-decision/no-proof boundaries."
     },
     {
+      "name": "owner:proof-input-template",
+      "purpose": "Generate the single owner proof input template for license/no-reuse and weak artifact permission without submitting owner input."
+    },
+    {
+      "name": "owner:proof-input-check",
+      "purpose": "Check an owner proof input record before downstream conversion without approving proof or closing gates."
+    },
+    {
+      "name": "audit:owner-proof-input",
+      "purpose": "Check the owner proof input schema, template, report, CLI, public docs, and no-decision/no-proof boundaries."
+    },
+    {
       "name": "owner:decision-intake",
       "purpose": "Generate the owner decision intake form without choosing a license, collecting an artifact, or closing gates."
     },
@@ -760,6 +777,7 @@
     "spec/owner-decision-answer.schema.json",
     "spec/owner-evidence-intake.schema.json",
     "spec/owner-evidence-submission.schema.json",
+    "spec/owner-proof-input.schema.json",
     "docs/COMPLETION-AUDIT.md",
     "docs/GAP-REGISTER.md",
     "tools/audit-gap-register-sync-closure.mjs",
@@ -789,6 +807,7 @@
     "docs/ADOPTION-PACKET.md",
     "docs/OWNER-ACTION-QUEUE.md",
     "docs/OWNER-PROOF-HANDOFF.md",
+    "docs/OWNER-PROOF-INPUT.md",
     "docs/OWNER-DECISION-INTAKE.md",
     "docs/OWNER-DECISION-ANSWER-RECORD.md",
     "docs/OWNER-ANSWER-REVIEW.md",

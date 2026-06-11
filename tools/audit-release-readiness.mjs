@@ -71,6 +71,7 @@ const requiredReadyFiles = [
   "docs/RELEASE-EVIDENCE-REPORT.md",
   "docs/OWNER-ACTION-QUEUE.md",
   "docs/OWNER-PROOF-HANDOFF.md",
+  "docs/OWNER-PROOF-INPUT.md",
   "docs/OWNER-DECISION-INTAKE.md",
   "docs/OWNER-DECISION-ANSWER-RECORD.md",
   "docs/OWNER-ANSWER-REVIEW.md",
@@ -142,6 +143,7 @@ const requiredReadyFiles = [
   "tools/audit-release-evidence-report.mjs",
   "tools/audit-owner-decision-intake.mjs",
   "tools/audit-owner-proof-handoff.mjs",
+  "tools/audit-owner-proof-input.mjs",
   "tools/audit-owner-decision-answer-record.mjs",
   "tools/audit-owner-answer-review.mjs",
   "tools/audit-owner-evidence-attachment-form.mjs",
@@ -210,6 +212,8 @@ const requiredReadyFiles = [
   "tools/create-release-evidence-report.mjs",
   "tools/create-owner-action-queue.mjs",
   "tools/create-owner-proof-handoff.mjs",
+  "tools/create-owner-proof-input-template.mjs",
+  "tools/check-owner-proof-input-record.mjs",
   "tools/create-owner-decision-intake.mjs",
   "tools/create-owner-decision-answer-record.mjs",
   "tools/review-owner-decision-answer-record.mjs",
@@ -243,6 +247,7 @@ const requiredReadyFiles = [
   "spec/owner-decision-answer.schema.json",
   "spec/owner-evidence-intake.schema.json",
   "spec/owner-evidence-submission.schema.json",
+  "spec/owner-proof-input.schema.json",
   "package.json",
   ".mimesis/framework-manifest.json",
   ".mimesis/publication-packets/v0.1.md",
@@ -271,6 +276,8 @@ const requiredReadyFiles = [
   ".mimesis/gaps/closure-plan.json",
   ".mimesis/operator-runbooks/current-runbook.md",
   ".mimesis/owner-actions/current-action-queue.md",
+  ".mimesis/owner-actions/proof-input-template.json",
+  ".mimesis/owner-actions/fixture-proof-input-check.md",
   ".mimesis/owner-actions/decision-intake.md",
   ".mimesis/owner-actions/fixture-answer-record.json",
   ".mimesis/owner-actions/answer-review.md",
@@ -721,6 +728,18 @@ if (!/"owner:queue"/.test(packageJson)) {
 
 if (!/"owner:proof-handoff"/.test(packageJson)) {
   failures.push("package.json must expose npm run owner:proof-handoff");
+}
+
+if (!/"owner:proof-input-template"/.test(packageJson)) {
+  failures.push("package.json must expose npm run owner:proof-input-template");
+}
+
+if (!/"owner:proof-input-check"/.test(packageJson)) {
+  failures.push("package.json must expose npm run owner:proof-input-check");
+}
+
+if (!/"audit:owner-proof-input"/.test(packageJson)) {
+  failures.push("package.json must expose npm run audit:owner-proof-input");
 }
 
 if (!/"owner:decision-intake"/.test(packageJson)) {
@@ -1249,6 +1268,14 @@ if (!/owner:proof-handoff/.test(releaseCheck)) {
   failures.push("release:check must include npm run owner:proof-handoff");
 }
 
+if (!/owner:proof-input-template/.test(releaseCheck)) {
+  failures.push("release:check must include npm run owner:proof-input-template");
+}
+
+if (!/owner:proof-input-check/.test(releaseCheck)) {
+  failures.push("release:check must include npm run owner:proof-input-check");
+}
+
 if (!/owner:decision-intake/.test(releaseCheck)) {
   failures.push("release:check must include npm run owner:decision-intake");
 }
@@ -1299,6 +1326,10 @@ if (!/audit:owner-queue/.test(releaseCheck)) {
 
 if (!/audit:owner-proof-handoff/.test(releaseCheck)) {
   failures.push("release:check must include npm run audit:owner-proof-handoff");
+}
+
+if (!/audit:owner-proof-input/.test(releaseCheck)) {
+  failures.push("release:check must include npm run audit:owner-proof-input");
 }
 
 if (!/audit:owner-decision-intake/.test(releaseCheck)) {
@@ -1721,6 +1752,22 @@ if (!/does not choose a license/i.test(read("docs/OWNER-PROOF-HANDOFF.md"))) {
 
 if (!/does not approve proof/i.test(read("docs/OWNER-PROOF-HANDOFF.md"))) {
   failures.push("owner proof handoff doc must keep proof approval boundary visible");
+}
+
+if (!/owner proof input/i.test(read("docs/OWNER-PROOF-INPUT.md"))) {
+  failures.push("owner proof input doc must name the proof input surface");
+}
+
+if (!/does not choose a license/i.test(read("docs/OWNER-PROOF-INPUT.md"))) {
+  failures.push("owner proof input doc must keep license decision boundary visible");
+}
+
+if (!/does not submit an artifact/i.test(read("docs/OWNER-PROOF-INPUT.md"))) {
+  failures.push("owner proof input doc must keep artifact submission boundary visible");
+}
+
+if (!/does not approve proof/i.test(read("docs/OWNER-PROOF-INPUT.md"))) {
+  failures.push("owner proof input doc must keep proof approval boundary visible");
 }
 
 if (!/owner decision intake/i.test(read("docs/OWNER-DECISION-INTAKE.md"))) {
