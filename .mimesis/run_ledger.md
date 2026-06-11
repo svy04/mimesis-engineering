@@ -3050,3 +3050,38 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use owner proof input review after issue conversion and before proof input check/split.
 - Treat review reports as field readiness review only; they do not supply owner evidence or close any gate.
 - Keep the remaining v0.2 gates open until the owner supplies real license/no-reuse input, one permissioned weak artifact, proof execution evidence, benchmark/adoption evidence, and fresh strict sync evidence.
+
+## 2026-06-11 - Remote Owner Proof Input Issue Anchor
+
+## Import
+
+- Re-read the current gap register, current state summary, goal completion audit, owner action queue, owner proof input request packet, owner proof input issue form, and open GitHub issues.
+- Confirmed the remaining completion gates still require owner license/no-reuse input and one permissioned weak artifact.
+- Confirmed there was no open owner proof input issue before this slice.
+
+## Distill
+
+- Create one public owner-input anchor issue so the owner can provide `license_or_no_reuse` and `weak_artifact_permission` without the framework inventing either answer.
+- Keep the issue as a request/intake surface only.
+- Do not treat the issue as owner decision, permission grant, submitted proof, external validation, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## Capsule
+
+- Added the GitHub label `owner-proof-input` for owner proof intake tracking.
+- Created GitHub issue #7: https://github.com/svy04/mimesis-engineering/issues/7
+- The issue asks for license/no-reuse direction, one weak artifact, artifact owner, publication preference, redaction requirements, proof boundary, and safety confirmation.
+
+## Shard
+
+- The issue body includes the local processing path: `owner:proof-input-issue-convert`, `owner:proof-input-review`, `owner:proof-input-check --require-ready`, and `owner:proof-input-split --require-ready`.
+- The issue body repeats the no-license-choice, no-permission-grant, no-proof, no-publication, no-adoption, no-benchmark, and no-gate-closure boundary.
+
+## Verify
+
+- `gh issue view 7 --json number,title,state,url,labels,body,createdAt` showed issue #7 open with the `owner-proof-input` label and the bounded request body.
+- `npm run audit:sync:strict` passed before this ledger entry with a clean local worktree matching upstream.
+
+## Remember
+
+- Use issue #7 as the remote owner-input anchor before expecting real owner proof input.
+- Keep all completion gates open until the owner fills the issue with real license/no-reuse and weak artifact permission input, and the local conversion/review/check/split path passes on that real input.
