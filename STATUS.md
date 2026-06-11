@@ -169,6 +169,7 @@ It is not a shipped plugin.
 - The repository includes `proof:execution-report` and `audit:proof-execution-report` for generating and checking a command evidence ledger without executing commands or creating external proof.
 - The repository includes `audit:proof-run-dry` for checking the proof-run path with a temporary local fixture.
 - The repository includes `license:packet` for generating the owner license decision packet.
+- The repository includes `license:decision-from-owner-answer` and `audit:license-decision-from-owner-answer` for turning a reviewed `license_or_no_reuse` owner answer into a bounded release decision record candidate without providing legal advice, publishing, creating external proof, or closing gates.
 - The repository includes `operator:runbook` for generating a local ecosystem run path across engineering, canvas, and casebook.
 - The repository includes `ecosystem:resources` for generating a local index of engineering, canvas, and casebook resources without copying neighboring repository content.
 - The repository includes `benchmark:packet` for generating a measurement protocol before productivity or adoption claims.

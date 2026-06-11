@@ -8,6 +8,9 @@ It captures current release, license, package, action, plugin, proof, benchmark,
 It does not choose a license, does not stage files, does not create a commit, does not push, does not tag, does not release, and does not publish.
 It keeps sync as a runtime-only sync proof requirement instead of embedding branch, commit, dirty-worktree, or upstream snapshots in the committed owner decision record.
 
+`license:decision-from-owner-answer` can create a separate release decision record candidate from a reviewed owner answer for `license_or_no_reuse`.
+That bridge records owner-provided license or no-reuse intent only; it does not provide legal advice, does not publish, does not create external proof, and does not close gates.
+
 ## Command
 
 ```bash
@@ -61,3 +64,5 @@ npm run audit:release-decision-record
 ```
 
 The audit checks package script wiring, CLI exposure, release preflight wiring, JSON shape, pending owner decision states, required fresh commands, source files, and proof-boundary flags.
+
+The separate `audit:license-decision-from-owner-answer` check verifies the reviewed owner answer bridge without changing the default pending release decision fixture.

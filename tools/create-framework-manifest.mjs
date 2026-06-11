@@ -182,6 +182,11 @@ const manifest = {
       command: "npm run release:decision-record"
     },
     {
+      name: "license decision from owner answer bridge",
+      path: ".mimesis/release-decisions/from-owner-answer-bridge.md",
+      command: "npm run license:decision-from-owner-answer"
+    },
+    {
       name: "release evidence report",
       path: ".mimesis/release-evidence/v0.1-report.md",
       command: "npm run release:evidence-report"
@@ -478,8 +483,16 @@ const manifest = {
       purpose: "Generate the machine-readable owner release decision record without choosing or publishing."
     },
     {
+      name: "license:decision-from-owner-answer",
+      purpose: "Bridge a reviewed owner license/no-reuse answer into a bounded release decision record candidate without legal advice or publication."
+    },
+    {
       name: "audit:release-decision-record",
       purpose: "Check owner release decisions remain pending or blocked and bounded."
+    },
+    {
+      name: "audit:license-decision-from-owner-answer",
+      purpose: "Check reviewed owner license/no-reuse answer conversion, blocked fixture behavior, and no-legal-advice/no-publication boundaries."
     },
     {
       name: "release:evidence-report",
@@ -764,6 +777,7 @@ const manifest = {
     "docs/PLUGIN-INSTALL-PACKET.md",
     "docs/STATUS-ROADMAP-SYNC.md",
     "docs/RELEASE-DECISION-RECORD.md",
+    "docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md",
     "docs/RELEASE-EVIDENCE-REPORT.md",
     "docs/PUBLICATION-EVIDENCE-PACKET.md",
     "docs/ADOPTION-PACKET.md",
@@ -784,6 +798,8 @@ const manifest = {
     "docs/PROOF-INTAKE-SCHEMA.md",
     "tools/proof-intake-from-owner-evidence.mjs",
     "tools/audit-proof-intake-from-owner-evidence.mjs",
+    "tools/license-decision-from-owner-answer.mjs",
+    "tools/audit-license-decision-from-owner-answer.mjs",
     "docs/REFERENCE-PACK-INDEX.md",
     "reference-packs/README.md",
     "PROOF-BOUNDARY.md",

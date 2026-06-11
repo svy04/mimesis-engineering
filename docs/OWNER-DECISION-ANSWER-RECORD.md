@@ -60,6 +60,13 @@ The audit checks:
 - prohibited claims and no-decision boundaries remain explicit
 - package script, CLI, docs, release preflight, validator, framework manifest, release artifact manifest, and completion matrix wiring exist
 
+## License Decision Bridge
+
+When the owner later provides a reviewed owner answer for `license_or_no_reuse`, `license:decision-from-owner-answer` can turn that reviewed owner answer into a bounded release decision record candidate.
+
+The default fixture remains pending and blocked.
+The bridge requires a reviewed owner answer, explicit owner confirmation, decision evidence, and confirmations that the operator is not providing legal advice, publishing, or closing gates.
+
 ## Boundary
 
 This is a local fixture for pending owner answers.

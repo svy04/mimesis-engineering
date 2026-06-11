@@ -2611,3 +2611,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 
 - Use dry-run proof rehearsal as a local path integrity check only.
 - Do not treat either dry-run lane as real external proof, real owner evidence, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## 2026-06-11 - License Decision From Owner Answer Bridge Slice
+
+## Import
+
+- Re-read the clean PR state, `.mimesis/gaps/current-gap-register.json`, `spec/owner-decision-answer.schema.json`, `docs/OWNER-DECISION-ANSWER-RECORD.md`, `docs/RELEASE-DECISION-RECORD.md`, `.mimesis/owner-actions/fixture-answer-record.json`, `.mimesis/release-decisions/owner-decision-record.json`, and the release/manifest/audit wiring.
+- Found that Mimesis had a pending owner answer record and a pending release decision record, but no checked bridge from a reviewed `license_or_no_reuse` owner answer into a bounded release decision record candidate.
+
+## Distill
+
+- Add a narrow owner-license bridge that records owner-provided license/no-reuse intent only after a reviewed owner answer exists.
+- Keep the default fixture blocked because the owner has not answered.
+- Preserve the boundary that the bridge does not choose a license by code, provide legal advice, publish, create external proof, prove adoption, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-license-decision-from-owner-answer.mjs`, which failed for the missing bridge tool, docs, scripts, CLI, schema allowance, manifest, validator, release artifact, and release preflight wiring.
+- GREEN: added `tools/license-decision-from-owner-answer.mjs`, default blocked report generation, reviewed-owner-answer conversion, required owner/legal/publication confirmations, and rejection for pending fixtures or missing license-name when a reuse license is selected.
+- GREEN: updated the owner answer schema so real reviewed owner decision records can set `safetyConfirmation.noRealOwnerDecision: false` while the generated fixture remains pending and no-decision.
+
+## Shard
+
+- `license:decision-from-owner-answer` now writes `.mimesis/release-decisions/from-owner-answer-bridge.md` in default blocked mode.
+- A reviewed owner answer record with `license_or_no_reuse.answerStatus: answered` can create a release decision record candidate with `status: owner_license_decision_recorded_not_publication`.
+- README, docs, tools README, completion audit, release-order audit, framework manifest, validator, release artifact manifest, STATUS, and ROADMAP now expose the bridge and its no-legal-advice/no-publication boundary.
+
+## Verify
+
+- `node tools/audit-license-decision-from-owner-answer.mjs` failed first for the expected missing bridge surface.
+- After implementation, `npm run license:decision-from-owner-answer`, `npm run audit:license-decision-from-owner-answer`, `npm run audit:owner-decision-answer-record`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:completion`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, and `npm run validate` passed.
+
+## Remember
+
+- Treat license/no-reuse bridging as an owner-answer recording path, not a license recommendation or legal decision by the framework.
+- Keep the committed default report blocked until a real reviewed owner answer exists.
+- Do not use the bridge output as publication, external proof, adoption evidence, benchmark evidence, gate closure, or objective completion.

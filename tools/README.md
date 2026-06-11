@@ -1125,6 +1125,47 @@ npm run cli -- license:packet
 This writes `.mimesis/license-packets/owner-decision.md`.
 It is an owner decision aid, not a license choice or legal advice.
 
+## License Decision From Owner Answer
+
+Run the default blocked bridge report:
+
+```bash
+npm run license:decision-from-owner-answer
+```
+
+or:
+
+```bash
+npm run cli -- license:decision-from-owner-answer
+```
+
+This writes `.mimesis/release-decisions/from-owner-answer-bridge.md`.
+
+After the owner supplies a reviewed owner decision answer record with `license_or_no_reuse` answered, create a bounded release decision record candidate:
+
+```bash
+npm run cli -- license:decision-from-owner-answer path/to/owner-answer-record.json --output path/to/release-decision-record.json --decision no_reuse_boundary --owner-confirmation "Owner explicitly chose the no-reuse boundary for v0.1." --decision-evidence path/to/reviewed-owner-answer.json --confirm-owner-reviewed --confirm-not-legal-advice --confirm-no-publication
+```
+
+This bridge reads a reviewed owner answer and records owner-provided license/no-reuse intent.
+It does not provide legal advice, publish, create external proof, or close gates.
+
+## Audit License Decision From Owner Answer
+
+Run:
+
+```bash
+npm run audit:license-decision-from-owner-answer
+```
+
+or:
+
+```bash
+npm run cli -- audit:license-decision-from-owner-answer
+```
+
+This checks blocked default behavior, reviewed owner answer conversion, required confirmations, no-legal-advice boundaries, release preflight wiring, validator coverage, framework manifest visibility, and release artifact manifest coverage.
+
 ## Audit License Packet
 
 Run:

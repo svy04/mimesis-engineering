@@ -403,6 +403,8 @@ It does not prove npm package release.
 `proof:candidate-packet` creates a first proof candidate packet, not selected proof, external proof, permission, publication, or adoption evidence.
 `audit:proof-candidate-packet` checks that candidate selection remains visible without claiming completion.
 `license:packet` creates an owner decision packet, not a license choice.
+`license:decision-from-owner-answer` creates a blocked bridge report by default, and can record a reviewed `license_or_no_reuse` owner answer as a bounded release decision record candidate; it does not provide legal advice, publish, create external proof, or close gates.
+`audit:license-decision-from-owner-answer` checks the reviewed owner answer bridge and no-legal-advice/no-publication boundaries.
 `operator:runbook` creates an ecosystem operating path, not external adoption or publication proof.
 `ecosystem:resources` creates a local ecosystem resource index, not copied content, external adoption proof, or remote freshness proof.
 `benchmark:packet` creates a measurement protocol, not benchmarked productivity, adoption proof, or customer outcome proof.

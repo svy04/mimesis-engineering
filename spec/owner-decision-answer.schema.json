@@ -81,8 +81,7 @@
       ],
       "properties": {
         "noRealOwnerDecision": {
-          "type": "boolean",
-          "const": true
+          "type": "boolean"
         },
         "noArtifactCollected": {
           "type": "boolean",

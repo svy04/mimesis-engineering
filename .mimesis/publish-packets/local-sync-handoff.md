@@ -9,10 +9,10 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71`
-- upstream head: `c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71`
-- tracked changed entries: 10
-- untracked entries: 0
+- head: `28704cdf56e1d36c7af36d8e8a457a7a23749213`
+- upstream head: `28704cdf56e1d36c7af36d8e8a457a7a23749213`
+- tracked changed entries: 25
+- untracked entries: 4
 
 Conclusion:
 local worktree is not publish-ready because it has unpublished local changes or does not match upstream.
@@ -22,49 +22,101 @@ local worktree is not publish-ready because it has unpublished local changes or 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/proof-runs/dry-run-report.md
+ M .mimesis/framework-manifest.json
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
  M .mimesis/sync-status.md
  M README.md
+ M ROADMAP.md
+ M STATUS.md
+ M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/PROOF-RUN-DRY-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
+ M docs/OWNER-DECISION-ANSWER-RECORD.md
+ M docs/RELEASE-CHECK-ORDER.md
+ M docs/RELEASE-DECISION-RECORD.md
+ M package.json
+ M spec/owner-decision-answer.schema.json
  M tools/README.md
- M tools/audit-proof-run-dry.mjs
+ M tools/audit-cli.mjs
+ M tools/audit-completion-matrix.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
+ M tools/audit-release-check-order.mjs
+ M tools/create-framework-manifest.mjs
+ M tools/create-release-artifact-manifest.mjs
+ M tools/validate-mimesis.mjs
+?? .mimesis/release-decisions/from-owner-answer-bridge.md
+?? docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md
+?? tools/audit-license-decision-from-owner-answer.mjs
+?? tools/license-decision-from-owner-answer.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 ---
- .mimesis/proof-runs/dry-run-report.md           |  12 ++
- .mimesis/release-artifacts/v0.1-manifest.json   |  26 +--
- .mimesis/run_ledger.md                          |  34 ++++
- .mimesis/sync-status.md                         |  12 +-
- README.md                                       |   2 +-
- docs/COMPLETION-AUDIT.md                        |   2 +-
- docs/PROOF-RUN-DRY-AUDIT.md                     |  17 ++
- tools/README.md                                 |   2 +-
- tools/audit-proof-run-dry.mjs                   | 260 +++++++++++++++++++-----
- 10 files changed, 297 insertions(+), 102 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 -------
+ .mimesis/framework-manifest.json                |  16 ++++
+ .mimesis/release-artifacts/v0.1-manifest.json   | 110 +++++++++++++++---------
+ .mimesis/run_ledger.md                          |  36 ++++++++
+ .mimesis/sync-status.md                         |  41 +++++----
+ README.md                                       |   2 +
+ ROADMAP.md                                      |   1 +
+ STATUS.md                                       |   1 +
+ bin/mimesis.mjs                                 |   2 +
+ docs/COMPLETION-AUDIT.md                        |   1 +
+ docs/FRAMEWORK-MANIFEST.md                      |   4 +-
+ docs/OWNER-DECISION-ANSWER-RECORD.md            |   7 ++
+ docs/RELEASE-CHECK-ORDER.md                     |   2 +-
+ docs/RELEASE-DECISION-RECORD.md                 |   5 ++
+ package.json                                    |   4 +-
+ spec/owner-decision-answer.schema.json          |   3 +-
+ tools/README.md                                 |  41 +++++++++
+ tools/audit-cli.mjs                             |   2 +
+ tools/audit-completion-matrix.mjs               |   5 ++
+ tools/audit-framework-manifest.mjs              |   5 ++
+ tools/audit-release-artifact-manifest.mjs       |   4 +
+ tools/audit-release-check-order.mjs             |   9 ++
+ tools/create-framework-manifest.mjs             |  16 ++++
+ tools/create-release-artifact-manifest.mjs      |   4 +
+ tools/validate-mimesis.mjs                      |   4 +
+ 25 files changed, 262 insertions(+), 95 deletions(-)
 ```
 
 ## Tracked Changes
 
 - `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/proof-runs/dry-run-report.md`
+- ` M .mimesis/framework-manifest.json`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
 - ` M .mimesis/run_ledger.md`
 - ` M .mimesis/sync-status.md`
 - ` M README.md`
+- ` M ROADMAP.md`
+- ` M STATUS.md`
+- ` M bin/mimesis.mjs`
 - ` M docs/COMPLETION-AUDIT.md`
-- ` M docs/PROOF-RUN-DRY-AUDIT.md`
+- ` M docs/FRAMEWORK-MANIFEST.md`
+- ` M docs/OWNER-DECISION-ANSWER-RECORD.md`
+- ` M docs/RELEASE-CHECK-ORDER.md`
+- ` M docs/RELEASE-DECISION-RECORD.md`
+- ` M package.json`
+- ` M spec/owner-decision-answer.schema.json`
 - ` M tools/README.md`
-- ` M tools/audit-proof-run-dry.mjs`
+- ` M tools/audit-cli.mjs`
+- ` M tools/audit-completion-matrix.mjs`
+- ` M tools/audit-framework-manifest.mjs`
+- ` M tools/audit-release-artifact-manifest.mjs`
+- ` M tools/audit-release-check-order.mjs`
+- ` M tools/create-framework-manifest.mjs`
+- ` M tools/create-release-artifact-manifest.mjs`
+- ` M tools/validate-mimesis.mjs`
 
 ## Untracked Entries
 
-- none
+- `?? .mimesis/release-decisions/from-owner-answer-bridge.md`
+- `?? docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md`
+- `?? tools/audit-license-decision-from-owner-answer.mjs`
+- `?? tools/license-decision-from-owner-answer.mjs`
 
 ## Current Sync Report
 
@@ -80,8 +132,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 9
-- untracked files: 0
+- changed tracked files: 24
+- untracked files: 4
 
 ## Conclusion
 
@@ -98,14 +150,33 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/proof-runs/dry-run-report.md
+ M .mimesis/framework-manifest.json
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
  M README.md
+ M ROADMAP.md
+ M STATUS.md
+ M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/PROOF-RUN-DRY-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
+ M docs/OWNER-DECISION-ANSWER-RECORD.md
+ M docs/RELEASE-CHECK-ORDER.md
+ M docs/RELEASE-DECISION-RECORD.md
+ M package.json
+ M spec/owner-decision-answer.schema.json
  M tools/README.md
- M tools/audit-proof-run-dry.mjs
+ M tools/audit-cli.mjs
+ M tools/audit-completion-matrix.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
+ M tools/audit-release-check-order.mjs
+ M tools/create-framework-manifest.mjs
+ M tools/create-release-artifact-manifest.mjs
+ M tools/validate-mimesis.mjs
+?? .mimesis/release-decisions/from-owner-answer-bridge.md
+?? docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md
+?? tools/audit-license-decision-from-owner-answer.mjs
+?? tools/license-decision-from-owner-answer.mjs
 ```
 
 

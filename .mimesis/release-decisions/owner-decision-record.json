@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.release-decision-record.v0.1",
-  "generatedAt": "2026-06-11T05:34:59.501Z",
+  "generatedAt": "2026-06-11T05:58:08.229Z",
   "status": "owner_decision_required",
   "package": {
     "name": "mimesis-engineering",

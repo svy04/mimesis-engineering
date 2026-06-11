@@ -87,6 +87,9 @@ for (const text of [
   "proof intake from owner evidence",
   "proof:intake-from-owner-evidence",
   "audit:proof-intake-from-owner-evidence",
+  "license decision from owner answer",
+  "license:decision-from-owner-answer",
+  "audit:license-decision-from-owner-answer",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/FRAMEWORK-MANIFEST.md missing bridge text: ${text}`);
@@ -186,6 +189,8 @@ for (const command of [
   "plugin:install-packet",
   "audit:plugin-install-packet",
   "release:decision-record",
+  "license:decision-from-owner-answer",
+  "audit:license-decision-from-owner-answer",
   "audit:release-decision-record",
   "release:evidence-report",
   "audit:release-evidence-report",

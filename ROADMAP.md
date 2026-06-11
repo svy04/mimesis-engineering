@@ -146,6 +146,7 @@ Candidate work:
 - generated owner decision intake before recording owner license, weak artifact permission, publication, package/action/plugin, benchmark/adoption, or strict sync answers
 - generated owner decision answer record before treating any owner answer as machine-readable gate evidence
 - generated owner answer review before treating pending owner answers as gate movement
+- generated license decision from owner answer bridge before treating a reviewed `license_or_no_reuse` answer as a release decision record candidate
 - generated owner evidence attachment form before asking owner-provided evidence to move gates
 - generated owner evidence submission record before treating missing owner evidence as submitted evidence
 - generated owner evidence submission check before treating an owner evidence submission record as gate-moving evidence

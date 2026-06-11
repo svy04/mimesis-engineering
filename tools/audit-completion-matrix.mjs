@@ -99,6 +99,7 @@ const requiredRows = [
   "Release review bundle",
   "Release artifact manifest",
   "Status roadmap sync",
+  "License decision from owner answer",
   "Package release-candidate surface",
   "Release check order",
   "Repository-local GitHub Action",
@@ -355,6 +356,10 @@ const requiredEvidenceLinks = [
   "LICENSE-PACKET.md",
   "../tools/create-license-packet.mjs",
   "../tools/audit-license-packet.mjs",
+  "LICENSE-DECISION-FROM-OWNER-ANSWER.md",
+  "../.mimesis/release-decisions/from-owner-answer-bridge.md",
+  "../tools/license-decision-from-owner-answer.mjs",
+  "../tools/audit-license-decision-from-owner-answer.mjs",
   "LICENSE-DECISION.md",
 ];
 
