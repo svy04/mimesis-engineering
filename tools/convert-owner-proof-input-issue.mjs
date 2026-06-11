@@ -46,7 +46,8 @@ function normalizeHeading(value) {
     .replace(/`/g, "")
     .replace(/[_-]+/g, " ")
     .replace(/[^a-z0-9]+/g, " ")
-    .trim();
+    .trim()
+    .replace(/^\d+\s+/, "");
 }
 
 function normalizeValue(value) {
@@ -59,7 +60,7 @@ function normalizeValue(value) {
 
 function parseIssueBody(markdown) {
   const sections = new Map();
-  const headingPattern = /^###\s+(.+?)\s*$/gm;
+  const headingPattern = /^#{2,3}\s+(.+?)\s*$/gm;
   const matches = [...markdown.matchAll(headingPattern)];
 
   for (let index = 0; index < matches.length; index += 1) {

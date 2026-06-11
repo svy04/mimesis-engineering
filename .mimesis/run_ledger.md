@@ -3539,3 +3539,47 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Owner evidence submission issue conversion creates a draft owner evidence submission record candidate only.
 - A submitted field in a draft record is not field movement and not gate movement; reviewed record status is required before field-level movement.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Proof Input Issue Anchor Compatibility Slice
+
+## Import
+
+- Re-read the live owner proof input issue #7 body, the local owner proof input issue fixture, the converter, split bridge, proof-intake bridge, audit, docs, status, roadmap, completion matrix, and release packet.
+- Confirmed the live public owner issue anchor uses numbered `##` sections, while the converter only parsed local fixture-style `###` sections.
+
+## Distill
+
+- Fix the converter so actual public owner issue anchor markdown can become a local owner proof input record candidate after owner review.
+- Keep the output bounded: not a license choice, not legal advice, not permission grant, not submitted artifact, not external proof, not publication, and not gate closure.
+
+## Capsule
+
+- RED: extended `tools/audit-owner-proof-input-issue-convert.mjs` with an issue #7-style smoke fixture that uses numbered `##` headings, checkbox choices, fenced text blocks, publication preference, redaction requirements, proof boundary, and safety confirmation.
+- GREEN: updated `tools/convert-owner-proof-input-issue.mjs` to parse both `##` and `###` headings and normalize numbered heading prefixes before matching fields.
+- GREEN: updated `docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md`, `README.md`, `tools/README.md`, `STATUS.md`, `ROADMAP.md`, `docs/COMPLETION-AUDIT.md`, and `docs/V0.1-RELEASE-PACKET.md` to describe the public issue anchor compatibility without claiming owner input or proof.
+
+## Shard
+
+- The converter now recognizes both `### license_or_no_reuse` and `## 1. license_or_no_reuse`.
+- The audit now proves a reviewed, complete issue #7-style body can parse both minimum inputs and produce `ready for downstream conversion: yes`.
+- Empty or placeholder live issue content still remains blocked by the existing `--require-complete` path.
+
+## Verify
+
+- `npm run audit:owner-proof-input-issue-convert` failed first with `issue body missing license_or_no_reuse` and `issue body missing weak_artifact_permission` for the issue #7-style smoke.
+- After the parser fix, `npm run audit:owner-proof-input-issue-convert` passed.
+- `npm run owner:proof-input-issue-convert` passed and regenerated the fixture record/report.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:completion` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run audit:release-order` passed.
+- `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed with the new issue anchor smoke inside the release chain and without closing any gate.
+
+## Remember
+
+- Local fixtures must match the public owner intake shape closely enough to catch parser drift.
+- Issue #7-style markdown can now become a reviewed owner proof input record candidate only after owner-filled content and `--status reviewed --require-complete`.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

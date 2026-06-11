@@ -9,10 +9,10 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `09c2701225a072180efb9302bb092ca5c486fba4`
-- upstream head: `09c2701225a072180efb9302bb092ca5c486fba4`
-- tracked changed entries: 37
-- untracked entries: 7
+- head: `a7cf116c47eceb2a79336f79e4ff2cabd4525f43`
+- upstream head: `a7cf116c47eceb2a79336f79e4ff2cabd4525f43`
+- tracked changed entries: 23
+- untracked entries: 0
 
 Conclusion:
 local worktree is not publish-ready because it has unpublished local changes or does not match upstream.
@@ -21,16 +21,12 @@ local worktree is not publish-ready because it has unpublished local changes or 
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/claim-packs/public-v0.1.md
  M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/framework-manifest.json
  M .mimesis/gaps/closure-plan.json
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
- M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -42,86 +38,51 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M README.md
  M ROADMAP.md
  M STATUS.md
- M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/RELEASE-CHECK-ORDER.md
- M docs/STATUS-ROADMAP-SYNC.md
+ M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
  M docs/V0.1-RELEASE-PACKET.md
- M package.json
  M tools/README.md
- M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-framework-manifest.mjs
- M tools/audit-release-artifact-manifest.mjs
- M tools/audit-release-check-order.mjs
- M tools/audit-status-roadmap-sync.mjs
- M tools/create-framework-manifest.mjs
- M tools/create-release-artifact-manifest.mjs
- M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
-?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md
-?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md
-?? tools/audit-owner-evidence-submission-issue-convert.mjs
-?? tools/convert-owner-evidence-submission-issue.mjs
+ M tools/audit-owner-proof-input-issue-convert.mjs
+ M tools/convert-owner-proof-input-issue.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/claim-packs/public-v0.1.md                |   2 +-
- .mimesis/completion/goal-completion-audit.json     |   2 +-
+.mimesis/completion/goal-completion-audit.json     |   2 +-
  .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 ----
- .mimesis/framework-manifest.json                   |  13 ++
  .mimesis/gaps/closure-plan.json                    |   2 +-
  .mimesis/gaps/current-gap-register.json            |   2 +-
- .mimesis/gates/closure-readiness.json              |   6 +-
- .mimesis/gates/closure-review.json                 |   6 +-
- .mimesis/operator-runbooks/current-runbook.md      |   1 +
- .mimesis/publication-packets/v0.1.md               |   5 +
- .mimesis/publish-packets/local-sync-handoff.md     | 169 +++++++--------------
- .mimesis/release-artifacts/v0.1-manifest.json      | 162 ++++++++++++--------
+ .mimesis/gates/closure-readiness.json              |   8 +-
+ .mimesis/gates/closure-review.json                 |   8 +-
+ .mimesis/publish-packets/local-sync-handoff.md     | 181 ++++----------------
+ .mimesis/release-artifacts/v0.1-manifest.json      |  74 ++++----
  .../release-decisions/owner-decision-record.json   |   2 +-
- .mimesis/release-review/v0.1-bundle.json           |  39 ++---
- .mimesis/run_ledger.md                             |  48 ++++++
- .mimesis/state/current-state.json                  |   6 +-
- .mimesis/sync-status.md                            |  20 +--
- .mimesis/worktree/review-packet.json               |  58 ++-----
- README.md                                          |  13 ++
- ROADMAP.md                                         |   2 +
- STATUS.md                                          |   2 +
- bin/mimesis.mjs                                    |   2 +
- docs/COMPLETION-AUDIT.md                           |   2 +
- docs/RELEASE-CHECK-ORDER.md                        |   6 +-
- docs/STATUS-ROADMAP-SYNC.md                        |   2 +
- docs/V0.1-RELEASE-PACKET.md                        |  16 ++
- package.json                                       |   4 +-
- tools/README.md                                    |  33 ++++
- tools/audit-cli.mjs                                |   2 +
- tools/audit-completion-matrix.mjs                  |   1 +
- tools/audit-framework-manifest.mjs                 |   2 +
- tools/audit-release-artifact-manifest.mjs          |   6 +
- tools/audit-release-check-order.mjs                |   9 ++
- tools/audit-status-roadmap-sync.mjs                |   2 +
- tools/create-framework-manifest.mjs                |  13 ++
- tools/create-release-artifact-manifest.mjs         |   6 +
- tools/validate-mimesis.mjs                         |   6 +
- 37 files changed, 394 insertions(+), 310 deletions(-)
+ .mimesis/release-review/v0.1-bundle.json           |  65 ++-----
+ .mimesis/run_ledger.md                             |  44 +++++
+ .mimesis/state/current-state.json                  |   8 +-
+ .mimesis/sync-status.md                            |  31 +---
+ .mimesis/worktree/review-packet.json               | 188 ++-------------------
+ README.md                                          |   1 +
+ ROADMAP.md                                         |   1 +
+ STATUS.md                                          |   1 +
+ docs/COMPLETION-AUDIT.md                           |   2 +-
+ docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md            |  13 ++
+ docs/V0.1-RELEASE-PACKET.md                        |   1 +
+ tools/README.md                                    |   1 +
+ tools/audit-owner-proof-input-issue-convert.mjs    | 100 +++++++++++
+ tools/convert-owner-proof-input-issue.mjs          |   5 +-
+ 23 files changed, 284 insertions(+), 488 deletions(-)
 ```
 
 ## Tracked Changes
 
-- `M .mimesis/claim-packs/public-v0.1.md`
-- ` M .mimesis/completion/goal-completion-audit.json`
+- `M .mimesis/completion/goal-completion-audit.json`
 - ` D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/framework-manifest.json`
 - ` M .mimesis/gaps/closure-plan.json`
 - ` M .mimesis/gaps/current-gap-register.json`
 - ` M .mimesis/gates/closure-readiness.json`
 - ` M .mimesis/gates/closure-review.json`
-- ` M .mimesis/operator-runbooks/current-runbook.md`
-- ` M .mimesis/publication-packets/v0.1.md`
 - ` M .mimesis/publish-packets/local-sync-handoff.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
 - ` M .mimesis/release-decisions/owner-decision-record.json`
@@ -133,32 +94,16 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M README.md`
 - ` M ROADMAP.md`
 - ` M STATUS.md`
-- ` M bin/mimesis.mjs`
 - ` M docs/COMPLETION-AUDIT.md`
-- ` M docs/RELEASE-CHECK-ORDER.md`
-- ` M docs/STATUS-ROADMAP-SYNC.md`
+- ` M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md`
 - ` M docs/V0.1-RELEASE-PACKET.md`
-- ` M package.json`
 - ` M tools/README.md`
-- ` M tools/audit-cli.mjs`
-- ` M tools/audit-completion-matrix.mjs`
-- ` M tools/audit-framework-manifest.mjs`
-- ` M tools/audit-release-artifact-manifest.mjs`
-- ` M tools/audit-release-check-order.mjs`
-- ` M tools/audit-status-roadmap-sync.mjs`
-- ` M tools/create-framework-manifest.mjs`
-- ` M tools/create-release-artifact-manifest.mjs`
-- ` M tools/validate-mimesis.mjs`
+- ` M tools/audit-owner-proof-input-issue-convert.mjs`
+- ` M tools/convert-owner-proof-input-issue.mjs`
 
 ## Untracked Entries
 
-- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md`
-- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json`
-- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md`
-- `?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md`
-- `?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md`
-- `?? tools/audit-owner-evidence-submission-issue-convert.mjs`
-- `?? tools/convert-owner-evidence-submission-issue.mjs`
+- none
 
 ## Current Sync Report
 
@@ -174,8 +119,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 37
-- untracked files: 7
+- changed tracked files: 23
+- untracked files: 0
 
 ## Conclusion
 
@@ -191,16 +136,12 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/claim-packs/public-v0.1.md
  M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/framework-manifest.json
  M .mimesis/gaps/closure-plan.json
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
- M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -212,29 +153,12 @@ It does not publish, push, tag, release, or create a pull request.
  M README.md
  M ROADMAP.md
  M STATUS.md
- M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/RELEASE-CHECK-ORDER.md
- M docs/STATUS-ROADMAP-SYNC.md
+ M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
  M docs/V0.1-RELEASE-PACKET.md
- M package.json
  M tools/README.md
- M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-framework-manifest.mjs
- M tools/audit-release-artifact-manifest.mjs
- M tools/audit-release-check-order.mjs
- M tools/audit-status-roadmap-sync.mjs
- M tools/create-framework-manifest.mjs
- M tools/create-release-artifact-manifest.mjs
- M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
-?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md
-?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md
-?? tools/audit-owner-evidence-submission-issue-convert.mjs
-?? tools/convert-owner-evidence-submission-issue.mjs
+ M tools/audit-owner-proof-input-issue-convert.mjs
+ M tools/convert-owner-proof-input-issue.mjs
 ```
 
 

@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 37
-- untracked files: 7
+- changed tracked files: 23
+- untracked files: 0
 
 ## Conclusion
 
@@ -27,16 +27,12 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/claim-packs/public-v0.1.md
  M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/framework-manifest.json
  M .mimesis/gaps/closure-plan.json
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
- M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -48,27 +44,10 @@ It does not publish, push, tag, release, or create a pull request.
  M README.md
  M ROADMAP.md
  M STATUS.md
- M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/RELEASE-CHECK-ORDER.md
- M docs/STATUS-ROADMAP-SYNC.md
+ M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
  M docs/V0.1-RELEASE-PACKET.md
- M package.json
  M tools/README.md
- M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-framework-manifest.mjs
- M tools/audit-release-artifact-manifest.mjs
- M tools/audit-release-check-order.mjs
- M tools/audit-status-roadmap-sync.mjs
- M tools/create-framework-manifest.mjs
- M tools/create-release-artifact-manifest.mjs
- M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json
-?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
-?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md
-?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md
-?? tools/audit-owner-evidence-submission-issue-convert.mjs
-?? tools/convert-owner-evidence-submission-issue.mjs
+ M tools/audit-owner-proof-input-issue-convert.mjs
+ M tools/convert-owner-proof-input-issue.mjs
 ```

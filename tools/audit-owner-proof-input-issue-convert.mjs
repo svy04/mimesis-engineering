@@ -238,6 +238,106 @@ if (fs.existsSync(path.join(root, "tools", "convert-owner-proof-input-issue.mjs"
   }
 }
 
+if (fs.existsSync(path.join(root, "tools", "convert-owner-proof-input-issue.mjs"))) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-owner-issue-anchor-"));
+  const issuePath = path.join(tmpDir, "owner-proof-input-issue-anchor.md");
+  const outputPath = path.join(tmpDir, "record.json");
+  const reportPath = path.join(tmpDir, "report.md");
+  fs.writeFileSync(issuePath, `# Owner Proof Input
+
+## 1. license_or_no_reuse
+
+- [x] No reuse for now
+- [ ] Reuse allowed under an existing repository license
+
+Notes:
+
+\`\`\`text
+Owner says no reuse until a later explicit license decision.
+\`\`\`
+
+## 2. weak_artifact_permission
+
+Artifact/excerpt/path/link:
+
+\`\`\`text
+Weak README excerpt: the first screen is unclear and needs a 30-second explanation path.
+\`\`\`
+
+Artifact owner:
+
+\`\`\`text
+Owner-reviewed fixture submitter
+\`\`\`
+
+Publication preference:
+
+- [ ] Private review only
+- [ ] Public
+- [x] Redacted
+
+Redaction requirements:
+
+\`\`\`text
+Redact private names and project-specific secrets before any public case.
+\`\`\`
+
+Proof boundary, meaning what this artifact/case must not claim:
+
+\`\`\`text
+Do not claim external adoption, benchmarked productivity, revenue, or publication.
+\`\`\`
+
+## Safety Confirmation
+
+- [x] I did not include secrets, passwords, tokens, or private customer data.
+- [x] I own or control the submitted artifact, or I have permission to submit the shown redacted excerpt/path/link for review.
+- [x] I understand this issue does not grant permission, approve proof, publish, or close gates.
+`);
+
+  const result = spawnSync(
+    process.execPath,
+    [
+      "tools/convert-owner-proof-input-issue.mjs",
+      issuePath,
+      "--output",
+      outputPath,
+      "--report",
+      reportPath,
+      "--source",
+      "audit issue #7 format smoke",
+      "--status",
+      "reviewed",
+      "--require-complete",
+    ],
+    { cwd: root, encoding: "utf8" },
+  );
+  if (result.status !== 0) {
+    failures.push(`converter issue #7 format smoke failed: ${result.stderr || result.stdout}`);
+  } else {
+    const smokeRecord = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+    const smokeReport = fs.readFileSync(reportPath, "utf8");
+    if (smokeRecord.status !== "reviewed") {
+      failures.push("converter issue #7 format smoke record must preserve reviewed status");
+    }
+    if (smokeRecord.minimumInputs?.license_or_no_reuse?.inputStatus !== "submitted") {
+      failures.push("converter issue #7 format smoke must parse license_or_no_reuse from ## heading");
+    }
+    if (smokeRecord.minimumInputs?.weak_artifact_permission?.inputStatus !== "submitted") {
+      failures.push("converter issue #7 format smoke must parse weak_artifact_permission from ## heading");
+    }
+    if (!smokeRecord.minimumInputs?.weak_artifact_permission?.ownerInput?.includes("Weak README excerpt")) {
+      failures.push("converter issue #7 format smoke must preserve weak artifact excerpt");
+    }
+    if (!smokeRecord.minimumInputs?.weak_artifact_permission?.ownerInput?.includes("Redacted")) {
+      failures.push("converter issue #7 format smoke must preserve checked publication preference");
+    }
+    if (!smokeReport.includes("ready for downstream conversion: yes")) {
+      failures.push("converter issue #7 format smoke report must mark reviewed complete input as downstream ready");
+    }
+  }
+}
+
 if (failures.length) {
   console.error("\nMimesis owner proof input issue convert audit failed:");
   for (const failure of failures) {

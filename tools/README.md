@@ -2251,6 +2251,7 @@ npm run cli -- owner:proof-input-issue-convert path/to/owner-proof-input-issue.m
 
 This writes `.mimesis/owner-actions/fixture-owner-proof-input-issue-record.json` and `.mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md` for the default fixture issue.
 It converts issue body markdown into an owner proof input record candidate.
+It accepts fixture-style `###` sections and public issue anchor-style numbered `##` sections.
 It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
 
 ## Audit Owner Proof Input Issue Convert

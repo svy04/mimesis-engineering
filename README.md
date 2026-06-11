@@ -1238,6 +1238,7 @@ npm run audit:owner-proof-input-issue-convert
 
 This writes `.mimesis/owner-actions/fixture-owner-proof-input-issue-record.json` and `.mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md` from `.mimesis/owner-actions/fixture-owner-proof-input-issue.md`.
 For a real reviewed owner issue, run `npm run cli -- owner:proof-input-issue-convert path/to/owner-proof-input-issue.md --output path/to/owner-proof-input-record.json --report path/to/report.md --status reviewed --require-complete`.
+The converter handles both fixture-style `###` sections and public issue anchor-style numbered `##` sections.
 It is a conversion candidate only, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
 
 Run the owner proof input review before treating a converted draft record as reviewed:
