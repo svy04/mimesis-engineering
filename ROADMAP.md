@@ -59,6 +59,7 @@ Includes:
 - release evidence report
 - publication evidence packet with `publication:evidence-packet`, `audit:publication-evidence-packet`, `docs/PUBLICATION-EVIDENCE-PACKET.md`, and `.mimesis/release-evidence/publication-evidence-packet.md`
 - owner action queue
+- owner issue queue
 - owner decision intake
 - owner decision answer record
 - owner answer review
@@ -157,6 +158,7 @@ Candidate work:
 - generated release evidence report before public release, package, action, plugin, proof, benchmark, or adoption claims
 - generated publication evidence packet before treating npm, Marketplace, action, or shipped-plugin claims as reviewable
 - generated owner action queue before asking the owner for license, weak artifact, publication, package, action, plugin, benchmark, or adoption decisions
+- generated owner issue queue before moving owner/action gaps into GitHub issue drafts
 - generated owner decision intake before recording owner license, weak artifact permission, publication, package/action/plugin, benchmark/adoption, or strict sync answers
 - generated owner decision answer record before treating any owner answer as machine-readable gate evidence
 - generated owner answer review before treating pending owner answers as gate movement

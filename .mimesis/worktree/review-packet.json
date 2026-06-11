@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T11:23:29.267Z",
+  "generatedAt": "2026-06-11T11:42:41.099Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "b3d75278c2445c6b4f593cae38d3874b1ea40c12",
+    "head": "43b3b1d4a836045c862595671c7a746ea8d6bf1a",
     "dirty": true,
-    "trackedChangedCount": 38,
-    "untrackedCount": 2
+    "trackedChangedCount": 34,
+    "untrackedCount": 4
   },
   "trackedChanges": [
     {
@@ -43,10 +43,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -64,10 +60,6 @@
     {
       "status": "M",
       "path": ".mimesis/release-review/v0.1-bundle.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/run_ledger.md"
     },
     {
       "status": "M",
@@ -100,10 +92,6 @@
     {
       "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md"
     },
     {
       "status": "M",
@@ -156,10 +144,6 @@
     {
       "status": "M",
       "path": "tools/create-release-artifact-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/export-owner-proof-input-remote-issue.mjs"
     },
     {
       "status": "M",
@@ -197,10 +181,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -218,10 +198,6 @@
     {
       "status": "M",
       "path": ".mimesis/release-review/v0.1-bundle.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/run_ledger.md"
     },
     {
       "status": "M",
@@ -254,10 +230,6 @@
     {
       "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md"
     },
     {
       "status": "M",
@@ -313,10 +285,6 @@
     },
     {
       "status": "M",
-      "path": "tools/export-owner-proof-input-remote-issue.mjs"
-    },
-    {
-      "status": "M",
       "path": "tools/validate-mimesis.mjs"
     }
   ],
@@ -329,13 +297,11 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
-    " M .mimesis/operator-runbooks/current-runbook.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
     " M .mimesis/release-review/v0.1-bundle.json",
-    " M .mimesis/run_ledger.md",
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
@@ -344,7 +310,6 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
-    " M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
@@ -358,7 +323,6 @@
     " M tools/audit-status-roadmap-sync.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
-    " M tools/export-owner-proof-input-remote-issue.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
@@ -367,13 +331,19 @@
       "count": 1
     },
     {
-      "root": "tools",
+      "root": "docs",
       "count": 1
+    },
+    {
+      "root": "tools",
+      "count": 2
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json",
-    "tools/audit-owner-proof-input-remote-issue-export-candidate.mjs"
+    ".mimesis/owner-actions/v0.2-issue-queue.md",
+    "docs/OWNER-ISSUE-QUEUE.md",
+    "tools/audit-owner-issue-queue.mjs",
+    "tools/create-owner-issue-queue.mjs"
   ],
   "sourceCommands": [
     "git status --short",

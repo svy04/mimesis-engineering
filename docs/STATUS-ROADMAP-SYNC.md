@@ -42,6 +42,7 @@ The audit checks:
 - proof execution report visibility
 - spec index audit visibility
 - owner action queue visibility
+- owner issue queue visibility
 - owner proof handoff visibility
 - owner proof input visibility
 - owner proof input remote issue visibility
@@ -87,6 +88,7 @@ The audit currently requires the public status and roadmap to name:
 - proof execution report
 - spec index audit
 - owner action queue
+- owner issue queue
 - owner proof handoff
 - owner proof input
 - owner proof input remote issue

@@ -91,6 +91,7 @@ const requiredRows = [
   "Release evidence report",
   "Publication evidence packet",
   "Owner action queue",
+  "Owner issue queue",
   "Owner proof handoff",
   "Owner proof input",
   "Owner proof input issue",

@@ -205,6 +205,8 @@ for (const command of [
   "audit:adoption-packet",
   "owner:queue",
   "audit:owner-queue",
+  "owner:issue-queue",
+  "audit:owner-issue-queue",
   "owner:proof-input-issue",
   "owner:proof-input-request",
   "owner:proof-input-remote-issue",

@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 26
-- untracked files: 2
+- changed tracked files: 23
+- untracked files: 4
 
 ## Conclusion
 
@@ -31,13 +31,11 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/framework-manifest.json
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/release-artifacts/v0.1-manifest.json
- M .mimesis/run_ledger.md
  M README.md
  M ROADMAP.md
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
@@ -51,8 +49,9 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/audit-status-roadmap-sync.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
- M tools/export-owner-proof-input-remote-issue.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json
-?? tools/audit-owner-proof-input-remote-issue-export-candidate.mjs
+?? .mimesis/owner-actions/v0.2-issue-queue.md
+?? docs/OWNER-ISSUE-QUEUE.md
+?? tools/audit-owner-issue-queue.mjs
+?? tools/create-owner-issue-queue.mjs
 ```

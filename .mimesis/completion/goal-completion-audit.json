@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.goal-completion-audit.v0.1",
-  "generatedAt": "2026-06-11T11:23:30.154Z",
+  "generatedAt": "2026-06-11T11:42:42.095Z",
   "objective": "전 레포 자원과 잘사용해서 프레임워크 완성할때까지 달리자",
   "status": "not_complete_open_gates_remain",
   "goalComplete": false,

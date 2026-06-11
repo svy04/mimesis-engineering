@@ -238,6 +238,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md) - generated direct publication evidence intake packet
 - [docs/GOAL-COMPLETION-AUDIT.md](docs/GOAL-COMPLETION-AUDIT.md) - generated active-goal completion audit without completion proof
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
+- [docs/OWNER-ISSUE-QUEUE.md](docs/OWNER-ISSUE-QUEUE.md) - generated owner issue queue with copyable issue body drafts
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
 - [docs/OWNER-PROOF-INPUT-ISSUE.md](docs/OWNER-PROOF-INPUT-ISSUE.md) - public owner proof input issue handoff
@@ -452,6 +453,8 @@ It does not prove npm package release.
 `publication:evidence-packet` creates `.mimesis/release-evidence/publication-evidence-packet.md` from [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md). `audit:publication-evidence-packet` checks that this is direct publication evidence intake, not publication proof, and does not publish, stage, commit, push, tag, release, publish to npm, publish a Marketplace action, ship a plugin, or close gates.
 `owner:queue` creates an owner action queue, not a license choice, submitted artifact, publication, external proof, benchmark proof, adoption proof, or closed gate.
 `audit:owner-queue` checks the owner action queue and no-decision/no-proof boundary.
+`owner:issue-queue` creates an owner issue queue with copyable issue body drafts, not remote GitHub issues, owner decisions, submitted artifacts, external proof, adoption proof, or closed gates.
+`audit:owner-issue-queue` checks the owner issue queue and no-remote-mutation/no-closure boundary.
 `owner:proof-handoff` creates the minimum owner proof handoff for `license_or_no_reuse` and `weak_artifact_permission`, not owner decision, permission grant, proof approval, publication, or gate closure.
 `audit:owner-proof-handoff` checks the owner proof handoff and no-decision/no-proof boundary.
 `owner:proof-input-template` creates a schema-shaped owner proof input template for `license_or_no_reuse` and `weak_artifact_permission`, not an owner decision, submitted artifact, permission grant, publication, external proof, proof approval, or gate closure.
@@ -992,6 +995,16 @@ This writes `.mimesis/owner-actions/current-action-queue.md`.
 Audit it with `npm run audit:owner-queue`.
 It lists the next owner actions for license, weak artifact, before/after case, strict sync, package, action, plugin, benchmark, and adoption gates.
 It does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner issue queue:
+
+```bash
+npm run owner:issue-queue
+```
+
+This writes `.mimesis/owner-actions/v0.2-issue-queue.md`.
+Audit it with `npm run audit:owner-issue-queue`.
+It creates copyable issue body drafts only; it does not create GitHub issues, choose a license, collect an artifact, create external proof, prove adoption, or close gates.
 
 Generate an owner decision intake:
 

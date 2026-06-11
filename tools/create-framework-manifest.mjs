@@ -217,6 +217,11 @@ const manifest = {
       command: "npm run owner:queue"
     },
     {
+      name: "owner issue queue",
+      path: ".mimesis/owner-actions/v0.2-issue-queue.md",
+      command: "npm run owner:issue-queue"
+    },
+    {
       name: "owner proof handoff",
       path: ".mimesis/owner-actions/proof-run-handoff.md",
       command: "npm run owner:proof-handoff"
@@ -586,6 +591,14 @@ const manifest = {
       purpose: "Generate the owner action queue without making owner decisions or creating proof."
     },
     {
+      name: "owner:issue-queue",
+      purpose: "Generate copyable issue body drafts for open gates without creating remote GitHub issues."
+    },
+    {
+      name: "audit:owner-issue-queue",
+      purpose: "Check the owner issue queue, issue body boundaries, CLI wiring, and no-remote-mutation boundary."
+    },
+    {
       name: "audit:owner-queue",
       purpose: "Check the owner action queue, source coverage, and no-decision/no-proof boundaries."
     },
@@ -940,6 +953,7 @@ const manifest = {
     "docs/PUBLICATION-EVIDENCE-PACKET.md",
     "docs/ADOPTION-PACKET.md",
     "docs/OWNER-ACTION-QUEUE.md",
+    "docs/OWNER-ISSUE-QUEUE.md",
     "docs/OWNER-PROOF-HANDOFF.md",
     "docs/OWNER-PROOF-INPUT.md",
     "docs/OWNER-PROOF-INPUT-ISSUE.md",

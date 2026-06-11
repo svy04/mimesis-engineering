@@ -1557,6 +1557,40 @@ npm run cli -- audit:owner-queue
 
 This checks package script wiring, CLI exposure, release preflight order, generated queue sections, source packet coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
 
+## Create Owner Issue Queue
+
+Run:
+
+```bash
+npm run owner:issue-queue
+```
+
+or:
+
+```bash
+npm run cli -- owner:issue-queue
+```
+
+This writes `.mimesis/owner-actions/v0.2-issue-queue.md`.
+It turns current open gates into copyable issue body drafts only.
+It does not create GitHub issues, choose a license, collect an artifact, grant permission, create external proof, prove adoption, or close gates.
+
+## Audit Owner Issue Queue
+
+Run:
+
+```bash
+npm run audit:owner-issue-queue
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-issue-queue
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated issue body drafts, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-remote-mutation/no-closure boundaries.
+
 ## Create Owner Decision Intake
 
 Run:

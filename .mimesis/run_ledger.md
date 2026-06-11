@@ -3274,3 +3274,42 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `audit:owner-proof-input-remote-issue-export-candidate` as proof that the private export success path works on a fixture candidate.
 - Do not use the fixture candidate as owner input or gate evidence.
 - Keep issue #7 and v0.2 gates open until real owner input exists, is privately exported, converted, reviewed, checked, split, and routed into reviewed evidence/proof records.
+
+## 2026-06-11 - Owner Issue Queue Slice
+
+## Import
+
+- Re-read the gap register, gap closure plan, owner action queue, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, and status/roadmap sync docs.
+- Confirmed the remaining gates still require owner decision, permissioned weak artifact, external case, publication evidence, benchmark evidence, or adoption evidence.
+- Confirmed there was no local owner issue queue surface for moving open gates into copyable GitHub issue body drafts.
+
+## Distill
+
+- Add an issue-ready owner queue that converts the current open gates into copyable issue body drafts.
+- Keep it local and non-mutating: no GitHub API calls, no remote issue creation, no gate closure, no owner decision, no submitted artifact, no proof, and no adoption claim.
+- Preserve the v0.2 boundary: issue drafts make work easier to coordinate, but they do not replace permissioned evidence.
+
+## Capsule
+
+- RED: added `tools/audit-owner-issue-queue.mjs`, which failed first for missing generated issue queue, docs, package scripts, CLI wiring, release-check order, validator coverage, manifests, and public docs.
+- GREEN: added `tools/create-owner-issue-queue.mjs` and `docs/OWNER-ISSUE-QUEUE.md`.
+- GREEN: wired `owner:issue-queue` and `audit:owner-issue-queue` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `.mimesis/owner-actions/v0.2-issue-queue.md` now lists every open gap with labels, direct evidence requirements, suggested local commands, stop conditions, allowed claim after evidence, and proof boundaries.
+- The issue queue includes `mimesis-owner-gate`, `mimesis-proof-gate`, `mimesis-publication-gate`, and `mimesis-measurement-gate` labels as local draft metadata only.
+- The generated packet intentionally avoids remote mutation commands and states that it does not create GitHub issues.
+
+## Verify
+
+- `node tools/audit-owner-issue-queue.mjs` failed first for the expected missing owner issue queue surface.
+- After implementation, `npm run audit:owner-issue-queue`, `npm run audit:cli`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run audit:completion-row-count`, and `npm run validate` passed.
+- `npm run release:check` passed with `owner:issue-queue` and `audit:owner-issue-queue` in the release chain.
+- `git diff --check` passed with line-ending warnings only.
+
+## Remember
+
+- Use `owner:issue-queue` when open gates need to become copyable public issue drafts without creating remote issues.
+- Do not treat issue drafts as owner decisions, submitted artifacts, permission grants, external proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
