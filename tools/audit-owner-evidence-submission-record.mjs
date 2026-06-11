@@ -205,6 +205,8 @@ for (const text of [
   "schema-shaped",
   "fixture-evidence-submission-record.json",
   "not_submitted_owner_evidence",
+  "field-level readiness",
+  "--require-field weak_artifact_permission",
   "owner evidence has not been submitted",
   "does not submit evidence",
   "does not attach evidence",
@@ -238,6 +240,32 @@ if (record.sourceForm !== ".mimesis/owner-actions/evidence-attachment-form.md") 
 
 if (record.sourceEvidenceRecord !== ".mimesis/owner-actions/fixture-evidence-record.json") {
   failures.push("owner evidence submission fixture sourceEvidenceRecord must point to fixture-evidence-record.json");
+}
+
+if (record.fieldLevelReadiness?.defaultField !== "weak_artifact_permission") {
+  failures.push("owner evidence submission fixture fieldLevelReadiness.defaultField must be weak_artifact_permission");
+}
+
+if (!record.fieldLevelReadiness?.command?.includes("--require-field weak_artifact_permission")) {
+  failures.push("owner evidence submission fixture fieldLevelReadiness.command must include --require-field weak_artifact_permission");
+}
+
+for (const field of requiredFields) {
+  if (!record.fieldLevelReadiness?.supportedFields?.includes(field)) {
+    failures.push(`owner evidence submission fixture fieldLevelReadiness.supportedFields missing ${field}`);
+  }
+}
+
+for (const boundary of [
+  "does_not_submit_evidence",
+  "does_not_attach_evidence",
+  "does_not_grant_permission",
+  "does_not_create_external_proof",
+  "does_not_close_gates",
+]) {
+  if (!record.fieldLevelReadiness?.boundaries?.includes(boundary)) {
+    failures.push(`owner evidence submission fixture fieldLevelReadiness missing boundary: ${boundary}`);
+  }
 }
 
 if (!failures.length) {

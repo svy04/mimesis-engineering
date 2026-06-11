@@ -52,6 +52,17 @@ The generated record keeps these owner evidence fields visible:
 
 Each field stays `missing`, records that owner evidence is not submitted, lists blocked gates, lists required attachments, and preserves an owner-provided evidence slot.
 
+## Field-Level Readiness
+
+The record includes a `fieldLevelReadiness` contract so an operator can check one submitted field before a narrower review movement:
+
+```bash
+npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission
+```
+
+The default field is `weak_artifact_permission` because the first v0.2 proof path starts with one permissioned or clearly redacted weak artifact.
+Field-level readiness is not evidence submission, evidence attachment, permission, external proof, publication, adoption proof, benchmark proof, or gate closure.
+
 ## Allowed Claim
 
 Mimesis has a local owner evidence submission record that makes missing owner evidence machine-readable.

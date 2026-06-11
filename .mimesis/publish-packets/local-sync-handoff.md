@@ -9,9 +9,9 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `ba456b9e1abd27fac5079371d16e67eb894c4091`
-- upstream head: `ba456b9e1abd27fac5079371d16e67eb894c4091`
-- tracked changed entries: 21
+- head: `23c512f51805fe0c2ba7a235b90b13e796af0367`
+- upstream head: `23c512f51805fe0c2ba7a235b90b13e796af0367`
+- tracked changed entries: 9
 - untracked entries: 0
 
 Conclusion:
@@ -21,79 +21,43 @@ local worktree is not publish-ready because it has unpublished local changes or 
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/gaps/closure-plan.json
- M .mimesis/gaps/current-gap-register.json
- M .mimesis/gates/closure-readiness.json
- M .mimesis/gates/closure-review.json
- M .mimesis/owner-actions/fixture-evidence-submission-check.md
- M .mimesis/publish-packets/local-sync-handoff.md
- M .mimesis/release-artifacts/v0.1-manifest.json
- M .mimesis/release-decisions/owner-decision-record.json
- M .mimesis/release-review/v0.1-bundle.json
+ M .mimesis/owner-actions/fixture-evidence-submission-record.json
  M .mimesis/run_ledger.md
- M .mimesis/state/current-state.json
  M .mimesis/sync-status.md
- M .mimesis/worktree/review-packet.json
- M README.md
- M docs/COMPLETION-AUDIT.md
- M docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md
- M tools/README.md
- M tools/audit-owner-evidence-submission-check.mjs
+ M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md
+ M spec/owner-evidence-submission.schema.json
+ M tools/audit-owner-evidence-submission-record.mjs
  M tools/check-owner-evidence-submission-record.mjs
+ M tools/create-owner-evidence-submission-record.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/completion/goal-completion-audit.json     |   2 +-
- .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 ----
- .mimesis/gaps/closure-plan.json                    |   2 +-
- .mimesis/gaps/current-gap-register.json            |   2 +-
- .mimesis/gates/closure-readiness.json              |   6 +-
- .mimesis/gates/closure-review.json                 |   6 +-
- .../fixture-evidence-submission-check.md           |   3 +
- .mimesis/publish-packets/local-sync-handoff.md     | 165 +++++----------------
- .mimesis/release-artifacts/v0.1-manifest.json      |  60 ++++----
- .../release-decisions/owner-decision-record.json   |   2 +-
- .mimesis/release-review/v0.1-bundle.json           |  68 +++------
- .mimesis/run_ledger.md                             |  36 +++++
- .mimesis/state/current-state.json                  |   6 +-
- .mimesis/sync-status.md                            |  27 +---
- .mimesis/worktree/review-packet.json               | 156 +++----------------
- README.md                                          |   8 +
- docs/COMPLETION-AUDIT.md                           |   3 +-
- docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md            |  10 ++
- tools/README.md                                    |  10 +-
- tools/audit-owner-evidence-submission-check.mjs    |  61 ++++++++
- tools/check-owner-evidence-submission-record.mjs   |  36 ++++-
- 21 files changed, 295 insertions(+), 406 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md    | 32 -------------
+ .../fixture-evidence-submission-record.json        | 23 +++++++++
+ .mimesis/run_ledger.md                             | 36 +++++++++++++++
+ .mimesis/sync-status.md                            | 25 +++-------
+ docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md           | 11 +++++
+ spec/owner-evidence-submission.schema.json         | 54 ++++++++++++++++++++++
+ tools/audit-owner-evidence-submission-record.mjs   | 28 +++++++++++
+ tools/check-owner-evidence-submission-record.mjs   | 13 ++++++
+ tools/create-owner-evidence-submission-record.mjs  | 17 +++++++
+ 9 files changed, 188 insertions(+), 51 deletions(-)
 ```
 
 ## Tracked Changes
 
-- `M .mimesis/completion/goal-completion-audit.json`
-- ` D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/gaps/closure-plan.json`
-- ` M .mimesis/gaps/current-gap-register.json`
-- ` M .mimesis/gates/closure-readiness.json`
-- ` M .mimesis/gates/closure-review.json`
-- ` M .mimesis/owner-actions/fixture-evidence-submission-check.md`
-- ` M .mimesis/publish-packets/local-sync-handoff.md`
-- ` M .mimesis/release-artifacts/v0.1-manifest.json`
-- ` M .mimesis/release-decisions/owner-decision-record.json`
-- ` M .mimesis/release-review/v0.1-bundle.json`
+- `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
+- ` M .mimesis/owner-actions/fixture-evidence-submission-record.json`
 - ` M .mimesis/run_ledger.md`
-- ` M .mimesis/state/current-state.json`
 - ` M .mimesis/sync-status.md`
-- ` M .mimesis/worktree/review-packet.json`
-- ` M README.md`
-- ` M docs/COMPLETION-AUDIT.md`
-- ` M docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md`
-- ` M tools/README.md`
-- ` M tools/audit-owner-evidence-submission-check.mjs`
+- ` M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md`
+- ` M spec/owner-evidence-submission.schema.json`
+- ` M tools/audit-owner-evidence-submission-record.mjs`
 - ` M tools/check-owner-evidence-submission-record.mjs`
+- ` M tools/create-owner-evidence-submission-record.mjs`
 
 ## Untracked Entries
 
@@ -113,7 +77,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 21
+- changed tracked files: 8
 - untracked files: 0
 
 ## Conclusion
@@ -130,27 +94,14 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/gaps/closure-plan.json
- M .mimesis/gaps/current-gap-register.json
- M .mimesis/gates/closure-readiness.json
- M .mimesis/gates/closure-review.json
- M .mimesis/owner-actions/fixture-evidence-submission-check.md
- M .mimesis/publish-packets/local-sync-handoff.md
- M .mimesis/release-artifacts/v0.1-manifest.json
- M .mimesis/release-decisions/owner-decision-record.json
- M .mimesis/release-review/v0.1-bundle.json
+ M .mimesis/owner-actions/fixture-evidence-submission-record.json
  M .mimesis/run_ledger.md
- M .mimesis/state/current-state.json
- M .mimesis/sync-status.md
- M .mimesis/worktree/review-packet.json
- M README.md
- M docs/COMPLETION-AUDIT.md
- M docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md
- M tools/README.md
- M tools/audit-owner-evidence-submission-check.mjs
+ M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md
+ M spec/owner-evidence-submission.schema.json
+ M tools/audit-owner-evidence-submission-record.mjs
  M tools/check-owner-evidence-submission-record.mjs
+ M tools/create-owner-evidence-submission-record.mjs
 ```
 
 

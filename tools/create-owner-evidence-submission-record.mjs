@@ -55,12 +55,29 @@ function buildSubmissionRecord(record) {
       },
     ]),
   );
+  const fieldNames = Object.keys(fields);
 
   return {
     schemaVersion: "0.1.0",
     status: "not_submitted_owner_evidence",
     sourceForm: formRelative.replaceAll(path.sep, "/"),
     sourceEvidenceRecord: inputRelative.replaceAll(path.sep, "/"),
+    fieldLevelReadiness: {
+      purpose: "Check one submitted owner evidence field before field-specific review movement.",
+      defaultField: "weak_artifact_permission",
+      supportedFields: fieldNames,
+      command: "npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission",
+      boundary: "Field-level readiness is not submitted evidence, attached evidence, permission, external proof, publication, adoption proof, benchmark proof, or gate closure.",
+      boundaries: [
+        "does_not_submit_evidence",
+        "does_not_attach_evidence",
+        "does_not_grant_permission",
+        "does_not_create_external_proof",
+        "does_not_publish",
+        "does_not_prove_adoption",
+        "does_not_close_gates",
+      ],
+    },
     fields,
     requiredGateIds: record.requiredGateIds ?? [],
     safetyConfirmation: {

@@ -10,6 +10,7 @@
     "status",
     "sourceForm",
     "sourceEvidenceRecord",
+    "fieldLevelReadiness",
     "fields",
     "requiredGateIds",
     "safetyConfirmation",
@@ -32,6 +33,59 @@
     "sourceEvidenceRecord": {
       "type": "string",
       "minLength": 1
+    },
+    "fieldLevelReadiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "purpose",
+        "defaultField",
+        "supportedFields",
+        "command",
+        "boundary",
+        "boundaries"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defaultField": {
+          "type": "string",
+          "const": "weak_artifact_permission"
+        },
+        "supportedFields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "license_or_no_reuse",
+              "weak_artifact_permission",
+              "publication_scope",
+              "package_action_plugin_scope",
+              "benchmark_adoption_scope",
+              "strict_sync_intent"
+            ]
+          }
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundaries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     },
     "fields": {
       "type": "object",

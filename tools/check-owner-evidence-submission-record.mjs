@@ -100,6 +100,7 @@ function validateRecord(record, requireGateReady, requiredFieldName) {
     "status",
     "sourceForm",
     "sourceEvidenceRecord",
+    "fieldLevelReadiness",
     "fields",
     "requiredGateIds",
     "safetyConfirmation",
@@ -127,6 +128,18 @@ function validateRecord(record, requireGateReady, requiredFieldName) {
 
   if (!record.sourceEvidenceRecord || placeholderPattern.test(record.sourceEvidenceRecord)) {
     failures.push("sourceEvidenceRecord must be filled and not placeholder text");
+  }
+
+  if (record.fieldLevelReadiness) {
+    if (record.fieldLevelReadiness.defaultField !== "weak_artifact_permission") {
+      failures.push("fieldLevelReadiness.defaultField must be weak_artifact_permission");
+    }
+    if (!record.fieldLevelReadiness.command?.includes("--require-field weak_artifact_permission")) {
+      failures.push("fieldLevelReadiness.command must include --require-field weak_artifact_permission");
+    }
+    if (!record.fieldLevelReadiness.boundary || !/not/i.test(record.fieldLevelReadiness.boundary)) {
+      failures.push("fieldLevelReadiness.boundary must preserve a not-proof boundary");
+    }
   }
 
   const fields = record.fields ?? {};

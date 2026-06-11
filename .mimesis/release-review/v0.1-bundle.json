@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T04:49:11.907Z",
+  "generatedAt": "2026-06-11T04:56:12.561Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,9 +12,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "ba456b9e1abd27fac5079371d16e67eb894c4091",
+    "head": "23c512f51805fe0c2ba7a235b90b13e796af0367",
     "dirty": true,
-    "trackedChangedCount": 20,
+    "trackedChangedCount": 19,
     "untrackedCount": 0
   },
   "sourceFiles": [
@@ -29,7 +29,7 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/owner-actions/fixture-evidence-submission-check.md",
+    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -38,20 +38,17 @@
     ".mimesis/state/current-state.json",
     ".mimesis/sync-status.md",
     ".mimesis/worktree/review-packet.json",
-    "README.md",
-    "docs/COMPLETION-AUDIT.md",
-    "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
-    "tools/README.md",
-    "tools/audit-owner-evidence-submission-check.mjs",
-    "tools/check-owner-evidence-submission-record.mjs"
+    "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md",
+    "spec/owner-evidence-submission.schema.json",
+    "tools/audit-owner-evidence-submission-record.mjs",
+    "tools/check-owner-evidence-submission-record.mjs",
+    "tools/create-owner-evidence-submission-record.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 1,
-      "sample": [
-        "README.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Tracked root-framework files that need human review."
     },
     {
@@ -63,7 +60,7 @@
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/owner-actions/fixture-evidence-submission-check.md",
+        ".mimesis/owner-actions/fixture-evidence-submission-record.json",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -77,11 +74,9 @@
     },
     {
       "name": "public documentation",
-      "count": 3,
+      "count": 1,
       "sample": [
-        "docs/COMPLETION-AUDIT.md",
-        "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
-        "README.md"
+        "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md"
       ],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
@@ -89,16 +84,18 @@
       "name": "tooling and cli",
       "count": 3,
       "sample": [
-        "tools/audit-owner-evidence-submission-check.mjs",
+        "tools/audit-owner-evidence-submission-record.mjs",
         "tools/check-owner-evidence-submission-record.mjs",
-        "tools/README.md"
+        "tools/create-owner-evidence-submission-record.mjs"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },
     {
       "name": "spec and schemas",
-      "count": 0,
-      "sample": [],
+      "count": 1,
+      "sample": [
+        "spec/owner-evidence-submission.schema.json"
+      ],
       "note": "Spec contracts, templates, and reference packs."
     }
   ],

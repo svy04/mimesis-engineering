@@ -2468,3 +2468,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use field-level readiness when one permissioned weak artifact is supplied, before moving into case review.
 - Keep `--require-gate-ready` for all-field owner evidence readiness only.
 - Do not treat field-level readiness as proof, permission, gate closure, publication, adoption, benchmark evidence, or objective completion.
+
+## 2026-06-11 - Owner Evidence Field-Level Contract Slice
+
+## Import
+
+- Re-read `spec/owner-evidence-submission.schema.json`, `tools/create-owner-evidence-submission-record.mjs`, `tools/check-owner-evidence-submission-record.mjs`, `tools/audit-owner-evidence-submission-record.mjs`, `docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md`, and the generated fixture record.
+- Found that `--require-field weak_artifact_permission` existed as checker behavior but was not yet part of the owner evidence submission record's machine-readable contract.
+
+## Distill
+
+- Make field-level readiness visible inside the JSON record itself.
+- Keep the default path aligned with "Bring one weak artifact" by naming `weak_artifact_permission` as the default field.
+- Preserve the proof boundary that this does not submit evidence, attach evidence, grant permission, create external proof, publish, prove adoption, prove benchmark results, close gates, or complete the objective.
+
+## Capsule
+
+- RED: strengthened `tools/audit-owner-evidence-submission-record.mjs` so the existing schema, docs, and fixture failed without `fieldLevelReadiness`.
+- GREEN: added `fieldLevelReadiness` to the schema, generator, checker contract, docs, and generated fixture.
+- GREEN: kept default fixture status as `not_submitted_owner_evidence` so no gate is closed by the contract itself.
+
+## Shard
+
+- `spec/owner-evidence-submission.schema.json` now requires `fieldLevelReadiness`.
+- `.mimesis/owner-actions/fixture-evidence-submission-record.json` now records the default field, supported fields, command, and no-proof/no-closure boundaries.
+- `docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md` now explains the field-level readiness path.
+
+## Verify
+
+- `npm run audit:owner-evidence-submission-record` failed first for the expected missing `fieldLevelReadiness` contract.
+- After implementation, `npm run owner:evidence-submission-record`, `npm run audit:owner-evidence-submission-record`, `npm run owner:evidence-submission-check`, `npm run audit:owner-evidence-submission-check`, and `npm run validate` passed.
+
+## Remember
+
+- Future owner evidence records should carry their own field-level readiness command and boundaries.
+- `fieldLevelReadiness.defaultField` should remain `weak_artifact_permission` unless the first proof path changes.
+- Treat field-level readiness as a routing guard into review, not as evidence, proof, publication, adoption, benchmark, gate closure, or completion.
