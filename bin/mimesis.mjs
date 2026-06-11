@@ -120,6 +120,7 @@ const commands = new Map([
   ["audit:gap-closure-plan", { description: "Audit bounded closure instructions for open gates.", type: "node", script: "tools/audit-gap-closure-plan.mjs" }],
   ["audit:goal-completion-audit", { description: "Audit active-goal completion evidence and no-completion boundary.", type: "node", script: "tools/audit-goal-completion-audit.mjs" }],
   ["audit:gate-evidence-packet", { description: "Audit the evidence intake packet for open gates.", type: "node", script: "tools/audit-gate-evidence-packet.mjs" }],
+  ["audit:gate-evidence-issue-form", { description: "Audit the GitHub gate evidence issue intake form and no-proof boundary.", type: "node", script: "tools/audit-gate-evidence-issue-form.mjs" }],
   ["audit:gate-closure-readiness", { description: "Audit the gate closure readiness report and no-closure boundary.", type: "node", script: "tools/audit-gate-closure-readiness.mjs" }],
   ["audit:gate-closure-review", { description: "Audit the gate closure review record and no-approval/no-closure boundary.", type: "node", script: "tools/audit-gate-closure-review.mjs" }],
   ["audit:framework-manifest", { description: "Audit the generated AI-native framework manifest.", type: "node", script: "tools/audit-framework-manifest.mjs" }],

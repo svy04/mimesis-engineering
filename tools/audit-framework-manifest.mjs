@@ -156,6 +156,7 @@ for (const command of [
   "audit:gap-closure-plan",
   "gate:evidence-packet",
   "audit:gate-evidence-packet",
+  "audit:gate-evidence-issue-form",
   "gate:closure-readiness",
   "audit:gate-closure-readiness",
   "gate:closure-review",

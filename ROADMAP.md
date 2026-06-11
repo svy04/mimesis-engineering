@@ -41,6 +41,7 @@ Includes:
 - gap register
 - gap closure plan
 - gate evidence packet
+- gate evidence issue
 - gate closure readiness
 - gate closure review
 - workspace checker
@@ -134,6 +135,7 @@ Candidate work:
 - generated gap register for remaining owner, proof, publication, benchmark, and adoption gates
 - generated gap closure plan for bounded evidence steps without claiming closed gates
 - generated gate evidence packet for routing open gates to evidence packet requirements without creating evidence
+- GitHub gate evidence issue intake form before treating issue submissions as reviewed evidence, proof, adoption evidence, benchmark evidence, publication, or gate closure
 - generated gate closure readiness report before treating any open gate as closable
 - proof queue exit path: `case:review` -> `case:from-intake` -> `case:check` -> `evidence:from-case` -> `evidence:review` -> `evidence:check` -> `claim:from-evidence`
 - record-based proof queue rehearsal path: `proof:intake-record` -> `case:from-record` -> `case:check`

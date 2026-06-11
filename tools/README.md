@@ -533,6 +533,23 @@ npm run cli -- audit:gate-evidence-packet
 
 This checks the generated gate evidence packet, required open-gate IDs, evidence template bridge, review command path, package script wiring, CLI exposure, release preflight hook, release artifact manifest visibility, and proof boundaries.
 
+## Audit Gate Evidence Issue Form
+
+Run:
+
+```bash
+npm run audit:gate-evidence-issue-form
+```
+
+or:
+
+```bash
+npm run cli -- audit:gate-evidence-issue-form
+```
+
+This checks `.github/ISSUE_TEMPLATE/gate-evidence.yml`, `docs/GATE-EVIDENCE-ISSUE.md`, issue-form audit coverage, package script wiring, CLI exposure, release preflight order, validator coverage, framework manifest visibility, release artifact manifest coverage, public docs, and no-proof/no-closure boundaries.
+The gate evidence issue form is evidence intake only; it does not close gates, create proof, prove adoption, prove benchmark results, publish, or replace reviewed evidence packets.
+
 ## Create Gate Closure Readiness
 
 Run:
@@ -2969,7 +2986,7 @@ Run:
 npm run release:check
 ```
 
-This generates the local publication packet, first-proof packet, first external proof intake kit, proof intake fixture record, proof intake check report, proof readiness packet, proof-run packet, license decision packet, framework manifest, reference pack index, first-loop demo, MCP resource index, plugin install-readiness packet, plugin/action release-candidate packet, publish/sync handoff packet, release execution packet, release decision record, gap register, current state summary, worktree review packet, release review bundle, goal completion audit, release artifact manifest, current gate board, ecosystem operator runbook, ecosystem resource packet, public claim pack, case publication packet, draft evidence packet from the completed local case, benchmark packet, adoption packet, and publication evidence packet, then runs the local protocol validator, proof intake schema audit, proof intake record audit, proof intake check audit, framework manifest schema audit, framework manifest audit, reference pack index audit, activation-surface audit, first-loop demo audit, case-start audit, case-check audit, permissioned-case intake audit, permissioned-case fixture audit, case-from-intake audit, case-from-record audit, case publication audit, evidence-from-case audit, evidence-review audit, evidence packet audit, claim-from-evidence audit, proof queue audit, proof packet audit, proof-intake audit, proof-readiness audit, proof-run audit, proof-run dry audit, adapter audit, plugin audit, Codex plugin scaffold audit, MCP server scaffold audit, MCP stdio runtime audit, plugin install packet audit, plugin packet audit, publish packet audit, release execution audit, release decision record audit, gap register audit, release artifact manifest audit, worktree review packet audit, release review bundle audit, goal completion audit, status roadmap sync audit, gate-board audit, operator-runbook audit, ecosystem resource audit, public claim pack audit, benchmark packet audit, adoption packet audit, publication evidence packet audit, issue-form audit, secret safety audit, source-first audit, completion audit, completion row-count audit, release-order audit, publication packet audit, license-boundary audit, license packet audit, and release-readiness audit.
+This generates the local publication packet, first-proof packet, first external proof intake kit, proof intake fixture record, proof intake check report, proof readiness packet, proof-run packet, license decision packet, framework manifest, reference pack index, first-loop demo, MCP resource index, plugin install-readiness packet, plugin/action release-candidate packet, publish/sync handoff packet, release execution packet, release decision record, gap register, current state summary, worktree review packet, release review bundle, goal completion audit, release artifact manifest, current gate board, ecosystem operator runbook, ecosystem resource packet, public claim pack, case publication packet, draft evidence packet from the completed local case, benchmark packet, adoption packet, and publication evidence packet, then runs the local protocol validator, proof intake schema audit, proof intake record audit, proof intake check audit, framework manifest schema audit, framework manifest audit, reference pack index audit, activation-surface audit, first-loop demo audit, case-start audit, case-check audit, permissioned-case intake audit, permissioned-case fixture audit, case-from-intake audit, case-from-record audit, case publication audit, evidence-from-case audit, evidence-review audit, evidence packet audit, claim-from-evidence audit, proof queue audit, proof packet audit, proof-intake audit, proof-readiness audit, proof-run audit, proof-run dry audit, adapter audit, plugin audit, Codex plugin scaffold audit, MCP server scaffold audit, MCP stdio runtime audit, plugin install packet audit, plugin packet audit, publish packet audit, release execution audit, release decision record audit, gap register audit, gate evidence issue form audit, release artifact manifest audit, worktree review packet audit, release review bundle audit, goal completion audit, status roadmap sync audit, gate-board audit, operator-runbook audit, ecosystem resource audit, public claim pack audit, benchmark packet audit, adoption packet audit, publication evidence packet audit, issue-form audit, secret safety audit, source-first audit, completion audit, completion row-count audit, release-order audit, publication packet audit, license-boundary audit, license packet audit, and release-readiness audit.
 It also runs the workspace check plus package and root-action release-candidate audits.
 
 ## Audit Non-Writing Strict Sync

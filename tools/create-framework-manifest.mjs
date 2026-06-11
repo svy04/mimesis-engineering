@@ -152,6 +152,11 @@ const manifest = {
       command: "npm run gate:evidence-packet"
     },
     {
+      name: "gate evidence issue form",
+      path: ".github/ISSUE_TEMPLATE/gate-evidence.yml",
+      command: "npm run audit:gate-evidence-issue-form"
+    },
+    {
       name: "gate closure readiness report",
       path: ".mimesis/gates/closure-readiness.json",
       command: "npm run gate:closure-readiness"
@@ -387,6 +392,10 @@ const manifest = {
     {
       name: "audit:gate-evidence-packet",
       purpose: "Check that open gates have an evidence intake packet without claiming evidence."
+    },
+    {
+      name: "audit:gate-evidence-issue-form",
+      purpose: "Check the GitHub gate evidence issue form, public docs, manifests, and no-proof/no-closure boundaries."
     },
     {
       name: "gate:closure-readiness",
@@ -955,6 +964,9 @@ const manifest = {
     "tools/audit-gap-register-sync-closure.mjs",
     "docs/GAP-CLOSURE-PLAN.md",
     "docs/GATE-EVIDENCE-PACKET.md",
+    "docs/GATE-EVIDENCE-ISSUE.md",
+    ".github/ISSUE_TEMPLATE/gate-evidence.yml",
+    "tools/audit-gate-evidence-issue-form.mjs",
     "docs/GATE-CLOSURE-READINESS.md",
     "docs/GATE-CLOSURE-REVIEW.md",
     "docs/FIRST-PROOF-CANDIDATE-PACKET.md",

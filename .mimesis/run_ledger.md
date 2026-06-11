@@ -3399,3 +3399,47 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `owner:issue-remote-create` only for deliberate remote coordination. The default mode is dry-run; `--execute` is required for mutation.
 - The created issues are open coordination gates, not evidence that any gate is closed.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Gate Evidence Issue Intake Slice
+
+## Import
+
+- Re-read the active gap/gate surfaces, issue form audit, package scripts, CLI command map, validator, framework manifest generator, release artifact manifest generator, README, tools README, status, roadmap, release packet, completion audit, status/roadmap sync, and release-check order.
+- Confirmed remote v0.2 gate issues exist, but there was no standard GitHub issue form for submitting gate evidence.
+
+## Distill
+
+- Add a GitHub gate evidence issue form as an intake surface only.
+- Keep every submission proof-bounded: not gate closure, not proof creation, not adoption proof, not benchmark proof, not publication, and not a replacement for reviewed evidence packets.
+
+## Capsule
+
+- RED: added `tools/audit-gate-evidence-issue-form.mjs`, which first failed for missing issue form, docs, package script, CLI wiring, validator coverage, manifests, release order, and public docs.
+- GREEN: added `.github/ISSUE_TEMPLATE/gate-evidence.yml` and `docs/GATE-EVIDENCE-ISSUE.md`.
+- GREEN: wired `audit:gate-evidence-issue-form` through package scripts, CLI, issue-form audit coverage, validator, framework manifest, release artifact manifest, release-check order, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- The issue form collects `gate_id`, `evidence_type`, `evidence_links`, `evidence_summary`, `permission_boundary`, `review_state`, `allowed_claim`, `disallowed_claim`, and `safety_confirmation`.
+- The public doc routes issue intake through `evidence:check`, `evidence:review`, gate closure readiness, and gate closure review before any gate movement claim.
+- The release preflight now runs `audit:gate-evidence-issue-form` after `audit:gate-evidence-packet` and before `audit:proof-candidate-packet`.
+
+## Verify
+
+- `npm run audit:gate-evidence-issue-form` passed.
+- `npm run audit:issues` passed.
+- `npm run audit:release-order` passed.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run audit:completion` passed.
+- `npm run audit:completion-row-count` passed.
+- `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed.
+
+## Remember
+
+- Gate Evidence issues are routing/intake records only.
+- Evidence must still become a reviewed evidence packet and pass gate closure readiness/review before a stronger claim.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

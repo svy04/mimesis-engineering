@@ -32,6 +32,17 @@ const expectedForms = {
     "proof_boundary",
     "safety_confirmation",
   ],
+  "gate-evidence.yml": [
+    "gate_id",
+    "evidence_type",
+    "evidence_links",
+    "evidence_summary",
+    "permission_boundary",
+    "review_state",
+    "allowed_claim",
+    "disallowed_claim",
+    "safety_confirmation",
+  ],
   "boundary-risk.yml": ["file-or-case", "risk-type", "why-it-matters", "suggested-repair"],
 };
 

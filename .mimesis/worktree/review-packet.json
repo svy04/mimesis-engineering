@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T12:33:17.566Z",
+  "generatedAt": "2026-06-11T12:56:50.748Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "cc099d47824da5b4373c516feb1ede316c558f2f",
+    "head": "88a53bef84bd5f6c91163a4393e3390480b3abd9",
     "dirty": true,
-    "trackedChangedCount": 39,
-    "untrackedCount": 6
+    "trackedChangedCount": 37,
+    "untrackedCount": 4
   },
   "trackedChanges": [
     {
@@ -44,14 +44,6 @@
     {
       "status": "M",
       "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/owner-actions/remote-issue-sync.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/owner-actions/remote-issue-sync.md"
     },
     {
       "status": "M",
@@ -111,10 +103,6 @@
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
-    },
-    {
-      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -144,6 +132,10 @@
     {
       "status": "M",
       "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-issue-forms.mjs"
     },
     {
       "status": "M",
@@ -205,14 +197,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/owner-actions/remote-issue-sync.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/owner-actions/remote-issue-sync.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -269,10 +253,6 @@
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
-    },
-    {
-      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -302,6 +282,10 @@
     {
       "status": "M",
       "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-issue-forms.mjs"
     },
     {
       "status": "M",
@@ -338,8 +322,6 @@
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
     " M .mimesis/operator-runbooks/current-runbook.md",
-    " M .mimesis/owner-actions/remote-issue-sync.json",
-    " M .mimesis/owner-actions/remote-issue-sync.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
@@ -354,7 +336,6 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
-    " M docs/FRAMEWORK-MANIFEST.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
@@ -363,6 +344,7 @@
     " M tools/audit-cli.mjs",
     " M tools/audit-completion-matrix.mjs",
     " M tools/audit-framework-manifest.mjs",
+    " M tools/audit-issue-forms.mjs",
     " M tools/audit-release-artifact-manifest.mjs",
     " M tools/audit-release-check-order.mjs",
     " M tools/audit-status-roadmap-sync.mjs",
@@ -372,8 +354,8 @@
   ],
   "untrackedRoots": [
     {
-      "root": ".mimesis/owner-actions",
-      "count": 2
+      "root": ".github/ISSUE_TEMPLATE",
+      "count": 1
     },
     {
       "root": "docs",
@@ -381,16 +363,14 @@
     },
     {
       "root": "tools",
-      "count": 2
+      "count": 1
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/remote-issue-create.json",
-    ".mimesis/owner-actions/remote-issue-create.md",
-    "docs/OWNER-ISSUE-REMOTE-CREATE.md",
-    "docs/superpowers/plans/2026-06-11-owner-issue-remote-create.md",
-    "tools/audit-owner-issue-remote-create.mjs",
-    "tools/create-owner-issue-remote-create.mjs"
+    ".github/ISSUE_TEMPLATE/gate-evidence.yml",
+    "docs/GATE-EVIDENCE-ISSUE.md",
+    "docs/superpowers/plans/2026-06-11-gate-evidence-issue-form.md",
+    "tools/audit-gate-evidence-issue-form.mjs"
   ],
   "sourceCommands": [
     "git status --short",

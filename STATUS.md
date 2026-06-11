@@ -42,6 +42,7 @@ Release readiness:
 - gap register
 - gap closure plan
 - gate evidence packet
+- gate evidence issue
 - gate closure readiness
 - external workspace checker
 - private npm scripts for local execution
@@ -229,6 +230,7 @@ It is not a shipped plugin.
 - The repository includes `release:artifact-manifest` and `audit:release-artifact-manifest` for generating and checking a local SHA-256 release artifact manifest without publishing or creating proof.
 - The repository includes `gap:closure-plan` and `audit:gap-closure-plan` for turning open gates into bounded evidence steps without closing gates or proving completion.
 - The repository includes `gate:evidence-packet` and `audit:gate-evidence-packet` for routing open gates to evidence packet requirements without creating evidence or closing gates.
+- The repository includes `audit:gate-evidence-issue-form` for checking the GitHub gate evidence issue intake form without closing gates, creating proof, proving adoption, proving benchmark results, or publishing.
 - The repository includes `gate:closure-readiness` and `audit:gate-closure-readiness` for turning gap, owner evidence, and current-state records into a readiness report or candidate report without submitting evidence or closing gates.
 - The repository includes `gate:closure-review` and `audit:gate-closure-review` for turning readiness and owner evidence submission checks into a review record or candidate review without approving gate closure.
 - The repository includes `audit:status-roadmap` for checking that public status and roadmap pages name the current local v0.1 implementation surface.

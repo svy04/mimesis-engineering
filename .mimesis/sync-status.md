@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 40
-- untracked files: 6
+- changed tracked files: 38
+- untracked files: 4
 
 ## Conclusion
 
@@ -36,8 +36,6 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
  M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/owner-actions/remote-issue-sync.json
- M .mimesis/owner-actions/remote-issue-sync.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -52,7 +50,6 @@ It does not publish, push, tag, release, or create a pull request.
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
@@ -61,16 +58,15 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
  M tools/audit-framework-manifest.mjs
+ M tools/audit-issue-forms.mjs
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-status-roadmap-sync.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/remote-issue-create.json
-?? .mimesis/owner-actions/remote-issue-create.md
-?? docs/OWNER-ISSUE-REMOTE-CREATE.md
-?? docs/superpowers/
-?? tools/audit-owner-issue-remote-create.mjs
-?? tools/create-owner-issue-remote-create.mjs
+?? .github/ISSUE_TEMPLATE/gate-evidence.yml
+?? docs/GATE-EVIDENCE-ISSUE.md
+?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-form.md
+?? tools/audit-gate-evidence-issue-form.mjs
 ```

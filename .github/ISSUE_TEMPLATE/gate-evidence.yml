@@ -1,0 +1,103 @@
+name: Gate Evidence
+description: Submit evidence for one open Mimesis gate without claiming proof or closure.
+title: "[Gate Evidence]: "
+labels: ["gate-evidence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No proof, no claim.
+        Use this form to submit evidence for one open Mimesis gate.
+        This issue does not close gates, does not create proof, does not publish, and does not prove adoption.
+        Do not paste secrets, passwords, tokens, private customer data, manufactured social proof, artificial usage, or fabricated outcome claims.
+  - type: dropdown
+    id: gate_id
+    attributes:
+      label: Gate ID
+      options:
+        - strict_publish_sync
+        - owner_license_decision
+        - permissioned_external_artifact
+        - completed_external_case
+        - package_publication
+        - action_publication
+        - shipped_plugin
+        - benchmark_study
+        - external_adoption
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_type
+    attributes:
+      label: Evidence type
+      options:
+        - Sync verification evidence
+        - Owner decision evidence
+        - Permissioned weak artifact evidence
+        - Before/after case evidence
+        - Package publication evidence
+        - Action or Marketplace publication evidence
+        - Plugin or connector release evidence
+        - Benchmark measurement evidence
+        - External adoption evidence
+        - Boundary or rejection evidence
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_links
+    attributes:
+      label: Evidence links
+      description: Link to repo artifacts, issue comments, releases, logs, or reviewed packets. Do not paste secrets or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_summary
+    attributes:
+      label: Evidence summary
+      description: Summarize what the evidence directly proves and what it does not prove.
+    validations:
+      required: true
+  - type: textarea
+    id: permission_boundary
+    attributes:
+      label: Permission and publication boundary
+      description: State who owns the evidence, whether it can be public, and what must remain private or redacted.
+    validations:
+      required: true
+  - type: dropdown
+    id: review_state
+    attributes:
+      label: Review state
+      options:
+        - Draft evidence, not reviewed
+        - Ready for evidence:check
+        - Reviewed evidence packet attached
+        - Rejected or insufficient evidence
+        - Private evidence available but not publishable
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_claim
+    attributes:
+      label: Allowed claim
+      description: What exact narrow claim would this evidence allow after review?
+    validations:
+      required: true
+  - type: textarea
+    id: disallowed_claim
+    attributes:
+      label: Disallowed claim
+      description: What must this evidence not be used to claim?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety_confirmation
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I did not include secrets, passwords, tokens, or private customer data.
+          required: true
+        - label: I did not include manufactured social proof, artificial usage, or fabricated outcome claims.
+          required: true
+        - label: I understand this issue does not close gates, create proof, publish, prove adoption, or prove benchmark results by itself.
+          required: true

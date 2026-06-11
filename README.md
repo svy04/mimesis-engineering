@@ -259,6 +259,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/ADOPTION-PACKET.md](docs/ADOPTION-PACKET.md) - generated external adoption evidence intake packet
 - [docs/GAP-CLOSURE-PLAN.md](docs/GAP-CLOSURE-PLAN.md) - generated evidence steps for closing open gates without claiming closure
 - [docs/GATE-EVIDENCE-PACKET.md](docs/GATE-EVIDENCE-PACKET.md) - generated evidence intake packet for routing open gates to evidence requirements
+- [docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md) - GitHub gate evidence issue intake form and no-proof boundary
 - [docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md) - generated readiness report for open gates before any closure claim
 - [docs/GATE-CLOSURE-REVIEW.md](docs/GATE-CLOSURE-REVIEW.md) - generated gate closure review record that keeps gates open without approving closure
 - [docs/RELEASE-EXECUTION-PACKET.md](docs/RELEASE-EXECUTION-PACKET.md) - generated owner release execution handoff
@@ -527,6 +528,7 @@ Tool command execution is disabled through the stdio candidate.
 `release:artifact-manifest` creates a local SHA-256 release artifact manifest, not publication, sync, license choice, external proof, or adoption evidence.
 `gap:closure-plan` creates a local gap closure plan, not closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:evidence-packet` creates a local gate evidence packet, not evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`audit:gate-evidence-issue-form` checks the GitHub gate evidence issue form and public docs; the issue form is intake only and does not close gates, create proof, prove adoption, or prove benchmark results.
 `gate:closure-readiness` creates a local gate closure readiness report and can also read `--owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json`; candidate mode can mark `ownerEvidenceReviewReady` while still keeping `canCloseNow: false`, so it is not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:closure-review` creates a local gate closure review record and can also read `--readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json`; candidate review carries `ownerEvidenceReviewReady` forward while keeping `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`, so it is not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `release:execution-packet` creates an owner release handoff, not a commit, push, tag, release, package publish, Marketplace publish, or license choice.
@@ -623,6 +625,9 @@ Current gap closure plan:
 
 Current gate evidence packet:
 [docs/GATE-EVIDENCE-PACKET.md](docs/GATE-EVIDENCE-PACKET.md)
+
+Gate evidence issue intake:
+[docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md) and [.github/ISSUE_TEMPLATE/gate-evidence.yml](.github/ISSUE_TEMPLATE/gate-evidence.yml)
 
 Current gate closure readiness report:
 [docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md)
@@ -921,6 +926,15 @@ npm run audit:gate-evidence-packet
 
 This writes `.mimesis/gates/evidence-packet.md`.
 It does not close gates, create evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Audit the GitHub gate evidence issue intake form:
+
+```bash
+npm run audit:gate-evidence-issue-form
+```
+
+This checks `.github/ISSUE_TEMPLATE/gate-evidence.yml`, [docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md), public docs, manifests, and release preflight wiring.
+The gate evidence issue form does not close gates, create proof, prove adoption, prove benchmark results, publish, or replace reviewed evidence packets.
 
 Generate the current gate closure readiness report:
 
