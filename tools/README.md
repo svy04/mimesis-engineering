@@ -529,6 +529,13 @@ npm run cli -- gate:closure-readiness
 
 This writes `.mimesis/gates/closure-readiness.json`.
 It turns the current gap register, closure plan, owner evidence submission record, and current state summary into a readiness report with `canCloseNow: false` for current open gates.
+It also supports candidate input from a real owner evidence submission record:
+
+```bash
+npm run cli -- gate:closure-readiness --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json
+```
+
+Candidate mode can set `ownerEvidenceReviewReady: true` for reviewed submitted owner evidence fields, while keeping `canCloseNow: false`.
 It does not close gates, create evidence, attach evidence, submit evidence, prove completion, publish, choose a license, create external proof, or prove adoption.
 
 ## Audit Gate Closure Readiness
@@ -545,7 +552,7 @@ or:
 npm run cli -- audit:gate-closure-readiness
 ```
 
-This checks package script wiring, CLI exposure, release preflight order, generated readiness source coverage, required open-gate IDs, `canCloseNow` boundaries, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-evidence/no-closure claims.
+This checks package script wiring, CLI exposure, release preflight order, generated readiness source coverage, candidate owner evidence submission input, required open-gate IDs, `ownerEvidenceReviewReady`, `canCloseNow` boundaries, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-evidence/no-closure claims.
 
 ## Create Gate Closure Review
 

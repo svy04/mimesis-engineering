@@ -320,11 +320,11 @@ const manifest = {
     },
     {
       name: "gate:closure-readiness",
-      purpose: "Generate the machine-readable readiness report for open gates without closing gates."
+      purpose: "Generate the machine-readable readiness report for open gates, or a candidate report from a reviewed owner evidence submission record, without closing gates."
     },
     {
       name: "audit:gate-closure-readiness",
-      purpose: "Check that open gates remain not-ready until direct evidence exists."
+      purpose: "Check that open gates remain not-ready, candidate owner evidence input is bounded, and direct evidence is not treated as closure."
     },
     {
       name: "gate:closure-review",

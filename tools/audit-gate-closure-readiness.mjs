@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -46,6 +48,13 @@ function requireBefore(commands, earlier, later) {
   }
 }
 
+function runReadiness(args, options = {}) {
+  return spawnSync(process.execPath, [path.join(root, "tools", "create-gate-closure-readiness.mjs"), ...args], {
+    cwd: options.cwd ?? root,
+    encoding: "utf8",
+  });
+}
+
 const requiredGapIds = [
   "strict_publish_sync",
   "owner_license_decision",
@@ -88,6 +97,7 @@ const releaseOrderDoc = read("docs/RELEASE-CHECK-ORDER.md");
 const frameworkManifest = readJson(".mimesis/framework-manifest.json");
 const releaseArtifactManifest = readJson(".mimesis/release-artifacts/v0.1-manifest.json");
 const validator = read("tools/validate-mimesis.mjs");
+const generator = read("tools/create-gate-closure-readiness.mjs");
 const releaseCheck = packageJson.scripts?.["release:check"] ?? "";
 const releaseCommands = releaseCheck
   .split("&&")
@@ -132,6 +142,9 @@ for (const text of [
   "gate closure readiness",
   "readiness report, not closure",
   "canCloseNow",
+  "--owner-evidence-submission",
+  "--output",
+  "real owner evidence submission",
   "does not close gates",
   "does not create evidence",
   "does not attach evidence",
@@ -156,6 +169,18 @@ if (report.schema !== "mimesis.gate-closure-readiness.v0.1") {
 
 if (report.status !== "open_gates_not_ready") {
   failures.push("gate closure readiness status must be open_gates_not_ready");
+}
+
+if (!report.inputMode || typeof report.inputMode !== "object") {
+  failures.push("gate closure readiness missing inputMode");
+}
+
+if (report.inputMode?.ownerEvidenceSubmissionRecord !== ".mimesis/owner-actions/fixture-evidence-submission-record.json") {
+  failures.push("gate closure readiness default inputMode must name the fixture owner evidence submission record");
+}
+
+if (report.inputMode?.candidateMode !== false) {
+  failures.push("gate closure readiness default inputMode candidateMode must be false");
 }
 
 if (report.completionAllowed !== false) {
@@ -200,6 +225,10 @@ for (const gate of gates) {
 
   if (gate.canCloseNow !== false) {
     failures.push(`gate closure readiness must not mark gate closable now: ${gate.id}`);
+  }
+
+  if (gate.ownerEvidenceReviewReady !== false) {
+    failures.push(`default gate closure readiness must not mark owner evidence review ready: ${gate.id}`);
   }
 
   if (!Array.isArray(gate.missingEvidence) || gate.missingEvidence.length === 0) {
@@ -293,6 +322,64 @@ if (!validator.includes(".mimesis/gates/closure-readiness.json")) {
 
 if (!validator.includes("tools/audit-gate-closure-readiness.mjs")) {
   failures.push("tools/validate-mimesis.mjs missing tools/audit-gate-closure-readiness.mjs");
+}
+
+for (const text of ["--owner-evidence-submission", "--output", "candidateMode", "ownerEvidenceReviewReady"]) {
+  if (!generator.includes(text)) {
+    failures.push(`tools/create-gate-closure-readiness.mjs missing option or field text: ${text}`);
+  }
+}
+
+if (!failures.length) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-gate-readiness-input-"));
+  const fixtureRecord = readJson(".mimesis/owner-actions/fixture-evidence-submission-record.json");
+  const reviewedRecord = path.join(tmpDir, "reviewed-owner-evidence.json");
+  const outputRecord = path.join(tmpDir, "closure-readiness-candidate.json");
+  fixtureRecord.status = "reviewed";
+  fixtureRecord.fields.weak_artifact_permission = {
+    ...fixtureRecord.fields.weak_artifact_permission,
+    submissionStatus: "submitted",
+    ownerSubmittedEvidence: "permissioned or clearly redacted weak artifact attached for gate-specific review only",
+    ownerAttachmentSlot: "examples/permissioned-case-intake.md",
+    safetyCheck: "owner confirms permission, redaction, submitter scope, and publication scope before case movement",
+    boundary: "does not create external proof, close gates, publish, or prove adoption",
+  };
+  fs.writeFileSync(reviewedRecord, `${JSON.stringify(fixtureRecord, null, 2)}\n`);
+
+  const result = runReadiness(["--owner-evidence-submission", reviewedRecord, "--output", outputRecord], { cwd: tmpDir });
+  if (result.status !== 0) {
+    failures.push(`gate closure readiness must accept a reviewed owner evidence submission input:\n${result.stdout}\n${result.stderr}`.trim());
+  }
+
+  const candidate = fs.existsSync(outputRecord) ? JSON.parse(fs.readFileSync(outputRecord, "utf8")) : {};
+  if (candidate.inputMode?.candidateMode !== true) {
+    failures.push("gate closure readiness candidate output must set inputMode.candidateMode true");
+  }
+  if (candidate.inputMode?.ownerEvidenceSubmissionRecord !== reviewedRecord.replaceAll(path.sep, "/")) {
+    failures.push("gate closure readiness candidate output must record the supplied owner evidence submission path");
+  }
+
+  const permissionedGate = candidate.gates?.find((gate) => gate.id === "permissioned_external_artifact") ?? {};
+  if (permissionedGate.ownerEvidenceReviewReady !== true) {
+    failures.push("permissioned external artifact gate should be ownerEvidenceReviewReady for reviewed submitted weak_artifact_permission");
+  }
+  if (permissionedGate.canCloseNow !== false) {
+    failures.push("permissioned external artifact gate must still have canCloseNow false in candidate mode");
+  }
+  if (permissionedGate.missingEvidence?.some((item) => item.includes("weak_artifact_permission: not submitted owner evidence"))) {
+    failures.push("permissioned external artifact candidate missingEvidence must not say weak_artifact_permission is not submitted");
+  }
+
+  const completedCaseGate = candidate.gates?.find((gate) => gate.id === "completed_external_case") ?? {};
+  if (completedCaseGate.ownerEvidenceReviewReady !== true) {
+    failures.push("completed external case gate should show ownerEvidenceReviewReady while still requiring case evidence");
+  }
+  if (completedCaseGate.canCloseNow !== false) {
+    failures.push("completed external case gate must still have canCloseNow false");
+  }
+  if (!completedCaseGate.missingEvidence?.some((item) => item.includes("case:check"))) {
+    failures.push("completed external case gate must still list case evidence as missing");
+  }
 }
 
 if (failures.length) {

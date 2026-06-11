@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-artifact-manifest.v0.1",
   "status": "local_manifest_not_publication",
-  "generatedAt": "2026-06-11T06:00:15.348Z",
+  "generatedAt": "2026-06-11T06:22:19.171Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -10,10 +10,10 @@
   },
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
-    "head": "28704cdf56e1d36c7af36d8e8a457a7a23749213",
+    "head": "deb6612fde19e7161b3191a3eb9cdffe427e4b8d",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "trackedChangedCount": 35,
-    "untrackedCount": 4
+    "trackedChangedCount": 26,
+    "untrackedCount": 0
   },
   "artifactCount": 255,
   "artifacts": [
@@ -64,7 +64,7 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 8694,
-      "sha256": "8cf385f87782f33d7aca915e6d944be6ef08938337199ea28e56c90504516ae5"
+      "sha256": "e833ccf5c18f50f80f6da002e64e71baf6dc5d1371dabf9b1773d46b78ad48a3"
     },
     {
       "path": ".mimesis/ecosystem-resources/current-resource-packet.md",
@@ -84,36 +84,36 @@
       "path": ".mimesis/framework-manifest.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 29005,
-      "sha256": "3a4b453c0151543f9d6e17de277db083a84b3093c8bf42ae35de777c668e3623"
+      "bytes": 29139,
+      "sha256": "9d4620cb07eeed29f0c46b6042d09ec155d82bf056539e8fd2bfc3e7facd5084"
     },
     {
       "path": ".mimesis/gaps/closure-plan.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 10461,
-      "sha256": "8266ba2492f9af52d673c6665f54a9f433b42599bd631d3ba611b136261a2e17"
+      "sha256": "67edbf18519190b58db49e0869a2d94aab61db82f2b8f997b7eae0b3e3aac4a1"
     },
     {
       "path": ".mimesis/gaps/current-gap-register.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 5686,
-      "sha256": "edbc2562e5c57826c3f2d3962af57e9e71c56e28d9c32a60a380b9f81a7cf9e0"
+      "sha256": "55c555813e21850c310f35783fc1a4fccec4475cc33f1cd814f96431b1a1550b"
     },
     {
       "path": ".mimesis/gates/closure-readiness.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 23888,
-      "sha256": "389ef1a60c846470bffe0a778befc6c792df2f55625e046ad0d98294b5d4901c"
+      "bytes": 24631,
+      "sha256": "94e40bd8803e1ecdef093507444d7e6bbdd403daf821dde0716ee46893aee06c"
     },
     {
       "path": ".mimesis/gates/closure-review.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 15873,
-      "sha256": "58b99df40b89e0220ec22c59fb3b262e33af603040e41c0b0f24d1762d56573b"
+      "sha256": "4d35f8403a3417ba4cc50dd3f876a469618e153fef2d2823d2d70dd362661609"
     },
     {
       "path": ".mimesis/gates/current-gateboard.md",
@@ -336,8 +336,8 @@
       "path": ".mimesis/publish-packets/local-sync-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7244,
-      "sha256": "4ca0efb2c93d082e0b11573c351b517dc18f2bfe068caf8984009d976de6160c"
+      "bytes": 5954,
+      "sha256": "7d01861acb626db22aaf7bd450314d44845d3ac034d69298f6d55f18bc7e4331"
     },
     {
       "path": ".mimesis/reference-packs/index.json",
@@ -358,7 +358,7 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 3254,
-      "sha256": "a1e36ff687485d20b3080841953492837735a667156c45375759bc53637973a2"
+      "sha256": "faa00aedc5ef3a7b85628637ba6a292be2ca1d66e9e86a40bd64f5902b6f4b8d"
     },
     {
       "path": ".mimesis/release-evidence/publication-evidence-packet.md",
@@ -385,15 +385,15 @@
       "path": ".mimesis/release-review/v0.1-bundle.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6875,
-      "sha256": "c1abfa69cbab5544b8979f68f3c5299f938cb918ee1238dc8a795e5f6c0783fe"
+      "bytes": 5954,
+      "sha256": "dcc6032e782ca96fca908d15361f178ecc5e0688163e0bdc2af02665e448a671"
     },
     {
       "path": ".mimesis/run_ledger.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 264977,
-      "sha256": "086f96fd25d56510f0d786614a4ef345eface5f2ded124253857ad60aa105267"
+      "bytes": 267719,
+      "sha256": "642a9982b71356fe4f9c1f7ffa4d93f0331680ddababc7d6b2cfacc3cca34cfc"
     },
     {
       "path": ".mimesis/security/secret-safety-report.md",
@@ -407,21 +407,21 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 9748,
-      "sha256": "cbae20287b84163287e3f1da34a3198721de401190fe657098e00894aafcd5e4"
+      "sha256": "03ef1818921624f1fc4f1cc6afd543e9eb1a39cb9ae450874604f6fd7182f71c"
     },
     {
       "path": ".mimesis/sync-status.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2172,
-      "sha256": "b8b28ceede65c180ea5dd40a87ffd9bd3e69a82b54b4b1aafdcc89643e685d1a"
+      "bytes": 1384,
+      "sha256": "cc3392dd0231ed32e21fc227ee70c5e368c1383e2394f1cfae16b34a0eae695d"
     },
     {
       "path": ".mimesis/worktree/review-packet.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 9137,
-      "sha256": "06cea7e743dce5aee292b503bd8a32bb9f6b25032bec139edfd959f7c2bf81dd"
+      "bytes": 6962,
+      "sha256": "19dd8419caaac1dd00fb5e682788945282512c03ece752eea68d252d596abbde"
     },
     {
       "path": "action.yml",
@@ -546,8 +546,8 @@
       "path": "docs/COMPLETION-AUDIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 50687,
-      "sha256": "545966b05d58244ca3a42f8155091a0bf92d60d52972832ad7055cec9547f8f6"
+      "bytes": 50931,
+      "sha256": "4d9f2975d738fa33552c41f0ac0c16faa12cbebff8d37bd172827dde13dd1012"
     },
     {
       "path": "docs/CURRENT-STATE-SUMMARY.md",
@@ -581,8 +581,8 @@
       "path": "docs/FRAMEWORK-MANIFEST.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 4342,
-      "sha256": "f9c884c9346323610adf53509e67a3d21e3a5f9132414a4129ad0e4bf2db1e49"
+      "bytes": 4443,
+      "sha256": "4b3bf28d75560ee1336ba42c2ca79c61d6347136c8f445818c92a9f63a2e3413"
     },
     {
       "path": "docs/GAP-CLOSURE-PLAN.md",
@@ -602,8 +602,8 @@
       "path": "docs/GATE-CLOSURE-READINESS.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1831,
-      "sha256": "5a9450ab7cb138714e6e32decf766629e239bfffe45c459b2ede3a39c8023c9a"
+      "bytes": 2645,
+      "sha256": "7cffce16dc5a4145550ad4a5c4965407d3b0f949b5249e017b2c7a61b6188baf"
     },
     {
       "path": "docs/GATE-CLOSURE-REVIEW.md",
@@ -854,8 +854,8 @@
       "path": "docs/RELEASE-CHECK-ORDER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 15584,
-      "sha256": "07178da76b3d9ab60b06144da35aaad706e2a828c9cabdcb53cf4cf3f9afd72c"
+      "bytes": 15842,
+      "sha256": "8ef18cce96ce11d704711fad91fab3455bdedc34ac07e0943c76da3da0c3068b"
     },
     {
       "path": "docs/RELEASE-DECISION-RECORD.md",
@@ -1029,8 +1029,8 @@
       "path": "README.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 59234,
-      "sha256": "4a9d36b2eaa9727a7450202e69cbf4335d54468801dcc9cf223bc1db787b9d35"
+      "bytes": 59847,
+      "sha256": "0e814385451da30d5053cbe952db043421ed87c18902b3d16e41b01805632117"
     },
     {
       "path": "reference-packs/ai-workflow.md",
@@ -1092,8 +1092,8 @@
       "path": "ROADMAP.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 9538,
-      "sha256": "45873b5b49448b289acd6a59b837810d64dfa6ffe2b7389329af8b5cf09cd091"
+      "bytes": 9645,
+      "sha256": "092dc852aa04317f14d91ef4083ba8400ee5222e80400737be9f1a01083472fb"
     },
     {
       "path": "SECURITY.md",
@@ -1134,8 +1134,8 @@
       "path": "spec/gate-closure-readiness.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 3639,
-      "sha256": "8f36a7276942433549826b0ae1ccca00cc1e2249362a1c8513e76fc860338969"
+      "bytes": 4354,
+      "sha256": "a1a176997b9440f678de8a84b8c717bf174a2915e48d245290af97225d8ed69b"
     },
     {
       "path": "spec/gate-closure-review.schema.json",
@@ -1211,8 +1211,8 @@
       "path": "STATUS.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 19510,
-      "sha256": "ce5fdae4dc8c454afb2218f24648a5ae2ace9e90565723fbc45965b79d7aa32f"
+      "bytes": 19640,
+      "sha256": "331fafa1ddc32f6ac1c298598c0394e9a602774e3e1af79c56a71e44543486f6"
     },
     {
       "path": "templates/artifact-brief.md",
@@ -1316,8 +1316,8 @@
       "path": "tools/audit-gate-closure-readiness.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 10539,
-      "sha256": "654d2847d3044dacfcfe9398e4fc0e50acb94cfaf5852e5d0db0fcc0c910f1a0"
+      "bytes": 15052,
+      "sha256": "fa5028faa7c2cc7d05f337247e4a2ed0ca197cc1219fd1e8bf53c68d5325d3ce"
     },
     {
       "path": "tools/audit-gate-closure-review.mjs",
@@ -1589,8 +1589,8 @@
       "path": "tools/create-framework-manifest.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 30229,
-      "sha256": "76a7776f624007daa544544cf343e42230be4e4d61542714e4aa8d6cdb9d437d"
+      "bytes": 30355,
+      "sha256": "68c7ed2190dcac96f7eaf2e8813efce7422451cab670c3c326cf401788e0933a"
     },
     {
       "path": "tools/create-gap-closure-plan.mjs",
@@ -1610,8 +1610,8 @@
       "path": "tools/create-gate-closure-readiness.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5506,
-      "sha256": "8e8ff623a7f6ccd9a1fa6a9699107e6dc68381d678d2c4dac965c934b4808ae6"
+      "bytes": 8218,
+      "sha256": "7f513bc0a06f24494f034818016d460a7228a56a1793bbb02025b52fecf9a897"
     },
     {
       "path": "tools/create-gate-closure-review.mjs",

@@ -463,7 +463,7 @@ Tool command execution is disabled through the stdio candidate.
 `release:artifact-manifest` creates a local SHA-256 release artifact manifest, not publication, sync, license choice, external proof, or adoption evidence.
 `gap:closure-plan` creates a local gap closure plan, not closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:evidence-packet` creates a local gate evidence packet, not evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
-`gate:closure-readiness` creates a local gate closure readiness report, not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`gate:closure-readiness` creates a local gate closure readiness report and can also read `--owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json`; candidate mode can mark `ownerEvidenceReviewReady` while still keeping `canCloseNow: false`, so it is not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:closure-review` creates a local gate closure review record with `decision: keep_open`, not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `release:execution-packet` creates an owner release handoff, not a commit, push, tag, release, package publish, Marketplace publish, or license choice.
 `claim:pack` creates a public copy guardrail, not publication, adoption proof, benchmark proof, legal proof, or certification.
@@ -849,6 +849,13 @@ npm run audit:gate-closure-readiness
 ```
 
 This writes `.mimesis/gates/closure-readiness.json`.
+With a real reviewed owner evidence submission record, write a separate candidate report:
+
+```bash
+npm run cli -- gate:closure-readiness --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json
+```
+
+Candidate readiness can show `ownerEvidenceReviewReady: true`; it still keeps `canCloseNow: false`.
 It does not close gates, submit evidence, attach evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
 
 Generate the gate closure review record:

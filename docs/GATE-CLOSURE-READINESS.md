@@ -17,11 +17,31 @@ Schema:
 
 - `spec/gate-closure-readiness.schema.json`
 
+## Input Modes
+
+Default mode reads the fixture owner evidence submission record:
+
+```bash
+npm run cli -- gate:closure-readiness
+```
+
+Candidate mode can read a real owner evidence submission record and write a separate readiness candidate:
+
+```bash
+npm run cli -- gate:closure-readiness --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json
+```
+
+The `--owner-evidence-submission` input can make a gate show `ownerEvidenceReviewReady: true` when the related owner evidence fields are reviewed and submitted.
+It still keeps `canCloseNow: false`.
+The `--output` file is a candidate report, not gate closure.
+
 ## What It Shows
 
 - every open gate from `.mimesis/gaps/current-gap-register.json`
+- input mode for fixture or real owner evidence submission records
 - readiness status for `blocked`, `pending_owner`, `waiting_for_artifact`, and `waiting_for_evidence`
 - `canCloseNow: false` for every current gate
+- `ownerEvidenceReviewReady` for owner evidence that is ready for gate-specific review
 - required evidence and missing evidence by gate
 - owner evidence submission fields that still say evidence is missing
 - first command and stop conditions from `.mimesis/gaps/closure-plan.json`

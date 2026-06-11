@@ -5,7 +5,26 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outputPath = path.join(root, ".mimesis", "gates", "closure-readiness.json");
+const args = process.argv.slice(2);
+const flags = new Map();
+const defaultOwnerEvidenceSubmissionRecord = ".mimesis/owner-actions/fixture-evidence-submission-record.json";
+const defaultOutputPath = ".mimesis/gates/closure-readiness.json";
+
+for (let index = 0; index < args.length; index += 1) {
+  const arg = args[index];
+  if (!arg.startsWith("--")) {
+    continue;
+  }
+
+  const key = arg.slice(2);
+  const next = args[index + 1];
+  if (next && !next.startsWith("--")) {
+    flags.set(key, next);
+    index += 1;
+  } else {
+    flags.set(key, true);
+  }
+}
 
 function readText(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
@@ -13,6 +32,53 @@ function readText(relativePath) {
 
 function readJson(relativePath) {
   return JSON.parse(readText(relativePath));
+}
+
+function resolveInput(inputPath) {
+  const raw = String(inputPath);
+  const cwdPath = path.resolve(process.cwd(), raw);
+  if (fs.existsSync(cwdPath)) {
+    return cwdPath;
+  }
+
+  const repoPath = path.resolve(root, raw);
+  if (fs.existsSync(repoPath)) {
+    return repoPath;
+  }
+
+  return cwdPath;
+}
+
+function resolveOutput(outputPath) {
+  const raw = String(outputPath);
+  return path.isAbsolute(raw) ? raw : path.resolve(process.cwd(), raw);
+}
+
+function displayPath(filePath) {
+  const repoRelative = path.relative(root, filePath);
+  if (!repoRelative.startsWith("..") && !path.isAbsolute(repoRelative)) {
+    return repoRelative.replaceAll(path.sep, "/");
+  }
+  return path.resolve(filePath).replaceAll(path.sep, "/");
+}
+
+function readJsonFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function usage() {
+  console.log(`Usage: mimesis gate:closure-readiness [--owner-evidence-submission path/to/record.json] [--output path/to/closure-readiness.json]
+
+Generates a gate closure readiness report from the current gap register.
+Default mode uses the fixture owner evidence submission record.
+Candidate mode can read a real reviewed owner evidence submission record and write a separate output.
+It does not close gates, publish, create evidence, or prove adoption.
+`);
+}
+
+if (flags.has("help") || flags.has("h")) {
+  usage();
+  process.exit(0);
 }
 
 function readinessFor(status) {
@@ -52,14 +118,24 @@ function unique(values) {
 const packageJson = readJson("package.json");
 const gapRegister = readJson(".mimesis/gaps/current-gap-register.json");
 const closurePlan = readJson(".mimesis/gaps/closure-plan.json");
-const ownerEvidenceSubmission = readJson(".mimesis/owner-actions/fixture-evidence-submission-record.json");
+const ownerEvidenceSubmissionPath = resolveInput(flags.get("owner-evidence-submission") ?? defaultOwnerEvidenceSubmissionRecord);
+const outputPath = resolveOutput(flags.get("output") ?? defaultOutputPath);
+const ownerEvidenceSubmission = readJsonFile(ownerEvidenceSubmissionPath);
 const currentState = readJson(".mimesis/state/current-state.json");
 const closureById = new Map((closurePlan.steps ?? []).map((step) => [step.id, step]));
 const ownerFieldsByGate = ownerSubmissionFieldsByGate(ownerEvidenceSubmission);
+const ownerEvidenceSubmissionRecord = displayPath(ownerEvidenceSubmissionPath);
+const outputRecord = displayPath(outputPath);
+const candidateMode =
+  ownerEvidenceSubmissionRecord !== defaultOwnerEvidenceSubmissionRecord || outputRecord !== defaultOutputPath;
 
 const gates = (gapRegister.gaps ?? []).map((gap) => {
   const closure = closureById.get(gap.id) ?? {};
   const ownerFields = ownerFieldsByGate.get(gap.id) ?? [];
+  const ownerEvidenceReviewReady =
+    ownerEvidenceSubmission.status === "reviewed" &&
+    ownerFields.length > 0 &&
+    ownerFields.every((field) => field.submissionStatus === "submitted");
   const ownerMissingEvidence = ownerFields
     .filter((field) => field.submissionStatus !== "submitted")
     .flatMap((field) => [
@@ -85,6 +161,7 @@ const gates = (gapRegister.gaps ?? []).map((gap) => {
     requiredEvidence: gap.requiredEvidence ?? [],
     missingEvidence,
     ownerEvidence: ownerFields,
+    ownerEvidenceReviewReady,
     firstCommand: closure.commands?.[0] ?? "see gap closure plan",
     commands: closure.commands ?? [],
     stopConditions: closure.stopConditions ?? ["Stop if direct evidence is missing."],
@@ -109,6 +186,13 @@ const report = {
     license: packageJson.license ?? "none",
   },
   git: currentState.git ?? {},
+  inputMode: {
+    ownerEvidenceSubmissionRecord,
+    outputPath: outputRecord,
+    candidateMode,
+    boundary:
+      "A supplied owner evidence submission record can make owner evidence review-ready, but this report still does not close gates or prove evidence.",
+  },
   completionAllowed: false,
   gateCount: gates.length,
   readinessCounts,
@@ -124,7 +208,7 @@ const report = {
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gaps/closure-plan.json",
     ".mimesis/owner-actions/evidence-bundle.md",
-    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    ownerEvidenceSubmissionRecord,
     ".mimesis/owner-actions/evidence-review.md",
     ".mimesis/state/current-state.json",
   ],

@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-readiness.v0.1",
   "status": "open_gates_not_ready",
-  "generatedAt": "2026-06-11T05:58:17.734Z",
+  "generatedAt": "2026-06-11T06:21:07.394Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +11,16 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "28704cdf56e1d36c7af36d8e8a457a7a23749213",
+    "head": "deb6612fde19e7161b3191a3eb9cdffe427e4b8d",
     "dirty": true,
-    "trackedChangedCount": 30,
-    "untrackedCount": 4
+    "trackedChangedCount": 24,
+    "untrackedCount": 0
+  },
+  "inputMode": {
+    "ownerEvidenceSubmissionRecord": ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    "outputPath": ".mimesis/gates/closure-readiness.json",
+    "candidateMode": false,
+    "boundary": "A supplied owner evidence submission record can make owner evidence review-ready, but this report still does not close gates or prove evidence."
   },
   "completionAllowed": false,
   "gateCount": 9,
@@ -84,6 +90,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run audit:sync",
       "commands": [
         "npm run audit:sync",
@@ -129,6 +136,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run license:packet",
       "commands": [
         "npm run license:packet",
@@ -176,6 +184,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run proof:intake",
       "commands": [
         "npm run proof:intake",
@@ -227,6 +236,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run cli -- case:review path/to/intake.md",
       "commands": [
         "npm run cli -- case:review path/to/intake.md",
@@ -285,6 +295,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run audit:package",
       "commands": [
         "npm run audit:package",
@@ -341,6 +352,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run audit:action",
       "commands": [
         "npm run audit:action",
@@ -396,6 +408,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run plugin:install-packet",
       "commands": [
         "npm run plugin:install-packet",
@@ -446,6 +459,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "npm run benchmark:packet",
       "commands": [
         "npm run benchmark:packet",
@@ -492,6 +506,7 @@
           "boundary": "does not submit evidence or close gates"
         }
       ],
+      "ownerEvidenceReviewReady": false,
       "firstCommand": "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",
       "commands": [
         "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",

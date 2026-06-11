@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 35
-- untracked files: 4
+- changed tracked files: 19
+- untracked files: 0
 
 ## Conclusion
 
@@ -27,43 +27,23 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/claim-packs/public-v0.1.md
- M .mimesis/completion/goal-completion-audit.json
+ D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
- M .mimesis/gaps/closure-plan.json
- M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
- M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
- M .mimesis/release-decisions/owner-decision-record.json
- M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
  M .mimesis/state/current-state.json
- M .mimesis/sync-status.md
- M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
- M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
  M docs/FRAMEWORK-MANIFEST.md
- M docs/OWNER-DECISION-ANSWER-RECORD.md
+ M docs/GATE-CLOSURE-READINESS.md
  M docs/RELEASE-CHECK-ORDER.md
- M docs/RELEASE-DECISION-RECORD.md
- M package.json
- M spec/owner-decision-answer.schema.json
+ M spec/gate-closure-readiness.schema.json
  M tools/README.md
- M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-framework-manifest.mjs
- M tools/audit-release-artifact-manifest.mjs
- M tools/audit-release-check-order.mjs
+ M tools/audit-gate-closure-readiness.mjs
  M tools/create-framework-manifest.mjs
- M tools/create-release-artifact-manifest.mjs
- M tools/validate-mimesis.mjs
-?? .mimesis/release-decisions/from-owner-answer-bridge.md
-?? docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md
-?? tools/audit-license-decision-from-owner-answer.mjs
-?? tools/license-decision-from-owner-answer.mjs
+ M tools/create-gate-closure-readiness.mjs
 ```

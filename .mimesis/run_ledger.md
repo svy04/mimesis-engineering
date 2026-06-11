@@ -2647,3 +2647,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Treat license/no-reuse bridging as an owner-answer recording path, not a license recommendation or legal decision by the framework.
 - Keep the committed default report blocked until a real reviewed owner answer exists.
 - Do not use the bridge output as publication, external proof, adoption evidence, benchmark evidence, gate closure, or objective completion.
+
+## 2026-06-11 - Gate Closure Readiness Candidate Input Slice
+
+## Import
+
+- Re-read the current gap register, gap closure plan, owner evidence submission record/check path, gate closure readiness generator/audit, schema, README, tools README, framework manifest, release-order doc, and generated readiness/review reports.
+- Found that `gate:closure-readiness` was fixed to the local fixture owner evidence submission record, so a future real reviewed owner evidence submission could not produce a separate readiness candidate without modifying committed fixture state.
+
+## Distill
+
+- Add a candidate input mode for real owner evidence submission records.
+- Keep default fixture mode blocked and keep every current gate at `canCloseNow: false`.
+- Preserve the boundary that candidate readiness is not submitted evidence, attached evidence, gate closure, proof, publication, adoption evidence, benchmark evidence, or objective completion.
+
+## Capsule
+
+- RED: strengthened `tools/audit-gate-closure-readiness.mjs` so the existing generator/docs/report failed without `--owner-evidence-submission`, `--output`, `inputMode`, and `ownerEvidenceReviewReady`.
+- GREEN: updated `tools/create-gate-closure-readiness.mjs` to accept a supplied owner evidence submission record and a separate output path.
+- GREEN: extended the gate closure readiness schema and docs so candidate reports can show owner evidence review-readiness while retaining `canCloseNow: false`.
+
+## Shard
+
+- Default `npm run gate:closure-readiness` still writes `.mimesis/gates/closure-readiness.json` from `.mimesis/owner-actions/fixture-evidence-submission-record.json`.
+- Candidate mode can run `npm run cli -- gate:closure-readiness --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json`.
+- A reviewed submitted owner evidence field can set `ownerEvidenceReviewReady: true` for related gates, but the report still refuses gate closure with `canCloseNow: false`.
+
+## Verify
+
+- `node tools/audit-gate-closure-readiness.mjs` failed first for the expected missing candidate input support.
+- After implementation and regeneration, `npm run audit:gate-closure-readiness`, `npm run audit:gate-closure-review`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:completion`, `npm run audit:release-order`, and `npm run validate` passed.
+
+## Remember
+
+- Use gate closure readiness candidate mode when a real reviewed owner evidence submission record arrives.
+- Treat `ownerEvidenceReviewReady` as a routing signal into gate-specific review, not as closure approval.
+- Keep `gate:closure-review` responsible for keeping gates open until direct closure evidence is reviewed.
