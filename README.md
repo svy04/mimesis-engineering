@@ -244,6 +244,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
 - [docs/OWNER-PROOF-INPUT-ISSUE.md](docs/OWNER-PROOF-INPUT-ISSUE.md) - public owner proof input issue handoff
+- [docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md](docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md) - private owner proof input candidate pipeline audit
 - [docs/OWNER-PROOF-INPUT-SPLIT.md](docs/OWNER-PROOF-INPUT-SPLIT.md) - split reviewed owner proof input into downstream record candidates
 - [docs/OWNER-DECISION-INTAKE.md](docs/OWNER-DECISION-INTAKE.md) - generated owner decision intake
 - [docs/OWNER-DECISION-ANSWER-RECORD.md](docs/OWNER-DECISION-ANSWER-RECORD.md) - generated schema-shaped owner decision answer record
@@ -485,6 +486,7 @@ It does not prove npm package release.
 `owner:proof-input-remote-issue-export` exports candidate remote owner input to `.mimesis/private/` only, after refusing request-only or secret-like issue bodies.
 `audit:owner-proof-input-remote-issue-export` checks the owner proof input remote issue export path, `.gitignore`, CLI, docs, manifests, release order, and no-commit/no-proof boundary.
 `audit:owner-proof-input-remote-issue-export-candidate` checks the owner proof input remote issue export candidate fixture smoke path without using live owner input.
+`audit:owner-proof-input-private-pipeline` checks the owner proof input private pipeline from private export through convert, review, check, and split without using live owner input or closing gates.
 `owner:proof-input-issue-convert` converts a GitHub owner proof input issue body into a draft owner proof input record candidate, not owner decision, permission grant, external proof, publication, or gate closure.
 `audit:owner-proof-input-issue-convert` checks the converter, fixture issue, generated draft record/report, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-review` reviews a draft owner proof input record before reviewed-record promotion, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
@@ -1229,6 +1231,15 @@ This writes raw issue body only under `.mimesis/private/`, which is gitignored.
 It refuses request-only issue bodies, secret-like issue bodies, and non-private output paths.
 The owner proof input remote issue export candidate audit uses `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json` to prove the private candidate path, then removes its private audit output.
 It is a private local bridge only, not owner decision, permission grant, external proof, proof approval, publication, adoption evidence, benchmark evidence, or gate closure.
+
+Run the owner proof input private pipeline audit before trusting the private export-to-split chain:
+
+```bash
+npm run audit:owner-proof-input-private-pipeline
+```
+
+This uses `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json`, writes temporary output only under `.mimesis/private/audit/`, confirms it is gitignored, and removes it.
+It is a private fixture smoke only, not live owner input, owner decision, permission grant, submitted evidence, external proof, proof approval, publication, adoption evidence, benchmark evidence, or gate closure.
 
 Run the owner proof input issue convert step to turn an issue body into a local record candidate:
 

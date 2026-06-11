@@ -155,6 +155,7 @@ const commands = new Map([
   ["audit:owner-proof-input-issue-convert", { description: "Audit owner proof input issue conversion and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-issue-convert.mjs" }],
   ["audit:owner-proof-input-review", { description: "Audit owner proof input review and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-review.mjs" }],
   ["audit:owner-proof-input-split", { description: "Audit owner proof input split routing and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-split.mjs" }],
+  ["audit:owner-proof-input-private-pipeline", { description: "Audit the private owner proof input candidate pipeline from export through split without proof or gate closure.", type: "node", script: "tools/audit-owner-proof-input-private-pipeline.mjs" }],
   ["audit:owner-queue", { description: "Audit the generated owner action queue handoff.", type: "node", script: "tools/audit-owner-action-queue.mjs" }],
   ["audit:owner-issue-queue", { description: "Audit the generated owner issue queue and no-remote-mutation boundary.", type: "node", script: "tools/audit-owner-issue-queue.mjs" }],
   ["audit:owner-issue-remote-sync", { description: "Audit the read-only remote issue sync snapshot and no-remote-mutation boundary.", type: "node", script: "tools/audit-owner-issue-remote-sync.mjs" }],

@@ -94,6 +94,7 @@ Release readiness:
 - owner proof input remote issue snapshot
 - owner proof input remote issue export
 - owner proof input remote issue export candidate
+- owner proof input private pipeline
 - owner proof input review
 - owner proof input split
 - owner evidence attachment form
@@ -218,6 +219,7 @@ It is not a shipped plugin.
 - The repository includes `owner:proof-input-remote-issue` and `audit:owner-proof-input-remote-issue` for recording and checking the current remote owner proof input issue anchor without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, proving benchmark results, or closing gates.
 - The repository includes `owner:proof-input-issue-convert` and `audit:owner-proof-input-issue-convert` for the owner proof input issue convert path: converting a GitHub owner proof input issue body into a draft owner proof input record candidate without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The owner proof input issue converter now audits the actual public issue anchor style with numbered `##` sections as well as the local fixture `###` sections.
+- The repository includes `audit:owner-proof-input-private-pipeline` for the owner proof input private pipeline: a fixture smoke that runs private export, convert, review, check, and split under `.mimesis/private/audit/` without using live owner input, granting permission, submitting evidence, creating proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-review` and `audit:owner-proof-input-review` for reviewing a draft owner proof input record before reviewed-record promotion without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-split` and `audit:owner-proof-input-split` for routing a reviewed owner proof input into downstream owner decision/evidence record candidates without choosing a license, submitting an artifact, granting permission, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:evidence-submission-record` and `audit:owner-evidence-submission-record` for generating and checking a schema-shaped owner evidence submission record that keeps `not_submitted_owner_evidence` visible without submitting evidence, attaching evidence, choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.

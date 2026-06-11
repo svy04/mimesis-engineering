@@ -2236,6 +2236,24 @@ This runs the owner proof input remote issue export candidate fixture smoke agai
 It writes only temporary private audit output under `.mimesis/private/audit/`, confirms that output is gitignored, then removes it.
 It is not owner input, not weak artifact permission, not proof, not publication, and not gate closure.
 
+## Audit Owner Proof Input Private Pipeline
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-private-pipeline
+```
+
+Or through the CLI:
+
+```bash
+npm run cli -- audit:owner-proof-input-private-pipeline
+```
+
+This runs the owner proof input private pipeline smoke from private export through convert, review, check, and split using `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json`.
+It writes only temporary private audit output under `.mimesis/private/audit/`, confirms that output is gitignored, checks downstream owner decision/evidence candidate routing, then removes it.
+It is not live owner input, not a license choice, not permission grant, not submitted evidence, not proof, not publication, and not gate closure.
+
 ## Convert Owner Proof Input Issue
 
 Run:

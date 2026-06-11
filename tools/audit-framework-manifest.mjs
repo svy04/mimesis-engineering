@@ -230,6 +230,7 @@ for (const command of [
   "audit:owner-proof-input-remote-issue-snapshot",
   "audit:owner-proof-input-remote-issue-export",
   "audit:owner-proof-input-remote-issue-export-candidate",
+  "audit:owner-proof-input-private-pipeline",
   "audit:owner-proof-input-issue-convert",
   "audit:owner-proof-input-review",
   "owner:decision-intake",

@@ -732,6 +732,10 @@ const manifest = {
       purpose: "Check the candidate fixture smoke path for private remote owner proof input issue export without using live owner input."
     },
     {
+      name: "audit:owner-proof-input-private-pipeline",
+      purpose: "Check the private owner proof input candidate path from export through split without proof or gate closure claims."
+    },
+    {
       name: "audit:owner-proof-input-issue-convert",
       purpose: "Check owner proof input issue conversion, fixture output, CLI, public docs, and no-proof boundaries."
     },
@@ -1030,6 +1034,7 @@ const manifest = {
     "docs/OWNER-PROOF-INPUT.md",
     "docs/OWNER-PROOF-INPUT-ISSUE.md",
     "docs/OWNER-PROOF-INPUT-REQUEST.md",
+    "docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md",
     "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
     "docs/OWNER-PROOF-INPUT-REVIEW.md",
     "docs/OWNER-PROOF-INPUT-SPLIT.md",

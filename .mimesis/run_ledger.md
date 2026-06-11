@@ -3630,3 +3630,49 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Remote owner proof input snapshot readiness must match the private export gate closely enough to avoid false candidate states.
 - Owner issue #7 remains request-only until owner-filled content includes checked license/publication choices and checked safety confirmations.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Proof Input Private Pipeline Slice
+
+## Import
+
+- Re-read the owner proof input remote issue export, issue convert, review, check, split, downstream owner decision/evidence record paths, release manifests, release order, README, tools README, status, roadmap, completion matrix, and v0.1 release packet.
+- Confirmed the existing individual audits covered each stage but did not prove the private fixture path as one connected export-to-split chain.
+
+## Distill
+
+- Add one private fixture smoke for the owner proof input private pipeline.
+- Keep all raw issue body and candidate outputs under `.mimesis/private/audit/`.
+- Do not treat the fixture as live owner input, owner decision, permission grant, submitted evidence, external proof, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-private-pipeline.mjs` and confirmed it failed until package script wiring, CLI exposure, docs, validator coverage, framework/release manifest coverage, release order, and public status docs existed.
+- GREEN: wired `audit:owner-proof-input-private-pipeline` into `package.json`, `bin/mimesis.mjs`, release order checks, validation, manifests, README, tools README, status, roadmap, completion audit, and the v0.1 release packet.
+- GREEN: added `docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md` to document the private export -> convert -> review -> check -> split path and its proof boundary.
+
+## Shard
+
+- The new audit exports `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json` to a gitignored private issue body, converts it to a reviewed proof input record, reviews it, checks readiness, splits it into downstream owner decision/evidence candidates, verifies the private outputs are gitignored, then removes the private audit directory.
+- The audit checks safety confirmations and boundaries instead of failing on `prohibitedClaims` text, because prohibited claim lists intentionally name unsafe claims.
+- The release chain now runs the private pipeline audit after export/convert/review/split audits and before owner evidence submission and release artifact manifest audits.
+
+## Verify
+
+- `npm run audit:owner-proof-input-private-pipeline` failed first for missing wiring/docs/manifests and later for an overly broad unsafe-claim string scan against intentional `prohibitedClaims` lists.
+- `npm run audit:owner-proof-input-private-pipeline` passed after checking safety fields and boundaries directly.
+- `npm run audit:cli` passed.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:release-order` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run audit:completion` passed.
+- `npm run audit:completion-row-count` passed.
+- `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed with `audit:owner-proof-input-private-pipeline` in the release chain and without closing any gate.
+
+## Remember
+
+- Keep private raw owner issue body and candidate proof input outputs under `.mimesis/private/audit/` or another gitignored private path.
+- Treat private pipeline success as local path coherence only; it is not live owner input, permission, evidence, proof, publication, adoption, benchmark, or gate closure.
+- Keep the active goal open while `gapCount: 9` remains.
