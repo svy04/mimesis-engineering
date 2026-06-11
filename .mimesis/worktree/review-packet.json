@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T10:12:44.256Z",
+  "generatedAt": "2026-06-11T10:29:00.569Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
+    "head": "e6652b7d3fef5674bef23ab5aad6f80db72eeb76",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 4
+    "trackedChangedCount": 42,
+    "untrackedCount": 1
   },
   "trackedChanges": [
     {
@@ -103,6 +103,10 @@
     },
     {
       "status": "M",
+      "path": "docs/CURRENT-STATE-SUMMARY.md"
+    },
+    {
+      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -119,6 +123,10 @@
     },
     {
       "status": "M",
+      "path": "spec/current-state-summary.schema.json"
+    },
+    {
+      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -131,7 +139,15 @@
     },
     {
       "status": "M",
+      "path": "tools/audit-current-state-summary.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-goal-completion-audit.mjs"
     },
     {
       "status": "M",
@@ -147,7 +163,15 @@
     },
     {
       "status": "M",
+      "path": "tools/create-current-state-summary.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-goal-completion-audit.mjs"
     },
     {
       "status": "M",
@@ -249,6 +273,10 @@
     },
     {
       "status": "M",
+      "path": "docs/CURRENT-STATE-SUMMARY.md"
+    },
+    {
+      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -265,6 +293,10 @@
     },
     {
       "status": "M",
+      "path": "spec/current-state-summary.schema.json"
+    },
+    {
+      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -277,7 +309,15 @@
     },
     {
       "status": "M",
+      "path": "tools/audit-current-state-summary.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-goal-completion-audit.mjs"
     },
     {
       "status": "M",
@@ -293,7 +333,15 @@
     },
     {
       "status": "M",
+      "path": "tools/create-current-state-summary.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-goal-completion-audit.mjs"
     },
     {
       "status": "M",
@@ -328,40 +376,35 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
+    " M docs/CURRENT-STATE-SUMMARY.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M package.json",
+    " M spec/current-state-summary.schema.json",
     " M tools/README.md",
     " M tools/audit-cli.mjs",
     " M tools/audit-completion-matrix.mjs",
+    " M tools/audit-current-state-summary.mjs",
     " M tools/audit-framework-manifest.mjs",
+    " M tools/audit-goal-completion-audit.mjs",
     " M tools/audit-release-artifact-manifest.mjs",
     " M tools/audit-release-check-order.mjs",
     " M tools/audit-status-roadmap-sync.mjs",
+    " M tools/create-current-state-summary.mjs",
     " M tools/create-framework-manifest.mjs",
+    " M tools/create-goal-completion-audit.mjs",
     " M tools/create-release-artifact-manifest.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": ".mimesis/owner-actions",
-      "count": 1
-    },
-    {
-      "root": "docs",
-      "count": 1
-    },
-    {
       "root": "tools",
-      "count": 2
+      "count": 1
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/remote-proof-input-issue-anchor.md",
-    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
-    "tools/audit-owner-proof-input-remote-issue.mjs",
-    "tools/create-owner-proof-input-remote-issue-anchor.mjs"
+    "tools/audit-state-snapshot-boundary.mjs"
   ],
   "sourceCommands": [
     "git status --short",

@@ -140,6 +140,7 @@ const audit = {
   freshVerificationRequiredBeforeCompletion: [
     "npm run release:check",
     "npm run release:check:public",
+    "npm run audit:state-snapshot-boundary",
     "npm run audit:sync:strict",
   ],
   allowedClaim:

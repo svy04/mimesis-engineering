@@ -103,6 +103,7 @@ const requiredRows = [
   "Owner evidence submission record",
   "Owner evidence intake record",
   "Current state summary",
+  "State snapshot boundary",
   "Worktree review packet",
   "Release review bundle",
   "Release artifact manifest",

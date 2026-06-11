@@ -50,6 +50,7 @@ const closureById = new Map((closurePlan.steps ?? []).map((step) => [step.id, st
 
 const summary = {
   schema: "mimesis.current-state-summary.v0.1",
+  snapshotKind: "generated_local_state_snapshot",
   status: gapRegister.status ?? "open_gates_remain",
   generatedAt: new Date().toISOString(),
   package: {
@@ -65,6 +66,9 @@ const summary = {
     dirty: status.length > 0,
     trackedChangedCount: trackedChanged.length,
     untrackedCount: untracked.length,
+    freshness: "generation_time_only",
+    committedSnapshotCanGoStale: true,
+    liveVerificationCommand: "npm run audit:sync:strict",
   },
   completionAllowed: false,
   gapCount: gapRegister.gapCount ?? gapRegister.gaps?.length ?? 0,
@@ -112,9 +116,9 @@ const summary = {
     "does_not_prove_adoption",
   ],
   allowedClaim:
-    "Mimesis has a local current state summary that is not proof; it summarizes open gates and next actions from existing local packets.",
+    "Mimesis has a local current state summary that is a generation-time snapshot, not proof; it summarizes open gates and next actions from existing local packets.",
   disallowedClaim:
-    "The current state summary does not close gates, prove completion, publish, choose a license, create external proof, prove adoption, prove benchmarked productivity, or prove shipped-plugin status.",
+    "The current state summary is not live git freshness proof; committed snapshots can go stale and live sync requires npm run audit:sync:strict. It does not close gates, prove completion, publish, choose a license, create external proof, prove adoption, prove benchmarked productivity, or prove shipped-plugin status.",
 };
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });

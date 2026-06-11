@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T10:12:44.969Z",
+  "generatedAt": "2026-06-11T10:29:01.073Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
+    "head": "e6652b7d3fef5674bef23ab5aad6f80db72eeb76",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 4
+    "trackedChangedCount": 42,
+    "untrackedCount": 1
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -46,18 +46,24 @@
     "STATUS.md",
     "bin/mimesis.mjs",
     "docs/COMPLETION-AUDIT.md",
+    "docs/CURRENT-STATE-SUMMARY.md",
     "docs/RELEASE-CHECK-ORDER.md",
     "docs/STATUS-ROADMAP-SYNC.md",
     "docs/V0.1-RELEASE-PACKET.md",
     "package.json",
+    "spec/current-state-summary.schema.json",
     "tools/README.md",
     "tools/audit-cli.mjs",
     "tools/audit-completion-matrix.mjs",
+    "tools/audit-current-state-summary.mjs",
     "tools/audit-framework-manifest.mjs",
+    "tools/audit-goal-completion-audit.mjs",
     "tools/audit-release-artifact-manifest.mjs",
     "tools/audit-release-check-order.mjs",
     "tools/audit-status-roadmap-sync.mjs",
+    "tools/create-current-state-summary.mjs",
     "tools/create-framework-manifest.mjs",
+    "tools/create-goal-completion-audit.mjs",
     "tools/create-release-artifact-manifest.mjs",
     "tools/validate-mimesis.mjs"
   ],
@@ -72,7 +78,7 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 18,
+      "count": 17,
       "sample": [
         ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
@@ -82,7 +88,6 @@
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
         ".mimesis/operator-runbooks/current-runbook.md",
-        ".mimesis/owner-actions/remote-proof-input-issue-anchor.md",
         ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -100,7 +105,7 @@
       "count": 8,
       "sample": [
         "docs/COMPLETION-AUDIT.md",
-        "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
+        "docs/CURRENT-STATE-SUMMARY.md",
         "docs/RELEASE-CHECK-ORDER.md",
         "docs/STATUS-ROADMAP-SYNC.md",
         "docs/V0.1-RELEASE-PACKET.md",
@@ -112,19 +117,22 @@
     },
     {
       "name": "tooling and cli",
-      "count": 14,
+      "count": 17,
       "sample": [
         "bin/mimesis.mjs",
         "package.json",
         "tools/audit-cli.mjs",
         "tools/audit-completion-matrix.mjs",
+        "tools/audit-current-state-summary.mjs",
         "tools/audit-framework-manifest.mjs",
-        "tools/audit-owner-proof-input-remote-issue.mjs",
+        "tools/audit-goal-completion-audit.mjs",
         "tools/audit-release-artifact-manifest.mjs",
         "tools/audit-release-check-order.mjs",
+        "tools/audit-state-snapshot-boundary.mjs",
         "tools/audit-status-roadmap-sync.mjs",
+        "tools/create-current-state-summary.mjs",
         "tools/create-framework-manifest.mjs",
-        "tools/create-owner-proof-input-remote-issue-anchor.mjs",
+        "tools/create-goal-completion-audit.mjs",
         "tools/create-release-artifact-manifest.mjs",
         "tools/README.md",
         "tools/validate-mimesis.mjs"
@@ -133,8 +141,10 @@
     },
     {
       "name": "spec and schemas",
-      "count": 0,
-      "sample": [],
+      "count": 1,
+      "sample": [
+        "spec/current-state-summary.schema.json"
+      ],
       "note": "Spec contracts, templates, and reference packs."
     }
   ],

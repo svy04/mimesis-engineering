@@ -86,6 +86,10 @@ if (summary.schema !== "mimesis.current-state-summary.v0.1") {
   failures.push("current state summary must use schema mimesis.current-state-summary.v0.1");
 }
 
+if (summary.snapshotKind !== "generated_local_state_snapshot") {
+  failures.push("current state summary must identify itself as a generated local state snapshot");
+}
+
 if (summary.status !== "open_gates_remain") {
   failures.push("current state summary must keep status open_gates_remain");
 }
@@ -137,6 +141,22 @@ if (!/does not close gates/i.test(summary.disallowedClaim ?? "")) {
 
 if (!/not proof/i.test(summary.allowedClaim ?? "")) {
   failures.push("current state summary allowed claim must keep not-proof wording");
+}
+
+if (summary.git?.freshness !== "generation_time_only") {
+  failures.push("current state summary git.freshness must be generation_time_only");
+}
+
+if (summary.git?.committedSnapshotCanGoStale !== true) {
+  failures.push("current state summary git.committedSnapshotCanGoStale must be true");
+}
+
+if (summary.git?.liveVerificationCommand !== "npm run audit:sync:strict") {
+  failures.push("current state summary git.liveVerificationCommand must be npm run audit:sync:strict");
+}
+
+if (!/not live git freshness proof/i.test(summary.disallowedClaim ?? "")) {
+  failures.push("current state summary disallowed claim must say it is not live git freshness proof");
 }
 
 if (failures.length) {

@@ -179,6 +179,7 @@ const commands = new Map([
   ["audit:secrets", { description: "Audit local files for common credential patterns.", type: "node", script: "tools/audit-secret-safety.mjs" }],
   ["audit:spec-index", { description: "Audit the spec README index and schema boundary surface.", type: "node", script: "tools/audit-spec-index.mjs" }],
   ["audit:state-summary", { description: "Audit the current state summary and open-gate boundaries.", type: "node", script: "tools/audit-current-state-summary.mjs" }],
+  ["audit:state-snapshot-boundary", { description: "Audit that committed current-state snapshots are generation-time evidence only.", type: "node", script: "tools/audit-state-snapshot-boundary.mjs" }],
   ["audit:status-roadmap", { description: "Audit that public status and roadmap docs match the local v0.1 surface.", type: "node", script: "tools/audit-status-roadmap-sync.mjs" }],
   ["audit:sync", { description: "Write local git sync status without requiring publication readiness.", type: "node", script: "tools/audit-sync-status.mjs" }],
   ["audit:sync:strict", { description: "Require a clean worktree synced with upstream.", type: "npm", script: "audit:sync:strict" }],

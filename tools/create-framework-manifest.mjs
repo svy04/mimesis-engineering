@@ -733,6 +733,10 @@ const manifest = {
       purpose: "Check the current state summary, source coverage, and no-proof/no-closure boundaries."
     },
     {
+      name: "audit:state-snapshot-boundary",
+      purpose: "Check that committed current-state snapshots are generation-time evidence only and point to strict sync for live freshness."
+    },
+    {
       name: "worktree:packet",
       purpose: "Generate a local dirty worktree review packet without staging, committing, pushing, closing strict sync, or publishing."
     },

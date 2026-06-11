@@ -266,6 +266,7 @@ if (!fs.existsSync(manifestPath)) {
     "tools/audit-spec-index.mjs",
     "tools/create-current-state-summary.mjs",
     "tools/audit-current-state-summary.mjs",
+    "tools/audit-state-snapshot-boundary.mjs",
     "tools/create-worktree-review-packet.mjs",
     "tools/audit-worktree-review-packet.mjs",
     "tools/create-release-review-bundle.mjs",

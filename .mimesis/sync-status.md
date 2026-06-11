@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 37
-- untracked files: 4
+- changed tracked files: 32
+- untracked files: 1
 
 ## Conclusion
 
@@ -27,45 +27,37 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- M .mimesis/claim-packs/public-v0.1.md
  M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
- M .mimesis/gaps/closure-plan.json
- M .mimesis/gaps/current-gap-register.json
- M .mimesis/gates/closure-readiness.json
- M .mimesis/gates/closure-review.json
- M .mimesis/operator-runbooks/current-runbook.md
  M .mimesis/publication-packets/v0.1.md
- M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
- M .mimesis/release-decisions/owner-decision-record.json
- M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
  M .mimesis/state/current-state.json
- M .mimesis/sync-status.md
- M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
+ M docs/CURRENT-STATE-SUMMARY.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
+ M spec/current-state-summary.schema.json
  M tools/README.md
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
+ M tools/audit-current-state-summary.mjs
  M tools/audit-framework-manifest.mjs
+ M tools/audit-goal-completion-audit.mjs
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-status-roadmap-sync.mjs
+ M tools/create-current-state-summary.mjs
  M tools/create-framework-manifest.mjs
+ M tools/create-goal-completion-audit.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/remote-proof-input-issue-anchor.md
-?? docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md
-?? tools/audit-owner-proof-input-remote-issue.mjs
-?? tools/create-owner-proof-input-remote-issue-anchor.mjs
+?? tools/audit-state-snapshot-boundary.mjs
 ```

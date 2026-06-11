@@ -332,6 +332,7 @@ npm run cli -- audit:framework-manifest
 npm run cli -- audit:spec-index
 npm run cli -- state:summary
 npm run cli -- audit:state-summary
+npm run cli -- audit:state-snapshot-boundary
 npm run cli -- reference:index
 npm run cli -- audit:reference-index
 npm run cli -- plugin:install-packet
@@ -490,8 +491,9 @@ Tool command execution is disabled through the stdio candidate.
 `publish:packet` creates a publish/sync handoff packet, not a commit, push, tag, release, PR, or publication.
 `audit:sync:strict-nonwriting` checks the non-writing strict sync boundary described in [docs/PUBLISH-SYNC-GATE.md](docs/PUBLISH-SYNC-GATE.md), so publish-readiness checks can avoid mutating the worktree.
 `release:decision-record` creates an owner decision JSON record, not a license choice, publication, commit, push, tag, release, proof, or adoption evidence.
-`state:summary` creates a machine-readable current state summary from open gates and owner evidence packets; it does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption.
+`state:summary` creates a machine-readable current state summary from open gates and owner evidence packets; it is a generation-time snapshot and does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption.
 `audit:state-summary` checks the summary source coverage and no-proof/no-closure boundaries.
+`audit:state-snapshot-boundary` checks the state snapshot boundary: committed current-state snapshots are not live git freshness proof and must point to `npm run audit:sync:strict`.
 `worktree:packet` creates a local dirty worktree review packet, not publication, remote freshness proof, or strict sync closure.
 `audit:worktree-packet` checks the worktree review packet and confirms it does not stage, commit, push, publish, or close strict sync.
 `release:review-bundle` creates a release review bundle that classifies local dirty worktree scope; it is not a commit, push, tag, release, publication, license choice, remote freshness proof, or strict sync closure.
@@ -1182,7 +1184,12 @@ Generate the current state summary:
 ```bash
 npm run state:summary
 npm run audit:state-summary
+npm run audit:state-snapshot-boundary
 ```
+
+This is a state snapshot boundary check.
+The generated `.mimesis/state/current-state.json` records git status at generation time only.
+A committed snapshot can go stale after commit or push; use `npm run audit:sync:strict` for live sync evidence.
 
 This writes `.mimesis/state/current-state.json`.
 It summarizes the current gap register, closure plan, gate board, owner action queue, and release evidence report.

@@ -1,7 +1,8 @@
 {
   "schema": "mimesis.current-state-summary.v0.1",
+  "snapshotKind": "generated_local_state_snapshot",
   "status": "open_gates_remain",
-  "generatedAt": "2026-06-11T10:11:44.189Z",
+  "generatedAt": "2026-06-11T10:28:07.289Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +12,13 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
+    "head": "e6652b7d3fef5674bef23ab5aad6f80db72eeb76",
     "dirty": true,
-    "trackedChangedCount": 37,
-    "untrackedCount": 4
+    "trackedChangedCount": 39,
+    "untrackedCount": 1,
+    "freshness": "generation_time_only",
+    "committedSnapshotCanGoStale": true,
+    "liveVerificationCommand": "npm run audit:sync:strict"
   },
   "completionAllowed": false,
   "gapCount": 9,
@@ -235,6 +239,6 @@
     "does_not_create_external_proof",
     "does_not_prove_adoption"
   ],
-  "allowedClaim": "Mimesis has a local current state summary that is not proof; it summarizes open gates and next actions from existing local packets.",
-  "disallowedClaim": "The current state summary does not close gates, prove completion, publish, choose a license, create external proof, prove adoption, prove benchmarked productivity, or prove shipped-plugin status."
+  "allowedClaim": "Mimesis has a local current state summary that is a generation-time snapshot, not proof; it summarizes open gates and next actions from existing local packets.",
+  "disallowedClaim": "The current state summary is not live git freshness proof; committed snapshots can go stale and live sync requires npm run audit:sync:strict. It does not close gates, prove completion, publish, choose a license, create external proof, prove adoption, prove benchmarked productivity, or prove shipped-plugin status."
 }

@@ -95,6 +95,7 @@ Release readiness:
 - owner evidence intake record
 - owner evidence review
 - current state summary
+- state snapshot boundary
 - worktree review packet
 - release review bundle
 - goal completion audit

@@ -191,7 +191,7 @@ Do not publish a stronger claim if:
 - release execution packet is described as commit, push, tag, release, package publication, Marketplace publication, or license choice
 - publication evidence packet is described as publication proof, npm publication, Marketplace publication, plugin shipment, tag creation, commit, push, or gate closure
 - goal completion audit is described as completion proof, closed gates, publication, owner decision, external proof, benchmark proof, or adoption proof
-- current state summary is described as closed gates, completion proof, publication, owner decision, external proof, adoption proof, or benchmark evidence
+- current state summary is described as closed gates, completion proof, publication, owner decision, external proof, adoption proof, benchmark evidence, or live git freshness proof
 - worktree review packet is described as publication, remote freshness proof, strict sync closure, commit, push, tag, release, owner decision, external proof, or adoption evidence
 - release review bundle is described as commit, push, tag, release, publication, license choice, remote freshness proof, strict sync closure, owner decision, external proof, or adoption evidence
 - owner proof handoff is described as license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate

@@ -2181,6 +2181,7 @@ npm run cli -- state:summary
 
 This writes `.mimesis/state/current-state.json`.
 It summarizes the current gap register, gap closure plan, gate board, owner action queue, and release evidence report.
+It is a generation-time snapshot, not live git freshness proof.
 It does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption.
 
 ## Audit Current State Summary
@@ -2198,6 +2199,23 @@ npm run cli -- audit:state-summary
 ```
 
 This checks package script wiring, CLI exposure, release preflight order, generated summary source coverage, gap IDs, boundaries, schema visibility, public docs, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure claims.
+
+## Audit State Snapshot Boundary
+
+Run:
+
+```bash
+npm run audit:state-snapshot-boundary
+```
+
+or:
+
+```bash
+npm run cli -- audit:state-snapshot-boundary
+```
+
+This checks the state snapshot boundary: `.mimesis/state/current-state.json` is a committed generation-time snapshot, not live git freshness proof.
+It requires the snapshot to point operators to `npm run audit:sync:strict` for live local-to-upstream verification.
 
 ## Create Worktree Review Packet
 

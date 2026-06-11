@@ -28,6 +28,7 @@ The audit checks:
 - publication evidence packet visibility
 - goal completion audit visibility
 - current state summary visibility
+- state snapshot boundary visibility
 - worktree review packet visibility
 - release review bundle visibility
 - gap closure plan visibility
@@ -68,6 +69,7 @@ The audit currently requires the public status and roadmap to name:
 - publication evidence packet
 - goal completion audit
 - current state summary
+- state snapshot boundary
 - worktree review packet
 - release review bundle
 - release evidence report

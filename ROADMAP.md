@@ -77,6 +77,7 @@ Includes:
 - owner evidence intake record
 - owner evidence review
 - current state summary
+- state snapshot boundary audit with `audit:state-snapshot-boundary`
 - worktree review packet with `worktree:packet` and `audit:worktree-packet`
 - release review bundle with `release:review-bundle` and `audit:release-review-bundle`
 - goal completion audit with `goal:completion-audit`, `audit:goal-completion-audit`, `docs/GOAL-COMPLETION-AUDIT.md`, and `.mimesis/completion/goal-completion-audit.json`
@@ -173,6 +174,7 @@ Candidate work:
 - generated owner evidence intake record before treating any owner evidence attachment as machine-readable gate evidence
 - generated owner evidence review before treating pending owner evidence as gate movement
 - generated current state summary before treating open gates as closed or hidden
+- generated state snapshot boundary before treating committed current-state snapshots as live git freshness proof
 - generated gate closure readiness report before treating missing owner evidence as resolved, including candidate-mode `ownerEvidenceReviewReady` checks from reviewed owner evidence submission records
 - generated gate closure review record before treating any open gate as approved for closure, including candidate-mode review records that carry `ownerEvidenceReviewReady` without closure approval
 - generated worktree review packet before treating dirty local changes as reviewed, publishable, or synced

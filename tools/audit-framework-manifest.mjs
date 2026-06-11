@@ -235,6 +235,7 @@ for (const command of [
   "audit:owner-evidence-review",
   "state:summary",
   "audit:state-summary",
+  "audit:state-snapshot-boundary",
   "worktree:packet",
   "audit:worktree-packet",
   "release:review-bundle",

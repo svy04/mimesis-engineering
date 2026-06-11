@@ -7,6 +7,7 @@
   "additionalProperties": false,
   "required": [
     "schema",
+    "snapshotKind",
     "status",
     "generatedAt",
     "package",
@@ -25,6 +26,11 @@
     "schema": {
       "type": "string",
       "const": "mimesis.current-state-summary.v0.1"
+    },
+    "snapshotKind": {
+      "type": "string",
+      "const": "generated_local_state_snapshot",
+      "description": "Marks the file as a generation-time local snapshot, not live remote freshness proof."
     },
     "status": {
       "type": "string",
@@ -59,7 +65,17 @@
     "git": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["branch", "upstream", "head", "dirty", "trackedChangedCount", "untrackedCount"],
+      "required": [
+        "branch",
+        "upstream",
+        "head",
+        "dirty",
+        "trackedChangedCount",
+        "untrackedCount",
+        "freshness",
+        "committedSnapshotCanGoStale",
+        "liveVerificationCommand"
+      ],
       "properties": {
         "branch": {
           "type": "string",
@@ -83,6 +99,18 @@
         "untrackedCount": {
           "type": "integer",
           "minimum": 0
+        },
+        "freshness": {
+          "type": "string",
+          "const": "generation_time_only"
+        },
+        "committedSnapshotCanGoStale": {
+          "type": "boolean",
+          "const": true
+        },
+        "liveVerificationCommand": {
+          "type": "string",
+          "const": "npm run audit:sync:strict"
         }
       }
     },

@@ -184,6 +184,7 @@ for (const text of [
   ".mimesis/release-review/v0.1-bundle.json",
   "docs/COMPLETION-AUDIT.md",
   "npm run release:check",
+  "npm run audit:state-snapshot-boundary",
 ]) {
   if (!JSON.stringify(audit).includes(text)) {
     failures.push(`${auditRelativePath} missing evidence text: ${text}`);

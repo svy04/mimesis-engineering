@@ -3122,3 +3122,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `.mimesis/owner-actions/remote-proof-input-issue-anchor.md` as the local pointer to remote issue #7.
 - Treat issue #7 and its local anchor as owner input coordination only; they are not owner answers, weak artifact permission, external proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
 - Keep the remaining v0.2 gates open until the owner fills issue #7 and the real-input conversion, review, ready check, split, proof intake, and evidence-review chain passes.
+
+## 2026-06-11 - State Snapshot Boundary Slice
+
+## Import
+
+- Re-read `.mimesis/gaps/current-gap-register.json`, `.mimesis/state/current-state.json`, `.mimesis/completion/goal-completion-audit.json`, `tools/create-current-state-summary.mjs`, `tools/audit-current-state-summary.mjs`, `spec/current-state-summary.schema.json`, release-check order, framework manifest, release artifact manifest, public status, roadmap, README, tools README, release packet, and completion audit.
+- Found that the committed current state summary can carry generation-time git fields such as `head` and `dirty` that become stale after commit or push.
+- Confirmed live git status was clean and upstream-matched, while the committed state summary still reflected an earlier dirty snapshot.
+
+## Distill
+
+- Add an explicit state snapshot boundary so committed `.mimesis/state/current-state.json` is not mistaken for live git freshness proof.
+- Preserve `npm run audit:sync:strict` as the live local-to-upstream verification command.
+- Do not close the strict sync gate from a committed snapshot, mark completion, publish, choose a license, create external proof, prove adoption, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-state-snapshot-boundary.mjs`, which failed first for missing script/CLI/release wiring, missing snapshot freshness fields, missing schema/doc/public surface coverage, and missing manifest coverage.
+- GREEN: added `snapshotKind`, `git.freshness`, `git.committedSnapshotCanGoStale`, and `git.liveVerificationCommand` to the current state summary generator and schema.
+- GREEN: wired `audit:state-snapshot-boundary` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `.mimesis/state/current-state.json` now identifies itself as `generated_local_state_snapshot`.
+- The git block now records `freshness: generation_time_only`, `committedSnapshotCanGoStale: true`, and `liveVerificationCommand: npm run audit:sync:strict`.
+- The current state summary allowed/disallowed claims now state that it is a generation-time snapshot and not live git freshness proof.
+
+## Verify
+
+- `node tools/audit-state-snapshot-boundary.mjs` failed first for the expected missing state snapshot boundary surface.
+- After implementation and regeneration, `npm run audit:state-snapshot-boundary`, `npm run audit:state-summary`, `npm run audit:cli`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run audit:goal-completion-audit`, and `npm run validate` passed.
+
+## Remember
+
+- Treat committed current-state summaries as generation-time snapshots only.
+- Use `npm run audit:sync:strict` for live sync evidence after commit/push.
+- Keep all owner/proof/publication/benchmark/adoption gates open until real owner input, permissioned weak artifact evidence, proof execution evidence, and reviewed measurement/adoption evidence exist.

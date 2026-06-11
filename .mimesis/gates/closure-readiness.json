@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-readiness.v0.1",
   "status": "open_gates_not_ready",
-  "generatedAt": "2026-06-11T10:11:44.897Z",
+  "generatedAt": "2026-06-11T10:28:08.129Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +11,13 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
+    "head": "e6652b7d3fef5674bef23ab5aad6f80db72eeb76",
     "dirty": true,
-    "trackedChangedCount": 37,
-    "untrackedCount": 4
+    "trackedChangedCount": 39,
+    "untrackedCount": 1,
+    "freshness": "generation_time_only",
+    "committedSnapshotCanGoStale": true,
+    "liveVerificationCommand": "npm run audit:sync:strict"
   },
   "inputMode": {
     "ownerEvidenceSubmissionRecord": ".mimesis/owner-actions/fixture-evidence-submission-record.json",

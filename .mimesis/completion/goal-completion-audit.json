@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.goal-completion-audit.v0.1",
-  "generatedAt": "2026-06-11T10:12:45.385Z",
+  "generatedAt": "2026-06-11T10:29:01.443Z",
   "objective": "전 레포 자원과 잘사용해서 프레임워크 완성할때까지 달리자",
   "status": "not_complete_open_gates_remain",
   "goalComplete": false,
@@ -217,6 +217,7 @@
   "freshVerificationRequiredBeforeCompletion": [
     "npm run release:check",
     "npm run release:check:public",
+    "npm run audit:state-snapshot-boundary",
     "npm run audit:sync:strict"
   ],
   "allowedClaim": "Mimesis has a local goal completion audit that maps objective evidence and open gates without making a completion claim.",

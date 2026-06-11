@@ -185,6 +185,7 @@ for (const command of [
   "audit:secrets",
   "audit:spec-index",
   "audit:state-summary",
+  "audit:state-snapshot-boundary",
   "audit:status-roadmap",
   "audit:sync",
   "audit:sync:strict",
