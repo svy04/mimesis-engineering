@@ -1,29 +1,21 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T05:15:42.055Z",
+  "generatedAt": "2026-06-11T05:25:45.128Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "932153e5a87e3819aa5fa7c2e6bb5cf7aa72436f",
+    "head": "7a30626afda8185cec20b8b8a061bbe0cf21ba16",
     "dirty": true,
-    "trackedChangedCount": 28,
-    "untrackedCount": 4
+    "trackedChangedCount": 19,
+    "untrackedCount": 0
   },
   "trackedChanges": [
     {
       "status": "M",
-      "path": ".mimesis/claim-packs/public-v0.1.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -40,6 +32,10 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/proof-runs/v0.2-first-run.md"
     },
     {
       "status": "M",
@@ -75,31 +71,11 @@
     },
     {
       "status": "M",
-      "path": "README.md"
+      "path": "docs/FRAMEWORK-MANIFEST.md"
     },
     {
       "status": "M",
-      "path": "bin/mimesis.mjs"
-    },
-    {
-      "status": "M",
-      "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/RELEASE-CHECK-ORDER.md"
-    },
-    {
-      "status": "M",
-      "path": "package.json"
-    },
-    {
-      "status": "M",
-      "path": "tools/README.md"
-    },
-    {
-      "status": "M",
-      "path": "tools/audit-cli.mjs"
+      "path": "docs/PROOF-RUN-PACKET.md"
     },
     {
       "status": "M",
@@ -107,37 +83,17 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-release-artifact-manifest.mjs"
+      "path": "tools/audit-proof-run-packet.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-release-check-order.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-framework-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-release-artifact-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/validate-mimesis.mjs"
+      "path": "tools/create-proof-run-packet.mjs"
     }
   ],
   "unstagedChanges": [
     {
       "status": "M",
-      "path": ".mimesis/claim-packs/public-v0.1.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -154,6 +110,10 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/proof-runs/v0.2-first-run.md"
     },
     {
       "status": "M",
@@ -189,31 +149,11 @@
     },
     {
       "status": "M",
-      "path": "README.md"
+      "path": "docs/FRAMEWORK-MANIFEST.md"
     },
     {
       "status": "M",
-      "path": "bin/mimesis.mjs"
-    },
-    {
-      "status": "M",
-      "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/RELEASE-CHECK-ORDER.md"
-    },
-    {
-      "status": "M",
-      "path": "package.json"
-    },
-    {
-      "status": "M",
-      "path": "tools/README.md"
-    },
-    {
-      "status": "M",
-      "path": "tools/audit-cli.mjs"
+      "path": "docs/PROOF-RUN-PACKET.md"
     },
     {
       "status": "M",
@@ -221,34 +161,21 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-release-artifact-manifest.mjs"
+      "path": "tools/audit-proof-run-packet.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-release-check-order.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-framework-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-release-artifact-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/validate-mimesis.mjs"
+      "path": "tools/create-proof-run-packet.mjs"
     }
   ],
   "stagedChanges": [],
   "trackedStatusLines": [
-    "M .mimesis/claim-packs/public-v0.1.md",
-    " M .mimesis/completion/goal-completion-audit.json",
-    " M .mimesis/framework-manifest.json",
+    "M .mimesis/completion/goal-completion-audit.json",
     " M .mimesis/gaps/closure-plan.json",
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/proof-runs/v0.2-first-run.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -257,40 +184,14 @@
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
-    " M README.md",
-    " M bin/mimesis.mjs",
-    " M docs/COMPLETION-AUDIT.md",
-    " M docs/RELEASE-CHECK-ORDER.md",
-    " M package.json",
-    " M tools/README.md",
-    " M tools/audit-cli.mjs",
+    " M docs/FRAMEWORK-MANIFEST.md",
+    " M docs/PROOF-RUN-PACKET.md",
     " M tools/audit-framework-manifest.mjs",
-    " M tools/audit-release-artifact-manifest.mjs",
-    " M tools/audit-release-check-order.mjs",
-    " M tools/create-framework-manifest.mjs",
-    " M tools/create-release-artifact-manifest.mjs",
-    " M tools/validate-mimesis.mjs"
+    " M tools/audit-proof-run-packet.mjs",
+    " M tools/create-proof-run-packet.mjs"
   ],
-  "untrackedRoots": [
-    {
-      "root": ".mimesis/proof-intake",
-      "count": 1
-    },
-    {
-      "root": "docs",
-      "count": 1
-    },
-    {
-      "root": "tools",
-      "count": 2
-    }
-  ],
-  "untrackedFilesSample": [
-    ".mimesis/proof-intake/from-owner-evidence-bridge.md",
-    "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
-    "tools/audit-proof-intake-from-owner-evidence.mjs",
-    "tools/proof-intake-from-owner-evidence.mjs"
-  ],
+  "untrackedRoots": [],
+  "untrackedFilesSample": [],
   "sourceCommands": [
     "git status --short",
     "git diff --name-status",

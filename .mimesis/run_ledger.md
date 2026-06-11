@@ -2540,3 +2540,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Treat owner evidence to proof intake conversion as a bridge into review, not as permission, proof, publication, adoption evidence, benchmark evidence, gate closure, or objective completion.
 - Keep the persistent fixture/report blocked until real reviewed owner evidence arrives.
 - Require explicit safety confirmations before creating a proof intake record from owner-provided weak artifact text.
+
+## 2026-06-11 - Manifest And Proof Run Bridge Surface Slice
+
+## Import
+
+- Re-read the clean PR state, `.mimesis/gaps/current-gap-register.json`, `docs/FRAMEWORK-MANIFEST.md`, `docs/PROOF-RUN-PACKET.md`, `.mimesis/framework-manifest.json`, `.mimesis/proof-runs/v0.2-first-run.md`, and the related audits/generators.
+- Found that the machine-readable manifest already knew about `proof:intake-from-owner-evidence`, but the human framework manifest and proof-run packet still emphasized the older `case:from-intake` lane.
+
+## Distill
+
+- Make the new owner evidence bridge visible in the human AI-native manifest surface.
+- Make the first v0.2 proof-run packet carry both proof lanes: permissioned intake and owner evidence bridge.
+- Preserve the boundary that neither lane creates proof, grants permission, publishes, proves adoption, or closes gates.
+
+## Capsule
+
+- RED: strengthened `tools/audit-framework-manifest.mjs` so `docs/FRAMEWORK-MANIFEST.md` failed without the bridge command text.
+- RED: strengthened `tools/audit-proof-run-packet.mjs` so the proof-run docs/generated packet failed without the owner evidence bridge lane.
+- GREEN: updated `docs/FRAMEWORK-MANIFEST.md`, `docs/PROOF-RUN-PACKET.md`, `tools/create-proof-run-packet.mjs`, and regenerated `.mimesis/proof-runs/v0.2-first-run.md`.
+
+## Shard
+
+- `docs/FRAMEWORK-MANIFEST.md` now names the proof intake from owner evidence bridge in entrypoints and commands.
+- `.mimesis/proof-runs/v0.2-first-run.md` now includes the bridge lane: `owner:evidence-submission-check -> proof:intake-from-owner-evidence -> proof:intake-check -> case:from-record -> case:check -> evidence:check`.
+- The evidence board now cites `docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md` and `docs/CASE-FROM-RECORD.md`.
+
+## Verify
+
+- `npm run audit:framework-manifest` failed first for missing bridge text in `docs/FRAMEWORK-MANIFEST.md`, then passed after the doc update.
+- `npm run audit:proof-run` failed first for the missing bridge lane, then passed after generator/doc updates and `npm run proof:run-packet`.
+- `npm run validate` passed after the updates.
+
+## Remember
+
+- Keep human-facing manifest docs synchronized with `.mimesis/framework-manifest.json` when new commands enter the AI-native surface.
+- Keep the proof-run packet aligned with both external intake routes: markdown intake and owner-evidence-record intake.
+- Do not collapse bridge readiness into permission, proof, publication, adoption evidence, benchmark evidence, or gate closure.

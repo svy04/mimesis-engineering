@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 17
-- untracked files: 4
+- changed tracked files: 9
+- untracked files: 0
 
 ## Conclusion
 
@@ -28,24 +28,12 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/framework-manifest.json
+ M .mimesis/proof-runs/v0.2-first-run.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
- M README.md
- M bin/mimesis.mjs
- M docs/COMPLETION-AUDIT.md
- M docs/RELEASE-CHECK-ORDER.md
- M package.json
- M tools/README.md
- M tools/audit-cli.mjs
+ M docs/FRAMEWORK-MANIFEST.md
+ M docs/PROOF-RUN-PACKET.md
  M tools/audit-framework-manifest.mjs
- M tools/audit-release-artifact-manifest.mjs
- M tools/audit-release-check-order.mjs
- M tools/create-framework-manifest.mjs
- M tools/create-release-artifact-manifest.mjs
- M tools/validate-mimesis.mjs
-?? .mimesis/proof-intake/from-owner-evidence-bridge.md
-?? docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md
-?? tools/audit-proof-intake-from-owner-evidence.mjs
-?? tools/proof-intake-from-owner-evidence.mjs
+ M tools/audit-proof-run-packet.mjs
+ M tools/create-proof-run-packet.mjs
 ```

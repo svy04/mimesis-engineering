@@ -83,6 +83,16 @@ for (const text of [
   }
 }
 
+for (const text of [
+  "proof intake from owner evidence",
+  "proof:intake-from-owner-evidence",
+  "audit:proof-intake-from-owner-evidence",
+]) {
+  if (!doc.toLowerCase().includes(text.toLowerCase())) {
+    failures.push(`docs/FRAMEWORK-MANIFEST.md missing bridge text: ${text}`);
+  }
+}
+
 if (manifest.name !== "mimesis-engineering") {
   failures.push("framework manifest name must be mimesis-engineering");
 }

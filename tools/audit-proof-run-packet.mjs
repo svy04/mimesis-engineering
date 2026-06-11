@@ -44,6 +44,7 @@ if (!cli.includes('"proof:run-packet"') || !cli.includes('"audit:proof-run"')) {
 for (const text of [
   "operator proof run",
   "case:review -> case:from-intake -> case:check -> evidence:check",
+  "owner:evidence-submission-check -> proof:intake-from-owner-evidence -> proof:intake-check -> case:from-record -> case:check -> evidence:check",
   "does not create external proof",
   "does not publish",
 ]) {
@@ -75,6 +76,9 @@ if (!fs.existsSync(packetPath)) {
   for (const text of [
     "case:review",
     "case:from-intake",
+    "proof:intake-from-owner-evidence",
+    "case:from-record",
+    "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
     "case:check",
     "evidence:check",
     "release:check:public",

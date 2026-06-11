@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T05:15:42.749Z",
+  "generatedAt": "2026-06-11T05:25:45.801Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "932153e5a87e3819aa5fa7c2e6bb5cf7aa72436f",
+    "head": "7a30626afda8185cec20b8b8a061bbe0cf21ba16",
     "dirty": true,
-    "trackedChangedCount": 28,
-    "untrackedCount": 4
+    "trackedChangedCount": 19,
+    "untrackedCount": 0
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -24,13 +24,12 @@
     ".mimesis/release-evidence/v0.1-report.md"
   ],
   "trackedChangedPaths": [
-    ".mimesis/claim-packs/public-v0.1.md",
     ".mimesis/completion/goal-completion-audit.json",
-    ".mimesis/framework-manifest.json",
     ".mimesis/gaps/closure-plan.json",
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
+    ".mimesis/proof-runs/v0.2-first-run.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -39,41 +38,29 @@
     ".mimesis/state/current-state.json",
     ".mimesis/sync-status.md",
     ".mimesis/worktree/review-packet.json",
-    "README.md",
-    "bin/mimesis.mjs",
-    "docs/COMPLETION-AUDIT.md",
-    "docs/RELEASE-CHECK-ORDER.md",
-    "package.json",
-    "tools/README.md",
-    "tools/audit-cli.mjs",
+    "docs/FRAMEWORK-MANIFEST.md",
+    "docs/PROOF-RUN-PACKET.md",
     "tools/audit-framework-manifest.mjs",
-    "tools/audit-release-artifact-manifest.mjs",
-    "tools/audit-release-check-order.mjs",
-    "tools/create-framework-manifest.mjs",
-    "tools/create-release-artifact-manifest.mjs",
-    "tools/validate-mimesis.mjs"
+    "tools/audit-proof-run-packet.mjs",
+    "tools/create-proof-run-packet.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 1,
-      "sample": [
-        "README.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Tracked root-framework files that need human review."
     },
     {
       "name": "generated protocol artifacts",
-      "count": 16,
+      "count": 14,
       "sample": [
-        ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
-        ".mimesis/framework-manifest.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/proof-intake/from-owner-evidence-bridge.md",
+        ".mimesis/proof-runs/v0.2-first-run.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -87,31 +74,20 @@
     },
     {
       "name": "public documentation",
-      "count": 4,
+      "count": 2,
       "sample": [
-        "docs/COMPLETION-AUDIT.md",
-        "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
-        "docs/RELEASE-CHECK-ORDER.md",
-        "README.md"
+        "docs/FRAMEWORK-MANIFEST.md",
+        "docs/PROOF-RUN-PACKET.md"
       ],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
     {
       "name": "tooling and cli",
-      "count": 12,
+      "count": 3,
       "sample": [
-        "bin/mimesis.mjs",
-        "package.json",
-        "tools/audit-cli.mjs",
         "tools/audit-framework-manifest.mjs",
-        "tools/audit-proof-intake-from-owner-evidence.mjs",
-        "tools/audit-release-artifact-manifest.mjs",
-        "tools/audit-release-check-order.mjs",
-        "tools/create-framework-manifest.mjs",
-        "tools/create-release-artifact-manifest.mjs",
-        "tools/proof-intake-from-owner-evidence.mjs",
-        "tools/README.md",
-        "tools/validate-mimesis.mjs"
+        "tools/audit-proof-run-packet.mjs",
+        "tools/create-proof-run-packet.mjs"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },

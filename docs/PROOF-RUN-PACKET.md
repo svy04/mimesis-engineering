@@ -7,7 +7,7 @@ Status: local operator proof run handoff.
 Run `proof:readiness` first when the artifact has not arrived yet.
 The readiness packet keeps the current state explicit: Bring one weak artifact, then run the proof loop.
 
-It turns the proof queue, intake kit, permissioned-case review, case checker, benchmark protocol, evidence packet gate, and release preflight into one bounded runbook.
+It turns the proof queue, intake kit, owner evidence bridge, permissioned-case review, case checker, benchmark protocol, evidence packet gate, and release preflight into one bounded runbook.
 
 ## Command
 
@@ -37,6 +37,12 @@ The preceding readiness packet is:
 
 ```text
 proof:readiness -> case:review -> case:from-intake -> case:check -> evidence:check
+```
+
+Owner evidence bridge lane:
+
+```text
+owner:evidence-submission-check -> proof:intake-from-owner-evidence -> proof:intake-check -> case:from-record -> case:check -> evidence:check
 ```
 
 Then run:

@@ -31,8 +31,10 @@ function extractSection(content, heading) {
 const packageJson = JSON.parse(read("package.json"));
 const proofQueue = read("docs/V0.2-PROOF-QUEUE.md");
 const intakeKit = read("docs/PROOF-INTAKE-KIT.md");
+const ownerEvidenceBridge = read("docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md");
 const permissionedCheck = read("docs/PERMISSIONED-CASE-CHECK.md");
 const caseFromIntake = read("docs/CASE-FROM-INTAKE.md");
+const caseFromRecord = read("docs/CASE-FROM-RECORD.md");
 const caseCheck = read("docs/CASE-CHECK.md");
 const evidencePacket = read("docs/EVIDENCE-PACKET.md");
 const benchmarkPacket = read("docs/BENCHMARK-PACKET.md");
@@ -54,7 +56,7 @@ Status: operator proof run packet, not completed external proof.
 
 Use this packet when an operator has one real permissioned or clearly redacted weak artifact and needs to run the first v0.2 proof attempt without losing the artifact trail.
 
-It connects the intake kit, permissioned review gate, started-case bridge, case evidence checker, benchmark protocol, evidence packet gate, and public release preflight.
+It connects the intake kit, owner evidence bridge, permissioned review gate, started-case bridges, case evidence checker, benchmark protocol, evidence packet gate, and public release preflight.
 
 ## Current Queue State
 
@@ -68,6 +70,8 @@ Operator must also keep:
 
 - original weak artifact path
 - reviewed permissioned intake path
+- reviewed owner evidence submission record path when using the owner evidence bridge lane
+- generated proof intake record path when using the owner evidence bridge lane
 - chosen reference pack path
 - started case workspace path
 - completed evidence packet path for any stronger public claim
@@ -85,14 +89,22 @@ Minimum command chain:
 case:review -> case:from-intake -> case:check -> evidence:check
 \`\`\`
 
+Owner evidence bridge command chain:
+
+\`\`\`text
+owner:evidence-submission-check -> proof:intake-from-owner-evidence -> proof:intake-check -> case:from-record -> case:check -> evidence:check
+\`\`\`
+
 ## Evidence Board
 
 | Evidence | Source | Required Before Claim |
 | --- | --- | --- |
 | Proof queue state | docs/V0.2-PROOF-QUEUE.md | before selecting a candidate |
 | Submitter intake kit | docs/PROOF-INTAKE-KIT.md | before asking for a weak artifact |
+| Owner evidence bridge | docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md | before turning reviewed owner evidence into a proof intake record |
 | Permissioned review gate | docs/PERMISSIONED-CASE-CHECK.md | before publication treatment |
 | Started case bridge | docs/CASE-FROM-INTAKE.md | before transforming the artifact |
+| Record started case bridge | docs/CASE-FROM-RECORD.md | before transforming a proof intake record |
 | Completed case check | docs/CASE-CHECK.md | before a before/after case claim |
 | Evidence packet gate | docs/EVIDENCE-PACKET.md | before stronger public claims |
 | Benchmark protocol | docs/BENCHMARK-PACKET.md | before productivity or adoption claims |
@@ -101,8 +113,10 @@ case:review -> case:from-intake -> case:check -> evidence:check
 ## Source Snapshot
 
 - Intake kit boundary includes: ${intakeKit.includes("does not create external proof") ? "does not create external proof" : "missing proof boundary"}
+- Owner evidence bridge boundary includes: ${ownerEvidenceBridge.includes("does not grant permission") ? "does not grant permission" : "missing owner evidence bridge boundary"}
 - Permissioned review boundary includes: ${permissionedCheck.includes("permissioned external case") ? "permissioned external case review" : "missing permissioned review"}
 - Case bridge boundary includes: ${caseFromIntake.includes("permissioned-case starter") ? "permissioned-case starter" : "missing started-case boundary"}
+- Record case bridge boundary includes: ${caseFromRecord.includes("does not create completed before/after proof") ? "does not create completed before/after proof" : "missing record-case boundary"}
 - Case check boundary includes: ${caseCheck.includes("completed case note") ? "completed case note" : "missing case-check boundary"}
 - Evidence gate boundary includes: ${evidencePacket.includes("does not create evidence") ? "does not create evidence" : "missing evidence boundary"}
 - Benchmark boundary includes: ${benchmarkPacket.includes("does not prove benchmarked productivity") ? "does not prove benchmarked productivity" : "missing benchmark boundary"}
@@ -115,6 +129,7 @@ ${queueStops}
 Also stop if:
 
 - the intake file cannot be shared publicly or redacted safely
+- the owner evidence submission record is not reviewed or \`weak_artifact_permission\` is not submitted
 - the evidence packet is draft, unsafe, or not reviewed
 - \`npm run release:check:public\` fails
 - the public copy needs a claim stronger than the evidence board supports
