@@ -3443,3 +3443,51 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Gate Evidence issues are routing/intake records only.
 - Evidence must still become a reviewed evidence packet and pass gate closure readiness/review before a stronger claim.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Gate Evidence Issue Convert Slice
+
+## Import
+
+- Re-read the gate evidence issue form, current gate/evidence packet surfaces, package scripts, CLI command map, validator, framework manifest generator, release artifact manifest generator, release-check order, README, tools README, status, roadmap, release packet, completion audit, and status/roadmap sync.
+- Confirmed the repo had a bounded GitHub Gate Evidence issue intake form, but no local converter from an issue body into a draft evidence packet candidate.
+
+## Distill
+
+- Add an issue-body-to-evidence-packet conversion path for gate evidence intake.
+- Keep the output draft-only: not reviewed evidence, not proof, not gate closure, not adoption proof, not benchmark proof, not publication, and not a replacement for owner/reviewer decisions.
+
+## Capsule
+
+- RED: added `tools/audit-gate-evidence-issue-convert.mjs`, which first failed for missing converter, fixture issue, fixture packet/report, docs, package script, CLI wiring, validator coverage, manifests, release order, and public docs.
+- GREEN: added `tools/convert-gate-evidence-issue.mjs`, `docs/GATE-EVIDENCE-ISSUE-CONVERT.md`, `.mimesis/gates/fixture-gate-evidence-issue.md`, `.mimesis/gates/fixture-gate-evidence-packet.md`, and `.mimesis/gates/fixture-gate-evidence-issue-conversion-report.md`.
+- GREEN: wired `gate:evidence-issue-convert` and `audit:gate-evidence-issue-convert` through package scripts, CLI, validator, framework manifest, release artifact manifest, release-check order, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- The converter parses Gate Evidence issue fields into a draft evidence packet candidate with `Status: draft.`
+- The conversion report records parsed fields, warnings, failures, and `ready for evidence review: no` for the fixture.
+- The fixture keeps the claim-risk phrase `External adoption evidence` inside a nearby `not proof` boundary so validation catches accidental proof-like wording.
+- The evidence packet checker now allows the new `gate evidence, not proof by itself` class while preserving reviewed-evidence and proof boundaries.
+
+## Verify
+
+- `node tools/audit-gate-evidence-issue-convert.mjs` failed first for the expected missing conversion surface.
+- `npm run gate:evidence-issue-convert` passed after implementation and generated the fixture packet/report.
+- `node tools/check-evidence-packet.mjs .mimesis\gates\fixture-gate-evidence-packet.md` passed.
+- `npm run audit:gate-evidence-issue-convert` passed.
+- `npm run audit:gate-evidence-issue-form` passed.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:release-order` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run audit:completion` passed.
+- `npm run audit:completion-row-count` passed.
+- `npm run validate` first caught a claim-risk phrase in the fixture without a nearby boundary; after fixing the fixture boundary, `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed with `gate:evidence-issue-convert` in the release chain and without closing any gate.
+
+## Remember
+
+- Gate Evidence issue conversion creates a draft evidence packet candidate only.
+- `ready for evidence review: yes` is allowed only when the issue review state explicitly starts with `Reviewed evidence packet attached`.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

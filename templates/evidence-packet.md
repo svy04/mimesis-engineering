@@ -24,6 +24,9 @@ Boundary: do not claim any listed outcome without packet evidence.
 - shipped plugin, not a claim by itself
 - customer outcome, not a claim by itself
 - publication event, not a claim by itself
+- owner decision, not legal advice or publication by itself
+- sync verification, not publication by itself
+- gate evidence, not proof by itself
 
 ## Source / Artifact Links
 

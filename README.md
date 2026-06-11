@@ -260,6 +260,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/GAP-CLOSURE-PLAN.md](docs/GAP-CLOSURE-PLAN.md) - generated evidence steps for closing open gates without claiming closure
 - [docs/GATE-EVIDENCE-PACKET.md](docs/GATE-EVIDENCE-PACKET.md) - generated evidence intake packet for routing open gates to evidence requirements
 - [docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md) - GitHub gate evidence issue intake form and no-proof boundary
+- [docs/GATE-EVIDENCE-ISSUE-CONVERT.md](docs/GATE-EVIDENCE-ISSUE-CONVERT.md) - gate evidence issue convert path to draft evidence packets
 - [docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md) - generated readiness report for open gates before any closure claim
 - [docs/GATE-CLOSURE-REVIEW.md](docs/GATE-CLOSURE-REVIEW.md) - generated gate closure review record that keeps gates open without approving closure
 - [docs/RELEASE-EXECUTION-PACKET.md](docs/RELEASE-EXECUTION-PACKET.md) - generated owner release execution handoff
@@ -529,6 +530,7 @@ Tool command execution is disabled through the stdio candidate.
 `gap:closure-plan` creates a local gap closure plan, not closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:evidence-packet` creates a local gate evidence packet, not evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `audit:gate-evidence-issue-form` checks the GitHub gate evidence issue form and public docs; the issue form is intake only and does not close gates, create proof, prove adoption, or prove benchmark results.
+`gate:evidence-issue-convert` creates a draft evidence packet candidate from a Gate Evidence issue body; it does not review evidence, create proof, publish, prove adoption, prove benchmark results, or close gates.
 `gate:closure-readiness` creates a local gate closure readiness report and can also read `--owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json`; candidate mode can mark `ownerEvidenceReviewReady` while still keeping `canCloseNow: false`, so it is not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:closure-review` creates a local gate closure review record and can also read `--readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json`; candidate review carries `ownerEvidenceReviewReady` forward while keeping `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`, so it is not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `release:execution-packet` creates an owner release handoff, not a commit, push, tag, release, package publish, Marketplace publish, or license choice.
@@ -628,6 +630,9 @@ Current gate evidence packet:
 
 Gate evidence issue intake:
 [docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md) and [.github/ISSUE_TEMPLATE/gate-evidence.yml](.github/ISSUE_TEMPLATE/gate-evidence.yml)
+
+Gate evidence issue convert:
+[docs/GATE-EVIDENCE-ISSUE-CONVERT.md](docs/GATE-EVIDENCE-ISSUE-CONVERT.md)
 
 Current gate closure readiness report:
 [docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md)
@@ -935,6 +940,16 @@ npm run audit:gate-evidence-issue-form
 
 This checks `.github/ISSUE_TEMPLATE/gate-evidence.yml`, [docs/GATE-EVIDENCE-ISSUE.md](docs/GATE-EVIDENCE-ISSUE.md), public docs, manifests, and release preflight wiring.
 The gate evidence issue form does not close gates, create proof, prove adoption, prove benchmark results, publish, or replace reviewed evidence packets.
+
+Convert the fixture Gate Evidence issue into a draft evidence packet candidate:
+
+```bash
+npm run gate:evidence-issue-convert
+npm run audit:gate-evidence-issue-convert
+```
+
+This writes `.mimesis/gates/fixture-gate-evidence-packet.md` and `.mimesis/gates/fixture-gate-evidence-issue-conversion-report.md`.
+It is a gate evidence issue convert path only; it does not review evidence, create proof, prove adoption, prove benchmark results, publish, or close gates.
 
 Generate the current gate closure readiness report:
 

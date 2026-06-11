@@ -157,6 +157,8 @@ for (const command of [
   "gate:evidence-packet",
   "audit:gate-evidence-packet",
   "audit:gate-evidence-issue-form",
+  "gate:evidence-issue-convert",
+  "audit:gate-evidence-issue-convert",
   "gate:closure-readiness",
   "audit:gate-closure-readiness",
   "gate:closure-review",

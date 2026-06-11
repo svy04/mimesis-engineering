@@ -19,6 +19,8 @@ It does not close gates, does not create proof, does not prove adoption, does no
 ## Commands
 
 ```bash
+npm run gate:evidence-issue-convert
+npm run audit:gate-evidence-issue-convert
 npm run audit:gate-evidence-issue-form
 npm run audit:issues
 npm run cli -- evidence:check path/to/evidence-packet.md
@@ -33,6 +35,7 @@ The gate evidence issue form:
 
 - standardizes evidence intake
 - keeps the gate id, evidence link, permission boundary, allowed claim, and disallowed claim together
+- can be converted into a draft evidence packet with `gate:evidence-issue-convert`
 - does not close gates
 - does not create proof
 - does not prove adoption

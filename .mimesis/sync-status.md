@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 38
-- untracked files: 4
+- changed tracked files: 41
+- untracked files: 7
 
 ## Conclusion
 
@@ -36,6 +36,7 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
  M .mimesis/operator-runbooks/current-runbook.md
+ M .mimesis/proof-intake/first-external-proof-kit.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -50,23 +51,28 @@ It does not publish, push, tag, release, or create a pull request.
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
+ M docs/GATE-EVIDENCE-ISSUE.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
+ M templates/evidence-packet.md
  M tools/README.md
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
  M tools/audit-framework-manifest.mjs
- M tools/audit-issue-forms.mjs
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-status-roadmap-sync.mjs
+ M tools/check-evidence-packet.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .github/ISSUE_TEMPLATE/gate-evidence.yml
-?? docs/GATE-EVIDENCE-ISSUE.md
-?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-form.md
-?? tools/audit-gate-evidence-issue-form.mjs
+?? .mimesis/gates/fixture-gate-evidence-issue-conversion-report.md
+?? .mimesis/gates/fixture-gate-evidence-issue.md
+?? .mimesis/gates/fixture-gate-evidence-packet.md
+?? docs/GATE-EVIDENCE-ISSUE-CONVERT.md
+?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md
+?? tools/audit-gate-evidence-issue-convert.mjs
+?? tools/convert-gate-evidence-issue.mjs
 ```

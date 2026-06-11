@@ -144,6 +144,11 @@
       "command": "npm run audit:gate-evidence-issue-form"
     },
     {
+      "name": "gate evidence issue conversion",
+      "path": ".mimesis/gates/fixture-gate-evidence-packet.md",
+      "command": "npm run gate:evidence-issue-convert"
+    },
+    {
       "name": "gate closure readiness report",
       "path": ".mimesis/gates/closure-readiness.json",
       "command": "npm run gate:closure-readiness"
@@ -383,6 +388,14 @@
     {
       "name": "audit:gate-evidence-issue-form",
       "purpose": "Check the GitHub gate evidence issue form, public docs, manifests, and no-proof/no-closure boundaries."
+    },
+    {
+      "name": "gate:evidence-issue-convert",
+      "purpose": "Convert a Gate Evidence issue body into a draft evidence packet candidate without reviewing evidence or closing gates."
+    },
+    {
+      "name": "audit:gate-evidence-issue-convert",
+      "purpose": "Check Gate Evidence issue conversion, fixture output, evidence packet structure, manifests, public docs, and no-proof/no-closure boundaries."
     },
     {
       "name": "gate:closure-readiness",
@@ -952,8 +965,14 @@
     "docs/GAP-CLOSURE-PLAN.md",
     "docs/GATE-EVIDENCE-PACKET.md",
     "docs/GATE-EVIDENCE-ISSUE.md",
+    "docs/GATE-EVIDENCE-ISSUE-CONVERT.md",
     ".github/ISSUE_TEMPLATE/gate-evidence.yml",
     "tools/audit-gate-evidence-issue-form.mjs",
+    "tools/convert-gate-evidence-issue.mjs",
+    "tools/audit-gate-evidence-issue-convert.mjs",
+    ".mimesis/gates/fixture-gate-evidence-issue.md",
+    ".mimesis/gates/fixture-gate-evidence-packet.md",
+    ".mimesis/gates/fixture-gate-evidence-issue-conversion-report.md",
     "docs/GATE-CLOSURE-READINESS.md",
     "docs/GATE-CLOSURE-REVIEW.md",
     "docs/FIRST-PROOF-CANDIDATE-PACKET.md",

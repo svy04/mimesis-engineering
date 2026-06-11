@@ -115,7 +115,7 @@ if (/(guarantee|guaranteed|universal|always|proves everything|automatic success)
   failures.push("claim under review uses absolute proof language");
 }
 
-if (!/(permissioned external case|benchmark|external adoption|package release|action release|shipped plugin|customer outcome|publication event|local case)/i.test(evidenceType)) {
+if (!/(permissioned external case|benchmark|external adoption|package release|action release|shipped plugin|customer outcome|publication event|local case|owner decision|sync verification|gate evidence)/i.test(evidenceType)) {
   failures.push("evidence type must name a concrete evidence class");
 }
 

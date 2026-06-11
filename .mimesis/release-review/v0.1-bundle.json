@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T12:56:51.326Z",
+  "generatedAt": "2026-06-11T13:20:15.392Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "88a53bef84bd5f6c91163a4393e3390480b3abd9",
+    "head": "d6e2ff7d610ba4080453bb22a2f785c8f80a18e3",
     "dirty": true,
-    "trackedChangedCount": 37,
-    "untrackedCount": 4
+    "trackedChangedCount": 40,
+    "untrackedCount": 7
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -32,6 +32,7 @@
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
     ".mimesis/operator-runbooks/current-runbook.md",
+    ".mimesis/proof-intake/first-external-proof-kit.md",
     ".mimesis/publication-packets/v0.1.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -46,18 +47,20 @@
     "STATUS.md",
     "bin/mimesis.mjs",
     "docs/COMPLETION-AUDIT.md",
+    "docs/GATE-EVIDENCE-ISSUE.md",
     "docs/RELEASE-CHECK-ORDER.md",
     "docs/STATUS-ROADMAP-SYNC.md",
     "docs/V0.1-RELEASE-PACKET.md",
     "package.json",
+    "templates/evidence-packet.md",
     "tools/README.md",
     "tools/audit-cli.mjs",
     "tools/audit-completion-matrix.mjs",
     "tools/audit-framework-manifest.mjs",
-    "tools/audit-issue-forms.mjs",
     "tools/audit-release-artifact-manifest.mjs",
     "tools/audit-release-check-order.mjs",
     "tools/audit-status-roadmap-sync.mjs",
+    "tools/check-evidence-packet.mjs",
     "tools/create-framework-manifest.mjs",
     "tools/create-release-artifact-manifest.mjs",
     "tools/validate-mimesis.mjs"
@@ -73,7 +76,7 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 17,
+      "count": 21,
       "sample": [
         ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
@@ -82,7 +85,11 @@
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
+        ".mimesis/gates/fixture-gate-evidence-issue-conversion-report.md",
+        ".mimesis/gates/fixture-gate-evidence-issue.md",
+        ".mimesis/gates/fixture-gate-evidence-packet.md",
         ".mimesis/operator-runbooks/current-runbook.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
         ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -97,13 +104,14 @@
     },
     {
       "name": "public documentation",
-      "count": 9,
+      "count": 10,
       "sample": [
         "docs/COMPLETION-AUDIT.md",
+        "docs/GATE-EVIDENCE-ISSUE-CONVERT.md",
         "docs/GATE-EVIDENCE-ISSUE.md",
         "docs/RELEASE-CHECK-ORDER.md",
         "docs/STATUS-ROADMAP-SYNC.md",
-        "docs/superpowers/plans/2026-06-11-gate-evidence-issue-form.md",
+        "docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md",
         "docs/V0.1-RELEASE-PACKET.md",
         "README.md",
         "ROADMAP.md",
@@ -115,17 +123,17 @@
       "name": "tooling and cli",
       "count": 15,
       "sample": [
-        ".github/ISSUE_TEMPLATE/gate-evidence.yml",
         "bin/mimesis.mjs",
         "package.json",
         "tools/audit-cli.mjs",
         "tools/audit-completion-matrix.mjs",
         "tools/audit-framework-manifest.mjs",
-        "tools/audit-gate-evidence-issue-form.mjs",
-        "tools/audit-issue-forms.mjs",
+        "tools/audit-gate-evidence-issue-convert.mjs",
         "tools/audit-release-artifact-manifest.mjs",
         "tools/audit-release-check-order.mjs",
         "tools/audit-status-roadmap-sync.mjs",
+        "tools/check-evidence-packet.mjs",
+        "tools/convert-gate-evidence-issue.mjs",
         "tools/create-framework-manifest.mjs",
         "tools/create-release-artifact-manifest.mjs",
         "tools/README.md",
@@ -135,8 +143,10 @@
     },
     {
       "name": "spec and schemas",
-      "count": 0,
-      "sample": [],
+      "count": 1,
+      "sample": [
+        "templates/evidence-packet.md"
+      ],
       "note": "Spec contracts, templates, and reference packs."
     }
   ],

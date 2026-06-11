@@ -43,6 +43,7 @@ Release readiness:
 - gap closure plan
 - gate evidence packet
 - gate evidence issue
+- gate evidence issue convert
 - gate closure readiness
 - external workspace checker
 - private npm scripts for local execution
@@ -231,6 +232,7 @@ It is not a shipped plugin.
 - The repository includes `gap:closure-plan` and `audit:gap-closure-plan` for turning open gates into bounded evidence steps without closing gates or proving completion.
 - The repository includes `gate:evidence-packet` and `audit:gate-evidence-packet` for routing open gates to evidence packet requirements without creating evidence or closing gates.
 - The repository includes `audit:gate-evidence-issue-form` for checking the GitHub gate evidence issue intake form without closing gates, creating proof, proving adoption, proving benchmark results, or publishing.
+- The repository includes `gate:evidence-issue-convert` and `audit:gate-evidence-issue-convert` for converting a Gate Evidence issue body into a draft evidence packet candidate without reviewing evidence, creating proof, publishing, proving adoption, proving benchmark results, or closing gates.
 - The repository includes `gate:closure-readiness` and `audit:gate-closure-readiness` for turning gap, owner evidence, and current-state records into a readiness report or candidate report without submitting evidence or closing gates.
 - The repository includes `gate:closure-review` and `audit:gate-closure-review` for turning readiness and owner evidence submission checks into a review record or candidate review without approving gate closure.
 - The repository includes `audit:status-roadmap` for checking that public status and roadmap pages name the current local v0.1 implementation surface.

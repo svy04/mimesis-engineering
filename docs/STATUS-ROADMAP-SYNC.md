@@ -34,6 +34,7 @@ The audit checks:
 - gap closure plan visibility
 - gate evidence packet visibility
 - gate evidence issue visibility
+- gate evidence issue convert visibility
 - gate closure readiness visibility
 - adoption packet visibility
 - first proof candidate packet visibility
@@ -83,6 +84,7 @@ The audit currently requires the public status and roadmap to name:
 - gap closure plan
 - gate evidence packet
 - gate evidence issue
+- gate evidence issue convert
 - gate closure readiness
 - adoption packet
 - first proof candidate packet
