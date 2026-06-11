@@ -44,8 +44,6 @@ const toolsReadme = read("tools/README.md");
 const gapDoc = read("docs/GAP-REGISTER.md");
 const releaseOrderDoc = read("docs/RELEASE-CHECK-ORDER.md");
 const register = readJson(".mimesis/gaps/current-gap-register.json");
-const syncStatus = read(".mimesis/sync-status.md");
-const gateBoard = read(".mimesis/gates/current-gateboard.md");
 const releaseCheck = packageJson.scripts?.["release:check"] ?? "";
 
 if (packageJson.scripts?.["audit:gap-register-sync-closure"] !== "node tools/audit-gap-register-sync-closure.mjs") {
@@ -61,25 +59,36 @@ if (!cli.includes('"audit:gap-register-sync-closure"')) {
 }
 
 for (const text of [
-  "syncReady",
   "strictSyncGap",
-  "Status: synced",
-  "clean and synced:\\s*yes",
-  "...(syncReady ? [] : [strictSyncGap])",
+  "const gaps = [",
+  "strictSyncGap,",
+  "runtime-only",
 ]) {
   if (!generator.includes(text)) {
-    failures.push(`tools/create-gap-register.mjs missing sync closure contract: ${text}`);
+    failures.push(`tools/create-gap-register.mjs missing runtime-only sync contract: ${text}`);
   }
 }
 
 for (const text of [
-  "syncReady",
   "strict_publish_sync",
+  "runtime-only",
+  "non-writing strict sync",
+]) {
+  if (!gapAudit.includes(text)) {
+    failures.push(`tools/audit-gap-register.mjs missing runtime-only sync audit text: ${text}`);
+  }
+}
+
+for (const forbidden of [
+  "syncReady ? []",
   "Status: synced",
   "clean and synced:\\s*yes",
 ]) {
-  if (!gapAudit.includes(text)) {
-    failures.push(`tools/audit-gap-register.mjs missing sync-aware audit text: ${text}`);
+  if (generator.includes(forbidden)) {
+    failures.push(`tools/create-gap-register.mjs must not close committed strict sync from stale snapshot text: ${forbidden}`);
+  }
+  if (gapAudit.includes(forbidden)) {
+    failures.push(`tools/audit-gap-register.mjs must not omit strict sync from stale snapshot text: ${forbidden}`);
   }
 }
 
@@ -122,7 +131,8 @@ for (const [name, content] of [
 ]) {
   for (const text of [
     "strict sync gap",
-    "sync-ready",
+    "runtime-only",
+    "non-writing strict sync",
     "audit:gap-register-sync-closure",
   ]) {
     if (!content.toLowerCase().includes(text.toLowerCase())) {
@@ -131,19 +141,12 @@ for (const [name, content] of [
   }
 }
 
-const syncReady =
-  /Status:\s*synced/i.test(syncStatus) &&
-  /clean and synced:\s*yes/i.test(gateBoard);
 const strictGapPresent = Array.isArray(register.gaps)
   ? register.gaps.some((gap) => gap.id === "strict_publish_sync")
   : false;
 
-if (syncReady && strictGapPresent) {
-  failures.push("sync-ready register must omit strict_publish_sync from open gaps");
-}
-
-if (!syncReady && !strictGapPresent) {
-  failures.push("non-sync-ready register must keep strict_publish_sync visible as an open gap");
+if (!strictGapPresent) {
+  failures.push("committed gap register must keep strict_publish_sync visible; only npm run audit:sync:strict proves current live sync");
 }
 
 if (failures.length) {
@@ -154,4 +157,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Mimesis gap register sync-closure audit passed: strict sync closes only when sync-ready evidence exists.");
+console.log("Mimesis gap register sync-closure audit passed: committed gap register keeps strict sync runtime-only and proof-bounded.");

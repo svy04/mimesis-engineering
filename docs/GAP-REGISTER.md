@@ -47,7 +47,7 @@ The audit checks:
 - `open_gates_remain` status
 - `completionAllowed: false`
 - required gap IDs
-- strict sync gap sync-ready closure behavior
+- strict sync gap runtime-only closure boundary
 - required evidence fields
 - source files
 - proof and publication boundaries
@@ -56,11 +56,12 @@ The audit checks:
 ## Required Gap IDs
 
 The register currently tracks open gaps.
-The strict sync gap is conditional: when `.mimesis/sync-status.md` says `Status: synced` and `.mimesis/gates/current-gateboard.md` says `clean and synced: yes`, the gap register treats strict sync as sync-ready and omits `strict_publish_sync` from the open gap list.
+The strict sync gap remains visible in committed gap-register snapshots because `.mimesis/sync-status.md` and `.mimesis/gates/current-gateboard.md` are local report artifacts that can become stale after commit or push.
 
-`npm run audit:gap-register-sync-closure` checks this sync-ready boundary.
+`npm run audit:gap-register-sync-closure` checks this runtime-only boundary.
+Use the non-writing strict sync check, `npm run audit:sync:strict`, as the current runtime proof of local upstream sync.
 
-When sync-ready evidence is absent, the register tracks:
+The committed register tracks:
 
 - `strict_publish_sync`
 - `owner_license_decision`

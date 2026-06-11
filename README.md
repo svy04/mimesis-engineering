@@ -377,7 +377,7 @@ It does not prove npm package release.
 `evidence:check` checks claim-evidence packet structure, not the truth of claims beyond named evidence.
 `gap:register` creates a machine-readable open-gate register, not completion proof.
 `audit:gap-register` checks that owner, proof, publication, benchmark, and adoption gaps remain visible and bounded.
-`audit:gap-register-sync-closure` checks that the strict sync gap stays open until the repository is sync-ready, then leaves the open gap register.
+`audit:gap-register-sync-closure` checks that the strict sync gap stays visible in committed artifacts because current sync proof is runtime-only.
 `gate:board` creates a current owner/proof/publication gate board, not completion proof.
 `proof:packet` creates a first-proof handoff packet, not external proof.
 `proof:intake` creates a first external proof intake kit, not a submitted artifact or completed proof.
@@ -801,7 +801,8 @@ npm run audit:gap-register-sync-closure
 ```
 
 This writes `.mimesis/gaps/current-gap-register.json`.
-The strict sync gap is conditional: when `.mimesis/sync-status.md` reports `Status: synced` and the gate board reports `clean and synced: yes`, the register is sync-ready and omits `strict_publish_sync` from open gaps.
+The strict sync gap stays visible in the committed register because `.mimesis/sync-status.md` and gate-board snapshots can become stale after commit or push.
+Use the non-writing strict sync check, `npm run audit:sync:strict`, as the runtime-only proof of current local upstream sync.
 It does not prove completion, publish, choose a license, create external proof, or prove adoption.
 
 Generate the current gap closure plan:

@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-artifact-manifest.v0.1",
   "status": "local_manifest_not_publication",
-  "generatedAt": "2026-06-11T03:56:33.197Z",
+  "generatedAt": "2026-06-11T04:06:43.186Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -10,9 +10,9 @@
   },
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
-    "head": "8fbdf0e20d02adfca773191e14fb2abec4ba4bac",
+    "head": "c6677489a825fb43ad7d9b72a8f8067d485d356e",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "trackedChangedCount": 74,
+    "trackedChangedCount": 26,
     "untrackedCount": 0
   },
   "artifactCount": 247,
@@ -63,8 +63,8 @@
       "path": ".mimesis/completion/goal-completion-audit.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 8595,
-      "sha256": "84ae37f14027e91b8b0067f2b140be7b779983e50c9cfc4ea82e7b03e4bb218b"
+      "bytes": 8694,
+      "sha256": "08f01282380910e3cfc981ce975f81cde783b15de187e13449ef73fcc5d801cd"
     },
     {
       "path": ".mimesis/ecosystem-resources/current-resource-packet.md",
@@ -91,36 +91,36 @@
       "path": ".mimesis/gaps/closure-plan.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 10345,
-      "sha256": "b54d5872dfe002c9536f05f3ed1ffe6ac84989d1a9ebad8c8176b64a271e3057"
+      "bytes": 10444,
+      "sha256": "6bfe0d446a09f504128f5f609806cd6375b7d5eef6ca408bd425cb6a018e28f3"
     },
     {
       "path": ".mimesis/gaps/current-gap-register.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5570,
-      "sha256": "7afebda102a5b07a2ed548ffef0d367395e91b4979a01c1db65397b8521a107d"
+      "bytes": 5669,
+      "sha256": "35f5845bfd55b880cc96d2d8767c0075db29444088bf51b25a7b7a58d74e949b"
     },
     {
       "path": ".mimesis/gates/closure-readiness.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 23806,
-      "sha256": "b7dcbbd0915105a86a8e6f14f77df6cae6e8ae1d47d51bbc63d9867c78392ae8"
+      "bytes": 23913,
+      "sha256": "70ea0b20d3579cdbd4e1047ba927d4fa935e2f1cc697e55d682bb07656f0536d"
     },
     {
       "path": ".mimesis/gates/closure-review.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 15785,
-      "sha256": "74e0bdd2278ae5c3f24a785fb1f9808a09ec88cce968674885758c31f3eb10c3"
+      "bytes": 15884,
+      "sha256": "bbdbf17b0dcfd0f51d5f5af6fb6095bcac08857f627ede0022b7d8518b67a718"
     },
     {
       "path": ".mimesis/gates/current-gateboard.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 8082,
-      "sha256": "e2ef44716ca0e20663484ecf1803b4c789ac7f9264fed6b5ebf6c2169c7645f1"
+      "bytes": 4918,
+      "sha256": "a8d4d4d6c6bd464e181fb35e51648056526e2aeb378fdc97c6e0dcf2ac56293f"
     },
     {
       "path": ".mimesis/gates/evidence-packet.md",
@@ -147,29 +147,29 @@
       "path": ".mimesis/operator-runbooks/current-runbook.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 19809,
-      "sha256": "415aab76c38f23c81cf8699b1aebdab9746287d2fe2f46689c70925579c7d833"
+      "bytes": 16645,
+      "sha256": "64f01b1867f2262e87cd6013a452ec7b38faa018f7522ef30a47f3182a65b690"
     },
     {
       "path": ".mimesis/owner-actions/answer-review.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5748,
-      "sha256": "160f9de719366187edf6377ff892e7355de620c837ef1add5f2633f207c58629"
+      "bytes": 5756,
+      "sha256": "247395905f5a19065c8f3087fc65fa94617b6530846983cdda13f2a22b5450a9"
     },
     {
       "path": ".mimesis/owner-actions/current-action-queue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7290,
-      "sha256": "79b91f6155bdd78ccc4a2b81d2ffa412d018ae3c6b95dd3b066ecaf56318a50e"
+      "bytes": 7389,
+      "sha256": "5ad1df49c171602a1d6afd13a78edf0f5b0a1cf93373407875b91e858059deb0"
     },
     {
       "path": ".mimesis/owner-actions/decision-intake.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6435,
-      "sha256": "f4e24ab627fb7ec03be47f2a6292997ed32adb4254d713db0e458015ccfd8836"
+      "bytes": 6443,
+      "sha256": "ccb4d0443e9eefb466debebdddb27a21f64c9741a60e71eec9f38a14d7ae9b21"
     },
     {
       "path": ".mimesis/owner-actions/evidence-attachment-form.md",
@@ -196,8 +196,8 @@
       "path": ".mimesis/owner-actions/fixture-answer-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3992,
-      "sha256": "51eb391c6688e69b649c7309431f3916ffa52adf4d5f487f7465864160a928b3"
+      "bytes": 4000,
+      "sha256": "9ca9d9f6fdbc2eb172d99f6d9938b8c9516af50f81a2dcd3b95847c8223bb53e"
     },
     {
       "path": ".mimesis/owner-actions/fixture-evidence-record.json",
@@ -329,8 +329,8 @@
       "path": ".mimesis/publish-packets/local-sync-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 14668,
-      "sha256": "f23b009efb87a261c21fa972c22efcd7c112b31918f93da311b9f8634f7b8435"
+      "bytes": 4276,
+      "sha256": "cfcdc6d872a906669ec8e48641796f80dd5daa92037fc9907296f6b27cb4451d"
     },
     {
       "path": ".mimesis/reference-packs/index.json",
@@ -344,7 +344,7 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 3379,
-      "sha256": "aefa4e26a510ee9c1d84bc3481319439599c537ab0d4c689df6afc29986b7d59"
+      "sha256": "35bddc89194f11552a2affb47283235c9ab7e8b4d0d2cd454042b60e17762e68"
     },
     {
       "path": ".mimesis/release-evidence/publication-evidence-packet.md",
@@ -364,15 +364,15 @@
       "path": ".mimesis/release-execution/v0.1-owner-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 11762,
-      "sha256": "d0278bdd02aaa15ba791a84eeb078b9b0f5e597494d99ad0167a530d1ceb5077"
+      "bytes": 5347,
+      "sha256": "e01d3dbc36ce880c99e81b7f9d71cb61de17c04c1f60e4e994c0b3fc673a6cdd"
     },
     {
       "path": ".mimesis/release-review/v0.1-bundle.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 9284,
-      "sha256": "7d501a1fd8f4c1edd2c472b73adbcb84387d104a18e0642315a6cdfef2b66c7d"
+      "bytes": 5974,
+      "sha256": "c349e948d1cab8878ebd3135a956cc564f25a265b3e9d8f274d0459fc7455129"
     },
     {
       "path": ".mimesis/run_ledger.md",
@@ -392,22 +392,22 @@
       "path": ".mimesis/state/current-state.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 9496,
-      "sha256": "053eb3201a72891861a7d4f8b578b9be5e36149633c434de7c5006d5a0fce948"
+      "bytes": 9694,
+      "sha256": "6cee1c444ac8664dbca7dbd862099eeef87e592ae484998dc36e38545c08d2a8"
     },
     {
       "path": ".mimesis/sync-status.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4211,
-      "sha256": "f0b63520e0d700d68446bc395e950204352e82f686c0555513c8bd7df02aa5df"
+      "bytes": 1047,
+      "sha256": "b0e88ed47c2e90e3ef38b16e57d85185138293164ca53a26ff856dbce296c688"
     },
     {
       "path": ".mimesis/worktree/review-packet.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 14295,
-      "sha256": "5f1804030ee6d2136cc27aa75173955d30c520d53f628f65f91515361f52ecb8"
+      "bytes": 6614,
+      "sha256": "eff90ac80c802cfd2e1991e232028e4e4c0be338bbfd754f69b0488f7236cfb5"
     },
     {
       "path": "action.yml",
@@ -581,8 +581,8 @@
       "path": "docs/GAP-REGISTER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2304,
-      "sha256": "6e6dced288f8e4dda5603c465b0a007622a92610f0c60eb8e2cf0900d86c8bd7"
+      "bytes": 2348,
+      "sha256": "281263941150ff7e40b190961de78e5fa8a739e04d9aa2a25d68dbd3fd4e6922"
     },
     {
       "path": "docs/GATE-CLOSURE-READINESS.md",
@@ -826,8 +826,8 @@
       "path": "docs/RELEASE-CHECK-ORDER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 15186,
-      "sha256": "4accd3da001a3aa272b108dd87ea71c8e303de7712cee4a439272093112c434e"
+      "bytes": 15225,
+      "sha256": "7650e920d4d7de9827bb78724cc5cc8d70e501159f980bcc43676bf6c1536074"
     },
     {
       "path": "docs/RELEASE-DECISION-RECORD.md",
@@ -1001,8 +1001,8 @@
       "path": "README.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 57237,
-      "sha256": "3b84dc4bad18d6764371f16719690db502001804cbf5ef53d7eea670957ffdd3"
+      "bytes": 57297,
+      "sha256": "952204a9310b5044ebd880001cd19912e33db8214976d537ed8589af00e652df"
     },
     {
       "path": "reference-packs/ai-workflow.md",
@@ -1274,15 +1274,15 @@
       "path": "tools/audit-gap-register-sync-closure.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5230,
-      "sha256": "0ea9264c2ddeb0356ceaaa66be5d7ad22a5ba703b9ed516f7626efc6284c0158"
+      "bytes": 5288,
+      "sha256": "fbf426148283cf9045c8010ded26e5250b25b225af66f48bde190721eb6e833f"
     },
     {
       "path": "tools/audit-gap-register.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6144,
-      "sha256": "17c1cb55bffab8cf9c645d250716f63558ec50fa523c4b2e980641df2a5f2491"
+      "bytes": 6382,
+      "sha256": "34cd002581dcdac6f02449e6de0e735d52fe590f356d24cf40a14f474f0a0113"
     },
     {
       "path": "tools/audit-gate-closure-readiness.mjs",
@@ -1561,8 +1561,8 @@
       "path": "tools/create-gap-register.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6883,
-      "sha256": "87506bc48ba98fe7036eb9567b02e160871f364606cfecf364e48f3bc3b82c27"
+      "bytes": 6712,
+      "sha256": "7cab3a696b6e321225f0742ccf93a2ec94ca3a76769a661c2417b3cdc482be37"
     },
     {
       "path": "tools/create-gate-closure-readiness.mjs",

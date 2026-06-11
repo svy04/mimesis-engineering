@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.gap-closure-plan.v0.1",
-  "generatedAt": "2026-06-11T03:56:22.588Z",
+  "generatedAt": "2026-06-11T04:06:32.245Z",
   "status": "closure_plan_not_closure",
   "sourceRegister": ".mimesis/gaps/current-gap-register.json",
   "completionAllowed": false,
@@ -25,8 +25,8 @@
         "Stop if upstream sync cannot be verified from the local git state."
       ],
       "allowedClaimAfterClosure": "The strict local sync gate passed at the recorded time.",
-      "boundary": "Does not stage, commit, push, tag, release, or publish.",
-      "sourceNextAction": "Clean or intentionally publish local changes, then rerun the strict sync gate."
+      "boundary": "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync.",
+      "sourceNextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed."
     },
     {
       "id": "owner_license_decision",

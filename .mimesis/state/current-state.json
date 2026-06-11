@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.current-state-summary.v0.1",
   "status": "open_gates_remain",
-  "generatedAt": "2026-06-11T03:56:29.512Z",
+  "generatedAt": "2026-06-11T04:06:39.265Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,9 +11,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "8fbdf0e20d02adfca773191e14fb2abec4ba4bac",
+    "head": "c6677489a825fb43ad7d9b72a8f8067d485d356e",
     "dirty": true,
-    "trackedChangedCount": 74,
+    "trackedChangedCount": 20,
     "untrackedCount": 0
   },
   "completionAllowed": false,
@@ -41,13 +41,13 @@
         "npm run audit:sync:strict",
         ".mimesis/sync-status.md"
       ],
-      "nextAction": "Clean or intentionally publish local changes, then rerun the strict sync gate.",
+      "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
       "firstCommand": "npm run audit:sync",
       "stopConditions": [
         "Stop if the worktree is dirty and no owner has requested staging, committing, pushing, tagging, releasing, or publishing.",
         "Stop if upstream sync cannot be verified from the local git state."
       ],
-      "boundary": "Does not stage, commit, push, tag, release, or publish."
+      "boundary": "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync."
     },
     {
       "id": "owner_license_decision",
@@ -204,8 +204,8 @@
   "nextBestActions": [
     {
       "id": "strict_publish_sync",
-      "nextAction": "Clean or intentionally publish local changes, then rerun the strict sync gate.",
-      "boundary": "Does not stage, commit, push, tag, release, or publish."
+      "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
+      "boundary": "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync."
     },
     {
       "id": "owner_license_decision",

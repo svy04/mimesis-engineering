@@ -39,10 +39,8 @@ const toolsReadme = read("tools/README.md");
 const status = read("STATUS.md");
 const roadmap = read("ROADMAP.md");
 const frameworkManifest = readJson(".mimesis/framework-manifest.json");
-const syncStatus = read(".mimesis/sync-status.md");
-const gateBoard = read(".mimesis/gates/current-gateboard.md");
 const releaseCheck = packageJson.scripts?.["release:check"] ?? "";
-const syncReady = /Status: synced/i.test(syncStatus) && /clean and synced:\s*yes/i.test(gateBoard);
+const strictSyncBoundary = "runtime-only non-writing strict sync";
 
 if (!packageJson.scripts?.["gap:register"]) {
   failures.push("package.json missing script: gap:register");
@@ -100,6 +98,7 @@ const gaps = Array.isArray(register.gaps) ? register.gaps : [];
 const gapIds = new Set(gaps.map((gap) => gap.id));
 
 const expectedGapIds = [
+  "strict_publish_sync",
   "owner_license_decision",
   "permissioned_external_artifact",
   "completed_external_case",
@@ -110,18 +109,22 @@ const expectedGapIds = [
   "external_adoption",
 ];
 
-if (!syncReady) {
-  expectedGapIds.unshift("strict_publish_sync");
-}
-
 for (const id of expectedGapIds) {
   if (!gapIds.has(id)) {
     failures.push(`gap register missing gap id: ${id}`);
   }
 }
 
-if (syncReady && gapIds.has("strict_publish_sync")) {
-  failures.push("gap register must omit strict_publish_sync when syncReady evidence is present");
+const strictSyncGap = gaps.find((gap) => gap.id === "strict_publish_sync");
+if (!strictSyncGap) {
+  failures.push("gap register must keep strict_publish_sync visible because strict sync is runtime-only");
+} else {
+  if (!strictSyncGap.requiredEvidence?.includes("npm run audit:sync:strict")) {
+    failures.push("strict_publish_sync must require npm run audit:sync:strict");
+  }
+  if (!`${strictSyncGap.nextAction} ${strictSyncGap.boundary}`.toLowerCase().includes(strictSyncBoundary.toLowerCase())) {
+    failures.push("strict_publish_sync must explain the runtime-only non-writing strict sync boundary");
+  }
 }
 
 for (const gap of gaps) {

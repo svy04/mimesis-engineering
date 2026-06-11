@@ -410,7 +410,7 @@ npm run cli -- gap:register
 
 This writes `.mimesis/gaps/current-gap-register.json`.
 It is a machine-readable register of remaining owner, proof, publication, benchmark, and adoption gaps.
-The strict sync gap is conditional: when the sync report and gate board are sync-ready, `strict_publish_sync` leaves the open gap register.
+The strict sync gap stays visible in committed gap-register snapshots because current sync proof is runtime-only.
 It does not prove completion, publish, choose a license, create external proof, or prove adoption.
 
 ## Audit Gap Register
@@ -443,7 +443,7 @@ or:
 npm run cli -- audit:gap-register-sync-closure
 ```
 
-This checks that the strict sync gap stays visible while sync-ready evidence is absent, and leaves the gap register only when `.mimesis/sync-status.md` reports `Status: synced` and the gate board reports `clean and synced: yes`.
+This checks that the strict sync gap stays visible in committed artifacts, and that current sync proof remains a runtime-only non-writing strict sync check through `npm run audit:sync:strict`.
 
 ## Create Gap Closure Plan
 

@@ -27,7 +27,7 @@
     "publication_scope": {
       "answerStatus": "pending",
       "ownerAnswer": "pending owner answer",
-      "currentSignal": "pending / dirty_or_unsynced_worktree / blocked: Clean or intentionally publish local changes, then rerun the strict sync gate.",
+      "currentSignal": "pending / dirty_or_unsynced_worktree / blocked: Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
       "evidenceToAttach": [
         "npm run release:check:public",
         "npm run audit:sync:strict"

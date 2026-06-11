@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.gap-register.v0.1",
-  "generatedAt": "2026-06-11T03:56:22.264Z",
+  "generatedAt": "2026-06-11T04:06:31.888Z",
   "status": "open_gates_remain",
   "completionAllowed": false,
   "package": {
@@ -20,8 +20,8 @@
         "npm run audit:sync:strict",
         ".mimesis/sync-status.md"
       ],
-      "nextAction": "Clean or intentionally publish local changes, then rerun the strict sync gate.",
-      "boundary": "Does not stage, commit, push, tag, release, or publish."
+      "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
+      "boundary": "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync."
     },
     {
       "id": "owner_license_decision",

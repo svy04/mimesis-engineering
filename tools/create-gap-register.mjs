@@ -22,12 +22,8 @@ const releaseDecision = fs.existsSync(path.join(root, ".mimesis", "release-decis
 const gateBoard = fs.existsSync(path.join(root, ".mimesis", "gates", "current-gateboard.md"))
   ? read(".mimesis/gates/current-gateboard.md")
   : "";
-const syncStatus = fs.existsSync(path.join(root, ".mimesis", "sync-status.md"))
-  ? read(".mimesis/sync-status.md")
-  : "";
 
 const dirtySignal = releaseDecision.git?.cleanAndSynced === false || /clean and synced:\s*no/i.test(gateBoard);
-const syncReady = /Status: synced/i.test(syncStatus) && /clean and synced:\s*yes/i.test(gateBoard);
 
 const strictSyncGap = {
   id: "strict_publish_sync",
@@ -35,12 +31,12 @@ const strictSyncGap = {
   kind: "git_sync",
   status: dirtySignal ? "blocked" : "needs_fresh_verification",
   requiredEvidence: ["npm run audit:sync:strict", ".mimesis/sync-status.md"],
-  nextAction: "Clean or intentionally publish local changes, then rerun the strict sync gate.",
-  boundary: "Does not stage, commit, push, tag, release, or publish.",
+  nextAction: "Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
+  boundary: "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync.",
 };
 
 const gaps = [
-  ...(syncReady ? [] : [strictSyncGap]),
+  strictSyncGap,
   {
     id: "owner_license_decision",
     title: "Owner license decision",
