@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T05:25:45.801Z",
+  "generatedAt": "2026-06-11T05:37:12.059Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,7 +12,7 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "7a30626afda8185cec20b8b8a061bbe0cf21ba16",
+    "head": "c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71",
     "dirty": true,
     "trackedChangedCount": 19,
     "untrackedCount": 0
@@ -29,7 +29,7 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/proof-runs/v0.2-first-run.md",
+    ".mimesis/proof-runs/dry-run-report.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -38,17 +38,19 @@
     ".mimesis/state/current-state.json",
     ".mimesis/sync-status.md",
     ".mimesis/worktree/review-packet.json",
-    "docs/FRAMEWORK-MANIFEST.md",
-    "docs/PROOF-RUN-PACKET.md",
-    "tools/audit-framework-manifest.mjs",
-    "tools/audit-proof-run-packet.mjs",
-    "tools/create-proof-run-packet.mjs"
+    "README.md",
+    "docs/COMPLETION-AUDIT.md",
+    "docs/PROOF-RUN-DRY-AUDIT.md",
+    "tools/README.md",
+    "tools/audit-proof-run-dry.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 0,
-      "sample": [],
+      "count": 1,
+      "sample": [
+        "README.md"
+      ],
       "note": "Tracked root-framework files that need human review."
     },
     {
@@ -60,7 +62,7 @@
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/proof-runs/v0.2-first-run.md",
+        ".mimesis/proof-runs/dry-run-report.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -74,20 +76,20 @@
     },
     {
       "name": "public documentation",
-      "count": 2,
+      "count": 3,
       "sample": [
-        "docs/FRAMEWORK-MANIFEST.md",
-        "docs/PROOF-RUN-PACKET.md"
+        "docs/COMPLETION-AUDIT.md",
+        "docs/PROOF-RUN-DRY-AUDIT.md",
+        "README.md"
       ],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
     {
       "name": "tooling and cli",
-      "count": 3,
+      "count": 2,
       "sample": [
-        "tools/audit-framework-manifest.mjs",
-        "tools/audit-proof-run-packet.mjs",
-        "tools/create-proof-run-packet.mjs"
+        "tools/audit-proof-run-dry.mjs",
+        "tools/README.md"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },

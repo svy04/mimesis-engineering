@@ -10,6 +10,12 @@ It checks:
 permissioned intake -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
 ```
 
+and:
+
+```text
+owner evidence bridge -> proof intake record -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
+```
+
 ## Command
 
 ```bash
@@ -33,6 +39,17 @@ npm run cli -- audit:proof-run-dry
 - creates a temporary evidence packet
 - runs `evidence:check --require-reviewed --write-report`
 - runs `claim:from-evidence` against the reviewed evidence packet
+- creates a reviewed temporary owner evidence submission record
+- runs `owner:evidence-submission-check --require-field weak_artifact_permission`
+- runs `proof:intake-from-owner-evidence`
+- runs `proof:intake-check --require-case-ready`
+- runs `case:from-record`
+- verifies the owner-evidence started case fails `case:check`
+- completes the owner-evidence temporary case files
+- runs `case:check --write-report`
+- creates a second temporary evidence packet
+- runs `evidence:check --require-reviewed --write-report`
+- runs `claim:from-evidence` against the second reviewed evidence packet
 - writes `.mimesis/proof-runs/dry-run-report.md`
 
 ## Boundary

@@ -10,7 +10,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 9
+- changed tracked files: 19
 - untracked files: 0
 
 ## Conclusion
@@ -27,13 +27,23 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
- D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/proof-runs/v0.2-first-run.md
+ M .mimesis/completion/goal-completion-audit.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
+ M .mimesis/proof-runs/dry-run-report.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
- M docs/FRAMEWORK-MANIFEST.md
- M docs/PROOF-RUN-PACKET.md
- M tools/audit-framework-manifest.mjs
- M tools/audit-proof-run-packet.mjs
- M tools/create-proof-run-packet.mjs
+ M .mimesis/state/current-state.json
+ M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
+ M README.md
+ M docs/COMPLETION-AUDIT.md
+ M docs/PROOF-RUN-DRY-AUDIT.md
+ M tools/README.md
+ M tools/audit-proof-run-dry.mjs
 ```

@@ -251,6 +251,55 @@ Artifact: temporary permissioned README fixture
   }
 }
 
+function writeEvidencePacket(filePath, title, sourceLinks, allowedClaim) {
+  fs.writeFileSync(filePath, `# Evidence Packet
+
+## Claim Under Review
+
+${title}
+
+## Evidence Type
+
+permissioned external case
+
+## Source / Artifact Links
+
+${sourceLinks.map((item) => `- ${item}`).join("\n")}
+
+## Permission / Publication Boundary
+
+The generated fixture is permissioned for public dry-run audit use, but it is not a real submitter artifact.
+
+## Measurement / Observation Method
+
+Observed by running the local proof-run dry audit in a temporary local directory.
+
+## Before / After Or Event Evidence
+
+Before:
+Started case failed case:check before completion.
+
+After:
+Completed fixture passed case:check and produced case-proof.md.
+
+## Allowed Claim
+
+${allowedClaim}
+
+## Disallowed Claim
+
+The dry audit does not create external proof, prove adoption, prove benchmarked productivity, prove customer outcomes, or prove legal originality.
+
+## What Remains Unproven
+
+A real permissioned external weak artifact still needs to run through the path.
+
+## Review Decision
+
+reviewed
+`);
+}
+
 function runDryAudit() {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-proof-run-dry-"));
   const summary = [];
@@ -337,54 +386,16 @@ I did not include secrets, tokens, passwords, private customer data, or real sub
     }
 
     const evidencePath = path.join(tempRoot, "evidence-packet.md");
-    fs.writeFileSync(evidencePath, `# Evidence Packet
-
-## Claim Under Review
-
-The temporary local proof-run fixture completed the local Mimesis proof path through reviewed evidence packet and bounded claim candidate.
-
-## Evidence Type
-
-permissioned external case
-
-## Source / Artifact Links
-
-- proof-run-case/.mimesis/case-proof.md
-- permissioned-case-review.md
-- proof-run-case/.mimesis/case-note.md
-
-## Permission / Publication Boundary
-
-The generated fixture is permissioned for public dry-run audit use, but it is not a real submitter artifact.
-
-## Measurement / Observation Method
-
-Observed by running case:review, case:from-intake, case:check --write-report, and evidence:check --require-reviewed --write-report in a temporary local directory.
-
-## Before / After Or Event Evidence
-
-Before:
-Started case failed case:check before completion.
-
-After:
-Completed fixture passed case:check and produced case-proof.md.
-
-## Allowed Claim
-
-The local dry audit can exercise the proof-run command path on a temporary fixture.
-
-## Disallowed Claim
-
-The dry audit does not create external proof, prove adoption, prove benchmarked productivity, prove customer outcomes, or prove legal originality.
-
-## What Remains Unproven
-
-A real permissioned external weak artifact still needs to run through the path.
-
-## Review Decision
-
-reviewed
-`);
+    writeEvidencePacket(
+      evidencePath,
+      "The temporary local proof-run fixture completed the local Mimesis proof path through reviewed evidence packet and bounded claim candidate.",
+      [
+        "proof-run-case/.mimesis/case-proof.md",
+        "permissioned-case-review.md",
+        "proof-run-case/.mimesis/case-note.md",
+      ],
+      "The local dry audit can exercise the permissioned-intake proof-run command path on a temporary fixture.",
+    );
 
     const evidenceCheck = runNode("check-evidence-packet.mjs", [
       evidencePath,
@@ -409,6 +420,146 @@ reviewed
       summary.push("bounded claim candidate: passed");
     }
 
+    const ownerRecord = JSON.parse(read(".mimesis/owner-actions/fixture-evidence-submission-record.json"));
+    ownerRecord.status = "reviewed";
+    ownerRecord.fields.weak_artifact_permission = {
+      ...ownerRecord.fields.weak_artifact_permission,
+      submissionStatus: "submitted",
+      ownerSubmittedEvidence: [
+        "# Owner Evidence Bridge Weak Artifact",
+        "",
+        "This temporary weak README fixture is generated for the owner evidence bridge dry audit.",
+        "It has no secrets, no private customer data, and no copied protected material.",
+        "It is permitted for redacted local framework review only.",
+      ].join("\n"),
+      ownerAttachmentSlot: "temporary owner evidence bridge weak artifact text",
+      safetyCheck: "owner reviewed this temporary weak artifact and permits redacted local framework review only",
+      boundary: "does not grant permission, create external proof, publish, or close gates",
+    };
+
+    const ownerRecordPath = path.join(tempRoot, "owner-evidence-submission-record.json");
+    fs.writeFileSync(ownerRecordPath, `${JSON.stringify(ownerRecord, null, 2)}\n`);
+
+    const ownerFieldCheck = runNode("check-owner-evidence-submission-record.mjs", [
+      ownerRecordPath,
+      "--require-field",
+      "weak_artifact_permission",
+      "--write-report",
+      path.join(tempRoot, "owner-evidence-submission-check.md"),
+    ], tempRoot);
+    if (ownerFieldCheck.status !== 0) {
+      failures.push(`owner evidence field dry run failed: ${ownerFieldCheck.stderr || ownerFieldCheck.stdout}`);
+    } else {
+      summary.push("owner evidence field check: passed");
+    }
+
+    const proofIntakeRecordPath = path.join(tempRoot, "owner-proof-intake-record.json");
+    const ownerBridge = runNode("proof-intake-from-owner-evidence.mjs", [
+      ownerRecordPath,
+      "--output",
+      proofIntakeRecordPath,
+      "--submitter",
+      "temporary owner evidence bridge dry audit",
+      "--artifact-owner",
+      "generated local fixture owner",
+      "--permission-status",
+      "owner permits redacted local framework review only; this is not publication permission",
+      "--publication-preference",
+      "redacted",
+      "--redaction-requirements",
+      "redact identifying and private details before any public use",
+      "--reference",
+      "reference-packs/github-readme.md",
+      "--desired-transformation",
+      "Transform the temporary weak artifact into a clearer proof-run dry-audit artifact while preserving proof boundaries.",
+      "--confirm-no-secrets",
+      "--confirm-no-private-customer-data",
+      "--confirm-no-copied-protected-material",
+    ], tempRoot);
+    if (ownerBridge.status !== 0) {
+      failures.push(`owner evidence bridge dry run failed: ${ownerBridge.stderr || ownerBridge.stdout}`);
+    } else {
+      summary.push("owner evidence bridge conversion: passed");
+    }
+
+    const ownerProofIntakeCheck = runNode("check-proof-intake-record.mjs", [
+      proofIntakeRecordPath,
+      "--require-case-ready",
+      "--write-report",
+      path.join(tempRoot, "owner-proof-intake-check.md"),
+    ], tempRoot);
+    if (ownerProofIntakeCheck.status !== 0) {
+      failures.push(`owner proof intake check dry run failed: ${ownerProofIntakeCheck.stderr || ownerProofIntakeCheck.stdout}`);
+    } else {
+      summary.push("owner proof intake check: passed");
+    }
+
+    const ownerFromRecord = runNode("case-from-record.mjs", [
+      proofIntakeRecordPath,
+      "--title",
+      "Owner Evidence Bridge Dry Fixture",
+      "--out",
+      "owner-bridge-case",
+    ], tempRoot);
+
+    const ownerCaseRoot = path.join(tempRoot, "owner-bridge-case");
+    if (ownerFromRecord.status !== 0) {
+      failures.push(`owner started case creation dry run failed: ${ownerFromRecord.stderr || ownerFromRecord.stdout}`);
+    } else {
+      summary.push("owner started case creation: passed");
+    }
+
+    const ownerStartedCheck = runNode("check-case.mjs", [ownerCaseRoot], tempRoot);
+    if (ownerStartedCheck.status === 0) {
+      failures.push("owner bridge started case must fail case:check before completion");
+    } else {
+      summary.push("owner started case rejection: passed");
+    }
+
+    writeCaseCompletion(ownerCaseRoot);
+
+    const ownerCompletedCheck = runNode("check-case.mjs", [ownerCaseRoot, "--write-report"], tempRoot);
+    if (ownerCompletedCheck.status !== 0) {
+      failures.push(`owner completed case check dry run failed: ${ownerCompletedCheck.stderr || ownerCompletedCheck.stdout}`);
+    } else {
+      summary.push("owner completed case check: passed");
+    }
+
+    const ownerEvidencePath = path.join(tempRoot, "owner-evidence-packet.md");
+    writeEvidencePacket(
+      ownerEvidencePath,
+      "The temporary owner evidence bridge fixture completed the local Mimesis proof path through reviewed evidence packet and bounded claim candidate.",
+      [
+        "owner-bridge-case/.mimesis/case-proof.md",
+        "owner-proof-intake-record.json",
+        "owner-bridge-case/.mimesis/case-note.md",
+      ],
+      "The local dry audit can exercise the owner-evidence bridge proof-run command path on a temporary fixture.",
+    );
+
+    const ownerEvidenceCheck = runNode("check-evidence-packet.mjs", [
+      ownerEvidencePath,
+      "--require-reviewed",
+      "--write-report",
+    ], tempRoot);
+    if (ownerEvidenceCheck.status !== 0) {
+      failures.push(`owner evidence packet review dry run failed: ${ownerEvidenceCheck.stderr || ownerEvidenceCheck.stdout}`);
+    } else {
+      summary.push("owner evidence packet review: passed");
+    }
+
+    const ownerClaimPath = path.join(tempRoot, "owner-claim-candidate.md");
+    const ownerClaimCandidate = runNode("create-claim-from-evidence.mjs", [
+      ownerEvidencePath,
+      "--out",
+      ownerClaimPath,
+    ], tempRoot);
+    if (ownerClaimCandidate.status !== 0) {
+      failures.push(`owner claim candidate dry run failed: ${ownerClaimCandidate.stderr || ownerClaimCandidate.stdout}`);
+    } else {
+      summary.push("owner bounded claim candidate: passed");
+    }
+
     if (!failures.length) {
       const report = `# Proof Run Dry Audit Report
 
@@ -422,6 +573,10 @@ ${summary.map((item) => `- ${item}`).join("\n")}
 
 \`\`\`text
 permissioned intake -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
+\`\`\`
+
+\`\`\`text
+owner evidence bridge -> proof intake record -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
 \`\`\`
 
 ## Boundary
@@ -454,6 +609,7 @@ if (!cli.includes('"audit:proof-run-dry"')) {
 
 for (const text of [
   "permissioned intake -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate",
+  "owner evidence bridge -> proof intake record -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate",
   "does not create external proof",
   "does not run release:check:public",
   "temporary local fixture",
@@ -479,6 +635,14 @@ if (!fs.existsSync(reportPath)) {
     "completed case check: passed",
     "evidence packet review: passed",
     "bounded claim candidate: passed",
+    "owner evidence bridge conversion: passed",
+    "owner proof intake check: passed",
+    "owner started case creation: passed",
+    "owner started case rejection: passed",
+    "owner completed case check: passed",
+    "owner evidence packet review: passed",
+    "owner bounded claim candidate: passed",
+    "owner evidence bridge -> proof intake record -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate",
     "does not create external proof",
   ]) {
     if (!report.toLowerCase().includes(text.toLowerCase())) {

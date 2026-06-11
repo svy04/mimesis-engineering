@@ -2577,3 +2577,37 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Keep human-facing manifest docs synchronized with `.mimesis/framework-manifest.json` when new commands enter the AI-native surface.
 - Keep the proof-run packet aligned with both external intake routes: markdown intake and owner-evidence-record intake.
 - Do not collapse bridge readiness into permission, proof, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## 2026-06-11 - Owner Evidence Bridge Dry Run Lane Slice
+
+## Import
+
+- Re-read `tools/audit-proof-run-dry.mjs`, `docs/PROOF-RUN-DRY-AUDIT.md`, `.mimesis/proof-runs/dry-run-report.md`, `README.md`, `tools/README.md`, and `docs/COMPLETION-AUDIT.md`.
+- Found the dry-run rehearsal exercised the permissioned intake lane through reviewed evidence and bounded claim candidate, but did not yet execute the owner evidence bridge lane.
+
+## Distill
+
+- Make the dry-run proof rehearsal execute both first-proof intake routes: permissioned intake and owner evidence bridge.
+- Preserve the boundary that both lanes use temporary local fixtures and do not create external proof, submit a real artifact, publish, prove adoption, prove benchmarked productivity, prove customer outcomes, or prove legal originality.
+
+## Capsule
+
+- RED: strengthened `tools/audit-proof-run-dry.mjs` so the existing docs/report failed without the owner evidence bridge lane.
+- GREEN: added a temporary reviewed owner evidence submission record path that runs field check, `proof:intake-from-owner-evidence`, proof-intake check, `case:from-record`, started-case rejection, completed-case check, evidence review, and bounded claim generation.
+- GREEN: updated `docs/PROOF-RUN-DRY-AUDIT.md`, `README.md`, `tools/README.md`, `docs/COMPLETION-AUDIT.md`, and regenerated `.mimesis/proof-runs/dry-run-report.md`.
+
+## Shard
+
+- `audit:proof-run-dry` now rehearses the owner evidence bridge lane through a schema-shaped proof intake record and started case workspace.
+- The generated dry-run report now lists both command paths and all owner-lane pass checks.
+- The public docs now describe dry-run fixtures as covering both lanes, while preserving the no-proof boundary.
+
+## Verify
+
+- `npm run audit:proof-run-dry` failed first for missing owner evidence bridge docs/report text.
+- After implementation, `npm run audit:proof-run-dry`, `npm run audit:completion`, and `npm run validate` passed.
+
+## Remember
+
+- Use dry-run proof rehearsal as a local path integrity check only.
+- Do not treat either dry-run lane as real external proof, real owner evidence, publication, adoption evidence, benchmark evidence, or gate closure.

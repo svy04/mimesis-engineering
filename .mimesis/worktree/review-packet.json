@@ -1,13 +1,13 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T05:25:45.128Z",
+  "generatedAt": "2026-06-11T05:37:04.465Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "7a30626afda8185cec20b8b8a061bbe0cf21ba16",
+    "head": "c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71",
     "dirty": true,
     "trackedChangedCount": 19,
     "untrackedCount": 0
@@ -35,7 +35,7 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/proof-runs/v0.2-first-run.md"
+      "path": ".mimesis/proof-runs/dry-run-report.md"
     },
     {
       "status": "M",
@@ -71,23 +71,23 @@
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
+      "path": "README.md"
     },
     {
       "status": "M",
-      "path": "docs/PROOF-RUN-PACKET.md"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-framework-manifest.mjs"
+      "path": "docs/PROOF-RUN-DRY-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-proof-run-packet.mjs"
+      "path": "tools/README.md"
     },
     {
       "status": "M",
-      "path": "tools/create-proof-run-packet.mjs"
+      "path": "tools/audit-proof-run-dry.mjs"
     }
   ],
   "unstagedChanges": [
@@ -113,7 +113,7 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/proof-runs/v0.2-first-run.md"
+      "path": ".mimesis/proof-runs/dry-run-report.md"
     },
     {
       "status": "M",
@@ -149,23 +149,23 @@
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
+      "path": "README.md"
     },
     {
       "status": "M",
-      "path": "docs/PROOF-RUN-PACKET.md"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-framework-manifest.mjs"
+      "path": "docs/PROOF-RUN-DRY-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-proof-run-packet.mjs"
+      "path": "tools/README.md"
     },
     {
       "status": "M",
-      "path": "tools/create-proof-run-packet.mjs"
+      "path": "tools/audit-proof-run-dry.mjs"
     }
   ],
   "stagedChanges": [],
@@ -175,7 +175,7 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
-    " M .mimesis/proof-runs/v0.2-first-run.md",
+    " M .mimesis/proof-runs/dry-run-report.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -184,11 +184,11 @@
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
-    " M docs/FRAMEWORK-MANIFEST.md",
-    " M docs/PROOF-RUN-PACKET.md",
-    " M tools/audit-framework-manifest.mjs",
-    " M tools/audit-proof-run-packet.mjs",
-    " M tools/create-proof-run-packet.mjs"
+    " M README.md",
+    " M docs/COMPLETION-AUDIT.md",
+    " M docs/PROOF-RUN-DRY-AUDIT.md",
+    " M tools/README.md",
+    " M tools/audit-proof-run-dry.mjs"
   ],
   "untrackedRoots": [],
   "untrackedFilesSample": [],

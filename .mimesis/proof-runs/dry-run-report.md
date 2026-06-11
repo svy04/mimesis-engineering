@@ -10,11 +10,23 @@ Status: local fixture path checked.
 - completed case check: passed
 - evidence packet review: passed
 - bounded claim candidate: passed
+- owner evidence field check: passed
+- owner evidence bridge conversion: passed
+- owner proof intake check: passed
+- owner started case creation: passed
+- owner started case rejection: passed
+- owner completed case check: passed
+- owner evidence packet review: passed
+- owner bounded claim candidate: passed
 
 ## Command Path
 
 ```text
 permissioned intake -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
+```
+
+```text
+owner evidence bridge -> proof intake record -> started case -> completed case -> reviewed evidence packet -> bounded claim candidate
 ```
 
 ## Boundary

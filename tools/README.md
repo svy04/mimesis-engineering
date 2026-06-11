@@ -1077,7 +1077,7 @@ or:
 npm run cli -- audit:proof-run-dry
 ```
 
-This runs a temporary local fixture through permissioned intake, started case creation, started-case rejection, completed case check, reviewed evidence packet, and bounded claim candidate.
+This runs temporary local fixtures through both the permissioned-intake lane and the owner-evidence bridge lane, including started case creation, started-case rejection, completed case check, reviewed evidence packet, and bounded claim candidate.
 It writes `.mimesis/proof-runs/dry-run-report.md`.
 It does not create external proof and does not run `release:check:public`.
 

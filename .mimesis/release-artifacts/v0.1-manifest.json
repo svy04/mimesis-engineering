@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-artifact-manifest.v0.1",
   "status": "local_manifest_not_publication",
-  "generatedAt": "2026-06-11T05:26:01.467Z",
+  "generatedAt": "2026-06-11T05:37:29.955Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -10,7 +10,7 @@
   },
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
-    "head": "7a30626afda8185cec20b8b8a061bbe0cf21ba16",
+    "head": "c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71",
     "upstream": "origin/codex/mimesis-framework-v0.1",
     "trackedChangedCount": 19,
     "untrackedCount": 0
@@ -64,7 +64,7 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 8694,
-      "sha256": "8fb4052ef2414f32aeb5f95e9db0afee72f5f6fe82ef42124d4688decb1a626c"
+      "sha256": "dd86c9dc9653474b5d48b4ccf62f4d9a0e1a1e3591eb0c7f84cc876b7956f14b"
     },
     {
       "path": ".mimesis/ecosystem-resources/current-resource-packet.md",
@@ -92,28 +92,28 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 10461,
-      "sha256": "6b27b192b41162d41f13e35445a0c70bb1de579db3f8ee03d186b7f2898335a8"
+      "sha256": "8861f864f2290a7480409a308949b351755b1780a8512d91579b8d2947a01df5"
     },
     {
       "path": ".mimesis/gaps/current-gap-register.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 5686,
-      "sha256": "0a3ef3981abbaead549a67aea56ca0f1d6cab74828aa9a0863a56fea48594686"
+      "sha256": "fac53b5a885551ae5792c5e5eddb394c926331b0606d2b037d851746780c79f1"
     },
     {
       "path": ".mimesis/gates/closure-readiness.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 23888,
-      "sha256": "89711e5e316728d668fddbed4a36408f5b2a137524e67cf2df8a4f204c2111a3"
+      "sha256": "68d1e104c3e248cb5d7d53960ecef60122349cc21b3d93485d18b062992061ff"
     },
     {
       "path": ".mimesis/gates/closure-review.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 15873,
-      "sha256": "3446db4bbb258480e8d2838d6346246e61567bb21e38280c4682fd5eb5c69a5b"
+      "sha256": "09407cd40f4f5f3f3efc0b9c8ad12599f48651048740505358da33591a6face4"
     },
     {
       "path": ".mimesis/gates/current-gateboard.md",
@@ -301,8 +301,8 @@
       "path": ".mimesis/proof-runs/dry-run-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 688,
-      "sha256": "b00256dd8284c0d09594870700c8eaa3d8eb707053e343404291bbf4e1d5d495"
+      "bytes": 1143,
+      "sha256": "f64908de0fa553d4ec441fdd1b344d51326788eea1c61959c1d0d021082fd15e"
     },
     {
       "path": ".mimesis/proof-runs/execution-report.md",
@@ -336,8 +336,8 @@
       "path": ".mimesis/publish-packets/local-sync-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4468,
-      "sha256": "1142c3766f713c554699b3a1919665b42bc70cf27c68f2d6de2ae46b3fcc9069"
+      "bytes": 4267,
+      "sha256": "9ce828254ccff27b93b3cd6952d7d36bd4a7dff1b917714f8e95d2d5f5266791"
     },
     {
       "path": ".mimesis/reference-packs/index.json",
@@ -351,7 +351,7 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 3254,
-      "sha256": "4e2f1ec903e6255276e0a93150cbdc759d7bd8f8dd42e51d041a16f62f8de9e3"
+      "sha256": "98ec2e4b9ccab6a8874d6e437de8c810553b4882e197425e961f8e4cd0fd0506"
     },
     {
       "path": ".mimesis/release-evidence/publication-evidence-packet.md",
@@ -378,15 +378,15 @@
       "path": ".mimesis/release-review/v0.1-bundle.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5487,
-      "sha256": "70f19bf8ce1d59a4aa44e9fce8ddedf317f62f733dad7efb359f3ba223c52311"
+      "bytes": 5424,
+      "sha256": "45b47dcc218ae846ec3c9141a8d0ff9709ba5195e92e6429bec6a25c7b2b1b47"
     },
     {
       "path": ".mimesis/run_ledger.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 259671,
-      "sha256": "8b740bacb09a6a91f0eec704ff86c656adf88adde866da9cdf402b2d9ef605bc"
+      "bytes": 261853,
+      "sha256": "a94a8d47ea559aae54cb3f6dff9edd26523b10fd9a65f5ec156405775f93111d"
     },
     {
       "path": ".mimesis/security/secret-safety-report.md",
@@ -400,21 +400,21 @@
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
       "bytes": 9748,
-      "sha256": "8594aa58203df2f99443edce81a590cbefd523cce11d548b8bb478eab23830e1"
+      "sha256": "6eb7f250f6aafae2b01eccdebb77eb97c2de6860f81e5e1b0ec4c29c515c0276"
     },
     {
       "path": ".mimesis/sync-status.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1092,
-      "sha256": "a5fe99627e1e212f43285cd6f88298617d435e45a19f27cd6f13f4779983f50e"
+      "bytes": 1459,
+      "sha256": "ab5bf8bd9453773bfe23f26cba831aff9eb78c033461e99d3fa17375216d9d59"
     },
     {
       "path": ".mimesis/worktree/review-packet.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5730,
-      "sha256": "ce49fd547f1b9c1314ec56fe9f05181a1967b06b5a32d39b0df9d823ba0f54b4"
+      "bytes": 5595,
+      "sha256": "7ef5d46ae5ebebeb2b0f71d9053814a9f2312e6d782efe2a54b60d18ed9655e8"
     },
     {
       "path": "action.yml",
@@ -539,8 +539,8 @@
       "path": "docs/COMPLETION-AUDIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 49964,
-      "sha256": "43a46ecd388765f0531bccbe32287bba36f9509a8ebb6f1504b00d8c1d3184da"
+      "bytes": 50021,
+      "sha256": "2317c0428ad7db8af82cdb48d08a24f146de2cdde90e0290f56acca83df60ad4"
     },
     {
       "path": "docs/CURRENT-STATE-SUMMARY.md",
@@ -777,8 +777,8 @@
       "path": "docs/PROOF-RUN-DRY-AUDIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1208,
-      "sha256": "8f1dac34bb07b13e75008beec4a30a9f5f85536ff0adc029f90c7db838145fc8"
+      "bytes": 1940,
+      "sha256": "3c6d8a18e5a9c65b1ae9c26a1eb39fbcd60cba90d8d28e9e9c02d42c62270210"
     },
     {
       "path": "docs/PROOF-RUN-PACKET.md",
@@ -1015,8 +1015,8 @@
       "path": "README.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 58779,
-      "sha256": "9cc7679a78b868658577a78681d64d746b3fb6b04de6660f3870764413ccd682"
+      "bytes": 58836,
+      "sha256": "48beb49d22f4813e1474f8046b401e92bcee9707ac794a3d477a1a5f12f55a1c"
     },
     {
       "path": "reference-packs/ai-workflow.md",

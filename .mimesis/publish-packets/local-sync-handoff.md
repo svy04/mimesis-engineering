@@ -9,8 +9,8 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `7a30626afda8185cec20b8b8a061bbe0cf21ba16`
-- upstream head: `7a30626afda8185cec20b8b8a061bbe0cf21ba16`
+- head: `c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71`
+- upstream head: `c697c7f3ffbc0f8457854f3ffc00d11f1ca50a71`
 - tracked changed entries: 10
 - untracked entries: 0
 
@@ -22,45 +22,45 @@ local worktree is not publish-ready because it has unpublished local changes or 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/proof-runs/v0.2-first-run.md
+ M .mimesis/proof-runs/dry-run-report.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
  M .mimesis/sync-status.md
- M docs/FRAMEWORK-MANIFEST.md
- M docs/PROOF-RUN-PACKET.md
- M tools/audit-framework-manifest.mjs
- M tools/audit-proof-run-packet.mjs
- M tools/create-proof-run-packet.mjs
+ M README.md
+ M docs/COMPLETION-AUDIT.md
+ M docs/PROOF-RUN-DRY-AUDIT.md
+ M tools/README.md
+ M tools/audit-proof-run-dry.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md | 32 ---------------------
- .mimesis/proof-runs/v0.2-first-run.md           | 15 +++++++++-
- .mimesis/release-artifacts/v0.1-manifest.json   | 28 +++++++++----------
- .mimesis/run_ledger.md                          | 37 +++++++++++++++++++++++++
- .mimesis/sync-status.md                         | 26 +++++------------
- docs/FRAMEWORK-MANIFEST.md                      |  4 +--
- docs/PROOF-RUN-PACKET.md                        |  8 +++++-
- tools/audit-framework-manifest.mjs              | 10 +++++++
- tools/audit-proof-run-packet.mjs                |  4 +++
- tools/create-proof-run-packet.mjs               | 17 +++++++++++-
- 10 files changed, 111 insertions(+), 70 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 ---
+ .mimesis/proof-runs/dry-run-report.md           |  12 ++
+ .mimesis/release-artifacts/v0.1-manifest.json   |  26 +--
+ .mimesis/run_ledger.md                          |  34 ++++
+ .mimesis/sync-status.md                         |  12 +-
+ README.md                                       |   2 +-
+ docs/COMPLETION-AUDIT.md                        |   2 +-
+ docs/PROOF-RUN-DRY-AUDIT.md                     |  17 ++
+ tools/README.md                                 |   2 +-
+ tools/audit-proof-run-dry.mjs                   | 260 +++++++++++++++++++-----
+ 10 files changed, 297 insertions(+), 102 deletions(-)
 ```
 
 ## Tracked Changes
 
 - `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/proof-runs/v0.2-first-run.md`
+- ` M .mimesis/proof-runs/dry-run-report.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
 - ` M .mimesis/run_ledger.md`
 - ` M .mimesis/sync-status.md`
-- ` M docs/FRAMEWORK-MANIFEST.md`
-- ` M docs/PROOF-RUN-PACKET.md`
-- ` M tools/audit-framework-manifest.mjs`
-- ` M tools/audit-proof-run-packet.mjs`
-- ` M tools/create-proof-run-packet.mjs`
+- ` M README.md`
+- ` M docs/COMPLETION-AUDIT.md`
+- ` M docs/PROOF-RUN-DRY-AUDIT.md`
+- ` M tools/README.md`
+- ` M tools/audit-proof-run-dry.mjs`
 
 ## Untracked Entries
 
@@ -98,14 +98,14 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/proof-runs/v0.2-first-run.md
+ M .mimesis/proof-runs/dry-run-report.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
- M docs/FRAMEWORK-MANIFEST.md
- M docs/PROOF-RUN-PACKET.md
- M tools/audit-framework-manifest.mjs
- M tools/audit-proof-run-packet.mjs
- M tools/create-proof-run-packet.mjs
+ M README.md
+ M docs/COMPLETION-AUDIT.md
+ M docs/PROOF-RUN-DRY-AUDIT.md
+ M tools/README.md
+ M tools/audit-proof-run-dry.mjs
 ```
 
 

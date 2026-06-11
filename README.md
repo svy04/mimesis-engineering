@@ -706,7 +706,7 @@ npm run audit:proof-run-dry
 ```
 
 This writes `.mimesis/proof-runs/dry-run-report.md` from a temporary local fixture.
-It now rehearses the path through reviewed evidence and bounded claim candidate.
+It now rehearses both the permissioned-intake lane and the owner-evidence bridge lane through reviewed evidence and bounded claim candidate.
 It does not create external proof or run `release:check:public`.
 
 Generate a local casebook candidate packet:
