@@ -1,15 +1,15 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T13:55:27.804Z",
+  "generatedAt": "2026-06-11T14:10:05.642Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a7cf116c47eceb2a79336f79e4ff2cabd4525f43",
+    "head": "f70e8ed50198423620ad825b7558ee65cb3bbb47",
     "dirty": true,
-    "trackedChangedCount": 22,
+    "trackedChangedCount": 24,
     "untrackedCount": 0
   },
   "trackedChanges": [
@@ -35,6 +35,14 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -83,7 +91,7 @@
     },
     {
       "status": "M",
-      "path": "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md"
+      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md"
     },
     {
       "status": "M",
@@ -95,11 +103,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-owner-proof-input-issue-convert.mjs"
+      "path": "tools/audit-owner-proof-input-remote-issue-snapshot.mjs"
     },
     {
       "status": "M",
-      "path": "tools/convert-owner-proof-input-issue.mjs"
+      "path": "tools/create-owner-proof-input-remote-issue-snapshot.mjs"
     }
   ],
   "unstagedChanges": [
@@ -125,6 +133,14 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -173,7 +189,7 @@
     },
     {
       "status": "M",
-      "path": "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md"
+      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md"
     },
     {
       "status": "M",
@@ -185,11 +201,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-owner-proof-input-issue-convert.mjs"
+      "path": "tools/audit-owner-proof-input-remote-issue-snapshot.mjs"
     },
     {
       "status": "M",
-      "path": "tools/convert-owner-proof-input-issue.mjs"
+      "path": "tools/create-owner-proof-input-remote-issue-snapshot.mjs"
     }
   ],
   "stagedChanges": [],
@@ -199,6 +215,8 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/owner-actions/remote-proof-input-issue-snapshot.json",
+    " M .mimesis/owner-actions/remote-proof-input-issue-snapshot.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -211,11 +229,11 @@
     " M ROADMAP.md",
     " M STATUS.md",
     " M docs/COMPLETION-AUDIT.md",
-    " M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
+    " M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M tools/README.md",
-    " M tools/audit-owner-proof-input-issue-convert.mjs",
-    " M tools/convert-owner-proof-input-issue.mjs"
+    " M tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
+    " M tools/create-owner-proof-input-remote-issue-snapshot.mjs"
   ],
   "untrackedRoots": [],
   "untrackedFilesSample": [],

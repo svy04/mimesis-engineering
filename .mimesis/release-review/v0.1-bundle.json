@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T13:55:28.426Z",
+  "generatedAt": "2026-06-11T14:10:06.136Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,9 +12,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a7cf116c47eceb2a79336f79e4ff2cabd4525f43",
+    "head": "f70e8ed50198423620ad825b7558ee65cb3bbb47",
     "dirty": true,
-    "trackedChangedCount": 22,
+    "trackedChangedCount": 24,
     "untrackedCount": 0
   },
   "sourceFiles": [
@@ -29,6 +29,8 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
+    ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json",
+    ".mimesis/owner-actions/remote-proof-input-issue-snapshot.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -41,11 +43,11 @@
     "ROADMAP.md",
     "STATUS.md",
     "docs/COMPLETION-AUDIT.md",
-    "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
+    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
     "docs/V0.1-RELEASE-PACKET.md",
     "tools/README.md",
-    "tools/audit-owner-proof-input-issue-convert.mjs",
-    "tools/convert-owner-proof-input-issue.mjs"
+    "tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
+    "tools/create-owner-proof-input-remote-issue-snapshot.mjs"
   ],
   "reviewGroups": [
     {
@@ -58,13 +60,15 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 13,
+      "count": 15,
       "sample": [
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
+        ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json",
+        ".mimesis/owner-actions/remote-proof-input-issue-snapshot.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -81,7 +85,7 @@
       "count": 6,
       "sample": [
         "docs/COMPLETION-AUDIT.md",
-        "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
+        "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
         "docs/V0.1-RELEASE-PACKET.md",
         "README.md",
         "ROADMAP.md",
@@ -93,8 +97,8 @@
       "name": "tooling and cli",
       "count": 3,
       "sample": [
-        "tools/audit-owner-proof-input-issue-convert.mjs",
-        "tools/convert-owner-proof-input-issue.mjs",
+        "tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
+        "tools/create-owner-proof-input-remote-issue-snapshot.mjs",
         "tools/README.md"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."

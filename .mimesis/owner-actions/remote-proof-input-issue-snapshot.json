@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.owner-proof-input-remote-issue-snapshot.v0.1",
-  "generatedAt": "2026-06-11T10:45:42.595Z",
+  "generatedAt": "2026-06-11T14:02:35.293Z",
   "snapshotKind": "metadata_only_remote_issue_snapshot",
   "issue": {
     "number": 7,
@@ -23,6 +23,9 @@
     "licenseHeadingPresent": true,
     "weakArtifactHeadingPresent": true,
     "safetyConfirmationPresent": true,
+    "licenseChoiceChecked": false,
+    "publicationChoiceChecked": false,
+    "checkedSafetyCount": 0,
     "placeholdersPresent": true,
     "secretLikePatternDetected": false
   },

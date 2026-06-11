@@ -30,9 +30,13 @@ Generated files:
 - whether the `owner-proof-input` label is present
 - body SHA-256 hash and character count
 - whether required headings are present
+- whether a license choice and publication preference are checked
+- how many safety confirmations are checked
 - whether request placeholders are still present
 - whether a secret-like pattern was detected
 - whether the issue is still request-only or looks like candidate owner input
+
+`candidate_owner_input` requires filled owner text, checked license and publication choices, all three safety confirmations checked, no placeholders, no secret-like pattern, the expected label, and an open issue.
 
 ## Boundary
 

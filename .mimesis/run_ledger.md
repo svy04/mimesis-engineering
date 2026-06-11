@@ -3583,3 +3583,50 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Local fixtures must match the public owner intake shape closely enough to catch parser drift.
 - Issue #7-style markdown can now become a reviewed owner proof input record candidate only after owner-filled content and `--status reviewed --require-complete`.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Proof Input Remote Snapshot Readiness Slice
+
+## Import
+
+- Re-read the live GitHub issue #7 body, the owner proof input remote issue snapshot generator/audit, the private export tool/audit, the owner proof input issue converter, release packet docs, README, tools README, status, roadmap, completion matrix, and current goal/gap records.
+- Confirmed issue #7 is still a request-only template with unchecked choices, unchecked safety confirmation, and owner placeholders.
+
+## Distill
+
+- Align the metadata-only remote snapshot readiness signals with the private raw-body export gate.
+- Prevent a filled-looking but unsafe issue body from being treated as candidate owner input until checked license choice, checked publication preference, and all safety confirmations exist.
+- Preserve the no-body/no-proof boundary: the snapshot records metadata, hash, and readiness signals only.
+
+## Capsule
+
+- RED: extended `tools/audit-owner-proof-input-remote-issue-snapshot.mjs` with a temp `--issue-json` smoke fixture that has filled text and checked license/publication choices but zero checked safety confirmations.
+- GREEN: updated `tools/create-owner-proof-input-remote-issue-snapshot.mjs` to support `--issue-json`, record `licenseChoiceChecked`, `publicationChoiceChecked`, and `checkedSafetyCount`, and keep snapshots request-only until all readiness signals pass.
+- GREEN: regenerated `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` and `.mimesis/owner-actions/remote-proof-input-issue-snapshot.md` from live issue #7.
+
+## Shard
+
+- Live issue #7 now snapshots as `ownerInputStatus: request_only_pending_owner`.
+- Live issue #7 now snapshots as `readyForLocalConversion: false`.
+- Live issue #7 now records `checkedSafetyCount: 0`, `licenseChoiceChecked: false`, and `publicationChoiceChecked: false`.
+- The snapshot still does not store the raw issue body.
+
+## Verify
+
+- `npm run audit:owner-proof-input-remote-issue-snapshot` failed first for missing checked-choice/safety signals and for not honoring `--issue-json`.
+- `npm run owner:proof-input-remote-issue-snapshot` passed and regenerated the metadata-only snapshot/report.
+- `npm run audit:owner-proof-input-remote-issue-snapshot` passed after the generator fix.
+- `npm run audit:owner-proof-input-remote-issue-export` passed.
+- `npm run audit:owner-proof-input-remote-issue-export-candidate` passed.
+- `npm run audit:owner-proof-input-issue-convert` passed.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed with the stronger snapshot readiness audit and without closing any gate.
+
+## Remember
+
+- Remote owner proof input snapshot readiness must match the private export gate closely enough to avoid false candidate states.
+- Owner issue #7 remains request-only until owner-filled content includes checked license/publication choices and checked safety confirmations.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

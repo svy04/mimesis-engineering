@@ -1212,6 +1212,7 @@ npm run audit:owner-proof-input-remote-issue-snapshot
 
 This writes `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` and `.mimesis/owner-actions/remote-proof-input-issue-snapshot.md`.
 It is metadata-only and does not store the raw issue body.
+It records heading, checked-choice, safety-confirmation, placeholder, and secret-like readiness signals.
 It can show that issue #7 is still request-only, or that it looks like candidate owner input for a deliberate private local conversion step.
 It records https://github.com/svy04/mimesis-engineering/issues/7 as the current owner input anchor.
 It is an anchor only, not owner decision, permission grant, submitted artifact, external proof, proof approval, publication, adoption evidence, benchmark evidence, or gate closure.

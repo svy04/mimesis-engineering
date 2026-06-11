@@ -2163,6 +2163,7 @@ npm run cli -- owner:proof-input-remote-issue-snapshot
 
 This writes `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` and `.mimesis/owner-actions/remote-proof-input-issue-snapshot.md`.
 It reads live GitHub issue metadata and records a body hash without storing the raw issue body.
+It records checked-choice and safety-confirmation readiness signals before treating issue #7 as candidate owner input.
 It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
 
 ## Audit Owner Proof Input Remote Issue Snapshot

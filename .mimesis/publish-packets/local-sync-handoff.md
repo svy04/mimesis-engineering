@@ -9,9 +9,9 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `a7cf116c47eceb2a79336f79e4ff2cabd4525f43`
-- upstream head: `a7cf116c47eceb2a79336f79e4ff2cabd4525f43`
-- tracked changed entries: 23
+- head: `f70e8ed50198423620ad825b7558ee65cb3bbb47`
+- upstream head: `f70e8ed50198423620ad825b7558ee65cb3bbb47`
+- tracked changed entries: 25
 - untracked entries: 0
 
 Conclusion:
@@ -27,6 +27,8 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -39,40 +41,42 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M ROADMAP.md
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
- M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
+ M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md
  M docs/V0.1-RELEASE-PACKET.md
  M tools/README.md
- M tools/audit-owner-proof-input-issue-convert.mjs
- M tools/convert-owner-proof-input-issue.mjs
+ M tools/audit-owner-proof-input-remote-issue-snapshot.mjs
+ M tools/create-owner-proof-input-remote-issue-snapshot.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
 .mimesis/completion/goal-completion-audit.json     |   2 +-
- .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 ----
+ .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 ------
  .mimesis/gaps/closure-plan.json                    |   2 +-
  .mimesis/gaps/current-gap-register.json            |   2 +-
- .mimesis/gates/closure-readiness.json              |   8 +-
- .mimesis/gates/closure-review.json                 |   8 +-
- .mimesis/publish-packets/local-sync-handoff.md     | 181 ++++----------------
- .mimesis/release-artifacts/v0.1-manifest.json      |  74 ++++----
+ .mimesis/gates/closure-readiness.json              |   6 +-
+ .mimesis/gates/closure-review.json                 |   6 +-
+ .../remote-proof-input-issue-snapshot.json         |   5 +-
+ .../remote-proof-input-issue-snapshot.md           |   3 +
+ .mimesis/publish-packets/local-sync-handoff.md     |  97 +++++-----------
+ .mimesis/release-artifacts/v0.1-manifest.json      |  80 ++++++-------
  .../release-decisions/owner-decision-record.json   |   2 +-
- .mimesis/release-review/v0.1-bundle.json           |  65 ++-----
- .mimesis/run_ledger.md                             |  44 +++++
- .mimesis/state/current-state.json                  |   8 +-
- .mimesis/sync-status.md                            |  31 +---
- .mimesis/worktree/review-packet.json               | 188 ++-------------------
+ .mimesis/release-review/v0.1-bundle.json           |  26 +++--
+ .mimesis/run_ledger.md                             |  47 ++++++++
+ .mimesis/state/current-state.json                  |   6 +-
+ .mimesis/sync-status.md                            |  10 +-
+ .mimesis/worktree/review-packet.json               |  51 ++++----
  README.md                                          |   1 +
- ROADMAP.md                                         |   1 +
+ ROADMAP.md                                         |   2 +-
  STATUS.md                                          |   1 +
  docs/COMPLETION-AUDIT.md                           |   2 +-
- docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md            |  13 ++
+ docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md    |   4 +
  docs/V0.1-RELEASE-PACKET.md                        |   1 +
  tools/README.md                                    |   1 +
- tools/audit-owner-proof-input-issue-convert.mjs    | 100 +++++++++++
- tools/convert-owner-proof-input-issue.mjs          |   5 +-
- 23 files changed, 284 insertions(+), 488 deletions(-)
+ ...dit-owner-proof-input-remote-issue-snapshot.mjs | 128 +++++++++++++++++++++
+ ...ate-owner-proof-input-remote-issue-snapshot.mjs |  31 ++++-
+ 25 files changed, 354 insertions(+), 194 deletions(-)
 ```
 
 ## Tracked Changes
@@ -83,6 +87,8 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M .mimesis/gaps/current-gap-register.json`
 - ` M .mimesis/gates/closure-readiness.json`
 - ` M .mimesis/gates/closure-review.json`
+- ` M .mimesis/owner-actions/remote-proof-input-issue-snapshot.json`
+- ` M .mimesis/owner-actions/remote-proof-input-issue-snapshot.md`
 - ` M .mimesis/publish-packets/local-sync-handoff.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
 - ` M .mimesis/release-decisions/owner-decision-record.json`
@@ -95,11 +101,11 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M ROADMAP.md`
 - ` M STATUS.md`
 - ` M docs/COMPLETION-AUDIT.md`
-- ` M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md`
+- ` M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md`
 - ` M docs/V0.1-RELEASE-PACKET.md`
 - ` M tools/README.md`
-- ` M tools/audit-owner-proof-input-issue-convert.mjs`
-- ` M tools/convert-owner-proof-input-issue.mjs`
+- ` M tools/audit-owner-proof-input-remote-issue-snapshot.mjs`
+- ` M tools/create-owner-proof-input-remote-issue-snapshot.mjs`
 
 ## Untracked Entries
 
@@ -119,7 +125,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 23
+- changed tracked files: 25
 - untracked files: 0
 
 ## Conclusion
@@ -142,6 +148,8 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -154,11 +162,11 @@ It does not publish, push, tag, release, or create a pull request.
  M ROADMAP.md
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
- M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
+ M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md
  M docs/V0.1-RELEASE-PACKET.md
  M tools/README.md
- M tools/audit-owner-proof-input-issue-convert.mjs
- M tools/convert-owner-proof-input-issue.mjs
+ M tools/audit-owner-proof-input-remote-issue-snapshot.mjs
+ M tools/create-owner-proof-input-remote-issue-snapshot.mjs
 ```
 
 

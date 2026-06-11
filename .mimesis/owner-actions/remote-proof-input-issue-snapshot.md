@@ -20,6 +20,9 @@ This report records live GitHub issue metadata and a body hash without storing t
 
 - license_or_no_reuse heading present: yes
 - weak_artifact_permission heading present: yes
+- license choice checked: no
+- publication choice checked: no
+- safety confirmations checked: 0
 - placeholders present: yes
 - secret-like pattern detected: no
 

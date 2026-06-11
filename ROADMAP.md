@@ -178,7 +178,7 @@ Candidate work:
 - generated owner proof input issue before treating public issue intake as owner decision, permission grant, proof, publication, or gate closure
 - generated owner proof input request before treating owner-facing requests as submitted owner input, permission, proof, publication, or gate closure
 - generated owner proof input remote issue before treating GitHub issue #7 as owner decision, submitted artifact, proof, publication, adoption evidence, benchmark evidence, or gate closure
-- generated owner proof input remote issue snapshot before treating GitHub issue #7 as candidate owner input or storing raw owner issue body
+- generated owner proof input remote issue snapshot with checked-choice and safety-confirmation readiness signals before treating GitHub issue #7 as candidate owner input or storing raw owner issue body
 - generated owner proof input remote issue export before treating GitHub issue #7 body as a private local conversion input
 - generated owner proof input remote issue export candidate fixture before trusting the private export success path
 - generated owner proof input issue convert before treating issue markdown as reviewed owner decision, permission grant, proof, publication, or gate closure

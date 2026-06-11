@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -106,6 +108,9 @@ requireIncludes("generator", generator, [
   "bodyStored",
   "bodyOmittedReason",
   "request_only_pending_owner",
+  "checkedSafetyCount",
+  "licenseChoiceChecked",
+  "publicationChoiceChecked",
   "does_not_store_issue_body",
 ]);
 
@@ -141,6 +146,16 @@ if (snapshot.ownerInputStatus === "request_only_pending_owner" && snapshot.ready
   failures.push("request-only snapshots must not be ready for local conversion");
 }
 
+if (!Number.isInteger(snapshot.requiredSignals?.checkedSafetyCount)) {
+  failures.push("snapshot requiredSignals.checkedSafetyCount must be an integer");
+}
+
+for (const signal of ["licenseChoiceChecked", "publicationChoiceChecked"]) {
+  if (typeof snapshot.requiredSignals?.[signal] !== "boolean") {
+    failures.push(`snapshot requiredSignals.${signal} must be a boolean`);
+  }
+}
+
 for (const boundary of [
   "does_not_store_issue_body",
   "does_not_choose_license",
@@ -164,6 +179,9 @@ requireIncludes("report", report, [
   "# Mimesis Remote Owner Proof Input Issue Snapshot",
   "body stored: no",
   "body sha256",
+  "license choice checked",
+  "publication choice checked",
+  "safety confirmations checked",
   "not owner decision",
   "not proof",
   "does not store the raw issue body",
@@ -226,6 +244,116 @@ for (const [label, content] of [
 ]) {
   if (!content.toLowerCase().includes("owner proof input remote issue snapshot")) {
     failures.push(`${label}: missing owner proof input remote issue snapshot text`);
+  }
+}
+
+if (fs.existsSync(path.join(root, "tools", "create-owner-proof-input-remote-issue-snapshot.mjs"))) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-owner-proof-snapshot-"));
+  const issueJsonPath = path.join(tmpDir, "issue.json");
+  const outputPath = path.join(tmpDir, "snapshot.json");
+  const reportPath = path.join(tmpDir, "snapshot.md");
+  fs.writeFileSync(issueJsonPath, `${JSON.stringify({
+    number: 77,
+    title: "[Owner Proof Input]: fixture with unchecked safety",
+    state: "OPEN",
+    url: "https://github.com/svy04/mimesis-engineering/issues/77",
+    labels: [{ name: "owner-proof-input" }],
+    createdAt: "2026-06-11T00:00:00Z",
+    updatedAt: "2026-06-11T00:00:00Z",
+    body: `Status: owner input candidate fixture, not owner decision or proof.
+
+## 1. license_or_no_reuse
+
+- [x] No reuse for now
+- [ ] Reuse allowed under an existing repository license
+
+Notes:
+
+\`\`\`text
+Owner says no reuse until a later explicit license decision.
+\`\`\`
+
+## 2. weak_artifact_permission
+
+Artifact/excerpt/path/link:
+
+\`\`\`text
+Weak README excerpt that needs a clearer 30-second explanation path.
+\`\`\`
+
+Artifact owner:
+
+\`\`\`text
+Owner-reviewed fixture submitter
+\`\`\`
+
+Publication preference:
+
+- [ ] Private review only
+- [ ] Public
+- [ ] Anonymized
+- [x] Redacted
+
+Redaction requirements:
+
+\`\`\`text
+Redact private names before public use.
+\`\`\`
+
+Proof boundary, meaning what this artifact/case must not claim:
+
+\`\`\`text
+Do not claim external adoption, benchmarked productivity, revenue, or publication.
+\`\`\`
+
+## Safety Confirmation
+
+- [ ] I did not include secrets, passwords, tokens, or private customer data.
+- [ ] I own or control the submitted artifact, or I have permission to submit the shown redacted excerpt/path/link for review.
+- [ ] I understand this issue does not grant permission, approve proof, publish, or close gates.
+`,
+  }, null, 2)}\n`);
+
+  const result = spawnSync(
+    process.execPath,
+    [
+      "tools/create-owner-proof-input-remote-issue-snapshot.mjs",
+      "--issue-json",
+      issueJsonPath,
+      "--output",
+      outputPath,
+      "--report",
+      reportPath,
+    ],
+    { cwd: root, encoding: "utf8" },
+  );
+
+  if (result.status !== 0) {
+    failures.push(`snapshot fixture smoke failed: ${result.stderr || result.stdout}`);
+  } else {
+    const smokeSnapshot = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+    const smokeReport = fs.readFileSync(reportPath, "utf8");
+    if (smokeSnapshot.issue?.number !== 77) {
+      failures.push("snapshot fixture smoke must read --issue-json instead of live issue #7");
+    }
+    if (smokeSnapshot.ownerInputStatus !== "request_only_pending_owner") {
+      failures.push("snapshot fixture smoke with unchecked safety confirmations must remain request_only_pending_owner");
+    }
+    if (smokeSnapshot.readyForLocalConversion !== false) {
+      failures.push("snapshot fixture smoke with unchecked safety confirmations must not be ready for local conversion");
+    }
+    if (smokeSnapshot.requiredSignals?.licenseChoiceChecked !== true) {
+      failures.push("snapshot fixture smoke must detect checked license choice");
+    }
+    if (smokeSnapshot.requiredSignals?.publicationChoiceChecked !== true) {
+      failures.push("snapshot fixture smoke must detect checked publication preference");
+    }
+    if (smokeSnapshot.requiredSignals?.checkedSafetyCount !== 0) {
+      failures.push("snapshot fixture smoke must count zero checked safety confirmations");
+    }
+    if (!smokeReport.includes("safety confirmations checked: 0")) {
+      failures.push("snapshot fixture smoke report must show zero checked safety confirmations");
+    }
   }
 }
 

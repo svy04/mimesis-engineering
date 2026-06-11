@@ -10,7 +10,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 23
+- changed tracked files: 25
 - untracked files: 0
 
 ## Conclusion
@@ -33,6 +33,8 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.json
+ M .mimesis/owner-actions/remote-proof-input-issue-snapshot.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -45,9 +47,9 @@ It does not publish, push, tag, release, or create a pull request.
  M ROADMAP.md
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
- M docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
+ M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md
  M docs/V0.1-RELEASE-PACKET.md
  M tools/README.md
- M tools/audit-owner-proof-input-issue-convert.mjs
- M tools/convert-owner-proof-input-issue.mjs
+ M tools/audit-owner-proof-input-remote-issue-snapshot.mjs
+ M tools/create-owner-proof-input-remote-issue-snapshot.mjs
 ```

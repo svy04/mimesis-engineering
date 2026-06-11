@@ -37,6 +37,11 @@ const issueUrl = `https://github.com/svy04/mimesis-engineering/issues/${issueNum
 const expectedLabel = "owner-proof-input";
 const placeholderPattern = /\[owner to fill|_No response_|pending owner input|not provided|TBD|TODO|<fill/i;
 const secretPattern = /\b(api[_-]?key|secret|password|token|oauth[_-]?token)\b\s*[:=]\s*["']?[A-Za-z0-9._\-]{8,}/i;
+const checkedBoxPattern = /-\s*\[[xX]\]/g;
+const oneCheckedBoxPattern = /-\s*\[[xX]\]/;
+const issueJsonPath = flags.has("issue-json")
+  ? path.resolve(root, String(flags.get("issue-json")))
+  : "";
 
 function repoRelative(filePath) {
   return path.relative(root, filePath).replaceAll(path.sep, "/");
@@ -81,6 +86,10 @@ function hasOwnerValue(value) {
 }
 
 function fetchIssue() {
+  if (issueJsonPath) {
+    return JSON.parse(fs.readFileSync(issueJsonPath, "utf8"));
+  }
+
   const result = spawnSync(
     "gh",
     [
@@ -138,6 +147,9 @@ This report records live GitHub issue metadata and a body hash without storing t
 
 - license_or_no_reuse heading present: ${snapshot.requiredSignals.licenseHeadingPresent ? "yes" : "no"}
 - weak_artifact_permission heading present: ${snapshot.requiredSignals.weakArtifactHeadingPresent ? "yes" : "no"}
+- license choice checked: ${snapshot.requiredSignals.licenseChoiceChecked ? "yes" : "no"}
+- publication choice checked: ${snapshot.requiredSignals.publicationChoiceChecked ? "yes" : "no"}
+- safety confirmations checked: ${snapshot.requiredSignals.checkedSafetyCount}
 - placeholders present: ${snapshot.requiredSignals.placeholdersPresent ? "yes" : "no"}
 - secret-like pattern detected: ${snapshot.requiredSignals.secretLikePatternDetected ? "yes" : "no"}
 
@@ -196,6 +208,9 @@ try {
       licenseHeadingPresent: false,
       weakArtifactHeadingPresent: false,
       safetyConfirmationPresent: false,
+      licenseChoiceChecked: false,
+      publicationChoiceChecked: false,
+      checkedSafetyCount: 0,
       placeholdersPresent: false,
       secretLikePatternDetected: false,
     },
@@ -226,13 +241,22 @@ try {
 const body = String(issue.body || "");
 const licenseSection = section(body, ["license_or_no_reuse", "license or no-reuse"]);
 const weakArtifactSection = section(body, ["weak_artifact_permission", "weak artifact permission"]);
+const safetySection = section(body, ["Safety Confirmation"]);
 const labels = (issue.labels ?? []).map((label) => label.name).filter(Boolean);
 const expectedLabelPresent = labels.includes(expectedLabel);
 const licenseHeadingPresent = body.includes("license_or_no_reuse");
 const weakArtifactHeadingPresent = body.includes("weak_artifact_permission");
 const placeholdersPresent = placeholderPattern.test(body);
 const secretLikePatternDetected = secretPattern.test(body);
-const requestOnly = placeholdersPresent || !hasOwnerValue(licenseSection) || !hasOwnerValue(weakArtifactSection);
+const licenseChoiceChecked = oneCheckedBoxPattern.test(licenseSection);
+const publicationChoiceChecked = /Publication preference:[\s\S]*?-\s*\[[xX]\]/i.test(weakArtifactSection);
+const checkedSafetyCount = (safetySection.match(checkedBoxPattern) || []).length;
+const requestOnly = placeholdersPresent
+  || !hasOwnerValue(licenseSection)
+  || !hasOwnerValue(weakArtifactSection)
+  || !licenseChoiceChecked
+  || !publicationChoiceChecked
+  || checkedSafetyCount < 3;
 const unsafe = secretLikePatternDetected || issue.state !== "OPEN" || !expectedLabelPresent;
 const ownerInputStatus = unsafe
   ? "unsafe_blocked"
@@ -262,7 +286,10 @@ const snapshot = {
   requiredSignals: {
     licenseHeadingPresent,
     weakArtifactHeadingPresent,
-    safetyConfirmationPresent: /Safety Confirmation/i.test(body),
+    safetyConfirmationPresent: Boolean(safetySection),
+    licenseChoiceChecked,
+    publicationChoiceChecked,
+    checkedSafetyCount,
     placeholdersPresent,
     secretLikePatternDetected,
   },

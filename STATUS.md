@@ -112,6 +112,7 @@ Release readiness:
 - status roadmap sync audit
 - public claim pack
 - release check order audit
+- owner proof input remote issue snapshot now records checked-choice and safety-confirmation readiness signals without storing raw issue body.
 - Superpowers adapter with `adapter:superpowers`, `audit:superpowers-adapter`, `docs/SUPERPOWERS-ADAPTER.md`, `adapters/superpowers.md`, and `.mimesis/adapter-packets/superpowers.md`; it is a local process/artifact contract, not Superpowers installation proof or execution proof.
 
 ## What Is Contract-Only
