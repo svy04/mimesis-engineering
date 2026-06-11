@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/owner-evidence-intake.schema.json",
+  "title": "Mimesis Owner Evidence Intake Record",
+  "description": "Machine-readable contract for pending owner evidence attachments derived from the owner evidence bundle without attaching or accepting evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "sourceBundle",
+    "fields",
+    "requiredGateIds",
+    "safetyConfirmation",
+    "prohibitedClaims",
+    "boundaries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending_owner_evidence_attachments", "draft", "reviewed", "rejected"]
+    },
+    "sourceBundle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "license_or_no_reuse",
+        "weak_artifact_permission",
+        "publication_scope",
+        "package_action_plugin_scope",
+        "benchmark_adoption_scope",
+        "strict_sync_intent"
+      ],
+      "properties": {
+        "license_or_no_reuse": {
+          "$ref": "#/$defs/evidenceField"
+        },
+        "weak_artifact_permission": {
+          "$ref": "#/$defs/evidenceField"
+        },
+        "publication_scope": {
+          "$ref": "#/$defs/evidenceField"
+        },
+        "package_action_plugin_scope": {
+          "$ref": "#/$defs/evidenceField"
+        },
+        "benchmark_adoption_scope": {
+          "$ref": "#/$defs/evidenceField"
+        },
+        "strict_sync_intent": {
+          "$ref": "#/$defs/evidenceField"
+        }
+      }
+    },
+    "requiredGateIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "safetyConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noEvidenceAttached",
+        "noArtifactCollected",
+        "noPermissionGranted",
+        "noPublication",
+        "noExternalProof",
+        "noClosedGates"
+      ],
+      "properties": {
+        "noEvidenceAttached": {
+          "type": "boolean",
+          "const": true
+        },
+        "noArtifactCollected": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPermissionGranted": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPublication": {
+          "type": "boolean",
+          "const": true
+        },
+        "noExternalProof": {
+          "type": "boolean",
+          "const": true
+        },
+        "noClosedGates": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "prohibitedClaims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "evidenceField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attachmentStatus",
+        "ownerEvidence",
+        "blockedGateIds",
+        "requiredAttachments",
+        "requiredCommands",
+        "stopCondition",
+        "boundary"
+      ],
+      "properties": {
+        "attachmentStatus": {
+          "type": "string",
+          "enum": ["pending", "attached", "blocked", "not_in_scope"]
+        },
+        "ownerEvidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blockedGateIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requiredAttachments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requiredCommands": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "stopCondition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

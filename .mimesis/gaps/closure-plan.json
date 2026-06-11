@@ -1,0 +1,229 @@
+{
+  "schema": "mimesis.gap-closure-plan.v0.1",
+  "generatedAt": "2026-06-11T03:56:22.588Z",
+  "status": "closure_plan_not_closure",
+  "sourceRegister": ".mimesis/gaps/current-gap-register.json",
+  "completionAllowed": false,
+  "closureCount": 9,
+  "steps": [
+    {
+      "id": "strict_publish_sync",
+      "title": "Strict publish sync gate",
+      "currentStatus": "blocked",
+      "closureType": "local_sync_gate",
+      "requiredEvidence": [
+        "npm run audit:sync:strict",
+        ".mimesis/sync-status.md"
+      ],
+      "commands": [
+        "npm run audit:sync",
+        "npm run audit:sync:strict",
+        "git status --short --branch"
+      ],
+      "stopConditions": [
+        "Stop if the worktree is dirty and no owner has requested staging, committing, pushing, tagging, releasing, or publishing.",
+        "Stop if upstream sync cannot be verified from the local git state."
+      ],
+      "allowedClaimAfterClosure": "The strict local sync gate passed at the recorded time.",
+      "boundary": "Does not stage, commit, push, tag, release, or publish.",
+      "sourceNextAction": "Clean or intentionally publish local changes, then rerun the strict sync gate."
+    },
+    {
+      "id": "owner_license_decision",
+      "title": "Owner license decision",
+      "currentStatus": "pending_owner",
+      "closureType": "owner_decision_gate",
+      "requiredEvidence": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md"
+      ],
+      "commands": [
+        "npm run license:packet",
+        "npm run audit:license-packet",
+        "Record the owner's explicit license or no-reuse decision in the release decision record."
+      ],
+      "stopConditions": [
+        "Stop if no owner decision exists.",
+        "Stop if the request would require legal advice."
+      ],
+      "allowedClaimAfterClosure": "The owner recorded a license or no-reuse decision.",
+      "boundary": "Does not choose a license or provide legal advice.",
+      "sourceNextAction": "Owner chooses a reuse license or keeps the no-reuse boundary."
+    },
+    {
+      "id": "permissioned_external_artifact",
+      "title": "One permissioned external weak artifact",
+      "currentStatus": "waiting_for_artifact",
+      "closureType": "permissioned_artifact_gate",
+      "requiredEvidence": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md"
+      ],
+      "commands": [
+        "npm run proof:intake",
+        "npm run audit:proof-intake",
+        "Collect one permissioned, user-submitted, or clearly redacted weak artifact."
+      ],
+      "stopConditions": [
+        "Stop if permission, redaction, or submitter scope is unclear.",
+        "Stop if the artifact contains secrets or private personal data that should not enter the case trail."
+      ],
+      "allowedClaimAfterClosure": "One permissioned or clearly redacted weak artifact is available for a proof loop.",
+      "boundary": "Does not create external proof or grant permission.",
+      "sourceNextAction": "Collect one user-submitted, permissioned, or clearly redacted weak artifact."
+    },
+    {
+      "id": "completed_external_case",
+      "title": "Completed permissioned before/after case",
+      "currentStatus": "waiting_for_artifact",
+      "closureType": "proof_case_gate",
+      "requiredEvidence": [
+        "npm run cli -- case:review path/to/intake.md",
+        "npm run cli -- case:from-intake path/to/intake.md",
+        "npm run cli -- case:check path/to/case"
+      ],
+      "commands": [
+        "npm run cli -- case:review path/to/intake.md",
+        "npm run cli -- case:from-intake path/to/intake.md",
+        "npm run cli -- case:check path/to/case",
+        "npm run cli -- evidence:from-case path/to/case --out path/to/evidence.md --force",
+        "npm run cli -- evidence:review path/to/evidence.md --decision reviewed --reviewer \"Reviewer Name\" --note \"Reviewed against the proof boundary.\""
+      ],
+      "stopConditions": [
+        "Stop if the case lacks before/after artifacts.",
+        "Stop if the boundary check does not preserve what remains unproven.",
+        "Stop if reviewed evidence is missing."
+      ],
+      "allowedClaimAfterClosure": "A permissioned before/after case exists with reviewed evidence and explicit proof boundaries.",
+      "boundary": "Does not prove improvement, adoption, or outcome until the before/after case evidence exists.",
+      "sourceNextAction": "Run the reviewed artifact through the full case path and preserve the boundary check."
+    },
+    {
+      "id": "package_publication",
+      "title": "npm package publication",
+      "currentStatus": "blocked",
+      "closureType": "publication_gate",
+      "requiredEvidence": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "owner-controlled npm publish evidence"
+      ],
+      "commands": [
+        "npm run audit:package",
+        "npm run package:dry-run",
+        "Owner-controlled npm publish command, only after license and sync gates close."
+      ],
+      "stopConditions": [
+        "Stop if package.json remains private.",
+        "Stop if the license decision is pending.",
+        "Stop if strict sync has not passed."
+      ],
+      "allowedClaimAfterClosure": "The npm package was published only if owner-controlled publish evidence exists.",
+      "boundary": "Dry-run package checks are not npm publication.",
+      "sourceNextAction": "After license and sync gates close, owner decides whether npm publication is in scope."
+    },
+    {
+      "id": "action_publication",
+      "title": "Tagged GitHub Action or Marketplace publication",
+      "currentStatus": "blocked",
+      "closureType": "publication_gate",
+      "requiredEvidence": [
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "tag or Marketplace release evidence"
+      ],
+      "commands": [
+        "npm run audit:action",
+        "Owner-controlled git tag or GitHub Marketplace release flow, only after release gates close."
+      ],
+      "stopConditions": [
+        "Stop if no tag or Marketplace release evidence exists.",
+        "Stop if the repository-local action metadata is the only evidence."
+      ],
+      "allowedClaimAfterClosure": "A tagged GitHub Action or Marketplace release exists only if release evidence is attached.",
+      "boundary": "Repository-local action metadata is not Marketplace publication.",
+      "sourceNextAction": "Owner decides whether a tagged public action release or Marketplace listing is in scope."
+    },
+    {
+      "id": "shipped_plugin",
+      "title": "Shipped plugin or connector proof",
+      "currentStatus": "blocked",
+      "closureType": "integration_gate",
+      "requiredEvidence": [
+        "docs/PLUGIN-RELEASE-PACKET.md",
+        ".mimesis/plugin-release-packets/v0.1-action-candidate.md",
+        "installation or release evidence packet"
+      ],
+      "commands": [
+        "npm run plugin:install-packet",
+        "npm run plugin:packet",
+        "npm run audit:plugin-install-packet",
+        "npm run audit:plugin-packet",
+        "Attach real installation, release, or connector availability evidence."
+      ],
+      "stopConditions": [
+        "Stop if only local plugin scaffolds exist.",
+        "Stop if no install or release evidence can be attached."
+      ],
+      "allowedClaimAfterClosure": "A plugin or connector shipped only if install or release evidence exists.",
+      "boundary": "Local plugin scaffolds and install-readiness packets are not shipped plugins.",
+      "sourceNextAction": "Produce a real tagged plugin/action release or installation proof before shipped-plugin claims."
+    },
+    {
+      "id": "benchmark_study",
+      "title": "Benchmarked productivity evidence",
+      "currentStatus": "waiting_for_evidence",
+      "closureType": "measurement_gate",
+      "requiredEvidence": [
+        "docs/BENCHMARK-PACKET.md",
+        ".mimesis/benchmark-packets/v0.2-first-benchmark.md",
+        "reviewed evidence packet"
+      ],
+      "commands": [
+        "npm run benchmark:packet",
+        "npm run audit:benchmark-packet",
+        "Run the measurement protocol and review the resulting evidence packet."
+      ],
+      "stopConditions": [
+        "Stop if no measured before/after study exists.",
+        "Stop if evidence has not been reviewed."
+      ],
+      "allowedClaimAfterClosure": "A benchmark result can be claimed only within the measured study boundary.",
+      "boundary": "Measurement protocol only; no benchmark claim without direct evidence.",
+      "sourceNextAction": "Run the measurement protocol and review the resulting evidence before productivity claims."
+    },
+    {
+      "id": "external_adoption",
+      "title": "External adoption evidence",
+      "currentStatus": "waiting_for_evidence",
+      "closureType": "adoption_gate",
+      "requiredEvidence": [
+        "templates/evidence-packet.md",
+        "reviewed adoption evidence packet"
+      ],
+      "commands": [
+        "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",
+        "npm run evidence:check path/to/reviewed-adoption-evidence.md",
+        "npm run cli -- claim:from-evidence path/to/reviewed-adoption-evidence.md --out path/to/bounded-claim.md"
+      ],
+      "stopConditions": [
+        "Stop if public repository visibility is the only evidence.",
+        "Stop if the evidence is not external, permissioned, or reviewed."
+      ],
+      "allowedClaimAfterClosure": "External adoption can be claimed only within the reviewed evidence packet boundary.",
+      "boundary": "Read-only public repository visibility is not external adoption.",
+      "sourceNextAction": "Collect and review real external usage evidence before adoption claims."
+    }
+  ],
+  "boundaries": [
+    "does_not_close_gates",
+    "does_not_prove_completion",
+    "does_not_publish",
+    "does_not_stage_commit_push_tag_release",
+    "does_not_choose_license",
+    "does_not_create_external_proof",
+    "does_not_prove_adoption"
+  ],
+  "allowedClaim": "Mimesis has a local gap closure plan that explains how each open gate can be closed with direct evidence.",
+  "disallowedClaim": "The gap closure plan does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption."
+}

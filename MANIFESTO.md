@@ -1,7 +1,8 @@
 # Manifesto
 
-AI-native work does not need more confident roleplay.
+Give AI standards, not roles.
 
+AI-native work does not need more confident roleplay.
 It needs better standards.
 
 The weak move is to tell an LLM:
@@ -15,6 +16,8 @@ The stronger move is to show it:
 ```text
 These are the artifacts experts actually made.
 Use their structure as the standard.
+Transform my work under my constraints.
+Show the proof boundary.
 ```
 
 Mimesis Engineering treats real artifacts as context:
@@ -31,8 +34,13 @@ Mimesis Engineering treats real artifacts as context:
 - user flows
 - proof surfaces
 
-The goal is not copying. The goal is to extract knowledge structure, visual structure, judgment loops, and proof boundaries so your work starts from a higher standard than your own first idea.
+The goal is not copying.
+The goal is to extract knowledge structure, visual structure, judgment loops, and proof boundaries so your work starts from a higher standard than your own first idea.
 
 Good imitation is not plagiarism.
 
-Good imitation is a way to raise the floor.
+Good imitation raises the floor.
+Strong Mimesis leaves an artifact trail.
+
+Bring one weak artifact.
+Leave with a stronger one.

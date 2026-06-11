@@ -1,0 +1,1763 @@
+{
+  "schema": "mimesis.release-artifact-manifest.v0.1",
+  "status": "local_manifest_not_publication",
+  "generatedAt": "2026-06-11T03:56:33.197Z",
+  "package": {
+    "name": "mimesis-engineering",
+    "version": "0.1.0",
+    "private": true,
+    "license": "UNLICENSED"
+  },
+  "git": {
+    "branch": "codex/mimesis-framework-v0.1",
+    "head": "8fbdf0e20d02adfca773191e14fb2abec4ba4bac",
+    "upstream": "origin/codex/mimesis-framework-v0.1",
+    "trackedChangedCount": 74,
+    "untrackedCount": 0
+  },
+  "artifactCount": 247,
+  "artifacts": [
+    {
+      "path": ".github/actions/release-check/action.yml",
+      "category": "github",
+      "sourceType": "framework-source",
+      "bytes": 616,
+      "sha256": "c7cd05a750e2c6735067b7038cccc64deaa6220db066905844a42c80265ab87b"
+    },
+    {
+      "path": ".github/workflows/validate-mimesis.yml",
+      "category": "github",
+      "sourceType": "framework-source",
+      "bytes": 403,
+      "sha256": "18056d16458c5e4a6c048fa14a6096a493f34e5ecbb0566b3db4d79196d3012b"
+    },
+    {
+      "path": ".mimesis/adoption-packets/v0.2-first-adoption.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 2940,
+      "sha256": "02571324218738e789feec47045db7975a1b18ca6a89f92732c410da973a2275"
+    },
+    {
+      "path": ".mimesis/benchmark-packets/v0.2-first-benchmark.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3580,
+      "sha256": "fb3cb02190dafdadbc4040027deb1df879f2ff0b10f69005eed1bf67599604fd"
+    },
+    {
+      "path": ".mimesis/case-publication-packets/current-casebook-candidate.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 2874,
+      "sha256": "1368ea974c99ff5f87165c5efd88621c8c874bf9b61b043bdf4718b36c31d6d5"
+    },
+    {
+      "path": ".mimesis/claim-packs/public-v0.1.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 2693,
+      "sha256": "48ab5189a222101e1e89b7571b7db22710a6ca7fe4918e05a6f1f29f234d5181"
+    },
+    {
+      "path": ".mimesis/completion/goal-completion-audit.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 8595,
+      "sha256": "84ae37f14027e91b8b0067f2b140be7b779983e50c9cfc4ea82e7b03e4bb218b"
+    },
+    {
+      "path": ".mimesis/ecosystem-resources/current-resource-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4331,
+      "sha256": "50594636c816840e612f81f0710a1764e1cacf14f8baf2b01c879df7901d0f2e"
+    },
+    {
+      "path": ".mimesis/evidence-packets/local-case-draft.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 2061,
+      "sha256": "a9ed17e59ff1efc7d4ad5fd6b4e6886b575b8df5a6c1f7973095e34dd2a16db8"
+    },
+    {
+      "path": ".mimesis/framework-manifest.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 27434,
+      "sha256": "59671259f0b23bdc9a02b15e0cccf742dc524fbc48dac8c1044c05c09f37d99d"
+    },
+    {
+      "path": ".mimesis/gaps/closure-plan.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 10345,
+      "sha256": "b54d5872dfe002c9536f05f3ed1ffe6ac84989d1a9ebad8c8176b64a271e3057"
+    },
+    {
+      "path": ".mimesis/gaps/current-gap-register.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 5570,
+      "sha256": "7afebda102a5b07a2ed548ffef0d367395e91b4979a01c1db65397b8521a107d"
+    },
+    {
+      "path": ".mimesis/gates/closure-readiness.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 23806,
+      "sha256": "b7dcbbd0915105a86a8e6f14f77df6cae6e8ae1d47d51bbc63d9867c78392ae8"
+    },
+    {
+      "path": ".mimesis/gates/closure-review.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 15785,
+      "sha256": "74e0bdd2278ae5c3f24a785fb1f9808a09ec88cce968674885758c31f3eb10c3"
+    },
+    {
+      "path": ".mimesis/gates/current-gateboard.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 8082,
+      "sha256": "e2ef44716ca0e20663484ecf1803b4c789ac7f9264fed6b5ebf6c2169c7645f1"
+    },
+    {
+      "path": ".mimesis/gates/evidence-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 5656,
+      "sha256": "78a71e6cddf3d83a8cb4658141591700246d6079481981d29bfa55ceb73ad97a"
+    },
+    {
+      "path": ".mimesis/license-packets/owner-decision.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3526,
+      "sha256": "16f41c0d382aab8d8b717b09bb490d28bd7200d7e5fb1f20cda17da82c75f75c"
+    },
+    {
+      "path": ".mimesis/mcp/resource-index.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4574,
+      "sha256": "e26c290be63f357e48d6c36f6863196cbbf3d28d3508fad5763ab07c83696b0c"
+    },
+    {
+      "path": ".mimesis/operator-runbooks/current-runbook.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 19809,
+      "sha256": "415aab76c38f23c81cf8699b1aebdab9746287d2fe2f46689c70925579c7d833"
+    },
+    {
+      "path": ".mimesis/owner-actions/answer-review.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 5748,
+      "sha256": "160f9de719366187edf6377ff892e7355de620c837ef1add5f2633f207c58629"
+    },
+    {
+      "path": ".mimesis/owner-actions/current-action-queue.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 7290,
+      "sha256": "79b91f6155bdd78ccc4a2b81d2ffa412d018ae3c6b95dd3b066ecaf56318a50e"
+    },
+    {
+      "path": ".mimesis/owner-actions/decision-intake.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6435,
+      "sha256": "f4e24ab627fb7ec03be47f2a6292997ed32adb4254d713db0e458015ccfd8836"
+    },
+    {
+      "path": ".mimesis/owner-actions/evidence-attachment-form.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 7999,
+      "sha256": "1597bd7bc310d98ee2a545d25e092279dd27080a00594af270998800bf6b4754"
+    },
+    {
+      "path": ".mimesis/owner-actions/evidence-bundle.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 7682,
+      "sha256": "f45d48e3c673d81ceb080edda30d20421d88fe61d87df31e83d9e7e3f915ecd9"
+    },
+    {
+      "path": ".mimesis/owner-actions/evidence-review.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 5433,
+      "sha256": "e94e36686cc9bfd0e96003b9099952d155057ec9e311cff1ee0e106f7caa4f11"
+    },
+    {
+      "path": ".mimesis/owner-actions/fixture-answer-record.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3992,
+      "sha256": "51eb391c6688e69b649c7309431f3916ffa52adf4d5f487f7465864160a928b3"
+    },
+    {
+      "path": ".mimesis/owner-actions/fixture-evidence-record.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 5668,
+      "sha256": "ab961413f52b4129ac57d0821fd25826fb98f8b1df7b0a317b981c1cf6a0eca6"
+    },
+    {
+      "path": ".mimesis/owner-actions/fixture-evidence-submission-check.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 1806,
+      "sha256": "7fa9ab59a6dc6f42d2a5e7fa5fe2992e77b9f11042bd7412485033b7a20f97d3"
+    },
+    {
+      "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4995,
+      "sha256": "225f6a4425a5715c8e95a16b5a33c7400e28973cdc3355ff2dc71e49fbf0b624"
+    },
+    {
+      "path": ".mimesis/plugin-install-packets/codex-local.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3634,
+      "sha256": "697cd4b0c2b1b60701619a0c33c8c0c65addf94ddad6acd496b9570656980734"
+    },
+    {
+      "path": ".mimesis/plugin-release-packets/v0.1-action-candidate.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 7090,
+      "sha256": "709d91a584d6b061436ebeae4d940e2e48215ab82bf7e66180b0d7a174c90840"
+    },
+    {
+      "path": ".mimesis/proof-candidates/first-candidate.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6649,
+      "sha256": "3c977af1f4210d737b1feea9253d23d1b1b3117cd8795cf89e708c3f60c9d993"
+    },
+    {
+      "path": ".mimesis/proof-intake/acceptance-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 8605,
+      "sha256": "0265422bfb4ca6fa3523e929bacd6937e47187cce13b39c91fba07467e2d1247"
+    },
+    {
+      "path": ".mimesis/proof-intake/first-external-proof-kit.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6694,
+      "sha256": "5b45851db061f317ef58f514ad371a31fdca49bac264f7b2293be67dc5eac44a"
+    },
+    {
+      "path": ".mimesis/proof-intake/fixture-check.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 1892,
+      "sha256": "3b5434e40371afe759cc40850bce37b929630b0987052d53ee29b4085948b99d"
+    },
+    {
+      "path": ".mimesis/proof-intake/fixture-record.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 1363,
+      "sha256": "284576181db70a453a9efa7b70be6651a771f9c643f1a45059541ab62c4f9bad"
+    },
+    {
+      "path": ".mimesis/proof-intake/redaction-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6351,
+      "sha256": "1adb80988e9e2531d8227642013208ceb96a3c3147862b36535a97c5e20986b3"
+    },
+    {
+      "path": ".mimesis/proof-intake/submission-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 8308,
+      "sha256": "18a833cd65a1f57d0fbfd8b27dd26ccfb6a7f6d2c197e0d4379f6e9dfded4a88"
+    },
+    {
+      "path": ".mimesis/proof-packets/v0.2-first-proof.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4952,
+      "sha256": "32f95cdb8a1774af7626cdbc455eecdbc122de3af97df885b8fa3f6cdaf5ae2f"
+    },
+    {
+      "path": ".mimesis/proof-runs/dry-run-report.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 688,
+      "sha256": "b00256dd8284c0d09594870700c8eaa3d8eb707053e343404291bbf4e1d5d495"
+    },
+    {
+      "path": ".mimesis/proof-runs/execution-report.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6220,
+      "sha256": "25733ce24e600f5f48588c23db375b5892d44d431c71f415dc6271a726f008a4"
+    },
+    {
+      "path": ".mimesis/proof-runs/readiness.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6877,
+      "sha256": "8119fad9c0428913f1b2a2f650843f92e75c20918ef8c8db05106c2c1ccc834c"
+    },
+    {
+      "path": ".mimesis/proof-runs/v0.2-first-run.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 6144,
+      "sha256": "d02df6d661b286969e6373ebe6cfcb2ced716f8edb30a4c25e33f177511fb798"
+    },
+    {
+      "path": ".mimesis/publication-packets/v0.1.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 26368,
+      "sha256": "a3ad205f9ac315a297f07e235f535de2df2af845927d4d11bb258ab90541d8ce"
+    },
+    {
+      "path": ".mimesis/publish-packets/local-sync-handoff.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 14668,
+      "sha256": "f23b009efb87a261c21fa972c22efcd7c112b31918f93da311b9f8634f7b8435"
+    },
+    {
+      "path": ".mimesis/reference-packs/index.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 11159,
+      "sha256": "d28e3bdfbd70d5ce4767c7cbb71410694a5652b27aad16862518eba70a8eca8c"
+    },
+    {
+      "path": ".mimesis/release-decisions/owner-decision-record.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3379,
+      "sha256": "aefa4e26a510ee9c1d84bc3481319439599c537ab0d4c689df6afc29986b7d59"
+    },
+    {
+      "path": ".mimesis/release-evidence/publication-evidence-packet.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 3599,
+      "sha256": "df3eba2378d27bfc132c18ed0fecbffbe192114fa2384c5c940510962c6cae01"
+    },
+    {
+      "path": ".mimesis/release-evidence/v0.1-report.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4843,
+      "sha256": "33717c728f5c6e696c7df9da034c1cfd99d98504ddbd76d6c1896d91dbe4076a"
+    },
+    {
+      "path": ".mimesis/release-execution/v0.1-owner-handoff.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 11762,
+      "sha256": "d0278bdd02aaa15ba791a84eeb078b9b0f5e597494d99ad0167a530d1ceb5077"
+    },
+    {
+      "path": ".mimesis/release-review/v0.1-bundle.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 9284,
+      "sha256": "7d501a1fd8f4c1edd2c472b73adbcb84387d104a18e0642315a6cdfef2b66c7d"
+    },
+    {
+      "path": ".mimesis/run_ledger.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 241704,
+      "sha256": "32e8e00f6db1819c17cd541502fb4991a0d7997f47bf095fd2213f524234a2be"
+    },
+    {
+      "path": ".mimesis/security/secret-safety-report.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 480,
+      "sha256": "489db9567129bf849fc7c47ceab83ee25115026decf21e00766ba416d8d2038d"
+    },
+    {
+      "path": ".mimesis/state/current-state.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 9496,
+      "sha256": "053eb3201a72891861a7d4f8b578b9be5e36149633c434de7c5006d5a0fce948"
+    },
+    {
+      "path": ".mimesis/sync-status.md",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 4211,
+      "sha256": "f0b63520e0d700d68446bc395e950204352e82f686c0555513c8bd7df02aa5df"
+    },
+    {
+      "path": ".mimesis/worktree/review-packet.json",
+      "category": "generated-protocol",
+      "sourceType": "generated-local-artifact",
+      "bytes": 14295,
+      "sha256": "5f1804030ee6d2136cc27aa75173955d30c520d53f628f65f91515361f52ecb8"
+    },
+    {
+      "path": "action.yml",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 978,
+      "sha256": "bbd4f9430f252e367375da1973ee21cd78b7d1b7d12f4354adeead154ce881db"
+    },
+    {
+      "path": "adapters/README.md",
+      "category": "adapter",
+      "sourceType": "framework-source",
+      "bytes": 1192,
+      "sha256": "02c509f0fd4b8f12bfa2ba9e744e277fc6f3de64bc10eb32009b2863028b49b8"
+    },
+    {
+      "path": "bin/mimesis.mjs",
+      "category": "root",
+      "sourceType": "local-tooling",
+      "bytes": 26737,
+      "sha256": "868c7f2c81f307b3885d28bed9cd6033183f602c52dc5ef241fcb10b6d3b3d7e"
+    },
+    {
+      "path": "cases/001-mimesis-on-mimesis.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 2546,
+      "sha256": "b2a32d38b6f69f3d0b76a2bbe7abaafb93886076ca1afd8a6b84f3ff7a0b689d"
+    },
+    {
+      "path": "cases/002-blog-homepage-mimesis.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 2678,
+      "sha256": "7c76eafbf4c10036ca2bfa90b9fa925a07b3683beccd4edb46f9368c6df8f364"
+    },
+    {
+      "path": "cases/003-github-profile-mimesis.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 2543,
+      "sha256": "102bcbc591295719ecc95a9cc0c6ce9545997765eb5c3008c3a9807ca4d0396b"
+    },
+    {
+      "path": "cases/004-when-mimesis-becomes-shallow-copying.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 1568,
+      "sha256": "ddb764fc26c4e55b29e8ec8f56b37a00f64fdfd868e45c705bce8424df73841e"
+    },
+    {
+      "path": "cases/005-lovable-ai-app-builder-public-source-specimen.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 3557,
+      "sha256": "af89e6e9ace73257b0171c867a3bacc78be1e8ddffa3ec0ffa8acff40375a150"
+    },
+    {
+      "path": "cases/EXTERNAL-CASEBOOK.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 1509,
+      "sha256": "b354880a897523236f7fc7053afdeda015659f1355d70050d63667466df0db49"
+    },
+    {
+      "path": "cases/README.md",
+      "category": "case",
+      "sourceType": "case-surface",
+      "bytes": 1243,
+      "sha256": "fa0f5ab072b3080e026b051b81d85b440f9574c7bd9e5a4a1c8e9e7f76e45b7c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 924,
+      "sha256": "a683555cba19538632e4cb7a59d84830e03e6dc1d6fb58a4487b927398a3cd7f"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 2818,
+      "sha256": "2185f310d5383a618cc1f079b2eaa200d563d10104390a6bbab436e7e10b3054"
+    },
+    {
+      "path": "docs/ACTION-RELEASE-CANDIDATE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2082,
+      "sha256": "9d8c6c9a589e4683df4a226e011948b136762158c67c954a38292d204e9bdfee"
+    },
+    {
+      "path": "docs/ACTIVATION-SURFACE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1388,
+      "sha256": "c860e660510f5a5facebaaec3d421ba8411403c1cae04315142f7581df42f63a"
+    },
+    {
+      "path": "docs/ADOPTION-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1152,
+      "sha256": "30963d1e7f8005a5cc2b989242fc778d33c5b794b05c0385850e19e55f4adb6a"
+    },
+    {
+      "path": "docs/BENCHMARK-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1247,
+      "sha256": "dec619a7fb1f42042ce3599ceb3c80cea1ee6d23760c1fb1ae3cd955282871c6"
+    },
+    {
+      "path": "docs/CLAIM-FROM-EVIDENCE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1261,
+      "sha256": "fdbad340b10bc4af1f9eec9172d2d130cb1b5bc5e9f053134b654bab18adbddc"
+    },
+    {
+      "path": "docs/COMPLETION-AUDIT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 48943,
+      "sha256": "a84cac13825a15863990e6b56236f14b5c88ad08e2ec2f02d4d870957731f7d8"
+    },
+    {
+      "path": "docs/CURRENT-STATE-SUMMARY.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1582,
+      "sha256": "5e475896e695bbe19aac095e2f01318f268945043c22ad52225facbaec5f9717"
+    },
+    {
+      "path": "docs/FIRST-LOOP-DEMO.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 929,
+      "sha256": "28a953c9b84eebbdf75825c4e85be05cbabcc8177e9f9858b43d8151ab620362"
+    },
+    {
+      "path": "docs/FIRST-PROOF-CANDIDATE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1626,
+      "sha256": "d3e768e07e2e4f605c7558002ef658cf2b9b0becdf0a8c22f91985c630300a8e"
+    },
+    {
+      "path": "docs/FRAMEWORK-MANIFEST-SCHEMA.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1844,
+      "sha256": "e78b1f848e3a30cd6340d5b99b22861635e459966074a383c2ed3397e5c402e8"
+    },
+    {
+      "path": "docs/FRAMEWORK-MANIFEST.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 3884,
+      "sha256": "753b6d6f56f9abd322d0e3cb6d62cfd843312068a7856886f8a7c9d2a9e3d1ba"
+    },
+    {
+      "path": "docs/GAP-CLOSURE-PLAN.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1894,
+      "sha256": "95d2b982c554a324702e354dca170ba2156b88c89eab6558eec4c79d305b0266"
+    },
+    {
+      "path": "docs/GAP-REGISTER.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2304,
+      "sha256": "6e6dced288f8e4dda5603c465b0a007622a92610f0c60eb8e2cf0900d86c8bd7"
+    },
+    {
+      "path": "docs/GATE-CLOSURE-READINESS.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1831,
+      "sha256": "5a9450ab7cb138714e6e32decf766629e239bfffe45c459b2ede3a39c8023c9a"
+    },
+    {
+      "path": "docs/GATE-CLOSURE-REVIEW.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1467,
+      "sha256": "cf5ff97817f645ea8731e355c1de078a532c380daec15efdf8054a4f17045531"
+    },
+    {
+      "path": "docs/GATE-EVIDENCE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1383,
+      "sha256": "f1b1b99586a660a6f47f47131b859a2e1fa767f3c9e1eb4118f74e9d66c76416"
+    },
+    {
+      "path": "docs/GOAL-COMPLETION-AUDIT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1300,
+      "sha256": "496a923d3d141e934e50c4df091b4f0e4f1faad94ce4e843fb278fa5cc073b6f"
+    },
+    {
+      "path": "docs/OWNER-ACTION-QUEUE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1738,
+      "sha256": "c5e8c87b762933e2e55eb7d04f7c971786138b8ced3be9e18caa836b042deb63"
+    },
+    {
+      "path": "docs/OWNER-ANSWER-REVIEW.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1595,
+      "sha256": "c9628576336f8198673051604b8da8677a6e2dae6f2dd3705db08e0a1cd6698b"
+    },
+    {
+      "path": "docs/OWNER-DECISION-ANSWER-RECORD.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2035,
+      "sha256": "12a56ec498ca76586bba9f4495a2b28d1e5f099419ae4787152e3733748de6bd"
+    },
+    {
+      "path": "docs/OWNER-DECISION-INTAKE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1496,
+      "sha256": "006ceb27247597934162c6e412cb179ddc7850577b921198f26d46476f7849e6"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1477,
+      "sha256": "d9e79ee353d19cd86f38fd8c88de5ec638128d9bdbf0ba54b1be89de577def9b"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-BUNDLE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1807,
+      "sha256": "46a81eb8b54f4bb2ae542ee14f465ea9943e8728f02412b34a660e07205a2dff"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-INTAKE-RECORD.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1757,
+      "sha256": "be26a836fddadcb45a8767bbbfdd5499eb9708875961d692f1318acdcf641ba8"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-REVIEW.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1404,
+      "sha256": "4b3288d53a3456b781d3b07fedd414c1e030ac6e799448a66d0c5bda4ab133fa"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1771,
+      "sha256": "0481e1fb8b7de4fa7d1091b8575c53e8955e267d71311b6c4d81f277798e9bba"
+    },
+    {
+      "path": "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 3092,
+      "sha256": "316c7fd8e6a68618abe08ab37caa20aa8f62651d198eadbc7faab41cee1fcad6"
+    },
+    {
+      "path": "docs/PACKAGE-RELEASE-CANDIDATE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1819,
+      "sha256": "c4da50e9ac5ffe6aad5f19bfbff908118064e51f50c082a70782ecf9210322fe"
+    },
+    {
+      "path": "docs/PLUGIN-INSTALL-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1568,
+      "sha256": "24175a6b2189ad22d66b7e1219001b56d569b05022421c4204e19cc96a429ec8"
+    },
+    {
+      "path": "docs/PLUGIN-RELEASE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1553,
+      "sha256": "c59ec47cb862ce74e172707512172d15fe97da1df1b516693e6f7c672c3a9067"
+    },
+    {
+      "path": "docs/PROOF-ACCEPTANCE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1617,
+      "sha256": "ad2478e7176ca36090bf0ab5318dc07b6543a6e2df6225b780abcfbcbb682d20"
+    },
+    {
+      "path": "docs/PROOF-EXECUTION-REPORT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1688,
+      "sha256": "07e14973dd3617de798613507f9f88ecc2fc9b01a5b128eec122264a493de876"
+    },
+    {
+      "path": "docs/PROOF-INTAKE-CHECK.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1986,
+      "sha256": "5862d5a5941d940654785dfea76318f7e472ea01aa36d3f23c547ae3c910f7cb"
+    },
+    {
+      "path": "docs/PROOF-INTAKE-KIT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2117,
+      "sha256": "1cb6e3b774efe48a1c788a3191cf69d6c8f191ad1663bc6afa7cc1fd9f32ee3a"
+    },
+    {
+      "path": "docs/PROOF-INTAKE-RECORD.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1397,
+      "sha256": "2b1b265b13ae3fcfb2c34918d00c42f202f0642e9311129d735f82a5516d61fc"
+    },
+    {
+      "path": "docs/PROOF-INTAKE-SCHEMA.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2395,
+      "sha256": "63d7f167458ff61ab0f278221f1b3526de55409f3b14527f7813725dd833717d"
+    },
+    {
+      "path": "docs/PROOF-READINESS-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1821,
+      "sha256": "45c5ce7126b288fd49532e786231b0e172a778b6c8cc256d914f919f07787bc6"
+    },
+    {
+      "path": "docs/PROOF-REDACTION-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1620,
+      "sha256": "81b043533b8a2d1af72123e66f03e5ebd1581ed9431c79d59a2517af8cc5e05b"
+    },
+    {
+      "path": "docs/PROOF-RUN-DRY-AUDIT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1208,
+      "sha256": "8f1dac34bb07b13e75008beec4a30a9f5f85536ff0adc029f90c7db838145fc8"
+    },
+    {
+      "path": "docs/PROOF-RUN-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1578,
+      "sha256": "df0ea2785759c4915f46a0f774e4367a90e601bde5b4f61fc072036a7caa1155"
+    },
+    {
+      "path": "docs/PROOF-SUBMISSION-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1676,
+      "sha256": "2a785df91caf34313a8b5c141a535a331d2261a794a17fabe886316b347edc14"
+    },
+    {
+      "path": "docs/PUBLIC-CLAIM-PACK.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1892,
+      "sha256": "1e49a5a8c8e11b65388c774c76157ec4717ba6f6cc8663184241bacc3fd26dd5"
+    },
+    {
+      "path": "docs/PUBLICATION-EVIDENCE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1350,
+      "sha256": "39f65abba8846e20f825cb39f760335a5192ddbb714af8a29c1a67092d9ec7d3"
+    },
+    {
+      "path": "docs/PUBLISH-HANDOFF-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 940,
+      "sha256": "b3cc9e307098b380ead94da81395221fdc8bdf1f5c6cf32b53602f2bda2cfc00"
+    },
+    {
+      "path": "docs/PUBLISH-SYNC-GATE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1496,
+      "sha256": "1b7529e9a6659b0addf9e39febba0301eee347a3d23c6bf11bdb9708c7fcc1cd"
+    },
+    {
+      "path": "docs/REFERENCE-PACK-INDEX.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1649,
+      "sha256": "48362468327c28e477411ed5f0b42857ba0fcb23f1d4949235523054ba94fa76"
+    },
+    {
+      "path": "docs/RELEASE-ARTIFACT-MANIFEST.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1814,
+      "sha256": "a6efdad699cb04e312ae8c53d9b497212b6fba7beefd8e9a00c1c16eb73aee15"
+    },
+    {
+      "path": "docs/RELEASE-CHECK-ORDER.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 15186,
+      "sha256": "4accd3da001a3aa272b108dd87ea71c8e303de7712cee4a439272093112c434e"
+    },
+    {
+      "path": "docs/RELEASE-DECISION-RECORD.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1705,
+      "sha256": "3dec27292f39ab3fa1dfba84543c563128c383e36d61d1ff0334c9b7acbec9db"
+    },
+    {
+      "path": "docs/RELEASE-EVIDENCE-REPORT.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1893,
+      "sha256": "6ecf673d2404138ad56e17027d4b4b0cb540cd9a9b73eb623d2381b51606206b"
+    },
+    {
+      "path": "docs/RELEASE-EXECUTION-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1168,
+      "sha256": "3961823c3dea6da0bc8b4d93ce6b6f9f170077e3ce091eeaf6069e679c7541f9"
+    },
+    {
+      "path": "docs/RELEASE-REVIEW-BUNDLE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1413,
+      "sha256": "b13286f5d794095db6768d525579d0cbc5cbe5e265a6789340adc1aff28c93dc"
+    },
+    {
+      "path": "docs/SOURCE-FIRST-PROTOCOL.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 2742,
+      "sha256": "c877fd4f9cf6182eec5c1ddbfdf3d8b49ca4d2aa78c95a20292c0fb2e79b102c"
+    },
+    {
+      "path": "docs/STATUS-ROADMAP-SYNC.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 3210,
+      "sha256": "e5e42ac500bb80b6a611720b6b9fc1c5348a46edc18a799c7b327224f4e3ff2d"
+    },
+    {
+      "path": "docs/V0.1-RELEASE-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 52632,
+      "sha256": "9cf3b5217b5baa10856ab0b0b2d91ba92045a0754e5e12dd06858cbf3504d6c1"
+    },
+    {
+      "path": "docs/V0.2-PROOF-QUEUE.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 4437,
+      "sha256": "613c24551d07277545dd8a67df4153b5a76a18a2cf67ecb959d4a411391a4d3c"
+    },
+    {
+      "path": "docs/WORKTREE-REVIEW-PACKET.md",
+      "category": "documentation",
+      "sourceType": "framework-source",
+      "bytes": 1492,
+      "sha256": "5ba53cb5544d067d0910e7687468c4200695b42656250c6df0d033d7534f5e23"
+    },
+    {
+      "path": "examples/permissioned-case-intake.md",
+      "category": "example",
+      "sourceType": "framework-source",
+      "bytes": 1177,
+      "sha256": "c36671b13601828cbd3e890000a65712b7a07dc24887ebb17510f002086c2952"
+    },
+    {
+      "path": "examples/weak-readme.md",
+      "category": "example",
+      "sourceType": "framework-source",
+      "bytes": 131,
+      "sha256": "f62f3ed3a39613efcc8f2c7eb4273d036e257544d61727d51bfe4d72a3601d0f"
+    },
+    {
+      "path": "FRAMEWORK.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 2508,
+      "sha256": "840944674797423aff5fae759e3194baed7af48d85d53d52132b5ef9baee335b"
+    },
+    {
+      "path": "GLOSSARY.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 2165,
+      "sha256": "e1748c17ef96ea91beb3a4b9fc39426695974329d462e370589b1af7034e34e9"
+    },
+    {
+      "path": "LICENSE.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 662,
+      "sha256": "f463291ad9466f32db5dbb648336e7ca45e6fe50a88d111c235bd6d15fdbf501"
+    },
+    {
+      "path": "MANIFESTO.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 988,
+      "sha256": "c0cc987aae710950ea92bfdb9606f1cacb7d2d6df2b6725e97bc576e8377e47c"
+    },
+    {
+      "path": "package.json",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 18059,
+      "sha256": "cc65c6fb49dec6eeb55408ec36fad973a11b20702afe1b7676094f2142298b24"
+    },
+    {
+      "path": "plugins/mimesis-codex/.codex-plugin/plugin.json",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 763,
+      "sha256": "169f07c752b77306b73042ca8ead958d0e755146793b5a1ca6ebb4e49a7bce8f"
+    },
+    {
+      "path": "plugins/mimesis-codex/skills/mimesis-loop/SKILL.md",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 1652,
+      "sha256": "88b660f75ce0a36f7b0e82460c4c00066b4e034e29ffd89e1a643415f9d7a021"
+    },
+    {
+      "path": "plugins/mimesis-mcp/manifest.json",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 650,
+      "sha256": "1330147713ce6bcab0bfa7133564398b8c730ce031e3ce26917c831c4cc9e114"
+    },
+    {
+      "path": "plugins/mimesis-mcp/resources.json",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 1987,
+      "sha256": "c6f9c8d75e5172aaafc8a7d0498453e4c698d87b2604b7d1db1216aebe5a223c"
+    },
+    {
+      "path": "plugins/mimesis-mcp/tools.json",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 1787,
+      "sha256": "2ffc1edf365346bca98f9e5ba546ff3b4afdfcc76b3e502a7d5a6f11cf58db49"
+    },
+    {
+      "path": "plugins/README.md",
+      "category": "plugin",
+      "sourceType": "framework-source",
+      "bytes": 2321,
+      "sha256": "f167387f0f0043197f0c1618639f150f4fd2ceafbc231a260a5000314014c1ba"
+    },
+    {
+      "path": "prompts/README.md",
+      "category": "prompt",
+      "sourceType": "framework-source",
+      "bytes": 687,
+      "sha256": "91408035edc3820c68a1c1a284abe63a5221ca4578fa29b5a4cd455cf939f22d"
+    },
+    {
+      "path": "PROOF-BOUNDARY.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 2853,
+      "sha256": "87cb2cbd8d2f88a27cc2a3f223726b174f645b0b4bd5780b64d982c691df2cdf"
+    },
+    {
+      "path": "README.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 57237,
+      "sha256": "3b84dc4bad18d6764371f16719690db502001804cbf5ef53d7eea670957ffdd3"
+    },
+    {
+      "path": "reference-packs/ai-workflow.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1306,
+      "sha256": "f2a100d27945b6717d41fb563ab4a320a49d53761e82c4e84f54a0defc5b309f"
+    },
+    {
+      "path": "reference-packs/blog-post.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1279,
+      "sha256": "387c06f042606236a705e2b94bedcd3d4659f9cfe879f48fae5866c0267d1f95"
+    },
+    {
+      "path": "reference-packs/github-readme.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1337,
+      "sha256": "a387d37f621ce024d233a1798ee19a640a6fb66a59ba92e4779b284d3de40992"
+    },
+    {
+      "path": "reference-packs/landing-page.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1463,
+      "sha256": "d5c3d1a5d84a9f989f2d86133791036084b79049ff30fe577448b01a6569ebe9"
+    },
+    {
+      "path": "reference-packs/product-page.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1359,
+      "sha256": "ab8d43a179f8bab7df5fc1cafb8ab69237413ba63f394277ff01ced060b5132a"
+    },
+    {
+      "path": "reference-packs/profile-positioning.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1649,
+      "sha256": "f329ef80bc9cd681df6170ddb5947a1ca3c840155b25e89ffa7248b8bdd5f4a4"
+    },
+    {
+      "path": "reference-packs/README.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1648,
+      "sha256": "3071307ee344382630f5a5ddeffcce7c72bd095269a5ff97659ec6d2bf5cf251"
+    },
+    {
+      "path": "reference-packs/research-note.md",
+      "category": "reference-pack",
+      "sourceType": "source-first-standard",
+      "bytes": 1597,
+      "sha256": "f00a0dfa49ff9598989c33b9e3c26c93681bdcb19d93a5f26fed799e5f8e54ab"
+    },
+    {
+      "path": "ROADMAP.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 9393,
+      "sha256": "454359de386f39760cdb0656c7549cbc86c61758c4cb43814616b2022d8ad29e"
+    },
+    {
+      "path": "SECURITY.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 993,
+      "sha256": "747486e6fd4b44cbf1885f5f042df0fd554625111d5e6d4461ea8241472feeb0"
+    },
+    {
+      "path": "spec/adapter-contract.md",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 1156,
+      "sha256": "5245ff23f8f90acac2185951fe1cebddfb1ff23233b749a5368452aa7b75cccc"
+    },
+    {
+      "path": "spec/current-state-summary.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 5741,
+      "sha256": "9274528c112f0985edee10a2e5b15206de4e85a4ed713655bc82be35c8309f59"
+    },
+    {
+      "path": "spec/file-protocol.md",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 1778,
+      "sha256": "c335ea824ac8b580412f93b1ab989952105afadd20302438c10ab2687f2c8a3f"
+    },
+    {
+      "path": "spec/framework-manifest.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 3810,
+      "sha256": "4c73cfa177e2182a77b96de8852d801fa3c9caf09f9f8ce9a12d62e28639a23c"
+    },
+    {
+      "path": "spec/gate-closure-readiness.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 3639,
+      "sha256": "8f36a7276942433549826b0ae1ccca00cc1e2249362a1c8513e76fc860338969"
+    },
+    {
+      "path": "spec/gate-closure-review.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 3459,
+      "sha256": "88b222a09cea44cdad31da6d7321bf11aea8fd13951bea5da51379cc0f15be2c"
+    },
+    {
+      "path": "spec/mimesis-v0.1.md",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4209,
+      "sha256": "8b79d3efe9797f5e009097e57b690c6248fe4b59477f36c95c4ebbd9bb17bb69"
+    },
+    {
+      "path": "spec/owner-decision-answer.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4107,
+      "sha256": "6561453c9bb6eb20148107e8213e26793d013a6f492c362d21e2ec96ddb9df77"
+    },
+    {
+      "path": "spec/owner-evidence-intake.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4608,
+      "sha256": "81835db6563080df7268db9b04394aeb5917f974ba87d1583742cd7eb158e5c6"
+    },
+    {
+      "path": "spec/owner-evidence-submission.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4800,
+      "sha256": "580265a369520c63e2ce73f760fbe9397e5810b3b72698391e7be9c65944b8fb"
+    },
+    {
+      "path": "spec/proof-intake.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 2536,
+      "sha256": "ff78308f2ac1f128f375550d62e7f6c7ffc9468ad076aedbb74eee05b2563416"
+    },
+    {
+      "path": "spec/quality-bar.md",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 2192,
+      "sha256": "fc47e58fc973b9af432469490f86fbf892c7ddf16b0a6b300c983f766205c464"
+    },
+    {
+      "path": "spec/README.md",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4000,
+      "sha256": "176d578f91f45a461ba806a9fea3c775d393fc596fdf294cd47e0a6b21b5b0eb"
+    },
+    {
+      "path": "spec/release-review-bundle.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 3310,
+      "sha256": "834580e7d6a9cb32b9a639f79d8b2c66e614509e5e7df947895a4e4226febbb5"
+    },
+    {
+      "path": "spec/worktree-review-packet.schema.json",
+      "category": "specification",
+      "sourceType": "framework-source",
+      "bytes": 4077,
+      "sha256": "15ec63c1365115b5de759ec1f1ffa97ae095560b65682ac80e53c8e371b5ca3c"
+    },
+    {
+      "path": "STATUS.md",
+      "category": "root",
+      "sourceType": "framework-source",
+      "bytes": 19207,
+      "sha256": "288a07191a2bfc39bcdfe2b542bf9894516303d9b2737fb0f838cc2825305c29"
+    },
+    {
+      "path": "templates/artifact-brief.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 358,
+      "sha256": "12cfd294f20e37545229f4e888908f536d97f83cfd4cfa7b4b33580fa0ac64e5"
+    },
+    {
+      "path": "templates/boundary-check.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 519,
+      "sha256": "54bda52798bd88cd302f61f2b9f0483240322dbc57cabc411305059d68922815"
+    },
+    {
+      "path": "templates/case-note.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 480,
+      "sha256": "abbc85177ee2352246d688332bc42d80e358a8bcca2983390a88588360e8b2d4"
+    },
+    {
+      "path": "templates/improved-artifact.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 360,
+      "sha256": "4f48c94c08fdff6f223fdabc1bfce19e1cbaa4013d683eb565b3ccde813f9176"
+    },
+    {
+      "path": "templates/README.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 816,
+      "sha256": "4a6760472f41676a15f11084b9e08721d08910f8795a0d9f6dd9682702a9aab3"
+    },
+    {
+      "path": "templates/reference-set.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 816,
+      "sha256": "479423af0fb6cd6f27b01f113eea8a88b107d59ac8f15238cdd30b6d8fe22d2a"
+    },
+    {
+      "path": "templates/structure-map.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 659,
+      "sha256": "a8b465f42e3b2ac489d65d42c483d6710b839b85156a8ce6aca25bd7a32e3c22"
+    },
+    {
+      "path": "templates/transformation-plan.md",
+      "category": "template",
+      "sourceType": "copyable-template",
+      "bytes": 523,
+      "sha256": "09d14c2178abb2905ebc2f8c46bbdc8818b4f7aa79c5bc459f243605e05c344b"
+    },
+    {
+      "path": "tools/audit-adoption-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6347,
+      "sha256": "0341e97a07ee9aca455d5eb59b2440d7db594cb3af4324f0f3b39a03df84432a"
+    },
+    {
+      "path": "tools/audit-current-state-summary.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4836,
+      "sha256": "8d404260c69072493488b355774b278dd08ccb768cf6cce5b6892dac9a952a04"
+    },
+    {
+      "path": "tools/audit-framework-manifest.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7914,
+      "sha256": "e9040533a9399b1cee2156868360f1b224c516b682b9701eaadaa5396e672b98"
+    },
+    {
+      "path": "tools/audit-gap-closure-plan.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 8155,
+      "sha256": "b3e630227be66fcff8112503ad276b49097e0fb8bf43ee7d37a9c35d4a429958"
+    },
+    {
+      "path": "tools/audit-gap-register-sync-closure.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5230,
+      "sha256": "0ea9264c2ddeb0356ceaaa66be5d7ad22a5ba703b9ed516f7626efc6284c0158"
+    },
+    {
+      "path": "tools/audit-gap-register.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6144,
+      "sha256": "17c1cb55bffab8cf9c645d250716f63558ec50fa523c4b2e980641df2a5f2491"
+    },
+    {
+      "path": "tools/audit-gate-closure-readiness.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 10539,
+      "sha256": "654d2847d3044dacfcfe9398e4fc0e50acb94cfaf5852e5d0db0fcc0c910f1a0"
+    },
+    {
+      "path": "tools/audit-gate-closure-review.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 10253,
+      "sha256": "1828ea22d27a6188a3648d4fd2f51f12fe5d3721c29013bc22eb8ee36245370c"
+    },
+    {
+      "path": "tools/audit-gate-evidence-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6495,
+      "sha256": "1314b0c4d79e016b4dcbf957c226578822af0516af1811ffbe103f7fe5259e76"
+    },
+    {
+      "path": "tools/audit-goal-completion-audit.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 8663,
+      "sha256": "9bf0d2749763ce5a994c25f0692bc1fc9439b407017b24d6a4dd6675384aff49"
+    },
+    {
+      "path": "tools/audit-owner-action-queue.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7728,
+      "sha256": "305e66204c44e3609328addeb4e6da17039519cbef425d236ef33a88a46b3659"
+    },
+    {
+      "path": "tools/audit-owner-answer-review.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7218,
+      "sha256": "ac6008d7d6807016334eb09fa8879a3990be2c3e0db9de78daef949204f5d24c"
+    },
+    {
+      "path": "tools/audit-owner-decision-answer-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 11946,
+      "sha256": "6506fb257db0ef184a39ca5e1f9ef51ec3f85d3fe5f0757a1f18df1363eb9d07"
+    },
+    {
+      "path": "tools/audit-owner-decision-intake.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6845,
+      "sha256": "1aca6a5aef3cd71dfef51b4640920b7037ac4d07534e5a393bc47991e5adfa3d"
+    },
+    {
+      "path": "tools/audit-owner-evidence-attachment-form.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7850,
+      "sha256": "6ed19e0fed39377b757200d596daf8593f80348fe0fe95229bc2d7e27e75991c"
+    },
+    {
+      "path": "tools/audit-owner-evidence-bundle.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7913,
+      "sha256": "dba3e4c61301bb598789e5228d4b404dea9f056fc902117c08b0f37dde2a9921"
+    },
+    {
+      "path": "tools/audit-owner-evidence-intake-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 12759,
+      "sha256": "4b5d8a8c357dfe626a24919eba471522647ee8bc9dc5ef6387a45011a1131daf"
+    },
+    {
+      "path": "tools/audit-owner-evidence-review.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7513,
+      "sha256": "57b01dfd70f649023f2b15953d053dabcbb8ac9b5eb7c3ff4690b97542d7af4b"
+    },
+    {
+      "path": "tools/audit-owner-evidence-submission-check.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 9744,
+      "sha256": "cc4d2c5760c5d48334062026abed05a8c323c59662a564f2599caa6e7db843c8"
+    },
+    {
+      "path": "tools/audit-owner-evidence-submission-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 13394,
+      "sha256": "c1f12f97cfb4539b2e95b653def63fff25f38d23e1f78c50239fae2f62178195"
+    },
+    {
+      "path": "tools/audit-package-surface.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 20466,
+      "sha256": "d3efd82eb4b8e1400054b599eb04c5392d28bfa747fe79261e3d855114c04079"
+    },
+    {
+      "path": "tools/audit-proof-acceptance-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5899,
+      "sha256": "1b7f9e0c0437ad05a08636f3770fd8a3f0f1f1a749e743df3ca089d0b7479641"
+    },
+    {
+      "path": "tools/audit-proof-candidate-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6649,
+      "sha256": "1ff406a964a9075de21906baa0be3970e973d7ee72453f3152dbb87e7694625d"
+    },
+    {
+      "path": "tools/audit-proof-execution-report.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6021,
+      "sha256": "d78fa226508240cdf1047232b1484b4f8205c74470fee0b180303494e8edbf00"
+    },
+    {
+      "path": "tools/audit-proof-intake-check.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7887,
+      "sha256": "de7f2db9ee2b450ca707c545082c5b5c1d49db909536a9a84b7dec8b3939fe96"
+    },
+    {
+      "path": "tools/audit-proof-redaction-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5884,
+      "sha256": "d5c16a0c3f07958a5d8bf23168b62960d3f4ad41f33fe03a433930006d3b6d30"
+    },
+    {
+      "path": "tools/audit-proof-submission-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6241,
+      "sha256": "10a6ccc93cf30a7cae6a8b8497a8f30918120e346c1a83c0cccd3162fe0f5c1f"
+    },
+    {
+      "path": "tools/audit-publication-evidence-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7103,
+      "sha256": "8930db3cac00f539d328a3dcab5852ffc9a84f7b39b67705fc85a8c80237e0e1"
+    },
+    {
+      "path": "tools/audit-publication-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 1973,
+      "sha256": "e60bd88cac86ed1d57ce373d354f9da2aa4b988e7e6904abb5fe8e264b6b1110"
+    },
+    {
+      "path": "tools/audit-release-artifact-manifest.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 11409,
+      "sha256": "f5b3ced206df22d415a0cdc1eaee3adc2b44ef107a4b00b514636e52a8c8746e"
+    },
+    {
+      "path": "tools/audit-release-check-order.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 21168,
+      "sha256": "b15d5a000c0e30762ec72486068e902e33a816dee42e3cdd6103ed9313bf565c"
+    },
+    {
+      "path": "tools/audit-release-decision-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4849,
+      "sha256": "39874818fb997d7089474c70114da4a7d146df626bd49c261a37a5341901abed"
+    },
+    {
+      "path": "tools/audit-release-evidence-report.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6273,
+      "sha256": "0cbd6feed2c0ff94d26042816ca23444842a76ba676aead8e731ae1a2c3b0950"
+    },
+    {
+      "path": "tools/audit-release-readiness.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 71780,
+      "sha256": "a63725efea2110ca3b14668d615e85b525a00f81ed91eebe559e683d52cc71ef"
+    },
+    {
+      "path": "tools/audit-release-review-bundle.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7841,
+      "sha256": "8e78fed860b13a22cb4e0f4edc903eed8851329dfee9197e0e33756d6f98faf9"
+    },
+    {
+      "path": "tools/audit-spec-index.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 3751,
+      "sha256": "b7edba46f774b5f13f352b9560c858049f191878ce928a70e56afe5d6d7d2b37"
+    },
+    {
+      "path": "tools/audit-status-roadmap-sync.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6491,
+      "sha256": "934f6a5298dfe412207231305e852fcaecbcc35d10d234d449c365cd428e8b3f"
+    },
+    {
+      "path": "tools/audit-sync-strict-nonwriting.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 3585,
+      "sha256": "c1bbf1afdcd8a81370df07c43c60becef333e67a41e42dd3914becec0f6d33ed"
+    },
+    {
+      "path": "tools/audit-worktree-review-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 8216,
+      "sha256": "d4e5c27a1d662ef7aff15363da2bd284b9b4135a6db7d9fd0722c5a5480ec933"
+    },
+    {
+      "path": "tools/check-owner-evidence-submission-record.mjs",
+      "category": "tooling",
+      "sourceType": "framework-source",
+      "bytes": 12041,
+      "sha256": "2f3c711e8ed8390b9c668922cd18f63eef893e0d8207ce2a07c4ecaa646b7bbd"
+    },
+    {
+      "path": "tools/check-proof-intake-record.mjs",
+      "category": "tooling",
+      "sourceType": "framework-source",
+      "bytes": 10350,
+      "sha256": "718c191965044bd2b4ca29ec5ed532fdfdc223e386274f8a7e038f28452f36a6"
+    },
+    {
+      "path": "tools/create-adoption-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4520,
+      "sha256": "5f28919f6d15694432e30b11aa6152afdae3f2e179932961e75a77a70ff04bd6"
+    },
+    {
+      "path": "tools/create-current-state-summary.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4526,
+      "sha256": "49665bf6cd976c510efc90ec87ad64a80d256a46bf4dafabe5150eebdbe03722"
+    },
+    {
+      "path": "tools/create-framework-manifest.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 28732,
+      "sha256": "df9a685de8b6c97f56d19ecd81384b4aaff57544bf83d0fdee04db5a1d550b15"
+    },
+    {
+      "path": "tools/create-gap-closure-plan.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7704,
+      "sha256": "c0ad8c1a619619761b5d0f750c7b490d3a3ca33739a1070bfd37cba2b577d18b"
+    },
+    {
+      "path": "tools/create-gap-register.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6883,
+      "sha256": "87506bc48ba98fe7036eb9567b02e160871f364606cfecf364e48f3bc3b82c27"
+    },
+    {
+      "path": "tools/create-gate-closure-readiness.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5506,
+      "sha256": "8e8ff623a7f6ccd9a1fa6a9699107e6dc68381d678d2c4dac965c934b4808ae6"
+    },
+    {
+      "path": "tools/create-gate-closure-review.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4718,
+      "sha256": "c30f4ebb53f1c3dfda9b5387025302c21e91500101500c2e7ce7888fadcd4c38"
+    },
+    {
+      "path": "tools/create-gate-evidence-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6078,
+      "sha256": "030357cb1d0137415c4de1ffd431c8b067eacc5e476c1e704fb33a2eb97be109"
+    },
+    {
+      "path": "tools/create-goal-completion-audit.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6161,
+      "sha256": "e738256abdce9eba3800a2ede68ccaad0065a30a8ceacb7ff962fc7c8c18053c"
+    },
+    {
+      "path": "tools/create-owner-action-queue.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6926,
+      "sha256": "e7eb724f239a24f49fc79fa9fa0d78eadff30b8a1906043a75b2ac23c9a2d447"
+    },
+    {
+      "path": "tools/create-owner-decision-answer-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4691,
+      "sha256": "a2eb74f65ce0bc6fd4d848f3ff4be6763b29713b05d3a12629088db3f6613079"
+    },
+    {
+      "path": "tools/create-owner-decision-intake.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 9354,
+      "sha256": "a0f7376cee5cf0b352f5bbea3ff34e964b0a9d7840c8a06088bb72965b9eab94"
+    },
+    {
+      "path": "tools/create-owner-evidence-attachment-form.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6734,
+      "sha256": "b8ef900ba028fa7671fc9a8ad35aa87bf044cd6faa1717dc921ad646d255e870"
+    },
+    {
+      "path": "tools/create-owner-evidence-bundle.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 9062,
+      "sha256": "95fa2d511bdd7eef5c357c286e4dbc9e00b01982fdaf2a256b5c5aee366b5097"
+    },
+    {
+      "path": "tools/create-owner-evidence-intake-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5017,
+      "sha256": "aee9f21d7f8c9443e5b49e86f9fd15c7d55fb2643fa54cf473efa6e74a3f3861"
+    },
+    {
+      "path": "tools/create-owner-evidence-submission-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4315,
+      "sha256": "1165610b6ffdb0ea48037c898714dcd35c4d414fb2faf3f6b5e6a7fee5907472"
+    },
+    {
+      "path": "tools/create-proof-acceptance-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6631,
+      "sha256": "0bbbcc125356fecaf2432f5df8eb86263dbf7245f25bc266760fa30b20e9f8cd"
+    },
+    {
+      "path": "tools/create-proof-candidate-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 7116,
+      "sha256": "388b9c455a9a8150581e6a1a6b4a52da8d6744840723c8c6dda0e51487e59358"
+    },
+    {
+      "path": "tools/create-proof-execution-report.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 8432,
+      "sha256": "5cd021ed2fc28c022d08a555e2c00a4692b3432a2daff803515bcfe4e4cba782"
+    },
+    {
+      "path": "tools/create-proof-redaction-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6537,
+      "sha256": "ed60912fb3ce007018942ba901d493968830374ca9783e4ee33fa021b226fdde"
+    },
+    {
+      "path": "tools/create-proof-submission-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6877,
+      "sha256": "dab76a214ce362ebf9d12949790b97e280e31cf693cb69fc41ee7cbd5b13b130"
+    },
+    {
+      "path": "tools/create-publication-evidence-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4527,
+      "sha256": "7203af164cfc734ab2a07ceed0b52b5b9b6f5d3a43b528d45e97e90d3ade5abb"
+    },
+    {
+      "path": "tools/create-publication-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 3789,
+      "sha256": "741d281c33bf10491338416f4cfde028ce10cab1ae044e4a02fa0c1910457c46"
+    },
+    {
+      "path": "tools/create-release-artifact-manifest.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 15295,
+      "sha256": "d214bdb865275b8215b8b98169c985df82d793e55d1770fecce6b548e29f51d2"
+    },
+    {
+      "path": "tools/create-release-decision-record.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 5420,
+      "sha256": "d7c876a76b5e0e38a8dec2222133ef9a5d42c9787b13a1a245193294b2b93ae7"
+    },
+    {
+      "path": "tools/create-release-evidence-report.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6913,
+      "sha256": "bc9d4a908924079d1e83bdf4ab16ce4c9f3e78a4454cf3fd64d4524b80e084c2"
+    },
+    {
+      "path": "tools/create-release-review-bundle.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 6794,
+      "sha256": "077c24a0ff9897041e674a8e0b133fbf4688f9c925eb704b0abfbdb31bff884d"
+    },
+    {
+      "path": "tools/create-worktree-review-packet.mjs",
+      "category": "tooling",
+      "sourceType": "local-tooling",
+      "bytes": 4451,
+      "sha256": "f2258c82c97079c3c3e834d64038e9d5d3b305c735309e66d147671a54ea8cc0"
+    },
+    {
+      "path": "tools/review-owner-decision-answer-record.mjs",
+      "category": "tooling",
+      "sourceType": "framework-source",
+      "bytes": 4992,
+      "sha256": "48083eeaa020882e5b695f5b3987cb4ec7bd0b7805f3671df3141cbb11bf3d76"
+    },
+    {
+      "path": "tools/review-owner-evidence-intake-record.mjs",
+      "category": "tooling",
+      "sourceType": "framework-source",
+      "bytes": 5543,
+      "sha256": "3fca7af4f76a4d1c6e2d1574abe5acaf2fe35e3862d5dc6272db6de460f4948e"
+    },
+    {
+      "path": "tools/validate-mimesis.mjs",
+      "category": "tooling",
+      "sourceType": "framework-source",
+      "bytes": 23425,
+      "sha256": "4271e06e62a91b2fb2ef6bff94d5b5a5df364dbe844151ecbecb5e0470643665"
+    }
+  ],
+  "missingArtifacts": [],
+  "boundaries": [
+    "does_not_publish",
+    "does_not_stage_commit_push_tag_release",
+    "does_not_choose_license",
+    "does_not_create_external_proof",
+    "does_not_prove_adoption"
+  ],
+  "notes": [
+    "This manifest inventories selected local v0.1 release-review artifacts with SHA-256 hashes.",
+    "It intentionally does not hash itself, because generatedAt would make a self hash unstable.",
+    "It is local integrity evidence only, not publication, external proof, adoption proof, legal advice, or license choice."
+  ]
+}

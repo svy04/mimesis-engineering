@@ -1,122 +1,1270 @@
 # Mimesis Engineering
 
-Do not ask AI to pretend to be an expert.
+> Give AI standards, not roles.
 
-Show it what experts actually made.
-
-**Mimesis Engineering** is artifact-level imitation for AI-native work. It uses real products, papers, books, blogs, layouts, visual systems, user flows, proof surfaces, and decision loops as standards for AI-assisted creation.
-
-한국어로 말하면:
-
-> AI에게 전문가인 척하라고 시키는 게 아니라, 전문가들이 실제로 만든 결과물의 구조를 기준으로 내 작업을 바꾸는 방법입니다.
-
-## Core Idea
-
-Persona prompts imitate roles.
-
-Mimesis imitates artifact structure.
-
-Instead of saying:
+Most people ask AI to pretend.
 
 ```text
 You are a world-class expert.
 ```
 
-Start from:
+Mimesis starts from real artifacts.
 
 ```text
 Here are the best artifacts in this field.
-Decompose their knowledge structure, visual structure, user flow, trust devices, failure handling, and claim boundaries.
-Then use those standards to critique and transform my current work.
+Study their structure.
+Transform my work under my constraints.
+Show the proof boundary.
 ```
 
-## Use It Now
+Bring one weak artifact.
+Leave with a stronger one.
 
-1. New Korean users: read [처음 시작하기](docs/START-HERE.ko.md).
-2. Builders: read the [5-minute quickstart](docs/QUICKSTART.md).
-3. Read the [Working Spec](docs/WORKING-SPEC.md).
-4. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
-5. Compare your work with cases in [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
-6. Open a workflow case or risk check issue when the method needs improvement.
+## Understand In 30 Seconds
 
-## Repository Map
+Mimesis Engineering is a small public framework for improving AI-assisted work.
 
-### Core Method
+Instead of asking AI to roleplay an expert, you give it real artifacts to study:
 
-- [MANIFESTO.md](MANIFESTO.md) — the public thesis.
-- [FRAMEWORK.md](FRAMEWORK.md) — the MIMESIS loop.
-- [GLOSSARY.md](GLOSSARY.md) — key terms.
-- [PROOF-BOUNDARY.md](PROOF-BOUNDARY.md) — what this repo does and does not claim.
-- [docs/START-HERE.ko.md](docs/START-HERE.ko.md) — Korean beginner entry page.
-- [docs/QUICKSTART.md](docs/QUICKSTART.md) — 5-minute first use.
-- [docs/WORKING-SPEC.md](docs/WORKING-SPEC.md) — current operating spec.
+- strong references
+- a weak artifact
+- constraints
+- proof boundaries
+- a visible artifact trail
 
-### Build and Launch System
+The output is not just a better sentence.
+The output is a before/after case with files that show how the work changed.
 
-- [docs/INITIAL-IMPLEMENTATION-STRATEGY.md](docs/INITIAL-IMPLEMENTATION-STRATEGY.md) — how this repo becomes a usable public system.
-- [docs/LAUNCH-STRATEGY.md](docs/LAUNCH-STRATEGY.md) — the Mimesis Drop plan.
-- [docs/TRAFFIC-ABSORPTION-SYSTEM.md](docs/TRAFFIC-ABSORPTION-SYSTEM.md) — how attention becomes cases, issues, contributors, and relationships.
+한국어:
 
-### Templates
+AI에게 역할이 아니라 기준을 줘라.
 
-- [templates/codex-master-task.md](templates/codex-master-task.md) — Codex implementation prompt.
-- [templates/hermes-launch-operator.md](templates/hermes-launch-operator.md) — Hermes daily operator prompt.
-- [prompts/](prompts/) — prompt templates.
+대부분은 AI에게 전문가인 척하라고 시킨다.
+미메시스는 AI에게 실제로 공부할 산출물을 준다.
 
-### Proof Surfaces
+약한 산출물 하나를 가져와라.
+더 강한 산출물로 나가라.
 
-- [examples/](examples/) — applied templates.
-- [cases/](cases/) — public case notes.
-- [mimesis-casebook](https://github.com/svy04/mimesis-casebook) — public casebook.
+## What This Is
 
-## MIMESIS Loop
+Mimesis Engineering is an artifact-first work system for AI-native builders.
+
+It helps you:
+
+- collect strong references
+- decompose their structure
+- extract transferable patterns
+- transform your own artifact
+- inspect originality and proof boundaries
+- publish a case note
+
+## The Old Way vs The Mimesis Way
+
+| Old Way | Mimesis Way |
+| --- | --- |
+| Ask AI to act like an expert | Show AI expert artifacts |
+| Start from a vague prompt | Start from strong standards |
+| Optimize wording | Extract structure |
+| Chase style | Inspect proof and boundaries |
+| Ship average output | Ship a stronger artifact with a case note |
+
+## Bring One Weak Artifact
+
+Bring:
+
+- a weak README
+- a weak landing page
+- a weak product idea
+- a weak blog draft
+- a weak prompt
+- a weak workflow
+
+Run one Mimesis loop.
+Leave with a stronger artifact and a proof boundary.
+
+## See It Work
+
+Case 001:
+Mimesis Engineering applied to Mimesis Engineering itself.
+
+Before:
+A strong idea with weak activation proof.
+
+After:
+A clearer work system with a canvas, reference pack, case note, and originality boundary.
+
+Read the case:
+[cases/001-mimesis-on-mimesis.md](cases/001-mimesis-on-mimesis.md)
+
+## The Seven Artifacts
+
+One Mimesis loop produces:
+
+- [Artifact Brief](docs/WHAT-YOU-GET.md#artifact-brief)
+- [Reference Set](docs/WHAT-YOU-GET.md#reference-set)
+- [Structure Map](docs/WHAT-YOU-GET.md#structure-map)
+- [Transformation Plan](docs/WHAT-YOU-GET.md#transformation-plan)
+- [Improved Artifact](docs/WHAT-YOU-GET.md#improved-artifact)
+- [Boundary Check](docs/WHAT-YOU-GET.md#boundary-check)
+- [Case Note](docs/WHAT-YOU-GET.md#case-note)
+
+## 5-Minute First Loop
+
+Start here:
+[docs/QUICKSTART.md](docs/QUICKSTART.md)
+
+Run the local first-loop demo:
+
+```bash
+npm run first-loop:demo
+npm run audit:first-loop
+```
+
+This generates `.mimesis/first-loop-demo/` and checks it with `workspace:check` and `case:check`.
+It is local demo evidence, not external adoption or outcome proof.
+
+Generate the AI-native framework manifest:
+
+```bash
+npm run framework:manifest
+npm run audit:framework-manifest-schema
+npm run audit:framework-manifest
+```
+
+This writes `.mimesis/framework-manifest.json`.
+It indexes entrypoints, commands, artifacts, gates, and proof boundaries for agents and local tooling.
+The schema lives at `spec/framework-manifest.schema.json`.
+It does not prove external adoption or package publication.
+
+Generate the source-first reference pack index:
+
+```bash
+npm run reference:index
+npm run audit:reference-index
+```
+
+This writes `.mimesis/reference-packs/index.json`.
+It makes the standards in `reference-packs/` machine-readable without turning them into swipe files.
+
+Minimal path:
+
+1. Choose one weak artifact.
+2. Pick a reference pack.
+3. Decompose the references.
+4. Extract transferable structure.
+5. Transform your artifact.
+6. Inspect the boundary.
+7. Write a case note.
+
+## More Entry Points
+
+- Korean first-start page: [docs/START-HERE.ko.md](docs/START-HERE.ko.md)
+- Working spec: [docs/WORKING-SPEC.md](docs/WORKING-SPEC.md)
+- Initial implementation strategy: [docs/INITIAL-IMPLEMENTATION-STRATEGY.md](docs/INITIAL-IMPLEMENTATION-STRATEGY.md)
+- Launch strategy: [docs/LAUNCH-STRATEGY.md](docs/LAUNCH-STRATEGY.md)
+- Traffic absorption system: [docs/TRAFFIC-ABSORPTION-SYSTEM.md](docs/TRAFFIC-ABSORPTION-SYSTEM.md)
+- Codex task template: [templates/codex-master-task.md](templates/codex-master-task.md)
+- Hermes operator template: [templates/hermes-launch-operator.md](templates/hermes-launch-operator.md)
+
+## Framework v0.1
+
+This repository now exposes Mimesis as a plain-file framework:
+
+- [spec/README.md](spec/README.md) - spec index and schema boundary map
+- [spec/mimesis-v0.1.md](spec/mimesis-v0.1.md) - the v0.1 framework contract
+- [spec/file-protocol.md](spec/file-protocol.md) - required `.mimesis` files
+- [spec/framework-manifest.schema.json](spec/framework-manifest.schema.json) - machine-readable manifest schema
+- [docs/FRAMEWORK-MANIFEST.md](docs/FRAMEWORK-MANIFEST.md) - generated AI-native framework manifest
+- [docs/FRAMEWORK-MANIFEST-SCHEMA.md](docs/FRAMEWORK-MANIFEST-SCHEMA.md) - manifest schema audit and boundary
+- [.mimesis/README.md](.mimesis/README.md) - copyable loop workspace
+- [templates/README.md](templates/README.md) - fillable loop templates
+- [reference-packs/README.md](reference-packs/README.md) - standards to study
+- [docs/REFERENCE-PACK-INDEX.md](docs/REFERENCE-PACK-INDEX.md) - generated source-first reference pack index
+- [cases/README.md](cases/README.md) - before/after proof surface
+- [examples/README.md](examples/README.md) - starting scenarios
+- [prompts/README.md](prompts/README.md) - prompts that support the loop
+- [adapters/README.md](adapters/README.md) - tool integration contracts
+- [plugins/README.md](plugins/README.md) - plugin shapes, local scaffolds, and boundaries
+- [tools/README.md](tools/README.md) - local protocol checks
+- [docs/ACTIVATION-SURFACE.md](docs/ACTIVATION-SURFACE.md) - 30-second and 5-minute first-action guard
+- [docs/FIRST-LOOP-DEMO.md](docs/FIRST-LOOP-DEMO.md) - generated local first-loop demo
+- [STATUS.md](STATUS.md) - current claim and implementation status
+- [ROADMAP.md](ROADMAP.md) - proof-gated next versions
+- [LICENSE.md](LICENSE.md) - license selection boundary
+- [docs/LICENSE-PACKET.md](docs/LICENSE-PACKET.md) - generated owner license decision packet
+- [docs/OPERATOR-RUNBOOK.md](docs/OPERATOR-RUNBOOK.md) - generated ecosystem operator runbook
+- [docs/ECOSYSTEM-RESOURCE-PACKET.md](docs/ECOSYSTEM-RESOURCE-PACKET.md) - generated local ecosystem resource index
+- [docs/BENCHMARK-PACKET.md](docs/BENCHMARK-PACKET.md) - generated benchmark/adoption measurement protocol
+- [docs/V0.1-RELEASE-PACKET.md](docs/V0.1-RELEASE-PACKET.md) - release preflight and public claim boundary
+- [docs/RELEASE-CHECK-ORDER.md](docs/RELEASE-CHECK-ORDER.md) - release preflight ordering guard
+- [docs/V0.2-PROOF-QUEUE.md](docs/V0.2-PROOF-QUEUE.md) - first permissioned proof loop queue
+- [docs/FIRST-PROOF-PACKET.md](docs/FIRST-PROOF-PACKET.md) - generated v0.2 first-proof handoff packet
+- [docs/PROOF-INTAKE-KIT.md](docs/PROOF-INTAKE-KIT.md) - generated first external proof intake kit
+- [docs/PROOF-INTAKE-RECORD.md](docs/PROOF-INTAKE-RECORD.md) - generated schema-shaped proof intake fixture record
+- [docs/PROOF-INTAKE-CHECK.md](docs/PROOF-INTAKE-CHECK.md) - local proof intake check before case creation
+- [docs/PROOF-INTAKE-SCHEMA.md](docs/PROOF-INTAKE-SCHEMA.md) - local schema contract for proof intake records
+- [docs/PROOF-REDACTION-PACKET.md](docs/PROOF-REDACTION-PACKET.md) - generated redaction checklist packet before proof intake review
+- [docs/PROOF-SUBMISSION-PACKET.md](docs/PROOF-SUBMISSION-PACKET.md) - generated submission handoff packet before proof intake review
+- [docs/PROOF-READINESS-PACKET.md](docs/PROOF-READINESS-PACKET.md) - generated first weak artifact readiness packet
+- [docs/PROOF-RUN-PACKET.md](docs/PROOF-RUN-PACKET.md) - generated operator packet for the first proof run
+- [docs/PROOF-EXECUTION-REPORT.md](docs/PROOF-EXECUTION-REPORT.md) - generated command evidence ledger for the first proof run
+- [docs/FIRST-PROOF-CANDIDATE-PACKET.md](docs/FIRST-PROOF-CANDIDATE-PACKET.md) - generated candidate selection packet for the first proof candidate
+- [docs/PROOF-RUN-DRY-AUDIT.md](docs/PROOF-RUN-DRY-AUDIT.md) - local fixture audit for the proof-run path
+- [docs/COMPLETION-AUDIT.md](docs/COMPLETION-AUDIT.md) - requirement matrix, evidence, and remaining gates
+- [docs/GAP-REGISTER.md](docs/GAP-REGISTER.md) - generated machine-readable open-gate register
+- [docs/GATEBOARD.md](docs/GATEBOARD.md) - generated current owner/proof/publication gate board
+- [docs/CURRENT-STATE-SUMMARY.md](docs/CURRENT-STATE-SUMMARY.md) - generated machine-readable current state summary
+- [docs/WORKTREE-REVIEW-PACKET.md](docs/WORKTREE-REVIEW-PACKET.md) - generated dirty worktree review packet
+- [docs/RELEASE-REVIEW-BUNDLE.md](docs/RELEASE-REVIEW-BUNDLE.md) - generated release review bundle
+- [docs/EVIDENCE-PACKET.md](docs/EVIDENCE-PACKET.md) - strong-claim evidence gate
+- [docs/EVIDENCE-FROM-CASE.md](docs/EVIDENCE-FROM-CASE.md) - draft evidence packet from completed case evidence
+- [docs/EVIDENCE-REVIEW.md](docs/EVIDENCE-REVIEW.md) - named reviewer decision for evidence packets
+- [docs/CLAIM-FROM-EVIDENCE.md](docs/CLAIM-FROM-EVIDENCE.md) - bounded claim candidate from reviewed evidence
+- [docs/CASE-START.md](docs/CASE-START.md) - start a case workspace from one weak artifact
+- [docs/CASE-CHECK.md](docs/CASE-CHECK.md) - check whether a case has completed local evidence
+- [docs/PERMISSIONED-CASE-CHECK.md](docs/PERMISSIONED-CASE-CHECK.md) - review permissioned external case intake
+- [docs/PERMISSIONED-CASE-FIXTURE.md](docs/PERMISSIONED-CASE-FIXTURE.md) - reviewable permissioned intake fixture boundary
+- [docs/CASE-FROM-INTAKE.md](docs/CASE-FROM-INTAKE.md) - create a started case workspace from reviewed intake
+- [docs/CASE-FROM-RECORD.md](docs/CASE-FROM-RECORD.md) - create a started case workspace from a proof intake record
+- [docs/CASE-PUBLICATION-PACKET.md](docs/CASE-PUBLICATION-PACKET.md) - generate a bounded casebook candidate packet
+- [docs/PACKAGE-RELEASE-CANDIDATE.md](docs/PACKAGE-RELEASE-CANDIDATE.md) - local npm package candidate boundary
+- [docs/ACTION-RELEASE-CANDIDATE.md](docs/ACTION-RELEASE-CANDIDATE.md) - root GitHub Action candidate boundary
+- [docs/PLUGIN-INSTALL-PACKET.md](docs/PLUGIN-INSTALL-PACKET.md) - generated local Codex plugin install-readiness packet
+- [docs/PLUGIN-RELEASE-PACKET.md](docs/PLUGIN-RELEASE-PACKET.md) - generated plugin/action release-candidate packet
+- [docs/PUBLISH-SYNC-GATE.md](docs/PUBLISH-SYNC-GATE.md) - clean worktree and upstream sync gate
+- [docs/PUBLISH-HANDOFF-PACKET.md](docs/PUBLISH-HANDOFF-PACKET.md) - generated local publish/sync handoff packet
+- [docs/RELEASE-EVIDENCE-REPORT.md](docs/RELEASE-EVIDENCE-REPORT.md) - generated publication evidence checklist
+- [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md) - generated direct publication evidence intake packet
+- [docs/GOAL-COMPLETION-AUDIT.md](docs/GOAL-COMPLETION-AUDIT.md) - generated active-goal completion audit without completion proof
+- [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
+- [docs/OWNER-DECISION-INTAKE.md](docs/OWNER-DECISION-INTAKE.md) - generated owner decision intake
+- [docs/OWNER-DECISION-ANSWER-RECORD.md](docs/OWNER-DECISION-ANSWER-RECORD.md) - generated schema-shaped owner decision answer record
+- [docs/OWNER-ANSWER-REVIEW.md](docs/OWNER-ANSWER-REVIEW.md) - generated owner answer review
+- [docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md](docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md) - generated owner evidence attachment form
+- [docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md](docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md) - generated owner evidence submission record
+- [docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md](docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md) - local owner evidence submission check before gate movement
+- [docs/OWNER-EVIDENCE-BUNDLE.md](docs/OWNER-EVIDENCE-BUNDLE.md) - generated owner evidence bundle
+- [docs/OWNER-EVIDENCE-INTAKE-RECORD.md](docs/OWNER-EVIDENCE-INTAKE-RECORD.md) - generated schema-shaped owner evidence intake record
+- [docs/OWNER-EVIDENCE-REVIEW.md](docs/OWNER-EVIDENCE-REVIEW.md) - generated owner evidence review
+- [docs/RELEASE-DECISION-RECORD.md](docs/RELEASE-DECISION-RECORD.md) - generated owner release decision record
+- [docs/RELEASE-ARTIFACT-MANIFEST.md](docs/RELEASE-ARTIFACT-MANIFEST.md) - generated SHA-256 release artifact manifest
+- [docs/ADOPTION-PACKET.md](docs/ADOPTION-PACKET.md) - generated external adoption evidence intake packet
+- [docs/GAP-CLOSURE-PLAN.md](docs/GAP-CLOSURE-PLAN.md) - generated evidence steps for closing open gates without claiming closure
+- [docs/GATE-EVIDENCE-PACKET.md](docs/GATE-EVIDENCE-PACKET.md) - generated evidence intake packet for routing open gates to evidence requirements
+- [docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md) - generated readiness report for open gates before any closure claim
+- [docs/GATE-CLOSURE-REVIEW.md](docs/GATE-CLOSURE-REVIEW.md) - generated gate closure review record that keeps gates open without approving closure
+- [docs/RELEASE-EXECUTION-PACKET.md](docs/RELEASE-EXECUTION-PACKET.md) - generated owner release execution handoff
+- [docs/PUBLIC-CLAIM-PACK.md](docs/PUBLIC-CLAIM-PACK.md) - generated public copy and claim boundary
+- [docs/STATUS-ROADMAP-SYNC.md](docs/STATUS-ROADMAP-SYNC.md) - status roadmap sync audit
+- [docs/SOURCE-FIRST-PROTOCOL.md](docs/SOURCE-FIRST-PROTOCOL.md) - source provenance and primary-reference discipline
+- [docs/SECRET-SAFETY-GATE.md](docs/SECRET-SAFETY-GATE.md) - local credential-pattern and risky-file guardrail
+- [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md) - how engineering, canvas, and casebook fit together
+- [docs/CASEBOOK-PROTOCOL.md](docs/CASEBOOK-PROTOCOL.md) - how public cases should be shaped
+- [docs/REMOTE-ECOSYSTEM-AUDIT.md](docs/REMOTE-ECOSYSTEM-AUDIT.md) - read-only public repository visibility check
+
+The v0.1 implementation is intentionally Markdown-first.
+Adapters and plugins are documented as contracts unless explicitly marked otherwise.
+
+Validate the local framework surface:
+
+```bash
+npm run validate
+```
+
+or:
+
+```bash
+node tools/validate-mimesis.mjs
+```
+
+The same validator is wired as a repository workflow at `.github/workflows/validate-mimesis.yml`.
+The workflow also runs `npm run audit:adapters`.
+
+Initialize a `.mimesis` workspace in another project:
+
+```bash
+node tools/init-mimesis.mjs path/to/project
+```
+
+The `package.json` is marked `private` because v0.1 is not an npm package release.
+
+Use the local CLI wrapper:
+
+```bash
+npm run cli -- help
+npm run cli -- case:start --artifact README.md --reference-pack reference-packs/github-readme.md --title "README Loop"
+npm run cli -- case:check .
+npm run cli -- case:review path/to/permissioned-case.md
+npm run cli -- audit:permissioned-fixture
+npm run cli -- case:from-intake path/to/permissioned-case.md --reference-pack reference-packs/github-readme.md
+npm run cli -- case:from-record .mimesis/proof-intake/fixture-record.json
+npm run cli -- case:publish-packet .
+npm run cli -- evidence:check path/to/evidence-packet.md
+npm run cli -- gap:register
+npm run cli -- audit:gap-register
+npm run cli -- gate:board
+npm run cli -- proof:packet
+npm run cli -- proof:intake
+npm run cli -- proof:intake-record
+npm run cli -- proof:intake-check
+npm run cli -- audit:proof-intake-record
+npm run cli -- audit:proof-intake-check
+npm run cli -- audit:proof-intake-schema
+npm run cli -- proof:readiness
+npm run cli -- audit:proof-readiness
+npm run cli -- proof:run-packet
+npm run cli -- license:packet
+npm run cli -- operator:runbook
+npm run cli -- ecosystem:resources
+npm run cli -- benchmark:packet
+npm run cli -- adoption:packet
+npm run cli -- audit:adoption-packet
+npm run cli -- first-loop:demo
+npm run cli -- audit:first-loop
+npm run cli -- framework:manifest
+npm run cli -- audit:framework-manifest-schema
+npm run cli -- audit:framework-manifest
+npm run cli -- audit:spec-index
+npm run cli -- state:summary
+npm run cli -- audit:state-summary
+npm run cli -- reference:index
+npm run cli -- audit:reference-index
+npm run cli -- plugin:install-packet
+npm run cli -- audit:plugin-install-packet
+npm run cli -- plugin:packet
+npm run cli -- audit:codex-plugin
+npm run cli -- mcp:resources
+npm run cli -- mcp:serve
+npm run cli -- audit:mcp-server
+npm run cli -- audit:mcp-stdio
+npm run cli -- publish:packet
+npm run cli -- release:execution-packet
+npm run cli -- release:decision-record
+npm run cli -- release:evidence-report
+npm run cli -- publication:evidence-packet
+npm run cli -- audit:publication-evidence-packet
+npm run cli -- goal:completion-audit
+npm run cli -- audit:goal-completion-audit
+npm run cli -- owner:queue
+npm run cli -- owner:decision-intake
+npm run cli -- owner:decision-answer-record
+npm run cli -- owner:answer-review
+npm run cli -- owner:evidence-bundle
+npm run cli -- owner:evidence-intake-record
+npm run cli -- release:artifact-manifest
+npm run cli -- worktree:packet
+npm run cli -- release:review-bundle
+npm run cli -- claim:pack
+npm run cli -- audit:release-order
+npm run cli -- audit:worktree-packet
+npm run cli -- audit:release-review-bundle
+npm run cli -- audit:status-roadmap
+npm run cli -- audit:proof-run-dry
+npm run cli -- audit:remote-fallback
+npm run cli -- validate
+npm run cli -- workspace:check .
+```
+
+The CLI is local only.
+It does not prove npm package release.
+`case:start` creates a started case workspace, not a completed proof artifact.
+`case:check` checks completed local evidence, not external adoption or outcomes.
+`case:review` checks permissioned intake, not actual transformation proof.
+`audit:permissioned-fixture` checks a reviewable local fixture, not a real submitter artifact or external proof.
+`case:from-intake` creates a started external case workspace, not completed before/after proof.
+`case:from-record` creates a started case workspace from a proof intake record, not completed before/after proof or external adoption proof.
+`case:publish-packet` creates a casebook candidate packet, not publication, permission, adoption proof, benchmark proof, or a license decision.
+`evidence:check` checks claim-evidence packet structure, not the truth of claims beyond named evidence.
+`gap:register` creates a machine-readable open-gate register, not completion proof.
+`audit:gap-register` checks that owner, proof, publication, benchmark, and adoption gaps remain visible and bounded.
+`audit:gap-register-sync-closure` checks that the strict sync gap stays open until the repository is sync-ready, then leaves the open gap register.
+`gate:board` creates a current owner/proof/publication gate board, not completion proof.
+`proof:packet` creates a first-proof handoff packet, not external proof.
+`proof:intake` creates a first external proof intake kit, not a submitted artifact or completed proof.
+`proof:intake-record` creates a schema-shaped fixture record, not a real submitter artifact, permission grant, external proof, or publication.
+`proof:intake-check` checks a schema-shaped proof intake record before case creation; it does not grant permission, create external proof, redact files, publish, or prove adoption.
+`audit:proof-intake-record` checks that fixture record and its boundaries.
+`audit:proof-intake-check` checks the proof intake check report and unsafe-record failure behavior.
+`audit:proof-intake-schema` checks the proof intake schema contract, not permission, external proof, adoption, or publication.
+`proof:redaction-packet` creates a proof redaction packet, not redacted files, external proof, permission, complete private-data removal proof, or publication.
+`audit:proof-redaction-packet` checks the redaction checklist and no-proof/private-data boundary.
+`proof:submission-packet` creates a proof submission packet, not a submitted artifact, permission grant, external proof, closed gate, or publication.
+`audit:proof-submission-packet` checks the submission handoff and not-submitted/no-proof boundary.
+`proof:acceptance-packet` creates a proof acceptance packet, not an accepted artifact, external proof, transformation, closed gate, or publication.
+`audit:proof-acceptance-packet` checks the accept/revise/reject case creation gate and no-accepted-artifact/no-proof boundary.
+`proof:readiness` creates a first weak artifact readiness packet, not a submitted artifact, owner decision, external proof, publication, or owner gate bypass.
+`audit:proof-readiness` checks that readiness packet and its proof boundary.
+`proof:run-packet` creates an operator proof-run packet, not external proof, adoption proof, or publication.
+`proof:execution-report` creates a command evidence ledger packet, not executed proof, command execution, external proof, or publication.
+`audit:proof-execution-report` checks the execution report and no-executed-proof boundary.
+`audit:proof-run-dry` checks the proof-run path with a temporary local fixture, not a real external case.
+`proof:candidate-packet` creates a first proof candidate packet, not selected proof, external proof, permission, publication, or adoption evidence.
+`audit:proof-candidate-packet` checks that candidate selection remains visible without claiming completion.
+`license:packet` creates an owner decision packet, not a license choice.
+`operator:runbook` creates an ecosystem operating path, not external adoption or publication proof.
+`ecosystem:resources` creates a local ecosystem resource index, not copied content, external adoption proof, or remote freshness proof.
+`benchmark:packet` creates a measurement protocol, not benchmarked productivity, adoption proof, or customer outcome proof.
+
+`adoption:packet` creates `.mimesis/adoption-packets/v0.2-first-adoption.md` from [docs/ADOPTION-PACKET.md](docs/ADOPTION-PACKET.md). `audit:adoption-packet` checks that this is external adoption evidence intake, not adoption proof, and does not create evidence, publish, or close gates.
+`first-loop:demo` creates a completed local first-loop demo case, not a real external proof case.
+`audit:first-loop` checks the demo with workspace and case checks; it does not prove external adoption, benchmarked productivity, customer outcomes, legal originality, or package publication.
+`framework:manifest` creates a local AI-native framework manifest, not adoption proof, benchmark proof, package publication, shipped plugin proof, or a legal originality guarantee.
+`audit:framework-manifest-schema` checks the manifest schema contract, not external adoption, package publication, shipped plugin proof, official host compliance, customer outcomes, or legal originality.
+`audit:framework-manifest` checks that generated manifest surface, CLI exposure, release-check wiring, and proof boundaries.
+`reference:index` creates a local source-first reference pack index, not a source-quality guarantee, external adoption proof, package publication, or permission to copy protected surface.
+`audit:reference-index` checks that generated standards index and its copy boundaries.
+`plugin:install-packet` creates a local Codex plugin install-readiness handoff, not installation proof, a shipped plugin, official host compliance, Marketplace listing, or external adoption.
+`audit:plugin-install-packet` checks that install-readiness handoff and its not-installed boundary.
+`plugin:packet` creates a plugin/action release-candidate packet, not a shipped plugin.
+`release:evidence-report` creates a publication evidence checklist, not publication, tag creation, npm publish, Marketplace publication, plugin shipment, or external proof.
+`audit:release-evidence-report` checks the release evidence report and no-publication boundary.
+`publication:evidence-packet` creates `.mimesis/release-evidence/publication-evidence-packet.md` from [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md). `audit:publication-evidence-packet` checks that this is direct publication evidence intake, not publication proof, and does not publish, stage, commit, push, tag, release, publish to npm, publish a Marketplace action, ship a plugin, or close gates.
+`owner:queue` creates an owner action queue, not a license choice, submitted artifact, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-queue` checks the owner action queue and no-decision/no-proof boundary.
+`owner:decision-intake` creates an owner decision intake form, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-decision-intake` checks the owner decision intake form and no-decision/no-proof boundary.
+`owner:decision-answer-record` creates a schema-shaped pending owner answer fixture, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-decision-answer-record` checks the owner decision answer record schema, freshness, and no-decision/no-proof boundary.
+`owner:answer-review` creates a blocked-gate review from pending owner answers, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-answer-review` checks the owner answer review and blocked-gate boundary.
+`owner:evidence-attachment-form` creates an owner evidence attachment form, not attached evidence, a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-evidence-attachment-form` checks the owner evidence attachment form and no-evidence/no-proof boundary.
+`owner:evidence-submission-record` creates a schema-shaped owner evidence submission record, not submitted evidence, attached evidence, a license choice, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-evidence-submission-record` checks the owner evidence submission record and no-submitted-evidence/no-proof boundary.
+`owner:evidence-submission-check` checks an owner evidence submission record before gate movement, not submitted evidence, attached evidence, publication, external proof, adoption proof, or closed gate.
+`audit:owner-evidence-submission-check` checks the owner evidence submission check and unsafe-record rejection path.
+`owner:evidence-bundle` creates an owner evidence attachment map, not evidence, a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-evidence-bundle` checks the owner evidence bundle and no-evidence/no-proof boundary.
+`owner:evidence-intake-record` creates a schema-shaped pending owner evidence fixture, not attached evidence, a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-evidence-intake-record` checks the owner evidence intake record schema, freshness, and no-evidence/no-proof boundary.
+`owner:evidence-review` creates a blocked-gate review from pending owner evidence, not attached evidence, a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
+`audit:owner-evidence-review` checks the owner evidence review and blocked-gate boundary.
+`audit:codex-plugin` checks a local Codex plugin scaffold, not a shipped plugin, Marketplace listing, installation proof, or external adoption.
+`mcp:resources` creates a local MCP resource index scaffold, not a shipped MCP server or connector install.
+`audit:mcp-server` checks the local MCP scaffold, not a long-running server, secret exposure, or external adoption proof.
+`mcp:serve` runs a local line-delimited JSON-RPC stdio candidate for resource reads and descriptors.
+`audit:mcp-stdio` smoke-tests that candidate; it does not prove external MCP host installation, official compliance, secret exposure, or external adoption.
+Tool command execution is disabled through the stdio candidate.
+`publish:packet` creates a publish/sync handoff packet, not a commit, push, tag, release, PR, or publication.
+`audit:sync:strict-nonwriting` checks the non-writing strict sync boundary described in [docs/PUBLISH-SYNC-GATE.md](docs/PUBLISH-SYNC-GATE.md), so publish-readiness checks can avoid mutating the worktree.
+`release:decision-record` creates an owner decision JSON record, not a license choice, publication, commit, push, tag, release, proof, or adoption evidence.
+`state:summary` creates a machine-readable current state summary from open gates and owner evidence packets; it does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption.
+`audit:state-summary` checks the summary source coverage and no-proof/no-closure boundaries.
+`worktree:packet` creates a local dirty worktree review packet, not publication, remote freshness proof, or strict sync closure.
+`audit:worktree-packet` checks the worktree review packet and confirms it does not stage, commit, push, publish, or close strict sync.
+`release:review-bundle` creates a release review bundle that classifies local dirty worktree scope; it is not a commit, push, tag, release, publication, license choice, remote freshness proof, or strict sync closure.
+`audit:release-review-bundle` checks the release review bundle and its no-commit/no-publication boundary.
+`goal:completion-audit` creates `.mimesis/completion/goal-completion-audit.json`, an active-goal evidence map that keeps `completionAllowed: false` while open gates remain.
+`audit:goal-completion-audit` checks the goal completion audit and confirms it is objective evidence, not completion proof, a gate closure, publication, license choice, external proof, benchmark proof, or adoption proof.
+`release:artifact-manifest` creates a local SHA-256 release artifact manifest, not publication, sync, license choice, external proof, or adoption evidence.
+`gap:closure-plan` creates a local gap closure plan, not closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`gate:evidence-packet` creates a local gate evidence packet, not evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`gate:closure-readiness` creates a local gate closure readiness report, not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`gate:closure-review` creates a local gate closure review record with `decision: keep_open`, not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`release:execution-packet` creates an owner release handoff, not a commit, push, tag, release, package publish, Marketplace publish, or license choice.
+`claim:pack` creates a public copy guardrail, not publication, adoption proof, benchmark proof, legal proof, or certification.
+`audit:status-roadmap` checks that status and roadmap pages match the current local v0.1 surface; it does not prove completion or publish anything.
+
+Check the package and root action release-candidate surfaces without publishing:
+
+```bash
+npm run audit:package
+npm run audit:action
+```
+
+These are dry-run and metadata checks.
+They do not prove npm registry publication, a GitHub Marketplace listing, tagged release, or external adoption.
+
+If you have the neighboring repos checked out next to this one:
+
+```bash
+npm run audit:ecosystem
+```
+
+Create a Gemini CLI packet from the current artifact trail:
+
+```bash
+npm run adapter:gemini
+```
+
+This creates a local packet only.
+It does not execute Gemini CLI or prove OAuth/account integration.
+
+Create a Claude Code packet from the current artifact trail:
+
+```bash
+npm run adapter:claude
+```
+
+License status:
+[docs/LICENSE-DECISION.md](docs/LICENSE-DECISION.md)
+
+Owner license decision packet:
+[docs/LICENSE-PACKET.md](docs/LICENSE-PACKET.md)
+
+Permissioned external case requirements:
+[docs/PERMISSIONED-CASE-PACKET.md](docs/PERMISSIONED-CASE-PACKET.md)
+
+Strong-claim evidence packet:
+[docs/EVIDENCE-PACKET.md](docs/EVIDENCE-PACKET.md)
+
+Create a draft evidence packet from a completed local case:
+
+```bash
+npm run cli -- evidence:from-case . --out .mimesis/evidence-packets/local-case-draft.md --force
+npm run cli -- evidence:check .mimesis/evidence-packets/local-case-draft.md
+```
+
+This does not mark the evidence as reviewed and does not prove external adoption.
+
+Record a reviewer decision on an evidence packet:
+
+```bash
+npm run cli -- evidence:review .mimesis/evidence-packets/local-case-draft.md --decision reviewed --reviewer "Reviewer Name" --note "Reviewed against the proof boundary." --out path/to/reviewed-evidence.md
+```
+
+This records a decision only.
+It does not create evidence or prove external adoption.
+
+Create a bounded claim candidate from reviewed evidence:
+
+```bash
+npm run cli -- claim:from-evidence path/to/reviewed-evidence.md --out path/to/claim-candidate.md
+```
+
+This does not create evidence and does not publish.
+
+Current gate board:
+[docs/GATEBOARD.md](docs/GATEBOARD.md)
+
+Current gap register:
+[docs/GAP-REGISTER.md](docs/GAP-REGISTER.md)
+
+Current gap closure plan:
+[docs/GAP-CLOSURE-PLAN.md](docs/GAP-CLOSURE-PLAN.md)
+
+Current gate evidence packet:
+[docs/GATE-EVIDENCE-PACKET.md](docs/GATE-EVIDENCE-PACKET.md)
+
+Current gate closure readiness report:
+[docs/GATE-CLOSURE-READINESS.md](docs/GATE-CLOSURE-READINESS.md)
+
+Current first proof candidate packet:
+[docs/FIRST-PROOF-CANDIDATE-PACKET.md](docs/FIRST-PROOF-CANDIDATE-PACKET.md)
+
+First v0.2 proof queue:
+[docs/V0.2-PROOF-QUEUE.md](docs/V0.2-PROOF-QUEUE.md)
+
+Release readiness check:
+
+```bash
+npm run audit:release
+```
+
+Generate a local publication handoff packet:
+
+```bash
+npm run release:packet
+```
+
+This writes `.mimesis/publication-packets/v0.1.md`.
+
+Generate a local first-proof handoff packet:
+
+```bash
+npm run proof:packet
+```
+
+This writes `.mimesis/proof-packets/v0.2-first-proof.md`.
+
+Generate the first external proof intake kit:
+
+```bash
+npm run proof:intake
+```
+
+This writes `.mimesis/proof-intake/first-external-proof-kit.md`.
+Audit it with `npm run audit:proof-intake`.
+
+Generate the local proof intake fixture record:
+
+```bash
+npm run proof:intake-record
+```
+
+This writes `.mimesis/proof-intake/fixture-record.json`.
+Audit it with `npm run audit:proof-intake-record`.
+It is not a real submitter artifact and does not create external proof.
+
+Check the local proof intake fixture record before case creation:
+
+```bash
+npm run proof:intake-check
+npm run audit:proof-intake-check
+```
+
+This writes `.mimesis/proof-intake/fixture-check.md`.
+It does not grant permission, create external proof, redact files, publish, or prove adoption.
+
+Generate the proof redaction packet:
+
+```bash
+npm run proof:redaction-packet
+npm run audit:proof-redaction-packet
+```
+
+This writes `.mimesis/proof-intake/redaction-packet.md`.
+It does not redact files, create external proof, grant permission, publish, choose a license, or guarantee complete private-data removal.
+
+Generate the proof submission packet:
+
+```bash
+npm run proof:submission-packet
+npm run audit:proof-submission-packet
+```
+
+This writes `.mimesis/proof-intake/submission-packet.md`.
+It does not submit an artifact, create external proof, grant permission, publish, choose a license, or close the external-artifact gate.
+
+Generate the proof acceptance packet:
+
+```bash
+npm run proof:acceptance-packet
+npm run audit:proof-acceptance-packet
+```
+
+This writes `.mimesis/proof-intake/acceptance-packet.md`.
+It does not accept an artifact, create external proof, grant permission, run a transformation, publish, choose a license, or close the external-artifact gate.
+
+Audit the proof intake schema contract:
+
+```bash
+npm run audit:proof-intake-schema
+```
+
+This checks `spec/proof-intake.schema.json`.
+It does not create external proof, grant permission, prove adoption, choose a license, or publish a case.
+
+Generate the first weak artifact readiness packet:
+
+```bash
+npm run proof:readiness
+```
+
+This writes `.mimesis/proof-runs/readiness.md`.
+Audit it with `npm run audit:proof-readiness`.
+It does not create external proof, choose a license, bypass owner gates, publish, or prove adoption.
+
+Generate the first proof candidate packet:
+
+```bash
+npm run proof:candidate-packet
+npm run audit:proof-candidate-packet
+```
+
+This writes `.mimesis/proof-candidates/first-candidate.md`.
+It is a candidate selection packet only.
+It does not create external proof, select a candidate, grant permission, publish, choose a license, or prove external adoption.
+
+Generate the first proof-run operator packet:
+
+```bash
+npm run proof:run-packet
+```
+
+This writes `.mimesis/proof-runs/v0.2-first-run.md`.
+Audit it with `npm run audit:proof-run`.
+
+Generate the proof execution report:
+
+```bash
+npm run proof:execution-report
+npm run audit:proof-execution-report
+```
+
+This writes `.mimesis/proof-runs/execution-report.md`.
+It is a command evidence ledger for a future real proof run.
+It does not execute commands, create external proof, run a transformation, publish, choose a license, or prove adoption.
+
+Run the proof-run dry audit:
+
+```bash
+npm run audit:proof-run-dry
+```
+
+This writes `.mimesis/proof-runs/dry-run-report.md` from a temporary local fixture.
+It now rehearses the path through reviewed evidence and bounded claim candidate.
+It does not create external proof or run `release:check:public`.
+
+Generate a local casebook candidate packet:
+
+```bash
+npm run case:publish-packet
+```
+
+This writes `.mimesis/case-publication-packets/current-casebook-candidate.md`.
+Audit it with `npm run audit:case-publication`.
+
+Generate a local owner license decision packet:
+
+```bash
+npm run license:packet
+```
+
+This writes `.mimesis/license-packets/owner-decision.md`.
+
+Generate the current ecosystem operator runbook:
+
+```bash
+npm run operator:runbook
+```
+
+This writes `.mimesis/operator-runbooks/current-runbook.md`.
+Audit it with `npm run audit:operator-runbook`.
+
+Generate the local ecosystem resource packet:
+
+```bash
+npm run ecosystem:resources
+```
+
+This writes `.mimesis/ecosystem-resources/current-resource-packet.md`.
+Audit it with `npm run audit:ecosystem-resources`.
+
+Generate a benchmark/adoption measurement packet:
+
+```bash
+npm run benchmark:packet
+```
+
+This writes `.mimesis/benchmark-packets/v0.2-first-benchmark.md`.
+Audit it with `npm run audit:benchmark-packet`.
+
+Generate an external adoption evidence intake packet; this is not adoption proof:
+
+```bash
+npm run adoption:packet
+```
+
+This writes `.mimesis/adoption-packets/v0.2-first-adoption.md`.
+Audit it with `npm run audit:adoption-packet`.
+It does not prove external adoption, create evidence, publish, or close gates.
+
+Generate a local Codex plugin install-readiness packet:
+
+```bash
+npm run plugin:install-packet
+npm run audit:plugin-install-packet
+```
+
+This writes `.mimesis/plugin-install-packets/codex-local.md`.
+It does not install the plugin, publish, ship a plugin, prove official host compliance, or prove external adoption.
+
+Generate a local plugin/action release-candidate packet:
+
+```bash
+npm run plugin:packet
+```
+
+This writes `.mimesis/plugin-release-packets/v0.1-action-candidate.md`.
+Audit the local Codex plugin scaffold with `npm run audit:codex-plugin`.
+The scaffold is local prototype evidence, not a shipped plugin or Marketplace listing.
+
+Generate and audit the local MCP resource index scaffold:
+
+```bash
+npm run mcp:resources
+npm run audit:mcp-server
+npm run audit:mcp-stdio
+```
+
+This writes `.mimesis/mcp/resource-index.json`.
+It is local prototype evidence, not a shipped MCP server or connector installation.
+The stdio candidate supports `initialize`, `resources/list`, `resources/read`, `tools/list`, and `prompts/list` over line-delimited JSON-RPC.
+It does not execute tool commands.
+
+Generate the current gate board:
+
+```bash
+npm run gate:board
+```
+
+This writes `.mimesis/gates/current-gateboard.md`.
+Audit it with `npm run audit:gateboard`.
+
+Generate the current gap register:
+
+```bash
+npm run gap:register
+npm run audit:gap-register
+npm run audit:gap-register-sync-closure
+```
+
+This writes `.mimesis/gaps/current-gap-register.json`.
+The strict sync gap is conditional: when `.mimesis/sync-status.md` reports `Status: synced` and the gate board reports `clean and synced: yes`, the register is sync-ready and omits `strict_publish_sync` from open gaps.
+It does not prove completion, publish, choose a license, create external proof, or prove adoption.
+
+Generate the current gap closure plan:
+
+```bash
+npm run gap:closure-plan
+npm run audit:gap-closure-plan
+```
+
+This writes `.mimesis/gaps/closure-plan.json`.
+It does not close gates, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Generate the current gate evidence packet:
+
+```bash
+npm run gate:evidence-packet
+npm run audit:gate-evidence-packet
+```
+
+This writes `.mimesis/gates/evidence-packet.md`.
+It does not close gates, create evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Generate the current gate closure readiness report:
+
+```bash
+npm run gate:closure-readiness
+npm run audit:gate-closure-readiness
+```
+
+This writes `.mimesis/gates/closure-readiness.json`.
+It does not close gates, submit evidence, attach evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Generate the gate closure review record:
+
+```bash
+npm run gate:closure-review
+npm run audit:gate-closure-review
+```
+
+This writes `.mimesis/gates/closure-review.json`.
+It does not approve gate closure, close gates, submit evidence, attach evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Generate a local publish/sync handoff packet:
+
+```bash
+npm run publish:packet
+```
+
+This writes `.mimesis/publish-packets/local-sync-handoff.md`.
+Audit it with `npm run audit:publish-packet`.
+
+Generate an owner release decision record:
+
+```bash
+npm run release:decision-record
+```
+
+This writes `.mimesis/release-decisions/owner-decision-record.json`.
+Audit it with `npm run audit:release-decision-record`.
+It does not choose a license, stage, commit, push, tag, release, publish, create proof, or prove adoption.
+
+Generate a local release evidence report:
+
+```bash
+npm run release:evidence-report
+```
+
+This writes `.mimesis/release-evidence/v0.1-report.md`.
+Audit it with `npm run audit:release-evidence-report`.
+It lists required publication evidence for commit, push, tag, npm, Marketplace, plugin, external proof, benchmark, and adoption claims.
+It does not publish, stage, commit, push, tag, release, publish to npm, publish a GitHub Marketplace action, choose a license, ship a plugin, create external proof, or prove adoption.
+
+Generate a direct publication evidence packet:
+
+```bash
+npm run publication:evidence-packet
+```
+
+This writes `.mimesis/release-evidence/publication-evidence-packet.md`.
+Audit it with `npm run audit:publication-evidence-packet`.
+It does not publish, stage, commit, push, create a tag, publish to npm, publish a GitHub Marketplace action, ship a plugin, or close gates.
+
+Generate an owner action queue:
+
+```bash
+npm run owner:queue
+```
+
+This writes `.mimesis/owner-actions/current-action-queue.md`.
+Audit it with `npm run audit:owner-queue`.
+It lists the next owner actions for license, weak artifact, before/after case, strict sync, package, action, plugin, benchmark, and adoption gates.
+It does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner decision intake:
+
+```bash
+npm run owner:decision-intake
+```
+
+This writes `.mimesis/owner-actions/decision-intake.md`.
+Audit it with `npm run audit:owner-decision-intake`.
+It turns the owner action queue into fillable owner-answer fields for license, weak artifact permission, publication scope, package/action/plugin scope, benchmark/adoption scope, and strict sync intent.
+It does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner decision answer record:
+
+```bash
+npm run owner:decision-answer-record
+```
+
+This writes `.mimesis/owner-actions/fixture-answer-record.json`.
+Audit it with `npm run audit:owner-decision-answer-record`.
+It turns the owner decision intake into a schema-shaped fixture with pending owner answers.
+It does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner answer review:
+
+```bash
+npm run owner:answer-review
+```
+
+This writes `.mimesis/owner-actions/answer-review.md`.
+Audit it with `npm run audit:owner-answer-review`.
+It shows `blocked_pending_owner_answers` and `ready to proceed: no` while owner answers remain pending.
+It does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner evidence bundle:
+
+```bash
+npm run owner:evidence-bundle
+```
+
+This writes `.mimesis/owner-actions/evidence-bundle.md`.
+Audit it with `npm run audit:owner-evidence-bundle`.
+It maps pending owner answer fields to evidence attachments, commands, and stop conditions.
+It is not evidence and does not choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner evidence intake record:
+
+```bash
+npm run owner:evidence-intake-record
+```
+
+This writes `.mimesis/owner-actions/fixture-evidence-record.json`.
+Audit it with `npm run audit:owner-evidence-intake-record`.
+It turns the owner evidence bundle into schema-shaped pending owner evidence attachments.
+It does not attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner evidence review:
+
+```bash
+npm run owner:evidence-review
+```
+
+This writes `.mimesis/owner-actions/evidence-review.md`.
+Audit it with `npm run audit:owner-evidence-review`.
+It turns pending owner evidence attachments into a readable blocked-gate review.
+It does not attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner evidence attachment form:
+
+```bash
+npm run owner:evidence-attachment-form
+```
+
+This writes `.mimesis/owner-actions/evidence-attachment-form.md`.
+Audit it with `npm run audit:owner-evidence-attachment-form`.
+It creates owner-provided evidence slots for the pending gates.
+It does not attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate an owner evidence submission record:
+
+```bash
+npm run owner:evidence-submission-record
+```
+
+This writes `.mimesis/owner-actions/fixture-evidence-submission-record.json`.
+Audit it with `npm run audit:owner-evidence-submission-record`.
+It records `not_submitted_owner_evidence`.
+It does not submit evidence, attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Check an owner evidence submission record before gate movement:
+
+```bash
+npm run owner:evidence-submission-check
+npm run audit:owner-evidence-submission-check
+```
+
+This writes `.mimesis/owner-actions/fixture-evidence-submission-check.md`.
+It does not submit evidence, attach evidence, publish, create external proof, prove adoption, or close gates.
+
+Generate the current state summary:
+
+```bash
+npm run state:summary
+npm run audit:state-summary
+```
+
+This writes `.mimesis/state/current-state.json`.
+It summarizes the current gap register, closure plan, gate board, owner action queue, and release evidence report.
+It does not close gates, prove completion, publish, choose a license, create external proof, or prove adoption.
+
+Generate a local release artifact manifest:
+
+```bash
+npm run release:artifact-manifest
+```
+
+This writes `.mimesis/release-artifacts/v0.1-manifest.json`.
+Audit it with `npm run audit:release-artifact-manifest`.
+It records selected release-review files with SHA-256 hashes.
+It does not publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.
+
+Generate a dirty worktree review packet before treating local changes as reviewed:
+
+```bash
+npm run worktree:packet
+npm run audit:worktree-packet
+```
+
+This writes `.mimesis/worktree/review-packet.json`.
+It records tracked changes, untracked roots, source git commands, and review boundaries.
+It does not stage, commit, push, tag, release, publish, prove remote freshness, or close strict sync.
+
+Generate a release review bundle before treating local changes as commit-ready:
+
+```bash
+npm run release:review-bundle
+npm run audit:release-review-bundle
+```
+
+This writes `.mimesis/release-review/v0.1-bundle.json`.
+It classifies the dirty worktree into review groups and a required review sequence.
+It does not stage, commit, push, tag, release, publish, choose a license, prove remote freshness, or close strict sync.
+
+Generate an active-goal completion audit before any completion claim:
+
+```bash
+npm run goal:completion-audit
+npm run audit:goal-completion-audit
+```
+
+This writes `.mimesis/completion/goal-completion-audit.json`.
+It maps objective evidence and open gates for the active goal.
+It does not mark the active goal complete, close gates, publish, choose a license, create external proof, prove benchmarked productivity, or prove adoption.
+
+Generate an owner release execution handoff:
+
+```bash
+npm run release:execution-packet
+```
+
+This writes `.mimesis/release-execution/v0.1-owner-handoff.md`.
+Audit it with `npm run audit:release-execution`.
+
+Generate a bounded public claim pack:
+
+```bash
+npm run claim:pack
+```
+
+This writes `.mimesis/claim-packs/public-v0.1.md`.
+Audit it with `npm run audit:claim-pack`.
+
+Audit the first external proof path:
+
+```bash
+npm run audit:secrets
+npm run audit:activation
+npm run audit:license-packet
+npm run audit:codex-plugin
+npm run audit:mcp-server
+npm run audit:mcp-stdio
+npm run audit:plugin-packet
+npm run audit:publish-packet
+npm run audit:claim-pack
+npm run audit:completion-row-count
+npm run audit:release-order
+npm run audit:owner-decision-intake
+npm run audit:owner-decision-answer-record
+npm run audit:owner-answer-review
+npm run audit:owner-evidence-bundle
+npm run audit:owner-evidence-intake-record
+npm run audit:release-artifact-manifest
+npm run audit:worktree-packet
+npm run audit:release-review-bundle
+npm run audit:status-roadmap
+npm run audit:gap-register
+npm run audit:release-execution
+npm run audit:ecosystem-resources
+npm run audit:gateboard
+npm run audit:proof-intake-schema
+npm run audit:spec-index
+npm run audit:proof-intake-record
+npm run audit:proof-intake
+npm run audit:proof-run
+npm run audit:proof-run-dry
+npm run audit:operator-runbook
+npm run audit:proof-packet
+npm run audit:proof-queue
+npm run audit:permissioned-fixture
+npm run audit:case-publication
+npm run audit:benchmark-packet
+npm run audit:adoption-packet
+npm run audit:publication-evidence-packet
+npm run audit:goal-completion-audit
+npm run audit:sync:strict-nonwriting
+```
+
+Full local release preflight:
+
+```bash
+npm run release:check
+```
+
+If the neighboring repos are checked out beside this one:
+
+```bash
+npm run release:check:workspace
+```
+
+If public GitHub repository metadata can be read:
+
+```bash
+npm run release:check:public
+```
+
+This adds read-only visibility checks and a forced fallback path for `svy04/mimesis-engineering`, `svy04/mimesis-canvas`, and `svy04/mimesis-casebook`.
+It does not prove the remotes contain the current local worktree.
+
+Check the fallback directly:
+
+```bash
+npm run audit:remote-fallback
+```
+
+This forces the remote audit off the `gh` path and verifies public repository visibility through the fallback path.
+
+Secret safety audit:
+
+```bash
+npm run audit:secrets
+```
+
+This writes `.mimesis/security/secret-safety-report.md`.
+It is a local heuristic guardrail, not production-grade security proof.
+
+Strict publish readiness:
+
+```bash
+npm run release:ready:publish
+```
+
+This requires the public preflight plus a clean worktree synced with upstream.
+It does not choose a license or publish anything.
+
+## The MIMESIS Loop
 
 | Letter | Step | Question |
-|---|---|---|
-| M | Map the field | What products, papers, repos, and failures already define the space? |
-| I | Identify predecessors | Which artifacts are worth learning from? |
-| M | Model their structure | What knowledge, visual, user-flow, and proof structures make them work? |
-| E | Extract patterns | What can be transferred, transformed, or rejected? |
-| S | Synthesize variation | What should your version become under your constraints? |
-| I | Inspect risk | Where can imitation become shallow, unclear, or weak? |
-| S | Ship and revise | What evidence decides the next move? |
+| --- | --- | --- |
+| M | Map the field | What artifacts define this space? |
+| I | Identify strong artifacts | Which examples are worth studying? |
+| M | Model their structure | What makes them work? |
+| E | Extract patterns | What can transfer without copying? |
+| S | Synthesize your version | What should your artifact become? |
+| I | Inspect the boundary | Where could this become shallow, copied, or overclaimed? |
+| S | Ship proof | What evidence or case note proves the change? |
 
-## Operator Layer
+## The Boundary
 
-Mimesis Engineering is also being built as a work operating system.
+Weak Mimesis copies surface.
+Strong Mimesis extracts structure.
 
-| Actor | Role |
-|---|---|
-| Human operator | Direction, taste, final judgment |
-| GPT | Strategy, writing, synthesis |
-| Gemini | Skeptic, comparison, critique |
-| Codex | Repository and implementation builder |
-| Hermes | Daily operator, memory log, backlog, launch control |
+Do not:
 
-Memory categories:
+- copy sentences
+- clone layouts
+- hide references
+- borrow authority without proof
+- claim outcomes you have not shown
 
-- **Sensation** — what people reacted to
-- **Knowledge** — what became reliable
-- **Wisdom** — what should guide the next move
+Extract:
 
-## Launch Principle
+- problem structure
+- trust devices
+- user flow
+- claim boundary
+- proof rhythm
+- failure handling
 
-The launch goal is compressed discovery:
+No proof, no claim.
 
-> many real people finding one real artifact in one visible window.
+Read:
 
-Attention should come from real use, honest feedback, and clear proof boundaries.
+- [docs/ORIGINALITY-BOUNDARY.md](docs/ORIGINALITY-BOUNDARY.md)
+- [PROOF-BOUNDARY.md](PROOF-BOUNDARY.md)
 
-## Start
+## Casebook
 
-1. Read [docs/START-HERE.ko.md](docs/START-HERE.ko.md) or [docs/QUICKSTART.md](docs/QUICKSTART.md).
-2. Use [prompts/02-master-artifact-analysis.md](prompts/02-master-artifact-analysis.md).
-3. Fill a canvas from [mimesis-canvas](https://github.com/svy04/mimesis-canvas).
-4. Publish a case note using [mimesis-casebook](https://github.com/svy04/mimesis-casebook).
+- [Case 001: Mimesis on Mimesis](cases/001-mimesis-on-mimesis.md)
+- [Case 002: Blog Homepage Mimesis](cases/002-blog-homepage-mimesis.md)
+- [Case 003: GitHub Profile Mimesis](cases/003-github-profile-mimesis.md)
+- [Case 004: When Mimesis Becomes Shallow Copying](cases/004-when-mimesis-becomes-shallow-copying.md)
+- [Case 005: Public Source Specimen - AI App Builder Landing Page](cases/005-lovable-ai-app-builder-public-source-specimen.md)
+- [External Casebook Index](cases/EXTERNAL-CASEBOOK.md)
+- [Mimesis Casebook](https://github.com/svy04/mimesis-casebook)
+
+## Reference Packs
+
+- [Reference Pack Index](reference-packs/README.md)
+- [GitHub README](reference-packs/github-readme.md)
+- [Landing Page](reference-packs/landing-page.md)
+- [Product Page](reference-packs/product-page.md)
+- [Blog Post](reference-packs/blog-post.md)
+- [AI Workflow](reference-packs/ai-workflow.md)
+- [Research Note](reference-packs/research-note.md)
+- [Profile Positioning](reference-packs/profile-positioning.md)
+
+## Examples
+
+- [Example Index](examples/README.md)
+- [GitHub README Mimesis](examples/github-readme.md)
+- [Landing Page Mimesis](examples/landing-page.md)
+- [Research Paper Mimesis](examples/research-paper.md)
+- [Product Workflow Mimesis](examples/product-workflow.md)
+- [Blog Homepage Mimesis](examples/blog-homepage.md)
+- [Permissioned Case Intake Fixture](examples/permissioned-case-intake.md)
+
+## Contribute
+
+Real contributions only.
+
+You can:
+
+- submit a weak artifact
+- submit a reference pack
+- submit a before/after case
+- report where the method feels confusing
+- improve the boundary
+
+Do not:
+
+- ask for fake stars
+- post copied comments
+- create artificial amplification
+- submit copied material
+- invent proof
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Status
+
+- [Project Status](STATUS.md)
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+- [License Status](LICENSE.md)
+- [Security](SECURITY.md)
 
 ## Related
 
-- Concept hub: https://svy04.github.io/mimesis-engineering/
-- Prompt pack: https://svy04.github.io/posts/024-mimesis-prompts/
-- Artifact-level Mimesis: https://svy04.github.io/posts/artifact-level-mimesis/
-- Proof boundary: https://svy04.github.io/proof/
+- [Mimesis Canvas](https://github.com/svy04/mimesis-canvas)
+- [Mimesis Casebook](https://github.com/svy04/mimesis-casebook)
+- [Concept hub](https://svy04.github.io/mimesis-engineering/)
+- [Prompt pack](https://svy04.github.io/posts/024-mimesis-prompts/)
+- [Proof boundary](https://svy04.github.io/proof/)
+- [Artifact-level Mimesis](https://svy04.github.io/posts/artifact-level-mimesis/)

@@ -1,0 +1,52 @@
+{
+  "tools": [
+    {
+      "name": "mimesis_validate",
+      "command": "npm run validate",
+      "purpose": "Validate the local framework surface.",
+      "boundary": "local validation only; does not prove external adoption"
+    },
+    {
+      "name": "mimesis_workspace_check",
+      "command": "npm run workspace:check",
+      "purpose": "Check a visible .mimesis artifact trail.",
+      "boundary": "checks local files only"
+    },
+    {
+      "name": "mimesis_case_start",
+      "command": "npm run case:start",
+      "purpose": "Start a case workspace from one weak artifact.",
+      "boundary": "starts a case; does not complete proof"
+    },
+    {
+      "name": "mimesis_case_check",
+      "command": "npm run case:check",
+      "purpose": "Check completed local case evidence.",
+      "boundary": "local evidence only; not external adoption"
+    },
+    {
+      "name": "mimesis_evidence_check",
+      "command": "npm run evidence:check",
+      "purpose": "Check a strong-claim evidence packet.",
+      "boundary": "checks structure; does not create evidence"
+    },
+    {
+      "name": "mimesis_release_check",
+      "command": "npm run release:check",
+      "purpose": "Run local release preflight.",
+      "boundary": "does not publish, tag, or choose a license"
+    },
+    {
+      "name": "mimesis_audit_sources",
+      "command": "npm run audit:sources",
+      "purpose": "Check source-first reference discipline.",
+      "boundary": "reference discipline only; not legal originality proof"
+    },
+    {
+      "name": "mimesis_mcp_resources",
+      "command": "npm run mcp:resources",
+      "purpose": "Generate the local MCP resource index scaffold.",
+      "boundary": "does not start a long-running server"
+    }
+  ]
+}

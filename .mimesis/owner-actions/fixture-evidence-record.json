@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "pending_owner_evidence_attachments",
+  "sourceBundle": ".mimesis/owner-actions/evidence-bundle.md",
+  "fields": {
+    "license_or_no_reuse": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "owner_license_decision"
+      ],
+      "requiredAttachments": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md"
+      ],
+      "requiredCommands": [
+        "npm run audit:license",
+        "npm run license:packet",
+        "npm run release:decision-record",
+        "npm run audit:release-decision-record"
+      ],
+      "stopCondition": "Stop if no owner license or no-reuse decision exists.",
+      "boundary": "does not choose a license"
+    },
+    "weak_artifact_permission": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "permissioned_external_artifact",
+        "completed_external_case"
+      ],
+      "requiredAttachments": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
+        "permissioned or clearly redacted weak artifact"
+      ],
+      "requiredCommands": [
+        "npm run proof:intake",
+        "npm run proof:redaction-packet",
+        "npm run cli -- case:review",
+        "npm run cli -- case:from-intake",
+        "npm run cli -- case:check",
+        "npm run evidence:from-case",
+        "npm run evidence:review"
+      ],
+      "stopCondition": "Stop if permission, redaction, submitter scope, before/after evidence, or reviewed evidence is unclear.",
+      "boundary": "does not collect an artifact or grant permission"
+    },
+    "publication_scope": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "strict_publish_sync"
+      ],
+      "requiredAttachments": [
+        "npm run release:check:public",
+        "npm run audit:sync:strict"
+      ],
+      "requiredCommands": [
+        "npm run release:check:public",
+        "npm run audit:sync:strict"
+      ],
+      "stopCondition": "Stop if release:check:public or audit:sync:strict has not passed fresh after the owner intends to publish.",
+      "boundary": "does not publish"
+    },
+    "package_action_plugin_scope": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "package_publication",
+        "action_publication",
+        "shipped_plugin"
+      ],
+      "requiredAttachments": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "docs/PLUGIN-RELEASE-PACKET.md"
+      ],
+      "requiredCommands": [
+        "npm run audit:package",
+        "npm run package:dry-run",
+        "npm run audit:action",
+        "npm run plugin:packet",
+        "npm run audit:plugin-packet"
+      ],
+      "stopCondition": "Stop if only dry-run, local action metadata, local scaffolds, or install-readiness packets exist.",
+      "boundary": "does not publish, ship a plugin, or prove official host compliance"
+    },
+    "benchmark_adoption_scope": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "benchmark_study",
+        "external_adoption"
+      ],
+      "requiredAttachments": [
+        "docs/BENCHMARK-PACKET.md",
+        "templates/evidence-packet.md"
+      ],
+      "requiredCommands": [
+        "npm run benchmark:packet",
+        "npm run audit:benchmark-packet",
+        "npm run evidence:review"
+      ],
+      "stopCondition": "Stop if no measured study, external usage signal, or reviewed evidence packet exists.",
+      "boundary": "does not prove adoption, productivity, customer outcomes, or benchmark results"
+    },
+    "strict_sync_intent": {
+      "attachmentStatus": "pending",
+      "ownerEvidence": "pending owner evidence",
+      "blockedGateIds": [
+        "strict_publish_sync"
+      ],
+      "requiredAttachments": [
+        "npm run audit:sync",
+        "npm run audit:sync:strict",
+        ".mimesis/sync-status.md"
+      ],
+      "requiredCommands": [
+        "npm run audit:sync",
+        "npm run audit:sync:strict",
+        "git status --short --branch"
+      ],
+      "stopCondition": "Stop if the worktree is dirty and no owner has requested staging, committing, pushing, tagging, releasing, or publishing.",
+      "boundary": "does not stage, commit, push, tag, release, or close gates"
+    }
+  },
+  "requiredGateIds": [
+    "owner_license_decision",
+    "permissioned_external_artifact",
+    "completed_external_case",
+    "strict_publish_sync",
+    "package_publication",
+    "action_publication",
+    "shipped_plugin",
+    "benchmark_study",
+    "external_adoption"
+  ],
+  "safetyConfirmation": {
+    "noEvidenceAttached": true,
+    "noArtifactCollected": true,
+    "noPermissionGranted": true,
+    "noPublication": true,
+    "noExternalProof": true,
+    "noClosedGates": true
+  },
+  "prohibitedClaims": [
+    "evidence attached",
+    "external proof exists",
+    "adoption proof exists",
+    "benchmarked productivity exists",
+    "customer outcomes exist",
+    "publication happened",
+    "license was chosen",
+    "permission was granted",
+    "gates are closed"
+  ],
+  "boundaries": [
+    "does_not_attach_evidence",
+    "does_not_choose_license",
+    "does_not_collect_artifact",
+    "does_not_grant_permission",
+    "does_not_publish",
+    "does_not_create_external_proof",
+    "does_not_close_gates"
+  ]
+}

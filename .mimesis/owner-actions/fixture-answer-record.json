@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "pending_owner_answers",
+  "sourceIntake": ".mimesis/owner-actions/decision-intake.md",
+  "fields": {
+    "license_or_no_reuse": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "pending / UNLICENSED / pending_owner: Owner chooses a reuse license or keeps the no-reuse boundary.",
+      "evidenceToAttach": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md"
+      ],
+      "boundary": "does not choose a license"
+    },
+    "weak_artifact_permission": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "waiting_for_artifact / gate_board_blocks_external_proof / waiting_for_artifact: Collect one user-submitted, permissioned, or clearly redacted weak artifact.",
+      "evidenceToAttach": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
+        "permissioned or clearly redacted weak artifact"
+      ],
+      "boundary": "does not collect an artifact or grant permission"
+    },
+    "publication_scope": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "pending / dirty_or_unsynced_worktree / blocked: Clean or intentionally publish local changes, then rerun the strict sync gate.",
+      "evidenceToAttach": [
+        "npm run release:check:public",
+        "npm run audit:sync:strict"
+      ],
+      "boundary": "does not publish"
+    },
+    "package_action_plugin_scope": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "package_private_true / root_action_candidate_only / plugin_scaffold_and_install_readiness_only",
+      "evidenceToAttach": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "docs/PLUGIN-RELEASE-PACKET.md"
+      ],
+      "boundary": "does not publish, ship a plugin, or prove official host compliance"
+    },
+    "benchmark_adoption_scope": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "waiting_for_evidence / protocol_only / waiting_for_evidence: Run the measurement protocol and review the resulting evidence before productivity claims.",
+      "evidenceToAttach": [
+        "docs/BENCHMARK-PACKET.md",
+        "templates/evidence-packet.md"
+      ],
+      "boundary": "does not prove adoption, productivity, customer outcomes, or benchmark results"
+    },
+    "strict_sync_intent": {
+      "answerStatus": "pending",
+      "ownerAnswer": "pending owner answer",
+      "currentSignal": "dirty_or_unsynced_worktree",
+      "evidenceToAttach": [
+        "npm run audit:sync",
+        "npm run audit:sync:strict",
+        ".mimesis/sync-status.md"
+      ],
+      "boundary": "does not stage, commit, push, tag, release, or close gates"
+    }
+  },
+  "requiredGateIds": [
+    "owner_license_decision",
+    "permissioned_external_artifact",
+    "completed_external_case",
+    "strict_publish_sync",
+    "package_publication",
+    "action_publication",
+    "shipped_plugin",
+    "benchmark_study",
+    "external_adoption"
+  ],
+  "safetyConfirmation": {
+    "noRealOwnerDecision": true,
+    "noArtifactCollected": true,
+    "noPermissionGranted": true,
+    "noPublication": true,
+    "noExternalProof": true,
+    "noClosedGates": true
+  },
+  "prohibitedClaims": [
+    "external proof exists",
+    "adoption proof exists",
+    "benchmarked productivity exists",
+    "customer outcomes exist",
+    "publication happened",
+    "license was chosen",
+    "permission was granted",
+    "gates are closed"
+  ],
+  "boundaries": [
+    "does_not_choose_license",
+    "does_not_collect_artifact",
+    "does_not_grant_permission",
+    "does_not_publish",
+    "does_not_create_external_proof",
+    "does_not_close_gates"
+  ]
+}

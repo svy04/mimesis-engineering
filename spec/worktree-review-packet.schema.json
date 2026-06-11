@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://svy04.github.io/mimesis-engineering/spec/worktree-review-packet.schema.json",
+  "title": "Mimesis Worktree Review Packet",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "generatedAt",
+    "reviewScope",
+    "completionAllowed",
+    "git",
+    "trackedChanges",
+    "stagedChanges",
+    "unstagedChanges",
+    "untrackedRoots",
+    "untrackedFilesSample",
+    "sourceCommands",
+    "nextAction",
+    "boundaries",
+    "allowedClaim",
+    "disallowedClaim"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mimesis.worktree-review-packet.v0.1"
+    },
+    "status": {
+      "const": "dirty_worktree_review_packet_not_publication"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "reviewScope": {
+      "type": "string"
+    },
+    "completionAllowed": {
+      "const": false
+    },
+    "git": {
+      "type": "object",
+      "required": [
+        "branch",
+        "upstream",
+        "head",
+        "dirty",
+        "trackedChangedCount",
+        "untrackedCount"
+      ],
+      "properties": {
+        "branch": {
+          "type": "string"
+        },
+        "upstream": {
+          "type": "string"
+        },
+        "head": {
+          "type": "string"
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "trackedChangedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "untrackedCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "trackedChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "path"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "trackedStatusLines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stagedChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "path"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unstagedChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "path"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "untrackedRoots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "root",
+          "count"
+        ],
+        "properties": {
+          "root": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "untrackedFilesSample": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourceCommands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextAction": {
+      "type": "string"
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "does_not_stage_commit_push_tag_release",
+          "does_not_publish",
+          "does_not_prove_remote_freshness",
+          "does_not_close_strict_sync"
+        ]
+      }
+    },
+    "allowedClaim": {
+      "type": "string"
+    },
+    "disallowedClaim": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

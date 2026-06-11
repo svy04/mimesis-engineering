@@ -1,0 +1,70 @@
+{
+  "resources": [
+    {
+      "uri": "mimesis://spec/v0.1",
+      "name": "Mimesis v0.1 Spec",
+      "path": "spec/mimesis-v0.1.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://spec/file-protocol",
+      "name": "File Protocol",
+      "path": "spec/file-protocol.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/artifact-brief",
+      "name": "Artifact Brief Template",
+      "path": "templates/artifact-brief.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/reference-set",
+      "name": "Reference Set Template",
+      "path": "templates/reference-set.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/transformation-plan",
+      "name": "Transformation Plan Template",
+      "path": "templates/transformation-plan.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://reference-packs/github-readme",
+      "name": "GitHub README Reference Pack",
+      "path": "reference-packs/github-readme.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://reference-packs/ai-workflow",
+      "name": "AI Workflow Reference Pack",
+      "path": "reference-packs/ai-workflow.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://cases/index",
+      "name": "Case Index",
+      "path": "cases/README.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://proof/boundary",
+      "name": "Proof Boundary",
+      "path": "PROOF-BOUNDARY.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://audit/completion",
+      "name": "Completion Audit",
+      "path": "docs/COMPLETION-AUDIT.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://ledger/run",
+      "name": "Run Ledger",
+      "path": ".mimesis/run_ledger.md",
+      "mimeType": "text/markdown"
+    }
+  ]
+}

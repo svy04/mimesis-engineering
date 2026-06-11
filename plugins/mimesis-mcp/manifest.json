@@ -1,0 +1,19 @@
+{
+  "name": "mimesis-mcp",
+  "version": "0.1.0",
+  "status": "prototype",
+  "transport": "stdio-scaffold",
+  "description": "Local MCP server scaffold for exposing Mimesis Engineering files as reviewable resources.",
+  "protocolReferences": [
+    "https://modelcontextprotocol.io/docs/learn/architecture",
+    "https://modelcontextprotocol.io/specification/2025-11-25",
+    "https://github.com/modelcontextprotocol/typescript-sdk"
+  ],
+  "boundary": [
+    "local scaffold only",
+    "not a shipped MCP server",
+    "does not start a long-running server",
+    "does not expose secrets",
+    "does not prove external adoption"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/owner-decision-answer.schema.json",
+  "title": "Mimesis Owner Decision Answer Record",
+  "description": "Machine-readable contract for owner decision answers captured from the owner decision intake without making the decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "sourceIntake",
+    "fields",
+    "requiredGateIds",
+    "safetyConfirmation",
+    "prohibitedClaims",
+    "boundaries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending_owner_answers", "draft", "reviewed", "rejected"]
+    },
+    "sourceIntake": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "license_or_no_reuse",
+        "weak_artifact_permission",
+        "publication_scope",
+        "package_action_plugin_scope",
+        "benchmark_adoption_scope",
+        "strict_sync_intent"
+      ],
+      "properties": {
+        "license_or_no_reuse": {
+          "$ref": "#/$defs/answerField"
+        },
+        "weak_artifact_permission": {
+          "$ref": "#/$defs/answerField"
+        },
+        "publication_scope": {
+          "$ref": "#/$defs/answerField"
+        },
+        "package_action_plugin_scope": {
+          "$ref": "#/$defs/answerField"
+        },
+        "benchmark_adoption_scope": {
+          "$ref": "#/$defs/answerField"
+        },
+        "strict_sync_intent": {
+          "$ref": "#/$defs/answerField"
+        }
+      }
+    },
+    "requiredGateIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "safetyConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noRealOwnerDecision",
+        "noArtifactCollected",
+        "noPermissionGranted",
+        "noPublication",
+        "noExternalProof",
+        "noClosedGates"
+      ],
+      "properties": {
+        "noRealOwnerDecision": {
+          "type": "boolean",
+          "const": true
+        },
+        "noArtifactCollected": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPermissionGranted": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPublication": {
+          "type": "boolean",
+          "const": true
+        },
+        "noExternalProof": {
+          "type": "boolean",
+          "const": true
+        },
+        "noClosedGates": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "prohibitedClaims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "answerField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answerStatus",
+        "ownerAnswer",
+        "currentSignal",
+        "evidenceToAttach",
+        "boundary"
+      ],
+      "properties": {
+        "answerStatus": {
+          "type": "string",
+          "enum": ["pending", "answered", "blocked", "not_in_scope"]
+        },
+        "ownerAnswer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currentSignal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceToAttach": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

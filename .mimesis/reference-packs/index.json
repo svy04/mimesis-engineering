@@ -1,0 +1,252 @@
+{
+  "name": "mimesis-reference-pack-index",
+  "version": "0.1.0",
+  "status": "local-source-first-index-v0.1",
+  "purpose": "Machine-readable source-first standards index for choosing reference packs before transforming one weak artifact.",
+  "principle": "Give AI standards, not roles.",
+  "generatedFrom": [
+    "reference-packs/README.md",
+    "reference-packs/ai-workflow.md",
+    "reference-packs/blog-post.md",
+    "reference-packs/github-readme.md",
+    "reference-packs/landing-page.md",
+    "reference-packs/product-page.md",
+    "reference-packs/profile-positioning.md",
+    "reference-packs/research-note.md"
+  ],
+  "packs": [
+    {
+      "id": "ai-workflow",
+      "title": "AI Workflow Reference Pack",
+      "path": "reference-packs/ai-workflow.md",
+      "useWhen": "Use this when an AI workflow produces output but no durable artifact trail.",
+      "sourceQuality": "Prefer official tool docs, source repos, protocol specs, papers, standards, and maintained examples with explicit inputs and outputs.\nAvoid hidden prompts, private evaluations, and unverified automation claims.",
+      "inspect": [
+        "input artifact",
+        "role of AI",
+        "constraints",
+        "verification",
+        "memory",
+        "output artifact"
+      ],
+      "transferablePatterns": [
+        "input-before-generation",
+        "constraint block",
+        "artifact checklist",
+        "verification gate",
+        "memory update",
+        "proof note"
+      ],
+      "doNotCopy": [
+        "private data flows",
+        "proprietary prompts",
+        "hidden evaluations",
+        "unverified automation claims",
+        "authority language without proof"
+      ],
+      "starterPrompt": "Study the reference AI workflows below.\nExtract their structure, not their wording.\n\nIdentify input artifact, AI role, constraints, verification, memory, output artifact, and failure handling.\n\nThen transform my workflow so it leaves an artifact trail and proof boundary."
+    },
+    {
+      "id": "blog-post",
+      "title": "Blog Post Reference Pack",
+      "path": "reference-packs/blog-post.md",
+      "useWhen": "Use this when a draft has an idea but no strong reading path.",
+      "sourceQuality": "Prefer original essays, first-party engineering posts, papers, standards, source repos, and public talks with stable links.\nAvoid derivative summaries when the original source is available.",
+      "inspect": [
+        "thesis",
+        "narrative arc",
+        "tension",
+        "examples",
+        "insight density",
+        "ending CTA"
+      ],
+      "transferablePatterns": [
+        "problem-you-felt opening",
+        "old belief vs new frame",
+        "concrete example ladder",
+        "compressed definitions",
+        "proof or limitation section",
+        "useful ending"
+      ],
+      "doNotCopy": [
+        "exact metaphors",
+        "personal stories",
+        "sentence rhythm too closely",
+        "named examples without context",
+        "claims that belong to the reference author"
+      ],
+      "starterPrompt": "Study the reference posts below.\nExtract their structure, not their voice.\n\nIdentify thesis, tension, narrative arc, examples, insight density, proof boundaries, and ending CTA.\n\nThen transform my draft while preserving my own evidence and constraints."
+    },
+    {
+      "id": "github-readme",
+      "title": "GitHub README Reference Pack",
+      "path": "reference-packs/github-readme.md",
+      "useWhen": "You want to make a GitHub repo easier to understand, trust, use, and contribute to.",
+      "sourceQuality": "Prefer official project repositories, maintained source repos, release docs, contribution guides, and public issue or discussion trails.\nAvoid using marketing summaries as proof of how a README actually works.",
+      "inspect": [
+        "opening hook",
+        "problem statement",
+        "quickstart",
+        "output examples",
+        "trust devices",
+        "proof boundary",
+        "contribution path"
+      ],
+      "transferablePatterns": [
+        "old way vs new way",
+        "one-command or first-loop start",
+        "what this creates",
+        "before/after case",
+        "limitation section",
+        "contribution CTA"
+      ],
+      "doNotCopy": [
+        "exact wording",
+        "brand-specific claims",
+        "logos",
+        "visuals",
+        "layout too closely",
+        "proof you do not have"
+      ],
+      "starterPrompt": "Study the reference READMEs below.\nExtract their structure, not their wording.\n\nIdentify how they explain the problem, show the first action, build trust, state limitations, and invite contribution.\n\nThen transform my README under my project's constraints."
+    },
+    {
+      "id": "landing-page",
+      "title": "Landing Page Reference Pack",
+      "path": "reference-packs/landing-page.md",
+      "useWhen": "Use this when a landing page feels generic, unclear, overdesigned, or unearned.",
+      "sourceQuality": "Prefer official product pages, official docs, docs-linked pages, public changelogs, pricing pages, and case pages with visible proof boundaries.\nAvoid swipe files, screenshots without permission, and summaries that hide the original page.",
+      "inspect": [
+        "hero clarity",
+        "pain statement",
+        "transformation promise",
+        "proof",
+        "CTA",
+        "objection handling",
+        "boundary"
+      ],
+      "transferablePatterns": [
+        "one-line offer",
+        "before/after contrast",
+        "proof before pressure",
+        "short objection blocks",
+        "visible boundary language",
+        "action-first page flow"
+      ],
+      "doNotCopy": [
+        "exact hero wording",
+        "brand voice",
+        "visual identity",
+        "screenshots you do not own",
+        "customer proof you do not have",
+        "pricing claims without proof"
+      ],
+      "starterPrompt": "Study the reference landing pages below.\nExtract structure, not surface.\n\nIdentify their hero clarity, pain statement, transformation promise, proof rhythm, CTA path, objection handling, and claim boundary.\n\nThen transform my landing page under my audience, proof, and product constraints.\nDo not invent customer proof."
+    },
+    {
+      "id": "product-page",
+      "title": "Product Page Reference Pack",
+      "path": "reference-packs/product-page.md",
+      "useWhen": "Use this when a product page explains features but does not make the use case feel concrete.",
+      "sourceQuality": "Prefer official product pages, maintained docs, public demos, release notes, source repos, and help-center flows.\nAvoid copying customer logos, pricing claims, or product screenshots you do not have permission to use.",
+      "inspect": [
+        "audience",
+        "use case",
+        "workflow",
+        "proof",
+        "comparison",
+        "trust devices",
+        "activation"
+      ],
+      "transferablePatterns": [
+        "role-to-use-case shift",
+        "workflow diagram",
+        "first action CTA",
+        "feature-to-outcome mapping",
+        "proof boundary note",
+        "limitation callout"
+      ],
+      "doNotCopy": [
+        "exact feature names",
+        "product screenshots",
+        "customer logos",
+        "testimonials",
+        "benchmark claims",
+        "pricing structure without context"
+      ],
+      "starterPrompt": "Study the reference product pages below.\nExtract their structure, not their claims.\n\nIdentify the audience, use case, workflow, proof rhythm, comparison frame, trust devices, and activation path.\n\nThen transform my product page under my actual product, audience, evidence, and constraints."
+    },
+    {
+      "id": "profile-positioning",
+      "title": "Reference Pack: Profile Positioning",
+      "path": "reference-packs/profile-positioning.md",
+      "useWhen": "Use this when a GitHub profile, LinkedIn profile, personal homepage, or creator bio does not yet route attention to the right proof surface.\n\nThis pack is informed by the neighboring `mimesis-casebook` profile cases.",
+      "sourceQuality": "Prefer local artifacts, public profiles, official project pages, source repos, case notes, and proof pages with visible claim boundaries.\nAvoid private analytics, copied bios, and unverifiable social proof.",
+      "inspect": [
+        "first-line thesis",
+        "project/repo order",
+        "proof links",
+        "offer or collaboration path",
+        "claim boundary",
+        "stale claims",
+        "social proof risk"
+      ],
+      "transferablePatterns": [
+        "thesis first",
+        "proof surface second",
+        "repo or case links third",
+        "boundary statement near claims",
+        "one action path",
+        "distribution surface separate from source of truth"
+      ],
+      "doNotCopy": [
+        "another person's title",
+        "authority signals you have not earned",
+        "employer or affiliation language",
+        "unverifiable outcome claims",
+        "fake community proof",
+        "copied post structure"
+      ],
+      "starterPrompt": "Study these profile and positioning artifacts as standards.\n\nIdentify the thesis, proof surface, routing path, stale claims, and claim boundary.\n\nThen transform my profile under my actual proof and audience constraints.\nDo not invent external validation."
+    },
+    {
+      "id": "research-note",
+      "title": "Reference Pack: Research Note",
+      "path": "reference-packs/research-note.md",
+      "useWhen": "Use this when a research note sounds smart but does not yet show source quality, method limits, or proof boundaries.",
+      "sourceQuality": "Prefer papers, standards, patents, official docs, maintained source repos, datasets, and directly inspectable benchmark setups.\nUse secondary commentary only to route back to the primary source.",
+      "inspect": [
+        "source type",
+        "claim hierarchy",
+        "method comparison",
+        "evidence chain",
+        "limitation section",
+        "next-test design"
+      ],
+      "transferablePatterns": [
+        "source-first evidence table",
+        "claim-to-evidence map",
+        "known / unknown split",
+        "method comparison grid",
+        "limitation-first conclusion",
+        "next experiment section"
+      ],
+      "doNotCopy": [
+        "abstracts or paper prose",
+        "author authority without context",
+        "benchmark numbers without source and setup",
+        "conclusions beyond the cited evidence",
+        "legal, medical, financial, or safety claims without qualified review"
+      ],
+      "starterPrompt": "Study these primary sources and maintained implementations as standards.\n\nIdentify the problem statement, source quality, claim hierarchy, method comparison, evidence chain, limitations, and next experiment.\n\nThen transform my research note under my actual evidence boundary.\nDo not turn weak evidence into a strong claim."
+    }
+  ],
+  "boundary": [
+    "local index only",
+    "not a source-quality guarantee",
+    "does not prove external adoption",
+    "does not prove package publication",
+    "does not create external proof",
+    "does not permit copying protected surface"
+  ]
+}
