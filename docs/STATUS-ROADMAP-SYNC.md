@@ -60,6 +60,7 @@ The audit checks:
 - owner answer review visibility
 - owner evidence attachment form visibility
 - owner evidence submission record visibility
+- owner evidence submission issue convert visibility
 - owner evidence submission check visibility
 - owner evidence bundle visibility
 - owner evidence intake record visibility
@@ -110,6 +111,7 @@ The audit currently requires the public status and roadmap to name:
 - owner answer review
 - owner evidence attachment form
 - owner evidence submission record
+- owner evidence submission issue convert
 - owner evidence submission check
 - owner evidence bundle
 - owner evidence intake record

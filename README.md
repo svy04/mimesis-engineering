@@ -250,6 +250,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/OWNER-ANSWER-REVIEW.md](docs/OWNER-ANSWER-REVIEW.md) - generated owner answer review
 - [docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md](docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md) - generated owner evidence attachment form
 - [docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md](docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md) - generated owner evidence submission record
+- [docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md](docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md) - owner evidence submission issue convert path to draft submission records
 - [docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md](docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md) - local owner evidence submission check before gate movement
 - [docs/OWNER-EVIDENCE-BUNDLE.md](docs/OWNER-EVIDENCE-BUNDLE.md) - generated owner evidence bundle
 - [docs/OWNER-EVIDENCE-INTAKE-RECORD.md](docs/OWNER-EVIDENCE-INTAKE-RECORD.md) - generated schema-shaped owner evidence intake record
@@ -500,6 +501,8 @@ It does not prove npm package release.
 `audit:owner-evidence-attachment-form` checks the owner evidence attachment form and no-evidence/no-proof boundary.
 `owner:evidence-submission-record` creates a schema-shaped owner evidence submission record, not submitted evidence, attached evidence, a license choice, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
 `audit:owner-evidence-submission-record` checks the owner evidence submission record and no-submitted-evidence/no-proof boundary.
+`owner:evidence-submission-issue-convert` converts an owner evidence submission issue body into a draft owner evidence submission record candidate; it does not choose a license, attach evidence, grant permission, publish, create external proof, or close gates.
+`audit:owner-evidence-submission-issue-convert` checks the owner evidence submission issue convert fixture, docs, CLI, manifests, release order, and no-closure boundary.
 `owner:evidence-submission-check` checks an owner evidence submission record before gate movement, not submitted evidence, attached evidence, publication, external proof, adoption proof, or closed gate.
 `audit:owner-evidence-submission-check` checks the owner evidence submission check and unsafe-record rejection path.
 `owner:evidence-bundle` creates an owner evidence attachment map, not evidence, a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
@@ -1276,6 +1279,16 @@ Check an owner evidence submission record before gate movement:
 npm run owner:evidence-submission-check
 npm run audit:owner-evidence-submission-check
 ```
+
+Convert an owner evidence submission issue body into a draft submission record candidate:
+
+```bash
+npm run owner:evidence-submission-issue-convert
+npm run audit:owner-evidence-submission-issue-convert
+```
+
+This writes `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json` and `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md`.
+It is an owner evidence submission issue convert path only; it does not review evidence, choose a license, grant permission, publish, create external proof, or close gates.
 
 This writes `.mimesis/owner-actions/fixture-evidence-submission-check.md`.
 It does not submit evidence, attach evidence, publish, create external proof, prove adoption, or close gates.

@@ -109,6 +109,7 @@ const requiredRows = [
   "Owner proof input split",
   "Owner evidence bundle",
   "Owner evidence submission record",
+  "Owner evidence submission issue convert",
   "Owner evidence intake record",
   "Current state summary",
   "State snapshot boundary",

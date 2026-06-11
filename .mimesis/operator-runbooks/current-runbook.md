@@ -222,6 +222,7 @@ Do not publish a stronger claim if:
 - gate evidence issue is described as evidence, reviewed evidence, completion proof, publication, owner decision, external proof, adoption proof, benchmark proof, or closed gates
 - gate evidence issue convert is described as reviewed evidence, proof, completion proof, publication, owner decision, external proof, adoption proof, benchmark proof, or closed gates
 - gate closure readiness is described as evidence, submitted evidence, attached evidence, completion proof, publication, owner decision, external proof, adoption proof, or closed gates
+- owner evidence submission issue convert is described as reviewed owner evidence, submitted evidence, attached evidence, gate movement, completion proof, publication, owner decision, external proof, adoption proof, or closed gates
 - owner evidence submission check is described as submitted evidence, attached evidence, gate movement, completion proof, publication, owner decision, external proof, adoption proof, or closed gates
 - operator runbook is described as external adoption, publication, or proof that neighboring repos are current
 - not allowed: ecosystem resource packet is described as copied neighboring content, external adoption, publication, or remote freshness proof

@@ -314,6 +314,11 @@
       "command": "npm run owner:evidence-submission-record"
     },
     {
+      "name": "owner evidence submission issue conversion",
+      "path": ".mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json",
+      "command": "npm run owner:evidence-submission-issue-convert"
+    },
+    {
       "name": "owner evidence submission check",
       "path": ".mimesis/owner-actions/fixture-evidence-submission-check.md",
       "command": "npm run owner:evidence-submission-check"
@@ -788,6 +793,14 @@
     {
       "name": "audit:owner-evidence-submission-record",
       "purpose": "Check the owner evidence submission record, missing evidence status, blocked gates, and no-submitted-evidence boundary."
+    },
+    {
+      "name": "owner:evidence-submission-issue-convert",
+      "purpose": "Convert an owner evidence submission issue body into a draft owner evidence submission record candidate."
+    },
+    {
+      "name": "audit:owner-evidence-submission-issue-convert",
+      "purpose": "Check owner evidence submission issue conversion, fixture output, CLI, public docs, and no-closure boundaries."
     },
     {
       "name": "owner:evidence-submission-check",

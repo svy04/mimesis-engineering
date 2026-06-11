@@ -9,9 +9,9 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `d6e2ff7d610ba4080453bb22a2f785c8f80a18e3`
-- upstream head: `d6e2ff7d610ba4080453bb22a2f785c8f80a18e3`
-- tracked changed entries: 41
+- head: `09c2701225a072180efb9302bb092ca5c486fba4`
+- upstream head: `09c2701225a072180efb9302bb092ca5c486fba4`
+- tracked changed entries: 37
 - untracked entries: 7
 
 Conclusion:
@@ -30,7 +30,6 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
  M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/proof-intake/first-external-proof-kit.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -45,12 +44,10 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/GATE-EVIDENCE-ISSUE.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
- M templates/evidence-packet.md
  M tools/README.md
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
@@ -58,17 +55,16 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-status-roadmap-sync.mjs
- M tools/check-evidence-packet.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/gates/fixture-gate-evidence-issue-conversion-report.md
-?? .mimesis/gates/fixture-gate-evidence-issue.md
-?? .mimesis/gates/fixture-gate-evidence-packet.md
-?? docs/GATE-EVIDENCE-ISSUE-CONVERT.md
-?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md
-?? tools/audit-gate-evidence-issue-convert.mjs
-?? tools/convert-gate-evidence-issue.mjs
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
+?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md
+?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md
+?? tools/audit-owner-evidence-submission-issue-convert.mjs
+?? tools/convert-owner-evidence-submission-issue.mjs
 ```
 
 ## Tracked Diff Stat
@@ -77,45 +73,41 @@ local worktree is not publish-ready because it has unpublished local changes or 
 .mimesis/claim-packs/public-v0.1.md                |   2 +-
  .mimesis/completion/goal-completion-audit.json     |   2 +-
  .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 ----
- .mimesis/framework-manifest.json                   |  19 +++
+ .mimesis/framework-manifest.json                   |  13 ++
  .mimesis/gaps/closure-plan.json                    |   2 +-
  .mimesis/gaps/current-gap-register.json            |   2 +-
- .mimesis/gates/closure-readiness.json              |   8 +-
- .mimesis/gates/closure-review.json                 |   8 +-
+ .mimesis/gates/closure-readiness.json              |   6 +-
+ .mimesis/gates/closure-review.json                 |   6 +-
  .mimesis/operator-runbooks/current-runbook.md      |   1 +
- .mimesis/proof-intake/first-external-proof-kit.md  |   3 +
  .mimesis/publication-packets/v0.1.md               |   5 +
- .mimesis/publish-packets/local-sync-handoff.md     | 168 +++++++++-----------
- .mimesis/release-artifacts/v0.1-manifest.json      | 172 +++++++++++++--------
+ .mimesis/publish-packets/local-sync-handoff.md     | 169 +++++++--------------
+ .mimesis/release-artifacts/v0.1-manifest.json      | 162 ++++++++++++--------
  .../release-decisions/owner-decision-record.json   |   2 +-
- .mimesis/release-review/v0.1-bundle.json           |  36 +++--
+ .mimesis/release-review/v0.1-bundle.json           |  39 ++---
  .mimesis/run_ledger.md                             |  48 ++++++
- .mimesis/state/current-state.json                  |   8 +-
- .mimesis/sync-status.md                            |  20 ++-
- .mimesis/worktree/review-packet.json               |  70 ++++++---
- README.md                                          |  15 ++
+ .mimesis/state/current-state.json                  |   6 +-
+ .mimesis/sync-status.md                            |  20 +--
+ .mimesis/worktree/review-packet.json               |  58 ++-----
+ README.md                                          |  13 ++
  ROADMAP.md                                         |   2 +
  STATUS.md                                          |   2 +
  bin/mimesis.mjs                                    |   2 +
  docs/COMPLETION-AUDIT.md                           |   2 +
- docs/GATE-EVIDENCE-ISSUE.md                        |   3 +
- docs/RELEASE-CHECK-ORDER.md                        |   8 +-
+ docs/RELEASE-CHECK-ORDER.md                        |   6 +-
  docs/STATUS-ROADMAP-SYNC.md                        |   2 +
- docs/V0.1-RELEASE-PACKET.md                        |   6 +
+ docs/V0.1-RELEASE-PACKET.md                        |  16 ++
  package.json                                       |   4 +-
- templates/evidence-packet.md                       |   3 +
- tools/README.md                                    |  35 ++++-
+ tools/README.md                                    |  33 ++++
  tools/audit-cli.mjs                                |   2 +
- tools/audit-completion-matrix.mjs                  |   6 +
+ tools/audit-completion-matrix.mjs                  |   1 +
  tools/audit-framework-manifest.mjs                 |   2 +
  tools/audit-release-artifact-manifest.mjs          |   6 +
- tools/audit-release-check-order.mjs                |   9 +-
- tools/audit-status-roadmap-sync.mjs                |   4 +
- tools/check-evidence-packet.mjs                    |   2 +-
- tools/create-framework-manifest.mjs                |  19 +++
+ tools/audit-release-check-order.mjs                |   9 ++
+ tools/audit-status-roadmap-sync.mjs                |   2 +
+ tools/create-framework-manifest.mjs                |  13 ++
  tools/create-release-artifact-manifest.mjs         |   6 +
  tools/validate-mimesis.mjs                         |   6 +
- 41 files changed, 494 insertions(+), 260 deletions(-)
+ 37 files changed, 394 insertions(+), 310 deletions(-)
 ```
 
 ## Tracked Changes
@@ -129,7 +121,6 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M .mimesis/gates/closure-readiness.json`
 - ` M .mimesis/gates/closure-review.json`
 - ` M .mimesis/operator-runbooks/current-runbook.md`
-- ` M .mimesis/proof-intake/first-external-proof-kit.md`
 - ` M .mimesis/publication-packets/v0.1.md`
 - ` M .mimesis/publish-packets/local-sync-handoff.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
@@ -144,12 +135,10 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M STATUS.md`
 - ` M bin/mimesis.mjs`
 - ` M docs/COMPLETION-AUDIT.md`
-- ` M docs/GATE-EVIDENCE-ISSUE.md`
 - ` M docs/RELEASE-CHECK-ORDER.md`
 - ` M docs/STATUS-ROADMAP-SYNC.md`
 - ` M docs/V0.1-RELEASE-PACKET.md`
 - ` M package.json`
-- ` M templates/evidence-packet.md`
 - ` M tools/README.md`
 - ` M tools/audit-cli.mjs`
 - ` M tools/audit-completion-matrix.mjs`
@@ -157,20 +146,19 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M tools/audit-release-artifact-manifest.mjs`
 - ` M tools/audit-release-check-order.mjs`
 - ` M tools/audit-status-roadmap-sync.mjs`
-- ` M tools/check-evidence-packet.mjs`
 - ` M tools/create-framework-manifest.mjs`
 - ` M tools/create-release-artifact-manifest.mjs`
 - ` M tools/validate-mimesis.mjs`
 
 ## Untracked Entries
 
-- `?? .mimesis/gates/fixture-gate-evidence-issue-conversion-report.md`
-- `?? .mimesis/gates/fixture-gate-evidence-issue.md`
-- `?? .mimesis/gates/fixture-gate-evidence-packet.md`
-- `?? docs/GATE-EVIDENCE-ISSUE-CONVERT.md`
-- `?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md`
-- `?? tools/audit-gate-evidence-issue-convert.mjs`
-- `?? tools/convert-gate-evidence-issue.mjs`
+- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md`
+- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json`
+- `?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md`
+- `?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md`
+- `?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md`
+- `?? tools/audit-owner-evidence-submission-issue-convert.mjs`
+- `?? tools/convert-owner-evidence-submission-issue.mjs`
 
 ## Current Sync Report
 
@@ -186,7 +174,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 41
+- changed tracked files: 37
 - untracked files: 7
 
 ## Conclusion
@@ -212,7 +200,6 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
  M .mimesis/operator-runbooks/current-runbook.md
- M .mimesis/proof-intake/first-external-proof-kit.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -227,12 +214,10 @@ It does not publish, push, tag, release, or create a pull request.
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
- M docs/GATE-EVIDENCE-ISSUE.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
- M templates/evidence-packet.md
  M tools/README.md
  M tools/audit-cli.mjs
  M tools/audit-completion-matrix.mjs
@@ -240,17 +225,16 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
  M tools/audit-status-roadmap-sync.mjs
- M tools/check-evidence-packet.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/gates/fixture-gate-evidence-issue-conversion-report.md
-?? .mimesis/gates/fixture-gate-evidence-issue.md
-?? .mimesis/gates/fixture-gate-evidence-packet.md
-?? docs/GATE-EVIDENCE-ISSUE-CONVERT.md
-?? docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md
-?? tools/audit-gate-evidence-issue-convert.mjs
-?? tools/convert-gate-evidence-issue.mjs
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json
+?? .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
+?? docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md
+?? docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md
+?? tools/audit-owner-evidence-submission-issue-convert.mjs
+?? tools/convert-owner-evidence-submission-issue.mjs
 ```
 
 

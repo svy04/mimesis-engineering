@@ -3491,3 +3491,51 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Gate Evidence issue conversion creates a draft evidence packet candidate only.
 - `ready for evidence review: yes` is allowed only when the issue review state explicitly starts with `Reviewed evidence packet attached`.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Evidence Submission Issue Convert Slice
+
+## Import
+
+- Re-read the owner evidence attachment form, owner evidence submission record/check scripts, owner proof input issue convert pattern, gate closure readiness/review records, package scripts, CLI command map, validator, framework manifest generator, release artifact manifest generator, release-check order, README, tools README, status, roadmap, release packet, completion audit, and status/roadmap sync.
+- Confirmed the repo could generate and check a schema-shaped owner evidence submission record, but could not convert an owner evidence submission issue body into that record shape.
+
+## Distill
+
+- Add a draft-only owner evidence submission issue conversion path.
+- Keep the output bounded: not a license choice, not attached evidence, not permission grant, not reviewed owner evidence, not external proof, not publication, and not gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-evidence-submission-issue-convert.mjs`, which first failed for missing converter, fixture issue, fixture record/report, docs, package script, CLI wiring, validator coverage, manifests, release order, status/roadmap sync, completion matrix, and public docs.
+- GREEN: added `tools/convert-owner-evidence-submission-issue.mjs`, `docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md`, `.mimesis/owner-actions/fixture-owner-evidence-submission-issue.md`, `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json`, and `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md`.
+- GREEN: wired `owner:evidence-submission-issue-convert` and `audit:owner-evidence-submission-issue-convert` through package scripts, CLI, validator, framework manifest, release artifact manifest, release-check order, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- The converter parses `license_or_no_reuse`, `weak_artifact_permission`, `publication_scope`, `package_action_plugin_scope`, `benchmark_adoption_scope`, `strict_sync_intent`, `review_state`, and `safety_confirmation` sections.
+- The default fixture converts one `license_or_no_reuse` section into a submitted draft field while keeping the record status `draft`, all other fields missing, `field movement ready: no`, and `ready for gate movement: no`.
+- The existing owner evidence submission checker rejects the converted fixture for `--require-field license_or_no_reuse` because the record is not reviewed.
+
+## Verify
+
+- `node tools/audit-owner-evidence-submission-issue-convert.mjs` failed first for the expected missing conversion surface.
+- `npm run owner:evidence-submission-issue-convert` passed and generated the fixture record/report.
+- `node tools/check-owner-evidence-submission-record.mjs .mimesis\owner-actions\fixture-owner-evidence-submission-issue-record.json --require-field license_or_no_reuse --write-report .mimesis\owner-actions\fixture-owner-evidence-submission-issue-check.md` failed as expected because `record status must be reviewed before required field license_or_no_reuse can move`.
+- `npm run audit:owner-evidence-submission-issue-convert` passed.
+- `npm run audit:owner-evidence-submission-check` passed.
+- `npm run audit:cli` passed.
+- `npm run audit:framework-manifest` passed.
+- `npm run audit:release-artifact-manifest` passed.
+- `npm run audit:release-order` passed.
+- `npm run audit:status-roadmap` passed.
+- `npm run audit:completion` passed.
+- `npm run audit:completion-row-count` passed.
+- `npm run validate` passed.
+- `git diff --check` passed with line-ending warnings only.
+- `npm run release:check` passed with `owner:evidence-submission-issue-convert` in the release chain and without closing any gate.
+
+## Remember
+
+- Owner evidence submission issue conversion creates a draft owner evidence submission record candidate only.
+- A submitted field in a draft record is not field movement and not gate movement; reviewed record status is required before field-level movement.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

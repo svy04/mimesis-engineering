@@ -12,7 +12,7 @@ Status: public working framework.
 - The repository includes a `.mimesis` file protocol, templates, reference packs, prompts, cases, adapters, plugin shapes, and local validators.
 - The repository includes local handoff packets for proof intake, license decision, plugin/action release candidates, publish/sync, gate status, operator runbook, and public claims.
 - The local preflight command is `npm run release:check:public`.
-- The completion matrix currently tracks 114 requirement rows in `docs/COMPLETION-AUDIT.md`.
+- The completion matrix currently tracks 115 requirement rows in `docs/COMPLETION-AUDIT.md`.
 
 ## Disallowed Public Claims
 

@@ -242,6 +242,8 @@ for (const command of [
   "audit:owner-evidence-attachment-form",
   "owner:evidence-submission-record",
   "audit:owner-evidence-submission-record",
+  "owner:evidence-submission-issue-convert",
+  "audit:owner-evidence-submission-issue-convert",
   "owner:evidence-submission-check",
   "audit:owner-evidence-submission-check",
   "owner:evidence-bundle",

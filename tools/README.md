@@ -2395,6 +2395,39 @@ This writes `.mimesis/owner-actions/fixture-evidence-submission-check.md`.
 It checks an owner evidence submission record before gate movement, and `--require-field weak_artifact_permission` checks field-level readiness without requiring unrelated publication, package, benchmark, or adoption fields.
 It does not submit evidence, attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
 
+## Convert Owner Evidence Submission Issue
+
+Run:
+
+```bash
+npm run owner:evidence-submission-issue-convert
+```
+
+or:
+
+```bash
+npm run cli -- owner:evidence-submission-issue-convert .mimesis/owner-actions/fixture-owner-evidence-submission-issue.md
+```
+
+This writes `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json` and `.mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md`.
+The owner evidence submission issue convert command creates a draft owner evidence submission record candidate only; it does not choose a license, attach evidence, grant permission, publish, create external proof, or close gates.
+
+## Audit Owner Evidence Submission Issue Convert
+
+Run:
+
+```bash
+npm run audit:owner-evidence-submission-issue-convert
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-evidence-submission-issue-convert
+```
+
+This checks the converter, fixture issue, draft converted record, conversion report, package script wiring, CLI exposure, release preflight order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-owner-decision/no-closure boundaries.
+
 ## Audit Owner Evidence Submission Check
 
 Run:

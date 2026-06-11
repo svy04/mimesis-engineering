@@ -80,6 +80,7 @@ Includes:
 - owner proof input split
 - owner evidence attachment form
 - owner evidence submission record
+- owner evidence submission issue convert
 - owner evidence submission check
 - owner evidence bundle
 - owner evidence intake record
@@ -184,6 +185,7 @@ Candidate work:
 - generated owner proof input review before treating a draft owner proof input record as reviewed or downstream-ready
 - generated owner proof input split before treating a single owner proof input record as downstream owner decision/evidence records
 - generated owner evidence submission record before treating missing owner evidence as submitted evidence
+- generated owner evidence submission issue convert before treating issue text as reviewed owner evidence, owner decision, attached evidence, permission grant, proof, publication, or gate closure
 - generated owner evidence submission check before treating an owner evidence submission record as gate-moving evidence
 - generated goal completion audit before treating the active objective as complete
 - generated owner evidence bundle before treating evidence attachment requirements as evidence

@@ -1,15 +1,15 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T13:20:14.870Z",
+  "generatedAt": "2026-06-11T13:42:11.375Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "d6e2ff7d610ba4080453bb22a2f785c8f80a18e3",
+    "head": "09c2701225a072180efb9302bb092ca5c486fba4",
     "dirty": true,
-    "trackedChangedCount": 40,
+    "trackedChangedCount": 36,
     "untrackedCount": 7
   },
   "trackedChanges": [
@@ -44,10 +44,6 @@
     {
       "status": "M",
       "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/proof-intake/first-external-proof-kit.md"
     },
     {
       "status": "M",
@@ -107,10 +103,6 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-EVIDENCE-ISSUE.md"
-    },
-    {
-      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -124,10 +116,6 @@
     {
       "status": "M",
       "path": "package.json"
-    },
-    {
-      "status": "M",
-      "path": "templates/evidence-packet.md"
     },
     {
       "status": "M",
@@ -156,10 +144,6 @@
     {
       "status": "M",
       "path": "tools/audit-status-roadmap-sync.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/check-evidence-packet.mjs"
     },
     {
       "status": "M",
@@ -209,10 +193,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/proof-intake/first-external-proof-kit.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -269,10 +249,6 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-EVIDENCE-ISSUE.md"
-    },
-    {
-      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -286,10 +262,6 @@
     {
       "status": "M",
       "path": "package.json"
-    },
-    {
-      "status": "M",
-      "path": "templates/evidence-packet.md"
     },
     {
       "status": "M",
@@ -321,10 +293,6 @@
     },
     {
       "status": "M",
-      "path": "tools/check-evidence-packet.mjs"
-    },
-    {
-      "status": "M",
       "path": "tools/create-framework-manifest.mjs"
     },
     {
@@ -346,7 +314,6 @@
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
     " M .mimesis/operator-runbooks/current-runbook.md",
-    " M .mimesis/proof-intake/first-external-proof-kit.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
@@ -361,12 +328,10 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
-    " M docs/GATE-EVIDENCE-ISSUE.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M package.json",
-    " M templates/evidence-packet.md",
     " M tools/README.md",
     " M tools/audit-cli.mjs",
     " M tools/audit-completion-matrix.mjs",
@@ -374,14 +339,13 @@
     " M tools/audit-release-artifact-manifest.mjs",
     " M tools/audit-release-check-order.mjs",
     " M tools/audit-status-roadmap-sync.mjs",
-    " M tools/check-evidence-packet.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": ".mimesis/gates",
+      "root": ".mimesis/owner-actions",
       "count": 3
     },
     {
@@ -394,13 +358,13 @@
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/gates/fixture-gate-evidence-issue-conversion-report.md",
-    ".mimesis/gates/fixture-gate-evidence-issue.md",
-    ".mimesis/gates/fixture-gate-evidence-packet.md",
-    "docs/GATE-EVIDENCE-ISSUE-CONVERT.md",
-    "docs/superpowers/plans/2026-06-11-gate-evidence-issue-convert.md",
-    "tools/audit-gate-evidence-issue-convert.mjs",
-    "tools/convert-gate-evidence-issue.mjs"
+    ".mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md",
+    ".mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json",
+    ".mimesis/owner-actions/fixture-owner-evidence-submission-issue.md",
+    "docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md",
+    "docs/superpowers/plans/2026-06-11-owner-evidence-submission-issue-convert.md",
+    "tools/audit-owner-evidence-submission-issue-convert.mjs",
+    "tools/convert-owner-evidence-submission-issue.mjs"
   ],
   "sourceCommands": [
     "git status --short",
