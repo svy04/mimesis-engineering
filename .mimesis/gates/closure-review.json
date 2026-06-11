@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-review.v0.1",
   "status": "blocked_no_gate_closure",
-  "generatedAt": "2026-06-11T11:06:11.167Z",
+  "generatedAt": "2026-06-11T11:22:28.649Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +11,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "b05da0dbbd0b0fd43a2a8b47c1108b5d2cc6b8fa",
+    "head": "b3d75278c2445c6b4f593cae38d3874b1ea40c12",
     "dirty": true,
-    "trackedChangedCount": 31,
-    "untrackedCount": 4,
+    "trackedChangedCount": 33,
+    "untrackedCount": 2,
     "freshness": "generation_time_only",
     "committedSnapshotCanGoStale": true,
     "liveVerificationCommand": "npm run audit:sync:strict"

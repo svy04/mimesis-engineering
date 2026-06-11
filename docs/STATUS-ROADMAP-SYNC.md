@@ -47,6 +47,7 @@ The audit checks:
 - owner proof input remote issue visibility
 - owner proof input remote issue snapshot visibility
 - owner proof input remote issue export visibility
+- owner proof input remote issue export candidate visibility
 - owner proof input review visibility
 - owner proof input split visibility
 - owner decision intake visibility
@@ -91,6 +92,7 @@ The audit currently requires the public status and roadmap to name:
 - owner proof input remote issue
 - owner proof input remote issue snapshot
 - owner proof input remote issue export
+- owner proof input remote issue export candidate
 - owner proof input review
 - owner proof input split
 - owner decision intake

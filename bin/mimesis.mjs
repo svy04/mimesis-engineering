@@ -143,6 +143,7 @@ const commands = new Map([
   ["audit:owner-proof-input-remote-issue", { description: "Audit the remote owner proof input issue anchor and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-remote-issue.mjs" }],
   ["audit:owner-proof-input-remote-issue-snapshot", { description: "Audit the metadata-only remote owner proof input issue snapshot and no-body/no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-remote-issue-snapshot.mjs" }],
   ["audit:owner-proof-input-remote-issue-export", { description: "Audit the private remote owner proof input issue export path and no-commit/no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-remote-issue-export.mjs" }],
+  ["audit:owner-proof-input-remote-issue-export-candidate", { description: "Audit the candidate fixture smoke path for private remote owner proof input issue export.", type: "node", script: "tools/audit-owner-proof-input-remote-issue-export-candidate.mjs" }],
   ["audit:owner-proof-input-issue-convert", { description: "Audit owner proof input issue conversion and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-issue-convert.mjs" }],
   ["audit:owner-proof-input-review", { description: "Audit owner proof input review and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-review.mjs" }],
   ["audit:owner-proof-input-split", { description: "Audit owner proof input split routing and no-proof boundaries.", type: "node", script: "tools/audit-owner-proof-input-split.mjs" }],

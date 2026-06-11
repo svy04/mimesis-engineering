@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T11:07:03.670Z",
+  "generatedAt": "2026-06-11T11:23:29.779Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "b05da0dbbd0b0fd43a2a8b47c1108b5d2cc6b8fa",
+    "head": "b3d75278c2445c6b4f593cae38d3874b1ea40c12",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 4
+    "trackedChangedCount": 38,
+    "untrackedCount": 2
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -46,6 +46,7 @@
     "STATUS.md",
     "bin/mimesis.mjs",
     "docs/COMPLETION-AUDIT.md",
+    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
     "docs/RELEASE-CHECK-ORDER.md",
     "docs/STATUS-ROADMAP-SYNC.md",
     "docs/V0.1-RELEASE-PACKET.md",
@@ -59,6 +60,7 @@
     "tools/audit-status-roadmap-sync.mjs",
     "tools/create-framework-manifest.mjs",
     "tools/create-release-artifact-manifest.mjs",
+    "tools/export-owner-proof-input-remote-issue.mjs",
     "tools/validate-mimesis.mjs"
   ],
   "reviewGroups": [
@@ -72,7 +74,7 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 17,
+      "count": 18,
       "sample": [
         ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
@@ -82,6 +84,7 @@
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
         ".mimesis/operator-runbooks/current-runbook.md",
+        ".mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json",
         ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -118,7 +121,7 @@
         "tools/audit-cli.mjs",
         "tools/audit-completion-matrix.mjs",
         "tools/audit-framework-manifest.mjs",
-        "tools/audit-owner-proof-input-remote-issue-export.mjs",
+        "tools/audit-owner-proof-input-remote-issue-export-candidate.mjs",
         "tools/audit-release-artifact-manifest.mjs",
         "tools/audit-release-check-order.mjs",
         "tools/audit-status-roadmap-sync.mjs",

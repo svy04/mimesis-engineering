@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T11:07:03.194Z",
+  "generatedAt": "2026-06-11T11:23:29.267Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "b05da0dbbd0b0fd43a2a8b47c1108b5d2cc6b8fa",
+    "head": "b3d75278c2445c6b4f593cae38d3874b1ea40c12",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 4
+    "trackedChangedCount": 38,
+    "untrackedCount": 2
   },
   "trackedChanges": [
     {
@@ -103,6 +103,10 @@
     },
     {
       "status": "M",
+      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md"
+    },
+    {
+      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -152,6 +156,10 @@
     {
       "status": "M",
       "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/export-owner-proof-input-remote-issue.mjs"
     },
     {
       "status": "M",
@@ -249,6 +257,10 @@
     },
     {
       "status": "M",
+      "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md"
+    },
+    {
+      "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
@@ -301,6 +313,10 @@
     },
     {
       "status": "M",
+      "path": "tools/export-owner-proof-input-remote-issue.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/validate-mimesis.mjs"
     }
   ],
@@ -328,6 +344,7 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
+    " M docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
@@ -341,27 +358,22 @@
     " M tools/audit-status-roadmap-sync.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
+    " M tools/export-owner-proof-input-remote-issue.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": ".gitignore",
-      "count": 1
-    },
-    {
-      "root": "docs",
+      "root": ".mimesis/owner-actions",
       "count": 1
     },
     {
       "root": "tools",
-      "count": 2
+      "count": 1
     }
   ],
   "untrackedFilesSample": [
-    ".gitignore",
-    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
-    "tools/audit-owner-proof-input-remote-issue-export.mjs",
-    "tools/export-owner-proof-input-remote-issue.mjs"
+    ".mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json",
+    "tools/audit-owner-proof-input-remote-issue-export-candidate.mjs"
   ],
   "sourceCommands": [
     "git status --short",

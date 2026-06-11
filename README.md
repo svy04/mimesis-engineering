@@ -359,6 +359,7 @@ npm run cli -- owner:proof-input-request
 npm run cli -- owner:proof-input-remote-issue
 npm run cli -- owner:proof-input-remote-issue-snapshot
 npm run cli -- owner:proof-input-remote-issue-export
+npm run cli -- audit:owner-proof-input-remote-issue-export-candidate
 npm run cli -- owner:proof-input-issue-convert
 npm run cli -- owner:proof-input-review
 npm run cli -- audit:owner-proof-input-issue
@@ -465,6 +466,7 @@ It does not prove npm package release.
 `audit:owner-proof-input-remote-issue-snapshot` checks the owner proof input remote issue snapshot and no-body/no-proof boundary.
 `owner:proof-input-remote-issue-export` exports candidate remote owner input to `.mimesis/private/` only, after refusing request-only or secret-like issue bodies.
 `audit:owner-proof-input-remote-issue-export` checks the owner proof input remote issue export path, `.gitignore`, CLI, docs, manifests, release order, and no-commit/no-proof boundary.
+`audit:owner-proof-input-remote-issue-export-candidate` checks the owner proof input remote issue export candidate fixture smoke path without using live owner input.
 `owner:proof-input-issue-convert` converts a GitHub owner proof input issue body into a draft owner proof input record candidate, not owner decision, permission grant, external proof, publication, or gate closure.
 `audit:owner-proof-input-issue-convert` checks the converter, fixture issue, generated draft record/report, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-review` reviews a draft owner proof input record before reviewed-record promotion, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
@@ -1140,10 +1142,12 @@ Export the owner proof input remote issue body only after the snapshot shows can
 ```bash
 npm run owner:proof-input-remote-issue-export
 npm run audit:owner-proof-input-remote-issue-export
+npm run audit:owner-proof-input-remote-issue-export-candidate
 ```
 
 This writes raw issue body only under `.mimesis/private/`, which is gitignored.
 It refuses request-only issue bodies, secret-like issue bodies, and non-private output paths.
+The owner proof input remote issue export candidate audit uses `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json` to prove the private candidate path, then removes its private audit output.
 It is a private local bridge only, not owner decision, permission grant, external proof, proof approval, publication, adoption evidence, benchmark evidence, or gate closure.
 
 Run the owner proof input issue convert step to turn an issue body into a local record candidate:

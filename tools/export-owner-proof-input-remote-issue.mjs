@@ -17,6 +17,7 @@ const defaultReport = ".mimesis/private/owner-actions/remote-proof-input-issue-7
 const placeholderPattern = /\[owner to fill\b|\bTBD\b|<fill|TODO|pending owner input|not provided|none yet|_No response_/i;
 const secretPattern = /\b(api[_-]?key|secret|password|token|oauth[_-]?token)\b\s*[:=]\s*["']?[A-Za-z0-9._\-]{8,}/i;
 const checkedBoxPattern = /-\s*\[[xX]\]/g;
+const oneCheckedBoxPattern = /-\s*\[[xX]\]/;
 
 for (let index = 0; index < args.length; index += 1) {
   const arg = args[index];
@@ -35,10 +36,11 @@ for (let index = 0; index < args.length; index += 1) {
 }
 
 function usage() {
-  console.log(`Usage: mimesis owner:proof-input-remote-issue-export [--output .mimesis/private/owner-actions/remote-proof-input-issue-7.md] [--report .mimesis/private/owner-actions/remote-proof-input-issue-7-export.md] [--dry-run]
+  console.log(`Usage: mimesis owner:proof-input-remote-issue-export [--issue-json .mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json] [--output .mimesis/private/owner-actions/remote-proof-input-issue-7.md] [--report .mimesis/private/owner-actions/remote-proof-input-issue-7-export.md] [--dry-run]
 
 Fetches GitHub issue #7 and exports the raw issue body only when it is candidate owner input.
 The default output is gitignored under .mimesis/private/.
+Use --issue-json for the fixture_candidate_owner_input audit smoke; live use still fetches GitHub issue #7.
 The command refuses request-only issue bodies, secret-like content, and non-private output paths.
 It does not choose a license, grant permission, create external proof, publish, or close gates.
 `);
@@ -110,6 +112,18 @@ function fetchIssue() {
   return JSON.parse(output);
 }
 
+function readIssueJson(issueJsonPath) {
+  const fullPath = path.resolve(root, issueJsonPath);
+  if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) {
+    throw new Error(`issue JSON fixture does not exist: ${issueJsonPath}`);
+  }
+  const issue = JSON.parse(fs.readFileSync(fullPath, "utf8"));
+  if (issue.fixtureKind && issue.fixtureKind !== "fixture_candidate_owner_input") {
+    throw new Error(`unsupported issue JSON fixture kind: ${issue.fixtureKind}`);
+  }
+  return issue;
+}
+
 function classifyIssue(issue) {
   const body = String(issue.body || "");
   const sections = parseSections(body);
@@ -118,14 +132,13 @@ function classifyIssue(issue) {
   const weakArtifactSection = sectionValue(sections, ["weak_artifact_permission", "Weak artifact permission"]);
   const safetySection = sectionValue(sections, ["Safety Confirmation"]);
   const publicationSection = sectionValue(sections, ["Publication preference"]);
+  const publicationSource = publicationSection || weakArtifactSection;
   const bodySha256 = crypto.createHash("sha256").update(body).digest("hex");
   const secretLikePatternDetected = secretPattern.test(body);
   const placeholdersPresent = placeholderPattern.test(body);
   const checkedSafetyCount = (safetySection.match(checkedBoxPattern) || []).length;
-  const licenseChoiceChecked = checkedBoxPattern.test(licenseSection);
-  checkedBoxPattern.lastIndex = 0;
-  const publicationChoiceChecked = checkedBoxPattern.test(publicationSection);
-  checkedBoxPattern.lastIndex = 0;
+  const licenseChoiceChecked = oneCheckedBoxPattern.test(licenseSection);
+  const publicationChoiceChecked = oneCheckedBoxPattern.test(publicationSource);
   const expectedLabelPresent = labelNames.includes("owner-proof-input");
 
   let ownerInputStatus = "candidate_owner_input";
@@ -252,12 +265,13 @@ if (flags.has("help") || flags.has("h")) {
 const outputPath = resolvePrivatePath(String(flags.get("output") || positional[0] || privateIgnoredPath), privateIgnoredPath);
 const reportPath = resolvePrivatePath(String(flags.get("report") || defaultReport), defaultReport);
 const dryRun = flags.has("dry-run");
+const issueJsonPath = flags.get("issue-json") === true || !flags.has("issue-json") ? "" : String(flags.get("issue-json"));
 let classification;
 
 try {
-  classification = classifyIssue(fetchIssue());
+  classification = classifyIssue(issueJsonPath ? readIssueJson(issueJsonPath) : fetchIssue());
 } catch (error) {
-  console.error(`Owner proof input remote issue export could not fetch issue #${issueNumber}: ${error.message}`);
+  console.error(`Owner proof input remote issue export could not load issue input for #${issueNumber}: ${error.message}`);
   process.exit(1);
 }
 

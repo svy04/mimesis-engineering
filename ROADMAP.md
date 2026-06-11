@@ -69,6 +69,7 @@ Includes:
 - owner proof input remote issue
 - owner proof input remote issue snapshot
 - owner proof input remote issue export
+- owner proof input remote issue export candidate
 - owner proof input issue convert
 - owner proof input review
 - owner proof input split
@@ -168,6 +169,7 @@ Candidate work:
 - generated owner proof input remote issue before treating GitHub issue #7 as owner decision, submitted artifact, proof, publication, adoption evidence, benchmark evidence, or gate closure
 - generated owner proof input remote issue snapshot before treating GitHub issue #7 as candidate owner input or storing raw owner issue body
 - generated owner proof input remote issue export before treating GitHub issue #7 body as a private local conversion input
+- generated owner proof input remote issue export candidate fixture before trusting the private export success path
 - generated owner proof input issue convert before treating issue markdown as reviewed owner decision, permission grant, proof, publication, or gate closure
 - generated owner proof input review before treating a draft owner proof input record as reviewed or downstream-ready
 - generated owner proof input split before treating a single owner proof input record as downstream owner decision/evidence records

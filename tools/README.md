@@ -2040,6 +2040,7 @@ npm run cli -- owner:proof-input-remote-issue-export
 This writes candidate owner issue body only to `.mimesis/private/owner-actions/remote-proof-input-issue-7.md`.
 The path is gitignored by `.gitignore`.
 It refuses request-only issue bodies, secret-like issue bodies, and non-private output paths.
+The `--issue-json` flag is reserved for the fixture candidate smoke path.
 It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
 
 ## Audit Owner Proof Input Remote Issue Export
@@ -2057,6 +2058,24 @@ npm run cli -- audit:owner-proof-input-remote-issue-export
 ```
 
 This checks package script wiring, CLI exposure, `.gitignore`, private output boundaries, release preflight audit order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-commit/no-proof boundaries.
+
+## Audit Owner Proof Input Remote Issue Export Candidate
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-remote-issue-export-candidate
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-remote-issue-export-candidate
+```
+
+This runs the owner proof input remote issue export candidate fixture smoke against `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json`.
+It writes only temporary private audit output under `.mimesis/private/audit/`, confirms that output is gitignored, then removes it.
+It is not owner input, not weak artifact permission, not proof, not publication, and not gate closure.
 
 ## Convert Owner Proof Input Issue
 

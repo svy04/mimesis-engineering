@@ -88,6 +88,7 @@ Release readiness:
 - owner proof input remote issue
 - owner proof input remote issue snapshot
 - owner proof input remote issue export
+- owner proof input remote issue export candidate
 - owner proof input review
 - owner proof input split
 - owner evidence attachment form

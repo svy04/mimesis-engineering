@@ -15,6 +15,7 @@ The output path is under `.mimesis/private/`, which is gitignored.
 ```bash
 npm run owner:proof-input-remote-issue-export
 npm run audit:owner-proof-input-remote-issue-export
+npm run audit:owner-proof-input-remote-issue-export-candidate
 ```
 
 or:
@@ -22,6 +23,7 @@ or:
 ```bash
 npm run cli -- owner:proof-input-remote-issue-export
 npm run cli -- audit:owner-proof-input-remote-issue-export
+npm run cli -- audit:owner-proof-input-remote-issue-export-candidate
 ```
 
 Default private output:
@@ -38,6 +40,17 @@ Default private output:
 - The export command refuses non-private output paths.
 - The committed audit checks that `.mimesis/private/` is gitignored.
 - The release preflight runs only the audit, not the live raw-body export.
+
+## Fixture Candidate Smoke
+
+Use `--issue-json` only for a local fixture candidate smoke:
+
+```bash
+npm run cli -- owner:proof-input-remote-issue-export --issue-json .mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json --output .mimesis/private/audit/remote-proof-input-issue-candidate.md --report .mimesis/private/audit/remote-proof-input-issue-candidate-export.md
+```
+
+`npm run audit:owner-proof-input-remote-issue-export-candidate` runs this candidate export smoke path, confirms the candidate exports only to a gitignored private path, and removes the private audit output.
+The fixture candidate is not owner decision, not weak artifact permission, not proof, not publication, and not gate closure.
 
 ## Downstream Path
 

@@ -3236,3 +3236,41 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `.mimesis/private/` for raw owner issue body exports only after issue #7 is candidate owner input.
 - Treat private export as a local bridge into conversion/review/check/split, not as owner decision, permission, proof, publication, adoption evidence, benchmark evidence, or gate closure.
 - Keep all v0.2 gates open until real owner input is privately exported, converted, reviewed, checked, split, and routed into reviewed proof/evidence records.
+
+## 2026-06-11 - Owner Proof Input Remote Issue Export Candidate Smoke Slice
+
+## Import
+
+- Re-read `tools/export-owner-proof-input-remote-issue.mjs`, `tools/audit-owner-proof-input-remote-issue-export.mjs`, package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, and the current owner proof input remote issue snapshot.
+- Confirmed the live GitHub issue #7 remains `request_only_pending_owner`, so live raw-body export should still refuse.
+- Found that the private export success path did not yet have a local candidate fixture smoke test.
+
+## Distill
+
+- Add a fixture-only candidate owner-input smoke path so the export tool's success path can be verified without changing GitHub issue #7 or committing raw owner body.
+- Keep the fixture as a local smoke artifact only.
+- Do not treat the fixture as owner decision, permission, submitted artifact, proof, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-remote-issue-export-candidate.mjs`, which failed first for missing candidate fixture, missing `--issue-json` support, missing package/CLI/release wiring, missing validator/manifest coverage, and missing public docs.
+- GREEN: added `.mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json` and `--issue-json` fixture mode to `tools/export-owner-proof-input-remote-issue.mjs`.
+- GREEN: wired `audit:owner-proof-input-remote-issue-export-candidate` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- The candidate fixture models a filled issue #7 body with checked license direction, checked anonymized publication preference, checked safety confirmations, and no placeholder text.
+- The candidate audit runs the export tool against that fixture, writes temporary output under `.mimesis/private/audit/`, confirms the path is gitignored, verifies the export report says `candidate_owner_input` and `ready for local conversion: yes`, then removes the private audit output.
+- The live export command remains outside the default release preflight.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-remote-issue-export-candidate.mjs` failed first for the expected missing candidate export smoke surface.
+- After implementation, `npm run audit:owner-proof-input-remote-issue-export-candidate`, `npm run audit:owner-proof-input-remote-issue-export`, `npm run audit:cli`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+- `git status --ignored --short .mimesis/private` showed no leftover private audit output after the smoke check.
+
+## Remember
+
+- Use `audit:owner-proof-input-remote-issue-export-candidate` as proof that the private export success path works on a fixture candidate.
+- Do not use the fixture candidate as owner input or gate evidence.
+- Keep issue #7 and v0.2 gates open until real owner input exists, is privately exported, converted, reviewed, checked, split, and routed into reviewed evidence/proof records.
