@@ -4,6 +4,16 @@ Status: execution report packet, not executed proof.
 
 Generated for Mimesis Engineering v0.1.0 from the proof acceptance packet, proof run packet, case bridge, case check, evidence flow, claim candidate, and release preflight docs.
 
+## Input Mode
+
+- mode: default packet mode
+- execution record: none
+- candidate execution review mode: `npm run cli -- proof:execution-report --execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md`
+- candidateEvidenceReviewReady: false
+- proofApproved: false
+- publicClaimApproved: false
+- completionAllowed: false
+
 ## Report Inputs
 
 Use this report only after the proof acceptance gate says accept.
@@ -19,6 +29,7 @@ Required local inputs:
 - docs/CLAIM-FROM-EVIDENCE.md
 - docs/V0.1-RELEASE-PACKET.md
 - one real permissioned or clearly redacted weak artifact intake file
+- optional proof execution record for candidate execution review mode
 
 Source checks:
 

@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 19
-- untracked files: 0
+- changed tracked files: 22
+- untracked files: 1
 
 ## Conclusion
 
@@ -29,21 +29,25 @@ It does not publish, push, tag, release, or create a pull request.
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
- M .mimesis/gates/closure-readiness.json
- M .mimesis/gates/closure-review.json
+ M .mimesis/proof-runs/execution-report.md
+ M .mimesis/publication-packets/v0.1.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
- M .mimesis/state/current-state.json
  M README.md
  M ROADMAP.md
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
  M docs/FRAMEWORK-MANIFEST.md
- M docs/GATE-CLOSURE-REVIEW.md
+ M docs/PROOF-EXECUTION-REPORT.md
  M docs/RELEASE-CHECK-ORDER.md
- M spec/gate-closure-review.schema.json
+ M docs/V0.1-RELEASE-PACKET.md
+ M spec/README.md
  M tools/README.md
- M tools/audit-gate-closure-review.mjs
+ M tools/audit-proof-execution-report.mjs
+ M tools/audit-spec-index.mjs
  M tools/create-framework-manifest.mjs
- M tools/create-gate-closure-review.mjs
+ M tools/create-proof-execution-report.mjs
+ M tools/create-release-artifact-manifest.mjs
+ M tools/validate-mimesis.mjs
+?? spec/proof-execution-record.schema.json
 ```

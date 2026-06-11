@@ -1051,6 +1051,15 @@ This writes `.mimesis/proof-runs/execution-report.md`.
 It is a proof execution report and command evidence ledger for a future real proof run.
 It does not execute commands, create external proof, run a transformation, publish, choose a license, or prove adoption.
 
+After a real operator run, generate a separate candidate execution review from a proof execution record:
+
+```bash
+npm run cli -- proof:execution-report --execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md
+```
+
+The `--execution-record` file follows `spec/proof-execution-record.schema.json`.
+The `--output` report can mark `candidateEvidenceReviewReady: true`, but it still keeps `proofApproved: false`, `publicClaimApproved: false`, and `completionAllowed: false`.
+
 ## Audit Proof Execution Report
 
 Run:
@@ -1065,7 +1074,7 @@ or:
 npm run cli -- audit:proof-execution-report
 ```
 
-This checks the generated proof execution report, execution states, command evidence ledger, required attachments, package script wiring, CLI exposure, release preflight order, public docs, completion matrix visibility, framework manifest commands, release artifact manifest coverage, and proof boundaries.
+This checks the generated proof execution report, proof execution record schema, candidate execution review mode, execution states, command evidence ledger, required attachments, package script wiring, CLI exposure, release preflight order, public docs, completion matrix visibility, framework manifest commands, release artifact manifest coverage, and proof boundaries.
 
 ## Audit Proof Run Packet
 

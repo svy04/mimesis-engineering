@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T06:38:25.557Z",
+  "generatedAt": "2026-06-11T06:55:07.921Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "38a45ae69d1793431bb2f60ee70bb7f19c3cb05e",
+    "head": "d6618a037575e2434e888fd26d1863791168eee4",
     "dirty": true,
-    "trackedChangedCount": 26,
-    "untrackedCount": 0
+    "trackedChangedCount": 32,
+    "untrackedCount": 1
   },
   "trackedChanges": [
     {
@@ -36,6 +36,14 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/proof-runs/execution-report.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
       "status": "M",
@@ -91,7 +99,7 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-CLOSURE-REVIEW.md"
+      "path": "docs/PROOF-EXECUTION-REPORT.md"
     },
     {
       "status": "M",
@@ -99,7 +107,11 @@
     },
     {
       "status": "M",
-      "path": "spec/gate-closure-review.schema.json"
+      "path": "docs/V0.1-RELEASE-PACKET.md"
+    },
+    {
+      "status": "M",
+      "path": "spec/README.md"
     },
     {
       "status": "M",
@@ -107,7 +119,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-gate-closure-review.mjs"
+      "path": "tools/audit-proof-execution-report.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-spec-index.mjs"
     },
     {
       "status": "M",
@@ -115,7 +131,15 @@
     },
     {
       "status": "M",
-      "path": "tools/create-gate-closure-review.mjs"
+      "path": "tools/create-proof-execution-report.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "unstagedChanges": [
@@ -145,6 +169,14 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/proof-runs/execution-report.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/publication-packets/v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -197,7 +229,7 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-CLOSURE-REVIEW.md"
+      "path": "docs/PROOF-EXECUTION-REPORT.md"
     },
     {
       "status": "M",
@@ -205,7 +237,11 @@
     },
     {
       "status": "M",
-      "path": "spec/gate-closure-review.schema.json"
+      "path": "docs/V0.1-RELEASE-PACKET.md"
+    },
+    {
+      "status": "M",
+      "path": "spec/README.md"
     },
     {
       "status": "M",
@@ -213,7 +249,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-gate-closure-review.mjs"
+      "path": "tools/audit-proof-execution-report.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-spec-index.mjs"
     },
     {
       "status": "M",
@@ -221,7 +261,15 @@
     },
     {
       "status": "M",
-      "path": "tools/create-gate-closure-review.mjs"
+      "path": "tools/create-proof-execution-report.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "stagedChanges": [],
@@ -232,6 +280,8 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/proof-runs/execution-report.md",
+    " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -245,16 +295,27 @@
     " M STATUS.md",
     " M docs/COMPLETION-AUDIT.md",
     " M docs/FRAMEWORK-MANIFEST.md",
-    " M docs/GATE-CLOSURE-REVIEW.md",
+    " M docs/PROOF-EXECUTION-REPORT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
-    " M spec/gate-closure-review.schema.json",
+    " M docs/V0.1-RELEASE-PACKET.md",
+    " M spec/README.md",
     " M tools/README.md",
-    " M tools/audit-gate-closure-review.mjs",
+    " M tools/audit-proof-execution-report.mjs",
+    " M tools/audit-spec-index.mjs",
     " M tools/create-framework-manifest.mjs",
-    " M tools/create-gate-closure-review.mjs"
+    " M tools/create-proof-execution-report.mjs",
+    " M tools/create-release-artifact-manifest.mjs",
+    " M tools/validate-mimesis.mjs"
   ],
-  "untrackedRoots": [],
-  "untrackedFilesSample": [],
+  "untrackedRoots": [
+    {
+      "root": "spec",
+      "count": 1
+    }
+  ],
+  "untrackedFilesSample": [
+    "spec/proof-execution-record.schema.json"
+  ],
   "sourceCommands": [
     "git status --short",
     "git diff --name-status",

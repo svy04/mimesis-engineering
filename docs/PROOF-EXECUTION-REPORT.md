@@ -22,6 +22,20 @@ This writes:
 .mimesis/proof-runs/execution-report.md
 ```
 
+## Candidate Execution Review
+
+After an operator runs a real permissioned proof attempt, they can put command results into a proof execution record and generate a separate candidate execution review:
+
+```bash
+npm run cli -- proof:execution-report --execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md
+```
+
+The `--execution-record` file uses `spec/proof-execution-record.schema.json`.
+The `--output` file is a review surface, not proof approval.
+
+Candidate execution review can show `candidateEvidenceReviewReady: true` when the supplied record has a complete local run and the expected command evidence is present.
+It still keeps `proofApproved: false`, `publicClaimApproved: false`, and `completionAllowed: false`.
+
 ## Purpose
 
 The proof execution report gives the operator a command evidence ledger for a real proof attempt:
@@ -41,10 +55,12 @@ npm run audit:proof-execution-report
 ```
 
 The audit checks package script wiring, CLI exposure, release preflight order, generated report sections, command evidence ledger visibility, public docs, completion matrix visibility, framework manifest commands, release artifact manifest coverage, and proof boundaries.
+It also checks the proof execution record schema and a candidate execution review generated from a temporary record.
 
 ## Boundary
 
 This is not executed proof.
+Candidate execution review is not proof approval.
 This packet does not execute commands.
 It does not create external proof.
 It does not grant permission.

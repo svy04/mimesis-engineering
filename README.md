@@ -397,8 +397,8 @@ It does not prove npm package release.
 `proof:readiness` creates a first weak artifact readiness packet, not a submitted artifact, owner decision, external proof, publication, or owner gate bypass.
 `audit:proof-readiness` checks that readiness packet and its proof boundary.
 `proof:run-packet` creates an operator proof-run packet, not external proof, adoption proof, or publication.
-`proof:execution-report` creates a command evidence ledger packet, not executed proof, command execution, external proof, or publication.
-`audit:proof-execution-report` checks the execution report and no-executed-proof boundary.
+`proof:execution-report` creates a command evidence ledger packet and can read `--execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md` for candidate execution review; neither mode executes commands, approves proof, creates external proof, closes gates, or publishes.
+`audit:proof-execution-report` checks the execution report, proof execution record schema, candidate execution review, and no-executed-proof boundary.
 `audit:proof-run-dry` checks the proof-run path with a temporary local fixture, not a real external case.
 `proof:candidate-packet` creates a first proof candidate packet, not selected proof, external proof, permission, publication, or adoption evidence.
 `audit:proof-candidate-packet` checks that candidate selection remains visible without claiming completion.
@@ -698,6 +698,13 @@ npm run audit:proof-execution-report
 ```
 
 This writes `.mimesis/proof-runs/execution-report.md`.
+After a real operator run, review a supplied proof execution record without approving proof:
+
+```bash
+npm run cli -- proof:execution-report --execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md
+```
+
+Candidate execution review can show `candidateEvidenceReviewReady: true`, but it keeps `proofApproved: false`, `publicClaimApproved: false`, and `completionAllowed: false`.
 It is a command evidence ledger for a future real proof run.
 It does not execute commands, create external proof, run a transformation, publish, choose a license, or prove adoption.
 

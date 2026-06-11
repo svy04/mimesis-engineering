@@ -2719,3 +2719,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use gate closure review candidate mode after a real reviewed owner evidence submission and readiness candidate exist.
 - Treat `ownerEvidenceReviewReady` as a review routing signal, not as proof or gate closure.
 - Keep candidate review records separate from committed default fixtures unless the owner explicitly provides real evidence for review.
+
+## 2026-06-11 - Proof Execution Record Candidate Review Slice
+
+## Import
+
+- Re-read the proof execution report generator/audit, proof-run packet, proof-run dry audit, proof intake bridge, case-from-record path, release artifact manifest, framework manifest, spec index, README, tools README, completion audit, status, roadmap, and release-check order.
+- Found that `proof:execution-report` generated a blank command evidence ledger, but could not read an operator-supplied proof execution record after a real weak-artifact run.
+
+## Distill
+
+- Add a proof execution record contract and candidate review mode for supplied command evidence.
+- Keep default report mode as not-executed proof and keep candidate review at `proofApproved: false`, `publicClaimApproved: false`, and `completionAllowed: false`.
+- Preserve the boundary that an execution record review does not execute commands, approve proof, create external proof, publish, close gates, prove adoption, or prove benchmarked productivity.
+
+## Capsule
+
+- RED: strengthened `tools/audit-proof-execution-report.mjs` so the existing generator/docs/report failed without `--execution-record`, `--output`, `spec/proof-execution-record.schema.json`, and candidate review output.
+- GREEN: replaced `tools/create-proof-execution-report.mjs` with default packet mode plus candidate execution review mode.
+- GREEN: added `spec/proof-execution-record.schema.json` and wired the schema into spec index, validator, framework manifest, release artifact manifest, docs, README, tools README, status, roadmap, and release packet surfaces.
+
+## Shard
+
+- Default `npm run proof:execution-report` still writes `.mimesis/proof-runs/execution-report.md` without executing commands.
+- Candidate mode can run `npm run cli -- proof:execution-report --execution-record path/to/proof-execution-record.json --output path/to/proof-execution-candidate.md`.
+- A complete supplied command record can set `candidateEvidenceReviewReady: true`, but the report still refuses proof approval, public claim approval, completion, publication, and gate closure.
+
+## Verify
+
+- `node tools/audit-proof-execution-report.mjs` failed first for the expected missing schema and candidate input support.
+- After implementation and regeneration, `npm run audit:proof-execution-report`, `npm run audit:spec-index`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run validate`, and `npm run audit:completion` passed.
+
+## Remember
+
+- Use proof execution record candidate review after a real operator proof run produces command evidence.
+- Treat `candidateEvidenceReviewReady` as review readiness only, not proof approval.
+- Keep the record and candidate review separate from the default committed ledger unless a real proof execution record is supplied.

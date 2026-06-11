@@ -67,7 +67,7 @@ Release readiness:
 - proof acceptance packet
 - first proof candidate packet
 - first proof-run operator packet
-- proof execution report
+- proof execution report with proof execution record candidate review
 - proof-run dry audit
 - ecosystem operator runbook
 - ecosystem resource packet

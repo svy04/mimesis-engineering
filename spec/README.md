@@ -18,6 +18,7 @@ Status: spec index, not proof.
 - [worktree-review-packet.schema.json](worktree-review-packet.schema.json) — machine-readable dirty worktree review packet shape, not publication or strict sync closure
 - [release-review-bundle.schema.json](release-review-bundle.schema.json) — machine-readable release review bundle shape, not commit or publication
 - [proof-intake.schema.json](proof-intake.schema.json) — machine-readable proof intake record shape
+- [proof-execution-record.schema.json](proof-execution-record.schema.json) — machine-readable proof execution record shape, not proof approval or publication
 - [owner-decision-answer.schema.json](owner-decision-answer.schema.json) — JSON Schema for pending owner decision answers, not owner decision
 - [owner-evidence-intake.schema.json](owner-evidence-intake.schema.json) — JSON Schema for pending owner evidence requirements, not evidence
 - [owner-evidence-submission.schema.json](owner-evidence-submission.schema.json) — JSON Schema for owner evidence submission state, not submitted evidence
@@ -41,6 +42,7 @@ Use the schema files to check shape and boundary language only:
 - `owner-decision-answer.schema.json` checks the owner decision answer record shape for pending owner answers, not owner decision.
 - `owner-evidence-intake.schema.json` checks the owner evidence intake record shape for pending owner evidence requirements, not evidence.
 - `owner-evidence-submission.schema.json` checks the owner evidence submission record shape for `not_submitted_owner_evidence`, not submitted evidence.
+- `proof-execution-record.schema.json` checks an operator-supplied proof execution record shape, not proof approval, publication, closed gates, adoption proof, or benchmark proof.
 
 ## Core Lines
 

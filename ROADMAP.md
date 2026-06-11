@@ -89,7 +89,7 @@ Includes:
 - proof acceptance packet
 - first proof candidate packet
 - first proof-run operator packet
-- proof execution report
+- proof execution report with proof execution record candidate review
 - proof-run dry audit
 - ecosystem operator runbook
 - ecosystem resource packet
@@ -132,7 +132,7 @@ Candidate work:
 - generated proof acceptance packet before creating the first real weak-artifact case workspace
 - generated proof-run packet for the operator command path
 - generated first proof candidate packet for selecting one weak artifact without claiming proof
-- generated proof execution report for command evidence during the first real proof run
+- generated proof execution report and candidate review mode for supplied command evidence during the first real proof run
 - local proof-run dry audit for the command path
 - generated ecosystem operator runbook for engineering/canvas/casebook flow
 - generated ecosystem resource packet before choosing canvas or casebook examples

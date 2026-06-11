@@ -131,6 +131,7 @@ const artifactPaths = [
   "spec/worktree-review-packet.schema.json",
   "spec/release-review-bundle.schema.json",
   "spec/proof-intake.schema.json",
+  "spec/proof-execution-record.schema.json",
   "spec/owner-decision-answer.schema.json",
   "spec/owner-evidence-intake.schema.json",
   "spec/owner-evidence-submission.schema.json",

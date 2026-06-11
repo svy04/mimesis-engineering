@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T06:38:26.076Z",
+  "generatedAt": "2026-06-11T06:55:08.533Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "38a45ae69d1793431bb2f60ee70bb7f19c3cb05e",
+    "head": "d6618a037575e2434e888fd26d1863791168eee4",
     "dirty": true,
-    "trackedChangedCount": 26,
-    "untrackedCount": 0
+    "trackedChangedCount": 32,
+    "untrackedCount": 1
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -30,6 +30,8 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
+    ".mimesis/proof-runs/execution-report.md",
+    ".mimesis/publication-packets/v0.1.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -43,13 +45,17 @@
     "STATUS.md",
     "docs/COMPLETION-AUDIT.md",
     "docs/FRAMEWORK-MANIFEST.md",
-    "docs/GATE-CLOSURE-REVIEW.md",
+    "docs/PROOF-EXECUTION-REPORT.md",
     "docs/RELEASE-CHECK-ORDER.md",
-    "spec/gate-closure-review.schema.json",
+    "docs/V0.1-RELEASE-PACKET.md",
+    "spec/README.md",
     "tools/README.md",
-    "tools/audit-gate-closure-review.mjs",
+    "tools/audit-proof-execution-report.mjs",
+    "tools/audit-spec-index.mjs",
     "tools/create-framework-manifest.mjs",
-    "tools/create-gate-closure-review.mjs"
+    "tools/create-proof-execution-report.mjs",
+    "tools/create-release-artifact-manifest.mjs",
+    "tools/validate-mimesis.mjs"
   ],
   "reviewGroups": [
     {
@@ -62,7 +68,7 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 14,
+      "count": 16,
       "sample": [
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/framework-manifest.json",
@@ -70,6 +76,8 @@
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
+        ".mimesis/proof-runs/execution-report.md",
+        ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -83,12 +91,13 @@
     },
     {
       "name": "public documentation",
-      "count": 7,
+      "count": 8,
       "sample": [
         "docs/COMPLETION-AUDIT.md",
         "docs/FRAMEWORK-MANIFEST.md",
-        "docs/GATE-CLOSURE-REVIEW.md",
+        "docs/PROOF-EXECUTION-REPORT.md",
         "docs/RELEASE-CHECK-ORDER.md",
+        "docs/V0.1-RELEASE-PACKET.md",
         "README.md",
         "ROADMAP.md",
         "STATUS.md"
@@ -97,20 +106,24 @@
     },
     {
       "name": "tooling and cli",
-      "count": 4,
+      "count": 7,
       "sample": [
-        "tools/audit-gate-closure-review.mjs",
+        "tools/audit-proof-execution-report.mjs",
+        "tools/audit-spec-index.mjs",
         "tools/create-framework-manifest.mjs",
-        "tools/create-gate-closure-review.mjs",
-        "tools/README.md"
+        "tools/create-proof-execution-report.mjs",
+        "tools/create-release-artifact-manifest.mjs",
+        "tools/README.md",
+        "tools/validate-mimesis.mjs"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },
     {
       "name": "spec and schemas",
-      "count": 1,
+      "count": 2,
       "sample": [
-        "spec/gate-closure-review.schema.json"
+        "spec/proof-execution-record.schema.json",
+        "spec/README.md"
       ],
       "note": "Spec contracts, templates, and reference packs."
     }

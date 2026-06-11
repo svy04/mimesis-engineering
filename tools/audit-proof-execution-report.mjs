@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -48,6 +50,18 @@ function requireBefore(commands, earlier, later) {
   }
 }
 
+function runNode(script, args, cwd) {
+  return spawnSync(process.execPath, [path.join(root, "tools", script), ...args], {
+    cwd,
+    encoding: "utf8",
+  });
+}
+
+function writeJson(filePath, value) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
 const packageJson = readJson("package.json");
 const cli = read("bin/mimesis.mjs");
 const doc = read("docs/PROOF-EXECUTION-REPORT.md");
@@ -58,6 +72,8 @@ const completion = read("docs/COMPLETION-AUDIT.md");
 const status = read("STATUS.md");
 const roadmap = read("ROADMAP.md");
 const releasePacket = read("docs/V0.1-RELEASE-PACKET.md");
+const generator = read("tools/create-proof-execution-report.mjs");
+const executionRecordSchema = readJson("spec/proof-execution-record.schema.json");
 const frameworkManifest = readJson(".mimesis/framework-manifest.json");
 const releaseArtifactManifest = readJson(".mimesis/release-artifacts/v0.1-manifest.json");
 const releaseCommands = commandList(packageJson);
@@ -93,11 +109,15 @@ for (const [earlier, later] of [
 for (const text of [
   "proof execution report",
   "command evidence ledger",
+  "candidate execution review",
+  "proof execution record",
   "execution states",
   "not executed proof",
   "does not execute commands",
   "does not create external proof",
   "does not publish",
+  "--execution-record",
+  "--output",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/PROOF-EXECUTION-REPORT.md missing text: ${text}`);
@@ -107,6 +127,7 @@ for (const text of [
 for (const section of [
   "# Mimesis Proof Execution Report",
   "Status: execution report packet, not executed proof.",
+  "## Input Mode",
   "## Report Inputs",
   "## Execution States",
   "## Command Evidence Ledger",
@@ -124,6 +145,10 @@ for (const section of [
 for (const text of [
   ".mimesis/proof-intake/acceptance-packet.md",
   ".mimesis/proof-runs/v0.2-first-run.md",
+  "default packet mode",
+  "candidate execution review mode",
+  "candidateEvidenceReviewReady: false",
+  "proofApproved: false",
   "case:review",
   "case:from-intake",
   "case:check",
@@ -132,6 +157,8 @@ for (const text of [
   "evidence:check",
   "claim:from-evidence",
   "release:check:public",
+  "--execution-record",
+  "--output",
   "not_started",
   "running",
   "stopped",
@@ -142,6 +169,35 @@ for (const text of [
 ]) {
   if (!report.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`proof execution report missing text: ${text}`);
+  }
+}
+
+for (const text of [
+  "--execution-record",
+  "--output",
+  "candidate execution review",
+  "candidateEvidenceReviewReady",
+  "proofApproved",
+]) {
+  if (!generator.includes(text)) {
+    failures.push(`tools/create-proof-execution-report.mjs missing candidate input text: ${text}`);
+  }
+}
+
+if (executionRecordSchema.title !== "Mimesis Proof Execution Record") {
+  failures.push("spec/proof-execution-record.schema.json must define Mimesis Proof Execution Record");
+}
+
+for (const key of [
+  "schemaVersion",
+  "status",
+  "commandEvidence",
+  "safetyConfirmation",
+  "boundary",
+  "prohibitedClaims",
+]) {
+  if (!executionRecordSchema.required?.includes(key)) {
+    failures.push(`proof execution record schema missing required key: ${key}`);
   }
 }
 
@@ -166,6 +222,7 @@ for (const command of ["proof:execution-report", "audit:proof-execution-report"]
 
 const releaseArtifacts = new Set((releaseArtifactManifest.artifacts ?? []).map((artifact) => artifact.path));
 for (const artifactPath of [
+  "spec/proof-execution-record.schema.json",
   "docs/PROOF-EXECUTION-REPORT.md",
   ".mimesis/proof-runs/execution-report.md",
   "tools/create-proof-execution-report.mjs",
@@ -173,6 +230,130 @@ for (const artifactPath of [
 ]) {
   if (!releaseArtifacts.has(artifactPath)) {
     failures.push(`release artifact manifest missing artifact: ${artifactPath}`);
+  }
+}
+
+if (!failures.length) {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-proof-execution-record-"));
+  try {
+    const executionRecordPath = path.join(tempRoot, "proof-execution-record.json");
+    const outputPath = path.join(tempRoot, "proof-execution-candidate.md");
+    writeJson(executionRecordPath, {
+      schemaVersion: "0.1.0",
+      status: "complete_local_run",
+      artifactIntakePath: "cases/real-permissioned-intake.md",
+      caseWorkspacePath: ".mimesis/case-runs/real-weak-artifact",
+      evidencePacketPath: ".mimesis/evidence-packets/real-weak-artifact-reviewed.md",
+      claimCandidatePath: ".mimesis/claim-candidates/real-weak-artifact.md",
+      publicPreflightPath: ".mimesis/proof-runs/release-check-public-output.txt",
+      commandEvidence: [
+        {
+          command: "npm run cli -- case:review cases/real-permissioned-intake.md --require-public --write-report",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/case-runs/permissioned-case-review.md",
+          notes: "permission and redaction reviewed for local proof-run evidence only",
+        },
+        {
+          command: "npm run cli -- case:from-intake cases/real-permissioned-intake.md --reference-pack reference-packs/github-readme.md --title \"Permissioned README Case\"",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/case-runs/real-weak-artifact",
+          notes: "started case workspace created",
+        },
+        {
+          command: "npm run cli -- case:check .mimesis/case-runs/real-weak-artifact --write-report",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/case-runs/real-weak-artifact/.mimesis/case-proof.md",
+          notes: "local before/after case check passed",
+        },
+        {
+          command: "npm run cli -- evidence:from-case .mimesis/case-runs/real-weak-artifact --out .mimesis/evidence-packets/real-weak-artifact.md --force",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/evidence-packets/real-weak-artifact.md",
+          notes: "draft evidence packet created from completed local case",
+        },
+        {
+          command: "npm run cli -- evidence:review .mimesis/evidence-packets/real-weak-artifact.md --decision reviewed --reviewer \"Reviewer Name\" --note \"Reviewed against the proof boundary.\" --out .mimesis/evidence-packets/real-weak-artifact-reviewed.md",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/evidence-packets/real-weak-artifact-reviewed.md",
+          notes: "reviewed evidence packet exists",
+        },
+        {
+          command: "npm run cli -- evidence:check .mimesis/evidence-packets/real-weak-artifact-reviewed.md --require-reviewed --write-report",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/evidence-packets/real-weak-artifact-check.md",
+          notes: "reviewed evidence check passed",
+        },
+        {
+          command: "npm run cli -- claim:from-evidence .mimesis/evidence-packets/real-weak-artifact-reviewed.md --out .mimesis/claim-candidates/real-weak-artifact.md",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/claim-candidates/real-weak-artifact.md",
+          notes: "bounded claim candidate generated",
+        },
+        {
+          command: "npm run release:check:public",
+          state: "passed",
+          exitCode: 0,
+          evidencePath: ".mimesis/proof-runs/release-check-public-output.txt",
+          notes: "public preflight output captured; this is not publication",
+        },
+      ],
+      safetyConfirmation: {
+        noSecrets: true,
+        noPrivateCustomerData: true,
+        noCopiedProtectedMaterial: true,
+        noUnreviewedPublicationClaim: true,
+      },
+      boundary: [
+        "does not create external adoption proof",
+        "does not prove benchmarked productivity",
+        "does not publish",
+        "does not close gates",
+      ],
+      prohibitedClaims: [
+        "external adoption exists",
+        "benchmarked productivity exists",
+        "publication happened",
+        "all gates are closed",
+      ],
+    });
+
+    const candidate = runNode("create-proof-execution-report.mjs", [
+      "--execution-record",
+      executionRecordPath,
+      "--output",
+      outputPath,
+    ], tempRoot);
+
+    if (candidate.status !== 0) {
+      failures.push(`proof execution candidate review failed: ${candidate.stderr || candidate.stdout}`);
+    } else {
+      const candidateReport = fs.readFileSync(outputPath, "utf8");
+      for (const text of [
+        "Status: candidate execution review, not proof approval.",
+        "candidate execution review mode",
+        "candidateEvidenceReviewReady: true",
+        "proofApproved: false",
+        "publicClaimApproved: false",
+        "completionAllowed: false",
+        "does not create external proof",
+        "does not publish",
+      ]) {
+        if (!candidateReport.includes(text)) {
+          failures.push(`proof execution candidate report missing text: ${text}`);
+        }
+      }
+    }
+  } finally {
+    if (tempRoot.startsWith(os.tmpdir())) {
+      fs.rmSync(tempRoot, { recursive: true, force: true });
+    }
   }
 }
 

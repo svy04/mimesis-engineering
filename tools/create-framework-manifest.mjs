@@ -117,6 +117,11 @@ const manifest = {
       command: "npm run proof:execution-report"
     },
     {
+      name: "proof execution record schema",
+      path: "spec/proof-execution-record.schema.json",
+      command: "npm run audit:proof-execution-report"
+    },
+    {
       name: "first weak artifact readiness",
       path: ".mimesis/proof-runs/readiness.md",
       command: "npm run proof:readiness"
@@ -408,11 +413,11 @@ const manifest = {
     },
     {
       name: "proof:execution-report",
-      purpose: "Generate the proof execution command evidence ledger without executing commands."
+      purpose: "Generate the proof execution command evidence ledger, or candidate-review a supplied proof execution record, without executing commands or approving proof."
     },
     {
       name: "audit:proof-execution-report",
-      purpose: "Check the proof execution report and no-executed-proof boundary."
+      purpose: "Check the proof execution report, proof execution record schema, candidate execution review mode, and no-executed-proof/no-proof-approval boundary."
     },
     {
       name: "proof:readiness",
@@ -751,6 +756,7 @@ const manifest = {
     "spec/worktree-review-packet.schema.json",
     "spec/release-review-bundle.schema.json",
     "spec/proof-intake.schema.json",
+    "spec/proof-execution-record.schema.json",
     "spec/owner-decision-answer.schema.json",
     "spec/owner-evidence-intake.schema.json",
     "spec/owner-evidence-submission.schema.json",
