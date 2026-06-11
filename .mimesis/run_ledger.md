@@ -3011,3 +3011,42 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use the owner proof input request packet as the sendable owner ask before expecting real `license_or_no_reuse` or `weak_artifact_permission` input.
 - Treat request packets as readiness and coordination evidence only; they are not submitted owner input or proof.
 - Keep all remaining v0.2 gates open until real owner/external evidence is supplied and reviewed.
+
+## 2026-06-11 - Owner Proof Input Review Slice
+
+## Import
+
+- Re-read the owner proof input issue convert path, owner proof input checker, owner proof input split router, release-check order, framework manifest, release artifact manifest, validator, README, tools README, status, roadmap, release packet, completion audit, and status/roadmap sync audit.
+- Found that converted owner proof input records could be described as reviewed too early, without a dedicated review report between issue conversion and downstream check/split.
+
+## Distill
+
+- Add an owner proof input review gate between `owner:proof-input-issue-convert` and `owner:proof-input-check` / `owner:proof-input-split`.
+- Keep the default fixture blocked as `blocked_fixture`.
+- Allow reviewed-record promotion only with explicit `--approve`; allow fixture promotion only in smoke paths with `--allow-fixture`.
+- Do not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, prove adoption, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-review.mjs`, which failed first for the expected missing review report, review tool, docs, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `tools/review-owner-proof-input-record.mjs`, `docs/OWNER-PROOF-INPUT-REVIEW.md`, and `.mimesis/owner-actions/fixture-proof-input-review.md`.
+- GREEN: wired `owner:proof-input-review` and `audit:owner-proof-input-review` through package scripts, CLI, release order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `npm run owner:proof-input-review` writes `.mimesis/owner-actions/fixture-proof-input-review.md` from the converted fixture record and leaves it blocked.
+- `npm run cli -- owner:proof-input-review path/to/owner-proof-input-record.json --write-report path/to/review.md --output-record path/to/reviewed-owner-proof-input-record.json --approve --require-approvable` is the real reviewed-record promotion path.
+- The review checks schema version, draft/reviewed status, submitted minimum inputs, review checklists, safety confirmations, required boundaries, placeholder text, and secret-like strings.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-review.mjs` failed first for the expected missing owner proof input review surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input-review`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+- An explicit temporary smoke passed through `review-owner-proof-input-record.mjs --approve --allow-fixture`, `check-owner-proof-input-record.mjs --require-ready`, and `split-owner-proof-input-record.mjs --require-ready`.
+- `npm run release:check` passed with the owner proof input review slice included.
+
+## Remember
+
+- Use owner proof input review after issue conversion and before proof input check/split.
+- Treat review reports as field readiness review only; they do not supply owner evidence or close any gate.
+- Keep the remaining v0.2 gates open until the owner supplies real license/no-reuse input, one permissioned weak artifact, proof execution evidence, benchmark/adoption evidence, and fresh strict sync evidence.

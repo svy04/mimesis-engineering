@@ -1,15 +1,15 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T09:25:51.141Z",
+  "generatedAt": "2026-06-11T09:42:46.097Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "588c047059546a297e7346135b59e2a39ffe9572",
+    "head": "3577b8931754b159a2a60058d72fa4ddc4891586",
     "dirty": true,
-    "trackedChangedCount": 35,
+    "trackedChangedCount": 36,
     "untrackedCount": 4
   },
   "trackedChanges": [
@@ -104,6 +104,10 @@
     {
       "status": "M",
       "path": "docs/RELEASE-CHECK-ORDER.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
     },
     {
       "status": "M",
@@ -249,6 +253,10 @@
     },
     {
       "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
+    },
+    {
+      "status": "M",
       "path": "docs/V0.1-RELEASE-PACKET.md"
     },
     {
@@ -321,6 +329,7 @@
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
+    " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M package.json",
     " M tools/README.md",
@@ -349,10 +358,10 @@
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/proof-input-request.md",
-    "docs/OWNER-PROOF-INPUT-REQUEST.md",
-    "tools/audit-owner-proof-input-request.mjs",
-    "tools/create-owner-proof-input-request.mjs"
+    ".mimesis/owner-actions/fixture-proof-input-review.md",
+    "docs/OWNER-PROOF-INPUT-REVIEW.md",
+    "tools/audit-owner-proof-input-review.mjs",
+    "tools/review-owner-proof-input-record.mjs"
   ],
   "sourceCommands": [
     "git status --short",

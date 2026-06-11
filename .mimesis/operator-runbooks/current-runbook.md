@@ -198,6 +198,7 @@ Do not publish a stronger claim if:
 - owner proof input is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input request is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input issue convert is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
+- owner proof input review is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input split is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - release artifact manifest is described as publication, sync, license choice, external proof, legal originality proof, or adoption evidence
 - status roadmap sync is described as completion proof, publication, owner decision, external proof, legal originality proof, or adoption evidence

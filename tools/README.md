@@ -1989,6 +1989,40 @@ npm run cli -- audit:owner-proof-input-issue-convert
 
 This checks the converter, fixture issue body, generated draft record/report, package script wiring, CLI exposure, release preflight order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, smoke conversion, and no-proof/no-closure boundaries.
 
+## Review Owner Proof Input
+
+Run:
+
+```bash
+npm run owner:proof-input-review
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-review path/to/owner-proof-input-record.json --write-report path/to/review.md --output-record path/to/reviewed-owner-proof-input-record.json --approve --require-approvable
+```
+
+This writes `.mimesis/owner-actions/fixture-proof-input-review.md` for the default fixture issue record.
+It reviews whether `license_or_no_reuse` and `weak_artifact_permission` are complete enough for reviewed-record promotion.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Review
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-review
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-review
+```
+
+This checks the owner proof input review report, explicit approval smoke path, package script wiring, CLI exposure, release preflight order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
+
 ## Split Owner Proof Input
 
 Run:
