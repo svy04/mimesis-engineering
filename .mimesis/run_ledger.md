@@ -2974,3 +2974,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use owner proof input issue convert after public issue intake and before proof input check/split.
 - Treat converted records as candidates only; they do not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, prove adoption, prove benchmark results, or close gates.
 - Keep the remaining v0.2 gates open until the owner supplies real license/no-reuse input, one permissioned weak artifact, proof execution evidence, benchmark/adoption evidence, and fresh strict sync evidence.
+
+## 2026-06-11 - Owner Proof Input Request Slice
+
+## Import
+
+- Re-read the owner action queue, owner proof handoff, owner proof input issue packet, owner proof input issue convert docs, gap register, release order, manifests, validator, README, tools README, status, roadmap, release packet, and completion audit.
+- Found that the repository could describe needed owner inputs and convert issue bodies, but did not have one owner-facing request packet that could be sent before the first real proof loop.
+
+## Distill
+
+- Add a single request packet for the owner to provide `license_or_no_reuse` and `weak_artifact_permission`.
+- Keep the request packet bounded as a request only.
+- Do not treat the request as owner decision, permission grant, submitted artifact, proof, publication, adoption evidence, benchmark evidence, or gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-request.mjs`, which failed first for the expected missing request doc, generated packet, generator, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `tools/create-owner-proof-input-request.mjs`, `docs/OWNER-PROOF-INPUT-REQUEST.md`, and `.mimesis/owner-actions/proof-input-request.md`.
+- GREEN: wired `owner:proof-input-request` and `audit:owner-proof-input-request` through package scripts, CLI, release order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `npm run owner:proof-input-request` writes `.mimesis/owner-actions/proof-input-request.md`.
+- The request packet gives the owner the GitHub issue URL and local conversion/check/split commands.
+- The packet explicitly names stop conditions for ambiguous license input, missing artifact owner/permission/redaction/safety confirmation, secrets, private customer data, fake engagement, and false proof claims.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-request.mjs` failed first for the expected missing request surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input-request`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+- `npm run release:check` passed with the owner proof input request slice included.
+
+## Remember
+
+- Use the owner proof input request packet as the sendable owner ask before expecting real `license_or_no_reuse` or `weak_artifact_permission` input.
+- Treat request packets as readiness and coordination evidence only; they are not submitted owner input or proof.
+- Keep all remaining v0.2 gates open until real owner/external evidence is supplied and reviewed.

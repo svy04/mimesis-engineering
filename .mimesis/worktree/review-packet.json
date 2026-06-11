@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T09:11:23.346Z",
+  "generatedAt": "2026-06-11T09:25:51.141Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "013056e6ae50830094407a2c877889a789b6d9b9",
+    "head": "588c047059546a297e7346135b59e2a39ffe9572",
     "dirty": true,
     "trackedChangedCount": 35,
-    "untrackedCount": 6
+    "untrackedCount": 4
   },
   "trackedChanges": [
     {
@@ -337,7 +337,7 @@
   "untrackedRoots": [
     {
       "root": ".mimesis/owner-actions",
-      "count": 3
+      "count": 1
     },
     {
       "root": "docs",
@@ -349,12 +349,10 @@
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md",
-    ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
-    ".mimesis/owner-actions/fixture-owner-proof-input-issue.md",
-    "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
-    "tools/audit-owner-proof-input-issue-convert.mjs",
-    "tools/convert-owner-proof-input-issue.mjs"
+    ".mimesis/owner-actions/proof-input-request.md",
+    "docs/OWNER-PROOF-INPUT-REQUEST.md",
+    "tools/audit-owner-proof-input-request.mjs",
+    "tools/create-owner-proof-input-request.mjs"
   ],
   "sourceCommands": [
     "git status --short",

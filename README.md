@@ -354,8 +354,10 @@ npm run cli -- owner:queue
 npm run cli -- owner:proof-handoff
 npm run cli -- audit:owner-proof-handoff
 npm run cli -- owner:proof-input-issue
+npm run cli -- owner:proof-input-request
 npm run cli -- owner:proof-input-issue-convert
 npm run cli -- audit:owner-proof-input-issue
+npm run cli -- audit:owner-proof-input-request
 npm run cli -- audit:owner-proof-input-issue-convert
 npm run cli -- owner:proof-input-template
 npm run cli -- owner:proof-input-check
@@ -447,6 +449,8 @@ It does not prove npm package release.
 `owner:proof-input-check` checks that owner proof input record before downstream conversion; `--require-ready` fails until the owner has reviewed and submitted both minimum inputs.
 `audit:owner-proof-input` checks the template, checker, CLI, docs, manifests, release order, and no-decision/no-proof boundary.
 `owner:proof-input-issue` creates the public owner proof input issue handoff packet, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
+`owner:proof-input-request` creates the owner-facing request packet for `license_or_no_reuse` and `weak_artifact_permission`, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
+`audit:owner-proof-input-request` checks the request packet, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-issue-convert` converts a GitHub owner proof input issue body into a draft owner proof input record candidate, not owner decision, permission grant, external proof, publication, or gate closure.
 `audit:owner-proof-input-issue-convert` checks the converter, fixture issue, generated draft record/report, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-split` splits a reviewed owner proof input into downstream owner decision/evidence record candidates; the default template writes a blocked split report only.
@@ -1080,6 +1084,17 @@ npm run audit:owner-proof-input-issue
 This writes `.mimesis/owner-actions/proof-input-issue-packet.md`.
 It connects `.github/ISSUE_TEMPLATE/owner-proof-input.yml` to the local owner proof input path.
 It is a handoff only, not license choice, permission grant, proof approval, publication, or gate closure.
+
+Generate the owner proof input request packet:
+
+```bash
+npm run owner:proof-input-request
+npm run audit:owner-proof-input-request
+```
+
+This writes `.mimesis/owner-actions/proof-input-request.md`.
+It gives the owner one sendable request for `license_or_no_reuse` and `weak_artifact_permission`.
+It is a request only, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
 
 Run the owner proof input issue convert step to turn an issue body into a local record candidate:
 

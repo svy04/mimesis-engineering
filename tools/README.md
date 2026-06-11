@@ -1921,6 +1921,40 @@ npm run cli -- audit:owner-proof-input-issue
 
 This checks the public owner proof input issue form, generated packet, package script wiring, CLI exposure, release preflight order, issue-form audit coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
 
+## Generate Owner Proof Input Request
+
+Run:
+
+```bash
+npm run owner:proof-input-request
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-request
+```
+
+This writes `.mimesis/owner-actions/proof-input-request.md`.
+It gives the owner one sendable request for `license_or_no_reuse` and `weak_artifact_permission`.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Request
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-request
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-request
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated request packet, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
+
 ## Convert Owner Proof Input Issue
 
 Run:

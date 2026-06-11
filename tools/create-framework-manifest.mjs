@@ -232,6 +232,11 @@ const manifest = {
       command: "npm run owner:proof-input-issue"
     },
     {
+      name: "owner proof input request packet",
+      path: ".mimesis/owner-actions/proof-input-request.md",
+      command: "npm run owner:proof-input-request"
+    },
+    {
       name: "owner proof input issue converted fixture",
       path: ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
       command: "npm run owner:proof-input-issue-convert"
@@ -590,6 +595,10 @@ const manifest = {
       purpose: "Generate the public owner proof input issue handoff packet without choosing a license, granting permission, or approving proof."
     },
     {
+      name: "owner:proof-input-request",
+      purpose: "Generate the owner-facing request for license/no-reuse and one weak artifact without collecting evidence or closing gates."
+    },
+    {
       name: "owner:proof-input-issue-convert",
       purpose: "Convert a GitHub owner proof input issue body into a bounded draft owner proof input record without granting permission, creating proof, or closing gates."
     },
@@ -604,6 +613,10 @@ const manifest = {
     {
       name: "audit:owner-proof-input-issue",
       purpose: "Check the public owner proof input issue form, generated packet, CLI, public docs, and no-decision/no-proof boundaries."
+    },
+    {
+      name: "audit:owner-proof-input-request",
+      purpose: "Check the owner proof input request packet, CLI, public docs, manifests, and no-proof boundaries."
     },
     {
       name: "audit:owner-proof-input-issue-convert",
@@ -875,6 +888,7 @@ const manifest = {
     "docs/OWNER-PROOF-HANDOFF.md",
     "docs/OWNER-PROOF-INPUT.md",
     "docs/OWNER-PROOF-INPUT-ISSUE.md",
+    "docs/OWNER-PROOF-INPUT-REQUEST.md",
     "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
     "docs/OWNER-PROOF-INPUT-SPLIT.md",
     "docs/OWNER-DECISION-INTAKE.md",
