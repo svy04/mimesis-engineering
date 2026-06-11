@@ -197,6 +197,7 @@ Do not publish a stronger claim if:
 - owner proof handoff is described as license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input request is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
+- owner proof input remote issue is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, benchmark proof, or closed gate
 - owner proof input issue convert is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input review is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate
 - owner proof input split is described as owner decision, license choice, permission grant, submitted artifact, proof approval, external proof, publication, adoption proof, or closed gate

@@ -1955,6 +1955,40 @@ npm run cli -- audit:owner-proof-input-request
 
 This checks package script wiring, CLI exposure, release preflight order, generated request packet, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
 
+## Generate Owner Proof Input Remote Issue Anchor
+
+Run:
+
+```bash
+npm run owner:proof-input-remote-issue
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-remote-issue
+```
+
+This writes `.mimesis/owner-actions/remote-proof-input-issue-anchor.md`.
+It records `https://github.com/svy04/mimesis-engineering/issues/7` as the current owner input anchor.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Remote Issue
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-remote-issue
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-remote-issue
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated remote issue anchor packet, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
+
 ## Convert Owner Proof Input Issue
 
 Run:

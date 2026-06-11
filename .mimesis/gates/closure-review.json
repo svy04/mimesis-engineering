@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-review.v0.1",
   "status": "blocked_no_gate_closure",
-  "generatedAt": "2026-06-11T09:51:40.542Z",
+  "generatedAt": "2026-06-11T10:11:45.340Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +11,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a1aecc0f4c755105eab0e31368a69c05515df3de",
+    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
     "dirty": true,
-    "trackedChangedCount": 7,
-    "untrackedCount": 0
+    "trackedChangedCount": 37,
+    "untrackedCount": 4
   },
   "inputMode": {
     "readinessReport": ".mimesis/gates/closure-readiness.json",

@@ -355,10 +355,12 @@ npm run cli -- owner:proof-handoff
 npm run cli -- audit:owner-proof-handoff
 npm run cli -- owner:proof-input-issue
 npm run cli -- owner:proof-input-request
+npm run cli -- owner:proof-input-remote-issue
 npm run cli -- owner:proof-input-issue-convert
 npm run cli -- owner:proof-input-review
 npm run cli -- audit:owner-proof-input-issue
 npm run cli -- audit:owner-proof-input-request
+npm run cli -- audit:owner-proof-input-remote-issue
 npm run cli -- audit:owner-proof-input-issue-convert
 npm run cli -- audit:owner-proof-input-review
 npm run cli -- owner:proof-input-template
@@ -453,6 +455,8 @@ It does not prove npm package release.
 `owner:proof-input-issue` creates the public owner proof input issue handoff packet, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
 `owner:proof-input-request` creates the owner-facing request packet for `license_or_no_reuse` and `weak_artifact_permission`, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
 `audit:owner-proof-input-request` checks the request packet, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
+`owner:proof-input-remote-issue` records the remote owner proof input issue anchor, not owner decision, permission grant, submitted artifact, external proof, publication, adoption evidence, benchmark evidence, or gate closure.
+`audit:owner-proof-input-remote-issue` checks the remote issue anchor packet, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-issue-convert` converts a GitHub owner proof input issue body into a draft owner proof input record candidate, not owner decision, permission grant, external proof, publication, or gate closure.
 `audit:owner-proof-input-issue-convert` checks the converter, fixture issue, generated draft record/report, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-review` reviews a draft owner proof input record before reviewed-record promotion, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
@@ -1099,6 +1103,17 @@ npm run audit:owner-proof-input-request
 This writes `.mimesis/owner-actions/proof-input-request.md`.
 It gives the owner one sendable request for `license_or_no_reuse` and `weak_artifact_permission`.
 It is a request only, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
+
+Generate the owner proof input remote issue anchor before treating a GitHub issue as owner input:
+
+```bash
+npm run owner:proof-input-remote-issue
+npm run audit:owner-proof-input-remote-issue
+```
+
+This writes `.mimesis/owner-actions/remote-proof-input-issue-anchor.md`.
+It records https://github.com/svy04/mimesis-engineering/issues/7 as the current owner input anchor.
+It is an anchor only, not owner decision, permission grant, submitted artifact, external proof, proof approval, publication, adoption evidence, benchmark evidence, or gate closure.
 
 Run the owner proof input issue convert step to turn an issue body into a local record candidate:
 

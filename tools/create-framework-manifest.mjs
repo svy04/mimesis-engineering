@@ -237,6 +237,11 @@ const manifest = {
       command: "npm run owner:proof-input-request"
     },
     {
+      name: "owner proof input remote issue anchor",
+      path: ".mimesis/owner-actions/remote-proof-input-issue-anchor.md",
+      command: "npm run owner:proof-input-remote-issue"
+    },
+    {
       name: "owner proof input issue converted fixture",
       path: ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
       command: "npm run owner:proof-input-issue-convert"
@@ -604,6 +609,10 @@ const manifest = {
       purpose: "Generate the owner-facing request for license/no-reuse and one weak artifact without collecting evidence or closing gates."
     },
     {
+      name: "owner:proof-input-remote-issue",
+      purpose: "Generate the remote owner proof input issue anchor without treating the issue as owner decision, proof, or gate closure."
+    },
+    {
       name: "owner:proof-input-issue-convert",
       purpose: "Convert a GitHub owner proof input issue body into a bounded draft owner proof input record without granting permission, creating proof, or closing gates."
     },
@@ -626,6 +635,10 @@ const manifest = {
     {
       name: "audit:owner-proof-input-request",
       purpose: "Check the owner proof input request packet, CLI, public docs, manifests, and no-proof boundaries."
+    },
+    {
+      name: "audit:owner-proof-input-remote-issue",
+      purpose: "Check the remote owner proof input issue anchor, CLI, public docs, manifests, and no-proof boundaries."
     },
     {
       name: "audit:owner-proof-input-issue-convert",

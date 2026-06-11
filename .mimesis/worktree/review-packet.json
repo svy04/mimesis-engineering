@@ -1,21 +1,29 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T09:52:35.205Z",
+  "generatedAt": "2026-06-11T10:12:44.256Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "a1aecc0f4c755105eab0e31368a69c05515df3de",
+    "head": "a6f55fc6a6038c61b13a3044ea4e480290269fe3",
     "dirty": true,
-    "trackedChangedCount": 13,
-    "untrackedCount": 0
+    "trackedChangedCount": 36,
+    "untrackedCount": 4
   },
   "trackedChanges": [
     {
       "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -32,6 +40,14 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
       "status": "M",
@@ -64,12 +80,96 @@
     {
       "status": "M",
       "path": ".mimesis/worktree/review-packet.json"
+    },
+    {
+      "status": "M",
+      "path": "README.md"
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md"
+    },
+    {
+      "status": "M",
+      "path": "STATUS.md"
+    },
+    {
+      "status": "M",
+      "path": "bin/mimesis.mjs"
+    },
+    {
+      "status": "M",
+      "path": "docs/COMPLETION-AUDIT.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/RELEASE-CHECK-ORDER.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/V0.1-RELEASE-PACKET.md"
+    },
+    {
+      "status": "M",
+      "path": "package.json"
+    },
+    {
+      "status": "M",
+      "path": "tools/README.md"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-cli.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-completion-matrix.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "unstagedChanges": [
     {
       "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -86,6 +186,14 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
       "status": "M",
@@ -118,15 +226,95 @@
     {
       "status": "M",
       "path": ".mimesis/worktree/review-packet.json"
+    },
+    {
+      "status": "M",
+      "path": "README.md"
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md"
+    },
+    {
+      "status": "M",
+      "path": "STATUS.md"
+    },
+    {
+      "status": "M",
+      "path": "bin/mimesis.mjs"
+    },
+    {
+      "status": "M",
+      "path": "docs/COMPLETION-AUDIT.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/RELEASE-CHECK-ORDER.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/V0.1-RELEASE-PACKET.md"
+    },
+    {
+      "status": "M",
+      "path": "package.json"
+    },
+    {
+      "status": "M",
+      "path": "tools/README.md"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-cli.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-completion-matrix.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "stagedChanges": [],
   "trackedStatusLines": [
-    "M .mimesis/completion/goal-completion-audit.json",
+    "M .mimesis/claim-packs/public-v0.1.md",
+    " M .mimesis/completion/goal-completion-audit.json",
+    " M .mimesis/framework-manifest.json",
     " M .mimesis/gaps/closure-plan.json",
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/operator-runbooks/current-runbook.md",
+    " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -134,10 +322,47 @@
     " M .mimesis/run_ledger.md",
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
-    " M .mimesis/worktree/review-packet.json"
+    " M .mimesis/worktree/review-packet.json",
+    " M README.md",
+    " M ROADMAP.md",
+    " M STATUS.md",
+    " M bin/mimesis.mjs",
+    " M docs/COMPLETION-AUDIT.md",
+    " M docs/RELEASE-CHECK-ORDER.md",
+    " M docs/STATUS-ROADMAP-SYNC.md",
+    " M docs/V0.1-RELEASE-PACKET.md",
+    " M package.json",
+    " M tools/README.md",
+    " M tools/audit-cli.mjs",
+    " M tools/audit-completion-matrix.mjs",
+    " M tools/audit-framework-manifest.mjs",
+    " M tools/audit-release-artifact-manifest.mjs",
+    " M tools/audit-release-check-order.mjs",
+    " M tools/audit-status-roadmap-sync.mjs",
+    " M tools/create-framework-manifest.mjs",
+    " M tools/create-release-artifact-manifest.mjs",
+    " M tools/validate-mimesis.mjs"
   ],
-  "untrackedRoots": [],
-  "untrackedFilesSample": [],
+  "untrackedRoots": [
+    {
+      "root": ".mimesis/owner-actions",
+      "count": 1
+    },
+    {
+      "root": "docs",
+      "count": 1
+    },
+    {
+      "root": "tools",
+      "count": 2
+    }
+  ],
+  "untrackedFilesSample": [
+    ".mimesis/owner-actions/remote-proof-input-issue-anchor.md",
+    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
+    "tools/audit-owner-proof-input-remote-issue.mjs",
+    "tools/create-owner-proof-input-remote-issue-anchor.mjs"
+  ],
   "sourceCommands": [
     "git status --short",
     "git diff --name-status",

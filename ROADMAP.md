@@ -66,6 +66,7 @@ Includes:
 - owner proof input
 - owner proof input issue
 - owner proof input request
+- owner proof input remote issue
 - owner proof input issue convert
 - owner proof input review
 - owner proof input split
@@ -161,6 +162,7 @@ Candidate work:
 - generated owner proof input template/check before treating the minimum owner proof inputs as reviewed, submitted, or ready for downstream conversion
 - generated owner proof input issue before treating public issue intake as owner decision, permission grant, proof, publication, or gate closure
 - generated owner proof input request before treating owner-facing requests as submitted owner input, permission, proof, publication, or gate closure
+- generated owner proof input remote issue before treating GitHub issue #7 as owner decision, submitted artifact, proof, publication, adoption evidence, benchmark evidence, or gate closure
 - generated owner proof input issue convert before treating issue markdown as reviewed owner decision, permission grant, proof, publication, or gate closure
 - generated owner proof input review before treating a draft owner proof input record as reviewed or downstream-ready
 - generated owner proof input split before treating a single owner proof input record as downstream owner decision/evidence records

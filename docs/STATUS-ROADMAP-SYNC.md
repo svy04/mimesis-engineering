@@ -43,6 +43,7 @@ The audit checks:
 - owner action queue visibility
 - owner proof handoff visibility
 - owner proof input visibility
+- owner proof input remote issue visibility
 - owner proof input review visibility
 - owner proof input split visibility
 - owner decision intake visibility
@@ -83,6 +84,7 @@ The audit currently requires the public status and roadmap to name:
 - owner action queue
 - owner proof handoff
 - owner proof input
+- owner proof input remote issue
 - owner proof input review
 - owner proof input split
 - owner decision intake

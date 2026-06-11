@@ -3085,3 +3085,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 
 - Use issue #7 as the remote owner-input anchor before expecting real owner proof input.
 - Keep all completion gates open until the owner fills the issue with real license/no-reuse and weak artifact permission input, and the local conversion/review/check/split path passes on that real input.
+
+## 2026-06-11 - Owner Proof Input Remote Issue Anchor Slice
+
+## Import
+
+- Re-read the owner proof input request packet, issue packet, review path, issue form, framework manifest, release artifact manifest, release-check order, validator, README, tools README, status, roadmap, completion audit, and open GitHub issue #7.
+- Confirmed issue #7 is the live remote owner-input request, but the local framework did not yet have a generated packet that anchors the issue URL, verification command, and downstream processing path.
+
+## Distill
+
+- Record GitHub issue #7 as a local, machine-checkable owner proof input anchor.
+- Keep the anchor as request and routing evidence only.
+- Do not choose a license, grant weak artifact permission, submit owner evidence, create proof, publish, claim adoption, claim benchmark evidence, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-remote-issue.mjs`, which failed first for the expected missing remote issue anchor packet, generator, docs, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `tools/create-owner-proof-input-remote-issue-anchor.mjs`, `docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md`, and generated `.mimesis/owner-actions/remote-proof-input-issue-anchor.md`.
+- GREEN: wired `owner:proof-input-remote-issue` and `audit:owner-proof-input-remote-issue` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `npm run owner:proof-input-remote-issue` writes `.mimesis/owner-actions/remote-proof-input-issue-anchor.md`.
+- The anchor records the issue URL `https://github.com/svy04/mimesis-engineering/issues/7`, the remote verification command `gh issue view 7 --json number,title,state,url,labels,body,createdAt`, the required owner fields `license_or_no_reuse` and `weak_artifact_permission`, and the downstream local path.
+- The release order now keeps `owner:proof-input-request -> owner:proof-input-remote-issue -> owner:proof-input-issue-convert -> owner:proof-input-review -> owner:proof-input-check -> owner:proof-input-split`.
+
+## Verify
+
+- `npm run owner:proof-input-remote-issue` generated the local anchor packet.
+- `npm run audit:owner-proof-input-remote-issue`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+- `npm run release:check` passed with the remote issue anchor slice included.
+
+## Remember
+
+- Use `.mimesis/owner-actions/remote-proof-input-issue-anchor.md` as the local pointer to remote issue #7.
+- Treat issue #7 and its local anchor as owner input coordination only; they are not owner answers, weak artifact permission, external proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
+- Keep the remaining v0.2 gates open until the owner fills issue #7 and the real-input conversion, review, ready check, split, proof intake, and evidence-review chain passes.

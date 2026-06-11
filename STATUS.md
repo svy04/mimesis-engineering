@@ -85,6 +85,7 @@ Release readiness:
 - owner proof handoff
 - owner proof input
 - owner proof input issue
+- owner proof input remote issue
 - owner proof input review
 - owner proof input split
 - owner evidence attachment form
@@ -200,6 +201,7 @@ It is not a shipped plugin.
 - The repository includes `owner:proof-input-template`, `owner:proof-input-check`, and `audit:owner-proof-input` for generating and checking an owner proof input record before downstream conversion without choosing a license, submitting an artifact, granting permission, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-issue` and `audit:owner-proof-input-issue` for generating and checking a public owner proof input issue handoff without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-request` and `audit:owner-proof-input-request` for generating and checking an owner proof input request packet without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
+- The repository includes `owner:proof-input-remote-issue` and `audit:owner-proof-input-remote-issue` for recording and checking the current remote owner proof input issue anchor without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, proving benchmark results, or closing gates.
 - The repository includes `owner:proof-input-issue-convert` and `audit:owner-proof-input-issue-convert` for the owner proof input issue convert path: converting a GitHub owner proof input issue body into a draft owner proof input record candidate without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-review` and `audit:owner-proof-input-review` for reviewing a draft owner proof input record before reviewed-record promotion without choosing a license, granting permission, submitting an artifact, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-split` and `audit:owner-proof-input-split` for routing a reviewed owner proof input into downstream owner decision/evidence record candidates without choosing a license, submitting an artifact, granting permission, creating external proof, approving proof, publishing, proving adoption, or closing gates.
