@@ -18,11 +18,14 @@ It is not submitted evidence, attached evidence, an owner decision, publication,
 - submission fields: 6
 - missing fields: 6
 - submitted fields: 0
+- required field: none
+- required field status: not requested
 - required gate ids: 9
 
 ## Gate Movement Gate
 
 - require gate ready: false
+- field movement ready: no
 - case movement ready: no
 - gate movement ready: no
 - next command: `npm run gate:closure-readiness && npm run audit:gate-closure-readiness`

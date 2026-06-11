@@ -47,9 +47,10 @@ const requiredBoundaries = [
 ];
 
 function usage() {
-  console.log(`Usage: mimesis owner:evidence-submission-check [path/to/owner-evidence-submission-record.json] [--require-gate-ready] [--write-report path/to/report.md]
+  console.log(`Usage: mimesis owner:evidence-submission-check [path/to/owner-evidence-submission-record.json] [--require-field weak_artifact_permission] [--require-gate-ready] [--write-report path/to/report.md]
 
 Checks a schema-shaped owner evidence submission record before it can influence gate movement.
+Use --require-field to check one field, such as weak_artifact_permission, before field-level review movement.
 It does not submit evidence, attach evidence, choose a license, create proof, publish, or close gates.
 `);
 }
@@ -91,7 +92,7 @@ function arrayIncludesAll(source, expected) {
   return expected.every((item) => source?.includes(item));
 }
 
-function validateRecord(record, requireGateReady) {
+function validateRecord(record, requireGateReady, requiredFieldName) {
   const failures = [];
   const warnings = [];
   const requiredKeys = [
@@ -200,6 +201,20 @@ function validateRecord(record, requireGateReady) {
     warnings.push("submitted owner evidence still needs gate-specific review before any closure claim");
   }
 
+  if (requiredFieldName) {
+    if (!requiredFields.includes(requiredFieldName)) {
+      failures.push(`required field ${requiredFieldName} is not supported`);
+    } else {
+      const requiredField = fields[requiredFieldName];
+      if (record.status !== "reviewed") {
+        failures.push(`record status must be reviewed before required field ${requiredFieldName} can move`);
+      }
+      if (requiredField?.submissionStatus !== "submitted") {
+        failures.push(`required field ${requiredFieldName} must be submitted before field-level movement`);
+      }
+    }
+  }
+
   if (requireGateReady) {
     if (record.status !== "reviewed") {
       failures.push("record status must be reviewed before gate movement");
@@ -225,6 +240,9 @@ if (args.includes("--help") || args.includes("-h")) {
 
 const recordArg = positional[0] || flags.get("record") || ".mimesis/owner-actions/fixture-evidence-submission-record.json";
 const requireGateReady = flags.has("require-gate-ready");
+const requiredFieldName = flags.has("require-field") && flags.get("require-field") !== true
+  ? String(flags.get("require-field"))
+  : "";
 const writeReport = flags.has("write-report");
 const reportArg = flags.get("write-report") === true
   ? ".mimesis/owner-actions/fixture-evidence-submission-check.md"
@@ -237,11 +255,20 @@ if (!fs.existsSync(recordPath) || !fs.statSync(recordPath).isFile()) {
 }
 
 const record = readJson(recordPath);
-const { failures, warnings, fieldCount, missingCount, submittedCount } = validateRecord(record, requireGateReady);
+const { failures, warnings, fieldCount, missingCount, submittedCount } = validateRecord(record, requireGateReady, requiredFieldName);
 const source = displayPath(recordPath);
 const gateMovementReady = failures.length === 0 && missingCount === 0 && record.status === "reviewed";
+const requestedField = requiredFieldName ? record.fields?.[requiredFieldName] : null;
+const fieldMovementReady = Boolean(
+  requiredFieldName &&
+    failures.length === 0 &&
+    record.status === "reviewed" &&
+    requestedField?.submissionStatus === "submitted",
+);
 const reportStatus = failures.length
   ? "not ready owner evidence submission, gates remain blocked."
+  : fieldMovementReady
+    ? "reviewed owner evidence field, gates remain blocked until gate-specific review."
   : missingCount > 0
     ? "not submitted owner evidence, gates remain blocked."
     : "reviewed owner evidence submission, gates remain blocked until gate-specific review.";
@@ -267,11 +294,14 @@ It is not submitted evidence, attached evidence, an owner decision, publication,
 - submission fields: ${fieldCount}
 - missing fields: ${missingCount}
 - submitted fields: ${submittedCount}
+- required field: ${requiredFieldName || "none"}
+- required field status: ${requiredFieldName ? requestedField?.submissionStatus ?? "missing" : "not requested"}
 - required gate ids: ${Array.isArray(record.requiredGateIds) ? record.requiredGateIds.length : 0}
 
 ## Gate Movement Gate
 
 - require gate ready: ${requireGateReady}
+- field movement ready: ${fieldMovementReady ? "yes" : "no"}
 - case movement ready: ${gateMovementReady ? "yes" : "no"}
 - gate movement ready: ${gateMovementReady ? "yes" : "no"}
 - next command: \`npm run gate:closure-readiness && npm run audit:gate-closure-readiness\`

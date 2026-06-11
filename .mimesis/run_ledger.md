@@ -2432,3 +2432,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Future owner-facing handoff files should not embed live git/sync snapshots.
 - Use `npm run audit:sync:strict` as the current sync proof when the owner intends publication, release, tag, package, action, or plugin movement.
 - Keep `.mimesis/sync-status.md` as a local sync report, not an owner decision signal.
+
+## 2026-06-11 - Field-Level Owner Evidence Readiness Slice
+
+## Import
+
+- Re-read the current clean PR state, gap register, goal completion audit, owner evidence submission checker, owner evidence submission audit, README, tools README, and owner evidence docs.
+- Found that `owner:evidence-submission-check --require-gate-ready` required all owner evidence fields, which made the first v0.2 weak-artifact path heavier than the stated "Bring one weak artifact" standard.
+
+## Distill
+
+- Add a narrow field-level readiness gate for one owner evidence field.
+- Preserve the boundary that field-level readiness is not submitted evidence, gate closure, external proof, publication, permission, adoption, benchmark proof, or completion.
+
+## Capsule
+
+- RED: strengthened `tools/audit-owner-evidence-submission-check.mjs` so the existing fixture/report/docs failed without `--require-field weak_artifact_permission` support.
+- GREEN: added `--require-field <field>` to `tools/check-owner-evidence-submission-record.mjs`.
+- GREEN: documented the weak-artifact field-level path in `docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md`, `README.md`, `tools/README.md`, and `docs/COMPLETION-AUDIT.md`.
+
+## Shard
+
+- `--require-field weak_artifact_permission` now rejects the missing fixture with a named required-field failure.
+- A reviewed record with only `weak_artifact_permission` submitted can pass field-level readiness while gate movement remains `no`.
+- The fixture report now records `required field: none` and `field movement ready: no` so default generated evidence stays bounded.
+
+## Verify
+
+- `npm run audit:owner-evidence-submission-check` failed first for the expected missing field-level readiness docs/report behavior.
+- After implementation, `npm run audit:owner-evidence-submission-check`, `npm run audit:completion`, `npm run validate`, and `npm run release:check` passed.
+- `npm run cli -- owner:evidence-submission-check .mimesis/owner-actions/fixture-evidence-submission-record.json --require-field weak_artifact_permission` failed as expected because the fixture is not reviewed and the field is not submitted.
+
+## Remember
+
+- Use field-level readiness when one permissioned weak artifact is supplied, before moving into case review.
+- Keep `--require-gate-ready` for all-field owner evidence readiness only.
+- Do not treat field-level readiness as proof, permission, gate closure, publication, adoption, benchmark evidence, or objective completion.

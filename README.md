@@ -995,6 +995,14 @@ npm run audit:owner-evidence-submission-check
 This writes `.mimesis/owner-actions/fixture-evidence-submission-check.md`.
 It does not submit evidence, attach evidence, publish, create external proof, prove adoption, or close gates.
 
+Check one field after the owner supplies a permissioned weak artifact record:
+
+```bash
+npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission
+```
+
+This is a field-level readiness check for case review. It is not gate closure, external proof, publication, adoption evidence, or permission by itself.
+
 Generate the current state summary:
 
 ```bash

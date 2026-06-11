@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T04:38:09.548Z",
+  "generatedAt": "2026-06-11T04:49:11.907Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,9 +12,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "e440ad833bb52b1bd0243703258ec6f0928a39d4",
+    "head": "ba456b9e1abd27fac5079371d16e67eb894c4091",
     "dirty": true,
-    "trackedChangedCount": 31,
+    "trackedChangedCount": 20,
     "untrackedCount": 0
   },
   "sourceFiles": [
@@ -29,15 +29,7 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/owner-actions/answer-review.md",
-    ".mimesis/owner-actions/current-action-queue.md",
-    ".mimesis/owner-actions/decision-intake.md",
-    ".mimesis/owner-actions/evidence-attachment-form.md",
-    ".mimesis/owner-actions/evidence-bundle.md",
-    ".mimesis/owner-actions/evidence-review.md",
-    ".mimesis/owner-actions/fixture-answer-record.json",
-    ".mimesis/owner-actions/fixture-evidence-record.json",
-    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    ".mimesis/owner-actions/fixture-evidence-submission-check.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -46,41 +38,32 @@
     ".mimesis/state/current-state.json",
     ".mimesis/sync-status.md",
     ".mimesis/worktree/review-packet.json",
-    "docs/OWNER-ACTION-QUEUE.md",
-    "docs/OWNER-DECISION-INTAKE.md",
-    "docs/RELEASE-DECISION-RECORD.md",
-    "tools/audit-owner-action-queue.mjs",
-    "tools/audit-owner-decision-intake.mjs",
-    "tools/audit-release-decision-record.mjs",
-    "tools/create-owner-action-queue.mjs",
-    "tools/create-owner-decision-intake.mjs",
-    "tools/create-release-decision-record.mjs"
+    "README.md",
+    "docs/COMPLETION-AUDIT.md",
+    "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
+    "tools/README.md",
+    "tools/audit-owner-evidence-submission-check.mjs",
+    "tools/check-owner-evidence-submission-record.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 0,
-      "sample": [],
+      "count": 1,
+      "sample": [
+        "README.md"
+      ],
       "note": "Tracked root-framework files that need human review."
     },
     {
       "name": "generated protocol artifacts",
-      "count": 22,
+      "count": 14,
       "sample": [
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/owner-actions/answer-review.md",
-        ".mimesis/owner-actions/current-action-queue.md",
-        ".mimesis/owner-actions/decision-intake.md",
-        ".mimesis/owner-actions/evidence-attachment-form.md",
-        ".mimesis/owner-actions/evidence-bundle.md",
-        ".mimesis/owner-actions/evidence-review.md",
-        ".mimesis/owner-actions/fixture-answer-record.json",
-        ".mimesis/owner-actions/fixture-evidence-record.json",
-        ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+        ".mimesis/owner-actions/fixture-evidence-submission-check.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -96,22 +79,19 @@
       "name": "public documentation",
       "count": 3,
       "sample": [
-        "docs/OWNER-ACTION-QUEUE.md",
-        "docs/OWNER-DECISION-INTAKE.md",
-        "docs/RELEASE-DECISION-RECORD.md"
+        "docs/COMPLETION-AUDIT.md",
+        "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
+        "README.md"
       ],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
     {
       "name": "tooling and cli",
-      "count": 6,
+      "count": 3,
       "sample": [
-        "tools/audit-owner-action-queue.mjs",
-        "tools/audit-owner-decision-intake.mjs",
-        "tools/audit-release-decision-record.mjs",
-        "tools/create-owner-action-queue.mjs",
-        "tools/create-owner-decision-intake.mjs",
-        "tools/create-release-decision-record.mjs"
+        "tools/audit-owner-evidence-submission-check.mjs",
+        "tools/check-owner-evidence-submission-record.mjs",
+        "tools/README.md"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },

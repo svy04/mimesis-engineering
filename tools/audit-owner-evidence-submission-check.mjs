@@ -110,6 +110,8 @@ for (const text of [
   "owner evidence submission check",
   "not submitted owner evidence",
   "gates remain blocked",
+  "--require-field weak_artifact_permission",
+  "field-level readiness",
   "does not submit evidence",
   "does not attach evidence",
   "does not close gates",
@@ -142,6 +144,8 @@ for (const text of [
   "not_submitted_owner_evidence",
   "submission fields: 6",
   "missing fields: 6",
+  "required field: none",
+  "field movement ready: no",
   "case movement ready: no",
   "does not submit evidence",
   "does not attach evidence",
@@ -254,6 +258,63 @@ if (!failures.length) {
   }
   if (!`${bad.stdout}\n${bad.stderr}`.toLowerCase().includes("not ready")) {
     failures.push("owner evidence submission check rejection output must say not ready");
+  }
+
+  const missingField = runTool([
+    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    "--require-field",
+    "weak_artifact_permission",
+  ]);
+  if (missingField.status === 0) {
+    failures.push("owner evidence submission check must reject missing fixture evidence when a required field is requested");
+  }
+  if (!`${missingField.stdout}\n${missingField.stderr}`.toLowerCase().includes("required field weak_artifact_permission")) {
+    failures.push("owner evidence submission check missing-field rejection must name required field weak_artifact_permission");
+  }
+
+  const fixtureRecord = readJson(".mimesis/owner-actions/fixture-evidence-submission-record.json");
+  const reviewedWeakArtifactRecord = path.join(tmpDir, "reviewed-weak-artifact-owner-evidence.json");
+  fixtureRecord.status = "reviewed";
+  fixtureRecord.fields.weak_artifact_permission = {
+    ...fixtureRecord.fields.weak_artifact_permission,
+    submissionStatus: "submitted",
+    ownerSubmittedEvidence: "permissioned or clearly redacted weak artifact attached for field-level review only",
+    ownerAttachmentSlot: "examples/permissioned-case-intake.md",
+    safetyCheck: "owner confirms permission, redaction, submitter scope, and publication scope before case movement",
+    boundary: "does not create external proof, close gates, publish, or prove adoption",
+  };
+  fs.writeFileSync(reviewedWeakArtifactRecord, `${JSON.stringify(fixtureRecord, null, 2)}\n`);
+
+  const fieldReport = path.join(tmpDir, "reviewed-weak-artifact-field-check.md");
+  const fieldReady = runTool([
+    reviewedWeakArtifactRecord,
+    "--require-field",
+    "weak_artifact_permission",
+    "--write-report",
+    fieldReport,
+  ]);
+  if (fieldReady.status !== 0) {
+    failures.push(`owner evidence submission check must accept reviewed weak_artifact_permission field evidence:\n${fieldReady.stdout}\n${fieldReady.stderr}`.trim());
+  }
+  const fieldReportText = fs.existsSync(fieldReport) ? fs.readFileSync(fieldReport, "utf8") : "";
+  for (const text of [
+    "required field: weak_artifact_permission",
+    "field movement ready: yes",
+    "gate movement ready: no",
+    "reviewed owner evidence field, gates remain blocked until gate-specific review.",
+  ]) {
+    if (!fieldReportText.toLowerCase().includes(text.toLowerCase())) {
+      failures.push(`field-level owner evidence report missing text: ${text}`);
+    }
+  }
+
+  const wrongField = runTool([
+    reviewedWeakArtifactRecord,
+    "--require-field",
+    "publication_scope",
+  ]);
+  if (wrongField.status === 0) {
+    failures.push("owner evidence submission check must reject a requested field that remains missing");
   }
 }
 

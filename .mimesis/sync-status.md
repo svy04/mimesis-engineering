@@ -10,7 +10,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 32
+- changed tracked files: 21
 - untracked files: 0
 
 ## Conclusion
@@ -33,15 +33,7 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
- M .mimesis/owner-actions/answer-review.md
- M .mimesis/owner-actions/current-action-queue.md
- M .mimesis/owner-actions/decision-intake.md
- M .mimesis/owner-actions/evidence-attachment-form.md
- M .mimesis/owner-actions/evidence-bundle.md
- M .mimesis/owner-actions/evidence-review.md
- M .mimesis/owner-actions/fixture-answer-record.json
- M .mimesis/owner-actions/fixture-evidence-record.json
- M .mimesis/owner-actions/fixture-evidence-submission-record.json
+ M .mimesis/owner-actions/fixture-evidence-submission-check.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/release-decisions/owner-decision-record.json
@@ -50,13 +42,10 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/state/current-state.json
  M .mimesis/sync-status.md
  M .mimesis/worktree/review-packet.json
- M docs/OWNER-ACTION-QUEUE.md
- M docs/OWNER-DECISION-INTAKE.md
- M docs/RELEASE-DECISION-RECORD.md
- M tools/audit-owner-action-queue.mjs
- M tools/audit-owner-decision-intake.mjs
- M tools/audit-release-decision-record.mjs
- M tools/create-owner-action-queue.mjs
- M tools/create-owner-decision-intake.mjs
- M tools/create-release-decision-record.mjs
+ M README.md
+ M docs/COMPLETION-AUDIT.md
+ M docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md
+ M tools/README.md
+ M tools/audit-owner-evidence-submission-check.mjs
+ M tools/check-owner-evidence-submission-record.mjs
 ```

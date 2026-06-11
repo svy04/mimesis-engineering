@@ -1718,8 +1718,14 @@ or:
 npm run cli -- owner:evidence-submission-check .mimesis/owner-actions/fixture-evidence-submission-record.json --write-report .mimesis/owner-actions/fixture-evidence-submission-check.md
 ```
 
+For one permissioned weak artifact, check only the field that can move into case review:
+
+```bash
+npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission
+```
+
 This writes `.mimesis/owner-actions/fixture-evidence-submission-check.md`.
-It checks an owner evidence submission record before gate movement.
+It checks an owner evidence submission record before gate movement, and `--require-field weak_artifact_permission` checks field-level readiness without requiring unrelated publication, package, benchmark, or adoption fields.
 It does not submit evidence, attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
 
 ## Audit Owner Evidence Submission Check
@@ -1736,7 +1742,7 @@ or:
 npm run cli -- audit:owner-evidence-submission-check
 ```
 
-This checks package script wiring, CLI exposure, release preflight order, generated report sections, unsafe-record rejection, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-submitted-evidence/no-closure boundaries.
+This checks package script wiring, CLI exposure, release preflight order, generated report sections, field-level readiness, unsafe-record rejection, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-submitted-evidence/no-closure boundaries.
 
 ## Create Current State Summary
 

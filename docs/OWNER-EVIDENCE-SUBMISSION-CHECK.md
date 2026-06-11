@@ -9,6 +9,14 @@ npm run owner:evidence-submission-check
 npm run audit:owner-evidence-submission-check
 ```
 
+It can also check one submitted owner evidence field before a narrower review movement:
+
+```bash
+npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission
+```
+
+Use this field-level readiness check when the owner has supplied one permissioned or clearly redacted weak artifact and the operator needs to decide whether the `weak_artifact_permission` field is ready for case review. It does not close the external-artifact gate by itself.
+
 Generated report:
 
 - `.mimesis/owner-actions/fixture-evidence-submission-check.md`
@@ -34,11 +42,13 @@ For the current fixture, the expected answer is no: not submitted owner evidence
 - missing owner evidence remains explicit
 - safety confirmations preserve no-submission and no-attachment boundaries
 - heuristic secret patterns are rejected
+- `--require-field weak_artifact_permission` requires that one field to be `submitted` on a `reviewed` record
 - `--require-gate-ready` rejects records that are not reviewed and fully submitted
 
 ## Allowed Claim
 
 Mimesis can check an owner evidence submission record before gate movement.
+Mimesis can check field-level readiness for one owner evidence field before gate-specific review.
 
 ## Disallowed Claim
 
