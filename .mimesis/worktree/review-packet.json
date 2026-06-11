@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T08:49:48.946Z",
+  "generatedAt": "2026-06-11T09:11:23.346Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "02130c1629dbfc1352ad8aa206ef5471148199b1",
+    "head": "013056e6ae50830094407a2c877889a789b6d9b9",
     "dirty": true,
-    "trackedChangedCount": 33,
-    "untrackedCount": 5
+    "trackedChangedCount": 35,
+    "untrackedCount": 6
   },
   "trackedChanges": [
     {
@@ -40,6 +40,10 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
     },
     {
       "status": "M",
@@ -119,11 +123,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-framework-manifest.mjs"
+      "path": "tools/audit-completion-matrix.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-issue-forms.mjs"
+      "path": "tools/audit-framework-manifest.mjs"
     },
     {
       "status": "M",
@@ -132,6 +136,10 @@
     {
       "status": "M",
       "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
     },
     {
       "status": "M",
@@ -177,6 +185,10 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -253,11 +265,11 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-framework-manifest.mjs"
+      "path": "tools/audit-completion-matrix.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-issue-forms.mjs"
+      "path": "tools/audit-framework-manifest.mjs"
     },
     {
       "status": "M",
@@ -266,6 +278,10 @@
     {
       "status": "M",
       "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
     },
     {
       "status": "M",
@@ -289,6 +305,7 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/operator-runbooks/current-runbook.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
@@ -308,22 +325,19 @@
     " M package.json",
     " M tools/README.md",
     " M tools/audit-cli.mjs",
+    " M tools/audit-completion-matrix.mjs",
     " M tools/audit-framework-manifest.mjs",
-    " M tools/audit-issue-forms.mjs",
     " M tools/audit-release-artifact-manifest.mjs",
     " M tools/audit-release-check-order.mjs",
+    " M tools/audit-status-roadmap-sync.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": ".github/ISSUE_TEMPLATE",
-      "count": 1
-    },
-    {
       "root": ".mimesis/owner-actions",
-      "count": 1
+      "count": 3
     },
     {
       "root": "docs",
@@ -335,11 +349,12 @@
     }
   ],
   "untrackedFilesSample": [
-    ".github/ISSUE_TEMPLATE/owner-proof-input.yml",
-    ".mimesis/owner-actions/proof-input-issue-packet.md",
-    "docs/OWNER-PROOF-INPUT-ISSUE.md",
-    "tools/audit-owner-proof-input-issue.mjs",
-    "tools/create-owner-proof-input-issue-packet.mjs"
+    ".mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md",
+    ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
+    ".mimesis/owner-actions/fixture-owner-proof-input-issue.md",
+    "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
+    "tools/audit-owner-proof-input-issue-convert.mjs",
+    "tools/convert-owner-proof-input-issue.mjs"
   ],
   "sourceCommands": [
     "git status --short",

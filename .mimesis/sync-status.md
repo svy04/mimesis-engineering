@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 34
-- untracked files: 5
+- changed tracked files: 36
+- untracked files: 6
 
 ## Conclusion
 
@@ -35,6 +35,7 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
+ M .mimesis/operator-runbooks/current-runbook.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -54,16 +55,18 @@ It does not publish, push, tag, release, or create a pull request.
  M package.json
  M tools/README.md
  M tools/audit-cli.mjs
+ M tools/audit-completion-matrix.mjs
  M tools/audit-framework-manifest.mjs
- M tools/audit-issue-forms.mjs
  M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
+ M tools/audit-status-roadmap-sync.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .github/ISSUE_TEMPLATE/owner-proof-input.yml
-?? .mimesis/owner-actions/proof-input-issue-packet.md
-?? docs/OWNER-PROOF-INPUT-ISSUE.md
-?? tools/audit-owner-proof-input-issue.mjs
-?? tools/create-owner-proof-input-issue-packet.mjs
+?? .mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md
+?? .mimesis/owner-actions/fixture-owner-proof-input-issue-record.json
+?? .mimesis/owner-actions/fixture-owner-proof-input-issue.md
+?? docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md
+?? tools/audit-owner-proof-input-issue-convert.mjs
+?? tools/convert-owner-proof-input-issue.mjs
 ```

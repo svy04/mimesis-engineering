@@ -1921,6 +1921,40 @@ npm run cli -- audit:owner-proof-input-issue
 
 This checks the public owner proof input issue form, generated packet, package script wiring, CLI exposure, release preflight order, issue-form audit coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
 
+## Convert Owner Proof Input Issue
+
+Run:
+
+```bash
+npm run owner:proof-input-issue-convert
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-issue-convert path/to/owner-proof-input-issue.md --output path/to/owner-proof-input-record.json --report path/to/report.md --status reviewed --require-complete
+```
+
+This writes `.mimesis/owner-actions/fixture-owner-proof-input-issue-record.json` and `.mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md` for the default fixture issue.
+It converts issue body markdown into an owner proof input record candidate.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Issue Convert
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-issue-convert
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-issue-convert
+```
+
+This checks the converter, fixture issue body, generated draft record/report, package script wiring, CLI exposure, release preflight order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, smoke conversion, and no-proof/no-closure boundaries.
+
 ## Split Owner Proof Input
 
 Run:

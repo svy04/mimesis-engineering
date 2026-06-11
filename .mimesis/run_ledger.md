@@ -2936,3 +2936,41 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use the owner proof input issue form as the public intake handoff for the two minimum owner inputs.
 - Convert a reviewed issue into an owner proof input record before running `owner:proof-input-check --require-ready` or `owner:proof-input-split`.
 - Keep all proof, license, publication, adoption, benchmark, sync, and gate closure claims blocked until direct owner/external evidence exists.
+
+## 2026-06-11 - Owner Proof Input Issue Convert Slice
+
+## Import
+
+- Re-read the owner proof input issue handoff, owner proof input template/checker, owner proof input split tool, release-check order, framework manifest, release artifact manifest, validator, README, tools README, status, roadmap, release packet, and completion audit.
+- Found that the repository had a public owner proof input issue form and local proof input records, but no converter from GitHub issue body markdown into a local owner proof input record candidate.
+
+## Distill
+
+- Add a converter from GitHub owner proof input issue markdown to a bounded owner proof input record.
+- Keep default output as a fixture draft record, not ready for downstream conversion.
+- Allow `--status reviewed --require-complete` only as an explicit reviewed-record path, while still requiring downstream proof input check, split, license/evidence checks, proof intake, and gate review.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-issue-convert.mjs`, which failed first for the expected missing converter, fixture issue, converted record/report, docs, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `.mimesis/owner-actions/fixture-owner-proof-input-issue.md`, `tools/convert-owner-proof-input-issue.mjs`, `docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md`, `.mimesis/owner-actions/fixture-owner-proof-input-issue-record.json`, and `.mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md`.
+- GREEN: wired `owner:proof-input-issue-convert` and `audit:owner-proof-input-issue-convert` through package scripts, CLI, release order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `npm run owner:proof-input-issue-convert` converts the local fixture issue into a draft owner proof input record and conversion report.
+- `npm run cli -- owner:proof-input-issue-convert path/to/owner-proof-input-issue.md --output path/to/owner-proof-input-record.json --report path/to/report.md --status reviewed --require-complete` converts a reviewed issue body into a reviewed record candidate.
+- The converter preserves no-license-choice, no-permission-grant, no-submitted-artifact, no-external-proof, no-proof-approval, no-publication, and no-gate-closure boundaries.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-issue-convert.mjs` failed first for the expected missing issue conversion surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input-issue-convert`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+- A reviewed fixture smoke passed through `convert-owner-proof-input-issue.mjs --status reviewed --require-complete`, `check-owner-proof-input-record.mjs --require-ready`, and `split-owner-proof-input-record.mjs --require-ready` using temporary files.
+- `npm run release:check` passed with the owner proof input issue convert slice included.
+
+## Remember
+
+- Use owner proof input issue convert after public issue intake and before proof input check/split.
+- Treat converted records as candidates only; they do not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, prove adoption, prove benchmark results, or close gates.
+- Keep the remaining v0.2 gates open until the owner supplies real license/no-reuse input, one permissioned weak artifact, proof execution evidence, benchmark/adoption evidence, and fresh strict sync evidence.

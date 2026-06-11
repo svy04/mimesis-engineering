@@ -353,6 +353,10 @@ npm run cli -- audit:goal-completion-audit
 npm run cli -- owner:queue
 npm run cli -- owner:proof-handoff
 npm run cli -- audit:owner-proof-handoff
+npm run cli -- owner:proof-input-issue
+npm run cli -- owner:proof-input-issue-convert
+npm run cli -- audit:owner-proof-input-issue
+npm run cli -- audit:owner-proof-input-issue-convert
 npm run cli -- owner:proof-input-template
 npm run cli -- owner:proof-input-check
 npm run cli -- owner:proof-input-split
@@ -442,6 +446,9 @@ It does not prove npm package release.
 `owner:proof-input-template` creates a schema-shaped owner proof input template for `license_or_no_reuse` and `weak_artifact_permission`, not an owner decision, submitted artifact, permission grant, publication, external proof, proof approval, or gate closure.
 `owner:proof-input-check` checks that owner proof input record before downstream conversion; `--require-ready` fails until the owner has reviewed and submitted both minimum inputs.
 `audit:owner-proof-input` checks the template, checker, CLI, docs, manifests, release order, and no-decision/no-proof boundary.
+`owner:proof-input-issue` creates the public owner proof input issue handoff packet, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
+`owner:proof-input-issue-convert` converts a GitHub owner proof input issue body into a draft owner proof input record candidate, not owner decision, permission grant, external proof, publication, or gate closure.
+`audit:owner-proof-input-issue-convert` checks the converter, fixture issue, generated draft record/report, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:proof-input-split` splits a reviewed owner proof input into downstream owner decision/evidence record candidates; the default template writes a blocked split report only.
 `audit:owner-proof-input-split` checks the split report, candidate routing, downstream smoke paths, CLI, docs, manifests, release order, and no-proof/no-closure boundary.
 `owner:decision-intake` creates an owner decision intake form, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
@@ -1073,6 +1080,17 @@ npm run audit:owner-proof-input-issue
 This writes `.mimesis/owner-actions/proof-input-issue-packet.md`.
 It connects `.github/ISSUE_TEMPLATE/owner-proof-input.yml` to the local owner proof input path.
 It is a handoff only, not license choice, permission grant, proof approval, publication, or gate closure.
+
+Run the owner proof input issue convert step to turn an issue body into a local record candidate:
+
+```bash
+npm run owner:proof-input-issue-convert
+npm run audit:owner-proof-input-issue-convert
+```
+
+This writes `.mimesis/owner-actions/fixture-owner-proof-input-issue-record.json` and `.mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md` from `.mimesis/owner-actions/fixture-owner-proof-input-issue.md`.
+For a real reviewed owner issue, run `npm run cli -- owner:proof-input-issue-convert path/to/owner-proof-input-issue.md --output path/to/owner-proof-input-record.json --report path/to/report.md --status reviewed --require-complete`.
+It is a conversion candidate only, not license choice, permission grant, submitted artifact, external proof, proof approval, publication, or gate closure.
 
 Run the owner proof input split for downstream record candidates:
 
