@@ -2358,3 +2358,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Future gate board work should avoid committed branch/head/upstream/dirty-worktree snapshots.
 - Use `npm run audit:sync` only when a local sync report file is needed.
 - Use `npm run audit:sync:strict` as the current non-writing sync proof after the intended branch is clean and pushed.
+
+## 2026-06-11 - Runtime-Only Release Execution Boundary Slice
+
+## Import
+
+- Re-read the current PR state, gap register, owner action queue, release execution packet, completion audit, release-execution generator/audit, and release execution docs.
+- Confirmed the PR branch was clean and synced, while the committed release execution packet still embedded a stale branch/head/dirty-worktree snapshot and embedded sync report from before the last commit.
+
+## Distill
+
+- Keep the release execution packet as a stable owner handoff before any owner-controlled release action.
+- Move current git/sync proof back to runtime commands, especially `npm run release:check:public` and `npm run audit:sync:strict`.
+- Preserve the boundary that this slice does not publish, tag, choose a license, create external proof, prove adoption, or mark the active goal complete.
+
+## Capsule
+
+- RED: strengthened `tools/audit-release-execution-packet.mjs` first so the existing committed packet failed for missing runtime execution gate text and for embedding volatile execution snapshot sections.
+- GREEN: changed `tools/create-release-execution-packet.mjs` to emit a `Runtime Execution Gates` section and remove branch, commit hash, upstream head, dirty-worktree count, changed-entry list, and embedded sync report text.
+- UPDATED: aligned `docs/RELEASE-EXECUTION-PACKET.md` and `tools/README.md` with the stable handoff / runtime proof split.
+
+## Shard
+
+- `.mimesis/release-execution/v0.1-owner-handoff.md` now points operators to runtime commands instead of presenting stale local git evidence as committed proof.
+- `tools/audit-release-execution-packet.mjs` now rejects volatile execution snapshot text in the committed release execution packet.
+- `tools/create-release-execution-packet.mjs` no longer shells out to git for this committed packet.
+
+## Verify
+
+- The first `npm run audit:release-execution` run failed for the expected missing runtime-only execution boundary and forbidden volatile snapshot text.
+- After implementation, `npm run release:execution-packet` regenerated `.mimesis/release-execution/v0.1-owner-handoff.md`.
+- `npm run audit:release-execution` passed after regeneration.
+
+## Remember
+
+- Future release execution packet work should avoid committed branch/head/upstream/dirty-worktree snapshots.
+- Use `npm run release:check:public` and `npm run audit:sync:strict` as runtime proof before owner-controlled release action.
+- Use worktree/release review packets for local review inventories, but do not treat committed handoff packets as live sync proof.

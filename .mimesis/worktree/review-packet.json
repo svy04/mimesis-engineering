@@ -1,15 +1,15 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T04:16:39.518Z",
+  "generatedAt": "2026-06-11T04:25:00.361Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "187f4cca4720556b90f30e4471a2e3852d204459",
+    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
     "dirty": true,
-    "trackedChangedCount": 21,
+    "trackedChangedCount": 18,
     "untrackedCount": 0
   },
   "trackedChanges": [
@@ -35,14 +35,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/gates/current-gateboard.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -79,23 +71,19 @@
     },
     {
       "status": "M",
-      "path": "README.md"
+      "path": "docs/RELEASE-EXECUTION-PACKET.md"
     },
     {
       "status": "M",
-      "path": "docs/GAP-REGISTER.md"
+      "path": "tools/README.md"
     },
     {
       "status": "M",
-      "path": "docs/GATEBOARD.md"
+      "path": "tools/audit-release-execution-packet.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-gateboard.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-gateboard.mjs"
+      "path": "tools/create-release-execution-packet.mjs"
     }
   ],
   "unstagedChanges": [
@@ -121,14 +109,6 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/gates/current-gateboard.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/operator-runbooks/current-runbook.md"
-    },
-    {
-      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -165,23 +145,19 @@
     },
     {
       "status": "M",
-      "path": "README.md"
+      "path": "docs/RELEASE-EXECUTION-PACKET.md"
     },
     {
       "status": "M",
-      "path": "docs/GAP-REGISTER.md"
+      "path": "tools/README.md"
     },
     {
       "status": "M",
-      "path": "docs/GATEBOARD.md"
+      "path": "tools/audit-release-execution-packet.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-gateboard.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-gateboard.mjs"
+      "path": "tools/create-release-execution-packet.mjs"
     }
   ],
   "stagedChanges": [],
@@ -191,8 +167,6 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
-    " M .mimesis/gates/current-gateboard.md",
-    " M .mimesis/operator-runbooks/current-runbook.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -202,11 +176,10 @@
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
-    " M README.md",
-    " M docs/GAP-REGISTER.md",
-    " M docs/GATEBOARD.md",
-    " M tools/audit-gateboard.mjs",
-    " M tools/create-gateboard.mjs"
+    " M docs/RELEASE-EXECUTION-PACKET.md",
+    " M tools/README.md",
+    " M tools/audit-release-execution-packet.mjs",
+    " M tools/create-release-execution-packet.mjs"
   ],
   "untrackedRoots": [],
   "untrackedFilesSample": [],

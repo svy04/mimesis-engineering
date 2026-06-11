@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,43 +11,9 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
 
-function git(args) {
-  const result = spawnSync("git", args, {
-    cwd: root,
-    encoding: "utf8",
-  });
-  if (result.status !== 0) {
-    return (result.stderr || result.stdout || result.error?.message || "").trim();
-  }
-  return result.stdout.trim();
-}
-
-function sectionList(items) {
-  if (!items.length) {
-    return "- none";
-  }
-  return items.map((item) => `- \`${item.replaceAll("`", "'")}\``).join("\n");
-}
-
 const packageJson = JSON.parse(read("package.json"));
-const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]) || "unknown";
-const head = git(["rev-parse", "HEAD"]) || "unknown";
-const upstreamResult = git(["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]);
-const upstream = upstreamResult.includes("fatal") ? "none" : upstreamResult || "none";
-const upstreamHead = upstream === "none" ? "unknown" : git(["rev-parse", upstream]) || "unknown";
-const remote = git(["remote", "get-url", "origin"]) || "unknown";
-const statusShort = git(["status", "--short"]);
-const statusLines = statusShort ? statusShort.split(/\r?\n/).filter(Boolean) : [];
-const tracked = statusLines.filter((line) => !line.startsWith("??"));
-const untracked = statusLines.filter((line) => line.startsWith("??"));
-const syncedCommit = head !== "unknown" && upstreamHead !== "unknown" && head === upstreamHead;
-const cleanAndSynced = statusLines.length === 0 && syncedCommit;
 const privatePackage = packageJson.private === true;
 const unlicensed = packageJson.license === "UNLICENSED";
-
-const syncStatus = fs.existsSync(path.join(root, ".mimesis", "sync-status.md"))
-  ? read(".mimesis/sync-status.md")
-  : "Run npm run audit:sync to generate sync status.";
 
 const generated = `# Mimesis Release Execution Packet
 
@@ -56,34 +21,23 @@ Generated from the current local repository state for Mimesis Engineering v${pac
 
 Status: owner release execution handoff, not release execution.
 
-## Current Git Boundary
+## Runtime Execution Gates
 
-- branch: \`${branch}\`
-- upstream: \`${upstream}\`
-- remote: \`${remote}\`
-- head: \`${head}\`
-- upstream head: \`${upstreamHead}\`
-- dirty worktree entries: ${statusLines.length}
-- tracked changed entries: ${tracked.length}
-- untracked entries: ${untracked.length}
-- clean and synced: ${cleanAndSynced ? "yes" : "no"}
+- public preflight: run \`npm run release:check:public\`
+- sync proof: run \`npm run audit:sync:strict\`
+- secret scan: run \`npm run audit:secrets\`
+- license boundary: run \`npm run audit:license\`
+- package boundary: run \`npm run audit:package\`
+- action boundary: run \`npm run audit:action\`
 - package private: ${privatePackage ? "yes" : "no"}
 - package license: \`${packageJson.license ?? "none"}\`
+- committed release execution packet is not a sync proof
+- this packet intentionally avoids branch, commit hash, upstream head, dirty-worktree counts, changed-entry lists, and embedded sync reports
 
 Conclusion:
-${cleanAndSynced && !privatePackage && !unlicensed
-  ? "The local git and package metadata gates look closer to publish execution, but owner proof gates still apply."
+${!privatePackage && !unlicensed
+  ? "The package metadata is closer to publication, but runtime sync, owner decision, and proof gates still apply."
   : "This local checkout is not publish-ready because at least one owner, sync, package, or license gate remains open."}
-
-## Changed Entries
-
-Tracked:
-
-${sectionList(tracked)}
-
-Untracked:
-
-${sectionList(untracked)}
 
 ## Required Preflight
 
@@ -126,15 +80,11 @@ This is the safe order for an owner-controlled release:
 | Gate | Current Signal | Required Before Claim |
 | --- | --- | --- |
 | public preflight | \`npm run release:check:public\` is available | fresh passing run |
-| strict sync | clean and synced: ${cleanAndSynced ? "yes" : "no"} | \`npm run audit:sync:strict\` passes |
+| strict sync | runtime-only check required | \`npm run audit:sync:strict\` passes |
 | license | \`${packageJson.license ?? "none"}\` | owner-selected license or explicit no-reuse boundary |
 | npm package | private: ${privatePackage ? "true" : "false"} | owner changes package metadata and publishes from owner account |
 | GitHub Action | root \`action.yml\` candidate exists | tag/release or Marketplace evidence |
 | external proof | no completed permissioned external proof in current completion matrix | reviewed evidence packet |
-
-## Current Sync Report
-
-${syncStatus}
 
 ## Allowed Claim
 

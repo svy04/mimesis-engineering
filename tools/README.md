@@ -1943,6 +1943,7 @@ npm run cli -- release:execution-packet
 
 This writes `.mimesis/release-execution/v0.1-owner-handoff.md`.
 It is an owner release execution handoff, not a commit, push, tag, release, package publication, Marketplace publication, license choice, or external proof.
+It points to runtime-only execution gates instead of embedding branch, commit hash, dirty-worktree, changed-entry, or sync-report proof.
 
 ## Audit Release Execution Packet
 
@@ -1952,7 +1953,7 @@ Run:
 npm run audit:release-execution
 ```
 
-This checks that the generated release execution packet includes git boundary, required preflight, owner decisions, release sequence, publication gates, allowed claim, disallowed claim, and proof boundary.
+This checks that the generated release execution packet includes runtime-only execution gates, required preflight, owner decisions, release sequence, publication gates, allowed claim, disallowed claim, proof boundary, and no volatile execution snapshot text.
 
 ## Create Public Claim Pack
 

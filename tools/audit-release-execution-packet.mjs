@@ -47,6 +47,7 @@ for (const text of [
   "does not stage files",
   "does not choose a license",
   "does not create a tag",
+  "runtime-only execution gates",
 ]) {
   if (!doc.toLowerCase().includes(text)) {
     failures.push(`release execution doc missing boundary text: ${text}`);
@@ -59,7 +60,7 @@ if (!fs.existsSync(packetPath)) {
   const packet = fs.readFileSync(packetPath, "utf8");
   for (const section of [
     "# Mimesis Release Execution Packet",
-    "## Current Git Boundary",
+    "## Runtime Execution Gates",
     "## Required Preflight",
     "## Owner Decisions",
     "## Release Sequence",
@@ -76,6 +77,7 @@ if (!fs.existsSync(packetPath)) {
   for (const text of [
     "npm run release:check:public",
     "npm run audit:sync:strict",
+    "committed release execution packet is not a sync proof",
     "docs/LICENSE-PACKET.md",
     "docs/RELEASE-DECISION-RECORD.md",
     "docs/PUBLISH-HANDOFF-PACKET.md",
@@ -90,6 +92,24 @@ if (!fs.existsSync(packetPath)) {
   ]) {
     if (!packet.includes(text)) {
       failures.push(`release execution packet missing boundary text: ${text}`);
+    }
+  }
+
+  for (const forbiddenText of [
+    "## Current Git Boundary",
+    "## Changed Entries",
+    "## Current Sync Report",
+    "- branch: `",
+    "- upstream: `",
+    "- head: `",
+    "- upstream head: `",
+    "dirty worktree entries:",
+    "Tracked:",
+    "Untracked:",
+    "## Branch Status",
+  ]) {
+    if (packet.includes(forbiddenText)) {
+      failures.push(`release execution packet must not embed volatile execution snapshot text: ${forbiddenText}`);
     }
   }
 }

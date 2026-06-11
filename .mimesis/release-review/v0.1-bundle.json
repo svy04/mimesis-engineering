@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T04:16:40.095Z",
+  "generatedAt": "2026-06-11T04:25:00.851Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,9 +12,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "187f4cca4720556b90f30e4471a2e3852d204459",
+    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
     "dirty": true,
-    "trackedChangedCount": 21,
+    "trackedChangedCount": 18,
     "untrackedCount": 0
   },
   "sourceFiles": [
@@ -29,8 +29,6 @@
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/gates/current-gateboard.md",
-    ".mimesis/operator-runbooks/current-runbook.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
     ".mimesis/release-decisions/owner-decision-record.json",
@@ -40,32 +38,27 @@
     ".mimesis/state/current-state.json",
     ".mimesis/sync-status.md",
     ".mimesis/worktree/review-packet.json",
-    "README.md",
-    "docs/GAP-REGISTER.md",
-    "docs/GATEBOARD.md",
-    "tools/audit-gateboard.mjs",
-    "tools/create-gateboard.mjs"
+    "docs/RELEASE-EXECUTION-PACKET.md",
+    "tools/README.md",
+    "tools/audit-release-execution-packet.mjs",
+    "tools/create-release-execution-packet.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 1,
-      "sample": [
-        "README.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Tracked root-framework files that need human review."
     },
     {
       "name": "generated protocol artifacts",
-      "count": 16,
+      "count": 14,
       "sample": [
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/gates/current-gateboard.md",
-        ".mimesis/operator-runbooks/current-runbook.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
         ".mimesis/release-decisions/owner-decision-record.json",
@@ -80,20 +73,19 @@
     },
     {
       "name": "public documentation",
-      "count": 3,
+      "count": 1,
       "sample": [
-        "docs/GAP-REGISTER.md",
-        "docs/GATEBOARD.md",
-        "README.md"
+        "docs/RELEASE-EXECUTION-PACKET.md"
       ],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
     {
       "name": "tooling and cli",
-      "count": 2,
+      "count": 3,
       "sample": [
-        "tools/audit-gateboard.mjs",
-        "tools/create-gateboard.mjs"
+        "tools/audit-release-execution-packet.mjs",
+        "tools/create-release-execution-packet.mjs",
+        "tools/README.md"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },
