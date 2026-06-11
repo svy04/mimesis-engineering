@@ -83,6 +83,7 @@ Release readiness:
 - owner answer review
 - owner proof handoff
 - owner proof input
+- owner proof input split
 - owner evidence attachment form
 - owner evidence submission record
 - owner evidence submission check
@@ -193,6 +194,7 @@ It is not a shipped plugin.
 - The repository includes `owner:evidence-attachment-form` and `audit:owner-evidence-attachment-form` for generating and checking an owner evidence attachment form that asks for owner-provided evidence without attaching evidence, choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.
 - The repository includes `owner:proof-handoff` and `audit:owner-proof-handoff` for generating and checking an owner proof handoff focused on `license_or_no_reuse` and `weak_artifact_permission` without choosing a license, granting permission, submitting an artifact, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:proof-input-template`, `owner:proof-input-check`, and `audit:owner-proof-input` for generating and checking an owner proof input record before downstream conversion without choosing a license, submitting an artifact, granting permission, creating external proof, approving proof, publishing, proving adoption, or closing gates.
+- The repository includes `owner:proof-input-split` and `audit:owner-proof-input-split` for routing a reviewed owner proof input into downstream owner decision/evidence record candidates without choosing a license, submitting an artifact, granting permission, creating external proof, approving proof, publishing, proving adoption, or closing gates.
 - The repository includes `owner:evidence-submission-record` and `audit:owner-evidence-submission-record` for generating and checking a schema-shaped owner evidence submission record that keeps `not_submitted_owner_evidence` visible without submitting evidence, attaching evidence, choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.
 - The repository includes `owner:evidence-submission-check` and `audit:owner-evidence-submission-check` for checking an owner evidence submission record before gate movement without submitting evidence, attaching evidence, creating proof, publishing, or closing gates.
 - The repository includes `owner:evidence-bundle` and `audit:owner-evidence-bundle` for generating and checking an owner evidence bundle that maps pending owner answers to required evidence attachments, commands, and stop conditions without creating evidence, choosing a license, collecting an artifact, granting permission, publishing, proving adoption, or closing gates.

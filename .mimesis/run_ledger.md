@@ -2828,3 +2828,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use the owner proof input record as the first owner-fillable checkpoint after the proof handoff and before owner evidence submission records.
 - Treat owner proof input readiness as downstream conversion readiness only, not proof approval or gate closure.
 - Keep all remaining v0.2 gates open until owner-supplied license/no-reuse, permissioned weak artifact, publication, benchmark, adoption, and strict sync evidence exists.
+
+## 2026-06-11 - Owner Proof Input Split Slice
+
+## Import
+
+- Re-read the current gap register, goal completion audit, owner proof input template/checker, owner decision answer schema, owner evidence submission schema, license bridge, proof-intake-from-owner-evidence bridge, release-check order, manifests, README, tools README, status, roadmap, and completion audit.
+- Found that the repo had a single owner-fillable proof input record, but no converter from that reviewed record into the two downstream record shapes already supported by the license and evidence/proof bridges.
+
+## Distill
+
+- Add an owner proof input split report and converter.
+- Keep the default template blocked/not-ready and write only a report.
+- Allow a real reviewed owner proof input record to generate downstream owner decision answer and owner evidence submission record candidates without choosing a license, submitting an artifact, granting permission, creating proof, publishing, proving adoption, proving completion, or closing gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-split.mjs`, which failed for the expected missing split docs, command, CLI, release-check wiring, report, validator coverage, manifests, public docs, and downstream smoke path.
+- GREEN: added `tools/split-owner-proof-input-record.mjs`, `docs/OWNER-PROOF-INPUT-SPLIT.md`, and `.mimesis/owner-actions/proof-input-split-report.md`.
+- GREEN: wired `owner:proof-input-split` and `audit:owner-proof-input-split` through CLI, package scripts, release check, release order, validate, framework manifest, release artifact manifest, completion audit, status, roadmap, release packet, README, tools README, package audit, and release readiness audit.
+
+## Shard
+
+- Default `npm run owner:proof-input-split` writes `.mimesis/owner-actions/proof-input-split-report.md` and does not write downstream records for the not-ready template.
+- A reviewed owner proof input can run `npm run cli -- owner:proof-input-split path/to/owner-proof-input.json --output-dir path/to/split-output --require-ready`.
+- The split output can feed `license:decision-from-owner-answer`, `owner:evidence-submission-check --require-field weak_artifact_permission`, and `proof:intake-from-owner-evidence` smoke paths, while each downstream gate still requires its own evidence and review.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-split.mjs` failed first for the expected missing split surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input-split`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run validate`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:package`, and `npm run audit:release` passed.
+
+## Remember
+
+- Use owner proof input split immediately after a real owner proof input record is reviewed.
+- Treat split outputs as downstream candidates only; license decision, proof intake, proof execution, evidence review, and gate closure remain separate.
+- Keep default committed artifacts blocked/not-ready until the owner supplies the actual license/no-reuse and weak artifact inputs.

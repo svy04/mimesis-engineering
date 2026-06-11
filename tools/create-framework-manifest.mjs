@@ -222,6 +222,11 @@ const manifest = {
       command: "npm run owner:proof-input-template"
     },
     {
+      name: "owner proof input split report",
+      path: ".mimesis/owner-actions/proof-input-split-report.md",
+      command: "npm run owner:proof-input-split"
+    },
+    {
       name: "owner decision intake",
       path: ".mimesis/owner-actions/decision-intake.md",
       command: "npm run owner:decision-intake"
@@ -558,8 +563,16 @@ const manifest = {
       purpose: "Check an owner proof input record before downstream conversion without approving proof or closing gates."
     },
     {
+      name: "owner:proof-input-split",
+      purpose: "Split a reviewed owner proof input into downstream owner decision/evidence record candidates without claiming proof or closing gates."
+    },
+    {
       name: "audit:owner-proof-input",
       purpose: "Check the owner proof input schema, template, report, CLI, public docs, and no-decision/no-proof boundaries."
+    },
+    {
+      name: "audit:owner-proof-input-split",
+      purpose: "Check owner proof input split routing, downstream smoke paths, public docs, and no-proof boundaries."
     },
     {
       name: "owner:decision-intake",
@@ -821,6 +834,7 @@ const manifest = {
     "docs/OWNER-ACTION-QUEUE.md",
     "docs/OWNER-PROOF-HANDOFF.md",
     "docs/OWNER-PROOF-INPUT.md",
+    "docs/OWNER-PROOF-INPUT-SPLIT.md",
     "docs/OWNER-DECISION-INTAKE.md",
     "docs/OWNER-DECISION-ANSWER-RECORD.md",
     "docs/OWNER-ANSWER-REVIEW.md",

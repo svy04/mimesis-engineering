@@ -237,7 +237,7 @@ for (const scriptName of ["owner:proof-handoff", "audit:owner-proof-handoff"]) {
   }
 }
 
-for (const scriptName of ["owner:proof-input-template", "owner:proof-input-check", "audit:owner-proof-input"]) {
+for (const scriptName of ["owner:proof-input-template", "owner:proof-input-check", "owner:proof-input-split", "audit:owner-proof-input", "audit:owner-proof-input-split"]) {
   if (!packageJson.scripts?.[scriptName]) {
     failures.push(`package.json missing script: ${scriptName}`);
   }
@@ -497,6 +497,7 @@ if (!failures.length) {
       "docs/OWNER-ACTION-QUEUE.md",
       "docs/OWNER-PROOF-HANDOFF.md",
       "docs/OWNER-PROOF-INPUT.md",
+      "docs/OWNER-PROOF-INPUT-SPLIT.md",
       "docs/OWNER-DECISION-INTAKE.md",
       "docs/OWNER-DECISION-ANSWER-RECORD.md",
       "docs/OWNER-ANSWER-REVIEW.md",
@@ -518,7 +519,9 @@ if (!failures.length) {
       "spec/owner-proof-input.schema.json",
       "tools/create-owner-proof-input-template.mjs",
       "tools/check-owner-proof-input-record.mjs",
+      "tools/split-owner-proof-input-record.mjs",
       "tools/audit-owner-proof-input.mjs",
+      "tools/audit-owner-proof-input-split.mjs",
       "docs/PUBLISH-SYNC-GATE.md",
       "plugins/mimesis-codex/.codex-plugin/plugin.json",
       "plugins/mimesis-codex/README.md",
