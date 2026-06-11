@@ -1989,6 +1989,40 @@ npm run cli -- audit:owner-proof-input-remote-issue
 
 This checks package script wiring, CLI exposure, release preflight order, generated remote issue anchor packet, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
 
+## Generate Owner Proof Input Remote Issue Snapshot
+
+Run:
+
+```bash
+npm run owner:proof-input-remote-issue-snapshot
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-remote-issue-snapshot
+```
+
+This writes `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` and `.mimesis/owner-actions/remote-proof-input-issue-snapshot.md`.
+It reads live GitHub issue metadata and records a body hash without storing the raw issue body.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Remote Issue Snapshot
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-remote-issue-snapshot
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-remote-issue-snapshot
+```
+
+This checks package script wiring, CLI exposure, release preflight audit order, metadata-only snapshot shape, no raw issue body storage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
+
 ## Convert Owner Proof Input Issue
 
 Run:

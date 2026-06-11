@@ -229,6 +229,11 @@
       "command": "npm run owner:proof-input-remote-issue"
     },
     {
+      "name": "owner proof input remote issue snapshot",
+      "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json",
+      "command": "npm run owner:proof-input-remote-issue-snapshot"
+    },
+    {
       "name": "owner proof input issue converted fixture",
       "path": ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
       "command": "npm run owner:proof-input-issue-convert"
@@ -600,6 +605,10 @@
       "purpose": "Generate the remote owner proof input issue anchor without treating the issue as owner decision, proof, or gate closure."
     },
     {
+      "name": "owner:proof-input-remote-issue-snapshot",
+      "purpose": "Generate a metadata-only remote owner proof input issue snapshot without storing the raw issue body."
+    },
+    {
       "name": "owner:proof-input-issue-convert",
       "purpose": "Convert a GitHub owner proof input issue body into a bounded draft owner proof input record without granting permission, creating proof, or closing gates."
     },
@@ -626,6 +635,10 @@
     {
       "name": "audit:owner-proof-input-remote-issue",
       "purpose": "Check the remote owner proof input issue anchor, CLI, public docs, manifests, and no-proof boundaries."
+    },
+    {
+      "name": "audit:owner-proof-input-remote-issue-snapshot",
+      "purpose": "Check the metadata-only remote owner proof input issue snapshot, no-body storage, and no-proof boundaries."
     },
     {
       "name": "audit:owner-proof-input-issue-convert",

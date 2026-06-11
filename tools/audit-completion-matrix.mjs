@@ -96,6 +96,7 @@ const requiredRows = [
   "Owner proof input issue",
   "Owner proof input request",
   "Owner proof input remote issue",
+  "Owner proof input remote issue snapshot",
   "Owner proof input issue convert",
   "Owner proof input review",
   "Owner proof input split",

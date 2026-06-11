@@ -3159,3 +3159,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Treat committed current-state summaries as generation-time snapshots only.
 - Use `npm run audit:sync:strict` for live sync evidence after commit/push.
 - Keep all owner/proof/publication/benchmark/adoption gates open until real owner input, permissioned weak artifact evidence, proof execution evidence, and reviewed measurement/adoption evidence exist.
+
+## 2026-06-11 - Owner Proof Input Remote Issue Snapshot Slice
+
+## Import
+
+- Re-read the current gap register, owner proof input request/remote issue/issue conversion path, CLI, package scripts, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, and completion audit.
+- Queried GitHub issue #7, which exists as the remote owner-input request for license/no-reuse and one weak artifact, but still contains request-template placeholders rather than completed owner input.
+
+## Distill
+
+- Add a local metadata-only snapshot of the live remote issue state so the framework can distinguish request-only coordination from candidate owner input.
+- Store no raw GitHub issue body in committed artifacts.
+- Do not choose a license, grant weak artifact permission, export owner text as proof, create external proof, publish, claim adoption, claim benchmark evidence, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-remote-issue-snapshot.mjs`, which failed first for the expected missing snapshot JSON/report, generator, docs, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `tools/create-owner-proof-input-remote-issue-snapshot.mjs`, `docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md`, and generated `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` plus `.mimesis/owner-actions/remote-proof-input-issue-snapshot.md`.
+- GREEN: wired `owner:proof-input-remote-issue-snapshot` and `audit:owner-proof-input-remote-issue-snapshot` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `npm run owner:proof-input-remote-issue-snapshot` calls `gh issue view 7 --json number,title,state,url,labels,body,createdAt,updatedAt`.
+- The generated snapshot records issue metadata, label presence, body hash, body character count, readiness signals, `bodyStored: false`, and `bodyOmittedReason`.
+- The current live classification is `request_only_pending_owner` with `readyForLocalConversion: false`, because placeholders remain present.
+- `npm run release:check` statically audits the committed metadata-only snapshot but does not run the live remote fetch by default.
+
+## Verify
+
+- `npm run owner:proof-input-remote-issue-snapshot` generated the local metadata-only JSON and Markdown snapshot.
+- `npm run audit:owner-proof-input-remote-issue-snapshot`, `npm run audit:cli`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+
+## Remember
+
+- Use `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` to see whether issue #7 is still request-only or ready for local conversion.
+- Treat the snapshot as metadata and hash evidence only; it is not owner decision, weak artifact permission, owner proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
+- Keep all v0.2 gates open until the owner fills issue #7 or provides an equivalent reviewed owner proof input record, and the conversion/review/check/split/proof intake path passes on real input.
