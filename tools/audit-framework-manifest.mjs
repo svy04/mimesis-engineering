@@ -207,6 +207,8 @@ for (const command of [
   "audit:owner-queue",
   "owner:issue-queue",
   "audit:owner-issue-queue",
+  "owner:issue-remote-sync",
+  "audit:owner-issue-remote-sync",
   "owner:proof-input-issue",
   "owner:proof-input-request",
   "owner:proof-input-remote-issue",

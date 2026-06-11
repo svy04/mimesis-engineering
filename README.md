@@ -239,6 +239,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/GOAL-COMPLETION-AUDIT.md](docs/GOAL-COMPLETION-AUDIT.md) - generated active-goal completion audit without completion proof
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
 - [docs/OWNER-ISSUE-QUEUE.md](docs/OWNER-ISSUE-QUEUE.md) - generated owner issue queue with copyable issue body drafts
+- [docs/OWNER-ISSUE-REMOTE-SYNC.md](docs/OWNER-ISSUE-REMOTE-SYNC.md) - read-only owner issue remote sync snapshot
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
 - [docs/OWNER-PROOF-INPUT-ISSUE.md](docs/OWNER-PROOF-INPUT-ISSUE.md) - public owner proof input issue handoff
@@ -455,6 +456,8 @@ It does not prove npm package release.
 `audit:owner-queue` checks the owner action queue and no-decision/no-proof boundary.
 `owner:issue-queue` creates an owner issue queue with copyable issue body drafts, not remote GitHub issues, owner decisions, submitted artifacts, external proof, adoption proof, or closed gates.
 `audit:owner-issue-queue` checks the owner issue queue and no-remote-mutation/no-closure boundary.
+`owner:issue-remote-sync` creates a read-only owner issue remote sync snapshot from GitHub issue metadata, not remote issue creation, owner decisions, submitted artifacts, external proof, adoption proof, or closed gates.
+`audit:owner-issue-remote-sync` checks the owner issue remote sync snapshot and no-remote-mutation/no-closure boundary.
 `owner:proof-handoff` creates the minimum owner proof handoff for `license_or_no_reuse` and `weak_artifact_permission`, not owner decision, permission grant, proof approval, publication, or gate closure.
 `audit:owner-proof-handoff` checks the owner proof handoff and no-decision/no-proof boundary.
 `owner:proof-input-template` creates a schema-shaped owner proof input template for `license_or_no_reuse` and `weak_artifact_permission`, not an owner decision, submitted artifact, permission grant, publication, external proof, proof approval, or gate closure.
@@ -1005,6 +1008,16 @@ npm run owner:issue-queue
 This writes `.mimesis/owner-actions/v0.2-issue-queue.md`.
 Audit it with `npm run audit:owner-issue-queue`.
 It creates copyable issue body drafts only; it does not create GitHub issues, choose a license, collect an artifact, create external proof, prove adoption, or close gates.
+
+Generate a read-only owner issue remote sync snapshot:
+
+```bash
+npm run owner:issue-remote-sync
+```
+
+This writes `.mimesis/owner-actions/remote-issue-sync.json` and `.mimesis/owner-actions/remote-issue-sync.md`.
+Audit it with `npm run audit:owner-issue-remote-sync`.
+It compares local gate issue drafts with GitHub issue metadata only; it does not create GitHub issues, store issue bodies, choose a license, collect an artifact, create external proof, prove adoption, or close gates.
 
 Generate an owner decision intake:
 

@@ -80,6 +80,7 @@ Release readiness:
 - owner release execution handoff
 - owner action queue
 - owner issue queue
+- owner issue remote sync
 - owner decision intake
 - owner decision answer record
 - owner answer review
@@ -199,6 +200,7 @@ It is not a shipped plugin.
 - The repository includes `publication:evidence-packet` and `audit:publication-evidence-packet` for generating and checking a direct publication evidence packet at `docs/PUBLICATION-EVIDENCE-PACKET.md` and `.mimesis/release-evidence/publication-evidence-packet.md` without publishing, staging, committing, pushing, tagging, releasing, publishing to npm, publishing a Marketplace action, shipping a plugin, or closing gates.
 - The repository includes `owner:queue` and `audit:owner-queue` for generating and checking an owner action queue without choosing a license, collecting an artifact, publishing, creating proof, proving adoption, or closing gates.
 - The repository includes `owner:issue-queue` and `audit:owner-issue-queue` for generating and checking an owner issue queue with copyable issue body drafts without creating GitHub issues, choosing a license, collecting an artifact, creating proof, proving adoption, or closing gates.
+- The repository includes `owner:issue-remote-sync` and `audit:owner-issue-remote-sync` for generating and checking a read-only owner issue remote sync snapshot. The current snapshot reports 9 expected gate issues missing remotely and 6 existing non-gate issues; this is visibility only, not remote issue creation, proof, adoption evidence, or gate closure.
 - The repository includes `owner:decision-intake` and `audit:owner-decision-intake` for generating and checking an owner decision intake without choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.
 - The repository includes `owner:decision-answer-record` and `audit:owner-decision-answer-record` for generating and checking a schema-shaped pending owner answer record without choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.
 - The repository includes `owner:answer-review` and `audit:owner-answer-review` for generating and checking an owner answer review that keeps pending owner answers and blocked gates explicit without choosing a license, collecting an artifact, granting permission, publishing, creating proof, proving adoption, or closing gates.

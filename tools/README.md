@@ -1591,6 +1591,40 @@ npm run cli -- audit:owner-issue-queue
 
 This checks package script wiring, CLI exposure, release preflight order, generated issue body drafts, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-remote-mutation/no-closure boundaries.
 
+## Create Owner Issue Remote Sync
+
+Run:
+
+```bash
+npm run owner:issue-remote-sync
+```
+
+or:
+
+```bash
+npm run cli -- owner:issue-remote-sync
+```
+
+This writes `.mimesis/owner-actions/remote-issue-sync.json` and `.mimesis/owner-actions/remote-issue-sync.md`.
+It compares current local gate issue drafts with GitHub issue metadata only.
+It does not create GitHub issues, store issue bodies, choose a license, collect an artifact, grant permission, create external proof, prove adoption, or close gates.
+
+## Audit Owner Issue Remote Sync
+
+Run:
+
+```bash
+npm run audit:owner-issue-remote-sync
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-issue-remote-sync
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated remote sync metadata, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-remote-mutation/no-closure boundaries.
+
 ## Create Owner Decision Intake
 
 Run:

@@ -222,6 +222,11 @@ const manifest = {
       command: "npm run owner:issue-queue"
     },
     {
+      name: "owner issue remote sync",
+      path: ".mimesis/owner-actions/remote-issue-sync.json",
+      command: "npm run owner:issue-remote-sync"
+    },
+    {
       name: "owner proof handoff",
       path: ".mimesis/owner-actions/proof-run-handoff.md",
       command: "npm run owner:proof-handoff"
@@ -595,8 +600,16 @@ const manifest = {
       purpose: "Generate copyable issue body drafts for open gates without creating remote GitHub issues."
     },
     {
+      name: "owner:issue-remote-sync",
+      purpose: "Generate a read-only metadata snapshot comparing local gate issue drafts with remote GitHub issues without creating issues."
+    },
+    {
       name: "audit:owner-issue-queue",
       purpose: "Check the owner issue queue, issue body boundaries, CLI wiring, and no-remote-mutation boundary."
+    },
+    {
+      name: "audit:owner-issue-remote-sync",
+      purpose: "Check the owner issue remote sync snapshot, metadata-only issue matching, and no-remote-mutation boundary."
     },
     {
       name: "audit:owner-queue",
@@ -954,6 +967,7 @@ const manifest = {
     "docs/ADOPTION-PACKET.md",
     "docs/OWNER-ACTION-QUEUE.md",
     "docs/OWNER-ISSUE-QUEUE.md",
+    "docs/OWNER-ISSUE-REMOTE-SYNC.md",
     "docs/OWNER-PROOF-HANDOFF.md",
     "docs/OWNER-PROOF-INPUT.md",
     "docs/OWNER-PROOF-INPUT-ISSUE.md",

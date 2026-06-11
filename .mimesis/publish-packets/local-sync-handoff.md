@@ -9,10 +9,10 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `43b3b1d4a836045c862595671c7a746ea8d6bf1a`
-- upstream head: `43b3b1d4a836045c862595671c7a746ea8d6bf1a`
-- tracked changed entries: 24
-- untracked entries: 4
+- head: `9233c4bdd9e629069a452136947cba1476a51d71`
+- upstream head: `9233c4bdd9e629069a452136947cba1476a51d71`
+- tracked changed entries: 37
+- untracked entries: 5
 
 Conclusion:
 local worktree is not publish-ready because it has unpublished local changes or does not match upstream.
@@ -21,16 +21,29 @@ local worktree is not publish-ready because it has unpublished local changes or 
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/claim-packs/public-v0.1.md
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
  M .mimesis/publication-packets/v0.1.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
+ M .mimesis/run_ledger.md
+ M .mimesis/state/current-state.json
  M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
@@ -45,54 +58,81 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/v0.2-issue-queue.md
-?? docs/OWNER-ISSUE-QUEUE.md
-?? tools/audit-owner-issue-queue.mjs
-?? tools/create-owner-issue-queue.mjs
+?? .mimesis/owner-actions/remote-issue-sync.json
+?? .mimesis/owner-actions/remote-issue-sync.md
+?? docs/OWNER-ISSUE-REMOTE-SYNC.md
+?? tools/audit-owner-issue-remote-sync.mjs
+?? tools/create-owner-issue-remote-sync.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 -------
- .mimesis/framework-manifest.json                |  14 +++
- .mimesis/publication-packets/v0.1.md            |   3 +
- .mimesis/release-artifacts/v0.1-manifest.json   | 116 +++++++++++++++---------
- .mimesis/sync-status.md                         |  13 ++-
- README.md                                       |  13 +++
- ROADMAP.md                                      |   2 +
- STATUS.md                                       |   2 +
- bin/mimesis.mjs                                 |   2 +
- docs/COMPLETION-AUDIT.md                        |   2 +
- docs/RELEASE-CHECK-ORDER.md                     |   6 +-
- docs/STATUS-ROADMAP-SYNC.md                     |   2 +
- docs/V0.1-RELEASE-PACKET.md                     |  14 +++
- package.json                                    |   4 +-
- tools/README.md                                 |  34 +++++++
- tools/audit-cli.mjs                             |   2 +
- tools/audit-completion-matrix.mjs               |   1 +
- tools/audit-framework-manifest.mjs              |   2 +
- tools/audit-release-artifact-manifest.mjs       |   4 +
- tools/audit-release-check-order.mjs             |  11 +++
- tools/audit-status-roadmap-sync.mjs             |   4 +
- tools/create-framework-manifest.mjs             |  14 +++
- tools/create-release-artifact-manifest.mjs      |   4 +
- tools/validate-mimesis.mjs                      |   4 +
- 24 files changed, 218 insertions(+), 87 deletions(-)
+.mimesis/claim-packs/public-v0.1.md                |   2 +-
+ .mimesis/completion/goal-completion-audit.json     |   2 +-
+ .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 -----
+ .mimesis/framework-manifest.json                   |  14 ++
+ .mimesis/gaps/closure-plan.json                    |   2 +-
+ .mimesis/gaps/current-gap-register.json            |   2 +-
+ .mimesis/gates/closure-readiness.json              |   8 +-
+ .mimesis/gates/closure-review.json                 |   8 +-
+ .mimesis/publication-packets/v0.1.md               |   4 +
+ .mimesis/publish-packets/local-sync-handoff.md     |  65 +++++----
+ .mimesis/release-artifacts/v0.1-manifest.json      | 157 +++++++++++++--------
+ .../release-decisions/owner-decision-record.json   |   2 +-
+ .mimesis/release-review/v0.1-bundle.json           |  25 ++--
+ .mimesis/run_ledger.md                             |  38 +++++
+ .mimesis/state/current-state.json                  |   8 +-
+ .mimesis/sync-status.md                            |  27 +++-
+ .mimesis/worktree/review-packet.json               |  37 +++--
+ README.md                                          |  13 ++
+ ROADMAP.md                                         |   2 +
+ STATUS.md                                          |   2 +
+ bin/mimesis.mjs                                    |   2 +
+ docs/COMPLETION-AUDIT.md                           |   2 +
+ docs/FRAMEWORK-MANIFEST.md                         |   4 +-
+ docs/RELEASE-CHECK-ORDER.md                        |   2 +-
+ docs/STATUS-ROADMAP-SYNC.md                        |   2 +
+ docs/V0.1-RELEASE-PACKET.md                        |  16 +++
+ package.json                                       |   4 +-
+ tools/README.md                                    |  34 +++++
+ tools/audit-cli.mjs                                |   2 +
+ tools/audit-completion-matrix.mjs                  |   6 +
+ tools/audit-framework-manifest.mjs                 |   2 +
+ tools/audit-release-artifact-manifest.mjs          |   5 +
+ tools/audit-release-check-order.mjs                |   4 +
+ tools/audit-status-roadmap-sync.mjs                |   4 +
+ tools/create-framework-manifest.mjs                |  14 ++
+ tools/create-release-artifact-manifest.mjs         |   5 +
+ tools/validate-mimesis.mjs                         |   5 +
+ 37 files changed, 395 insertions(+), 168 deletions(-)
 ```
 
 ## Tracked Changes
 
-- `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
+- `M .mimesis/claim-packs/public-v0.1.md`
+- ` M .mimesis/completion/goal-completion-audit.json`
+- ` D .mimesis/first-loop-demo/.mimesis/case-proof.md`
 - ` M .mimesis/framework-manifest.json`
+- ` M .mimesis/gaps/closure-plan.json`
+- ` M .mimesis/gaps/current-gap-register.json`
+- ` M .mimesis/gates/closure-readiness.json`
+- ` M .mimesis/gates/closure-review.json`
 - ` M .mimesis/publication-packets/v0.1.md`
+- ` M .mimesis/publish-packets/local-sync-handoff.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
+- ` M .mimesis/release-decisions/owner-decision-record.json`
+- ` M .mimesis/release-review/v0.1-bundle.json`
+- ` M .mimesis/run_ledger.md`
+- ` M .mimesis/state/current-state.json`
 - ` M .mimesis/sync-status.md`
+- ` M .mimesis/worktree/review-packet.json`
 - ` M README.md`
 - ` M ROADMAP.md`
 - ` M STATUS.md`
 - ` M bin/mimesis.mjs`
 - ` M docs/COMPLETION-AUDIT.md`
+- ` M docs/FRAMEWORK-MANIFEST.md`
 - ` M docs/RELEASE-CHECK-ORDER.md`
 - ` M docs/STATUS-ROADMAP-SYNC.md`
 - ` M docs/V0.1-RELEASE-PACKET.md`
@@ -110,10 +150,11 @@ local worktree is not publish-ready because it has unpublished local changes or 
 
 ## Untracked Entries
 
-- `?? .mimesis/owner-actions/v0.2-issue-queue.md`
-- `?? docs/OWNER-ISSUE-QUEUE.md`
-- `?? tools/audit-owner-issue-queue.mjs`
-- `?? tools/create-owner-issue-queue.mjs`
+- `?? .mimesis/owner-actions/remote-issue-sync.json`
+- `?? .mimesis/owner-actions/remote-issue-sync.md`
+- `?? docs/OWNER-ISSUE-REMOTE-SYNC.md`
+- `?? tools/audit-owner-issue-remote-sync.mjs`
+- `?? tools/create-owner-issue-remote-sync.mjs`
 
 ## Current Sync Report
 
@@ -129,8 +170,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 23
-- untracked files: 4
+- changed tracked files: 37
+- untracked files: 5
 
 ## Conclusion
 
@@ -146,15 +187,29 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/claim-packs/public-v0.1.md
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
  M .mimesis/publication-packets/v0.1.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
+ M .mimesis/run_ledger.md
+ M .mimesis/state/current-state.json
+ M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
@@ -169,10 +224,11 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/v0.2-issue-queue.md
-?? docs/OWNER-ISSUE-QUEUE.md
-?? tools/audit-owner-issue-queue.mjs
-?? tools/create-owner-issue-queue.mjs
+?? .mimesis/owner-actions/remote-issue-sync.json
+?? .mimesis/owner-actions/remote-issue-sync.md
+?? docs/OWNER-ISSUE-REMOTE-SYNC.md
+?? tools/audit-owner-issue-remote-sync.mjs
+?? tools/create-owner-issue-remote-sync.mjs
 ```
 
 

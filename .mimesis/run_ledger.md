@@ -3313,3 +3313,41 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `owner:issue-queue` when open gates need to become copyable public issue drafts without creating remote issues.
 - Do not treat issue drafts as owner decisions, submitted artifacts, permission grants, external proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Issue Remote Sync Slice
+
+## Import
+
+- Re-read the owner issue queue, current gap register, package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap sync docs, and existing GitHub issue state.
+- Queried GitHub issues through `gh issue list --repo svy04/mimesis-engineering --state all --limit 100 --json number,title,state,url,labels,createdAt,updatedAt`.
+- Confirmed the live remote has 6 existing non-gate issues and no issue matching the 9 expected `[Mimesis v0.2 gate] ...` titles.
+
+## Distill
+
+- Add a read-only owner issue remote sync snapshot that compares local gate issue drafts with remote GitHub issue metadata.
+- Keep the live command outside the default release preflight because it reads current remote state.
+- Do not create GitHub issues, store issue bodies, choose a license, collect an artifact, grant permission, create external proof, prove adoption, prove benchmark results, publish, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-issue-remote-sync.mjs`, which failed first for missing snapshot files, docs, generator, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `tools/create-owner-issue-remote-sync.mjs`, `docs/OWNER-ISSUE-REMOTE-SYNC.md`, `.mimesis/owner-actions/remote-issue-sync.json`, and `.mimesis/owner-actions/remote-issue-sync.md`.
+- GREEN: wired `owner:issue-remote-sync` and `audit:owner-issue-remote-sync` through package scripts, CLI, release-check audit order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `.mimesis/owner-actions/remote-issue-sync.json` records `status: remote_gate_issues_missing`, `requiredGateCount: 9`, `matchedGateCount: 0`, `missingGateCount: 9`, and `existingNonGateIssueCount: 6`.
+- `.mimesis/owner-actions/remote-issue-sync.md` shows the gate match table, missing gate issues, existing non-gate issues, allowed claim, disallowed claim, and boundary.
+- The report includes `not proof` context beside benchmark/adoption gate labels so claim-risk validation does not read them as evidence claims.
+
+## Verify
+
+- `node tools/audit-owner-issue-remote-sync.mjs` failed first for the expected missing owner issue remote sync surface.
+- After implementation, `npm run audit:owner-issue-remote-sync`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run audit:completion-row-count`, `npm run audit:cli`, and `npm run validate` passed.
+- `npm run release:check` passed with `audit:owner-issue-remote-sync` in the release chain and without running the live `owner:issue-remote-sync` command.
+
+## Remember
+
+- Use `owner:issue-remote-sync` only when a fresh read-only comparison with remote GitHub issue metadata is needed.
+- The current snapshot says all 9 v0.2 gate issues are missing remotely; this is coordination visibility, not failure recovery, proof, owner decision, or gate closure.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

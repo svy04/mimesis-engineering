@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 23
-- untracked files: 4
+- changed tracked files: 37
+- untracked files: 5
 
 ## Conclusion
 
@@ -27,15 +27,29 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/claim-packs/public-v0.1.md
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
  M .mimesis/publication-packets/v0.1.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
+ M .mimesis/run_ledger.md
+ M .mimesis/state/current-state.json
+ M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
  M bin/mimesis.mjs
  M docs/COMPLETION-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
  M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
@@ -50,8 +64,9 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/v0.2-issue-queue.md
-?? docs/OWNER-ISSUE-QUEUE.md
-?? tools/audit-owner-issue-queue.mjs
-?? tools/create-owner-issue-queue.mjs
+?? .mimesis/owner-actions/remote-issue-sync.json
+?? .mimesis/owner-actions/remote-issue-sync.md
+?? docs/OWNER-ISSUE-REMOTE-SYNC.md
+?? tools/audit-owner-issue-remote-sync.mjs
+?? tools/create-owner-issue-remote-sync.mjs
 ```

@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T11:42:41.099Z",
+  "generatedAt": "2026-06-11T12:07:30.790Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "43b3b1d4a836045c862595671c7a746ea8d6bf1a",
+    "head": "9233c4bdd9e629069a452136947cba1476a51d71",
     "dirty": true,
-    "trackedChangedCount": 34,
-    "untrackedCount": 4
+    "trackedChangedCount": 36,
+    "untrackedCount": 5
   },
   "trackedChanges": [
     {
@@ -63,6 +63,10 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/run_ledger.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/state/current-state.json"
     },
     {
@@ -92,6 +96,10 @@
     {
       "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/FRAMEWORK-MANIFEST.md"
     },
     {
       "status": "M",
@@ -201,6 +209,10 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/run_ledger.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/state/current-state.json"
     },
     {
@@ -230,6 +242,10 @@
     {
       "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
+    },
+    {
+      "status": "M",
+      "path": "docs/FRAMEWORK-MANIFEST.md"
     },
     {
       "status": "M",
@@ -302,6 +318,7 @@
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
     " M .mimesis/release-review/v0.1-bundle.json",
+    " M .mimesis/run_ledger.md",
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
@@ -310,6 +327,7 @@
     " M STATUS.md",
     " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
+    " M docs/FRAMEWORK-MANIFEST.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
@@ -328,7 +346,7 @@
   "untrackedRoots": [
     {
       "root": ".mimesis/owner-actions",
-      "count": 1
+      "count": 2
     },
     {
       "root": "docs",
@@ -340,10 +358,11 @@
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/v0.2-issue-queue.md",
-    "docs/OWNER-ISSUE-QUEUE.md",
-    "tools/audit-owner-issue-queue.mjs",
-    "tools/create-owner-issue-queue.mjs"
+    ".mimesis/owner-actions/remote-issue-sync.json",
+    ".mimesis/owner-actions/remote-issue-sync.md",
+    "docs/OWNER-ISSUE-REMOTE-SYNC.md",
+    "tools/audit-owner-issue-remote-sync.mjs",
+    "tools/create-owner-issue-remote-sync.mjs"
   ],
   "sourceCommands": [
     "git status --short",
