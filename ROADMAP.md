@@ -64,6 +64,7 @@ Includes:
 - owner answer review
 - owner proof handoff
 - owner proof input
+- owner proof input issue
 - owner proof input split
 - owner evidence attachment form
 - owner evidence submission record
@@ -155,6 +156,7 @@ Candidate work:
 - generated owner evidence attachment form before asking owner-provided evidence to move gates
 - generated owner proof handoff before treating `license_or_no_reuse` and `weak_artifact_permission` as submitted owner inputs
 - generated owner proof input template/check before treating the minimum owner proof inputs as reviewed, submitted, or ready for downstream conversion
+- generated owner proof input issue before treating public issue intake as owner decision, permission grant, proof, publication, or gate closure
 - generated owner proof input split before treating a single owner proof input record as downstream owner decision/evidence records
 - generated owner evidence submission record before treating missing owner evidence as submitted evidence
 - generated owner evidence submission check before treating an owner evidence submission record as gate-moving evidence

@@ -1,25 +1,21 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T08:29:34.507Z",
+  "generatedAt": "2026-06-11T08:49:48.946Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "77d8e309a7884b2ab114cfe419efc2e4b6844779",
+    "head": "02130c1629dbfc1352ad8aa206ef5471148199b1",
     "dirty": true,
-    "trackedChangedCount": 36,
+    "trackedChangedCount": 33,
     "untrackedCount": 5
   },
   "trackedChanges": [
     {
       "status": "M",
-      "path": ".mimesis/adapter-packets/claude-code.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/adapter-packets/gemini-cli.md"
+      "path": ".mimesis/claim-packs/public-v0.1.md"
     },
     {
       "status": "M",
@@ -95,15 +91,11 @@
     },
     {
       "status": "M",
-      "path": "adapters/README.md"
-    },
-    {
-      "status": "M",
       "path": "bin/mimesis.mjs"
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
@@ -119,10 +111,6 @@
     },
     {
       "status": "M",
-      "path": "prompts/README.md"
-    },
-    {
-      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -135,15 +123,15 @@
     },
     {
       "status": "M",
+      "path": "tools/audit-issue-forms.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/audit-release-artifact-manifest.mjs"
     },
     {
       "status": "M",
       "path": "tools/audit-release-check-order.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-cli-packet.mjs"
     },
     {
       "status": "M",
@@ -161,11 +149,7 @@
   "unstagedChanges": [
     {
       "status": "M",
-      "path": ".mimesis/adapter-packets/claude-code.md"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/adapter-packets/gemini-cli.md"
+      "path": ".mimesis/claim-packs/public-v0.1.md"
     },
     {
       "status": "M",
@@ -241,15 +225,11 @@
     },
     {
       "status": "M",
-      "path": "adapters/README.md"
-    },
-    {
-      "status": "M",
       "path": "bin/mimesis.mjs"
     },
     {
       "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
@@ -265,10 +245,6 @@
     },
     {
       "status": "M",
-      "path": "prompts/README.md"
-    },
-    {
-      "status": "M",
       "path": "tools/README.md"
     },
     {
@@ -281,15 +257,15 @@
     },
     {
       "status": "M",
+      "path": "tools/audit-issue-forms.mjs"
+    },
+    {
+      "status": "M",
       "path": "tools/audit-release-artifact-manifest.mjs"
     },
     {
       "status": "M",
       "path": "tools/audit-release-check-order.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-cli-packet.mjs"
     },
     {
       "status": "M",
@@ -306,8 +282,7 @@
   ],
   "stagedChanges": [],
   "trackedStatusLines": [
-    "M .mimesis/adapter-packets/claude-code.md",
-    " M .mimesis/adapter-packets/gemini-cli.md",
+    "M .mimesis/claim-packs/public-v0.1.md",
     " M .mimesis/completion/goal-completion-audit.json",
     " M .mimesis/framework-manifest.json",
     " M .mimesis/gaps/closure-plan.json",
@@ -326,30 +301,28 @@
     " M README.md",
     " M ROADMAP.md",
     " M STATUS.md",
-    " M adapters/README.md",
     " M bin/mimesis.mjs",
-    " M docs/FRAMEWORK-MANIFEST.md",
+    " M docs/COMPLETION-AUDIT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
     " M docs/V0.1-RELEASE-PACKET.md",
     " M package.json",
-    " M prompts/README.md",
     " M tools/README.md",
     " M tools/audit-cli.mjs",
     " M tools/audit-framework-manifest.mjs",
+    " M tools/audit-issue-forms.mjs",
     " M tools/audit-release-artifact-manifest.mjs",
     " M tools/audit-release-check-order.mjs",
-    " M tools/create-cli-packet.mjs",
     " M tools/create-framework-manifest.mjs",
     " M tools/create-release-artifact-manifest.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": ".mimesis/adapter-packets",
+      "root": ".github/ISSUE_TEMPLATE",
       "count": 1
     },
     {
-      "root": "adapters",
+      "root": ".mimesis/owner-actions",
       "count": 1
     },
     {
@@ -357,20 +330,16 @@
       "count": 1
     },
     {
-      "root": "prompts",
-      "count": 1
-    },
-    {
       "root": "tools",
-      "count": 1
+      "count": 2
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/adapter-packets/superpowers.md",
-    "adapters/superpowers.md",
-    "docs/SUPERPOWERS-ADAPTER.md",
-    "prompts/superpowers-mimesis.md",
-    "tools/audit-superpowers-adapter.mjs"
+    ".github/ISSUE_TEMPLATE/owner-proof-input.yml",
+    ".mimesis/owner-actions/proof-input-issue-packet.md",
+    "docs/OWNER-PROOF-INPUT-ISSUE.md",
+    "tools/audit-owner-proof-input-issue.mjs",
+    "tools/create-owner-proof-input-issue-packet.mjs"
   ],
   "sourceCommands": [
     "git status --short",

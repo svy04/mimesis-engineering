@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T08:29:35.039Z",
+  "generatedAt": "2026-06-11T08:49:49.418Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,9 +12,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "77d8e309a7884b2ab114cfe419efc2e4b6844779",
+    "head": "02130c1629dbfc1352ad8aa206ef5471148199b1",
     "dirty": true,
-    "trackedChangedCount": 36,
+    "trackedChangedCount": 33,
     "untrackedCount": 5
   },
   "sourceFiles": [
@@ -24,8 +24,7 @@
     ".mimesis/release-evidence/v0.1-report.md"
   ],
   "trackedChangedPaths": [
-    ".mimesis/adapter-packets/claude-code.md",
-    ".mimesis/adapter-packets/gemini-cli.md",
+    ".mimesis/claim-packs/public-v0.1.md",
     ".mimesis/completion/goal-completion-audit.json",
     ".mimesis/framework-manifest.json",
     ".mimesis/gaps/closure-plan.json",
@@ -44,19 +43,17 @@
     "README.md",
     "ROADMAP.md",
     "STATUS.md",
-    "adapters/README.md",
     "bin/mimesis.mjs",
-    "docs/FRAMEWORK-MANIFEST.md",
+    "docs/COMPLETION-AUDIT.md",
     "docs/RELEASE-CHECK-ORDER.md",
     "docs/V0.1-RELEASE-PACKET.md",
     "package.json",
-    "prompts/README.md",
     "tools/README.md",
     "tools/audit-cli.mjs",
     "tools/audit-framework-manifest.mjs",
+    "tools/audit-issue-forms.mjs",
     "tools/audit-release-artifact-manifest.mjs",
     "tools/audit-release-check-order.mjs",
-    "tools/create-cli-packet.mjs",
     "tools/create-framework-manifest.mjs",
     "tools/create-release-artifact-manifest.mjs",
     "tools/validate-mimesis.mjs"
@@ -72,17 +69,16 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 18,
+      "count": 17,
       "sample": [
-        ".mimesis/adapter-packets/claude-code.md",
-        ".mimesis/adapter-packets/gemini-cli.md",
-        ".mimesis/adapter-packets/superpowers.md",
+        ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/framework-manifest.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
+        ".mimesis/owner-actions/proof-input-issue-packet.md",
         ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -97,14 +93,12 @@
     },
     {
       "name": "public documentation",
-      "count": 9,
+      "count": 7,
       "sample": [
-        "docs/FRAMEWORK-MANIFEST.md",
+        "docs/COMPLETION-AUDIT.md",
+        "docs/OWNER-PROOF-INPUT-ISSUE.md",
         "docs/RELEASE-CHECK-ORDER.md",
-        "docs/SUPERPOWERS-ADAPTER.md",
         "docs/V0.1-RELEASE-PACKET.md",
-        "prompts/README.md",
-        "prompts/superpowers-mimesis.md",
         "README.md",
         "ROADMAP.md",
         "STATUS.md"
@@ -115,17 +109,17 @@
       "name": "tooling and cli",
       "count": 14,
       "sample": [
-        "adapters/README.md",
-        "adapters/superpowers.md",
+        ".github/ISSUE_TEMPLATE/owner-proof-input.yml",
         "bin/mimesis.mjs",
         "package.json",
         "tools/audit-cli.mjs",
         "tools/audit-framework-manifest.mjs",
+        "tools/audit-issue-forms.mjs",
+        "tools/audit-owner-proof-input-issue.mjs",
         "tools/audit-release-artifact-manifest.mjs",
         "tools/audit-release-check-order.mjs",
-        "tools/audit-superpowers-adapter.mjs",
-        "tools/create-cli-packet.mjs",
         "tools/create-framework-manifest.mjs",
+        "tools/create-owner-proof-input-issue-packet.mjs",
         "tools/create-release-artifact-manifest.mjs",
         "tools/README.md",
         "tools/validate-mimesis.mjs"

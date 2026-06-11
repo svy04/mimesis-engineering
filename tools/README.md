@@ -1887,6 +1887,40 @@ npm run cli -- audit:owner-proof-input
 
 This checks package script wiring, CLI exposure, release preflight order, generated template/report sections, schema fields, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, ready-check failure behavior, and no-decision/no-proof boundaries.
 
+## Generate Owner Proof Input Issue Packet
+
+Run:
+
+```bash
+npm run owner:proof-input-issue
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-issue
+```
+
+This writes `.mimesis/owner-actions/proof-input-issue-packet.md`.
+It connects `.github/ISSUE_TEMPLATE/owner-proof-input.yml` to the owner proof input review path.
+It does not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Issue
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-issue
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-issue
+```
+
+This checks the public owner proof input issue form, generated packet, package script wiring, CLI exposure, release preflight order, issue-form audit coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
+
 ## Split Owner Proof Input
 
 Run:

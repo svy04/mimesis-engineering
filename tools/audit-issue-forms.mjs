@@ -22,6 +22,16 @@ const expectedForms = {
     "proof-boundary",
     "safety-confirmation",
   ],
+  "owner-proof-input.yml": [
+    "license_or_no_reuse",
+    "license_notes",
+    "weak_artifact_permission",
+    "artifact_owner",
+    "publication_preference",
+    "redaction_requirements",
+    "proof_boundary",
+    "safety_confirmation",
+  ],
   "boundary-risk.yml": ["file-or-case", "risk-type", "why-it-matters", "suggested-repair"],
 };
 

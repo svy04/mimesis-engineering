@@ -240,6 +240,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
+- [docs/OWNER-PROOF-INPUT-ISSUE.md](docs/OWNER-PROOF-INPUT-ISSUE.md) - public owner proof input issue handoff
 - [docs/OWNER-PROOF-INPUT-SPLIT.md](docs/OWNER-PROOF-INPUT-SPLIT.md) - split reviewed owner proof input into downstream record candidates
 - [docs/OWNER-DECISION-INTAKE.md](docs/OWNER-DECISION-INTAKE.md) - generated owner decision intake
 - [docs/OWNER-DECISION-ANSWER-RECORD.md](docs/OWNER-DECISION-ANSWER-RECORD.md) - generated schema-shaped owner decision answer record
@@ -1061,6 +1062,17 @@ npm run audit:owner-proof-input
 This writes `.mimesis/owner-actions/proof-input-template.json` and `.mimesis/owner-actions/fixture-proof-input-check.md`.
 It keeps both minimum inputs pending until the owner reviews and submits them.
 It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+Generate the owner proof input issue packet:
+
+```bash
+npm run owner:proof-input-issue
+npm run audit:owner-proof-input-issue
+```
+
+This writes `.mimesis/owner-actions/proof-input-issue-packet.md`.
+It connects `.github/ISSUE_TEMPLATE/owner-proof-input.yml` to the local owner proof input path.
+It is a handoff only, not license choice, permission grant, proof approval, publication, or gate closure.
 
 Run the owner proof input split for downstream record candidates:
 

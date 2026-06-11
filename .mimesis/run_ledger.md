@@ -2900,3 +2900,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use the Superpowers adapter when an operator wants process discipline plus Mimesis artifact standards without roleplay.
 - Treat the adapter as a local contract only; it does not prove that a Superpowers skill ran or that any external adoption, publication, shipped plugin, benchmark, or owner evidence gate closed.
 - Keep the remaining 9 gates open until direct owner/external evidence exists.
+
+## 2026-06-11 - Owner Proof Input Issue Slice
+
+## Import
+
+- Re-read the owner proof handoff, proof input template, proof input checker, proof input split report, issue form audit, CLI audit, release-check order, framework manifest, release artifact manifest, README, status, roadmap, release packet, and completion audit.
+- Found that the repo had owner proof input records and split tooling, but no public GitHub issue form or generated packet for collecting the two minimum owner decisions: `license_or_no_reuse` and `weak_artifact_permission`.
+
+## Distill
+
+- Add an owner proof input issue form and generated handoff packet.
+- Keep the issue form bounded as an intake surface only.
+- Do not treat an issue submission as license choice, permission grant, proof approval, publication approval, external validation, adoption evidence, or gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-issue.mjs`, which failed first for the expected missing issue form, docs, packet, package/CLI/release wiring, validator coverage, manifests, and public docs.
+- GREEN: added `.github/ISSUE_TEMPLATE/owner-proof-input.yml`, `docs/OWNER-PROOF-INPUT-ISSUE.md`, `tools/create-owner-proof-input-issue-packet.mjs`, and `.mimesis/owner-actions/proof-input-issue-packet.md`.
+- GREEN: wired `owner:proof-input-issue` and `audit:owner-proof-input-issue` through `package.json`, `bin/mimesis.mjs`, CLI audit, issue form audit, release order, validator, framework manifest, release artifact manifest, README, status, roadmap, release packet, tools README, and completion audit.
+
+## Shard
+
+- The GitHub issue form asks for license/no-reuse direction, weak artifact permission, artifact owner, publication preference, redaction requirements, proof boundary, and safety confirmation.
+- `npm run owner:proof-input-issue` writes `.mimesis/owner-actions/proof-input-issue-packet.md` from the issue form and existing owner action artifacts.
+- `npm run audit:owner-proof-input-issue` checks the issue form, generated packet, docs, package scripts, CLI map, issue audit, release order, validator, manifests, public docs, and boundary language.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-issue.mjs` failed first for the expected missing owner proof input issue surface.
+- After implementation and regeneration, `npm run audit:owner-proof-input-issue`, `npm run audit:issues`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run validate`, and `npm run release:check` passed.
+
+## Remember
+
+- Use the owner proof input issue form as the public intake handoff for the two minimum owner inputs.
+- Convert a reviewed issue into an owner proof input record before running `owner:proof-input-check --require-ready` or `owner:proof-input-split`.
+- Keep all proof, license, publication, adoption, benchmark, sync, and gate closure claims blocked until direct owner/external evidence exists.
