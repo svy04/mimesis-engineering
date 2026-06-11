@@ -11,7 +11,7 @@ Status: not remote-synced
 - ahead: 0
 - behind: 0
 - changed tracked files: 24
-- untracked files: 5
+- untracked files: 4
 
 ## Conclusion
 
@@ -51,9 +51,8 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/remote-proof-input-issue-snapshot.json
-?? .mimesis/owner-actions/remote-proof-input-issue-snapshot.md
-?? docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md
-?? tools/audit-owner-proof-input-remote-issue-snapshot.mjs
-?? tools/create-owner-proof-input-remote-issue-snapshot.mjs
+?? .gitignore
+?? docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md
+?? tools/audit-owner-proof-input-remote-issue-export.mjs
+?? tools/export-owner-proof-input-remote-issue.mjs
 ```

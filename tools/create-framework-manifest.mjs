@@ -622,6 +622,10 @@ const manifest = {
       purpose: "Generate a metadata-only remote owner proof input issue snapshot without storing the raw issue body."
     },
     {
+      name: "owner:proof-input-remote-issue-export",
+      purpose: "Export candidate remote owner proof input issue body to a private gitignored path for local conversion."
+    },
+    {
       name: "owner:proof-input-issue-convert",
       purpose: "Convert a GitHub owner proof input issue body into a bounded draft owner proof input record without granting permission, creating proof, or closing gates."
     },
@@ -652,6 +656,10 @@ const manifest = {
     {
       name: "audit:owner-proof-input-remote-issue-snapshot",
       purpose: "Check the metadata-only remote owner proof input issue snapshot, no-body storage, and no-proof boundaries."
+    },
+    {
+      name: "audit:owner-proof-input-remote-issue-export",
+      purpose: "Check the private remote owner proof input issue export path, no-commit boundary, and release audit wiring."
     },
     {
       name: "audit:owner-proof-input-issue-convert",

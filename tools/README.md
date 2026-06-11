@@ -2023,6 +2023,41 @@ npm run cli -- audit:owner-proof-input-remote-issue-snapshot
 
 This checks package script wiring, CLI exposure, release preflight audit order, metadata-only snapshot shape, no raw issue body storage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
 
+## Export Owner Proof Input Remote Issue
+
+Run:
+
+```bash
+npm run owner:proof-input-remote-issue-export
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-input-remote-issue-export
+```
+
+This writes candidate owner issue body only to `.mimesis/private/owner-actions/remote-proof-input-issue-7.md`.
+The path is gitignored by `.gitignore`.
+It refuses request-only issue bodies, secret-like issue bodies, and non-private output paths.
+It does not choose a license, submit an artifact, grant permission, create external proof, approve proof, publish, or close gates.
+
+## Audit Owner Proof Input Remote Issue Export
+
+Run:
+
+```bash
+npm run audit:owner-proof-input-remote-issue-export
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-input-remote-issue-export
+```
+
+This checks package script wiring, CLI exposure, `.gitignore`, private output boundaries, release preflight audit order, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-commit/no-proof boundaries.
+
 ## Convert Owner Proof Input Issue
 
 Run:

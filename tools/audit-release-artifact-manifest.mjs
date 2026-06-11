@@ -101,6 +101,7 @@ if (!fs.existsSync(manifestPath)) {
 
   for (const requiredPath of [
     "README.md",
+    ".gitignore",
     "spec/README.md",
     "docs/COMPLETION-AUDIT.md",
     "docs/GOAL-COMPLETION-AUDIT.md",
@@ -136,6 +137,7 @@ if (!fs.existsSync(manifestPath)) {
     "docs/OWNER-PROOF-INPUT-REQUEST.md",
     "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
     "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
+    "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
     "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
     "docs/OWNER-PROOF-INPUT-REVIEW.md",
     "docs/CURRENT-STATE-SUMMARY.md",
@@ -233,6 +235,8 @@ if (!fs.existsSync(manifestPath)) {
     "tools/audit-owner-proof-input-remote-issue.mjs",
     "tools/create-owner-proof-input-remote-issue-snapshot.mjs",
     "tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
+    "tools/export-owner-proof-input-remote-issue.mjs",
+    "tools/audit-owner-proof-input-remote-issue-export.mjs",
     "tools/convert-owner-proof-input-issue.mjs",
     "tools/audit-owner-proof-input-issue-convert.mjs",
     "tools/review-owner-proof-input-record.mjs",

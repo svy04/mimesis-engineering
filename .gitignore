@@ -1,0 +1,10 @@
+# Local dependency and runtime output.
+node_modules/
+
+# Local environment files must not be committed.
+.env
+.env.*
+
+# Private owner/proof working files.
+# These may contain raw GitHub issue bodies or owner-provided artifacts.
+.mimesis/private/

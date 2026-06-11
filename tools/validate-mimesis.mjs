@@ -10,6 +10,7 @@ const passes = [];
 
 const requiredPaths = [
   "README.md",
+  ".gitignore",
   "PROOF-BOUNDARY.md",
   "CONTRIBUTING.md",
   "STATUS.md",
@@ -119,6 +120,7 @@ const requiredPaths = [
   "docs/OWNER-PROOF-INPUT-REQUEST.md",
   "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
   "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
+  "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
   "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
   "docs/OWNER-PROOF-INPUT-REVIEW.md",
   "docs/OWNER-PROOF-INPUT-SPLIT.md",
@@ -311,6 +313,7 @@ const requiredPaths = [
   "tools/audit-owner-proof-input-request.mjs",
   "tools/audit-owner-proof-input-remote-issue.mjs",
   "tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
+  "tools/audit-owner-proof-input-remote-issue-export.mjs",
   "tools/audit-owner-proof-input-issue-convert.mjs",
   "tools/audit-owner-proof-input-review.mjs",
   "tools/audit-owner-proof-input-split.mjs",
@@ -408,6 +411,7 @@ const requiredPaths = [
   "tools/create-owner-proof-input-request.mjs",
   "tools/create-owner-proof-input-remote-issue-anchor.mjs",
   "tools/create-owner-proof-input-remote-issue-snapshot.mjs",
+  "tools/export-owner-proof-input-remote-issue.mjs",
   "tools/create-owner-proof-input-template.mjs",
   "tools/create-owner-evidence-attachment-form.mjs",
   "tools/create-owner-evidence-submission-record.mjs",

@@ -3196,3 +3196,43 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `.mimesis/owner-actions/remote-proof-input-issue-snapshot.json` to see whether issue #7 is still request-only or ready for local conversion.
 - Treat the snapshot as metadata and hash evidence only; it is not owner decision, weak artifact permission, owner proof, publication evidence, adoption evidence, benchmark evidence, or gate closure.
 - Keep all v0.2 gates open until the owner fills issue #7 or provides an equivalent reviewed owner proof input record, and the conversion/review/check/split/proof intake path passes on real input.
+
+## 2026-06-11 - Owner Proof Input Remote Issue Export Slice
+
+## Import
+
+- Re-read the owner proof input remote issue anchor, metadata-only snapshot, issue converter, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, and GitHub issue #7.
+- Confirmed issue #7 still contains request-template placeholders and is classified as `request_only_pending_owner`.
+- Found no committed `.gitignore` rule for a private owner/proof working area before this slice.
+
+## Distill
+
+- Add a safe live export bridge for the moment when issue #7 becomes candidate owner input.
+- Keep raw GitHub issue body out of committed `.mimesis` artifacts and out of release preflight.
+- Refuse request-only issue bodies, secret-like bodies, and non-private output paths.
+- Do not choose a license, grant weak artifact permission, submit owner evidence, create proof, publish, claim adoption, claim benchmark evidence, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-input-remote-issue-export.mjs`, which failed first for missing `.gitignore`, export tool, docs, package/CLI/release audit wiring, validator coverage, manifests, and public docs.
+- GREEN: added `.gitignore`, `tools/export-owner-proof-input-remote-issue.mjs`, and `docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md`.
+- GREEN: wired `owner:proof-input-remote-issue-export` and `audit:owner-proof-input-remote-issue-export` through package scripts, CLI, release-check order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, completion audit, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- `.gitignore` now ignores `.mimesis/private/` for raw owner issue bodies and owner/proof working files.
+- `npm run owner:proof-input-remote-issue-export` fetches GitHub issue #7, classifies owner-input readiness, and writes raw body only to `.mimesis/private/owner-actions/remote-proof-input-issue-7.md` when the issue is candidate owner input.
+- The command writes no raw body for the current request-only issue state.
+- The default release preflight runs only `audit:owner-proof-input-remote-issue-export`, not the live raw-body export command.
+
+## Verify
+
+- `node tools/audit-owner-proof-input-remote-issue-export.mjs` failed first for the expected missing safe-export surface.
+- `node tools/export-owner-proof-input-remote-issue.mjs --dry-run` refused the current request-only issue #7 and wrote no files.
+- `npm run audit:owner-proof-input-remote-issue-export`, `npm run audit:cli`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, and `npm run validate` passed.
+
+## Remember
+
+- Use `.mimesis/private/` for raw owner issue body exports only after issue #7 is candidate owner input.
+- Treat private export as a local bridge into conversion/review/check/split, not as owner decision, permission, proof, publication, adoption evidence, benchmark evidence, or gate closure.
+- Keep all v0.2 gates open until real owner input is privately exported, converted, reviewed, checked, split, and routed into reviewed proof/evidence records.
