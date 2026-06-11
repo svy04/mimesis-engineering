@@ -9,8 +9,8 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `deb6612fde19e7161b3191a3eb9cdffe427e4b8d`
-- upstream head: `deb6612fde19e7161b3191a3eb9cdffe427e4b8d`
+- head: `38a45ae69d1793431bb2f60ee70bb7f19c3cb05e`
+- upstream head: `38a45ae69d1793431bb2f60ee70bb7f19c3cb05e`
 - tracked changed entries: 20
 - untracked entries: 0
 
@@ -34,39 +34,39 @@ local worktree is not publish-ready because it has unpublished local changes or 
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
  M docs/FRAMEWORK-MANIFEST.md
- M docs/GATE-CLOSURE-READINESS.md
+ M docs/GATE-CLOSURE-REVIEW.md
  M docs/RELEASE-CHECK-ORDER.md
- M spec/gate-closure-readiness.schema.json
+ M spec/gate-closure-review.schema.json
  M tools/README.md
- M tools/audit-gate-closure-readiness.mjs
+ M tools/audit-gate-closure-review.mjs
  M tools/create-framework-manifest.mjs
- M tools/create-gate-closure-readiness.mjs
+ M tools/create-gate-closure-review.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md | 32 ---------
- .mimesis/framework-manifest.json                |  4 +-
- .mimesis/gates/closure-readiness.json           | 23 +++++--
- .mimesis/gates/closure-review.json              |  8 +--
- .mimesis/release-artifacts/v0.1-manifest.json   | 64 +++++++++---------
- .mimesis/run_ledger.md                          | 36 ++++++++++
- .mimesis/state/current-state.json               |  8 +--
- .mimesis/sync-status.md                         | 34 ++--------
- README.md                                       |  9 ++-
- ROADMAP.md                                      |  2 +-
- STATUS.md                                       |  4 +-
- docs/COMPLETION-AUDIT.md                        |  2 +-
- docs/FRAMEWORK-MANIFEST.md                      |  4 +-
- docs/GATE-CLOSURE-READINESS.md                  | 20 ++++++
- docs/RELEASE-CHECK-ORDER.md                     |  2 +-
- spec/gate-closure-readiness.schema.json         | 32 +++++++++
- tools/README.md                                 |  9 ++-
- tools/audit-gate-closure-readiness.mjs          | 87 ++++++++++++++++++++++++
- tools/create-framework-manifest.mjs             |  4 +-
- tools/create-gate-closure-readiness.mjs         | 90 ++++++++++++++++++++++++-
- 20 files changed, 355 insertions(+), 119 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 ------
+ .mimesis/framework-manifest.json                |   4 +-
+ .mimesis/gates/closure-readiness.json           |   6 +-
+ .mimesis/gates/closure-review.json              |  23 +++-
+ .mimesis/release-artifacts/v0.1-manifest.json   |  62 +++++-----
+ .mimesis/run_ledger.md                          |  36 ++++++
+ .mimesis/state/current-state.json               |   6 +-
+ .mimesis/sync-status.md                         |   8 +-
+ README.md                                       |  10 +-
+ ROADMAP.md                                      |   2 +-
+ STATUS.md                                       |   4 +-
+ docs/COMPLETION-AUDIT.md                        |   4 +-
+ docs/FRAMEWORK-MANIFEST.md                      |   2 +-
+ docs/GATE-CLOSURE-REVIEW.md                     |  19 ++++
+ docs/RELEASE-CHECK-ORDER.md                     |   2 +-
+ spec/gate-closure-review.schema.json            |  42 +++++++
+ tools/README.md                                 |   7 ++
+ tools/audit-gate-closure-review.mjs             | 144 ++++++++++++++++++++++++
+ tools/create-framework-manifest.mjs             |   4 +-
+ tools/create-gate-closure-review.mjs            | 120 ++++++++++++++++++--
+ 20 files changed, 438 insertions(+), 99 deletions(-)
 ```
 
 ## Tracked Changes
@@ -84,13 +84,13 @@ local worktree is not publish-ready because it has unpublished local changes or 
 - ` M STATUS.md`
 - ` M docs/COMPLETION-AUDIT.md`
 - ` M docs/FRAMEWORK-MANIFEST.md`
-- ` M docs/GATE-CLOSURE-READINESS.md`
+- ` M docs/GATE-CLOSURE-REVIEW.md`
 - ` M docs/RELEASE-CHECK-ORDER.md`
-- ` M spec/gate-closure-readiness.schema.json`
+- ` M spec/gate-closure-review.schema.json`
 - ` M tools/README.md`
-- ` M tools/audit-gate-closure-readiness.mjs`
+- ` M tools/audit-gate-closure-review.mjs`
 - ` M tools/create-framework-manifest.mjs`
-- ` M tools/create-gate-closure-readiness.mjs`
+- ` M tools/create-gate-closure-review.mjs`
 
 ## Untracked Entries
 
@@ -139,13 +139,13 @@ It does not publish, push, tag, release, or create a pull request.
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
  M docs/FRAMEWORK-MANIFEST.md
- M docs/GATE-CLOSURE-READINESS.md
+ M docs/GATE-CLOSURE-REVIEW.md
  M docs/RELEASE-CHECK-ORDER.md
- M spec/gate-closure-readiness.schema.json
+ M spec/gate-closure-review.schema.json
  M tools/README.md
- M tools/audit-gate-closure-readiness.mjs
+ M tools/audit-gate-closure-review.mjs
  M tools/create-framework-manifest.mjs
- M tools/create-gate-closure-readiness.mjs
+ M tools/create-gate-closure-review.mjs
 ```
 
 

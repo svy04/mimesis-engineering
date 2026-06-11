@@ -39,11 +39,11 @@ It does not publish, push, tag, release, or create a pull request.
  M STATUS.md
  M docs/COMPLETION-AUDIT.md
  M docs/FRAMEWORK-MANIFEST.md
- M docs/GATE-CLOSURE-READINESS.md
+ M docs/GATE-CLOSURE-REVIEW.md
  M docs/RELEASE-CHECK-ORDER.md
- M spec/gate-closure-readiness.schema.json
+ M spec/gate-closure-review.schema.json
  M tools/README.md
- M tools/audit-gate-closure-readiness.mjs
+ M tools/audit-gate-closure-review.mjs
  M tools/create-framework-manifest.mjs
- M tools/create-gate-closure-readiness.mjs
+ M tools/create-gate-closure-review.mjs
 ```

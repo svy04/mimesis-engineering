@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T06:22:18.317Z",
+  "generatedAt": "2026-06-11T06:38:26.076Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,7 +12,7 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "deb6612fde19e7161b3191a3eb9cdffe427e4b8d",
+    "head": "38a45ae69d1793431bb2f60ee70bb7f19c3cb05e",
     "dirty": true,
     "trackedChangedCount": 26,
     "untrackedCount": 0
@@ -43,13 +43,13 @@
     "STATUS.md",
     "docs/COMPLETION-AUDIT.md",
     "docs/FRAMEWORK-MANIFEST.md",
-    "docs/GATE-CLOSURE-READINESS.md",
+    "docs/GATE-CLOSURE-REVIEW.md",
     "docs/RELEASE-CHECK-ORDER.md",
-    "spec/gate-closure-readiness.schema.json",
+    "spec/gate-closure-review.schema.json",
     "tools/README.md",
-    "tools/audit-gate-closure-readiness.mjs",
+    "tools/audit-gate-closure-review.mjs",
     "tools/create-framework-manifest.mjs",
-    "tools/create-gate-closure-readiness.mjs"
+    "tools/create-gate-closure-review.mjs"
   ],
   "reviewGroups": [
     {
@@ -87,7 +87,7 @@
       "sample": [
         "docs/COMPLETION-AUDIT.md",
         "docs/FRAMEWORK-MANIFEST.md",
-        "docs/GATE-CLOSURE-READINESS.md",
+        "docs/GATE-CLOSURE-REVIEW.md",
         "docs/RELEASE-CHECK-ORDER.md",
         "README.md",
         "ROADMAP.md",
@@ -99,9 +99,9 @@
       "name": "tooling and cli",
       "count": 4,
       "sample": [
-        "tools/audit-gate-closure-readiness.mjs",
+        "tools/audit-gate-closure-review.mjs",
         "tools/create-framework-manifest.mjs",
-        "tools/create-gate-closure-readiness.mjs",
+        "tools/create-gate-closure-review.mjs",
         "tools/README.md"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
@@ -110,7 +110,7 @@
       "name": "spec and schemas",
       "count": 1,
       "sample": [
-        "spec/gate-closure-readiness.schema.json"
+        "spec/gate-closure-review.schema.json"
       ],
       "note": "Spec contracts, templates, and reference packs."
     }

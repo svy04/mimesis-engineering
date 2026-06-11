@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-review.v0.1",
   "status": "blocked_no_gate_closure",
-  "generatedAt": "2026-06-11T06:21:07.819Z",
+  "generatedAt": "2026-06-11T06:37:35.690Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,10 +11,18 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "deb6612fde19e7161b3191a3eb9cdffe427e4b8d",
+    "head": "38a45ae69d1793431bb2f60ee70bb7f19c3cb05e",
     "dirty": true,
     "trackedChangedCount": 24,
     "untrackedCount": 0
+  },
+  "inputMode": {
+    "readinessReport": ".mimesis/gates/closure-readiness.json",
+    "ownerEvidenceSubmissionCheck": ".mimesis/owner-actions/fixture-evidence-submission-check.md",
+    "ownerEvidenceSubmissionRecord": ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    "outputPath": ".mimesis/gates/closure-review.json",
+    "candidateMode": false,
+    "boundary": "A supplied readiness/check/record set can make owner evidence review-ready, but this review still keeps every gate open until direct closure evidence is reviewed."
   },
   "completionAllowed": false,
   "closureApproved": false,
@@ -44,6 +52,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: publication_scope, strict_sync_intent.",
       "requiredBeforeClosure": [
         "npm run audit:sync:strict",
@@ -84,6 +93,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: license_or_no_reuse.",
       "requiredBeforeClosure": [
         "docs/LICENSE-DECISION.md",
@@ -116,6 +126,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: weak_artifact_permission.",
       "requiredBeforeClosure": [
         "docs/PROOF-INTAKE-KIT.md",
@@ -149,6 +160,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: weak_artifact_permission.",
       "requiredBeforeClosure": [
         "npm run cli -- case:review path/to/intake.md",
@@ -185,6 +197,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: package_action_plugin_scope.",
       "requiredBeforeClosure": [
         "docs/PACKAGE-RELEASE-CANDIDATE.md",
@@ -222,6 +235,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: package_action_plugin_scope.",
       "requiredBeforeClosure": [
         "docs/ACTION-RELEASE-CANDIDATE.md",
@@ -259,6 +273,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: package_action_plugin_scope.",
       "requiredBeforeClosure": [
         "docs/PLUGIN-RELEASE-PACKET.md",
@@ -297,6 +312,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: benchmark_adoption_scope.",
       "requiredBeforeClosure": [
         "docs/BENCHMARK-PACKET.md",
@@ -331,6 +347,7 @@
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
+      "ownerEvidenceReviewReady": false,
       "reviewReason": "Owner evidence fields are not submitted: benchmark_adoption_scope.",
       "requiredBeforeClosure": [
         "templates/evidence-packet.md",

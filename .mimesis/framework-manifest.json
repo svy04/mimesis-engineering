@@ -315,11 +315,11 @@
     },
     {
       "name": "gate:closure-review",
-      "purpose": "Generate the machine-readable gate closure review record without approving or closing gates."
+      "purpose": "Generate the machine-readable gate closure review record, or a candidate review from supplied readiness/check inputs, without approving or closing gates."
     },
     {
       "name": "audit:gate-closure-review",
-      "purpose": "Check that gate closure attempts remain keep_open until direct evidence exists."
+      "purpose": "Check that gate closure attempts and candidate reviews remain keep_open until direct evidence exists."
     },
     {
       "name": "framework:manifest",

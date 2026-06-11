@@ -11,6 +11,7 @@
     "generatedAt",
     "package",
     "git",
+    "inputMode",
     "completionAllowed",
     "closureApproved",
     "reviewCount",
@@ -36,6 +37,43 @@
     "completionAllowed": {
       "type": "boolean",
       "const": false
+    },
+    "inputMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readinessReport",
+        "ownerEvidenceSubmissionCheck",
+        "ownerEvidenceSubmissionRecord",
+        "outputPath",
+        "candidateMode",
+        "boundary"
+      ],
+      "properties": {
+        "readinessReport": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownerEvidenceSubmissionCheck": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownerEvidenceSubmissionRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outputPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateMode": {
+          "type": "boolean"
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     },
     "closureApproved": {
       "type": "boolean",
@@ -89,6 +127,7 @@
         "decision",
         "closureApproved",
         "canCloseNow",
+        "ownerEvidenceReviewReady",
         "reviewReason",
         "requiredBeforeClosure",
         "forbiddenClaim",
@@ -123,6 +162,9 @@
         "canCloseNow": {
           "type": "boolean",
           "const": false
+        },
+        "ownerEvidenceReviewReady": {
+          "type": "boolean"
         },
         "reviewReason": {
           "type": "string",

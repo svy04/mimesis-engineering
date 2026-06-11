@@ -14,12 +14,31 @@ npm run gate:closure-review
 npm run audit:gate-closure-review
 ```
 
+## Input Modes
+
+Default mode reads the fixture readiness report, owner evidence submission check, and owner evidence submission record:
+
+```bash
+npm run cli -- gate:closure-review
+```
+
+Candidate review mode can read separate readiness/check/record files produced from a real owner evidence submission:
+
+```bash
+npm run cli -- gate:closure-review --readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json
+```
+
+The `--readiness`, `--owner-evidence-submission-check`, and `--owner-evidence-submission` inputs can carry `ownerEvidenceReviewReady: true` into a candidate review.
+The `--output` file is still a review record, not closure.
+Candidate review keeps `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`.
+
 ## What It Records
 
 - one review entry per current gate
 - `decision: keep_open`
 - `closureApproved: false`
 - `canCloseNow: false`
+- `ownerEvidenceReviewReady` when owner evidence is ready for gate-specific review
 - missing evidence required before closure
 - owner evidence fields that are still not submitted
 - forbidden claim text for each gate

@@ -464,7 +464,7 @@ Tool command execution is disabled through the stdio candidate.
 `gap:closure-plan` creates a local gap closure plan, not closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:evidence-packet` creates a local gate evidence packet, not evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `gate:closure-readiness` creates a local gate closure readiness report and can also read `--owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-readiness-candidate.json`; candidate mode can mark `ownerEvidenceReviewReady` while still keeping `canCloseNow: false`, so it is not submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
-`gate:closure-review` creates a local gate closure review record with `decision: keep_open`, not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
+`gate:closure-review` creates a local gate closure review record and can also read `--readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json`; candidate review carries `ownerEvidenceReviewReady` forward while keeping `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`, so it is not approved gate closure, submitted evidence, attached evidence, closed gates, completion proof, publication, license choice, external proof, or adoption evidence.
 `release:execution-packet` creates an owner release handoff, not a commit, push, tag, release, package publish, Marketplace publish, or license choice.
 `claim:pack` creates a public copy guardrail, not publication, adoption proof, benchmark proof, legal proof, or certification.
 `audit:status-roadmap` checks that status and roadmap pages match the current local v0.1 surface; it does not prove completion or publish anything.
@@ -864,6 +864,14 @@ Generate the gate closure review record:
 npm run gate:closure-review
 npm run audit:gate-closure-review
 ```
+
+With a candidate readiness/check/record set, write a separate candidate review:
+
+```bash
+npm run cli -- gate:closure-review --readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json
+```
+
+Candidate review can show `ownerEvidenceReviewReady: true`; it still keeps `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`.
 
 This writes `.mimesis/gates/closure-review.json`.
 It does not approve gate closure, close gates, submit evidence, attach evidence, prove completion, publish, stage, commit, push, tag, release, choose a license, create external proof, or prove adoption.

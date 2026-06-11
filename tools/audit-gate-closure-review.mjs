@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -46,6 +48,13 @@ function requireBefore(commands, earlier, later) {
   }
 }
 
+function runNode(script, args, options = {}) {
+  return spawnSync(process.execPath, [path.join(root, "tools", script), ...args], {
+    cwd: options.cwd ?? root,
+    encoding: "utf8",
+  });
+}
+
 const requiredGateIds = [
   "strict_publish_sync",
   "owner_license_decision",
@@ -89,6 +98,7 @@ const releaseOrderDoc = read("docs/RELEASE-CHECK-ORDER.md");
 const frameworkManifest = readJson(".mimesis/framework-manifest.json");
 const releaseArtifactManifest = readJson(".mimesis/release-artifacts/v0.1-manifest.json");
 const validator = read("tools/validate-mimesis.mjs");
+const generator = read("tools/create-gate-closure-review.mjs");
 const releaseCheck = packageJson.scripts?.["release:check"] ?? "";
 const releaseCommands = releaseCheck
   .split("&&")
@@ -135,6 +145,11 @@ for (const text of [
   "review record, not closure",
   "keep_open",
   "closureApproved",
+  "--readiness",
+  "--owner-evidence-submission-check",
+  "--owner-evidence-submission",
+  "--output",
+  "candidate review",
   "does not approve gate closure",
   "does not close gates",
   "does not publish",
@@ -168,6 +183,26 @@ if (report.closureApproved !== false) {
   failures.push("gate closure review closureApproved must be false");
 }
 
+if (!report.inputMode || typeof report.inputMode !== "object") {
+  failures.push("gate closure review missing inputMode");
+}
+
+if (report.inputMode?.readinessReport !== ".mimesis/gates/closure-readiness.json") {
+  failures.push("gate closure review default inputMode must name the fixture readiness report");
+}
+
+if (report.inputMode?.ownerEvidenceSubmissionCheck !== ".mimesis/owner-actions/fixture-evidence-submission-check.md") {
+  failures.push("gate closure review default inputMode must name the fixture owner evidence submission check");
+}
+
+if (report.inputMode?.ownerEvidenceSubmissionRecord !== ".mimesis/owner-actions/fixture-evidence-submission-record.json") {
+  failures.push("gate closure review default inputMode must name the fixture owner evidence submission record");
+}
+
+if (report.inputMode?.candidateMode !== false) {
+  failures.push("gate closure review default inputMode candidateMode must be false");
+}
+
 if (report.reviewCount !== readiness.gateCount) {
   failures.push("gate closure review reviewCount must match readiness gateCount");
 }
@@ -189,6 +224,7 @@ for (const review of reviews) {
     "decision",
     "closureApproved",
     "canCloseNow",
+    "ownerEvidenceReviewReady",
     "reviewReason",
     "requiredBeforeClosure",
     "forbiddenClaim",
@@ -206,6 +242,10 @@ for (const review of reviews) {
 
   if (review.closureApproved !== false || review.canCloseNow !== false) {
     failures.push(`gate closure review must not approve closure: ${review.id}`);
+  }
+
+  if (review.ownerEvidenceReviewReady !== false) {
+    failures.push(`default gate closure review must not mark owner evidence review ready: ${review.id}`);
   }
 }
 
@@ -293,6 +333,110 @@ for (const pathNeedle of [
 ]) {
   if (!validator.includes(pathNeedle)) {
     failures.push(`validator required files missing ${pathNeedle}`);
+  }
+}
+
+for (const text of [
+  "--readiness",
+  "--owner-evidence-submission-check",
+  "--owner-evidence-submission",
+  "--output",
+  "candidateMode",
+  "ownerEvidenceReviewReady",
+]) {
+  if (!generator.includes(text)) {
+    failures.push(`tools/create-gate-closure-review.mjs missing option or field text: ${text}`);
+  }
+}
+
+if (!failures.length) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "mimesis-gate-review-input-"));
+  const fixtureRecord = readJson(".mimesis/owner-actions/fixture-evidence-submission-record.json");
+  const reviewedRecord = path.join(tmpDir, "reviewed-owner-evidence.json");
+  const readinessCandidate = path.join(tmpDir, "closure-readiness-candidate.json");
+  const checkReport = path.join(tmpDir, "owner-evidence-field-check.md");
+  const reviewCandidate = path.join(tmpDir, "closure-review-candidate.json");
+
+  fixtureRecord.status = "reviewed";
+  fixtureRecord.fields.weak_artifact_permission = {
+    ...fixtureRecord.fields.weak_artifact_permission,
+    submissionStatus: "submitted",
+    ownerSubmittedEvidence: "permissioned or clearly redacted weak artifact attached for gate-specific review only",
+    ownerAttachmentSlot: "examples/permissioned-case-intake.md",
+    safetyCheck: "owner confirms permission, redaction, submitter scope, and publication scope before case movement",
+    boundary: "does not create external proof, close gates, publish, or prove adoption",
+  };
+  fs.writeFileSync(reviewedRecord, `${JSON.stringify(fixtureRecord, null, 2)}\n`);
+
+  const readinessResult = runNode("create-gate-closure-readiness.mjs", [
+    "--owner-evidence-submission",
+    reviewedRecord,
+    "--output",
+    readinessCandidate,
+  ]);
+  if (readinessResult.status !== 0) {
+    failures.push(`gate closure readiness candidate setup failed:\n${readinessResult.stdout}\n${readinessResult.stderr}`.trim());
+  }
+
+  const checkResult = runNode("check-owner-evidence-submission-record.mjs", [
+    reviewedRecord,
+    "--require-field",
+    "weak_artifact_permission",
+    "--write-report",
+    checkReport,
+  ]);
+  if (checkResult.status !== 0) {
+    failures.push(`owner evidence field check candidate setup failed:\n${checkResult.stdout}\n${checkResult.stderr}`.trim());
+  }
+
+  const reviewResult = runNode("create-gate-closure-review.mjs", [
+    "--readiness",
+    readinessCandidate,
+    "--owner-evidence-submission-check",
+    checkReport,
+    "--owner-evidence-submission",
+    reviewedRecord,
+    "--output",
+    reviewCandidate,
+  ]);
+  if (reviewResult.status !== 0) {
+    failures.push(`gate closure review must accept candidate readiness/check inputs:\n${reviewResult.stdout}\n${reviewResult.stderr}`.trim());
+  }
+
+  const candidate = fs.existsSync(reviewCandidate) ? JSON.parse(fs.readFileSync(reviewCandidate, "utf8")) : {};
+  if (candidate.inputMode?.candidateMode !== true) {
+    failures.push("gate closure review candidate output must set inputMode.candidateMode true");
+  }
+  if (candidate.inputMode?.readinessReport !== readinessCandidate.replaceAll(path.sep, "/")) {
+    failures.push("gate closure review candidate must record the supplied readiness path");
+  }
+  if (candidate.inputMode?.ownerEvidenceSubmissionCheck !== checkReport.replaceAll(path.sep, "/")) {
+    failures.push("gate closure review candidate must record the supplied owner evidence submission check path");
+  }
+  if (candidate.closureApproved !== false || candidate.completionAllowed !== false) {
+    failures.push("gate closure review candidate must not approve closure or completion");
+  }
+
+  const permissionedReview = candidate.reviews?.find((review) => review.id === "permissioned_external_artifact") ?? {};
+  if (permissionedReview.ownerEvidenceReviewReady !== true) {
+    failures.push("permissioned external artifact review should show ownerEvidenceReviewReady for reviewed submitted weak_artifact_permission");
+  }
+  if (permissionedReview.decision !== "keep_open" || permissionedReview.closureApproved !== false || permissionedReview.canCloseNow !== false) {
+    failures.push("permissioned external artifact candidate review must keep the gate open");
+  }
+  if (!permissionedReview.reviewReason?.toLowerCase().includes("ready for gate-specific review")) {
+    failures.push("permissioned external artifact candidate review must explain gate-specific review readiness");
+  }
+
+  const completedCaseReview = candidate.reviews?.find((review) => review.id === "completed_external_case") ?? {};
+  if (completedCaseReview.ownerEvidenceReviewReady !== true) {
+    failures.push("completed external case review should carry ownerEvidenceReviewReady while still requiring case evidence");
+  }
+  if (!completedCaseReview.requiredBeforeClosure?.some((item) => item.includes("case:check"))) {
+    failures.push("completed external case candidate review must still require case evidence before closure");
+  }
+  if (completedCaseReview.closureApproved !== false || completedCaseReview.canCloseNow !== false) {
+    failures.push("completed external case candidate review must remain open");
   }
 }
 

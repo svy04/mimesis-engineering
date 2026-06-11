@@ -156,7 +156,7 @@ Candidate work:
 - generated owner evidence review before treating pending owner evidence as gate movement
 - generated current state summary before treating open gates as closed or hidden
 - generated gate closure readiness report before treating missing owner evidence as resolved, including candidate-mode `ownerEvidenceReviewReady` checks from reviewed owner evidence submission records
-- generated gate closure review record before treating any open gate as approved for closure
+- generated gate closure review record before treating any open gate as approved for closure, including candidate-mode review records that carry `ownerEvidenceReviewReady` without closure approval
 - generated worktree review packet before treating dirty local changes as reviewed, publishable, or synced
 - generated release review bundle before treating dirty local changes as staged, committed, publishable, or synced
 - license decision

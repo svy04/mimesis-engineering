@@ -5,7 +5,28 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outputPath = path.join(root, ".mimesis", "gates", "closure-review.json");
+const args = process.argv.slice(2);
+const flags = new Map();
+const defaultReadinessReport = ".mimesis/gates/closure-readiness.json";
+const defaultOwnerEvidenceSubmissionCheck = ".mimesis/owner-actions/fixture-evidence-submission-check.md";
+const defaultOwnerEvidenceSubmissionRecord = ".mimesis/owner-actions/fixture-evidence-submission-record.json";
+const defaultOutputPath = ".mimesis/gates/closure-review.json";
+
+for (let index = 0; index < args.length; index += 1) {
+  const arg = args[index];
+  if (!arg.startsWith("--")) {
+    continue;
+  }
+
+  const key = arg.slice(2);
+  const next = args[index + 1];
+  if (next && !next.startsWith("--")) {
+    flags.set(key, next);
+    index += 1;
+  } else {
+    flags.set(key, true);
+  }
+}
 
 function readText(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
@@ -15,16 +36,80 @@ function readJson(relativePath) {
   return JSON.parse(readText(relativePath));
 }
 
+function resolveInput(inputPath) {
+  const raw = String(inputPath);
+  const cwdPath = path.resolve(process.cwd(), raw);
+  if (fs.existsSync(cwdPath)) {
+    return cwdPath;
+  }
+
+  const repoPath = path.resolve(root, raw);
+  if (fs.existsSync(repoPath)) {
+    return repoPath;
+  }
+
+  return cwdPath;
+}
+
+function resolveOutput(outputPath) {
+  const raw = String(outputPath);
+  return path.isAbsolute(raw) ? raw : path.resolve(process.cwd(), raw);
+}
+
+function displayPath(filePath) {
+  const repoRelative = path.relative(root, filePath);
+  if (!repoRelative.startsWith("..") && !path.isAbsolute(repoRelative)) {
+    return repoRelative.replaceAll(path.sep, "/");
+  }
+  return path.resolve(filePath).replaceAll(path.sep, "/");
+}
+
+function readJsonFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function usage() {
+  console.log(`Usage: mimesis gate:closure-review [--readiness path/to/readiness.json] [--owner-evidence-submission-check path/to/check.md] [--owner-evidence-submission path/to/record.json] [--output path/to/closure-review.json]
+
+Generates a gate closure review record from readiness and owner evidence submission inputs.
+Default mode uses the fixture readiness/check/record files.
+Candidate mode can read a real readiness candidate and owner evidence check, then write a separate review output.
+It does not approve closure, close gates, create evidence, publish, or prove adoption.
+`);
+}
+
+if (flags.has("help") || flags.has("h")) {
+  usage();
+  process.exit(0);
+}
+
 function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
 const packageJson = readJson("package.json");
-const readiness = readJson(".mimesis/gates/closure-readiness.json");
+const readinessPath = resolveInput(flags.get("readiness") ?? defaultReadinessReport);
+const ownerEvidenceSubmissionCheckPath = resolveInput(
+  flags.get("owner-evidence-submission-check") ?? defaultOwnerEvidenceSubmissionCheck,
+);
+const ownerEvidenceSubmissionPath = resolveInput(
+  flags.get("owner-evidence-submission") ?? defaultOwnerEvidenceSubmissionRecord,
+);
+const outputPath = resolveOutput(flags.get("output") ?? defaultOutputPath);
+const readiness = readJsonFile(readinessPath);
 const gapRegister = readJson(".mimesis/gaps/current-gap-register.json");
 const currentState = readJson(".mimesis/state/current-state.json");
-const ownerSubmission = readJson(".mimesis/owner-actions/fixture-evidence-submission-record.json");
-readText(".mimesis/owner-actions/fixture-evidence-submission-check.md");
+const ownerSubmission = readJsonFile(ownerEvidenceSubmissionPath);
+fs.readFileSync(ownerEvidenceSubmissionCheckPath, "utf8");
+const readinessReport = displayPath(readinessPath);
+const ownerEvidenceSubmissionCheck = displayPath(ownerEvidenceSubmissionCheckPath);
+const ownerEvidenceSubmissionRecord = displayPath(ownerEvidenceSubmissionPath);
+const outputRecord = displayPath(outputPath);
+const candidateMode =
+  readinessReport !== defaultReadinessReport ||
+  ownerEvidenceSubmissionCheck !== defaultOwnerEvidenceSubmissionCheck ||
+  ownerEvidenceSubmissionRecord !== defaultOwnerEvidenceSubmissionRecord ||
+  outputRecord !== defaultOutputPath;
 
 const gapsById = new Map((gapRegister.gaps ?? []).map((gap) => [gap.id, gap]));
 const requiredGateIds = ownerSubmission.requiredGateIds ?? [];
@@ -36,9 +121,12 @@ const reviews = (readiness.gates ?? []).map((gate) => {
   const missingOwnerFields = ownerEvidence
     .filter((field) => field.submissionStatus !== "submitted")
     .map((field) => field.fieldName);
+  const ownerEvidenceReviewReady = gate.ownerEvidenceReviewReady === true;
   const reviewReason = missingOwnerFields.length
     ? `Owner evidence fields are not submitted: ${missingOwnerFields.join(", ")}.`
-    : `Direct closure evidence is still missing: ${missingEvidence.slice(0, 3).join("; ")}.`;
+    : ownerEvidenceReviewReady
+      ? `Owner evidence is ready for gate-specific review; direct closure evidence is still missing: ${missingEvidence.slice(0, 3).join("; ")}.`
+      : `Direct closure evidence is still missing: ${missingEvidence.slice(0, 3).join("; ")}.`;
 
   return {
     id: gate.id,
@@ -48,6 +136,7 @@ const reviews = (readiness.gates ?? []).map((gate) => {
     decision: "keep_open",
     closureApproved: false,
     canCloseNow: false,
+    ownerEvidenceReviewReady,
     reviewReason,
     requiredBeforeClosure: missingEvidence,
     ownerEvidenceFields: ownerEvidence.map((field) => ({
@@ -57,9 +146,9 @@ const reviews = (readiness.gates ?? []).map((gate) => {
       boundary: field.boundary,
     })),
     sourceEvidence: [
-      ".mimesis/gates/closure-readiness.json",
-      ".mimesis/owner-actions/fixture-evidence-submission-check.md",
-      ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+      readinessReport,
+      ownerEvidenceSubmissionCheck,
+      ownerEvidenceSubmissionRecord,
     ],
     forbiddenClaim: "This review does not approve gate closure.",
     nextAction: gate.nextAction,
@@ -83,6 +172,15 @@ const report = {
     license: packageJson.license ?? "none",
   },
   git: currentState.git ?? {},
+  inputMode: {
+    readinessReport,
+    ownerEvidenceSubmissionCheck,
+    ownerEvidenceSubmissionRecord,
+    outputPath: outputRecord,
+    candidateMode,
+    boundary:
+      "A supplied readiness/check/record set can make owner evidence review-ready, but this review still keeps every gate open until direct closure evidence is reviewed.",
+  },
   completionAllowed: false,
   closureApproved: false,
   reviewCount: reviews.length,
@@ -92,9 +190,9 @@ const report = {
   reviewCounts,
   reviews,
   sourceFiles: [
-    ".mimesis/gates/closure-readiness.json",
-    ".mimesis/owner-actions/fixture-evidence-submission-check.md",
-    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    readinessReport,
+    ownerEvidenceSubmissionCheck,
+    ownerEvidenceSubmissionRecord,
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/state/current-state.json",
   ],

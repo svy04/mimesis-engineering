@@ -1,13 +1,13 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T06:22:17.815Z",
+  "generatedAt": "2026-06-11T06:38:25.557Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "deb6612fde19e7161b3191a3eb9cdffe427e4b8d",
+    "head": "38a45ae69d1793431bb2f60ee70bb7f19c3cb05e",
     "dirty": true,
     "trackedChangedCount": 26,
     "untrackedCount": 0
@@ -91,7 +91,7 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-CLOSURE-READINESS.md"
+      "path": "docs/GATE-CLOSURE-REVIEW.md"
     },
     {
       "status": "M",
@@ -99,7 +99,7 @@
     },
     {
       "status": "M",
-      "path": "spec/gate-closure-readiness.schema.json"
+      "path": "spec/gate-closure-review.schema.json"
     },
     {
       "status": "M",
@@ -107,7 +107,7 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-gate-closure-readiness.mjs"
+      "path": "tools/audit-gate-closure-review.mjs"
     },
     {
       "status": "M",
@@ -115,7 +115,7 @@
     },
     {
       "status": "M",
-      "path": "tools/create-gate-closure-readiness.mjs"
+      "path": "tools/create-gate-closure-review.mjs"
     }
   ],
   "unstagedChanges": [
@@ -197,7 +197,7 @@
     },
     {
       "status": "M",
-      "path": "docs/GATE-CLOSURE-READINESS.md"
+      "path": "docs/GATE-CLOSURE-REVIEW.md"
     },
     {
       "status": "M",
@@ -205,7 +205,7 @@
     },
     {
       "status": "M",
-      "path": "spec/gate-closure-readiness.schema.json"
+      "path": "spec/gate-closure-review.schema.json"
     },
     {
       "status": "M",
@@ -213,7 +213,7 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-gate-closure-readiness.mjs"
+      "path": "tools/audit-gate-closure-review.mjs"
     },
     {
       "status": "M",
@@ -221,7 +221,7 @@
     },
     {
       "status": "M",
-      "path": "tools/create-gate-closure-readiness.mjs"
+      "path": "tools/create-gate-closure-review.mjs"
     }
   ],
   "stagedChanges": [],
@@ -245,13 +245,13 @@
     " M STATUS.md",
     " M docs/COMPLETION-AUDIT.md",
     " M docs/FRAMEWORK-MANIFEST.md",
-    " M docs/GATE-CLOSURE-READINESS.md",
+    " M docs/GATE-CLOSURE-REVIEW.md",
     " M docs/RELEASE-CHECK-ORDER.md",
-    " M spec/gate-closure-readiness.schema.json",
+    " M spec/gate-closure-review.schema.json",
     " M tools/README.md",
-    " M tools/audit-gate-closure-readiness.mjs",
+    " M tools/audit-gate-closure-review.mjs",
     " M tools/create-framework-manifest.mjs",
-    " M tools/create-gate-closure-readiness.mjs"
+    " M tools/create-gate-closure-review.mjs"
   ],
   "untrackedRoots": [],
   "untrackedFilesSample": [],

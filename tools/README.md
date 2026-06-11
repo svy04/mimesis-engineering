@@ -570,6 +570,13 @@ npm run cli -- gate:closure-review
 
 This writes `.mimesis/gates/closure-review.json`.
 It turns the gate closure readiness report and owner evidence submission check into a review record with `decision: keep_open` and `closureApproved: false`.
+It also supports candidate input from a real readiness/check/record set:
+
+```bash
+npm run cli -- gate:closure-review --readiness path/to/closure-readiness-candidate.json --owner-evidence-submission-check path/to/owner-evidence-field-check.md --owner-evidence-submission path/to/reviewed-owner-evidence-submission.json --output path/to/closure-review-candidate.json
+```
+
+Candidate review can carry `ownerEvidenceReviewReady: true` forward while keeping `decision: keep_open`, `closureApproved: false`, and `canCloseNow: false`.
 It does not approve gate closure, close gates, create evidence, attach evidence, submit evidence, prove completion, publish, choose a license, create external proof, or prove adoption.
 
 ## Audit Gate Closure Review
