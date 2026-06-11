@@ -102,6 +102,7 @@ const requiredPaths = [
   "docs/REMOTE-ECOSYSTEM-AUDIT.md",
   "docs/SECRET-SAFETY-GATE.md",
   "docs/STATUS-ROADMAP-SYNC.md",
+  "docs/SUPERPOWERS-ADAPTER.md",
   "docs/RELEASE-DECISION-RECORD.md",
   "docs/RELEASE-ARTIFACT-MANIFEST.md",
   "docs/RELEASE-EVIDENCE-REPORT.md",
@@ -231,7 +232,9 @@ const requiredPaths = [
   "examples/product-workflow.md",
   "examples/blog-homepage.md",
   "prompts/README.md",
+  "prompts/superpowers-mimesis.md",
   "adapters/README.md",
+  "adapters/superpowers.md",
   "plugins/README.md",
   "plugins/mimesis-codex/.codex-plugin/plugin.json",
   "plugins/mimesis-codex/README.md",
@@ -336,6 +339,7 @@ const requiredPaths = [
   "tools/create-release-review-bundle.mjs",
   "tools/audit-release-review-bundle.mjs",
   "tools/audit-status-roadmap-sync.mjs",
+  "tools/audit-superpowers-adapter.mjs",
   "tools/audit-source-first.mjs",
   "tools/audit-sync-status.mjs",
   "tools/audit-sync-strict-nonwriting.mjs",
@@ -409,6 +413,7 @@ const requiredPaths = [
   "tools/validate-mimesis.mjs",
   ".mimesis/adapter-packets/claude-code.md",
   ".mimesis/adapter-packets/gemini-cli.md",
+  ".mimesis/adapter-packets/superpowers.md",
 ];
 
 const readmeSections = [

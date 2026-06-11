@@ -77,6 +77,11 @@ const manifest = {
       command: "npm run reference:index"
     },
     {
+      name: "Superpowers adapter",
+      path: ".mimesis/adapter-packets/superpowers.md",
+      command: "npm run adapter:superpowers"
+    },
+    {
       name: "proof intake schema",
       path: "spec/proof-intake.schema.json",
       command: "npm run audit:proof-intake-schema"
@@ -373,6 +378,14 @@ const manifest = {
     {
       name: "audit:spec-index",
       purpose: "Check the spec README indexes all local framework contracts and schema boundaries."
+    },
+    {
+      name: "adapter:superpowers",
+      purpose: "Generate the local Superpowers process/artifact adapter packet without proving Superpowers execution."
+    },
+    {
+      name: "audit:superpowers-adapter",
+      purpose: "Check the Superpowers adapter packet, docs, CLI wiring, release preflight order, and no-execution-proof boundary."
     },
     {
       name: "audit:proof-intake-schema",
@@ -826,6 +839,7 @@ const manifest = {
     "docs/CLAIM-FROM-EVIDENCE.md",
     "docs/PLUGIN-INSTALL-PACKET.md",
     "docs/STATUS-ROADMAP-SYNC.md",
+    "docs/SUPERPOWERS-ADAPTER.md",
     "docs/RELEASE-DECISION-RECORD.md",
     "docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md",
     "docs/RELEASE-EVIDENCE-REPORT.md",
@@ -854,6 +868,9 @@ const manifest = {
     "tools/license-decision-from-owner-answer.mjs",
     "tools/audit-license-decision-from-owner-answer.mjs",
     "docs/REFERENCE-PACK-INDEX.md",
+    "adapters/superpowers.md",
+    "prompts/superpowers-mimesis.md",
+    "tools/audit-superpowers-adapter.mjs",
     "reference-packs/README.md",
     "PROOF-BOUNDARY.md",
     "STATUS.md",

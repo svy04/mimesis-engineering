@@ -9,10 +9,10 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `fc059280de758eb983bf2dda67eedba808ba9312`
-- upstream head: `fc059280de758eb983bf2dda67eedba808ba9312`
-- tracked changed entries: 25
-- untracked entries: 4
+- head: `77d8e309a7884b2ab114cfe419efc2e4b6844779`
+- upstream head: `77d8e309a7884b2ab114cfe419efc2e4b6844779`
+- tracked changed entries: 37
+- untracked entries: 5
 
 Conclusion:
 local worktree is not publish-ready because it has unpublished local changes or does not match upstream.
@@ -21,102 +21,140 @@ local worktree is not publish-ready because it has unpublished local changes or 
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/adapter-packets/claude-code.md
+ M .mimesis/adapter-packets/gemini-cli.md
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
  M .mimesis/publication-packets/v0.1.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
+ M .mimesis/state/current-state.json
  M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
+ M adapters/README.md
  M bin/mimesis.mjs
- M docs/COMPLETION-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
- M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
+ M prompts/README.md
  M tools/README.md
  M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-package-surface.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
- M tools/audit-release-readiness.mjs
- M tools/audit-status-roadmap-sync.mjs
+ M tools/create-cli-packet.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/proof-input-split-report.md
-?? docs/OWNER-PROOF-INPUT-SPLIT.md
-?? tools/audit-owner-proof-input-split.mjs
-?? tools/split-owner-proof-input-record.mjs
+?? .mimesis/adapter-packets/superpowers.md
+?? adapters/superpowers.md
+?? docs/SUPERPOWERS-ADAPTER.md
+?? prompts/superpowers-mimesis.md
+?? tools/audit-superpowers-adapter.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md |  32 -------
- .mimesis/framework-manifest.json                |  14 +++
- .mimesis/publication-packets/v0.1.md            |   4 +
- .mimesis/release-artifacts/v0.1-manifest.json   | 116 +++++++++++++++---------
- .mimesis/run_ledger.md                          |  36 ++++++++
- .mimesis/sync-status.md                         |  30 ++----
- README.md                                       |  16 ++++
- ROADMAP.md                                      |   2 +
- STATUS.md                                       |   2 +
- bin/mimesis.mjs                                 |   2 +
- docs/COMPLETION-AUDIT.md                        |   1 +
- docs/RELEASE-CHECK-ORDER.md                     |   4 +-
- docs/STATUS-ROADMAP-SYNC.md                     |   2 +
- docs/V0.1-RELEASE-PACKET.md                     |  16 ++++
- package.json                                    |   6 +-
- tools/README.md                                 |  34 +++++++
- tools/audit-cli.mjs                             |   2 +
- tools/audit-completion-matrix.mjs               |   4 +
- tools/audit-package-surface.mjs                 |   5 +-
- tools/audit-release-check-order.mjs             |   8 ++
- tools/audit-release-readiness.mjs               |  36 ++++++++
- tools/audit-status-roadmap-sync.mjs             |   4 +
- tools/create-framework-manifest.mjs             |  14 +++
- tools/create-release-artifact-manifest.mjs      |   4 +
- tools/validate-mimesis.mjs                      |   4 +
- 25 files changed, 293 insertions(+), 105 deletions(-)
+.mimesis/adapter-packets/claude-code.md            |   3 +
+ .mimesis/adapter-packets/gemini-cli.md             |   3 +
+ .mimesis/completion/goal-completion-audit.json     |   2 +-
+ .mimesis/first-loop-demo/.mimesis/case-proof.md    |  32 -----
+ .mimesis/framework-manifest.json                   |  17 +++
+ .mimesis/gaps/closure-plan.json                    |   2 +-
+ .mimesis/gaps/current-gap-register.json            |   2 +-
+ .mimesis/gates/closure-readiness.json              |   8 +-
+ .mimesis/gates/closure-review.json                 |   8 +-
+ .mimesis/publication-packets/v0.1.md               |   1 +
+ .mimesis/publish-packets/local-sync-handoff.md     | 133 ++++++++++---------
+ .mimesis/release-artifacts/v0.1-manifest.json      | 147 +++++++++++++--------
+ .../release-decisions/owner-decision-record.json   |   2 +-
+ .mimesis/release-review/v0.1-bundle.json           |  55 ++++----
+ .mimesis/run_ledger.md                             |  36 +++++
+ .mimesis/state/current-state.json                  |   8 +-
+ .mimesis/sync-status.md                            |  38 ++++--
+ .mimesis/worktree/review-packet.json               | 118 ++++++++---------
+ README.md                                          |  11 ++
+ ROADMAP.md                                         |   2 +
+ STATUS.md                                          |   2 +
+ adapters/README.md                                 |   1 +
+ bin/mimesis.mjs                                    |   4 +-
+ docs/FRAMEWORK-MANIFEST.md                         |   4 +-
+ docs/RELEASE-CHECK-ORDER.md                        |   3 +-
+ docs/V0.1-RELEASE-PACKET.md                        |  12 ++
+ package.json                                       |   4 +-
+ prompts/README.md                                  |   1 +
+ tools/README.md                                    |  20 +++
+ tools/audit-cli.mjs                                |   2 +
+ tools/audit-framework-manifest.mjs                 |   5 +
+ tools/audit-release-artifact-manifest.mjs          |   5 +
+ tools/audit-release-check-order.mjs                |   9 ++
+ tools/create-cli-packet.mjs                        |  27 ++--
+ tools/create-framework-manifest.mjs                |  17 +++
+ tools/create-release-artifact-manifest.mjs         |   5 +
+ tools/validate-mimesis.mjs                         |   5 +
+ 37 files changed, 473 insertions(+), 281 deletions(-)
 ```
 
 ## Tracked Changes
 
-- `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
+- `M .mimesis/adapter-packets/claude-code.md`
+- ` M .mimesis/adapter-packets/gemini-cli.md`
+- ` M .mimesis/completion/goal-completion-audit.json`
+- ` D .mimesis/first-loop-demo/.mimesis/case-proof.md`
 - ` M .mimesis/framework-manifest.json`
+- ` M .mimesis/gaps/closure-plan.json`
+- ` M .mimesis/gaps/current-gap-register.json`
+- ` M .mimesis/gates/closure-readiness.json`
+- ` M .mimesis/gates/closure-review.json`
 - ` M .mimesis/publication-packets/v0.1.md`
+- ` M .mimesis/publish-packets/local-sync-handoff.md`
 - ` M .mimesis/release-artifacts/v0.1-manifest.json`
+- ` M .mimesis/release-decisions/owner-decision-record.json`
+- ` M .mimesis/release-review/v0.1-bundle.json`
 - ` M .mimesis/run_ledger.md`
+- ` M .mimesis/state/current-state.json`
 - ` M .mimesis/sync-status.md`
+- ` M .mimesis/worktree/review-packet.json`
 - ` M README.md`
 - ` M ROADMAP.md`
 - ` M STATUS.md`
+- ` M adapters/README.md`
 - ` M bin/mimesis.mjs`
-- ` M docs/COMPLETION-AUDIT.md`
+- ` M docs/FRAMEWORK-MANIFEST.md`
 - ` M docs/RELEASE-CHECK-ORDER.md`
-- ` M docs/STATUS-ROADMAP-SYNC.md`
 - ` M docs/V0.1-RELEASE-PACKET.md`
 - ` M package.json`
+- ` M prompts/README.md`
 - ` M tools/README.md`
 - ` M tools/audit-cli.mjs`
-- ` M tools/audit-completion-matrix.mjs`
-- ` M tools/audit-package-surface.mjs`
+- ` M tools/audit-framework-manifest.mjs`
+- ` M tools/audit-release-artifact-manifest.mjs`
 - ` M tools/audit-release-check-order.mjs`
-- ` M tools/audit-release-readiness.mjs`
-- ` M tools/audit-status-roadmap-sync.mjs`
+- ` M tools/create-cli-packet.mjs`
 - ` M tools/create-framework-manifest.mjs`
 - ` M tools/create-release-artifact-manifest.mjs`
 - ` M tools/validate-mimesis.mjs`
 
 ## Untracked Entries
 
-- `?? .mimesis/owner-actions/proof-input-split-report.md`
-- `?? docs/OWNER-PROOF-INPUT-SPLIT.md`
-- `?? tools/audit-owner-proof-input-split.mjs`
-- `?? tools/split-owner-proof-input-record.mjs`
+- `?? .mimesis/adapter-packets/superpowers.md`
+- `?? adapters/superpowers.md`
+- `?? docs/SUPERPOWERS-ADAPTER.md`
+- `?? prompts/superpowers-mimesis.md`
+- `?? tools/audit-superpowers-adapter.mjs`
 
 ## Current Sync Report
 
@@ -132,8 +170,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 24
-- untracked files: 4
+- changed tracked files: 37
+- untracked files: 5
 
 ## Conclusion
 
@@ -149,34 +187,48 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/adapter-packets/claude-code.md
+ M .mimesis/adapter-packets/gemini-cli.md
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
  M .mimesis/framework-manifest.json
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
  M .mimesis/publication-packets/v0.1.md
+ M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
+ M .mimesis/state/current-state.json
+ M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
  M README.md
  M ROADMAP.md
  M STATUS.md
+ M adapters/README.md
  M bin/mimesis.mjs
- M docs/COMPLETION-AUDIT.md
+ M docs/FRAMEWORK-MANIFEST.md
  M docs/RELEASE-CHECK-ORDER.md
- M docs/STATUS-ROADMAP-SYNC.md
  M docs/V0.1-RELEASE-PACKET.md
  M package.json
+ M prompts/README.md
  M tools/README.md
  M tools/audit-cli.mjs
- M tools/audit-completion-matrix.mjs
- M tools/audit-package-surface.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
  M tools/audit-release-check-order.mjs
- M tools/audit-release-readiness.mjs
- M tools/audit-status-roadmap-sync.mjs
+ M tools/create-cli-packet.mjs
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/proof-input-split-report.md
-?? docs/OWNER-PROOF-INPUT-SPLIT.md
-?? tools/audit-owner-proof-input-split.mjs
-?? tools/split-owner-proof-input-record.mjs
+?? .mimesis/adapter-packets/superpowers.md
+?? adapters/superpowers.md
+?? docs/SUPERPOWERS-ADAPTER.md
+?? prompts/superpowers-mimesis.md
+?? tools/audit-superpowers-adapter.mjs
 ```
 
 

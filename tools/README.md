@@ -175,6 +175,26 @@ npm run cli -- audit:reference-index
 
 This checks generated index freshness, all seven starter packs, source-quality fields, inspection fields, transferable patterns, what-not-to-copy boundaries, starter prompts, package scripts, CLI exposure, and release preflight wiring.
 
+## Create And Audit Superpowers Adapter
+
+Run:
+
+```bash
+npm run adapter:superpowers
+npm run audit:superpowers-adapter
+```
+
+or:
+
+```bash
+npm run cli -- adapter:superpowers
+npm run cli -- audit:superpowers-adapter
+```
+
+This writes `.mimesis/adapter-packets/superpowers.md`.
+It is a local process/artifact contract for using Superpowers discipline with Mimesis standards.
+It does not install Superpowers, prove that a Superpowers skill ran, prove external adoption, publish a package, or ship a plugin.
+
 ## Audit Framework Manifest
 
 Run:

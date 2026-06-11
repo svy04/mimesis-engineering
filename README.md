@@ -184,6 +184,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [examples/README.md](examples/README.md) - starting scenarios
 - [prompts/README.md](prompts/README.md) - prompts that support the loop
 - [adapters/README.md](adapters/README.md) - tool integration contracts
+- [docs/SUPERPOWERS-ADAPTER.md](docs/SUPERPOWERS-ADAPTER.md) - Superpowers adapter contract for process discipline plus Mimesis artifact standards
 - [plugins/README.md](plugins/README.md) - plugin shapes, local scaffolds, and boundaries
 - [tools/README.md](tools/README.md) - local protocol checks
 - [docs/ACTIVATION-SURFACE.md](docs/ACTIVATION-SURFACE.md) - 30-second and 5-minute first-action guard
@@ -516,6 +517,16 @@ Create a Claude Code packet from the current artifact trail:
 ```bash
 npm run adapter:claude
 ```
+
+Create a Superpowers adapter packet from the current artifact trail:
+
+```bash
+npm run adapter:superpowers
+npm run audit:superpowers-adapter
+```
+
+This creates and checks a local contract packet only.
+It does not install Superpowers or prove that a Superpowers skill ran.
 
 License status:
 [docs/LICENSE-DECISION.md](docs/LICENSE-DECISION.md)

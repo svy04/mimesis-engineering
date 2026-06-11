@@ -49,6 +49,7 @@ Includes:
 - local Codex plugin scaffold
 - local MCP server scaffold
 - local MCP stdio runtime candidate
+- Superpowers adapter
 - plugin/action release-candidate packet
 - read-only remote ecosystem visibility audit
 - remote visibility fallback audit
@@ -78,6 +79,7 @@ Includes:
 - status roadmap sync audit
 - public claim pack
 - release check order audit
+- Superpowers adapter with `adapter:superpowers`, `audit:superpowers-adapter`, `docs/SUPERPOWERS-ADAPTER.md`, `adapters/superpowers.md`, and `.mimesis/adapter-packets/superpowers.md`
 - local release preflight
 - completion audit matrix
 - owner license decision packet

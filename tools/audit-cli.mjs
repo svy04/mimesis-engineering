@@ -21,6 +21,7 @@ const packageJson = read("package.json");
 
 for (const command of [
   "init",
+  "adapter:superpowers",
   "adoption:packet",
   "benchmark:packet",
   "case:start",
@@ -166,6 +167,7 @@ for (const command of [
   "audit:release-order",
   "audit:package",
   "audit:action",
+  "audit:superpowers-adapter",
   "audit:permissioned-fixture",
   "audit:plugin-install-packet",
   "audit:remote",

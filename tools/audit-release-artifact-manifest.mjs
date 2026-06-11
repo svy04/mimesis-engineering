@@ -136,7 +136,9 @@ if (!fs.existsSync(manifestPath)) {
     "docs/WORKTREE-REVIEW-PACKET.md",
     "docs/RELEASE-REVIEW-BUNDLE.md",
     "docs/STATUS-ROADMAP-SYNC.md",
+    "docs/SUPERPOWERS-ADAPTER.md",
     ".mimesis/publication-packets/v0.1.md",
+    ".mimesis/adapter-packets/superpowers.md",
     ".mimesis/release-decisions/from-owner-answer-bridge.md",
     ".mimesis/release-decisions/owner-decision-record.json",
     ".mimesis/release-evidence/v0.1-report.md",
@@ -171,6 +173,7 @@ if (!fs.existsSync(manifestPath)) {
     ".mimesis/proof-runs/readiness.md",
     ".mimesis/adoption-packets/v0.2-first-adoption.md",
     "tools/validate-mimesis.mjs",
+    "tools/audit-superpowers-adapter.mjs",
     "tools/create-gap-register.mjs",
     "tools/audit-gap-register.mjs",
     // npm run audit:gap-register-sync-closure
@@ -246,6 +249,8 @@ if (!fs.existsSync(manifestPath)) {
     "tools/audit-release-review-bundle.mjs",
     "tools/audit-status-roadmap-sync.mjs",
     "tools/audit-sync-strict-nonwriting.mjs",
+    "prompts/superpowers-mimesis.md",
+    "adapters/superpowers.md",
     "package.json",
   ]) {
     if (!byPath.has(requiredPath)) {

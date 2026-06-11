@@ -15,6 +15,7 @@ const npmExecPath = process.env.npm_execpath;
 const commands = new Map([
   ["help", { description: "Show this help.", type: "help" }],
   ["init", { description: "Initialize a .mimesis workspace from templates.", type: "node", script: "tools/init-mimesis.mjs" }],
+  ["adapter:superpowers", { description: "Generate the local Superpowers process/artifact adapter packet.", type: "node", script: "tools/create-cli-packet.mjs", args: ["superpowers", ".mimesis/adapter-packets/superpowers.md"] }],
   ["adoption:packet", { description: "Generate the external adoption evidence intake packet without claiming adoption.", type: "node", script: "tools/create-adoption-packet.mjs" }],
   ["benchmark:packet", { description: "Generate the benchmark/adoption measurement protocol packet.", type: "node", script: "tools/create-benchmark-packet.mjs" }],
   ["case:start", { description: "Start a Mimesis case workspace from one weak artifact.", type: "node", script: "tools/start-case.mjs" }],
@@ -160,6 +161,7 @@ const commands = new Map([
   ["audit:release-order", { description: "Audit release preflight command ordering.", type: "node", script: "tools/audit-release-check-order.mjs" }],
   ["audit:package", { description: "Audit the npm package release-candidate surface.", type: "node", script: "tools/audit-package-surface.mjs" }],
   ["audit:action", { description: "Audit the GitHub Action release-candidate surface.", type: "node", script: "tools/audit-action-release-candidate.mjs" }],
+  ["audit:superpowers-adapter", { description: "Audit the local Superpowers adapter packet, docs, CLI, and proof boundaries.", type: "node", script: "tools/audit-superpowers-adapter.mjs" }],
   ["audit:permissioned-fixture", { description: "Audit the reviewable permissioned-case fixture.", type: "node", script: "tools/audit-permissioned-fixture.mjs" }],
   ["audit:plugin-install-packet", { description: "Audit the local Codex plugin install-readiness packet.", type: "node", script: "tools/audit-plugin-install-packet.mjs" }],
   ["audit:remote", { description: "Audit expected GitHub public repository visibility.", type: "node", script: "tools/audit-remote-ecosystem.mjs" }],
@@ -235,7 +237,7 @@ if (spec.type === "help") {
 }
 
 if (spec.type === "node") {
-  runNode(spec.script, rest);
+  runNode(spec.script, [...(spec.args ?? []), ...rest]);
 }
 
 if (spec.type === "npm") {

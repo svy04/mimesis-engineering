@@ -50,6 +50,7 @@ Release readiness:
 - local Codex plugin scaffold
 - local MCP server scaffold
 - local MCP stdio runtime candidate
+- Superpowers adapter
 - plugin/action release-candidate packet
 - release readiness audit
 - one-command release preflight
@@ -98,6 +99,7 @@ Release readiness:
 - status roadmap sync audit
 - public claim pack
 - release check order audit
+- Superpowers adapter with `adapter:superpowers`, `audit:superpowers-adapter`, `docs/SUPERPOWERS-ADAPTER.md`, `adapters/superpowers.md`, and `.mimesis/adapter-packets/superpowers.md`; it is a local process/artifact contract, not Superpowers installation proof or execution proof.
 
 ## What Is Contract-Only
 

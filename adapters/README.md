@@ -37,6 +37,7 @@ Every adapter must preserve:
 - [Gemini CLI](gemini-cli.md) - `prototype`
 - [GitHub Issues](github-issues.md) - `prototype`
 - [Local Filesystem](local-filesystem.md)
+- [Superpowers](superpowers.md) - `contract`
 
 ## Local Audit
 

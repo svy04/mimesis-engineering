@@ -17,6 +17,7 @@ The product is the artifact trail.
 - [README Mimesis](readme-mimesis.md)
 - [Landing Page Mimesis](landing-page-mimesis.md)
 - [Risk Inspection](risk-inspection.md)
+- [Superpowers + Mimesis](superpowers-mimesis.md)
 
 ## Use Rule
 

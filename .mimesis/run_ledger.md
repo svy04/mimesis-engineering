@@ -2864,3 +2864,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use owner proof input split immediately after a real owner proof input record is reviewed.
 - Treat split outputs as downstream candidates only; license decision, proof intake, proof execution, evidence review, and gate closure remain separate.
 - Keep default committed artifacts blocked/not-ready until the owner supplies the actual license/no-reuse and weak artifact inputs.
+
+## 2026-06-11 - Superpowers Adapter Slice
+
+## Import
+
+- Re-read the active gap register, goal completion audit, package scripts, CLI command map, adapter generator, adapter audit, framework manifest generator, release artifact manifest generator, validator, README, status, roadmap, release packet, and release order.
+- Found that Claude/Gemini/local adapters existed, but the user-requested Superpowers + Mimesis operating path was not visible as an adapter packet or dedicated audit.
+
+## Distill
+
+- Add a local Superpowers adapter contract that combines Superpowers process discipline with Mimesis artifact standards.
+- Keep it explicitly bounded as a contract packet, not Superpowers installation proof, skill execution proof, external adoption proof, benchmark proof, publication proof, or shipped-plugin proof.
+
+## Capsule
+
+- RED: added `tools/audit-superpowers-adapter.mjs`, which failed first for missing adapter docs, prompt, generated packet, CLI/package wiring, README/status/roadmap/release docs, manifest coverage, validator coverage, and release-check order.
+- GREEN: added `adapters/superpowers.md`, `docs/SUPERPOWERS-ADAPTER.md`, `prompts/superpowers-mimesis.md`, and `.mimesis/adapter-packets/superpowers.md`.
+- GREEN: wired `adapter:superpowers` and `audit:superpowers-adapter` through `package.json`, `bin/mimesis.mjs`, `tools/create-cli-packet.mjs`, `tools/audit-cli.mjs`, `tools/audit-release-check-order.mjs`, `tools/create-framework-manifest.mjs`, `tools/audit-framework-manifest.mjs`, `tools/create-release-artifact-manifest.mjs`, `tools/audit-release-artifact-manifest.mjs`, `tools/validate-mimesis.mjs`, README, STATUS, ROADMAP, tools README, release packet, adapter index, and prompt index.
+
+## Shard
+
+- `npm run adapter:superpowers` writes `.mimesis/adapter-packets/superpowers.md`.
+- `npm run audit:superpowers-adapter` checks the adapter doc, docs page, prompt, generated packet, CLI, package scripts, release-check order, manifest wiring, validator coverage, and no-execution-proof boundary.
+- The adapter keeps the working loop visible as `Import -> Distill -> Capsule -> Shard -> Verify -> Remember` while preserving `Give AI standards, not roles.` and `Bring one weak artifact.`
+
+## Verify
+
+- `node tools/audit-superpowers-adapter.mjs` failed first for the expected missing Superpowers adapter surface.
+- After implementation and regeneration, `npm run audit:superpowers-adapter`, `npm run audit:adapters`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run validate`, and `npm run release:check` passed.
+- `npm run validate` reported 404 required files, 878 local markdown links, 464 claim-risk lines checked with boundary context, and 6 adapter status labels checked.
+
+## Remember
+
+- Use the Superpowers adapter when an operator wants process discipline plus Mimesis artifact standards without roleplay.
+- Treat the adapter as a local contract only; it does not prove that a Superpowers skill ran or that any external adoption, publication, shipped plugin, benchmark, or owner evidence gate closed.
+- Keep the remaining 9 gates open until direct owner/external evidence exists.
