@@ -16,27 +16,19 @@ This report compares the local owner issue queue against live GitHub issue metad
 
 | Gap ID | Expected Remote Title | Remote State | Remote Issue | Labels |
 | --- | --- | --- | --- | --- |
-| `strict_publish_sync` | [Mimesis v0.2 gate] Strict publish sync gate | missing (not proof) | missing | mimesis-owner-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `owner_license_decision` | [Mimesis v0.2 gate] Owner license decision | missing (not proof) | missing | mimesis-owner-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `permissioned_external_artifact` | [Mimesis v0.2 gate] One permissioned external weak artifact | missing (not proof) | missing | mimesis-proof-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `completed_external_case` | [Mimesis v0.2 gate] Completed permissioned before/after case | missing (not proof) | missing | mimesis-proof-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `package_publication` | [Mimesis v0.2 gate] npm package publication | missing (not proof) | missing | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `action_publication` | [Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication | missing (not proof) | missing | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `shipped_plugin` | [Mimesis v0.2 gate] Shipped plugin or connector proof | missing (not proof) | missing | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `benchmark_study` | [Mimesis v0.2 gate] Benchmarked productivity evidence | missing (not proof) | missing | mimesis-measurement-gate<br>mimesis-v0.2<br>mimesis-gap |
-| `external_adoption` | [Mimesis v0.2 gate] External adoption evidence | missing (not proof) | missing | mimesis-measurement-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `strict_publish_sync` | [Mimesis v0.2 gate] Strict publish sync gate | matched (not proof) | #8 OPEN https://github.com/svy04/mimesis-engineering/issues/8 | mimesis-owner-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `owner_license_decision` | [Mimesis v0.2 gate] Owner license decision | matched (not proof) | #9 OPEN https://github.com/svy04/mimesis-engineering/issues/9 | mimesis-owner-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `permissioned_external_artifact` | [Mimesis v0.2 gate] One permissioned external weak artifact | matched (not proof) | #10 OPEN https://github.com/svy04/mimesis-engineering/issues/10 | mimesis-proof-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `completed_external_case` | [Mimesis v0.2 gate] Completed permissioned before/after case | matched (not proof) | #11 OPEN https://github.com/svy04/mimesis-engineering/issues/11 | mimesis-proof-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `package_publication` | [Mimesis v0.2 gate] npm package publication | matched (not proof) | #12 OPEN https://github.com/svy04/mimesis-engineering/issues/12 | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `action_publication` | [Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication | matched (not proof) | #13 OPEN https://github.com/svy04/mimesis-engineering/issues/13 | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `shipped_plugin` | [Mimesis v0.2 gate] Shipped plugin or connector proof | matched (not proof) | #14 OPEN https://github.com/svy04/mimesis-engineering/issues/14 | mimesis-publication-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `benchmark_study` | [Mimesis v0.2 gate] Benchmarked productivity evidence | matched (not proof) | #15 OPEN https://github.com/svy04/mimesis-engineering/issues/15 | mimesis-measurement-gate<br>mimesis-v0.2<br>mimesis-gap |
+| `external_adoption` | [Mimesis v0.2 gate] External adoption evidence | matched (not proof) | #16 OPEN https://github.com/svy04/mimesis-engineering/issues/16 | mimesis-measurement-gate<br>mimesis-v0.2<br>mimesis-gap |
 
 ## Missing Gate Issues
 
-- `strict_publish_sync`: [Mimesis v0.2 gate] Strict publish sync gate (not proof)
-- `owner_license_decision`: [Mimesis v0.2 gate] Owner license decision (not proof)
-- `permissioned_external_artifact`: [Mimesis v0.2 gate] One permissioned external weak artifact (not proof)
-- `completed_external_case`: [Mimesis v0.2 gate] Completed permissioned before/after case (not proof)
-- `package_publication`: [Mimesis v0.2 gate] npm package publication (not proof)
-- `action_publication`: [Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication (not proof)
-- `shipped_plugin`: [Mimesis v0.2 gate] Shipped plugin or connector proof (not proof)
-- `benchmark_study`: [Mimesis v0.2 gate] Benchmarked productivity evidence (not proof)
-- `external_adoption`: [Mimesis v0.2 gate] External adoption evidence (not proof)
+- No missing gate issues in this read-only snapshot.
 
 ## Existing Non-Gate Issues
 

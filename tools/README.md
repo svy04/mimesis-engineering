@@ -1625,6 +1625,46 @@ npm run cli -- audit:owner-issue-remote-sync
 
 This checks package script wiring, CLI exposure, release preflight order, generated remote sync metadata, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-remote-mutation/no-closure boundaries.
 
+## Create Owner Issue Remote Create
+
+Run:
+
+```bash
+npm run owner:issue-remote-create
+```
+
+or deliberately execute remote creation:
+
+```bash
+npm run owner:issue-remote-create -- --execute
+```
+
+or:
+
+```bash
+npm run cli -- owner:issue-remote-create
+```
+
+This writes `.mimesis/owner-actions/remote-issue-create.json` and `.mimesis/owner-actions/remote-issue-create.md`.
+It is dry-run by default and creates missing gate labels/issues only with `--execute`.
+It does not store issue bodies, choose a license, collect an artifact, grant permission, create external proof, prove adoption, prove benchmark results, publish, or close gates.
+
+## Audit Owner Issue Remote Create
+
+Run:
+
+```bash
+npm run audit:owner-issue-remote-create
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-issue-remote-create
+```
+
+This checks package script wiring, CLI exposure, release preflight audit order, generated remote create metadata, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-proof/no-closure boundaries.
+
 ## Create Owner Decision Intake
 
 Run:

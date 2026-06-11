@@ -240,6 +240,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
 - [docs/OWNER-ISSUE-QUEUE.md](docs/OWNER-ISSUE-QUEUE.md) - generated owner issue queue with copyable issue body drafts
 - [docs/OWNER-ISSUE-REMOTE-SYNC.md](docs/OWNER-ISSUE-REMOTE-SYNC.md) - read-only owner issue remote sync snapshot
+- [docs/OWNER-ISSUE-REMOTE-CREATE.md](docs/OWNER-ISSUE-REMOTE-CREATE.md) - gated owner issue remote create report
 - [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-PROOF-INPUT.md](docs/OWNER-PROOF-INPUT.md) - owner-fillable proof input template and checker
 - [docs/OWNER-PROOF-INPUT-ISSUE.md](docs/OWNER-PROOF-INPUT-ISSUE.md) - public owner proof input issue handoff
@@ -354,6 +355,12 @@ npm run cli -- audit:publication-evidence-packet
 npm run cli -- goal:completion-audit
 npm run cli -- audit:goal-completion-audit
 npm run cli -- owner:queue
+npm run cli -- owner:issue-queue
+npm run cli -- owner:issue-remote-sync
+npm run cli -- owner:issue-remote-create
+npm run cli -- audit:owner-issue-queue
+npm run cli -- audit:owner-issue-remote-sync
+npm run cli -- audit:owner-issue-remote-create
 npm run cli -- owner:proof-handoff
 npm run cli -- audit:owner-proof-handoff
 npm run cli -- owner:proof-input-issue
@@ -458,6 +465,8 @@ It does not prove npm package release.
 `audit:owner-issue-queue` checks the owner issue queue and no-remote-mutation/no-closure boundary.
 `owner:issue-remote-sync` creates a read-only owner issue remote sync snapshot from GitHub issue metadata, not remote issue creation, owner decisions, submitted artifacts, external proof, adoption proof, or closed gates.
 `audit:owner-issue-remote-sync` checks the owner issue remote sync snapshot and no-remote-mutation/no-closure boundary.
+`owner:issue-remote-create` dry-runs by default and creates missing remote GitHub gate issues only when called with `--execute`; it writes metadata-only reports and does not close gates, choose a license, collect an artifact, create external proof, prove adoption, prove benchmark results, publish, stage, commit, push, or tag.
+`audit:owner-issue-remote-create` checks the committed owner issue remote create report, release wiring, manifest visibility, and no-proof/no-closure boundary.
 `owner:proof-handoff` creates the minimum owner proof handoff for `license_or_no_reuse` and `weak_artifact_permission`, not owner decision, permission grant, proof approval, publication, or gate closure.
 `audit:owner-proof-handoff` checks the owner proof handoff and no-decision/no-proof boundary.
 `owner:proof-input-template` creates a schema-shaped owner proof input template for `license_or_no_reuse` and `weak_artifact_permission`, not an owner decision, submitted artifact, permission grant, publication, external proof, proof approval, or gate closure.
@@ -1018,6 +1027,18 @@ npm run owner:issue-remote-sync
 This writes `.mimesis/owner-actions/remote-issue-sync.json` and `.mimesis/owner-actions/remote-issue-sync.md`.
 Audit it with `npm run audit:owner-issue-remote-sync`.
 It compares local gate issue drafts with GitHub issue metadata only; it does not create GitHub issues, store issue bodies, choose a license, collect an artifact, create external proof, prove adoption, or close gates.
+
+Generate an owner issue remote create report:
+
+```bash
+npm run owner:issue-remote-create
+npm run owner:issue-remote-create -- --execute
+```
+
+This writes `.mimesis/owner-actions/remote-issue-create.json` and `.mimesis/owner-actions/remote-issue-create.md`.
+Dry-run is the default. `--execute` is the deliberate remote mutation path for missing gate labels and issues.
+Audit it with `npm run audit:owner-issue-remote-create`.
+It records issue metadata only; it does not store issue bodies, choose a license, collect an artifact, create external proof, prove adoption, prove benchmark results, publish, or close gates.
 
 Generate an owner decision intake:
 

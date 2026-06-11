@@ -44,6 +44,7 @@ The audit checks:
 - owner action queue visibility
 - owner issue queue visibility
 - owner issue remote sync visibility
+- owner issue remote create visibility
 - owner proof handoff visibility
 - owner proof input visibility
 - owner proof input remote issue visibility
@@ -91,6 +92,7 @@ The audit currently requires the public status and roadmap to name:
 - owner action queue
 - owner issue queue
 - owner issue remote sync
+- owner issue remote create
 - owner proof handoff
 - owner proof input
 - owner proof input remote issue

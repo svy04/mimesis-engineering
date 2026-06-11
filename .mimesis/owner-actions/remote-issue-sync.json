@@ -1,8 +1,8 @@
 {
   "schema": "mimesis.owner-issue-remote-sync.v0.1",
-  "generatedAt": "2026-06-11T12:02:07.308Z",
+  "generatedAt": "2026-06-11T12:18:02.317Z",
   "snapshotKind": "read_only_remote_snapshot",
-  "status": "remote_gate_issues_missing",
+  "status": "remote_gate_issues_matched",
   "repository": "svy04/mimesis-engineering",
   "remoteSource": "gh issue list --repo svy04/mimesis-engineering",
   "sourceQueue": ".mimesis/owner-actions/v0.2-issue-queue.md",
@@ -14,8 +14,8 @@
     "license": "UNLICENSED"
   },
   "requiredGateCount": 9,
-  "matchedGateCount": 0,
-  "missingGateCount": 9,
+  "matchedGateCount": 9,
+  "missingGateCount": 0,
   "existingNonGateIssueCount": 6,
   "matches": [
     {
@@ -29,8 +29,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 8,
+        "title": "[Mimesis v0.2 gate] Strict publish sync gate",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/8",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-owner-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:30Z",
+        "updatedAt": "2026-06-11T12:17:30Z"
+      },
       "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed."
     },
     {
@@ -44,8 +56,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 9,
+        "title": "[Mimesis v0.2 gate] Owner license decision",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/9",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-owner-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:32Z",
+        "updatedAt": "2026-06-11T12:17:32Z"
+      },
       "nextAction": "Owner chooses a reuse license or keeps the no-reuse boundary."
     },
     {
@@ -59,8 +83,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 10,
+        "title": "[Mimesis v0.2 gate] One permissioned external weak artifact",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/10",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-proof-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:34Z",
+        "updatedAt": "2026-06-11T12:17:34Z"
+      },
       "nextAction": "Collect one user-submitted, permissioned, or clearly redacted weak artifact."
     },
     {
@@ -74,8 +110,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 11,
+        "title": "[Mimesis v0.2 gate] Completed permissioned before/after case",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/11",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-proof-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:37Z",
+        "updatedAt": "2026-06-11T12:17:37Z"
+      },
       "nextAction": "Run the reviewed artifact through the full case path and preserve the boundary check."
     },
     {
@@ -89,8 +137,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 12,
+        "title": "[Mimesis v0.2 gate] npm package publication",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/12",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:39Z",
+        "updatedAt": "2026-06-11T12:17:39Z"
+      },
       "nextAction": "After license and sync gates close, owner decides whether npm publication is in scope."
     },
     {
@@ -104,8 +164,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 13,
+        "title": "[Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/13",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:42Z",
+        "updatedAt": "2026-06-11T12:17:42Z"
+      },
       "nextAction": "Owner decides whether a tagged public action release or Marketplace listing is in scope."
     },
     {
@@ -119,8 +191,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 14,
+        "title": "[Mimesis v0.2 gate] Shipped plugin or connector proof",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/14",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:44Z",
+        "updatedAt": "2026-06-11T12:17:44Z"
+      },
       "nextAction": "Produce a real tagged plugin/action release or installation proof before shipped-plugin claims."
     },
     {
@@ -134,8 +218,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 15,
+        "title": "[Mimesis v0.2 gate] Benchmarked productivity evidence",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/15",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-measurement-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:46Z",
+        "updatedAt": "2026-06-11T12:17:46Z"
+      },
       "nextAction": "Run the measurement protocol and review the resulting evidence before productivity claims."
     },
     {
@@ -149,8 +245,20 @@
         "mimesis-v0.2",
         "mimesis-gap"
       ],
-      "remoteState": "missing",
-      "remoteIssue": null,
+      "remoteState": "matched",
+      "remoteIssue": {
+        "number": 16,
+        "title": "[Mimesis v0.2 gate] External adoption evidence",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/16",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-measurement-gate",
+          "mimesis-v0.2"
+        ],
+        "createdAt": "2026-06-11T12:17:48Z",
+        "updatedAt": "2026-06-11T12:17:48Z"
+      },
       "nextAction": "Collect and review real external usage evidence before adoption claims."
     }
   ],

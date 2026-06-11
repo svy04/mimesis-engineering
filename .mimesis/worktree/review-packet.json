@@ -1,16 +1,16 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T12:07:30.790Z",
+  "generatedAt": "2026-06-11T12:33:17.566Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "9233c4bdd9e629069a452136947cba1476a51d71",
+    "head": "cc099d47824da5b4373c516feb1ede316c558f2f",
     "dirty": true,
-    "trackedChangedCount": 36,
-    "untrackedCount": 5
+    "trackedChangedCount": 39,
+    "untrackedCount": 6
   },
   "trackedChanges": [
     {
@@ -40,6 +40,18 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-issue-sync.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-issue-sync.md"
     },
     {
       "status": "M",
@@ -189,6 +201,18 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-issue-sync.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/remote-issue-sync.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publication-packets/v0.1.md"
     },
     {
@@ -313,6 +337,9 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/operator-runbooks/current-runbook.md",
+    " M .mimesis/owner-actions/remote-issue-sync.json",
+    " M .mimesis/owner-actions/remote-issue-sync.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
@@ -350,7 +377,7 @@
     },
     {
       "root": "docs",
-      "count": 1
+      "count": 2
     },
     {
       "root": "tools",
@@ -358,11 +385,12 @@
     }
   ],
   "untrackedFilesSample": [
-    ".mimesis/owner-actions/remote-issue-sync.json",
-    ".mimesis/owner-actions/remote-issue-sync.md",
-    "docs/OWNER-ISSUE-REMOTE-SYNC.md",
-    "tools/audit-owner-issue-remote-sync.mjs",
-    "tools/create-owner-issue-remote-sync.mjs"
+    ".mimesis/owner-actions/remote-issue-create.json",
+    ".mimesis/owner-actions/remote-issue-create.md",
+    "docs/OWNER-ISSUE-REMOTE-CREATE.md",
+    "docs/superpowers/plans/2026-06-11-owner-issue-remote-create.md",
+    "tools/audit-owner-issue-remote-create.mjs",
+    "tools/create-owner-issue-remote-create.mjs"
   ],
   "sourceCommands": [
     "git status --short",

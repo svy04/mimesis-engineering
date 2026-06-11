@@ -3351,3 +3351,51 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use `owner:issue-remote-sync` only when a fresh read-only comparison with remote GitHub issue metadata is needed.
 - The current snapshot says all 9 v0.2 gate issues are missing remotely; this is coordination visibility, not failure recovery, proof, owner decision, or gate closure.
 - Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.
+
+## 2026-06-11 - Owner Issue Remote Create Slice
+
+## Import
+
+- Re-read the owner issue queue, remote sync snapshot, current gap register, closure plan, package scripts, CLI, release-check order, validator, manifests, README, tools README, status, roadmap, release packet, completion audit, and status/roadmap sync docs.
+- Confirmed the previous read-only remote sync snapshot had 9 missing v0.2 gate issues and 6 existing non-gate issues.
+- Confirmed the user asked to keep running the framework completion loop with Superpowers and Mimesis discipline.
+
+## Distill
+
+- Create the missing remote GitHub gate issues for current v0.2 coordination.
+- Keep remote creation as a deliberate live mutation command outside `release:check`.
+- Treat the result as coordination metadata only: not owner decision, not license choice, not artifact collection, not permission grant, not proof, not publication, not adoption evidence, not benchmark evidence, and not gate closure.
+
+## Capsule
+
+- RED: added `tools/audit-owner-issue-remote-create.mjs`, which first failed for missing generator, docs, reports, validator coverage, manifest visibility, release artifact coverage, public docs, and release order.
+- GREEN: added `tools/create-owner-issue-remote-create.mjs`, `docs/OWNER-ISSUE-REMOTE-CREATE.md`, `.mimesis/owner-actions/remote-issue-create.json`, and `.mimesis/owner-actions/remote-issue-create.md`.
+- GREEN: wired `owner:issue-remote-create` and `audit:owner-issue-remote-create` through package scripts, CLI, release-check audit order, validator, framework manifest, release artifact manifest, README, tools README, status, roadmap, release packet, status/roadmap audit, and completion matrix audit.
+
+## Shard
+
+- Ran `npm run owner:issue-remote-create -- --execute`.
+- Created 6 labels: `mimesis-owner-gate`, `mimesis-proof-gate`, `mimesis-publication-gate`, `mimesis-measurement-gate`, `mimesis-v0.2`, and `mimesis-gap`.
+- Created 9 gate issues:
+  - #8 `[Mimesis v0.2 gate] Strict publish sync gate`
+  - #9 `[Mimesis v0.2 gate] Owner license decision`
+  - #10 `[Mimesis v0.2 gate] One permissioned external weak artifact`
+  - #11 `[Mimesis v0.2 gate] Completed permissioned before/after case`
+  - #12 `[Mimesis v0.2 gate] npm package publication`
+  - #13 `[Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication`
+  - #14 `[Mimesis v0.2 gate] Shipped plugin or connector proof` (not proof)
+  - #15 `[Mimesis v0.2 gate] Benchmarked productivity evidence` (not proof)
+  - #16 `[Mimesis v0.2 gate] External adoption evidence` (not proof)
+- Re-ran `npm run owner:issue-remote-sync`; the refreshed snapshot records `matchedGateCount: 9`, `missingGateCount: 0`, and `existingNonGateIssueCount: 6`.
+
+## Verify
+
+- `node tools/audit-owner-issue-remote-create.mjs` failed first for the expected missing owner issue remote create surface.
+- After implementation, `npm run audit:owner-issue-remote-create`, `npm run audit:owner-issue-remote-sync`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run audit:completion`, `npm run audit:completion-row-count`, `npm run audit:cli`, and `npm run validate` passed.
+- `npm run release:check` passed with `audit:owner-issue-remote-create` in the release chain and without running the live `owner:issue-remote-create` mutation command.
+
+## Remember
+
+- Use `owner:issue-remote-create` only for deliberate remote coordination. The default mode is dry-run; `--execute` is required for mutation.
+- The created issues are open coordination gates, not evidence that any gate is closed.
+- Keep the active goal open while `openGateCount: 9` and `gapCount: 9` remain.

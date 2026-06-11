@@ -1,0 +1,251 @@
+{
+  "schema": "mimesis.owner-issue-remote-create.v0.1",
+  "generatedAt": "2026-06-11T12:17:49.643Z",
+  "status": "remote_gate_issues_created",
+  "repository": "svy04/mimesis-engineering",
+  "sourceQueue": ".mimesis/owner-actions/v0.2-issue-queue.md",
+  "executeMode": true,
+  "requiredGateCount": 9,
+  "createdIssueCount": 9,
+  "existingMatchCount": 0,
+  "missingAfterCreateCount": 0,
+  "failedIssueCount": 0,
+  "labelCreatedCount": 6,
+  "labelResults": [
+    {
+      "name": "mimesis-owner-gate",
+      "remoteState": "created"
+    },
+    {
+      "name": "mimesis-proof-gate",
+      "remoteState": "created"
+    },
+    {
+      "name": "mimesis-publication-gate",
+      "remoteState": "created"
+    },
+    {
+      "name": "mimesis-measurement-gate",
+      "remoteState": "created"
+    },
+    {
+      "name": "mimesis-v0.2",
+      "remoteState": "created"
+    },
+    {
+      "name": "mimesis-gap",
+      "remoteState": "created"
+    }
+  ],
+  "issueResults": [
+    {
+      "gapId": "strict_publish_sync",
+      "expectedTitle": "[Mimesis v0.2 gate] Strict publish sync gate",
+      "labels": [
+        "mimesis-owner-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 8,
+        "title": "[Mimesis v0.2 gate] Strict publish sync gate",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/8",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-owner-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "owner_license_decision",
+      "expectedTitle": "[Mimesis v0.2 gate] Owner license decision",
+      "labels": [
+        "mimesis-owner-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 9,
+        "title": "[Mimesis v0.2 gate] Owner license decision",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/9",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-owner-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "permissioned_external_artifact",
+      "expectedTitle": "[Mimesis v0.2 gate] One permissioned external weak artifact",
+      "labels": [
+        "mimesis-proof-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 10,
+        "title": "[Mimesis v0.2 gate] One permissioned external weak artifact",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/10",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-proof-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "completed_external_case",
+      "expectedTitle": "[Mimesis v0.2 gate] Completed permissioned before/after case",
+      "labels": [
+        "mimesis-proof-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 11,
+        "title": "[Mimesis v0.2 gate] Completed permissioned before/after case",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/11",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-proof-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "package_publication",
+      "expectedTitle": "[Mimesis v0.2 gate] npm package publication",
+      "labels": [
+        "mimesis-publication-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 12,
+        "title": "[Mimesis v0.2 gate] npm package publication",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/12",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "action_publication",
+      "expectedTitle": "[Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication",
+      "labels": [
+        "mimesis-publication-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 13,
+        "title": "[Mimesis v0.2 gate] Tagged GitHub Action or Marketplace publication",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/13",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "shipped_plugin",
+      "expectedTitle": "[Mimesis v0.2 gate] Shipped plugin or connector proof",
+      "labels": [
+        "mimesis-publication-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 14,
+        "title": "[Mimesis v0.2 gate] Shipped plugin or connector proof",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/14",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-publication-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "benchmark_study",
+      "expectedTitle": "[Mimesis v0.2 gate] Benchmarked productivity evidence",
+      "labels": [
+        "mimesis-measurement-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 15,
+        "title": "[Mimesis v0.2 gate] Benchmarked productivity evidence",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/15",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-measurement-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "gapId": "external_adoption",
+      "expectedTitle": "[Mimesis v0.2 gate] External adoption evidence",
+      "labels": [
+        "mimesis-measurement-gate",
+        "mimesis-v0.2",
+        "mimesis-gap"
+      ],
+      "remoteState": "created",
+      "remoteIssue": {
+        "number": 16,
+        "title": "[Mimesis v0.2 gate] External adoption evidence",
+        "state": "OPEN",
+        "url": "https://github.com/svy04/mimesis-engineering/issues/16",
+        "labels": [
+          "mimesis-gap",
+          "mimesis-measurement-gate",
+          "mimesis-v0.2"
+        ]
+      },
+      "error": ""
+    }
+  ],
+  "allowedClaim": "Mimesis has remote GitHub gate issues for the current v0.2 open gates.",
+  "disallowedClaim": "Remote issue creation is not gate closure, not proof, not owner approval, not license choice, not artifact submission, not benchmark evidence, not adoption evidence, and not publication.",
+  "boundaries": [
+    "does_not_close_gates",
+    "does_not_choose_license",
+    "does_not_collect_artifact",
+    "does_not_create_external_proof",
+    "does_not_prove_adoption",
+    "does_not_prove_benchmark",
+    "does_not_publish"
+  ]
+}

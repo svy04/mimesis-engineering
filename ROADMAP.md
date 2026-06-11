@@ -61,6 +61,7 @@ Includes:
 - owner action queue
 - owner issue queue
 - owner issue remote sync
+- owner issue remote create
 - owner decision intake
 - owner decision answer record
 - owner answer review
@@ -160,7 +161,8 @@ Candidate work:
 - generated publication evidence packet before treating npm, Marketplace, action, or shipped-plugin claims as reviewable
 - generated owner action queue before asking the owner for license, weak artifact, publication, package, action, plugin, benchmark, or adoption decisions
 - generated owner issue queue before moving owner/action gaps into GitHub issue drafts
-- read-only owner issue remote sync before treating local gate issue drafts as remotely visible; the current snapshot shows 9 gate issues missing remotely and does not create issues, close gates, prove adoption, or create proof
+- read-only owner issue remote sync before treating local gate issue drafts as remotely visible; the current snapshot shows 9 gate issues matched remotely and 0 missing gate issues, but still does not close gates, prove adoption, or create proof
+- gated owner issue remote create before relying on GitHub issue coordination; it creates missing labels/issues only with `--execute` and does not choose a license, collect an artifact, create proof, prove adoption, publish, or close gates
 - generated owner decision intake before recording owner license, weak artifact permission, publication, package/action/plugin, benchmark/adoption, or strict sync answers
 - generated owner decision answer record before treating any owner answer as machine-readable gate evidence
 - generated owner answer review before treating pending owner answers as gate movement

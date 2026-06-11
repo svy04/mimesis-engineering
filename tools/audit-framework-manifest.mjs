@@ -93,6 +93,9 @@ for (const text of [
   "license decision from owner answer",
   "license:decision-from-owner-answer",
   "audit:license-decision-from-owner-answer",
+  "owner issue remote create",
+  "owner:issue-remote-create",
+  "audit:owner-issue-remote-create",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/FRAMEWORK-MANIFEST.md missing bridge text: ${text}`);
@@ -209,6 +212,8 @@ for (const command of [
   "audit:owner-issue-queue",
   "owner:issue-remote-sync",
   "audit:owner-issue-remote-sync",
+  "owner:issue-remote-create",
+  "audit:owner-issue-remote-create",
   "owner:proof-input-issue",
   "owner:proof-input-request",
   "owner:proof-input-remote-issue",

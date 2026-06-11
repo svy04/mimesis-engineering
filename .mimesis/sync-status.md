@@ -10,8 +10,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 37
-- untracked files: 5
+- changed tracked files: 40
+- untracked files: 6
 
 ## Conclusion
 
@@ -35,6 +35,9 @@ It does not publish, push, tag, release, or create a pull request.
  M .mimesis/gaps/current-gap-register.json
  M .mimesis/gates/closure-readiness.json
  M .mimesis/gates/closure-review.json
+ M .mimesis/operator-runbooks/current-runbook.md
+ M .mimesis/owner-actions/remote-issue-sync.json
+ M .mimesis/owner-actions/remote-issue-sync.md
  M .mimesis/publication-packets/v0.1.md
  M .mimesis/publish-packets/local-sync-handoff.md
  M .mimesis/release-artifacts/v0.1-manifest.json
@@ -64,9 +67,10 @@ It does not publish, push, tag, release, or create a pull request.
  M tools/create-framework-manifest.mjs
  M tools/create-release-artifact-manifest.mjs
  M tools/validate-mimesis.mjs
-?? .mimesis/owner-actions/remote-issue-sync.json
-?? .mimesis/owner-actions/remote-issue-sync.md
-?? docs/OWNER-ISSUE-REMOTE-SYNC.md
-?? tools/audit-owner-issue-remote-sync.mjs
-?? tools/create-owner-issue-remote-sync.mjs
+?? .mimesis/owner-actions/remote-issue-create.json
+?? .mimesis/owner-actions/remote-issue-create.md
+?? docs/OWNER-ISSUE-REMOTE-CREATE.md
+?? docs/superpowers/
+?? tools/audit-owner-issue-remote-create.mjs
+?? tools/create-owner-issue-remote-create.mjs
 ```
