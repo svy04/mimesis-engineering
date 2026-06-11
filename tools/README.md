@@ -759,6 +759,47 @@ This checks a schema-shaped proof intake record before `case:from-record`.
 It writes `.mimesis/proof-intake/fixture-check.md` for the local fixture path.
 It does not create external proof, does not grant permission, does not redact files, does not publish, and does not prove adoption.
 
+## Proof Intake From Owner Evidence
+
+Run the default blocked bridge report:
+
+```bash
+npm run proof:intake-from-owner-evidence
+```
+
+or:
+
+```bash
+npm run cli -- proof:intake-from-owner-evidence
+```
+
+This writes `.mimesis/proof-intake/from-owner-evidence-bridge.md`.
+
+After the owner supplies a reviewed owner evidence submission record with `weak_artifact_permission` submitted, convert that field into a proof intake record:
+
+```bash
+npm run cli -- proof:intake-from-owner-evidence path/to/owner-evidence-submission-record.json --output path/to/proof-intake-record.json --submitter "owner-reviewed weak artifact" --artifact-owner "owner-confirmed artifact owner" --permission-status "owner permits redacted framework review only" --publication-preference redacted --redaction-requirements "redact private details before public use" --reference reference-packs/github-readme.md --desired-transformation "Transform one weak artifact under Mimesis boundaries." --confirm-no-secrets --confirm-no-private-customer-data --confirm-no-copied-protected-material
+```
+
+This bridge reads the owner evidence submission record and writes a schema-shaped proof intake record for `proof:intake-check` and `case:from-record`.
+It does not grant permission, create external proof, publish, or close gates.
+
+## Audit Proof Intake From Owner Evidence
+
+Run:
+
+```bash
+npm run audit:proof-intake-from-owner-evidence
+```
+
+or:
+
+```bash
+npm run cli -- audit:proof-intake-from-owner-evidence
+```
+
+This checks blocked fixture behavior, reviewed-field conversion, explicit safety confirmations, proof intake checking, started-case creation, and the no-proof/no-permission/no-closure boundary.
+
 ## Audit Proof Intake Check
 
 Run:

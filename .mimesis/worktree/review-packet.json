@@ -1,21 +1,29 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T04:56:12.051Z",
+  "generatedAt": "2026-06-11T05:15:42.055Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "23c512f51805fe0c2ba7a235b90b13e796af0367",
+    "head": "932153e5a87e3819aa5fa7c2e6bb5cf7aa72436f",
     "dirty": true,
-    "trackedChangedCount": 19,
-    "untrackedCount": 0
+    "trackedChangedCount": 28,
+    "untrackedCount": 4
   },
   "trackedChanges": [
     {
       "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -32,10 +40,6 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json"
     },
     {
       "status": "M",
@@ -71,29 +75,69 @@
     },
     {
       "status": "M",
-      "path": "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md"
+      "path": "README.md"
     },
     {
       "status": "M",
-      "path": "spec/owner-evidence-submission.schema.json"
+      "path": "bin/mimesis.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-owner-evidence-submission-record.mjs"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/check-owner-evidence-submission-record.mjs"
+      "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
       "status": "M",
-      "path": "tools/create-owner-evidence-submission-record.mjs"
+      "path": "package.json"
+    },
+    {
+      "status": "M",
+      "path": "tools/README.md"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-cli.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "unstagedChanges": [
     {
       "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/framework-manifest.json"
     },
     {
       "status": "M",
@@ -110,10 +154,6 @@
     {
       "status": "M",
       "path": ".mimesis/gates/closure-review.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json"
     },
     {
       "status": "M",
@@ -149,33 +189,66 @@
     },
     {
       "status": "M",
-      "path": "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md"
+      "path": "README.md"
     },
     {
       "status": "M",
-      "path": "spec/owner-evidence-submission.schema.json"
+      "path": "bin/mimesis.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-owner-evidence-submission-record.mjs"
+      "path": "docs/COMPLETION-AUDIT.md"
     },
     {
       "status": "M",
-      "path": "tools/check-owner-evidence-submission-record.mjs"
+      "path": "docs/RELEASE-CHECK-ORDER.md"
     },
     {
       "status": "M",
-      "path": "tools/create-owner-evidence-submission-record.mjs"
+      "path": "package.json"
+    },
+    {
+      "status": "M",
+      "path": "tools/README.md"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-cli.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-framework-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-artifact-manifest.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/validate-mimesis.mjs"
     }
   ],
   "stagedChanges": [],
   "trackedStatusLines": [
-    "M .mimesis/completion/goal-completion-audit.json",
+    "M .mimesis/claim-packs/public-v0.1.md",
+    " M .mimesis/completion/goal-completion-audit.json",
+    " M .mimesis/framework-manifest.json",
     " M .mimesis/gaps/closure-plan.json",
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
-    " M .mimesis/owner-actions/fixture-evidence-submission-record.json",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
@@ -184,14 +257,40 @@
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
-    " M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md",
-    " M spec/owner-evidence-submission.schema.json",
-    " M tools/audit-owner-evidence-submission-record.mjs",
-    " M tools/check-owner-evidence-submission-record.mjs",
-    " M tools/create-owner-evidence-submission-record.mjs"
+    " M README.md",
+    " M bin/mimesis.mjs",
+    " M docs/COMPLETION-AUDIT.md",
+    " M docs/RELEASE-CHECK-ORDER.md",
+    " M package.json",
+    " M tools/README.md",
+    " M tools/audit-cli.mjs",
+    " M tools/audit-framework-manifest.mjs",
+    " M tools/audit-release-artifact-manifest.mjs",
+    " M tools/audit-release-check-order.mjs",
+    " M tools/create-framework-manifest.mjs",
+    " M tools/create-release-artifact-manifest.mjs",
+    " M tools/validate-mimesis.mjs"
   ],
-  "untrackedRoots": [],
-  "untrackedFilesSample": [],
+  "untrackedRoots": [
+    {
+      "root": ".mimesis/proof-intake",
+      "count": 1
+    },
+    {
+      "root": "docs",
+      "count": 1
+    },
+    {
+      "root": "tools",
+      "count": 2
+    }
+  ],
+  "untrackedFilesSample": [
+    ".mimesis/proof-intake/from-owner-evidence-bridge.md",
+    "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
+    "tools/audit-proof-intake-from-owner-evidence.mjs",
+    "tools/proof-intake-from-owner-evidence.mjs"
+  ],
   "sourceCommands": [
     "git status --short",
     "git diff --name-status",

@@ -383,8 +383,10 @@ It does not prove npm package release.
 `proof:intake` creates a first external proof intake kit, not a submitted artifact or completed proof.
 `proof:intake-record` creates a schema-shaped fixture record, not a real submitter artifact, permission grant, external proof, or publication.
 `proof:intake-check` checks a schema-shaped proof intake record before case creation; it does not grant permission, create external proof, redact files, publish, or prove adoption.
+`proof:intake-from-owner-evidence` bridges a reviewed `weak_artifact_permission` owner evidence submission record into a proof intake record; it does not grant permission, create external proof, publish, or close gates.
 `audit:proof-intake-record` checks that fixture record and its boundaries.
 `audit:proof-intake-check` checks the proof intake check report and unsafe-record failure behavior.
+`audit:proof-intake-from-owner-evidence` checks blocked fixture behavior, reviewed-field conversion, proof intake checking, started-case creation, and the no-permission/no-proof/no-closure boundary.
 `audit:proof-intake-schema` checks the proof intake schema contract, not permission, external proof, adoption, or publication.
 `proof:redaction-packet` creates a proof redaction packet, not redacted files, external proof, permission, complete private-data removal proof, or publication.
 `audit:proof-redaction-packet` checks the redaction checklist and no-proof/private-data boundary.
@@ -605,6 +607,17 @@ npm run audit:proof-intake-check
 
 This writes `.mimesis/proof-intake/fixture-check.md`.
 It does not grant permission, create external proof, redact files, publish, or prove adoption.
+
+Generate the blocked proof intake from owner evidence bridge report:
+
+```bash
+npm run proof:intake-from-owner-evidence
+npm run audit:proof-intake-from-owner-evidence
+```
+
+This writes `.mimesis/proof-intake/from-owner-evidence-bridge.md`.
+When a reviewed owner evidence submission record has `weak_artifact_permission` submitted, use `npm run cli -- proof:intake-from-owner-evidence path/to/owner-evidence-submission-record.json --output path/to/proof-intake-record.json ...` to create a proof intake record.
+It does not grant permission, create external proof, publish, or close gates.
 
 Generate the proof redaction packet:
 

@@ -9,10 +9,10 @@ Status: local handoff, not publication.
 - branch: `codex/mimesis-framework-v0.1`
 - upstream: `origin/codex/mimesis-framework-v0.1`
 - remote: `https://github.com/svy04/mimesis-engineering.git`
-- head: `23c512f51805fe0c2ba7a235b90b13e796af0367`
-- upstream head: `23c512f51805fe0c2ba7a235b90b13e796af0367`
-- tracked changed entries: 9
-- untracked entries: 0
+- head: `932153e5a87e3819aa5fa7c2e6bb5cf7aa72436f`
+- upstream head: `932153e5a87e3819aa5fa7c2e6bb5cf7aa72436f`
+- tracked changed entries: 18
+- untracked entries: 4
 
 Conclusion:
 local worktree is not publish-ready because it has unpublished local changes or does not match upstream.
@@ -22,46 +22,80 @@ local worktree is not publish-ready because it has unpublished local changes or 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/owner-actions/fixture-evidence-submission-record.json
+ M .mimesis/framework-manifest.json
+ M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
  M .mimesis/sync-status.md
- M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md
- M spec/owner-evidence-submission.schema.json
- M tools/audit-owner-evidence-submission-record.mjs
- M tools/check-owner-evidence-submission-record.mjs
- M tools/create-owner-evidence-submission-record.mjs
+ M README.md
+ M bin/mimesis.mjs
+ M docs/COMPLETION-AUDIT.md
+ M docs/RELEASE-CHECK-ORDER.md
+ M package.json
+ M tools/README.md
+ M tools/audit-cli.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
+ M tools/audit-release-check-order.mjs
+ M tools/create-framework-manifest.mjs
+ M tools/create-release-artifact-manifest.mjs
+ M tools/validate-mimesis.mjs
+?? .mimesis/proof-intake/from-owner-evidence-bridge.md
+?? docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md
+?? tools/audit-proof-intake-from-owner-evidence.mjs
+?? tools/proof-intake-from-owner-evidence.mjs
 ```
 
 ## Tracked Diff Stat
 
 ```text
-.mimesis/first-loop-demo/.mimesis/case-proof.md    | 32 -------------
- .../fixture-evidence-submission-record.json        | 23 +++++++++
- .mimesis/run_ledger.md                             | 36 +++++++++++++++
- .mimesis/sync-status.md                            | 25 +++-------
- docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md           | 11 +++++
- spec/owner-evidence-submission.schema.json         | 54 ++++++++++++++++++++++
- tools/audit-owner-evidence-submission-record.mjs   | 28 +++++++++++
- tools/check-owner-evidence-submission-record.mjs   | 13 ++++++
- tools/create-owner-evidence-submission-record.mjs  | 17 +++++++
- 9 files changed, 188 insertions(+), 51 deletions(-)
+.mimesis/first-loop-demo/.mimesis/case-proof.md | 32 ---------
+ .mimesis/framework-manifest.json                | 16 +++++
+ .mimesis/release-artifacts/v0.1-manifest.json   | 96 ++++++++++++++++---------
+ .mimesis/run_ledger.md                          | 36 ++++++++++
+ .mimesis/sync-status.md                         | 29 +++++---
+ README.md                                       | 13 ++++
+ bin/mimesis.mjs                                 |  2 +
+ docs/COMPLETION-AUDIT.md                        |  1 +
+ docs/RELEASE-CHECK-ORDER.md                     |  2 +-
+ package.json                                    |  4 +-
+ tools/README.md                                 | 41 +++++++++++
+ tools/audit-cli.mjs                             |  2 +
+ tools/audit-framework-manifest.mjs              |  2 +
+ tools/audit-release-artifact-manifest.mjs       |  4 ++
+ tools/audit-release-check-order.mjs             |  9 +++
+ tools/create-framework-manifest.mjs             | 16 +++++
+ tools/create-release-artifact-manifest.mjs      |  4 ++
+ tools/validate-mimesis.mjs                      |  4 ++
+ 18 files changed, 237 insertions(+), 76 deletions(-)
 ```
 
 ## Tracked Changes
 
 - `D .mimesis/first-loop-demo/.mimesis/case-proof.md`
-- ` M .mimesis/owner-actions/fixture-evidence-submission-record.json`
+- ` M .mimesis/framework-manifest.json`
+- ` M .mimesis/release-artifacts/v0.1-manifest.json`
 - ` M .mimesis/run_ledger.md`
 - ` M .mimesis/sync-status.md`
-- ` M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md`
-- ` M spec/owner-evidence-submission.schema.json`
-- ` M tools/audit-owner-evidence-submission-record.mjs`
-- ` M tools/check-owner-evidence-submission-record.mjs`
-- ` M tools/create-owner-evidence-submission-record.mjs`
+- ` M README.md`
+- ` M bin/mimesis.mjs`
+- ` M docs/COMPLETION-AUDIT.md`
+- ` M docs/RELEASE-CHECK-ORDER.md`
+- ` M package.json`
+- ` M tools/README.md`
+- ` M tools/audit-cli.mjs`
+- ` M tools/audit-framework-manifest.mjs`
+- ` M tools/audit-release-artifact-manifest.mjs`
+- ` M tools/audit-release-check-order.mjs`
+- ` M tools/create-framework-manifest.mjs`
+- ` M tools/create-release-artifact-manifest.mjs`
+- ` M tools/validate-mimesis.mjs`
 
 ## Untracked Entries
 
-- none
+- `?? .mimesis/proof-intake/from-owner-evidence-bridge.md`
+- `?? docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md`
+- `?? tools/audit-proof-intake-from-owner-evidence.mjs`
+- `?? tools/proof-intake-from-owner-evidence.mjs`
 
 ## Current Sync Report
 
@@ -77,8 +111,8 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 8
-- untracked files: 0
+- changed tracked files: 17
+- untracked files: 4
 
 ## Conclusion
 
@@ -95,13 +129,26 @@ It does not publish, push, tag, release, or create a pull request.
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/owner-actions/fixture-evidence-submission-record.json
+ M .mimesis/framework-manifest.json
+ M .mimesis/release-artifacts/v0.1-manifest.json
  M .mimesis/run_ledger.md
- M docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md
- M spec/owner-evidence-submission.schema.json
- M tools/audit-owner-evidence-submission-record.mjs
- M tools/check-owner-evidence-submission-record.mjs
- M tools/create-owner-evidence-submission-record.mjs
+ M README.md
+ M bin/mimesis.mjs
+ M docs/COMPLETION-AUDIT.md
+ M docs/RELEASE-CHECK-ORDER.md
+ M package.json
+ M tools/README.md
+ M tools/audit-cli.mjs
+ M tools/audit-framework-manifest.mjs
+ M tools/audit-release-artifact-manifest.mjs
+ M tools/audit-release-check-order.mjs
+ M tools/create-framework-manifest.mjs
+ M tools/create-release-artifact-manifest.mjs
+ M tools/validate-mimesis.mjs
+?? .mimesis/proof-intake/from-owner-evidence-bridge.md
+?? docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md
+?? tools/audit-proof-intake-from-owner-evidence.mjs
+?? tools/proof-intake-from-owner-evidence.mjs
 ```
 
 

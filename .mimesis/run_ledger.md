@@ -2504,3 +2504,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Future owner evidence records should carry their own field-level readiness command and boundaries.
 - `fieldLevelReadiness.defaultField` should remain `weak_artifact_permission` unless the first proof path changes.
 - Treat field-level readiness as a routing guard into review, not as evidence, proof, publication, adoption, benchmark, gate closure, or completion.
+
+## 2026-06-11 - Owner Evidence To Proof Intake Bridge Slice
+
+## Import
+
+- Re-read the owner evidence submission record, field-level readiness checker, proof intake record checker, case-from-record path, release order audit, framework manifest generator, validator, and completion matrix.
+- Found a gap between reviewed `weak_artifact_permission` owner evidence and the schema-shaped proof intake record used by `case:from-record`.
+
+## Distill
+
+- Add a narrow bridge from reviewed owner evidence submission record to proof intake record.
+- Keep the default local fixture blocked because it is `not_submitted_owner_evidence`.
+- Preserve the boundary that the bridge does not grant permission, create external proof, publish, prove adoption, prove benchmarked productivity, prove customer outcomes, prove legal originality, or close gates.
+
+## Capsule
+
+- RED: added `tools/audit-proof-intake-from-owner-evidence.mjs`, which failed until the bridge tool, docs, scripts, CLI exposure, manifest wiring, validator coverage, and release preflight ordering existed.
+- GREEN: added `tools/proof-intake-from-owner-evidence.mjs` with reviewed-field conversion, blocked fixture behavior, and explicit safety confirmations.
+- GREEN: documented the bridge in `docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md`, `README.md`, `tools/README.md`, `docs/COMPLETION-AUDIT.md`, and `docs/RELEASE-CHECK-ORDER.md`.
+
+## Shard
+
+- `npm run proof:intake-from-owner-evidence` now writes `.mimesis/proof-intake/from-owner-evidence-bridge.md` as a blocked default report.
+- `npm run cli -- proof:intake-from-owner-evidence path/to/owner-evidence-submission-record.json --output path/to/proof-intake-record.json ...` can convert only a reviewed, submitted `weak_artifact_permission` field into a proof intake record.
+- The bridge output is intended for `proof:intake-check` and then `case:from-record`; the created case remains started, not complete.
+
+## Verify
+
+- `node tools/audit-proof-intake-from-owner-evidence.mjs` failed first for the expected missing bridge tool, docs, scripts, CLI, manifest, validator, and release wiring.
+- After implementation, `npm run proof:intake-from-owner-evidence`, `npm run audit:proof-intake-from-owner-evidence`, `npm run audit:cli`, `npm run audit:release-order`, `npm run framework:manifest`, `npm run release:artifact-manifest`, `npm run audit:framework-manifest`, `npm run audit:framework-manifest-schema`, `npm run audit:release-artifact-manifest`, and `npm run validate` passed.
+
+## Remember
+
+- Treat owner evidence to proof intake conversion as a bridge into review, not as permission, proof, publication, adoption evidence, benchmark evidence, gate closure, or objective completion.
+- Keep the persistent fixture/report blocked until real reviewed owner evidence arrives.
+- Require explicit safety confirmations before creating a proof intake record from owner-provided weak artifact text.

@@ -92,6 +92,11 @@ const manifest = {
       command: "npm run proof:intake-check"
     },
     {
+      name: "proof intake from owner evidence bridge",
+      path: ".mimesis/proof-intake/from-owner-evidence-bridge.md",
+      command: "npm run proof:intake-from-owner-evidence"
+    },
+    {
       name: "proof redaction packet",
       path: ".mimesis/proof-intake/redaction-packet.md",
       command: "npm run proof:redaction-packet"
@@ -357,12 +362,20 @@ const manifest = {
       purpose: "Check a schema-shaped proof intake record before started-case creation."
     },
     {
+      name: "proof:intake-from-owner-evidence",
+      purpose: "Bridge a reviewed owner weak_artifact_permission field into a proof intake record without claiming permission or proof."
+    },
+    {
       name: "audit:proof-intake-record",
       purpose: "Check proof intake record freshness, schema conformance, safety confirmations, and proof boundaries."
     },
     {
       name: "audit:proof-intake-check",
       purpose: "Check proof intake record validation, report output, failure behavior, and no-proof boundary."
+    },
+    {
+      name: "audit:proof-intake-from-owner-evidence",
+      purpose: "Check owner evidence to proof intake conversion, blocked fixture behavior, safety confirmations, and started-case boundary."
     },
     {
       name: "proof:redaction-packet",
@@ -742,6 +755,7 @@ const manifest = {
     "docs/PROOF-EXECUTION-REPORT.md",
     "docs/PROOF-INTAKE-RECORD.md",
     "docs/PROOF-INTAKE-CHECK.md",
+    "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
     "docs/PROOF-READINESS-PACKET.md",
     "docs/CASE-FROM-RECORD.md",
     "docs/EVIDENCE-FROM-CASE.md",
@@ -768,6 +782,8 @@ const manifest = {
     "docs/RELEASE-REVIEW-BUNDLE.md",
     "docs/RELEASE-ARTIFACT-MANIFEST.md",
     "docs/PROOF-INTAKE-SCHEMA.md",
+    "tools/proof-intake-from-owner-evidence.mjs",
+    "tools/audit-proof-intake-from-owner-evidence.mjs",
     "docs/REFERENCE-PACK-INDEX.md",
     "reference-packs/README.md",
     "PROOF-BOUNDARY.md",
