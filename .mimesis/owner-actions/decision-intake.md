@@ -32,10 +32,10 @@ Source readiness:
 | --- | --- | --- | --- | --- |
 | `license_or_no_reuse` | Choose an exact reuse license, split code/content licenses, or keep no-reuse for now. | pending / UNLICENSED / pending_owner: Owner chooses a reuse license or keeps the no-reuse boundary. | docs/LICENSE-DECISION.md<br>.mimesis/license-packets/owner-decision.md | does not choose a license |
 | `weak_artifact_permission` | Attach one weak artifact and confirm permission, redaction, submitter scope, and publication scope. | waiting_for_artifact / gate_board_blocks_external_proof / waiting_for_artifact: Collect one user-submitted, permissioned, or clearly redacted weak artifact. | docs/PROOF-INTAKE-KIT.md<br>.mimesis/proof-intake/first-external-proof-kit.md<br>permissioned or clearly redacted weak artifact | does not collect an artifact or grant permission |
-| `publication_scope` | Choose unpublished local packet, PR, public release, or later release after gates close. | pending / dirty_or_unsynced_worktree / blocked: Run the runtime-only non-writing strict sync gate after the intended branch is pushed. | npm run release:check:public<br>npm run audit:sync:strict | does not publish |
+| `publication_scope` | Choose unpublished local packet, PR, public release, or later release after gates close. | pending / runtime_sync_audit_required / needs_fresh_verification: Run the runtime-only non-writing strict sync gate after the intended branch is pushed. | npm run release:check:public<br>npm run audit:sync:strict | does not publish |
 | `package_action_plugin_scope` | Choose whether npm, tagged action, Marketplace, plugin, or connector release is in scope after proof gates. | package_private_true / root_action_candidate_only / plugin_scaffold_and_install_readiness_only | docs/PACKAGE-RELEASE-CANDIDATE.md<br>npm run audit:package<br>docs/ACTION-RELEASE-CANDIDATE.md<br>npm run audit:action<br>docs/PLUGIN-INSTALL-PACKET.md<br>docs/PLUGIN-RELEASE-PACKET.md | does not publish, ship a plugin, or prove official host compliance |
 | `benchmark_adoption_scope` | Choose whether to run a benchmark/adoption study and name the evidence reviewer. | waiting_for_evidence / protocol_only / waiting_for_evidence: Run the measurement protocol and review the resulting evidence before productivity claims. | docs/BENCHMARK-PACKET.md<br>templates/evidence-packet.md | does not prove adoption, productivity, customer outcomes, or benchmark results |
-| `strict_sync_intent` | Confirm whether to clean, stage, commit, push, tag, or keep this as local evidence only. | dirty_or_unsynced_worktree | npm run audit:sync<br>npm run audit:sync:strict<br>.mimesis/sync-status.md | does not stage, commit, push, tag, release, or close gates |
+| `strict_sync_intent` | Confirm whether to clean, stage, commit, push, tag, or keep this as local evidence only. | runtime_sync_audit_required | npm run audit:sync:strict | does not stage, commit, push, tag, release, close gates, or prove sync |
 
 ## Required Owner Answers
 
@@ -74,7 +74,7 @@ Owner-facing gate IDs to keep visible:
 - Stop if `publication_scope` asks for release while strict sync is blocked.
 - Stop if `package_action_plugin_scope` asks for npm, Marketplace, plugin, or connector claims without direct publication or installation evidence.
 - Stop if `benchmark_adoption_scope` asks for productivity, adoption, or customer-outcome claims without reviewed evidence.
-- Stop if `strict_sync_intent` is inconsistent with the current dirty or unsynced worktree.
+- Stop if `strict_sync_intent` asks for release without a fresh passing runtime-only sync proof.
 
 ## Allowed Claim
 
@@ -106,4 +106,5 @@ It does not ship a plugin.
 It does not create external proof.
 It does not prove adoption.
 It does not close gates.
+It does not prove sync.
 It does not prove benchmarked productivity, customer outcomes, commercial outcomes, legal originality, or endorsement.

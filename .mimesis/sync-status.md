@@ -10,7 +10,7 @@ Status: not remote-synced
 - head matches upstream: yes
 - ahead: 0
 - behind: 0
-- changed tracked files: 7
+- changed tracked files: 32
 - untracked files: 0
 
 ## Conclusion
@@ -27,11 +27,36 @@ It does not publish, push, tag, release, or create a pull request.
 
 ```text
 ## codex/mimesis-framework-v0.1...origin/codex/mimesis-framework-v0.1
+ M .mimesis/completion/goal-completion-audit.json
  D .mimesis/first-loop-demo/.mimesis/case-proof.md
- M .mimesis/release-execution/v0.1-owner-handoff.md
+ M .mimesis/gaps/closure-plan.json
+ M .mimesis/gaps/current-gap-register.json
+ M .mimesis/gates/closure-readiness.json
+ M .mimesis/gates/closure-review.json
+ M .mimesis/owner-actions/answer-review.md
+ M .mimesis/owner-actions/current-action-queue.md
+ M .mimesis/owner-actions/decision-intake.md
+ M .mimesis/owner-actions/evidence-attachment-form.md
+ M .mimesis/owner-actions/evidence-bundle.md
+ M .mimesis/owner-actions/evidence-review.md
+ M .mimesis/owner-actions/fixture-answer-record.json
+ M .mimesis/owner-actions/fixture-evidence-record.json
+ M .mimesis/owner-actions/fixture-evidence-submission-record.json
+ M .mimesis/publish-packets/local-sync-handoff.md
+ M .mimesis/release-artifacts/v0.1-manifest.json
+ M .mimesis/release-decisions/owner-decision-record.json
+ M .mimesis/release-review/v0.1-bundle.json
  M .mimesis/run_ledger.md
- M docs/RELEASE-EXECUTION-PACKET.md
- M tools/README.md
- M tools/audit-release-execution-packet.mjs
- M tools/create-release-execution-packet.mjs
+ M .mimesis/state/current-state.json
+ M .mimesis/sync-status.md
+ M .mimesis/worktree/review-packet.json
+ M docs/OWNER-ACTION-QUEUE.md
+ M docs/OWNER-DECISION-INTAKE.md
+ M docs/RELEASE-DECISION-RECORD.md
+ M tools/audit-owner-action-queue.mjs
+ M tools/audit-owner-decision-intake.mjs
+ M tools/audit-release-decision-record.mjs
+ M tools/create-owner-action-queue.mjs
+ M tools/create-owner-decision-intake.mjs
+ M tools/create-release-decision-record.mjs
 ```

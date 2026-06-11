@@ -2395,3 +2395,40 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Future release execution packet work should avoid committed branch/head/upstream/dirty-worktree snapshots.
 - Use `npm run release:check:public` and `npm run audit:sync:strict` as runtime proof before owner-controlled release action.
 - Use worktree/release review packets for local review inventories, but do not treat committed handoff packets as live sync proof.
+
+## 2026-06-11 - Runtime-Only Owner Decision Sync Boundary Slice
+
+## Import
+
+- Re-read the current clean PR state, owner action queue, owner decision intake, owner decision record, owner answer fixture/review, release decision generator/audit, owner queue generator/audit, and owner intake generator/audit.
+- Found that committed owner-facing handoff files still carried `dirty_or_unsynced_worktree`, `cleanAndSynced`, and `.mimesis/sync-status.md` as if they were durable current proof.
+
+## Distill
+
+- Keep owner-facing files as stable decision and evidence intake surfaces.
+- Move current sync proof back to the runtime-only `npm run audit:sync:strict` command.
+- Preserve the boundary that this slice does not choose a license, publish, stage, commit, push, tag, create external proof, prove sync, prove adoption, or mark the active goal complete.
+
+## Capsule
+
+- RED: strengthened `tools/audit-release-decision-record.mjs`, `tools/audit-owner-action-queue.mjs`, and `tools/audit-owner-decision-intake.mjs` first so existing committed owner handoff artifacts failed for volatile sync signals.
+- GREEN: changed `tools/create-release-decision-record.mjs` to emit `syncProof.currentSignal = runtime_sync_audit_required` instead of a git snapshot.
+- GREEN: changed `tools/create-owner-action-queue.mjs` and `tools/create-owner-decision-intake.mjs` to remove `.mimesis/sync-status.md` as an owner-facing source signal and to point strict sync intent at `npm run audit:sync:strict`.
+
+## Shard
+
+- `.mimesis/release-decisions/owner-decision-record.json` now records a runtime sync proof requirement instead of branch/head/upstream/dirty counts.
+- `.mimesis/owner-actions/current-action-queue.md`, `decision-intake.md`, `fixture-answer-record.json`, and `answer-review.md` now avoid stale dirty/synced wording.
+- `docs/RELEASE-DECISION-RECORD.md`, `docs/OWNER-ACTION-QUEUE.md`, and `docs/OWNER-DECISION-INTAKE.md` now state that owner handoffs do not prove sync.
+
+## Verify
+
+- The first targeted audits failed for the expected stale sync signals and missing runtime-only sync wording.
+- After implementation and regeneration, `npm run audit:release-decision-record`, `npm run audit:owner-queue`, and `npm run audit:owner-decision-intake` passed.
+- A targeted search across owner-facing generated files found no `dirty_or_unsynced_worktree`, `git_clean_synced`, `clean_and_synced`, `cleanAndSynced`, `trackedChangedCount`, `upstreamHead`, `local audit recorded`, or `.mimesis/sync-status.md` matches.
+
+## Remember
+
+- Future owner-facing handoff files should not embed live git/sync snapshots.
+- Use `npm run audit:sync:strict` as the current sync proof when the owner intends publication, release, tag, package, action, or plugin movement.
+- Keep `.mimesis/sync-status.md` as a local sync report, not an owner decision signal.

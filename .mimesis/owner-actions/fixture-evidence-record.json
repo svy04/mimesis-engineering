@@ -115,9 +115,7 @@
         "strict_publish_sync"
       ],
       "requiredAttachments": [
-        "npm run audit:sync",
-        "npm run audit:sync:strict",
-        ".mimesis/sync-status.md"
+        "npm run audit:sync:strict"
       ],
       "requiredCommands": [
         "npm run audit:sync",
@@ -125,7 +123,7 @@
         "git status --short --branch"
       ],
       "stopCondition": "Stop if the worktree is dirty and no owner has requested staging, committing, pushing, tagging, releasing, or publishing.",
-      "boundary": "does not stage, commit, push, tag, release, or close gates"
+      "boundary": "does not stage, commit, push, tag, release, close gates, or prove sync"
     }
   },
   "requiredGateIds": [

@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-readiness.v0.1",
   "status": "open_gates_not_ready",
-  "generatedAt": "2026-06-11T04:24:15.004Z",
+  "generatedAt": "2026-06-11T04:37:20.781Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,27 +11,29 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
+    "head": "e440ad833bb52b1bd0243703258ec6f0928a39d4",
     "dirty": true,
-    "trackedChangedCount": 12,
+    "trackedChangedCount": 32,
     "untrackedCount": 0
   },
   "completionAllowed": false,
   "gateCount": 9,
   "readinessCounts": {
-    "blocked": 4,
+    "not_ready": 1,
     "pending_owner": 1,
     "waiting_for_artifact": 2,
+    "blocked": 3,
     "waiting_for_evidence": 2
   },
   "counts": {
     "byStatus": {
-      "blocked": 4,
+      "needs_fresh_verification": 1,
       "pending_owner": 1,
       "waiting_for_artifact": 2,
+      "blocked": 3,
       "waiting_for_evidence": 2
     },
-    "blocked": 4,
+    "blocked": 3,
     "pendingOwner": 1,
     "waitingForArtifact": 2,
     "waitingForEvidence": 2
@@ -41,9 +43,9 @@
       "id": "strict_publish_sync",
       "title": "Strict publish sync gate",
       "kind": "git_sync",
-      "status": "blocked",
+      "status": "needs_fresh_verification",
       "closureType": "local_sync_gate",
-      "readiness": "blocked",
+      "readiness": "not_ready",
       "canCloseNow": false,
       "requiredEvidence": [
         "npm run audit:sync:strict",
@@ -55,8 +57,7 @@
         "publication_scope: not submitted owner evidence",
         "npm run release:check:public",
         "owner-provided evidence required",
-        "strict_sync_intent: not submitted owner evidence",
-        "npm run audit:sync"
+        "strict_sync_intent: not submitted owner evidence"
       ],
       "ownerEvidence": [
         {
@@ -76,9 +77,7 @@
           "submissionStatus": "missing",
           "ownerSubmittedEvidence": "not submitted owner evidence",
           "requiredAttachments": [
-            "npm run audit:sync",
-            "npm run audit:sync:strict",
-            ".mimesis/sync-status.md"
+            "npm run audit:sync:strict"
           ],
           "ownerAttachmentSlot": "owner-provided evidence required",
           "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
@@ -510,7 +509,7 @@
   "nextReviewOrder": [
     {
       "id": "strict_publish_sync",
-      "readiness": "blocked",
+      "readiness": "not_ready",
       "firstCommand": "npm run audit:sync",
       "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed."
     },

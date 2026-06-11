@@ -27,7 +27,7 @@
     "publication_scope": {
       "answerStatus": "pending",
       "ownerAnswer": "pending owner answer",
-      "currentSignal": "pending / dirty_or_unsynced_worktree / blocked: Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
+      "currentSignal": "pending / runtime_sync_audit_required / needs_fresh_verification: Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
       "evidenceToAttach": [
         "npm run release:check:public",
         "npm run audit:sync:strict"
@@ -61,13 +61,11 @@
     "strict_sync_intent": {
       "answerStatus": "pending",
       "ownerAnswer": "pending owner answer",
-      "currentSignal": "dirty_or_unsynced_worktree",
+      "currentSignal": "runtime_sync_audit_required",
       "evidenceToAttach": [
-        "npm run audit:sync",
-        "npm run audit:sync:strict",
-        ".mimesis/sync-status.md"
+        "npm run audit:sync:strict"
       ],
-      "boundary": "does not stage, commit, push, tag, release, or close gates"
+      "boundary": "does not stage, commit, push, tag, release, close gates, or prove sync"
     }
   },
   "requiredGateIds": [

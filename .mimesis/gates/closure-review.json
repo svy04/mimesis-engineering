@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.gate-closure-review.v0.1",
   "status": "blocked_no_gate_closure",
-  "generatedAt": "2026-06-11T04:24:15.541Z",
+  "generatedAt": "2026-06-11T04:37:21.483Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,9 +11,9 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
+    "head": "e440ad833bb52b1bd0243703258ec6f0928a39d4",
     "dirty": true,
-    "trackedChangedCount": 12,
+    "trackedChangedCount": 32,
     "untrackedCount": 0
   },
   "completionAllowed": false,
@@ -39,8 +39,8 @@
     {
       "id": "strict_publish_sync",
       "title": "Strict publish sync gate",
-      "status": "blocked",
-      "readiness": "blocked",
+      "status": "needs_fresh_verification",
+      "readiness": "not_ready",
       "decision": "keep_open",
       "closureApproved": false,
       "canCloseNow": false,
@@ -51,8 +51,7 @@
         "publication_scope: not submitted owner evidence",
         "npm run release:check:public",
         "owner-provided evidence required",
-        "strict_sync_intent: not submitted owner evidence",
-        "npm run audit:sync"
+        "strict_sync_intent: not submitted owner evidence"
       ],
       "ownerEvidenceFields": [
         {

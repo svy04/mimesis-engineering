@@ -26,7 +26,6 @@ const packageJson = readJson("package.json");
 const gapRegister = readJson(".mimesis/gaps/current-gap-register.json");
 const closurePlan = readJson(".mimesis/gaps/closure-plan.json");
 const decisionRecord = readJson(".mimesis/release-decisions/owner-decision-record.json");
-const syncStatus = read(".mimesis/sync-status.md");
 const releaseEvidence = read(".mimesis/release-evidence/v0.1-report.md");
 const gateEvidence = read(".mimesis/gates/evidence-packet.md");
 const proofExecution = read(".mimesis/proof-runs/execution-report.md");
@@ -49,7 +48,7 @@ const rows = [...(gapRegister.gaps ?? [])]
   .sort((a, b) => (priorityById.get(a.id) ?? 99) - (priorityById.get(b.id) ?? 99))
   .map((gap) => {
     const closure = closureById.get(gap.id) ?? {};
-    const command = firstCommand(closure);
+    const command = gap.id === "strict_publish_sync" ? "npm run audit:sync:strict" : firstCommand(closure);
     return `| ${priorityById.get(gap.id) ?? ""} | \`${gap.id}\` | ${gap.title} | ${gap.status} | ${gap.nextAction} | \`${command}\` | ${gap.boundary} |`;
   });
 
@@ -77,13 +76,12 @@ const decisionRows = decisionKeys
 const releaseEvidenceReady = releaseEvidence.includes("## Publication Evidence Table") ? "yes" : "missing";
 const gateEvidenceReady = gateEvidence.includes("## Evidence Intake Matrix") ? "yes" : "missing";
 const proofExecutionReady = proofExecution.includes("## Command Evidence Ledger") ? "yes" : "missing";
-const syncReady = syncStatus.includes("failed") ? "blocked" : "local audit recorded";
 
 const generated = `# Mimesis Owner Action Queue
 
 Status: owner action queue packet, not owner decision.
 
-Generated for Mimesis Engineering v${packageJson.version} from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, sync status, and proof execution report.
+Generated for Mimesis Engineering v${packageJson.version} from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, and proof execution report.
 
 This packet answers one narrow question:
 
@@ -98,7 +96,6 @@ What should the owner decide or provide next before stronger v0.1/v0.2 claims?
 - .mimesis/gates/evidence-packet.md
 - .mimesis/release-evidence/v0.1-report.md
 - .mimesis/release-decisions/owner-decision-record.json
-- .mimesis/sync-status.md
 - .mimesis/proof-runs/execution-report.md
 
 Source readiness:
@@ -106,7 +103,7 @@ Source readiness:
 - release evidence table: ${releaseEvidenceReady}
 - gate evidence matrix: ${gateEvidenceReady}
 - proof execution ledger: ${proofExecutionReady}
-- strict sync state: ${syncReady}
+- strict sync state: runtime audit required
 
 ## Owner Decision Snapshot
 
@@ -166,6 +163,7 @@ It does not publish a GitHub Marketplace action.
 It does not ship a plugin.
 It does not create external proof.
 It does not prove adoption.
+It does not prove sync.
 It does not prove benchmarked productivity, customer outcomes, commercial outcomes, legal originality, or endorsement.
 `;
 

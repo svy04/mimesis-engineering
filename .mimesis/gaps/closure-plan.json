@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.gap-closure-plan.v0.1",
-  "generatedAt": "2026-06-11T04:24:06.777Z",
+  "generatedAt": "2026-06-11T04:37:13.021Z",
   "status": "closure_plan_not_closure",
   "sourceRegister": ".mimesis/gaps/current-gap-register.json",
   "completionAllowed": false,
@@ -9,7 +9,7 @@
     {
       "id": "strict_publish_sync",
       "title": "Strict publish sync gate",
-      "currentStatus": "blocked",
+      "currentStatus": "needs_fresh_verification",
       "closureType": "local_sync_gate",
       "requiredEvidence": [
         "npm run audit:sync:strict",

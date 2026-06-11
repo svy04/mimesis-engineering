@@ -6,6 +6,7 @@ Status: pending owner decision record.
 
 It captures current release, license, package, action, plugin, proof, benchmark, and adoption gates as pending or blocked.
 It does not choose a license, does not stage files, does not create a commit, does not push, does not tag, does not release, and does not publish.
+It keeps sync as a runtime-only sync proof requirement instead of embedding branch, commit, dirty-worktree, or upstream snapshots in the committed owner decision record.
 
 ## Command
 
@@ -38,6 +39,7 @@ The record gives the owner and future agents a single JSON artifact for:
 - benchmark or adoption status
 - required fresh commands before any owner-controlled release action
 - source files that justify the decision state
+- runtime-only sync proof requirement
 
 ## Boundary
 
@@ -48,6 +50,7 @@ It does not publish.
 It does not stage, commit, push, tag, or release.
 It does not create external proof.
 It does not prove external adoption, benchmarked productivity, shipped plugin status, npm publication, Marketplace publication, or legal originality.
+It does not prove sync.
 
 ## Audit
 

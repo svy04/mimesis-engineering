@@ -125,6 +125,7 @@ for (const text of [
   "does not collect an artifact",
   "does not publish",
   "does not create external proof",
+  "runtime-only sync proof",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/OWNER-ACTION-QUEUE.md missing text: ${text}`);
@@ -154,6 +155,8 @@ for (const text of [
   ".mimesis/gates/evidence-packet.md",
   ".mimesis/release-evidence/v0.1-report.md",
   ".mimesis/release-decisions/owner-decision-record.json",
+  "strict sync state: runtime audit required",
+  "runtime_sync_audit_required",
   "proof execution ledger: yes",
   "| Decision ID | Decision | Current Signal | Owner Question | Required Evidence |",
   "owner_license_decision",
@@ -168,9 +171,22 @@ for (const text of [
   "does not publish",
   "does not create external proof",
   "does not prove adoption",
+  "does not prove sync",
 ]) {
   if (!queue.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`owner action queue missing text: ${text}`);
+  }
+}
+
+for (const forbidden of [
+  ".mimesis/sync-status.md",
+  "dirty_or_unsynced_worktree",
+  "git_clean_synced",
+  "clean_and_synced",
+  "local audit recorded",
+]) {
+  if (queue.includes(forbidden)) {
+    failures.push(`owner action queue must not embed volatile sync signal: ${forbidden}`);
   }
 }
 

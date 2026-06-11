@@ -1,15 +1,15 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T04:25:00.361Z",
+  "generatedAt": "2026-06-11T04:38:08.378Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
+    "head": "e440ad833bb52b1bd0243703258ec6f0928a39d4",
     "dirty": true,
-    "trackedChangedCount": 18,
+    "trackedChangedCount": 31,
     "untrackedCount": 0
   },
   "trackedChanges": [
@@ -35,6 +35,42 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/owner-actions/answer-review.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/current-action-queue.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/decision-intake.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-attachment-form.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-bundle.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-review.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-answer-record.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-evidence-record.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -44,10 +80,6 @@
     {
       "status": "M",
       "path": ".mimesis/release-decisions/owner-decision-record.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/release-execution/v0.1-owner-handoff.md"
     },
     {
       "status": "M",
@@ -71,19 +103,39 @@
     },
     {
       "status": "M",
-      "path": "docs/RELEASE-EXECUTION-PACKET.md"
+      "path": "docs/OWNER-ACTION-QUEUE.md"
     },
     {
       "status": "M",
-      "path": "tools/README.md"
+      "path": "docs/OWNER-DECISION-INTAKE.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-release-execution-packet.mjs"
+      "path": "docs/RELEASE-DECISION-RECORD.md"
     },
     {
       "status": "M",
-      "path": "tools/create-release-execution-packet.mjs"
+      "path": "tools/audit-owner-action-queue.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-owner-decision-intake.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-decision-record.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-owner-action-queue.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-owner-decision-intake.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-decision-record.mjs"
     }
   ],
   "unstagedChanges": [
@@ -109,6 +161,42 @@
     },
     {
       "status": "M",
+      "path": ".mimesis/owner-actions/answer-review.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/current-action-queue.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/decision-intake.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-attachment-form.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-bundle.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/evidence-review.md"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-answer-record.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-evidence-record.json"
+    },
+    {
+      "status": "M",
+      "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/publish-packets/local-sync-handoff.md"
     },
     {
@@ -118,10 +206,6 @@
     {
       "status": "M",
       "path": ".mimesis/release-decisions/owner-decision-record.json"
-    },
-    {
-      "status": "M",
-      "path": ".mimesis/release-execution/v0.1-owner-handoff.md"
     },
     {
       "status": "M",
@@ -145,19 +229,39 @@
     },
     {
       "status": "M",
-      "path": "docs/RELEASE-EXECUTION-PACKET.md"
+      "path": "docs/OWNER-ACTION-QUEUE.md"
     },
     {
       "status": "M",
-      "path": "tools/README.md"
+      "path": "docs/OWNER-DECISION-INTAKE.md"
     },
     {
       "status": "M",
-      "path": "tools/audit-release-execution-packet.mjs"
+      "path": "docs/RELEASE-DECISION-RECORD.md"
     },
     {
       "status": "M",
-      "path": "tools/create-release-execution-packet.mjs"
+      "path": "tools/audit-owner-action-queue.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-owner-decision-intake.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-decision-record.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-owner-action-queue.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-owner-decision-intake.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/create-release-decision-record.mjs"
     }
   ],
   "stagedChanges": [],
@@ -167,19 +271,32 @@
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
+    " M .mimesis/owner-actions/answer-review.md",
+    " M .mimesis/owner-actions/current-action-queue.md",
+    " M .mimesis/owner-actions/decision-intake.md",
+    " M .mimesis/owner-actions/evidence-attachment-form.md",
+    " M .mimesis/owner-actions/evidence-bundle.md",
+    " M .mimesis/owner-actions/evidence-review.md",
+    " M .mimesis/owner-actions/fixture-answer-record.json",
+    " M .mimesis/owner-actions/fixture-evidence-record.json",
+    " M .mimesis/owner-actions/fixture-evidence-submission-record.json",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
     " M .mimesis/release-decisions/owner-decision-record.json",
-    " M .mimesis/release-execution/v0.1-owner-handoff.md",
     " M .mimesis/release-review/v0.1-bundle.json",
     " M .mimesis/run_ledger.md",
     " M .mimesis/state/current-state.json",
     " M .mimesis/sync-status.md",
     " M .mimesis/worktree/review-packet.json",
-    " M docs/RELEASE-EXECUTION-PACKET.md",
-    " M tools/README.md",
-    " M tools/audit-release-execution-packet.mjs",
-    " M tools/create-release-execution-packet.mjs"
+    " M docs/OWNER-ACTION-QUEUE.md",
+    " M docs/OWNER-DECISION-INTAKE.md",
+    " M docs/RELEASE-DECISION-RECORD.md",
+    " M tools/audit-owner-action-queue.mjs",
+    " M tools/audit-owner-decision-intake.mjs",
+    " M tools/audit-release-decision-record.mjs",
+    " M tools/create-owner-action-queue.mjs",
+    " M tools/create-owner-decision-intake.mjs",
+    " M tools/create-release-decision-record.mjs"
   ],
   "untrackedRoots": [],
   "untrackedFilesSample": [],

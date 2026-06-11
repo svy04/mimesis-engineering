@@ -90,9 +90,7 @@
         "strict_publish_sync"
       ],
       "requiredAttachments": [
-        "npm run audit:sync",
-        "npm run audit:sync:strict",
-        ".mimesis/sync-status.md"
+        "npm run audit:sync:strict"
       ],
       "ownerAttachmentSlot": "owner-provided evidence required",
       "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",

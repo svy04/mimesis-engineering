@@ -1,6 +1,7 @@
 # Owner Decision Intake
 
 `owner:decision-intake` generates a fillable owner decision intake packet from the current owner action queue, release decision record, proof intake kit, license packet, release evidence report, and gap register.
+It keeps sync as a runtime-only sync proof requirement instead of embedding branch, dirty-worktree, or sync-report snapshots in owner answer fields.
 
 Run:
 
@@ -57,5 +58,6 @@ It does not grant permission.
 It does not publish.
 It does not create external proof.
 It does not close gates.
+It does not prove sync.
 
 It is a structured intake surface, not a release, proof, benchmark, adoption, or publication event.

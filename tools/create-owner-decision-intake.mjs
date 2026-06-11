@@ -91,9 +91,9 @@ const formRows = [
   {
     field: "strict_sync_intent",
     ownerAnswer: "Confirm whether to clean, stage, commit, push, tag, or keep this as local evidence only.",
-    currentSignal: decisionRecord.git?.cleanAndSynced ? "clean_and_synced" : "dirty_or_unsynced_worktree",
-    evidence: "npm run audit:sync<br>npm run audit:sync:strict<br>.mimesis/sync-status.md",
-    boundary: "does not stage, commit, push, tag, release, or close gates",
+    currentSignal: decisionRecord.syncProof?.currentSignal ?? "runtime_sync_audit_required",
+    evidence: "npm run audit:sync:strict",
+    boundary: "does not stage, commit, push, tag, release, close gates, or prove sync",
   },
 ];
 
@@ -171,7 +171,7 @@ Owner-facing gate IDs to keep visible:
 - Stop if \`publication_scope\` asks for release while strict sync is blocked.
 - Stop if \`package_action_plugin_scope\` asks for npm, Marketplace, plugin, or connector claims without direct publication or installation evidence.
 - Stop if \`benchmark_adoption_scope\` asks for productivity, adoption, or customer-outcome claims without reviewed evidence.
-- Stop if \`strict_sync_intent\` is inconsistent with the current dirty or unsynced worktree.
+- Stop if \`strict_sync_intent\` asks for release without a fresh passing runtime-only sync proof.
 
 ## Allowed Claim
 
@@ -203,6 +203,7 @@ It does not ship a plugin.
 It does not create external proof.
 It does not prove adoption.
 It does not close gates.
+It does not prove sync.
 It does not prove benchmarked productivity, customer outcomes, commercial outcomes, legal originality, or endorsement.
 `;
 

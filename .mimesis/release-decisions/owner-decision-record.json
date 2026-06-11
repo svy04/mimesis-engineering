@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.release-decision-record.v0.1",
-  "generatedAt": "2026-06-11T04:24:04.765Z",
+  "generatedAt": "2026-06-11T04:37:11.410Z",
   "status": "owner_decision_required",
   "package": {
     "name": "mimesis-engineering",
@@ -8,14 +8,10 @@
     "private": true,
     "license": "UNLICENSED"
   },
-  "git": {
-    "branch": "codex/mimesis-framework-v0.1",
-    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
-    "upstream": "origin/codex/mimesis-framework-v0.1",
-    "upstreamHead": "c13867dd9ce809d08b215714c57efb23b7a13e72",
-    "cleanAndSynced": false,
-    "trackedChangedCount": 9,
-    "untrackedCount": 0
+  "syncProof": {
+    "currentSignal": "runtime_sync_audit_required",
+    "requiredCommand": "npm run audit:sync:strict",
+    "committedRecordIsNotSyncProof": true
   },
   "license": {
     "decision": "pending",
@@ -28,7 +24,7 @@
   },
   "publicRelease": {
     "decision": "pending",
-    "currentSignal": "dirty_or_unsynced_worktree",
+    "currentSignal": "runtime_sync_audit_required",
     "ownerQuestion": "Decide whether this local work belongs in a public release, PR, or unpublished local packet.",
     "requiredEvidence": [
       "npm run release:check:public",
@@ -98,6 +94,7 @@
     "does_not_publish",
     "does_not_stage_commit_push_tag_release",
     "does_not_create_external_proof",
-    "does_not_prove_adoption"
+    "does_not_prove_adoption",
+    "does_not_prove_sync"
   ]
 }

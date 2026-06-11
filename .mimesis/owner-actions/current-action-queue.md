@@ -2,7 +2,7 @@
 
 Status: owner action queue packet, not owner decision.
 
-Generated for Mimesis Engineering v0.1.0 from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, sync status, and proof execution report.
+Generated for Mimesis Engineering v0.1.0 from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, and proof execution report.
 
 This packet answers one narrow question:
 
@@ -17,7 +17,6 @@ What should the owner decide or provide next before stronger v0.1/v0.2 claims?
 - .mimesis/gates/evidence-packet.md
 - .mimesis/release-evidence/v0.1-report.md
 - .mimesis/release-decisions/owner-decision-record.json
-- .mimesis/sync-status.md
 - .mimesis/proof-runs/execution-report.md
 
 Source readiness:
@@ -25,14 +24,14 @@ Source readiness:
 - release evidence table: yes
 - gate evidence matrix: yes
 - proof execution ledger: yes
-- strict sync state: local audit recorded
+- strict sync state: runtime audit required
 
 ## Owner Decision Snapshot
 
 | Decision ID | Decision | Current Signal | Owner Question | Required Evidence |
 | --- | --- | --- | --- | --- |
 | `license` | pending | UNLICENSED | Choose a reuse license or keep the no-reuse boundary. | docs/LICENSE-DECISION.md<br>.mimesis/license-packets/owner-decision.md |
-| `publicRelease` | pending | dirty_or_unsynced_worktree | Decide whether this local work belongs in a public release, PR, or unpublished local packet. | npm run release:check:public<br>npm run audit:sync:strict |
+| `publicRelease` | pending | runtime_sync_audit_required | Decide whether this local work belongs in a public release, PR, or unpublished local packet. | npm run release:check:public<br>npm run audit:sync:strict |
 | `npmPublication` | blocked | package_private_true | Decide whether npm publication is in scope after license and sync gates close. | docs/PACKAGE-RELEASE-CANDIDATE.md<br>npm run audit:package |
 | `actionPublication` | blocked | root_action_candidate_only | Decide whether a tagged GitHub Action release or Marketplace listing is in scope. | docs/ACTION-RELEASE-CANDIDATE.md<br>npm run audit:action |
 | `pluginPublication` | blocked | plugin_scaffold_and_install_readiness_only | Decide whether any plugin should be shipped after real installation or release proof exists. | docs/PLUGIN-INSTALL-PACKET.md<br>docs/PLUGIN-RELEASE-PACKET.md |
@@ -46,7 +45,7 @@ Source readiness:
 | 1 | `owner_license_decision` | Owner license decision | pending_owner | Owner chooses a reuse license or keeps the no-reuse boundary. | `npm run license:packet` | Does not choose a license or provide legal advice. |
 | 2 | `permissioned_external_artifact` | One permissioned external weak artifact | waiting_for_artifact | Collect one user-submitted, permissioned, or clearly redacted weak artifact. | `npm run proof:intake` | Does not create external proof or grant permission. |
 | 3 | `completed_external_case` | Completed permissioned before/after case | waiting_for_artifact | Run the reviewed artifact through the full case path and preserve the boundary check. | `npm run cli -- case:review path/to/intake.md` | Does not prove improvement, adoption, or outcome until the before/after case evidence exists. |
-| 4 | `strict_publish_sync` | Strict publish sync gate | blocked | Run the runtime-only non-writing strict sync gate after the intended branch is pushed. | `npm run audit:sync` | Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync. |
+| 4 | `strict_publish_sync` | Strict publish sync gate | needs_fresh_verification | Run the runtime-only non-writing strict sync gate after the intended branch is pushed. | `npm run audit:sync:strict` | Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync. |
 | 5 | `package_publication` | npm package publication | blocked | After license and sync gates close, owner decides whether npm publication is in scope. | `npm run audit:package` | Dry-run package checks are not npm publication. |
 | 6 | `action_publication` | Tagged GitHub Action or Marketplace publication | blocked | Owner decides whether a tagged public action release or Marketplace listing is in scope. | `npm run audit:action` | Repository-local action metadata is not Marketplace publication. |
 | 7 | `shipped_plugin` | Shipped plugin or connector proof | blocked | Produce a real tagged plugin/action release or installation proof before shipped-plugin claims. | `npm run plugin:install-packet` | Local plugin scaffolds and install-readiness packets are not shipped plugins. |
@@ -99,4 +98,5 @@ It does not publish a GitHub Marketplace action.
 It does not ship a plugin.
 It does not create external proof.
 It does not prove adoption.
+It does not prove sync.
 It does not prove benchmarked productivity, customer outcomes, commercial outcomes, legal originality, or endorsement.

@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.current-state-summary.v0.1",
   "status": "open_gates_remain",
-  "generatedAt": "2026-06-11T04:24:14.590Z",
+  "generatedAt": "2026-06-11T04:37:20.005Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -11,21 +11,22 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "c13867dd9ce809d08b215714c57efb23b7a13e72",
+    "head": "e440ad833bb52b1bd0243703258ec6f0928a39d4",
     "dirty": true,
-    "trackedChangedCount": 12,
+    "trackedChangedCount": 32,
     "untrackedCount": 0
   },
   "completionAllowed": false,
   "gapCount": 9,
   "counts": {
     "byStatus": {
-      "blocked": 4,
+      "needs_fresh_verification": 1,
       "pending_owner": 1,
       "waiting_for_artifact": 2,
+      "blocked": 3,
       "waiting_for_evidence": 2
     },
-    "blocked": 4,
+    "blocked": 3,
     "pendingOwner": 1,
     "waitingForArtifact": 2,
     "waitingForEvidence": 2
@@ -35,7 +36,7 @@
       "id": "strict_publish_sync",
       "title": "Strict publish sync gate",
       "kind": "git_sync",
-      "status": "blocked",
+      "status": "needs_fresh_verification",
       "closureType": "local_sync_gate",
       "requiredEvidence": [
         "npm run audit:sync:strict",

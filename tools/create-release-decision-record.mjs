@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,31 +11,7 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
 
-function git(args) {
-  const result = spawnSync("git", args, {
-    cwd: root,
-    encoding: "utf8",
-  });
-  if (result.status !== 0) {
-    return (result.stderr || result.stdout || result.error?.message || "").trim();
-  }
-  return result.stdout.trim();
-}
-
-function statusLines() {
-  const status = git(["status", "--short"]);
-  return status ? status.split(/\r?\n/).filter(Boolean) : [];
-}
-
 const packageJson = JSON.parse(read("package.json"));
-const lines = statusLines();
-const trackedChanged = lines.filter((line) => !line.startsWith("??"));
-const untracked = lines.filter((line) => line.startsWith("??"));
-const head = git(["rev-parse", "HEAD"]) || "unknown";
-const upstreamResult = git(["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]);
-const upstream = upstreamResult.includes("fatal") ? "none" : upstreamResult || "none";
-const upstreamHead = upstream === "none" ? "unknown" : git(["rev-parse", upstream]) || "unknown";
-const cleanAndSynced = lines.length === 0 && head !== "unknown" && upstreamHead !== "unknown" && head === upstreamHead;
 const gateBoard = fs.existsSync(path.join(root, ".mimesis", "gates", "current-gateboard.md"))
   ? read(".mimesis/gates/current-gateboard.md")
   : "";
@@ -51,14 +26,10 @@ const record = {
     private: packageJson.private === true,
     license: packageJson.license ?? "none",
   },
-  git: {
-    branch: git(["rev-parse", "--abbrev-ref", "HEAD"]) || "unknown",
-    head,
-    upstream,
-    upstreamHead,
-    cleanAndSynced,
-    trackedChangedCount: trackedChanged.length,
-    untrackedCount: untracked.length,
+  syncProof: {
+    currentSignal: "runtime_sync_audit_required",
+    requiredCommand: "npm run audit:sync:strict",
+    committedRecordIsNotSyncProof: true,
   },
   license: {
     decision: "pending",
@@ -68,7 +39,7 @@ const record = {
   },
   publicRelease: {
     decision: "pending",
-    currentSignal: cleanAndSynced ? "git_clean_synced" : "dirty_or_unsynced_worktree",
+    currentSignal: "runtime_sync_audit_required",
     ownerQuestion: "Decide whether this local work belongs in a public release, PR, or unpublished local packet.",
     requiredEvidence: ["npm run release:check:public", "npm run audit:sync:strict"],
   },
@@ -121,6 +92,7 @@ const record = {
     "does_not_stage_commit_push_tag_release",
     "does_not_create_external_proof",
     "does_not_prove_adoption",
+    "does_not_prove_sync",
   ],
 };
 

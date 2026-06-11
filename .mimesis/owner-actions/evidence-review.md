@@ -31,7 +31,7 @@ Do pending owner evidence attachments contain direct evidence that can move rele
 | `publication_scope` | pending | pending owner evidence | npm run release:check:public<br>npm run audit:sync:strict | strict_publish_sync | does not publish |
 | `package_action_plugin_scope` | pending | pending owner evidence | docs/PACKAGE-RELEASE-CANDIDATE.md<br>npm run audit:package<br>docs/ACTION-RELEASE-CANDIDATE.md<br>npm run audit:action<br>docs/PLUGIN-INSTALL-PACKET.md<br>docs/PLUGIN-RELEASE-PACKET.md | package_publication<br>action_publication<br>shipped_plugin | does not publish, ship a plugin, or prove official host compliance |
 | `benchmark_adoption_scope` | pending | pending owner evidence | docs/BENCHMARK-PACKET.md<br>templates/evidence-packet.md | benchmark_study<br>external_adoption | does not prove adoption, productivity, customer outcomes, or benchmark results |
-| `strict_sync_intent` | pending | pending owner evidence | npm run audit:sync<br>npm run audit:sync:strict<br>.mimesis/sync-status.md | strict_publish_sync | does not stage, commit, push, tag, release, or close gates |
+| `strict_sync_intent` | pending | pending owner evidence | npm run audit:sync:strict | strict_publish_sync | does not stage, commit, push, tag, release, close gates, or prove sync |
 
 ## Blocked Gates
 

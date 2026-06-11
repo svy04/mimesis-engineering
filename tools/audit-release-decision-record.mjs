@@ -60,6 +60,7 @@ for (const text of [
   "does not publish",
   "does not stage",
   "pending owner decision",
+  "runtime-only sync proof",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/RELEASE-DECISION-RECORD.md missing text: ${text}`);
@@ -81,6 +82,10 @@ if (!fs.existsSync(recordPath)) {
 
   if (record.publicRelease?.decision !== "pending") {
     failures.push("release decision record publicRelease decision must be pending");
+  }
+
+  if (record.publicRelease?.currentSignal !== "runtime_sync_audit_required") {
+    failures.push("release decision record publicRelease currentSignal must be runtime_sync_audit_required");
   }
 
   if (record.npmPublication?.decision !== "blocked") {
@@ -128,9 +133,27 @@ if (!fs.existsSync(recordPath)) {
     "does_not_stage_commit_push_tag_release",
     "does_not_create_external_proof",
     "does_not_prove_adoption",
+    "does_not_prove_sync",
   ]) {
     if (!record.boundaries?.includes(boundary)) {
       failures.push(`release decision record missing boundary: ${boundary}`);
+    }
+  }
+
+  if (record.git) {
+    failures.push("release decision record must not embed a volatile git snapshot");
+  }
+
+  const serialized = JSON.stringify(record);
+  for (const forbidden of [
+    "dirty_or_unsynced_worktree",
+    "git_clean_synced",
+    "cleanAndSynced",
+    "trackedChangedCount",
+    "upstreamHead",
+  ]) {
+    if (serialized.includes(forbidden)) {
+      failures.push(`release decision record must not embed volatile sync signal: ${forbidden}`);
     }
   }
 }

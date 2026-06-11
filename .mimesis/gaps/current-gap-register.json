@@ -1,6 +1,6 @@
 {
   "schema": "mimesis.gap-register.v0.1",
-  "generatedAt": "2026-06-11T04:24:06.415Z",
+  "generatedAt": "2026-06-11T04:37:12.674Z",
   "status": "open_gates_remain",
   "completionAllowed": false,
   "package": {
@@ -15,7 +15,7 @@
       "id": "strict_publish_sync",
       "title": "Strict publish sync gate",
       "kind": "git_sync",
-      "status": "blocked",
+      "status": "needs_fresh_verification",
       "requiredEvidence": [
         "npm run audit:sync:strict",
         ".mimesis/sync-status.md"

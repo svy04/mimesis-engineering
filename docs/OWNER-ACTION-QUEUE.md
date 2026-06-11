@@ -2,7 +2,8 @@
 
 Status: local owner handoff packet.
 
-`owner:queue` generates an owner action queue from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, sync status, and proof execution report.
+`owner:queue` generates an owner action queue from the current gap register, gap closure plan, gate evidence packet, release evidence report, release decision record, and proof execution report.
+It keeps sync as a runtime-only sync proof requirement instead of embedding sync-report snapshots in the committed owner handoff.
 
 ## Command
 
@@ -56,4 +57,5 @@ It does not publish a GitHub Marketplace action.
 It does not ship a plugin.
 It does not create external proof.
 It does not prove adoption.
+It does not prove sync.
 It does not prove benchmarked productivity, customer outcomes, commercial outcomes, legal originality, or endorsement.

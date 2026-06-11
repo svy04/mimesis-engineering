@@ -97,6 +97,7 @@ for (const text of [
   "does not publish",
   "does not create external proof",
   "does not close gates",
+  "runtime-only sync proof",
 ]) {
   if (!doc.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`docs/OWNER-DECISION-INTAKE.md missing text: ${text}`);
@@ -135,6 +136,7 @@ for (const text of [
   "package_action_plugin_scope",
   "benchmark_adoption_scope",
   "strict_sync_intent",
+  "runtime_sync_audit_required",
   "| Field | Owner Answer Needed | Current Signal | Evidence To Attach | Boundary |",
   "does not choose a license",
   "does not collect an artifact",
@@ -142,9 +144,21 @@ for (const text of [
   "does not publish",
   "does not create external proof",
   "does not close gates",
+  "does not prove sync",
 ]) {
   if (!intake.toLowerCase().includes(text.toLowerCase())) {
     failures.push(`owner decision intake missing text: ${text}`);
+  }
+}
+
+for (const forbidden of [
+  "dirty_or_unsynced_worktree",
+  "git_clean_synced",
+  "clean_and_synced",
+  ".mimesis/sync-status.md",
+]) {
+  if (intake.includes(forbidden)) {
+    failures.push(`owner decision intake must not embed volatile sync signal: ${forbidden}`);
   }
 }
 

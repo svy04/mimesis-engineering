@@ -29,7 +29,7 @@ What direct owner-provided evidence must be attached before pending owner eviden
 | `publication_scope` | npm run release:check:public<br>npm run audit:sync:strict | strict_publish_sync | owner-provided evidence required | owner must confirm source, permission, and publication scope |
 | `package_action_plugin_scope` | docs/PACKAGE-RELEASE-CANDIDATE.md<br>npm run audit:package<br>docs/ACTION-RELEASE-CANDIDATE.md<br>npm run audit:action<br>docs/PLUGIN-INSTALL-PACKET.md<br>docs/PLUGIN-RELEASE-PACKET.md | package_publication<br>action_publication<br>shipped_plugin | owner-provided evidence required | owner must confirm source, permission, and publication scope |
 | `benchmark_adoption_scope` | docs/BENCHMARK-PACKET.md<br>templates/evidence-packet.md | benchmark_study<br>external_adoption | owner-provided evidence required | owner must confirm source, permission, and publication scope |
-| `strict_sync_intent` | npm run audit:sync<br>npm run audit:sync:strict<br>.mimesis/sync-status.md | strict_publish_sync | owner-provided evidence required | owner must confirm source, permission, and publication scope |
+| `strict_sync_intent` | npm run audit:sync:strict | strict_publish_sync | owner-provided evidence required | owner must confirm source, permission, and publication scope |
 
 ## Attachment Form
 
@@ -81,7 +81,7 @@ What direct owner-provided evidence must be attached before pending owner eviden
 ### strict_sync_intent
 
 - blocked gates: strict_publish_sync
-- required evidence: npm run audit:sync<br>npm run audit:sync:strict<br>.mimesis/sync-status.md
+- required evidence: npm run audit:sync:strict
 - owner attachment: owner-provided evidence required
 - permission/publication scope: owner-provided permission required
 - safety check: confirm this attachment contains no secrets, passwords, OAuth tokens, private customer data, or copied protected material.
