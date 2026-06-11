@@ -1,18 +1,22 @@
 {
   "schema": "mimesis.worktree-review-packet.v0.1",
   "status": "dirty_worktree_review_packet_not_publication",
-  "generatedAt": "2026-06-11T06:55:07.921Z",
+  "generatedAt": "2026-06-11T07:19:02.911Z",
   "reviewScope": "local dirty worktree only",
   "completionAllowed": false,
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "d6618a037575e2434e888fd26d1863791168eee4",
+    "head": "613065d8df5af10e76cc9c844bc75b96425781d6",
     "dirty": true,
-    "trackedChangedCount": 32,
-    "untrackedCount": 1
+    "trackedChangedCount": 36,
+    "untrackedCount": 4
   },
   "trackedChanges": [
+    {
+      "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
     {
       "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
@@ -39,7 +43,7 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/proof-runs/execution-report.md"
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
     },
     {
       "status": "M",
@@ -91,15 +95,11 @@
     },
     {
       "status": "M",
+      "path": "bin/mimesis.mjs"
+    },
+    {
+      "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/PROOF-EXECUTION-REPORT.md"
     },
     {
       "status": "M",
@@ -107,11 +107,15 @@
     },
     {
       "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
+    },
+    {
+      "status": "M",
       "path": "docs/V0.1-RELEASE-PACKET.md"
     },
     {
       "status": "M",
-      "path": "spec/README.md"
+      "path": "package.json"
     },
     {
       "status": "M",
@@ -119,19 +123,31 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-proof-execution-report.mjs"
+      "path": "tools/audit-cli.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-spec-index.mjs"
+      "path": "tools/audit-completion-matrix.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-package-surface.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-readiness.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
     },
     {
       "status": "M",
       "path": "tools/create-framework-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-proof-execution-report.mjs"
     },
     {
       "status": "M",
@@ -145,6 +161,10 @@
   "unstagedChanges": [
     {
       "status": "M",
+      "path": ".mimesis/claim-packs/public-v0.1.md"
+    },
+    {
+      "status": "M",
       "path": ".mimesis/completion/goal-completion-audit.json"
     },
     {
@@ -169,7 +189,7 @@
     },
     {
       "status": "M",
-      "path": ".mimesis/proof-runs/execution-report.md"
+      "path": ".mimesis/operator-runbooks/current-runbook.md"
     },
     {
       "status": "M",
@@ -221,15 +241,11 @@
     },
     {
       "status": "M",
+      "path": "bin/mimesis.mjs"
+    },
+    {
+      "status": "M",
       "path": "docs/COMPLETION-AUDIT.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/FRAMEWORK-MANIFEST.md"
-    },
-    {
-      "status": "M",
-      "path": "docs/PROOF-EXECUTION-REPORT.md"
     },
     {
       "status": "M",
@@ -237,11 +253,15 @@
     },
     {
       "status": "M",
+      "path": "docs/STATUS-ROADMAP-SYNC.md"
+    },
+    {
+      "status": "M",
       "path": "docs/V0.1-RELEASE-PACKET.md"
     },
     {
       "status": "M",
-      "path": "spec/README.md"
+      "path": "package.json"
     },
     {
       "status": "M",
@@ -249,19 +269,31 @@
     },
     {
       "status": "M",
-      "path": "tools/audit-proof-execution-report.mjs"
+      "path": "tools/audit-cli.mjs"
     },
     {
       "status": "M",
-      "path": "tools/audit-spec-index.mjs"
+      "path": "tools/audit-completion-matrix.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-package-surface.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-check-order.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-release-readiness.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-status-roadmap-sync.mjs"
     },
     {
       "status": "M",
       "path": "tools/create-framework-manifest.mjs"
-    },
-    {
-      "status": "M",
-      "path": "tools/create-proof-execution-report.mjs"
     },
     {
       "status": "M",
@@ -274,13 +306,14 @@
   ],
   "stagedChanges": [],
   "trackedStatusLines": [
-    "M .mimesis/completion/goal-completion-audit.json",
+    "M .mimesis/claim-packs/public-v0.1.md",
+    " M .mimesis/completion/goal-completion-audit.json",
     " M .mimesis/framework-manifest.json",
     " M .mimesis/gaps/closure-plan.json",
     " M .mimesis/gaps/current-gap-register.json",
     " M .mimesis/gates/closure-readiness.json",
     " M .mimesis/gates/closure-review.json",
-    " M .mimesis/proof-runs/execution-report.md",
+    " M .mimesis/operator-runbooks/current-runbook.md",
     " M .mimesis/publication-packets/v0.1.md",
     " M .mimesis/publish-packets/local-sync-handoff.md",
     " M .mimesis/release-artifacts/v0.1-manifest.json",
@@ -293,28 +326,42 @@
     " M README.md",
     " M ROADMAP.md",
     " M STATUS.md",
+    " M bin/mimesis.mjs",
     " M docs/COMPLETION-AUDIT.md",
-    " M docs/FRAMEWORK-MANIFEST.md",
-    " M docs/PROOF-EXECUTION-REPORT.md",
     " M docs/RELEASE-CHECK-ORDER.md",
+    " M docs/STATUS-ROADMAP-SYNC.md",
     " M docs/V0.1-RELEASE-PACKET.md",
-    " M spec/README.md",
+    " M package.json",
     " M tools/README.md",
-    " M tools/audit-proof-execution-report.mjs",
-    " M tools/audit-spec-index.mjs",
+    " M tools/audit-cli.mjs",
+    " M tools/audit-completion-matrix.mjs",
+    " M tools/audit-package-surface.mjs",
+    " M tools/audit-release-check-order.mjs",
+    " M tools/audit-release-readiness.mjs",
+    " M tools/audit-status-roadmap-sync.mjs",
     " M tools/create-framework-manifest.mjs",
-    " M tools/create-proof-execution-report.mjs",
     " M tools/create-release-artifact-manifest.mjs",
     " M tools/validate-mimesis.mjs"
   ],
   "untrackedRoots": [
     {
-      "root": "spec",
+      "root": ".mimesis/owner-actions",
       "count": 1
+    },
+    {
+      "root": "docs",
+      "count": 1
+    },
+    {
+      "root": "tools",
+      "count": 2
     }
   ],
   "untrackedFilesSample": [
-    "spec/proof-execution-record.schema.json"
+    ".mimesis/owner-actions/proof-run-handoff.md",
+    "docs/OWNER-PROOF-HANDOFF.md",
+    "tools/audit-owner-proof-handoff.mjs",
+    "tools/create-owner-proof-handoff.mjs"
   ],
   "sourceCommands": [
     "git status --short",

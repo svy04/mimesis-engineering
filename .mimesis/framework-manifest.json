@@ -199,6 +199,11 @@
       "command": "npm run owner:queue"
     },
     {
+      "name": "owner proof handoff",
+      "path": ".mimesis/owner-actions/proof-run-handoff.md",
+      "command": "npm run owner:proof-handoff"
+    },
+    {
       "name": "owner decision intake",
       "path": ".mimesis/owner-actions/decision-intake.md",
       "command": "npm run owner:decision-intake"
@@ -519,6 +524,14 @@
       "purpose": "Check the owner action queue, source coverage, and no-decision/no-proof boundaries."
     },
     {
+      "name": "owner:proof-handoff",
+      "purpose": "Generate the minimum owner proof handoff for license/no-reuse and one weak artifact permission without making a decision or approving proof."
+    },
+    {
+      "name": "audit:owner-proof-handoff",
+      "purpose": "Check the owner proof handoff, source coverage, and no-decision/no-proof boundaries."
+    },
+    {
       "name": "owner:decision-intake",
       "purpose": "Generate the owner decision intake form without choosing a license, collecting an artifact, or closing gates."
     },
@@ -775,6 +788,7 @@
     "docs/PUBLICATION-EVIDENCE-PACKET.md",
     "docs/ADOPTION-PACKET.md",
     "docs/OWNER-ACTION-QUEUE.md",
+    "docs/OWNER-PROOF-HANDOFF.md",
     "docs/OWNER-DECISION-INTAKE.md",
     "docs/OWNER-DECISION-ANSWER-RECORD.md",
     "docs/OWNER-ANSWER-REVIEW.md",

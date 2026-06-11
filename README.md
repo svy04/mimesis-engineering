@@ -237,6 +237,7 @@ This repository now exposes Mimesis as a plain-file framework:
 - [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md) - generated direct publication evidence intake packet
 - [docs/GOAL-COMPLETION-AUDIT.md](docs/GOAL-COMPLETION-AUDIT.md) - generated active-goal completion audit without completion proof
 - [docs/OWNER-ACTION-QUEUE.md](docs/OWNER-ACTION-QUEUE.md) - generated owner action queue
+- [docs/OWNER-PROOF-HANDOFF.md](docs/OWNER-PROOF-HANDOFF.md) - generated minimum owner proof handoff
 - [docs/OWNER-DECISION-INTAKE.md](docs/OWNER-DECISION-INTAKE.md) - generated owner decision intake
 - [docs/OWNER-DECISION-ANSWER-RECORD.md](docs/OWNER-DECISION-ANSWER-RECORD.md) - generated schema-shaped owner decision answer record
 - [docs/OWNER-ANSWER-REVIEW.md](docs/OWNER-ANSWER-REVIEW.md) - generated owner answer review
@@ -346,6 +347,8 @@ npm run cli -- audit:publication-evidence-packet
 npm run cli -- goal:completion-audit
 npm run cli -- audit:goal-completion-audit
 npm run cli -- owner:queue
+npm run cli -- owner:proof-handoff
+npm run cli -- audit:owner-proof-handoff
 npm run cli -- owner:decision-intake
 npm run cli -- owner:decision-answer-record
 npm run cli -- owner:answer-review
@@ -425,6 +428,8 @@ It does not prove npm package release.
 `publication:evidence-packet` creates `.mimesis/release-evidence/publication-evidence-packet.md` from [docs/PUBLICATION-EVIDENCE-PACKET.md](docs/PUBLICATION-EVIDENCE-PACKET.md). `audit:publication-evidence-packet` checks that this is direct publication evidence intake, not publication proof, and does not publish, stage, commit, push, tag, release, publish to npm, publish a Marketplace action, ship a plugin, or close gates.
 `owner:queue` creates an owner action queue, not a license choice, submitted artifact, publication, external proof, benchmark proof, adoption proof, or closed gate.
 `audit:owner-queue` checks the owner action queue and no-decision/no-proof boundary.
+`owner:proof-handoff` creates the minimum owner proof handoff for `license_or_no_reuse` and `weak_artifact_permission`, not owner decision, permission grant, proof approval, publication, or gate closure.
+`audit:owner-proof-handoff` checks the owner proof handoff and no-decision/no-proof boundary.
 `owner:decision-intake` creates an owner decision intake form, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
 `audit:owner-decision-intake` checks the owner decision intake form and no-decision/no-proof boundary.
 `owner:decision-answer-record` creates a schema-shaped pending owner answer fixture, not a license choice, submitted artifact, permission grant, publication, external proof, benchmark proof, adoption proof, or closed gate.
@@ -1010,6 +1015,17 @@ This writes `.mimesis/owner-actions/evidence-attachment-form.md`.
 Audit it with `npm run audit:owner-evidence-attachment-form`.
 It creates owner-provided evidence slots for the pending gates.
 It does not attach evidence, choose a license, collect an artifact, grant permission, publish, create external proof, prove adoption, or close gates.
+
+Generate the owner proof handoff:
+
+```bash
+npm run owner:proof-handoff
+```
+
+This writes `.mimesis/owner-actions/proof-run-handoff.md`.
+Audit it with `npm run audit:owner-proof-handoff`.
+It narrows the owner ask to `license_or_no_reuse` and `weak_artifact_permission`.
+It does not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, close gates, or prove completion.
 
 Generate an owner evidence submission record:
 

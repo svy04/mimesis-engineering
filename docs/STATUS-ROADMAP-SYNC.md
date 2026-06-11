@@ -41,6 +41,7 @@ The audit checks:
 - proof execution report visibility
 - spec index audit visibility
 - owner action queue visibility
+- owner proof handoff visibility
 - owner decision intake visibility
 - owner decision answer record visibility
 - owner answer review visibility
@@ -77,6 +78,7 @@ The audit currently requires the public status and roadmap to name:
 - proof execution report
 - spec index audit
 - owner action queue
+- owner proof handoff
 - owner decision intake
 - owner decision answer record
 - owner answer review

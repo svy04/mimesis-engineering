@@ -2755,3 +2755,39 @@ Artifact: `svy04/mimesis-engineering` public framework v0.1 surface
 - Use proof execution record candidate review after a real operator proof run produces command evidence.
 - Treat `candidateEvidenceReviewReady` as review readiness only, not proof approval.
 - Keep the record and candidate review separate from the default committed ledger unless a real proof execution record is supplied.
+
+## 2026-06-11 - Owner Proof Handoff Slice
+
+## Import
+
+- Re-read the owner action queue, owner decision intake, owner evidence attachment form, first proof run packet, proof execution report, license packet, proof intake kit, release-check order, framework manifest, release artifact manifest, README, tools README, status, roadmap, and completion audit surfaces.
+- Found that the repo had broad owner queues and evidence forms, but no single minimum handoff for the two first-proof blockers: `license_or_no_reuse` and `weak_artifact_permission`.
+
+## Distill
+
+- Add an owner proof handoff that narrows the next owner ask to license/no-reuse and one permissioned weak artifact.
+- Keep it as a local handoff packet only, not a license choice, permission grant, submitted artifact, external proof, proof approval, publication, adoption proof, completion proof, or gate closure.
+- Preserve the release-check order so the handoff is generated after its owner/proof source packets and before owner evidence submission records.
+
+## Capsule
+
+- RED: added `tools/audit-owner-proof-handoff.mjs`, which failed before the generator, CLI command, package scripts, generated packet, docs, validator, manifests, and public docs existed.
+- GREEN: added `tools/create-owner-proof-handoff.mjs`, `docs/OWNER-PROOF-HANDOFF.md`, and `.mimesis/owner-actions/proof-run-handoff.md`.
+- GREEN: wired `owner:proof-handoff` and `audit:owner-proof-handoff` through CLI, release check, validate, framework manifest, release artifact manifest, completion audit, status, roadmap, release packet, release order, README, and tools README.
+
+## Shard
+
+- Default `npm run owner:proof-handoff` writes `.mimesis/owner-actions/proof-run-handoff.md`.
+- The handoff names source packets, minimum owner inputs, owner fill targets, fastest safe command path, candidate review outputs, stop conditions, allowed claim, disallowed claim, and boundary.
+- The release order runs `owner:proof-handoff` after `owner:evidence-attachment-form` and before `owner:evidence-submission-record`; the audit order mirrors that before `audit:owner-evidence-submission-record`.
+
+## Verify
+
+- `node tools/audit-owner-proof-handoff.mjs` failed first for the expected missing handoff surface.
+- After implementation and regeneration, `npm run audit:owner-proof-handoff`, `npm run audit:cli`, `npm run audit:release-order`, `npm run audit:status-roadmap`, `npm run validate`, `npm run audit:completion`, `npm run audit:framework-manifest`, `npm run audit:release-artifact-manifest`, `npm run audit:package`, `npm run audit:release`, and `npm run release:check` passed.
+
+## Remember
+
+- Use the owner proof handoff as the first owner-facing packet for closing the license/no-reuse and weak artifact permission blockers.
+- Treat it as a handoff only; real progress still requires owner-supplied evidence and later proof execution/review records.
+- Keep the remaining v0.2 gates open until direct license, artifact, publication, benchmark, adoption, and sync evidence exists.

@@ -1775,6 +1775,40 @@ npm run cli -- audit:owner-evidence-attachment-form
 
 This checks package script wiring, CLI exposure, release preflight order, generated form sections, pending owner evidence fields, blocked gate IDs, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-evidence/no-proof boundaries.
 
+## Create Owner Proof Handoff
+
+Run:
+
+```bash
+npm run owner:proof-handoff
+```
+
+or:
+
+```bash
+npm run cli -- owner:proof-handoff
+```
+
+This writes `.mimesis/owner-actions/proof-run-handoff.md`.
+It reduces the next owner ask to the minimum proof inputs: `license_or_no_reuse` and `weak_artifact_permission`.
+It does not choose a license, grant permission, submit an artifact, create external proof, approve proof, publish, close gates, or prove completion.
+
+## Audit Owner Proof Handoff
+
+Run:
+
+```bash
+npm run audit:owner-proof-handoff
+```
+
+or:
+
+```bash
+npm run cli -- audit:owner-proof-handoff
+```
+
+This checks package script wiring, CLI exposure, release preflight order, generated handoff sections, source packet coverage, public docs, validator coverage, framework manifest visibility, release artifact manifest coverage, and no-decision/no-proof boundaries.
+
 ## Create Owner Evidence Submission Record
 
 Run:

@@ -70,6 +70,7 @@ const requiredReadyFiles = [
   "docs/RELEASE-ARTIFACT-MANIFEST.md",
   "docs/RELEASE-EVIDENCE-REPORT.md",
   "docs/OWNER-ACTION-QUEUE.md",
+  "docs/OWNER-PROOF-HANDOFF.md",
   "docs/OWNER-DECISION-INTAKE.md",
   "docs/OWNER-DECISION-ANSWER-RECORD.md",
   "docs/OWNER-ANSWER-REVIEW.md",
@@ -140,6 +141,7 @@ const requiredReadyFiles = [
   "tools/audit-release-decision-record.mjs",
   "tools/audit-release-evidence-report.mjs",
   "tools/audit-owner-decision-intake.mjs",
+  "tools/audit-owner-proof-handoff.mjs",
   "tools/audit-owner-decision-answer-record.mjs",
   "tools/audit-owner-answer-review.mjs",
   "tools/audit-owner-evidence-attachment-form.mjs",
@@ -207,6 +209,7 @@ const requiredReadyFiles = [
   "tools/create-release-decision-record.mjs",
   "tools/create-release-evidence-report.mjs",
   "tools/create-owner-action-queue.mjs",
+  "tools/create-owner-proof-handoff.mjs",
   "tools/create-owner-decision-intake.mjs",
   "tools/create-owner-decision-answer-record.mjs",
   "tools/review-owner-decision-answer-record.mjs",
@@ -716,6 +719,10 @@ if (!/"owner:queue"/.test(packageJson)) {
   failures.push("package.json must expose npm run owner:queue");
 }
 
+if (!/"owner:proof-handoff"/.test(packageJson)) {
+  failures.push("package.json must expose npm run owner:proof-handoff");
+}
+
 if (!/"owner:decision-intake"/.test(packageJson)) {
   failures.push("package.json must expose npm run owner:decision-intake");
 }
@@ -762,6 +769,10 @@ if (!/"audit:release-evidence-report"/.test(packageJson)) {
 
 if (!/"audit:owner-queue"/.test(packageJson)) {
   failures.push("package.json must expose npm run audit:owner-queue");
+}
+
+if (!/"audit:owner-proof-handoff"/.test(packageJson)) {
+  failures.push("package.json must expose npm run audit:owner-proof-handoff");
 }
 
 if (!/"audit:owner-decision-intake"/.test(packageJson)) {
@@ -1234,6 +1245,10 @@ if (!/owner:queue/.test(releaseCheck)) {
   failures.push("release:check must include npm run owner:queue");
 }
 
+if (!/owner:proof-handoff/.test(releaseCheck)) {
+  failures.push("release:check must include npm run owner:proof-handoff");
+}
+
 if (!/owner:decision-intake/.test(releaseCheck)) {
   failures.push("release:check must include npm run owner:decision-intake");
 }
@@ -1280,6 +1295,10 @@ if (!/audit:release-evidence-report/.test(releaseCheck)) {
 
 if (!/audit:owner-queue/.test(releaseCheck)) {
   failures.push("release:check must include npm run audit:owner-queue");
+}
+
+if (!/audit:owner-proof-handoff/.test(releaseCheck)) {
+  failures.push("release:check must include npm run audit:owner-proof-handoff");
 }
 
 if (!/audit:owner-decision-intake/.test(releaseCheck)) {
@@ -1690,6 +1709,18 @@ if (!/does not choose a license/i.test(read("docs/OWNER-ACTION-QUEUE.md"))) {
 
 if (!/does not create external proof/i.test(read("docs/OWNER-ACTION-QUEUE.md"))) {
   failures.push("owner action queue doc must keep proof boundary visible");
+}
+
+if (!/owner proof handoff/i.test(read("docs/OWNER-PROOF-HANDOFF.md"))) {
+  failures.push("owner proof handoff doc must name the handoff surface");
+}
+
+if (!/does not choose a license/i.test(read("docs/OWNER-PROOF-HANDOFF.md"))) {
+  failures.push("owner proof handoff doc must keep license decision boundary visible");
+}
+
+if (!/does not approve proof/i.test(read("docs/OWNER-PROOF-HANDOFF.md"))) {
+  failures.push("owner proof handoff doc must keep proof approval boundary visible");
 }
 
 if (!/owner decision intake/i.test(read("docs/OWNER-DECISION-INTAKE.md"))) {

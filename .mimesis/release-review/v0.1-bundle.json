@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T06:55:08.533Z",
+  "generatedAt": "2026-06-11T07:19:03.395Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -12,10 +12,10 @@
   "git": {
     "branch": "codex/mimesis-framework-v0.1",
     "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "d6618a037575e2434e888fd26d1863791168eee4",
+    "head": "613065d8df5af10e76cc9c844bc75b96425781d6",
     "dirty": true,
-    "trackedChangedCount": 32,
-    "untrackedCount": 1
+    "trackedChangedCount": 36,
+    "untrackedCount": 4
   },
   "sourceFiles": [
     ".mimesis/worktree/review-packet.json",
@@ -24,13 +24,14 @@
     ".mimesis/release-evidence/v0.1-report.md"
   ],
   "trackedChangedPaths": [
+    ".mimesis/claim-packs/public-v0.1.md",
     ".mimesis/completion/goal-completion-audit.json",
     ".mimesis/framework-manifest.json",
     ".mimesis/gaps/closure-plan.json",
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/proof-runs/execution-report.md",
+    ".mimesis/operator-runbooks/current-runbook.md",
     ".mimesis/publication-packets/v0.1.md",
     ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -43,17 +44,20 @@
     "README.md",
     "ROADMAP.md",
     "STATUS.md",
+    "bin/mimesis.mjs",
     "docs/COMPLETION-AUDIT.md",
-    "docs/FRAMEWORK-MANIFEST.md",
-    "docs/PROOF-EXECUTION-REPORT.md",
     "docs/RELEASE-CHECK-ORDER.md",
+    "docs/STATUS-ROADMAP-SYNC.md",
     "docs/V0.1-RELEASE-PACKET.md",
-    "spec/README.md",
+    "package.json",
     "tools/README.md",
-    "tools/audit-proof-execution-report.mjs",
-    "tools/audit-spec-index.mjs",
+    "tools/audit-cli.mjs",
+    "tools/audit-completion-matrix.mjs",
+    "tools/audit-package-surface.mjs",
+    "tools/audit-release-check-order.mjs",
+    "tools/audit-release-readiness.mjs",
+    "tools/audit-status-roadmap-sync.mjs",
     "tools/create-framework-manifest.mjs",
-    "tools/create-proof-execution-report.mjs",
     "tools/create-release-artifact-manifest.mjs",
     "tools/validate-mimesis.mjs"
   ],
@@ -68,15 +72,17 @@
     },
     {
       "name": "generated protocol artifacts",
-      "count": 16,
+      "count": 18,
       "sample": [
+        ".mimesis/claim-packs/public-v0.1.md",
         ".mimesis/completion/goal-completion-audit.json",
         ".mimesis/framework-manifest.json",
         ".mimesis/gaps/closure-plan.json",
         ".mimesis/gaps/current-gap-register.json",
         ".mimesis/gates/closure-readiness.json",
         ".mimesis/gates/closure-review.json",
-        ".mimesis/proof-runs/execution-report.md",
+        ".mimesis/operator-runbooks/current-runbook.md",
+        ".mimesis/owner-actions/proof-run-handoff.md",
         ".mimesis/publication-packets/v0.1.md",
         ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
@@ -94,9 +100,9 @@
       "count": 8,
       "sample": [
         "docs/COMPLETION-AUDIT.md",
-        "docs/FRAMEWORK-MANIFEST.md",
-        "docs/PROOF-EXECUTION-REPORT.md",
+        "docs/OWNER-PROOF-HANDOFF.md",
         "docs/RELEASE-CHECK-ORDER.md",
+        "docs/STATUS-ROADMAP-SYNC.md",
         "docs/V0.1-RELEASE-PACKET.md",
         "README.md",
         "ROADMAP.md",
@@ -106,12 +112,19 @@
     },
     {
       "name": "tooling and cli",
-      "count": 7,
+      "count": 14,
       "sample": [
-        "tools/audit-proof-execution-report.mjs",
-        "tools/audit-spec-index.mjs",
+        "bin/mimesis.mjs",
+        "package.json",
+        "tools/audit-cli.mjs",
+        "tools/audit-completion-matrix.mjs",
+        "tools/audit-owner-proof-handoff.mjs",
+        "tools/audit-package-surface.mjs",
+        "tools/audit-release-check-order.mjs",
+        "tools/audit-release-readiness.mjs",
+        "tools/audit-status-roadmap-sync.mjs",
         "tools/create-framework-manifest.mjs",
-        "tools/create-proof-execution-report.mjs",
+        "tools/create-owner-proof-handoff.mjs",
         "tools/create-release-artifact-manifest.mjs",
         "tools/README.md",
         "tools/validate-mimesis.mjs"
@@ -120,11 +133,8 @@
     },
     {
       "name": "spec and schemas",
-      "count": 2,
-      "sample": [
-        "spec/proof-execution-record.schema.json",
-        "spec/README.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Spec contracts, templates, and reference packs."
     }
   ],

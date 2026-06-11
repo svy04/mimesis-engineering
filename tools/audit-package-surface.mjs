@@ -231,6 +231,12 @@ for (const scriptName of ["owner:queue", "audit:owner-queue"]) {
   }
 }
 
+for (const scriptName of ["owner:proof-handoff", "audit:owner-proof-handoff"]) {
+  if (!packageJson.scripts?.[scriptName]) {
+    failures.push(`package.json missing script: ${scriptName}`);
+  }
+}
+
 for (const scriptName of ["owner:decision-intake", "audit:owner-decision-intake"]) {
   if (!packageJson.scripts?.[scriptName]) {
     failures.push(`package.json missing script: ${scriptName}`);
@@ -364,6 +370,7 @@ if (!failures.length) {
       "tools/audit-release-decision-record.mjs",
       "tools/audit-release-evidence-report.mjs",
       "tools/audit-owner-action-queue.mjs",
+      "tools/audit-owner-proof-handoff.mjs",
       "tools/audit-owner-decision-intake.mjs",
       "tools/audit-owner-decision-answer-record.mjs",
       "tools/audit-owner-answer-review.mjs",
@@ -418,6 +425,7 @@ if (!failures.length) {
       "tools/create-release-decision-record.mjs",
       "tools/create-release-evidence-report.mjs",
       "tools/create-owner-action-queue.mjs",
+      "tools/create-owner-proof-handoff.mjs",
       "tools/create-owner-decision-intake.mjs",
       "tools/create-owner-decision-answer-record.mjs",
       "tools/review-owner-decision-answer-record.mjs",
@@ -481,6 +489,7 @@ if (!failures.length) {
       "docs/RELEASE-DECISION-RECORD.md",
       "docs/RELEASE-EVIDENCE-REPORT.md",
       "docs/OWNER-ACTION-QUEUE.md",
+      "docs/OWNER-PROOF-HANDOFF.md",
       "docs/OWNER-DECISION-INTAKE.md",
       "docs/OWNER-DECISION-ANSWER-RECORD.md",
       "docs/OWNER-ANSWER-REVIEW.md",
