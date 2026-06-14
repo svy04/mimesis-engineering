@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/current-state-summary.schema.json",
+  "title": "Mimesis Current State Summary",
+  "description": "Machine-readable summary of current open gates, next actions, and proof boundaries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "snapshotKind",
+    "status",
+    "generatedAt",
+    "package",
+    "git",
+    "completionAllowed",
+    "gapCount",
+    "counts",
+    "gates",
+    "nextBestActions",
+    "sourceFiles",
+    "boundaries",
+    "allowedClaim",
+    "disallowedClaim"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "mimesis.current-state-summary.v0.1"
+    },
+    "snapshotKind": {
+      "type": "string",
+      "const": "generated_local_state_snapshot",
+      "description": "Marks the file as a generation-time local snapshot, not live remote freshness proof."
+    },
+    "status": {
+      "type": "string",
+      "const": "open_gates_remain"
+    },
+    "generatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "private", "license"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "private": {
+          "type": "boolean"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "git": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch",
+        "upstream",
+        "head",
+        "dirty",
+        "trackedChangedCount",
+        "untrackedCount",
+        "freshness",
+        "committedSnapshotCanGoStale",
+        "liveVerificationCommand"
+      ],
+      "properties": {
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "upstream": {
+          "type": "string",
+          "minLength": 1
+        },
+        "head": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "trackedChangedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "untrackedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freshness": {
+          "type": "string",
+          "const": "generation_time_only"
+        },
+        "committedSnapshotCanGoStale": {
+          "type": "boolean",
+          "const": true
+        },
+        "liveVerificationCommand": {
+          "type": "string",
+          "const": "npm run audit:sync:strict"
+        }
+      }
+    },
+    "completionAllowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "gapCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["byStatus", "blocked", "pendingOwner", "waitingForArtifact", "waitingForEvidence"],
+      "properties": {
+        "byStatus": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "blocked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pendingOwner": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "waitingForArtifact": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "waitingForEvidence": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "status",
+          "closureType",
+          "requiredEvidence",
+          "nextAction",
+          "firstCommand",
+          "stopConditions",
+          "boundary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "closureType": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requiredEvidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "nextAction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "firstCommand": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stopConditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "nextBestActions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "nextAction", "boundary"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nextAction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "sourceFiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowedClaim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disallowedClaim": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

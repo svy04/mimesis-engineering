@@ -1,0 +1,81 @@
+name: Owner Proof Input
+description: Submit the minimum owner input for license/no-reuse and one weak artifact permission boundary.
+title: "[Owner Proof Input]: "
+labels: ["owner-proof-input"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only when you own or control the decision.
+        This issue records owner input for review. It does not choose a license, grant permission, approve proof, publish, or close gates.
+        Do not paste secrets, passwords, tokens, private customer data, or copied protected material.
+  - type: dropdown
+    id: license_or_no_reuse
+    attributes:
+      label: license_or_no_reuse
+      description: Choose the current owner direction for reuse.
+      options:
+        - "No reuse for now"
+        - "Reuse allowed under an existing repository license"
+        - "Reuse allowed after adding a new license"
+        - "Split code/content license decision needed"
+        - "Needs legal review before reuse"
+    validations:
+      required: true
+  - type: textarea
+    id: license_notes
+    attributes:
+      label: License or no-reuse notes
+      description: Add the exact license name, no-reuse boundary, or review note. Do not ask the framework to choose legal terms.
+    validations:
+      required: true
+  - type: textarea
+    id: weak_artifact_permission
+    attributes:
+      label: weak_artifact_permission
+      description: Paste a shareable excerpt/path/link for one weak artifact and state why you can submit it for review.
+    validations:
+      required: true
+  - type: input
+    id: artifact_owner
+    attributes:
+      label: Artifact owner
+      description: Who owns or controls the weak artifact?
+    validations:
+      required: true
+  - type: dropdown
+    id: publication_preference
+    attributes:
+      label: Publication preference
+      options:
+        - "Private review only"
+        - "Public"
+        - "Anonymized"
+        - "Redacted"
+    validations:
+      required: true
+  - type: textarea
+    id: redaction_requirements
+    attributes:
+      label: Redaction requirements
+      description: What must be removed or masked before any public case, if anything?
+    validations:
+      required: true
+  - type: textarea
+    id: proof_boundary
+    attributes:
+      label: Proof boundary
+      description: What must this artifact or case not claim?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety_confirmation
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I did not include secrets, passwords, tokens, or private customer data.
+          required: true
+        - label: I own or control the submitted artifact, or I have permission to submit the shown redacted excerpt/path/link for review.
+          required: true
+        - label: I understand this issue does not grant permission, approve proof, publish, or close gates.
+          required: true

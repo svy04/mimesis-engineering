@@ -1,0 +1,16 @@
+{
+  "schema": "mimesis.owner-proof-input-remote-issue-candidate-fixture.v0.1",
+  "fixtureKind": "fixture_candidate_owner_input",
+  "number": 7,
+  "url": "https://github.com/svy04/mimesis-engineering/issues/7",
+  "title": "[Owner Proof Input]: license/no-reuse + one weak artifact",
+  "state": "OPEN",
+  "labels": [
+    {
+      "name": "owner-proof-input"
+    }
+  ],
+  "createdAt": "2026-06-11T09:48:54Z",
+  "updatedAt": "2026-06-11T09:49:45Z",
+  "body": "Status: fixture candidate owner input, not owner decision or proof.\n\nThis fixture models what a filled issue #7 could look like after owner review. It is only a local smoke fixture for the private export path.\n\n## 1. license_or_no_reuse\n\n- [x] Reuse allowed after adding a new license\n\nNotes:\n\n```text\nFixture candidate: owner plans to add an explicit repository license before reuse. This is not legal advice and not the final license decision.\n```\n\n## 2. weak_artifact_permission\n\nBring one weak artifact: one owner-submitted, permissioned, or clearly redacted artifact that is weak enough to improve and safe enough to review.\n\nArtifact/excerpt/path/link:\n\n```text\nFixture weak artifact: a redacted draft README paragraph that needs transformation into a clearer before/after Mimesis case.\n```\n\nArtifact owner:\n\n```text\nFixture owner\n```\n\nPublication preference:\n\n- [x] Anonymized\n\nRedaction requirements:\n\n```text\nRemove identifying names, customer details, credentials, and private operational context before any public case candidate.\n```\n\nProof boundary, meaning what this artifact/case must not claim:\n\n```text\nDo not claim customer proof, adoption, benchmarked productivity, publication, license grant, or gate closure from this fixture.\n```\n\n## Safety Confirmation\n\n- [x] I did not include secrets, passwords, tokens, or private customer data.\n- [x] I own or control the submitted artifact, or I have permission to submit the shown redacted excerpt/path/link for review.\n- [x] I understand this issue does not grant permission, approve proof, publish, or close gates.\n"
+}

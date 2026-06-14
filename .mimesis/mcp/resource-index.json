@@ -1,0 +1,153 @@
+{
+  "name": "mimesis-mcp",
+  "version": "0.1.0",
+  "status": "prototype",
+  "transport": "stdio-scaffold",
+  "generatedFrom": [
+    "plugins/mimesis-mcp/manifest.json",
+    "plugins/mimesis-mcp/resources.json",
+    "plugins/mimesis-mcp/tools.json"
+  ],
+  "protocolShape": {
+    "layer": "JSON-RPC shaped MCP scaffold",
+    "serverFeatures": [
+      "resources",
+      "tools",
+      "prompts"
+    ],
+    "prompts": [
+      {
+        "name": "mimesis_loop",
+        "purpose": "Guide a human operator through Import, Distill, Capsule, Shard, Verify, Remember.",
+        "boundary": "prompt descriptor only; not hidden automation"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "uri": "mimesis://spec/v0.1",
+      "name": "Mimesis v0.1 Spec",
+      "path": "spec/mimesis-v0.1.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://spec/file-protocol",
+      "name": "File Protocol",
+      "path": "spec/file-protocol.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/artifact-brief",
+      "name": "Artifact Brief Template",
+      "path": "templates/artifact-brief.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/reference-set",
+      "name": "Reference Set Template",
+      "path": "templates/reference-set.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://templates/transformation-plan",
+      "name": "Transformation Plan Template",
+      "path": "templates/transformation-plan.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://reference-packs/github-readme",
+      "name": "GitHub README Reference Pack",
+      "path": "reference-packs/github-readme.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://reference-packs/ai-workflow",
+      "name": "AI Workflow Reference Pack",
+      "path": "reference-packs/ai-workflow.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://cases/index",
+      "name": "Case Index",
+      "path": "cases/README.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://proof/boundary",
+      "name": "Proof Boundary",
+      "path": "PROOF-BOUNDARY.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://audit/completion",
+      "name": "Completion Audit",
+      "path": "docs/COMPLETION-AUDIT.md",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "mimesis://ledger/run",
+      "name": "Run Ledger",
+      "path": ".mimesis/run_ledger.md",
+      "mimeType": "text/markdown"
+    }
+  ],
+  "tools": [
+    {
+      "name": "mimesis_validate",
+      "command": "npm run validate",
+      "purpose": "Validate the local framework surface.",
+      "boundary": "local validation only; does not prove external adoption"
+    },
+    {
+      "name": "mimesis_workspace_check",
+      "command": "npm run workspace:check",
+      "purpose": "Check a visible .mimesis artifact trail.",
+      "boundary": "checks local files only"
+    },
+    {
+      "name": "mimesis_case_start",
+      "command": "npm run case:start",
+      "purpose": "Start a case workspace from one weak artifact.",
+      "boundary": "starts a case; does not complete proof"
+    },
+    {
+      "name": "mimesis_case_check",
+      "command": "npm run case:check",
+      "purpose": "Check completed local case evidence.",
+      "boundary": "local evidence only; not external adoption"
+    },
+    {
+      "name": "mimesis_evidence_check",
+      "command": "npm run evidence:check",
+      "purpose": "Check a strong-claim evidence packet.",
+      "boundary": "checks structure; does not create evidence"
+    },
+    {
+      "name": "mimesis_release_check",
+      "command": "npm run release:check",
+      "purpose": "Run local release preflight.",
+      "boundary": "does not publish, tag, or choose a license"
+    },
+    {
+      "name": "mimesis_audit_sources",
+      "command": "npm run audit:sources",
+      "purpose": "Check source-first reference discipline.",
+      "boundary": "reference discipline only; not legal originality proof"
+    },
+    {
+      "name": "mimesis_mcp_resources",
+      "command": "npm run mcp:resources",
+      "purpose": "Generate the local MCP resource index scaffold.",
+      "boundary": "does not start a long-running server"
+    }
+  ],
+  "boundary": [
+    "local scaffold only",
+    "not a shipped MCP server",
+    "does not start a long-running server",
+    "does not expose secrets",
+    "does not prove external adoption",
+    "does not prove benchmarked productivity",
+    "does not create external proof"
+  ]
+}

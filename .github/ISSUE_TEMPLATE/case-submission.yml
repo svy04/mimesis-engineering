@@ -1,0 +1,56 @@
+name: Case Submission
+description: Submit a before/after Mimesis case.
+title: "[Case]: "
+labels: ["case-submission"]
+body:
+  - type: textarea
+    id: starting-artifact
+    attributes:
+      label: Starting artifact
+      description: What did you begin with?
+    validations:
+      required: true
+  - type: textarea
+    id: references-studied
+    attributes:
+      label: References studied
+      description: What artifacts did you study?
+    validations:
+      required: true
+  - type: textarea
+    id: extracted-structure
+    attributes:
+      label: Extracted structure
+      description: What structure transferred without copying surface?
+    validations:
+      required: true
+  - type: textarea
+    id: transformation
+    attributes:
+      label: Transformation
+      description: What changed under your own constraints?
+    validations:
+      required: true
+  - type: textarea
+    id: before-after
+    attributes:
+      label: Before / after
+      description: Show the before and after state.
+    validations:
+      required: true
+  - type: textarea
+    id: proof-boundary
+    attributes:
+      label: Proof boundary
+      description: What remains unproven?
+    validations:
+      required: true
+  - type: dropdown
+    id: permission-to-publish
+    attributes:
+      label: Permission to publish?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true

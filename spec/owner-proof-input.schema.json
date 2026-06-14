@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/owner-proof-input.schema.json",
+  "title": "Mimesis Owner Proof Input Record",
+  "description": "Machine-readable contract for the minimum owner inputs needed before the first real proof run: license/no-reuse and one permissioned weak artifact.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "sourceHandoff",
+    "minimumInputs",
+    "downstreamTargets",
+    "safetyConfirmation",
+    "prohibitedClaims",
+    "boundaries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "template_not_owner_submitted",
+        "draft",
+        "reviewed",
+        "rejected"
+      ]
+    },
+    "sourceHandoff": {
+      "type": "string",
+      "minLength": 1
+    },
+    "minimumInputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "license_or_no_reuse",
+        "weak_artifact_permission"
+      ],
+      "properties": {
+        "license_or_no_reuse": {
+          "$ref": "#/$defs/proofInputField"
+        },
+        "weak_artifact_permission": {
+          "$ref": "#/$defs/proofInputField"
+        }
+      }
+    },
+    "downstreamTargets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ownerDecisionAnswerRecord",
+        "ownerEvidenceSubmissionRecord",
+        "proofIntakeRecord",
+        "proofExecutionRecord"
+      ],
+      "properties": {
+        "ownerDecisionAnswerRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownerEvidenceSubmissionRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proofIntakeRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proofExecutionRecord": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "safetyConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noOwnerDecisionMade",
+        "noArtifactSubmitted",
+        "noFrameworkChosenLicense",
+        "noPermissionGranted",
+        "noPublication",
+        "noExternalProof",
+        "noProofApproval",
+        "noClosedGates"
+      ],
+      "properties": {
+        "noOwnerDecisionMade": {
+          "type": "boolean"
+        },
+        "noArtifactSubmitted": {
+          "type": "boolean"
+        },
+        "noFrameworkChosenLicense": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPermissionGranted": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPublication": {
+          "type": "boolean",
+          "const": true
+        },
+        "noExternalProof": {
+          "type": "boolean",
+          "const": true
+        },
+        "noProofApproval": {
+          "type": "boolean",
+          "const": true
+        },
+        "noClosedGates": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "prohibitedClaims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "proofInputField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputStatus",
+        "ownerInput",
+        "requiredEvidence",
+        "reviewChecklist",
+        "downstreamTarget",
+        "boundary"
+      ],
+      "properties": {
+        "inputStatus": {
+          "type": "string",
+          "enum": [
+            "pending_owner",
+            "submitted",
+            "blocked",
+            "not_in_scope"
+          ]
+        },
+        "ownerInput": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requiredEvidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reviewChecklist": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "downstreamTarget": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

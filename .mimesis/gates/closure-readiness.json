@@ -1,0 +1,605 @@
+{
+  "schema": "mimesis.gate-closure-readiness.v0.1",
+  "status": "open_gates_not_ready",
+  "generatedAt": "2026-06-11T14:31:00.477Z",
+  "package": {
+    "name": "mimesis-engineering",
+    "version": "0.1.0",
+    "private": true,
+    "license": "UNLICENSED"
+  },
+  "git": {
+    "branch": "codex/mimesis-framework-v0.1",
+    "upstream": "origin/codex/mimesis-framework-v0.1",
+    "head": "487b4767e56a67f46ea21c98245ca36ce1820781",
+    "dirty": true,
+    "trackedChangedCount": 33,
+    "untrackedCount": 2,
+    "freshness": "generation_time_only",
+    "committedSnapshotCanGoStale": true,
+    "liveVerificationCommand": "npm run audit:sync:strict"
+  },
+  "inputMode": {
+    "ownerEvidenceSubmissionRecord": ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    "outputPath": ".mimesis/gates/closure-readiness.json",
+    "candidateMode": false,
+    "boundary": "A supplied owner evidence submission record can make owner evidence review-ready, but this report still does not close gates or prove evidence."
+  },
+  "completionAllowed": false,
+  "gateCount": 9,
+  "readinessCounts": {
+    "not_ready": 1,
+    "pending_owner": 1,
+    "waiting_for_artifact": 2,
+    "blocked": 3,
+    "waiting_for_evidence": 2
+  },
+  "counts": {
+    "byStatus": {
+      "needs_fresh_verification": 1,
+      "pending_owner": 1,
+      "waiting_for_artifact": 2,
+      "blocked": 3,
+      "waiting_for_evidence": 2
+    },
+    "blocked": 3,
+    "pendingOwner": 1,
+    "waitingForArtifact": 2,
+    "waitingForEvidence": 2
+  },
+  "gates": [
+    {
+      "id": "strict_publish_sync",
+      "title": "Strict publish sync gate",
+      "kind": "git_sync",
+      "status": "needs_fresh_verification",
+      "closureType": "local_sync_gate",
+      "readiness": "not_ready",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "npm run audit:sync:strict",
+        ".mimesis/sync-status.md"
+      ],
+      "missingEvidence": [
+        "npm run audit:sync:strict",
+        ".mimesis/sync-status.md",
+        "publication_scope: not submitted owner evidence",
+        "npm run release:check:public",
+        "owner-provided evidence required",
+        "strict_sync_intent: not submitted owner evidence"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "publication_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "npm run release:check:public",
+            "npm run audit:sync:strict"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        },
+        {
+          "fieldName": "strict_sync_intent",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "npm run audit:sync:strict"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run audit:sync",
+      "commands": [
+        "npm run audit:sync",
+        "npm run audit:sync:strict",
+        "git status --short --branch"
+      ],
+      "stopConditions": [
+        "Stop if the worktree is dirty and no owner has requested staging, committing, pushing, tagging, releasing, or publishing.",
+        "Stop if upstream sync cannot be verified from the local git state."
+      ],
+      "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed.",
+      "boundary": "Committed gap-register snapshots do not close strict sync; only the runtime-only non-writing strict sync audit proves current local upstream sync."
+    },
+    {
+      "id": "owner_license_decision",
+      "title": "Owner license decision",
+      "kind": "owner_decision",
+      "status": "pending_owner",
+      "closureType": "owner_decision_gate",
+      "readiness": "pending_owner",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md"
+      ],
+      "missingEvidence": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md",
+        "license_or_no_reuse: not submitted owner evidence",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "license_or_no_reuse",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/LICENSE-DECISION.md",
+            ".mimesis/license-packets/owner-decision.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run license:packet",
+      "commands": [
+        "npm run license:packet",
+        "npm run audit:license-packet",
+        "Record the owner's explicit license or no-reuse decision in the release decision record."
+      ],
+      "stopConditions": [
+        "Stop if no owner decision exists.",
+        "Stop if the request would require legal advice."
+      ],
+      "nextAction": "Owner chooses a reuse license or keeps the no-reuse boundary.",
+      "boundary": "Does not choose a license or provide legal advice."
+    },
+    {
+      "id": "permissioned_external_artifact",
+      "title": "One permissioned external weak artifact",
+      "kind": "external_artifact",
+      "status": "waiting_for_artifact",
+      "closureType": "permissioned_artifact_gate",
+      "readiness": "waiting_for_artifact",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md"
+      ],
+      "missingEvidence": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
+        "weak_artifact_permission: not submitted owner evidence",
+        "permissioned or clearly redacted weak artifact",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "weak_artifact_permission",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/PROOF-INTAKE-KIT.md",
+            ".mimesis/proof-intake/first-external-proof-kit.md",
+            "permissioned or clearly redacted weak artifact"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner-provided permission required before public or proof use",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run proof:intake",
+      "commands": [
+        "npm run proof:intake",
+        "npm run audit:proof-intake",
+        "Collect one permissioned, user-submitted, or clearly redacted weak artifact."
+      ],
+      "stopConditions": [
+        "Stop if permission, redaction, or submitter scope is unclear.",
+        "Stop if the artifact contains secrets or private personal data that should not enter the case trail."
+      ],
+      "nextAction": "Collect one user-submitted, permissioned, or clearly redacted weak artifact.",
+      "boundary": "Does not create external proof or grant permission."
+    },
+    {
+      "id": "completed_external_case",
+      "title": "Completed permissioned before/after case",
+      "kind": "proof_case",
+      "status": "waiting_for_artifact",
+      "closureType": "proof_case_gate",
+      "readiness": "waiting_for_artifact",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "npm run cli -- case:review path/to/intake.md",
+        "npm run cli -- case:from-intake path/to/intake.md",
+        "npm run cli -- case:check path/to/case"
+      ],
+      "missingEvidence": [
+        "npm run cli -- case:review path/to/intake.md",
+        "npm run cli -- case:from-intake path/to/intake.md",
+        "npm run cli -- case:check path/to/case",
+        "weak_artifact_permission: not submitted owner evidence",
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
+        "permissioned or clearly redacted weak artifact",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "weak_artifact_permission",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/PROOF-INTAKE-KIT.md",
+            ".mimesis/proof-intake/first-external-proof-kit.md",
+            "permissioned or clearly redacted weak artifact"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner-provided permission required before public or proof use",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run cli -- case:review path/to/intake.md",
+      "commands": [
+        "npm run cli -- case:review path/to/intake.md",
+        "npm run cli -- case:from-intake path/to/intake.md",
+        "npm run cli -- case:check path/to/case",
+        "npm run cli -- evidence:from-case path/to/case --out path/to/evidence.md --force",
+        "npm run cli -- evidence:review path/to/evidence.md --decision reviewed --reviewer \"Reviewer Name\" --note \"Reviewed against the proof boundary.\""
+      ],
+      "stopConditions": [
+        "Stop if the case lacks before/after artifacts.",
+        "Stop if the boundary check does not preserve what remains unproven.",
+        "Stop if reviewed evidence is missing."
+      ],
+      "nextAction": "Run the reviewed artifact through the full case path and preserve the boundary check.",
+      "boundary": "Does not prove improvement, adoption, or outcome until the before/after case evidence exists."
+    },
+    {
+      "id": "package_publication",
+      "title": "npm package publication",
+      "kind": "publication",
+      "status": "blocked",
+      "closureType": "publication_gate",
+      "readiness": "blocked",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "owner-controlled npm publish evidence"
+      ],
+      "missingEvidence": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "owner-controlled npm publish evidence",
+        "package_action_plugin_scope: not submitted owner evidence",
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "docs/PLUGIN-RELEASE-PACKET.md",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "package_action_plugin_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/PACKAGE-RELEASE-CANDIDATE.md",
+            "npm run audit:package",
+            "docs/ACTION-RELEASE-CANDIDATE.md",
+            "npm run audit:action",
+            "docs/PLUGIN-INSTALL-PACKET.md",
+            "docs/PLUGIN-RELEASE-PACKET.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run audit:package",
+      "commands": [
+        "npm run audit:package",
+        "npm run package:dry-run",
+        "Owner-controlled npm publish command, only after license and sync gates close."
+      ],
+      "stopConditions": [
+        "Stop if package.json remains private.",
+        "Stop if the license decision is pending.",
+        "Stop if strict sync has not passed."
+      ],
+      "nextAction": "After license and sync gates close, owner decides whether npm publication is in scope.",
+      "boundary": "Dry-run package checks are not npm publication."
+    },
+    {
+      "id": "action_publication",
+      "title": "Tagged GitHub Action or Marketplace publication",
+      "kind": "publication",
+      "status": "blocked",
+      "closureType": "publication_gate",
+      "readiness": "blocked",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "tag or Marketplace release evidence"
+      ],
+      "missingEvidence": [
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "tag or Marketplace release evidence",
+        "package_action_plugin_scope: not submitted owner evidence",
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "docs/PLUGIN-RELEASE-PACKET.md",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "package_action_plugin_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/PACKAGE-RELEASE-CANDIDATE.md",
+            "npm run audit:package",
+            "docs/ACTION-RELEASE-CANDIDATE.md",
+            "npm run audit:action",
+            "docs/PLUGIN-INSTALL-PACKET.md",
+            "docs/PLUGIN-RELEASE-PACKET.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run audit:action",
+      "commands": [
+        "npm run audit:action",
+        "Owner-controlled git tag or GitHub Marketplace release flow, only after release gates close."
+      ],
+      "stopConditions": [
+        "Stop if no tag or Marketplace release evidence exists.",
+        "Stop if the repository-local action metadata is the only evidence."
+      ],
+      "nextAction": "Owner decides whether a tagged public action release or Marketplace listing is in scope.",
+      "boundary": "Repository-local action metadata is not Marketplace publication."
+    },
+    {
+      "id": "shipped_plugin",
+      "title": "Shipped plugin or connector proof",
+      "kind": "integration",
+      "status": "blocked",
+      "closureType": "integration_gate",
+      "readiness": "blocked",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/PLUGIN-RELEASE-PACKET.md",
+        ".mimesis/plugin-release-packets/v0.1-action-candidate.md",
+        "installation or release evidence packet"
+      ],
+      "missingEvidence": [
+        "docs/PLUGIN-RELEASE-PACKET.md",
+        ".mimesis/plugin-release-packets/v0.1-action-candidate.md",
+        "installation or release evidence packet",
+        "package_action_plugin_scope: not submitted owner evidence",
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "package_action_plugin_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/PACKAGE-RELEASE-CANDIDATE.md",
+            "npm run audit:package",
+            "docs/ACTION-RELEASE-CANDIDATE.md",
+            "npm run audit:action",
+            "docs/PLUGIN-INSTALL-PACKET.md",
+            "docs/PLUGIN-RELEASE-PACKET.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run plugin:install-packet",
+      "commands": [
+        "npm run plugin:install-packet",
+        "npm run plugin:packet",
+        "npm run audit:plugin-install-packet",
+        "npm run audit:plugin-packet",
+        "Attach real installation, release, or connector availability evidence."
+      ],
+      "stopConditions": [
+        "Stop if only local plugin scaffolds exist.",
+        "Stop if no install or release evidence can be attached."
+      ],
+      "nextAction": "Produce a real tagged plugin/action release or installation proof before shipped-plugin claims.",
+      "boundary": "Local plugin scaffolds and install-readiness packets are not shipped plugins."
+    },
+    {
+      "id": "benchmark_study",
+      "title": "Benchmarked productivity evidence",
+      "kind": "measurement",
+      "status": "waiting_for_evidence",
+      "closureType": "measurement_gate",
+      "readiness": "waiting_for_evidence",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "docs/BENCHMARK-PACKET.md",
+        ".mimesis/benchmark-packets/v0.2-first-benchmark.md",
+        "reviewed evidence packet"
+      ],
+      "missingEvidence": [
+        "docs/BENCHMARK-PACKET.md",
+        ".mimesis/benchmark-packets/v0.2-first-benchmark.md",
+        "reviewed evidence packet",
+        "benchmark_adoption_scope: not submitted owner evidence",
+        "templates/evidence-packet.md",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "benchmark_adoption_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/BENCHMARK-PACKET.md",
+            "templates/evidence-packet.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "npm run benchmark:packet",
+      "commands": [
+        "npm run benchmark:packet",
+        "npm run audit:benchmark-packet",
+        "Run the measurement protocol and review the resulting evidence packet."
+      ],
+      "stopConditions": [
+        "Stop if no measured before/after study exists.",
+        "Stop if evidence has not been reviewed."
+      ],
+      "nextAction": "Run the measurement protocol and review the resulting evidence before productivity claims.",
+      "boundary": "Measurement protocol only; no benchmark claim without direct evidence."
+    },
+    {
+      "id": "external_adoption",
+      "title": "External adoption evidence",
+      "kind": "adoption",
+      "status": "waiting_for_evidence",
+      "closureType": "adoption_gate",
+      "readiness": "waiting_for_evidence",
+      "canCloseNow": false,
+      "requiredEvidence": [
+        "templates/evidence-packet.md",
+        "reviewed adoption evidence packet"
+      ],
+      "missingEvidence": [
+        "templates/evidence-packet.md",
+        "reviewed adoption evidence packet",
+        "benchmark_adoption_scope: not submitted owner evidence",
+        "docs/BENCHMARK-PACKET.md",
+        "owner-provided evidence required"
+      ],
+      "ownerEvidence": [
+        {
+          "fieldName": "benchmark_adoption_scope",
+          "submissionStatus": "missing",
+          "ownerSubmittedEvidence": "not submitted owner evidence",
+          "requiredAttachments": [
+            "docs/BENCHMARK-PACKET.md",
+            "templates/evidence-packet.md"
+          ],
+          "ownerAttachmentSlot": "owner-provided evidence required",
+          "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+          "boundary": "does not submit evidence or close gates"
+        }
+      ],
+      "ownerEvidenceReviewReady": false,
+      "firstCommand": "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",
+      "commands": [
+        "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",
+        "npm run evidence:check path/to/reviewed-adoption-evidence.md",
+        "npm run cli -- claim:from-evidence path/to/reviewed-adoption-evidence.md --out path/to/bounded-claim.md"
+      ],
+      "stopConditions": [
+        "Stop if public repository visibility is the only evidence.",
+        "Stop if the evidence is not external, permissioned, or reviewed."
+      ],
+      "nextAction": "Collect and review real external usage evidence before adoption claims.",
+      "boundary": "Read-only public repository visibility is not external adoption."
+    }
+  ],
+  "nextReviewOrder": [
+    {
+      "id": "strict_publish_sync",
+      "readiness": "not_ready",
+      "firstCommand": "npm run audit:sync",
+      "nextAction": "Run the runtime-only non-writing strict sync gate after the intended branch is pushed."
+    },
+    {
+      "id": "owner_license_decision",
+      "readiness": "pending_owner",
+      "firstCommand": "npm run license:packet",
+      "nextAction": "Owner chooses a reuse license or keeps the no-reuse boundary."
+    },
+    {
+      "id": "permissioned_external_artifact",
+      "readiness": "waiting_for_artifact",
+      "firstCommand": "npm run proof:intake",
+      "nextAction": "Collect one user-submitted, permissioned, or clearly redacted weak artifact."
+    },
+    {
+      "id": "completed_external_case",
+      "readiness": "waiting_for_artifact",
+      "firstCommand": "npm run cli -- case:review path/to/intake.md",
+      "nextAction": "Run the reviewed artifact through the full case path and preserve the boundary check."
+    },
+    {
+      "id": "package_publication",
+      "readiness": "blocked",
+      "firstCommand": "npm run audit:package",
+      "nextAction": "After license and sync gates close, owner decides whether npm publication is in scope."
+    },
+    {
+      "id": "action_publication",
+      "readiness": "blocked",
+      "firstCommand": "npm run audit:action",
+      "nextAction": "Owner decides whether a tagged public action release or Marketplace listing is in scope."
+    },
+    {
+      "id": "shipped_plugin",
+      "readiness": "blocked",
+      "firstCommand": "npm run plugin:install-packet",
+      "nextAction": "Produce a real tagged plugin/action release or installation proof before shipped-plugin claims."
+    },
+    {
+      "id": "benchmark_study",
+      "readiness": "waiting_for_evidence",
+      "firstCommand": "npm run benchmark:packet",
+      "nextAction": "Run the measurement protocol and review the resulting evidence before productivity claims."
+    },
+    {
+      "id": "external_adoption",
+      "readiness": "waiting_for_evidence",
+      "firstCommand": "Create or collect a reviewed adoption evidence packet from templates/evidence-packet.md.",
+      "nextAction": "Collect and review real external usage evidence before adoption claims."
+    }
+  ],
+  "sourceFiles": [
+    ".mimesis/gaps/current-gap-register.json",
+    ".mimesis/gaps/closure-plan.json",
+    ".mimesis/owner-actions/evidence-bundle.md",
+    ".mimesis/owner-actions/fixture-evidence-submission-record.json",
+    ".mimesis/owner-actions/evidence-review.md",
+    ".mimesis/state/current-state.json"
+  ],
+  "boundaries": [
+    "does_not_close_gates",
+    "does_not_create_evidence",
+    "does_not_attach_evidence",
+    "does_not_submit_evidence",
+    "does_not_prove_completion",
+    "does_not_publish",
+    "does_not_stage_commit_push_tag_release",
+    "does_not_choose_license",
+    "does_not_create_external_proof",
+    "does_not_prove_adoption"
+  ],
+  "allowedClaim": "Mimesis has a local gate closure readiness report that shows which open gates are still not ready to close and what evidence remains missing.",
+  "disallowedClaim": "The gate closure readiness report does not close gates, submit evidence, attach evidence, prove completion, publish, choose a license, create external proof, prove adoption, prove benchmarked productivity, or ship a plugin."
+}

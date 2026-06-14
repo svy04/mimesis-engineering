@@ -1,0 +1,30 @@
+name: Mimesis Protocol Check
+description: Check a repository for a visible Mimesis .mimesis artifact trail.
+inputs:
+  working-directory:
+    description: Repository or subdirectory to inspect.
+    required: false
+    default: "."
+  command:
+    description: Mimesis command to run. Use workspace:check for external repositories.
+    required: false
+    default: "workspace:check"
+runs:
+  using: composite
+  steps:
+    - name: Run Mimesis protocol check
+      run: |
+        case "${{ inputs.command }}" in
+          workspace:check)
+            node "$GITHUB_ACTION_PATH/bin/mimesis.mjs" workspace:check "${{ inputs.working-directory }}"
+            ;;
+          validate|release:check)
+            cd "$GITHUB_ACTION_PATH"
+            node bin/mimesis.mjs "${{ inputs.command }}"
+            ;;
+          *)
+            echo "Unsupported Mimesis command: ${{ inputs.command }}" >&2
+            exit 1
+            ;;
+        esac
+      shell: bash

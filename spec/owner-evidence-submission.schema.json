@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/owner-evidence-submission.schema.json",
+  "title": "Mimesis Owner Evidence Submission Record",
+  "description": "Machine-readable contract for owner evidence submission state derived from the attachment form without submitting, attaching, or accepting evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "sourceForm",
+    "sourceEvidenceRecord",
+    "fieldLevelReadiness",
+    "fields",
+    "requiredGateIds",
+    "safetyConfirmation",
+    "prohibitedClaims",
+    "boundaries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["not_submitted_owner_evidence", "draft", "reviewed", "rejected"]
+    },
+    "sourceForm": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceEvidenceRecord": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fieldLevelReadiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "purpose",
+        "defaultField",
+        "supportedFields",
+        "command",
+        "boundary",
+        "boundaries"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defaultField": {
+          "type": "string",
+          "const": "weak_artifact_permission"
+        },
+        "supportedFields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "license_or_no_reuse",
+              "weak_artifact_permission",
+              "publication_scope",
+              "package_action_plugin_scope",
+              "benchmark_adoption_scope",
+              "strict_sync_intent"
+            ]
+          }
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundaries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "license_or_no_reuse",
+        "weak_artifact_permission",
+        "publication_scope",
+        "package_action_plugin_scope",
+        "benchmark_adoption_scope",
+        "strict_sync_intent"
+      ],
+      "properties": {
+        "license_or_no_reuse": {
+          "$ref": "#/$defs/submissionField"
+        },
+        "weak_artifact_permission": {
+          "$ref": "#/$defs/submissionField"
+        },
+        "publication_scope": {
+          "$ref": "#/$defs/submissionField"
+        },
+        "package_action_plugin_scope": {
+          "$ref": "#/$defs/submissionField"
+        },
+        "benchmark_adoption_scope": {
+          "$ref": "#/$defs/submissionField"
+        },
+        "strict_sync_intent": {
+          "$ref": "#/$defs/submissionField"
+        }
+      }
+    },
+    "requiredGateIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "safetyConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noEvidenceSubmitted",
+        "noEvidenceAttached",
+        "noArtifactCollected",
+        "noPermissionGranted",
+        "noPublication",
+        "noExternalProof",
+        "noClosedGates"
+      ],
+      "properties": {
+        "noEvidenceSubmitted": {
+          "type": "boolean",
+          "const": true
+        },
+        "noEvidenceAttached": {
+          "type": "boolean",
+          "const": true
+        },
+        "noArtifactCollected": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPermissionGranted": {
+          "type": "boolean",
+          "const": true
+        },
+        "noPublication": {
+          "type": "boolean",
+          "const": true
+        },
+        "noExternalProof": {
+          "type": "boolean",
+          "const": true
+        },
+        "noClosedGates": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "prohibitedClaims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "submissionField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "submissionStatus",
+        "ownerSubmittedEvidence",
+        "blockedGateIds",
+        "requiredAttachments",
+        "ownerAttachmentSlot",
+        "safetyCheck",
+        "boundary"
+      ],
+      "properties": {
+        "submissionStatus": {
+          "type": "string",
+          "enum": ["missing", "submitted", "blocked", "not_in_scope"]
+        },
+        "ownerSubmittedEvidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blockedGateIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "requiredAttachments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ownerAttachmentSlot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "safetyCheck": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

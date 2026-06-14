@@ -1,0 +1,68 @@
+# Release Decision Record
+
+Status: pending owner decision record.
+
+`release:decision-record` generates a machine-readable owner release decision record.
+
+It captures current release, license, package, action, plugin, proof, benchmark, and adoption gates as pending or blocked.
+It does not choose a license, does not stage files, does not create a commit, does not push, does not tag, does not release, and does not publish.
+It keeps sync as a runtime-only sync proof requirement instead of embedding branch, commit, dirty-worktree, or upstream snapshots in the committed owner decision record.
+
+`license:decision-from-owner-answer` can create a separate release decision record candidate from a reviewed owner answer for `license_or_no_reuse`.
+That bridge records owner-provided license or no-reuse intent only; it does not provide legal advice, does not publish, does not create external proof, and does not close gates.
+
+## Command
+
+```bash
+npm run release:decision-record
+```
+
+or:
+
+```bash
+npm run cli -- release:decision-record
+```
+
+This writes:
+
+```text
+.mimesis/release-decisions/owner-decision-record.json
+```
+
+## Purpose
+
+The record gives the owner and future agents a single JSON artifact for:
+
+- license decision status
+- public release decision status
+- npm publication status
+- GitHub Action publication status
+- plugin publication status
+- external proof status
+- benchmark or adoption status
+- required fresh commands before any owner-controlled release action
+- source files that justify the decision state
+- runtime-only sync proof requirement
+
+## Boundary
+
+This is an owner release decision record, not a release action.
+
+It does not choose a license.
+It does not publish.
+It does not stage, commit, push, tag, or release.
+It does not create external proof.
+It does not prove external adoption, benchmarked productivity, shipped plugin status, npm publication, Marketplace publication, or legal originality.
+It does not prove sync.
+
+## Audit
+
+Run:
+
+```bash
+npm run audit:release-decision-record
+```
+
+The audit checks package script wiring, CLI exposure, release preflight wiring, JSON shape, pending owner decision states, required fresh commands, source files, and proof-boundary flags.
+
+The separate `audit:license-decision-from-owner-answer` check verifies the reviewed owner answer bridge without changing the default pending release decision fixture.

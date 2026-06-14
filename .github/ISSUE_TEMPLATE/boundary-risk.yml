@@ -1,0 +1,41 @@
+name: Boundary Risk
+description: Report copying, overclaiming, or shallow imitation risk.
+title: "[Boundary Risk]: "
+labels: ["boundary-risk"]
+body:
+  - type: input
+    id: file-or-case
+    attributes:
+      label: File or case
+      description: Where did you see the risk?
+    validations:
+      required: true
+  - type: dropdown
+    id: risk-type
+    attributes:
+      label: Risk type
+      options:
+        - surface copying
+        - wording similarity
+        - layout similarity
+        - authority borrowing
+        - unsupported claim
+        - missing attribution
+        - shallow imitation
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: why-it-matters
+    attributes:
+      label: Why it matters
+      description: Explain the harm or confusion.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-repair
+    attributes:
+      label: Suggested repair
+      description: How should this be made safer?
+    validations:
+      required: true

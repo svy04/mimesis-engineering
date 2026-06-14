@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/gate-closure-review.schema.json",
+  "title": "Mimesis Gate Closure Review",
+  "description": "Machine-readable review record for gate closure attempts. It keeps gates open until direct evidence exists and is reviewed.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "status",
+    "generatedAt",
+    "package",
+    "git",
+    "inputMode",
+    "completionAllowed",
+    "closureApproved",
+    "reviewCount",
+    "reviews",
+    "sourceFiles",
+    "boundaries",
+    "allowedClaim",
+    "disallowedClaim"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "mimesis.gate-closure-review.v0.1"
+    },
+    "status": {
+      "type": "string",
+      "const": "blocked_no_gate_closure"
+    },
+    "generatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completionAllowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "inputMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readinessReport",
+        "ownerEvidenceSubmissionCheck",
+        "ownerEvidenceSubmissionRecord",
+        "outputPath",
+        "candidateMode",
+        "boundary"
+      ],
+      "properties": {
+        "readinessReport": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownerEvidenceSubmissionCheck": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownerEvidenceSubmissionRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outputPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateMode": {
+          "type": "boolean"
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "closureApproved": {
+      "type": "boolean",
+      "const": false
+    },
+    "reviewCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "sourceFiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowedClaim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disallowedClaim": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "review": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "status",
+        "readiness",
+        "decision",
+        "closureApproved",
+        "canCloseNow",
+        "ownerEvidenceReviewReady",
+        "reviewReason",
+        "requiredBeforeClosure",
+        "forbiddenClaim",
+        "nextAction",
+        "boundary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "readiness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "type": "string",
+          "const": "keep_open"
+        },
+        "closureApproved": {
+          "type": "boolean",
+          "const": false
+        },
+        "canCloseNow": {
+          "type": "boolean",
+          "const": false
+        },
+        "ownerEvidenceReviewReady": {
+          "type": "boolean"
+        },
+        "reviewReason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requiredBeforeClosure": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "forbiddenClaim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nextAction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

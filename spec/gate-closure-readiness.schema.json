@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/svy04/mimesis-engineering/spec/gate-closure-readiness.schema.json",
+  "title": "Mimesis Gate Closure Readiness",
+  "description": "Machine-readable report for open gate readiness. It identifies missing evidence and closure blockers without closing gates or creating evidence.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "status",
+    "generatedAt",
+    "package",
+    "git",
+    "inputMode",
+    "completionAllowed",
+    "gateCount",
+    "readinessCounts",
+    "gates",
+    "sourceFiles",
+    "boundaries",
+    "allowedClaim",
+    "disallowedClaim"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "mimesis.gate-closure-readiness.v0.1"
+    },
+    "status": {
+      "type": "string",
+      "const": "open_gates_not_ready"
+    },
+    "generatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completionAllowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "inputMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ownerEvidenceSubmissionRecord",
+        "outputPath",
+        "candidateMode",
+        "boundary"
+      ],
+      "properties": {
+        "ownerEvidenceSubmissionRecord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outputPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateMode": {
+          "type": "boolean"
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "gateCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "readinessCounts": {
+      "type": "object"
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "sourceFiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowedClaim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disallowedClaim": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "kind",
+        "status",
+        "readiness",
+        "canCloseNow",
+        "requiredEvidence",
+        "missingEvidence",
+        "ownerEvidenceReviewReady",
+        "firstCommand",
+        "stopConditions",
+        "nextAction",
+        "boundary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "readiness": {
+          "type": "string",
+          "enum": ["blocked", "pending_owner", "waiting_for_artifact", "waiting_for_evidence", "not_ready"]
+        },
+        "canCloseNow": {
+          "type": "boolean",
+          "const": false
+        },
+        "ownerEvidenceReviewReady": {
+          "type": "boolean"
+        },
+        "requiredEvidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missingEvidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "firstCommand": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stopConditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "nextAction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

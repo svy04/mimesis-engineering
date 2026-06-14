@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "reviewed",
+  "submitter": "Mimesis local fixture operator.",
+  "startingArtifact": "A short weak README excerpt:\n\n```text\nThis project helps teams do better AI work. More details later.\n```",
+  "artifactOwner": "The fixture is generated locally for review-path testing.",
+  "permissionStatus": "I own it and have permission to use it as a public fixture.",
+  "publicationPreference": "public",
+  "redactionRequirements": "No redaction required because the artifact is generated locally and contains no real customer, company, or submitter data.",
+  "referencesStudied": [
+    "reference-packs/github-readme.md"
+  ],
+  "desiredTransformation": "Make the README excerpt clearer, safer, and more actionable while preserving a proof boundary.",
+  "proofBoundary": [
+    "This fixture must not claim external adoption",
+    "benchmarked productivity",
+    "customer outcomes",
+    "commercial proof",
+    "legal originality",
+    "endorsement",
+    "or universal effectiveness."
+  ],
+  "safetyConfirmation": {
+    "noSecrets": true,
+    "noPrivateCustomerData": true,
+    "noCopiedProtectedMaterial": true
+  },
+  "prohibitedClaims": [
+    "external adoption",
+    "benchmarked productivity",
+    "customer outcomes",
+    "commercial proof",
+    "legal originality",
+    "endorsement",
+    "universal effectiveness"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "not_submitted_owner_evidence",
+  "sourceForm": ".mimesis/owner-actions/evidence-attachment-form.md",
+  "sourceEvidenceRecord": ".mimesis/owner-actions/fixture-evidence-record.json",
+  "fieldLevelReadiness": {
+    "purpose": "Check one submitted owner evidence field before field-specific review movement.",
+    "defaultField": "weak_artifact_permission",
+    "supportedFields": [
+      "license_or_no_reuse",
+      "weak_artifact_permission",
+      "publication_scope",
+      "package_action_plugin_scope",
+      "benchmark_adoption_scope",
+      "strict_sync_intent"
+    ],
+    "command": "npm run cli -- owner:evidence-submission-check path/to/owner-evidence-submission-record.json --require-field weak_artifact_permission",
+    "boundary": "Field-level readiness is not submitted evidence, attached evidence, permission, external proof, publication, adoption proof, benchmark proof, or gate closure.",
+    "boundaries": [
+      "does_not_submit_evidence",
+      "does_not_attach_evidence",
+      "does_not_grant_permission",
+      "does_not_create_external_proof",
+      "does_not_publish",
+      "does_not_prove_adoption",
+      "does_not_close_gates"
+    ]
+  },
+  "fields": {
+    "license_or_no_reuse": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "owner_license_decision"
+      ],
+      "requiredAttachments": [
+        "docs/LICENSE-DECISION.md",
+        ".mimesis/license-packets/owner-decision.md"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+      "boundary": "does not submit evidence or close gates"
+    },
+    "weak_artifact_permission": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "permissioned_external_artifact",
+        "completed_external_case"
+      ],
+      "requiredAttachments": [
+        "docs/PROOF-INTAKE-KIT.md",
+        ".mimesis/proof-intake/first-external-proof-kit.md",
+        "permissioned or clearly redacted weak artifact"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner-provided permission required before public or proof use",
+      "boundary": "does not submit evidence or close gates"
+    },
+    "publication_scope": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "strict_publish_sync"
+      ],
+      "requiredAttachments": [
+        "npm run release:check:public",
+        "npm run audit:sync:strict"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+      "boundary": "does not submit evidence or close gates"
+    },
+    "package_action_plugin_scope": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "package_publication",
+        "action_publication",
+        "shipped_plugin"
+      ],
+      "requiredAttachments": [
+        "docs/PACKAGE-RELEASE-CANDIDATE.md",
+        "npm run audit:package",
+        "docs/ACTION-RELEASE-CANDIDATE.md",
+        "npm run audit:action",
+        "docs/PLUGIN-INSTALL-PACKET.md",
+        "docs/PLUGIN-RELEASE-PACKET.md"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+      "boundary": "does not submit evidence or close gates"
+    },
+    "benchmark_adoption_scope": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "benchmark_study",
+        "external_adoption"
+      ],
+      "requiredAttachments": [
+        "docs/BENCHMARK-PACKET.md",
+        "templates/evidence-packet.md"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+      "boundary": "does not submit evidence or close gates"
+    },
+    "strict_sync_intent": {
+      "submissionStatus": "missing",
+      "ownerSubmittedEvidence": "not submitted owner evidence",
+      "blockedGateIds": [
+        "strict_publish_sync"
+      ],
+      "requiredAttachments": [
+        "npm run audit:sync:strict"
+      ],
+      "ownerAttachmentSlot": "owner-provided evidence required",
+      "safetyCheck": "owner must confirm source, permission, redaction, and publication scope",
+      "boundary": "does not submit evidence or close gates"
+    }
+  },
+  "requiredGateIds": [
+    "owner_license_decision",
+    "permissioned_external_artifact",
+    "completed_external_case",
+    "strict_publish_sync",
+    "package_publication",
+    "action_publication",
+    "shipped_plugin",
+    "benchmark_study",
+    "external_adoption"
+  ],
+  "safetyConfirmation": {
+    "noEvidenceSubmitted": true,
+    "noEvidenceAttached": true,
+    "noArtifactCollected": true,
+    "noPermissionGranted": true,
+    "noPublication": true,
+    "noExternalProof": true,
+    "noClosedGates": true
+  },
+  "prohibitedClaims": [
+    "evidence submitted",
+    "evidence attached",
+    "external proof exists",
+    "adoption proof exists",
+    "benchmarked productivity exists",
+    "customer outcomes exist",
+    "publication happened",
+    "license was chosen",
+    "permission was granted",
+    "gates are closed"
+  ],
+  "boundaries": [
+    "does_not_submit_evidence",
+    "does_not_attach_evidence",
+    "does_not_choose_license",
+    "does_not_collect_artifact",
+    "does_not_grant_permission",
+    "does_not_publish",
+    "does_not_create_external_proof",
+    "does_not_close_gates"
+  ]
+}

@@ -1,0 +1,83 @@
+name: Permissioned External Case
+description: Submit an external weak artifact with permission and redaction boundaries.
+title: "[Permissioned Case]: "
+labels: ["permissioned-case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit this only if you have permission to share the artifact publicly, anonymously, or in redacted form.
+        Do not paste private data, secrets, customer information, or copied protected material.
+  - type: textarea
+    id: starting-artifact
+    attributes:
+      label: Starting artifact
+      description: Paste a shareable excerpt or link to the weak artifact.
+    validations:
+      required: true
+  - type: input
+    id: artifact-owner
+    attributes:
+      label: Artifact owner
+      description: Who owns or controls this artifact?
+    validations:
+      required: true
+  - type: dropdown
+    id: permission-status
+    attributes:
+      label: Permission status
+      options:
+        - "I own it"
+        - "I have permission"
+        - "Needs redaction before publication"
+        - "Private only"
+    validations:
+      required: true
+  - type: dropdown
+    id: publication-preference
+    attributes:
+      label: Publication preference
+      options:
+        - "Public"
+        - "Anonymized"
+        - "Redacted"
+        - "Private only"
+    validations:
+      required: true
+  - type: textarea
+    id: redaction-requirements
+    attributes:
+      label: Redaction requirements
+      description: What must be removed before this can become a public case?
+    validations:
+      required: true
+  - type: textarea
+    id: references-studied
+    attributes:
+      label: References studied
+      description: What strong artifacts should be studied?
+    validations:
+      required: true
+  - type: textarea
+    id: desired-transformation
+    attributes:
+      label: Desired transformation
+      description: What should become clearer, stronger, or safer?
+    validations:
+      required: true
+  - type: textarea
+    id: proof-boundary
+    attributes:
+      label: Proof boundary
+      description: What must this case not claim?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety-confirmation
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I did not include secrets, passwords, tokens, or private customer data.
+          required: true
+        - label: I understand this case does not prove universal effectiveness or commercial outcomes.
+          required: true

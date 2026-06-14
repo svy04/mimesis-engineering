@@ -1,123 +1,121 @@
-# 5-Minute Quickstart
+# First Loop: 5-Minute Quickstart
 
-Use this when you want to apply Mimesis Engineering immediately.
+Bring one weak artifact.
+Leave with a stronger one.
 
-You need:
+## Requirements
 
-- one artifact you want to improve
-- three stronger reference artifacts
+- one artifact to improve
+- one reference pack
+- one LLM
 - one place to write notes
 
-An artifact can be a README, landing page, blog post, product flow, research note, pitch, dashboard, design, or prompt.
+## Run The First-Loop Demo
 
-## Step 1 — Pick the weak artifact
+If you want to see the local artifact trail before using your own artifact:
 
-Write one sentence:
-
-```text
-I want to improve: ____
+```bash
+npm run first-loop:demo
+npm run audit:first-loop
 ```
+
+This writes `.mimesis/first-loop-demo/`, then checks it with `workspace:check` and `case:check`.
+It does not prove external adoption, benchmarked productivity, customer outcomes, legal originality, or a real external case.
+
+Optional:
+
+```bash
+node tools/init-mimesis.mjs path/to/project
+```
+
+To start from a real weak artifact:
+
+```bash
+npm run cli -- case:start --artifact path/to/weak.md --reference-pack reference-packs/github-readme.md --title "Weak README"
+```
+
+This creates a started case workspace.
+It is not a completed proof artifact yet.
+
+## 1. Choose Your Weak Artifact
+
+What to do:
+Pick one thing that exists now.
 
 Example:
+A README that explains the repo but does not make anyone want to try it.
 
-```text
-I want to improve my GitHub README for an AI workflow repo.
-```
+Output artifact:
+Artifact Brief.
 
-## Step 2 — Pick three strong references
+## 2. Pick a Reference Pack
 
-Choose references that are already trusted, clear, useful, or memorable.
+What to do:
+Choose the pack closest to the artifact.
 
-```text
-Reference 1:
-Reference 2:
-Reference 3:
-```
+Example:
+Use the [GitHub README Reference Pack](../reference-packs/github-readme.md).
 
-Do not copy them.
+Output artifact:
+Reference Set.
 
-Use them as standards.
+## 3. Decompose Strong Artifacts
 
-## Step 3 — Decompose the references
+What to do:
+Study the references before generating.
 
-For each reference, answer:
+Example:
+Inspect opening hook, quickstart, trust devices, limitations, and contribution path.
 
-```text
-Knowledge structure:
-Visual / layout structure:
-User flow:
-Trust device:
-Claim boundary:
-Failure handling:
-Rhythm / taste:
-```
+Output artifact:
+Structure Map.
 
-## Step 4 — Extract patterns
+## 4. Extract Transferable Structure
 
-Sort what you found.
+What to do:
+Separate structure from surface.
 
-```text
-Patterns to reuse:
-Patterns to transform:
-Patterns to reject:
-Things that would be too close to copy:
-```
+Example:
+Use "old way vs new way" as a contrast pattern.
+Do not copy exact wording.
 
-## Step 5 — Transform your artifact
+Output artifact:
+Transferable Patterns.
 
-Now rewrite or redesign your artifact under your own constraints.
+## 5. Transform Your Artifact
 
-Use this prompt:
+What to do:
+Rewrite under your own constraints.
 
-```text
-Using the extracted structures above, transform my artifact.
-Keep my goal, audience, constraints, and voice.
-Do not copy surface details.
-Improve structure, clarity, proof, user flow, and failure handling.
-```
+Example:
+Change the README so the first action appears before the repo map.
 
-## Step 6 — Inspect risk
+Output artifact:
+Improved Artifact.
 
-Ask:
+## 6. Inspect the Boundary
 
-```text
-Where does this still feel shallow?
-Where does it overclaim?
-Where does it look too close to the references?
-What proof is missing?
-What would a skeptical user not trust yet?
-```
+What to do:
+Check for surface copying, overclaiming, and weak proof.
 
-## Step 7 — Ship one proof artifact
+Example:
+Remove claims that imply external adoption if no public case proves it.
 
-Pick the smallest proof:
+Output artifact:
+Boundary Check.
 
-- before/after screenshot
-- rewritten README
-- case note
-- user feedback
-- benchmark
-- issue discussion
-- public critique
+## 7. Write a Case Note
 
-## Step 8 — Record memory
+What to do:
+Record before, references, extracted structure, after, improvement, and unproven claims.
 
-Write three notes.
+Example:
+Write `cases/001-mimesis-on-mimesis.md`.
 
-```text
-Sensation:
-What did people react to?
+Output artifact:
+Case Note.
 
-Knowledge:
-What became more reliable?
-
-Wisdom:
-What should guide the next version?
-```
-
-## Done
-
-You have completed one Mimesis loop when you can say:
+Your First Loop is done when you can say:
 
 ```text
 I started with ____.
@@ -125,6 +123,24 @@ I studied ____.
 I extracted ____.
 I changed ____.
 The result is stronger because ____.
-The proof is ____.
-The remaining boundary is ____.
+The proof boundary is ____.
 ```
+
+## Optional Local Check
+
+If you are using this repository shape, run:
+
+```bash
+node tools/validate-mimesis.mjs
+```
+
+This checks the local protocol surface.
+It does not prove external adoption or outcome improvement.
+
+To check a filled case workspace:
+
+```bash
+npm run cli -- case:check path/to/case
+```
+
+This rejects started cases and missing before/after evidence.

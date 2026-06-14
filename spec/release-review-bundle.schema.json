@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://svy04.github.io/mimesis-engineering/spec/release-review-bundle.schema.json",
+  "title": "Mimesis Release Review Bundle",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "generatedAt",
+    "completionAllowed",
+    "package",
+    "git",
+    "sourceFiles",
+    "trackedChangedPaths",
+    "reviewGroups",
+    "requiredReviewSequence",
+    "openGateSummary",
+    "releaseEvidenceBoundary",
+    "boundaries",
+    "allowedClaim",
+    "disallowedClaim"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mimesis.release-review-bundle.v0.1"
+    },
+    "status": {
+      "const": "local_release_review_bundle_not_commit"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "completionAllowed": {
+      "const": false
+    },
+    "package": {
+      "type": "object"
+    },
+    "git": {
+      "type": "object",
+      "required": [
+        "branch",
+        "upstream",
+        "head",
+        "dirty",
+        "trackedChangedCount",
+        "untrackedCount"
+      ],
+      "properties": {
+        "branch": {
+          "type": "string"
+        },
+        "upstream": {
+          "type": "string"
+        },
+        "head": {
+          "type": "string"
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "trackedChangedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "untrackedCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trackedChangedPaths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "count",
+          "sample",
+          "note"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sample": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requiredReviewSequence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "openGateSummary": {
+      "type": "object"
+    },
+    "releaseEvidenceBoundary": {
+      "type": "string"
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "does_not_stage_commit_push_tag_release",
+          "does_not_publish",
+          "does_not_choose_license",
+          "does_not_prove_remote_freshness",
+          "does_not_close_strict_sync",
+          "does_not_create_external_proof",
+          "does_not_prove_adoption"
+        ]
+      }
+    },
+    "allowedClaim": {
+      "type": "string"
+    },
+    "disallowedClaim": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

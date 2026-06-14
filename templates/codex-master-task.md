@@ -51,7 +51,7 @@ Improve README so it clearly answers:
 - Why is it different from prompt engineering?
 - How do I use it now?
 - Where are the canvas and casebook?
-- What is proven and what is not?
+- What local artifacts show, and what remains unverified?
 
 ### Priority 2 — Quickstart
 

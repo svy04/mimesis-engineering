@@ -1,0 +1,48 @@
+{
+  "schema": "mimesis.owner-proof-input-remote-issue-snapshot.v0.1",
+  "generatedAt": "2026-06-11T14:02:35.293Z",
+  "snapshotKind": "metadata_only_remote_issue_snapshot",
+  "issue": {
+    "number": 7,
+    "url": "https://github.com/svy04/mimesis-engineering/issues/7",
+    "title": "[Owner Proof Input]: license/no-reuse + one weak artifact",
+    "state": "OPEN",
+    "expectedLabel": "owner-proof-input",
+    "expectedLabelPresent": true,
+    "labels": [
+      "owner-proof-input"
+    ],
+    "createdAt": "2026-06-11T09:48:54Z",
+    "updatedAt": "2026-06-11T09:49:45Z"
+  },
+  "bodyStored": false,
+  "bodyOmittedReason": "raw issue body is never stored by this snapshot command; only metadata, hash, and readiness signals are recorded",
+  "bodySha256": "f9a8d9c02e17a18c67540a0e457bd58b0816b998b3cdf25b06ee772a8b399363",
+  "bodyCharacterCount": 2752,
+  "requiredSignals": {
+    "licenseHeadingPresent": true,
+    "weakArtifactHeadingPresent": true,
+    "safetyConfirmationPresent": true,
+    "licenseChoiceChecked": false,
+    "publicationChoiceChecked": false,
+    "checkedSafetyCount": 0,
+    "placeholdersPresent": true,
+    "secretLikePatternDetected": false
+  },
+  "ownerInputStatus": "request_only_pending_owner",
+  "readyForLocalConversion": false,
+  "nextSafeSteps": [
+    "Wait for the owner to fill issue #7 or provide an equivalent reviewed owner proof input record.",
+    "Do not export, commit, or treat the request-only issue body as owner input.",
+    "Keep owner/proof/publication/benchmark/adoption gates open."
+  ],
+  "allowedClaim": "Mimesis has a metadata-only remote owner proof input issue snapshot for issue #7.",
+  "disallowedClaim": "The metadata-only remote issue snapshot is not owner decision, not permission, not proof, not publication, not adoption evidence, not benchmark evidence, and not gate closure.",
+  "boundaries": [
+    "does_not_store_issue_body",
+    "does_not_choose_license",
+    "does_not_grant_permission",
+    "does_not_create_external_proof",
+    "does_not_close_gates"
+  ]
+}

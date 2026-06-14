@@ -1,0 +1,59 @@
+name: Weak Artifact
+description: Submit a weak artifact for a possible Mimesis loop.
+title: "[Weak Artifact]: "
+labels: ["weak-artifact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bring one weak artifact. Leave with a stronger one.
+        Do not submit copied material or private content you cannot share.
+  - type: input
+    id: artifact-type
+    attributes:
+      label: Artifact type
+      description: README, landing page, product idea, blog draft, prompt, workflow, or other.
+    validations:
+      required: true
+  - type: textarea
+    id: current-artifact
+    attributes:
+      label: Current artifact
+      description: Paste the artifact or link to it.
+    validations:
+      required: true
+  - type: input
+    id: target-audience
+    attributes:
+      label: Target audience
+      description: Who should this artifact serve?
+    validations:
+      required: true
+  - type: textarea
+    id: what-feels-weak
+    attributes:
+      label: What feels weak?
+      description: Name the problem in plain language.
+    validations:
+      required: true
+  - type: textarea
+    id: desired-transformation
+    attributes:
+      label: Desired transformation
+      description: What should become clearer, stronger, or safer?
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References if any
+      description: Add links to artifacts you think are strong. Do not paste protected content.
+  - type: dropdown
+    id: public-case-permission
+    attributes:
+      label: Permission to turn into public case?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true

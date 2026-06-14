@@ -1,0 +1,19 @@
+name: Mimesis Release Check
+description: Run the Mimesis local release preflight from a GitHub workflow.
+inputs:
+  workspace-check:
+    description: Run the neighboring-repo ecosystem audit after the local release preflight.
+    required: false
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - name: Run local release preflight
+      if: ${{ inputs.workspace-check != 'true' }}
+      run: npm run release:check
+      shell: bash
+
+    - name: Run workspace release preflight
+      if: ${{ inputs.workspace-check == 'true' }}
+      run: npm run release:check:workspace
+      shell: bash
