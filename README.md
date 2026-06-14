@@ -20,6 +20,30 @@ Show the proof boundary.
 Bring one weak artifact.
 Leave with a stronger one.
 
+## Current Public Proof State
+
+Current public proof route:
+[Mimesis Visual Failure Packet](https://svy04.github.io/proof-artifacts/mimesis-visual-failure-packet-2026-06-15/)
+
+This route is a redacted failure artifact and banned-claim boundary.
+It is useful because it shows where Mimesis-style work can become shallow,
+visually noisy, or overclaimed.
+
+Current public ecosystem surface:
+
+- [mimesis-engineering](https://github.com/svy04/mimesis-engineering) - framework and validators
+- [mimesis-canvas](https://github.com/svy04/mimesis-canvas) - worksheet surface
+- [mimesis-casebook](https://github.com/svy04/mimesis-casebook) - case surface
+
+Allowed claim:
+Mimesis Engineering has public framework files, local validators, public
+worksheet/case surfaces, and one public failure-boundary proof route.
+
+Not proven:
+It does not prove visual quality improvement, external adoption, benchmarked
+productivity, customer outcomes, production readiness, legal originality, or
+universal improvement.
+
 ## Understand In 30 Seconds
 
 Mimesis Engineering is a small public framework for improving AI-assisted work.

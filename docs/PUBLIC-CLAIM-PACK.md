@@ -41,11 +41,14 @@ This pack keeps public language inside the current local evidence:
 - It starts from one weak artifact and visible reference standards.
 - It includes local file protocols, templates, reference packs, cases, prompts, adapters, plugin shapes, and validators.
 - It can generate local handoff packets for proof, license, plugin, publish, gate, operator, and public-copy decisions.
+- The current public ecosystem surface includes `svy04/mimesis-engineering`, `svy04/mimesis-canvas`, and `svy04/mimesis-casebook` as public repositories when `audit:remote` passes.
+- The Mimesis Visual Failure Packet is a public redacted failure artifact and banned-claim boundary.
 
 ## Disallowed Public Claims
 
 - It does not prove external adoption.
 - It does not prove benchmarked productivity.
+- It does not prove visual quality improvement.
 - It does not choose a license.
 - It does not publish to npm, GitHub Marketplace, or any package registry.
 - It does not prove remote content freshness.

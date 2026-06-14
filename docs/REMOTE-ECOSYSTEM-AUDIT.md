@@ -33,6 +33,18 @@ npm run release:check:public
 - repository is not a fork
 - fallback path survives a forced GitHub CLI failure
 
+## Current Public Ecosystem
+
+The expected public ecosystem is:
+
+- `svy04/mimesis-engineering`
+- `svy04/mimesis-canvas`
+- `svy04/mimesis-casebook`
+
+Passing this audit means those repositories are visible with the expected
+metadata. It does not prove the contents are fresh, adopted, benchmarked,
+complete, or better than alternatives.
+
 ## Boundary
 
 This is a visibility audit.

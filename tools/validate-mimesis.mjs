@@ -505,6 +505,15 @@ const corePhrases = [
   "No proof, no claim.",
 ];
 
+const currentPublicProofMarkers = [
+  "Mimesis Visual Failure Packet",
+  "redacted failure artifact",
+  "banned-claim boundary",
+  "does not prove visual quality improvement",
+  "svy04/mimesis-canvas",
+  "svy04/mimesis-casebook",
+];
+
 const claimRiskPatterns = [
   /\bis proven\b/i,
   /\bindustry standard\b/i,
@@ -611,6 +620,15 @@ for (const phrase of corePhrases) {
 }
 if (!failures.some((item) => item.startsWith("missing core phrase"))) {
   pass(`core phrases present: ${corePhrases.length}`);
+}
+
+for (const marker of currentPublicProofMarkers) {
+  if (!readme.includes(marker)) {
+    fail(`README missing current public proof marker: ${marker}`);
+  }
+}
+if (!failures.some((item) => item.startsWith("README missing current public proof marker"))) {
+  pass(`README current public proof markers present: ${currentPublicProofMarkers.length}`);
 }
 
 const mimesisFiles = fs

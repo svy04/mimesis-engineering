@@ -3,10 +3,19 @@
 Current version: `v0.1`
 
 Current status:
-Public working framework.
+Public working framework with visible ecosystem repositories and one public
+failure-boundary proof route.
 
 Release readiness:
 `npm run audit:release` passes, with remaining gates explicitly documented.
+
+## Current Public Proof Route
+
+- [Mimesis Visual Failure Packet](https://svy04.github.io/proof-artifacts/mimesis-visual-failure-packet-2026-06-15/) - redacted failure artifact and banned-claim boundary.
+
+This is public proof of boundary discipline, not proof of visual quality
+improvement, external adoption, benchmarked productivity, customer outcomes,
+production readiness, legal originality, or universal improvement.
 
 ## What Is Usable Now
 
