@@ -27,6 +27,11 @@ function git(args) {
   return result.stdout.trim();
 }
 
+function upstreamName() {
+  const upstream = git(["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"]);
+  return upstream.includes("fatal:") ? "none" : upstream || "none";
+}
+
 function lines(text) {
   return text ? text.split(/\r?\n/).filter(Boolean) : [];
 }
@@ -80,7 +85,6 @@ function isSpec(filePath) {
   return filePath.startsWith("spec/") || filePath.startsWith("templates/") || filePath.startsWith("reference-packs/");
 }
 
-const worktreePacket = readJson(".mimesis/worktree/review-packet.json");
 const currentState = readJson(".mimesis/state/current-state.json");
 const gapRegister = readJson(".mimesis/gaps/current-gap-register.json");
 const releaseEvidenceReport = readText(".mimesis/release-evidence/v0.1-report.md");
@@ -107,15 +111,14 @@ const bundle = {
   completionAllowed: false,
   package: currentState.package,
   git: {
-    branch: worktreePacket.git?.branch ?? git(["rev-parse", "--abbrev-ref", "HEAD"]) ?? "unknown",
-    upstream: worktreePacket.git?.upstream ?? "unknown",
-    head: worktreePacket.git?.head ?? git(["rev-parse", "HEAD"]) ?? "unknown",
+    branch: git(["rev-parse", "--abbrev-ref", "HEAD"]) || "unknown",
+    upstream: upstreamName(),
+    head: git(["rev-parse", "HEAD"]) || "unknown",
     dirty: statusLines.length > 0,
     trackedChangedCount: statusLines.filter((line) => !line.startsWith("??")).length,
     untrackedCount: statusLines.filter((line) => line.startsWith("??")).length,
   },
   sourceFiles: [
-    ".mimesis/worktree/review-packet.json",
     ".mimesis/state/current-state.json",
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/release-evidence/v0.1-report.md",
@@ -129,7 +132,7 @@ const bundle = {
     groupFiles("spec and schemas", specsAndSchemas, "Spec contracts, templates, and reference packs."),
   ],
   requiredReviewSequence: [
-    "Read .mimesis/worktree/review-packet.json for dirty worktree scope.",
+    "Review git status and public documentation claims before staging anything.",
     "Review public documentation claims before staging anything.",
     "Run npm run audit:secrets and inspect .mimesis/security/secret-safety-report.md.",
     "Run npm run release:check and keep all proof boundaries green.",
@@ -154,7 +157,7 @@ const bundle = {
     "does_not_prove_adoption",
   ],
   allowedClaim:
-    "Mimesis has a local release review bundle that classifies dirty worktree review scope; it is not commit, push, tag, release, or publication.",
+    "Mimesis has a local release review bundle that classifies current review scope; it is not commit, push, tag, release, or publication.",
   disallowedClaim:
     "The release review bundle does not close strict sync, prove remote freshness, stage files, commit, push, tag, release, publish, choose a license, create external proof, or prove adoption.",
 };

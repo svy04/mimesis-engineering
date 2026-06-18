@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-artifact-manifest.v0.1",
   "status": "local_manifest_not_publication",
-  "generatedAt": "2026-06-11T14:31:04.408Z",
+  "generatedAt": "2026-06-18T13:49:05.609Z",
   "package": {
     "name": "mimesis-engineering",
     "version": "0.1.0",
@@ -9,13 +9,13 @@
     "license": "UNLICENSED"
   },
   "git": {
-    "branch": "codex/mimesis-framework-v0.1",
-    "head": "487b4767e56a67f46ea21c98245ca36ce1820781",
-    "upstream": "origin/codex/mimesis-framework-v0.1",
-    "trackedChangedCount": 33,
-    "untrackedCount": 2
+    "branch": "codex/public-runtime-state-reference-gate",
+    "head": "4db711eea9c231be3551092f2dd7869be8c74341",
+    "upstream": "none",
+    "trackedChangedCount": 10,
+    "untrackedCount": 0
   },
-  "artifactCount": 342,
+  "artifactCount": 339,
   "artifacts": [
     {
       "path": ".github/actions/release-check/action.yml",
@@ -28,15 +28,15 @@
       "path": ".github/ISSUE_TEMPLATE/gate-evidence.yml",
       "category": "github",
       "sourceType": "framework-source",
-      "bytes": 3545,
-      "sha256": "6d361049df8d371f1c5fb30ecdc42b1f17c2f1b15b22fc076920a0c670bc9fe8"
+      "bytes": 3648,
+      "sha256": "c9b62385199ecc8abf31d9d72e0a62a9eebb2eb51fe5170fd5139b443bdefb0f"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/owner-proof-input.yml",
       "category": "github",
       "sourceType": "framework-source",
-      "bytes": 2903,
-      "sha256": "e75602342413e5eab9cf6ebf17014d374d77f94a14afdcc8e70304cf6ab19b60"
+      "bytes": 2984,
+      "sha256": "0a6096eb6c2f385e71a7aa7822e3799af52dcc74213aadd487d4b90d723c7421"
     },
     {
       "path": ".github/workflows/validate-mimesis.yml",
@@ -49,554 +49,547 @@
       "path": ".gitignore",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 244,
-      "sha256": "2dc1859fcfbdafcb9acdddfaf8c2761e0c234588797718b17bde2b0c8fb30c3d"
+      "bytes": 440,
+      "sha256": "ddb08515741bca43ede56fa820478112762e769da951c7e8e787291c8746c3e8"
     },
     {
       "path": ".mimesis/adapter-packets/superpowers.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 11958,
-      "sha256": "525481425baa4d17ce6118bc225caed58661d2fe7e7812f318de23c18144c0e0"
+      "bytes": 12065,
+      "sha256": "b7a7602f5ea3b5df1253a90d6fe6e2cd83bc9f13d4f4acd55ee142856b1ebaf3"
     },
     {
       "path": ".mimesis/adoption-packets/v0.2-first-adoption.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2940,
-      "sha256": "02571324218738e789feec47045db7975a1b18ca6a89f92732c410da973a2275"
+      "bytes": 3024,
+      "sha256": "e010578c4850ee696ef49a6179e02c45b12d32fb71508cba1f6aad6cbc02c893"
     },
     {
       "path": ".mimesis/benchmark-packets/v0.2-first-benchmark.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3580,
-      "sha256": "fb3cb02190dafdadbc4040027deb1df879f2ff0b10f69005eed1bf67599604fd"
+      "bytes": 3695,
+      "sha256": "90415ec3112c3f7ec88a91f8ca4c7ba8cdf3b14d126a4a22fe569f3e6ac6ba15"
     },
     {
       "path": ".mimesis/case-publication-packets/current-casebook-candidate.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2874,
-      "sha256": "1368ea974c99ff5f87165c5efd88621c8c874bf9b61b043bdf4718b36c31d6d5"
+      "bytes": 2954,
+      "sha256": "5f818445bc6f3b16193876a92ff41b448c60a8a228757d234446a2ae56d8e264"
     },
     {
       "path": ".mimesis/claim-packs/public-v0.1.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2694,
-      "sha256": "cbdbc31440cc711b94ce8e32cbc2ab3025e54587a2fb18f56e52a692e5591320"
+      "bytes": 2768,
+      "sha256": "3732d63531a669e5c01544eb1bfaf3099b1805f67a79c2b2ad054ca4e25b1ed2"
     },
     {
       "path": ".mimesis/completion/goal-completion-audit.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 8739,
-      "sha256": "68bc0f8db81ba0f60a9106fb86984c52fac6b188eb35433bf4532581c59f1ba8"
+      "bytes": 8972,
+      "sha256": "52daf2f8e8ab6ac68db1917722d86ddf1d1482c6f96ea3a934fd95b3c0302a18"
     },
     {
       "path": ".mimesis/ecosystem-resources/current-resource-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4331,
-      "sha256": "50594636c816840e612f81f0710a1764e1cacf14f8baf2b01c879df7901d0f2e"
+      "bytes": 4404,
+      "sha256": "0edc3ed239749f55fb8cd4b33ae83bb570bbafe6ca4cc000cc33cf60737a4655"
     },
     {
       "path": ".mimesis/evidence-packets/local-case-draft.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2061,
-      "sha256": "a9ed17e59ff1efc7d4ad5fd6b4e6886b575b8df5a6c1f7973095e34dd2a16db8"
+      "bytes": 2132,
+      "sha256": "67b59adf68eef6562a9dc2f265e2b10ff38b134b65b51f2053e5e6481c41a712"
     },
     {
       "path": ".mimesis/framework-manifest.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 40832,
-      "sha256": "358faf6db06c61efa00ab8f3ee38da8f78d8e784bca04fc29b7a0c56ebd406af"
+      "bytes": 41887,
+      "sha256": "80b81d3fb1ce7ff88c13c5bbf30ade4f6f0b90c9e458ebc4a2e80897a90eb7bb"
     },
     {
       "path": ".mimesis/gaps/closure-plan.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 10461,
-      "sha256": "c9a0fafd10955bc06828bff20e46360358d23804f43dfcaa4eebce11a2a53123"
+      "bytes": 10690,
+      "sha256": "8a41931a095f641f4567ade9f41707f5a7624ad212df6df692c0f773ac414ca0"
     },
     {
       "path": ".mimesis/gaps/current-gap-register.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5686,
-      "sha256": "fb6918aaf0c70775fc47b280edecb96c559baa85c07c2dd2c74e6798e457ae49"
+      "bytes": 5831,
+      "sha256": "e75b059c38535cb5f9e96517eaf3638d65904c52937eb94abd8a686aaf9b30f3"
     },
     {
       "path": ".mimesis/gates/closure-readiness.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 24773,
-      "sha256": "e0a43088d575916335d505be064176b7a0d8ee635284675dcda6753608b8d5f4"
+      "bytes": 25378,
+      "sha256": "d46e8e6896c60a39494e3877d38affdb27f5c410f745b1fb650d23868facc229"
     },
     {
       "path": ".mimesis/gates/closure-review.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 16937,
-      "sha256": "d166aaa545bcb1f110849bd7aadb5816a6c29ade5d40038a2367523f4a9c80bc"
+      "bytes": 17339,
+      "sha256": "f0a39fbee8fd7521828c9fffe5ac51870e2789e7f35be014b74a61fe369133de"
     },
     {
       "path": ".mimesis/gates/current-gateboard.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4068,
-      "sha256": "efc0b23e6dc986a0d1836787c85739506ed34913461ee19feada9fd9fcad0a16"
+      "bytes": 4113,
+      "sha256": "53f37199cc09cd633421c24390d20e9dec60dbd56c83a5fa75cc86115317e5e2"
     },
     {
       "path": ".mimesis/gates/evidence-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5656,
-      "sha256": "78a71e6cddf3d83a8cb4658141591700246d6079481981d29bfa55ceb73ad97a"
+      "bytes": 5749,
+      "sha256": "2a0a1a0259c87f55f0e311b604eb7f08f692c587fc1a84b00829d44aa3e21bb2"
     },
     {
       "path": ".mimesis/gates/fixture-gate-evidence-issue-conversion-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1691,
-      "sha256": "9f3a5f73681440b7ddfeb38353d4b17fdc08e716361af577f39c0d682a0afa02"
+      "bytes": 1751,
+      "sha256": "17c61df7a1f3f48b8bea60b017dacbea3329b137061179b5b5c7df476e53d98a"
     },
     {
       "path": ".mimesis/gates/fixture-gate-evidence-issue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1361,
-      "sha256": "3a348dd73809662634d4cafb8ca08fa95a317eb9854e0e3677d8cc39d3c20dda"
+      "bytes": 1403,
+      "sha256": "5f038d58ba99a79a37a3f90ee4fc4a58be176c826ccb9aa353ce32df3a121100"
     },
     {
       "path": ".mimesis/gates/fixture-gate-evidence-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2535,
-      "sha256": "6a2ae2cd7e44a83faad482430cb6f09e5166c67de1f3ff8629937d147bc03f51"
+      "bytes": 2609,
+      "sha256": "2fdc042cf3e26b5812a31dc95643a99b75f096d6ba9761b13ccb6f4691b68d94"
     },
     {
       "path": ".mimesis/license-packets/owner-decision.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3526,
-      "sha256": "16f41c0d382aab8d8b717b09bb490d28bd7200d7e5fb1f20cda17da82c75f75c"
+      "bytes": 3608,
+      "sha256": "8eb66d0583a3d8d6de37084d83ee722a870ce2d9438d0da0a90e46b1cba1e3ad"
     },
     {
       "path": ".mimesis/mcp/resource-index.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4574,
-      "sha256": "e26c290be63f357e48d6c36f6863196cbbf3d28d3508fad5763ab07c83696b0c"
+      "bytes": 4727,
+      "sha256": "810b646c3d59e3486e85d00ec306244612886d88afafcd9575e077a072a7ce9e"
     },
     {
       "path": ".mimesis/operator-runbooks/current-runbook.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 18883,
-      "sha256": "f3ddc87b31b0e7e9ce822fbfffbe12d905874c56d63bc4cf766a504e11c961f4"
+      "bytes": 19145,
+      "sha256": "d9b69a42339b0bbd0cc23c6e714183c72c4cb2a377812ec929839abc25de6c4d"
     },
     {
       "path": ".mimesis/owner-actions/answer-review.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5738,
-      "sha256": "f5106d28b64f94aa12d57532a9ac9462ff98cd2caa6483f799d43a5c00aba7a2"
+      "bytes": 5825,
+      "sha256": "48e501c21b32be1d100414a7bf6b53bf11c2bc34fe98b05af58878f3f935fce8"
     },
     {
       "path": ".mimesis/owner-actions/current-action-queue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7401,
-      "sha256": "afe850efce3547f363f0c646a69bf0c9604cc4f1968396689db3acce25164981"
+      "bytes": 7503,
+      "sha256": "e61bfa0c3ca198ce2ef4f1e1ca20a50b0f6177c2cd04b0f7096b672e4b9ed47b"
     },
     {
       "path": ".mimesis/owner-actions/decision-intake.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6454,
-      "sha256": "159c12f0e8fb6267d6c43198227a9dddc69c9c460d35ba3c59a3e38e5e961a24"
+      "bytes": 6564,
+      "sha256": "fcb76e694359a75fd34cdb5cfc3e2959ec8830695450d5673b0edd263bd637b2"
     },
     {
       "path": ".mimesis/owner-actions/evidence-attachment-form.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7901,
-      "sha256": "fa9b63fe8c8f1b88e4b527bcdb6ee55dda0b21b74c998f6bd9fa1157e88ef8df"
+      "bytes": 8052,
+      "sha256": "a22fc00e2e5adbb4b8ae70580bed5b17106fdce74fc19a0eb639fa958c899637"
     },
     {
       "path": ".mimesis/owner-actions/evidence-bundle.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7641,
-      "sha256": "4a830d32a698193f5b858a79dca865ad6b08d3b54f8822102865e1dd189a796c"
+      "bytes": 7750,
+      "sha256": "8ca5242422d67413dee54a6e65b35e597477badc243c1903281166cccee84175"
     },
     {
       "path": ".mimesis/owner-actions/evidence-review.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5396,
-      "sha256": "890b99fb510a7141c36a9a5d315c4b9dac82ccbd30ed2c319e6d29b6ffb83a00"
+      "bytes": 5484,
+      "sha256": "1f04325b8b582d578a7834d8a9474bc30d0d560e14673e8c04526bdd45d7d906"
     },
     {
       "path": ".mimesis/owner-actions/fixture-answer-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3966,
-      "sha256": "4f2c25829d0c8ff07992466c208f97a89b454d5cc58fe362c0cd7a1d0034d2e8"
+      "bytes": 4074,
+      "sha256": "c4918756384e3533effcd2123e165588abe95d7c9973311ee6e1e56adaf7e7d0"
     },
     {
       "path": ".mimesis/owner-actions/fixture-evidence-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5615,
-      "sha256": "59aac21041e799f62f679dce36f9c1fd70f31f8ad77d272d852b1528d4c4ff1f"
+      "bytes": 5783,
+      "sha256": "639aa46644574aafb08d1bafd80c46a01a1064c2415b202cd31dce492ca4cbd0"
     },
     {
       "path": ".mimesis/owner-actions/fixture-evidence-submission-check.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1895,
-      "sha256": "862b640dc341b5e4ab88e252a58794292d23082f509482492a7f6f948a731e9d"
+      "bytes": 1966,
+      "sha256": "24843316d06122a97a6944b42c66bb0ce961d55e3265982eb0a32c2d33bb457d"
     },
     {
       "path": ".mimesis/owner-actions/fixture-evidence-submission-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 5915,
-      "sha256": "7692f3f61252cd93159fe0b8808b4c37f040cebc038f8807a5f5d118d477a91e"
+      "bytes": 6080,
+      "sha256": "86770caa2ce9264d7352595f24cbca95c83731d2cac65ba1c96d9cc808ad675e"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-evidence-submission-issue-conversion-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1797,
-      "sha256": "f7534f26a91442645e7b1ad820cbc3b367a30cf6538c65ce22d81cbd2834bbd7"
+      "bytes": 1851,
+      "sha256": "a8c833075c62b4131240cca19521ade98716555b61c74d5de44ba60d2a48def6"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-evidence-submission-issue-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6380,
-      "sha256": "6cfb04543bbcda18de8433d67fc2ba599882650fa95070edca0f304b34c184bc"
+      "bytes": 6547,
+      "sha256": "bf6ea0be9ef0fadf5d8873b13d4168df94e021bead2de48735c89067cb454379"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-evidence-submission-issue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1078,
-      "sha256": "6551c2203d34212abe62297b6e572d8ca834dfce326c9f9b558016b498586e24"
+      "bytes": 1116,
+      "sha256": "0295f28a9188030b2aa3e9bfd280814b437223328b7c74b53371cb55a7d1ab88"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-proof-input-issue-conversion-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1448,
-      "sha256": "3193ef089c01da08320662ea5c37b78929432e783cb47d01f46c5fcd35f53ff8"
+      "bytes": 1494,
+      "sha256": "133ecc9a62a0eb01824f41eb518c3890587288fde433b75582bacd67ee69a118"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-proof-input-issue-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4493,
-      "sha256": "a9dc19cc61ef7b48088e11f31ee1880270ff690d23ac2d6081b3f29a13030d1a"
+      "bytes": 4578,
+      "sha256": "a3816db0e739b3b43f3a6701588797ddbfd27cf631f181d78665d3d6a40a3dc6"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-proof-input-issue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1183,
-      "sha256": "02353bbe6b2288086b2d019bce946562e007d9ea3b4526c81bbd5bb651becae3"
+      "bytes": 1220,
+      "sha256": "558a350cf27974e32e2640d3a164ee5f120a2e585d2a88769d867f2617490665"
     },
     {
       "path": ".mimesis/owner-actions/fixture-owner-proof-input-remote-issue-candidate.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2088,
-      "sha256": "bf336f2a71add12379345def6025d6f6090ea95b27ce4aba5af2b44aabcf4ee3"
+      "bytes": 2104,
+      "sha256": "410dca9b4fe26b7178e0fa34b7ae0e40bf718a04dff2cf2049965874fc7f282e"
     },
     {
       "path": ".mimesis/owner-actions/fixture-proof-input-check.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1585,
-      "sha256": "485a164fdb265340e1aa2c0063ba0446bfe031e811bc83d8f7410d80bdcf26ee"
+      "bytes": 1643,
+      "sha256": "3aa1256b0d0ef5457407ce7be07e0f46813540371efda7a6f44069d3c64ae1c9"
     },
     {
       "path": ".mimesis/owner-actions/fixture-proof-input-review.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1475,
-      "sha256": "e198893ca28c01d783d1694ad38e7c784335c460a52cafc3dcbc4cfa3e0c8c4d"
+      "bytes": 1522,
+      "sha256": "2baa60a2c42050ef526f75a62a48d40142ed648b5c0e69b90d66ef8775174287"
     },
     {
       "path": ".mimesis/owner-actions/proof-input-issue-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3588,
-      "sha256": "d94954e7450dd79faed226ae338de725403a3e9282dcbeb4b0d05698715b7787"
+      "bytes": 3668,
+      "sha256": "00c07b9d0df3d91b1266397f53e01e283161a110ca05cd5ae259327ad813ecdc"
     },
     {
       "path": ".mimesis/owner-actions/proof-input-request.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4516,
-      "sha256": "13bf0aac75bb355e10f4dbbfaa399c633f66661e66d746be33a36c468c866bff"
+      "bytes": 4604,
+      "sha256": "90a7c14773cf0fd07dd29c6add0744fb46235aa138f97f1a35f9e4e4b7215d65"
     },
     {
       "path": ".mimesis/owner-actions/proof-input-split-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1740,
-      "sha256": "ff1965e34cee1d382061ec88ac011a3e2814a679f2512074b22f66fc5d39859c"
+      "bytes": 1791,
+      "sha256": "13662cdd8885e8fdd6fb4e22f11a23e60205fa146428ac1f192cc8f17849f5be"
     },
     {
       "path": ".mimesis/owner-actions/proof-input-template.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3350,
-      "sha256": "8c35394349fda902edf653c905f56f5e8fb862d87903132ab3fe5da0a362e854"
+      "bytes": 3430,
+      "sha256": "56e974c5e3d3c374a8caf0c2b6f0715df53a8e6e4eba470fe302a4a5ff15b967"
     },
     {
       "path": ".mimesis/owner-actions/proof-run-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7592,
-      "sha256": "251621d5f31ddfd8ecf0591cb6a84e0d454c6debce39246f54737031514ecda1"
+      "bytes": 7734,
+      "sha256": "4225901ae91a80a430e2e15c5718e76621a286a30e279edfe457d569ebc905ce"
     },
     {
       "path": ".mimesis/owner-actions/remote-issue-create.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7146,
-      "sha256": "5487c95c87963781750d93190d7402ba7f6394ed2b1f630d53faa39cb216224c"
+      "bytes": 7397,
+      "sha256": "fdf62089f7f91ce87136c4f1b9d359ef8441ac7acdaf95a7ac2342721e8fa42e"
     },
     {
       "path": ".mimesis/owner-actions/remote-issue-create.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3174,
-      "sha256": "7d1d6c484a0645dab2586de7bf814df9a8e206d1fb76b420a39e315a484d03f1"
+      "bytes": 3222,
+      "sha256": "92ee5385174e1dba23d6cb3dd7075a6604ebbc309351f7791920b6d06100238b"
     },
     {
       "path": ".mimesis/owner-actions/remote-issue-sync.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 11390,
-      "sha256": "a5dfdeadeb8901cdcd6473d110ba4b279123218f2fcb88ac76a47c31a0b97e0b"
+      "bytes": 11726,
+      "sha256": "8d1a97857268e5a5c5484fee07560e5b01738e29e244584279c870aca2be34ad"
     },
     {
       "path": ".mimesis/owner-actions/remote-issue-sync.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4069,
-      "sha256": "7aa7c3fbb9f7bb94c77f21728ad1b55962a3d91e4365ce89e1196b126a3b20bb"
+      "bytes": 4130,
+      "sha256": "ce82885fc561b3c6de23b6fe03774cf3c6f1f40c8870545f27b17b166da8d5cb"
     },
     {
       "path": ".mimesis/owner-actions/remote-proof-input-issue-anchor.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4498,
-      "sha256": "8460a7328d7f48cf3ecc38b6b1bdf22116ddfbc24d43ba50d94372a70cd57722"
+      "bytes": 4575,
+      "sha256": "466670b4ba9af6261ee87d757f6825a48461fc77e7d36c9b8b01a90522e85a0d"
     },
     {
       "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 2024,
-      "sha256": "d9c02d693fd7db60be7ed54bf81490bed5eb692369b83f28d6f130f48e02baf2"
+      "bytes": 2072,
+      "sha256": "3cb9350645732a6e9c597e6c3979a1c567d97710c5497d6c2f49662867ad4644"
     },
     {
       "path": ".mimesis/owner-actions/remote-proof-input-issue-snapshot.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1844,
-      "sha256": "981245729c727a758f2e9dea9e7ffa046b01e44daf5b615a438c809a6307aea4"
+      "bytes": 1899,
+      "sha256": "7c20a77aae899aaa8ba51b2b5c96a6beb22e6893a6a412afa90b0798c632ecbd"
     },
     {
       "path": ".mimesis/owner-actions/v0.2-issue-queue.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 17275,
-      "sha256": "6fc0557e20d1aa808d8a8596a30a061a9c6fe15d8eb797ac1c620b6614c09ced"
+      "bytes": 17844,
+      "sha256": "a5e23036dfd48bd1fb8b3a6f9f71c911f449fd19540ea7aa347c6abc6153c5ef"
     },
     {
       "path": ".mimesis/plugin-install-packets/codex-local.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3634,
-      "sha256": "697cd4b0c2b1b60701619a0c33c8c0c65addf94ddad6acd496b9570656980734"
+      "bytes": 3736,
+      "sha256": "e2c27a587f5035cc825fec710368f467af8107280a4a274c859d951040262d77"
     },
     {
       "path": ".mimesis/plugin-release-packets/v0.1-action-candidate.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7090,
-      "sha256": "709d91a584d6b061436ebeae4d940e2e48215ab82bf7e66180b0d7a174c90840"
+      "bytes": 7191,
+      "sha256": "f68dd9f79fe7654a00eadce0bbe8d2edc44d90043415d7d2cb1802f87e83fce0"
     },
     {
       "path": ".mimesis/proof-candidates/first-candidate.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6649,
-      "sha256": "3c977af1f4210d737b1feea9253d23d1b1b3117cd8795cf89e708c3f60c9d993"
+      "bytes": 6824,
+      "sha256": "32e758678715a32e4e9323c25941605e8d07f63315fdd784ef3ba3f38250a9c2"
     },
     {
       "path": ".mimesis/proof-intake/acceptance-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 8605,
-      "sha256": "0265422bfb4ca6fa3523e929bacd6937e47187cce13b39c91fba07467e2d1247"
+      "bytes": 8801,
+      "sha256": "4b730cbd7f3438f70b6295dad5b8415643d2b495b4eb105088f2437d59f599e1"
     },
     {
       "path": ".mimesis/proof-intake/first-external-proof-kit.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6836,
-      "sha256": "3249afd279d620c73906cfbd1bd8f91ca9da2c95c0badeac1ff8b7c0e9992edc"
+      "bytes": 6965,
+      "sha256": "bd9ec3b2ec2eb1938bb9cb86af448e2b61086a1afad13fa2d75a74c52190eeb3"
     },
     {
       "path": ".mimesis/proof-intake/fixture-check.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1892,
-      "sha256": "3b5434e40371afe759cc40850bce37b929630b0987052d53ee29b4085948b99d"
+      "bytes": 1958,
+      "sha256": "a344c35b7ced68456ec62d64bcef5d81de6991c09d33eb88113cd223652b3895"
     },
     {
       "path": ".mimesis/proof-intake/fixture-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1363,
-      "sha256": "284576181db70a453a9efa7b70be6651a771f9c643f1a45059541ab62c4f9bad"
+      "bytes": 1400,
+      "sha256": "16b0f446f5cb94f88ac3ab006662c013022abb09c9f3ec4dccf29ac21bad0ca7"
     },
     {
       "path": ".mimesis/proof-intake/from-owner-evidence-bridge.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1807,
-      "sha256": "bd05f1b52107e49c5c5ac9c9a06d16f20fbca64a39235ee54d7cef947bc3c54e"
+      "bytes": 1842,
+      "sha256": "00fe0b9180c6142abc13303d2f6c976e07866ffed538a15ea0636871d06497c1"
     },
     {
       "path": ".mimesis/proof-intake/redaction-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6351,
-      "sha256": "1adb80988e9e2531d8227642013208ceb96a3c3147862b36535a97c5e20986b3"
+      "bytes": 6532,
+      "sha256": "4cad92c775ad6faa424059801028e7c4cdfa7f457d4500257ea8458fe8c39326"
     },
     {
       "path": ".mimesis/proof-intake/submission-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 8308,
-      "sha256": "18a833cd65a1f57d0fbfd8b27dd26ccfb6a7f6d2c197e0d4379f6e9dfded4a88"
+      "bytes": 8557,
+      "sha256": "513e55a1afc50341936dc9d540ea2ffe8d56338a9750d55fce5bd25f4cb6a7cf"
     },
     {
       "path": ".mimesis/proof-packets/v0.2-first-proof.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4952,
-      "sha256": "32f95cdb8a1774af7626cdbc455eecdbc122de3af97df885b8fa3f6cdaf5ae2f"
+      "bytes": 5087,
+      "sha256": "fad674a94fc9b94488b462a677fafeab610b7523285df1aa017b192e62f06597"
     },
     {
       "path": ".mimesis/proof-runs/dry-run-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1143,
-      "sha256": "f64908de0fa553d4ec441fdd1b344d51326788eea1c61959c1d0d021082fd15e"
+      "bytes": 1178,
+      "sha256": "56ca00c2bd1adbd5ae0c34ab4d5b19b68b9f83a44be824f28b1cd6efb505d0ef"
     },
     {
       "path": ".mimesis/proof-runs/execution-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6652,
-      "sha256": "7d94d7f25a3a82fd787ddef6fe941dbf6547905e7d6a31804453daffebbdd77e"
+      "bytes": 6782,
+      "sha256": "2956e39dd2ee01f82233bf9b37f3cfbb8593b796599f33f90d473d789ac3b5cd"
     },
     {
       "path": ".mimesis/proof-runs/readiness.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6877,
-      "sha256": "8119fad9c0428913f1b2a2f650843f92e75c20918ef8c8db05106c2c1ccc834c"
+      "bytes": 7046,
+      "sha256": "6b63a19aa65ad7f48ef1200ffa96dc6d2a3e5d011b8d741f60c0a6867b7f1c7a"
     },
     {
       "path": ".mimesis/proof-runs/v0.2-first-run.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 7010,
-      "sha256": "2ea711d82ebfbe2664e95e1e7fb79d73677c02f09e915f8fbafcb98c47bdf6ef"
+      "bytes": 7173,
+      "sha256": "3db08aca2169d68996d9cd47894de987b9d5fa16658a0a993f865be9deff182d"
     },
     {
       "path": ".mimesis/publication-packets/v0.1.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 37302,
-      "sha256": "5346a4db2e56f51e27dd069b8956275f7543e858048c70ae605d8ddd026908aa"
-    },
-    {
-      "path": ".mimesis/publish-packets/local-sync-handoff.md",
-      "category": "generated-protocol",
-      "sourceType": "generated-local-artifact",
-      "bytes": 8715,
-      "sha256": "7904b3281924717b9cb3d7bbbdd9901e53c87d209b30c34e32d9545fa267c0ee"
+      "bytes": 37714,
+      "sha256": "7ed6651bd714603e7d5d7e4aa69f6e4966a214c4d274b849964b1e33eacaa656"
     },
     {
       "path": ".mimesis/reference-packs/index.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 11159,
-      "sha256": "d28e3bdfbd70d5ce4767c7cbb71410694a5652b27aad16862518eba70a8eca8c"
+      "bytes": 11411,
+      "sha256": "76f14799debfc8fc10466d3d165ba3f564c076d7f50ae05bb7410b795191f822"
     },
     {
       "path": ".mimesis/release-decisions/from-owner-answer-bridge.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 1608,
-      "sha256": "4ea500a52d113a6fd84273268dca0136d17910fe0bf4f49466c20d3b19271cd7"
+      "bytes": 1646,
+      "sha256": "bfdf190eed94951547e7369916ba9729346432f9c36cee5169b9e159ebcdb460"
     },
     {
       "path": ".mimesis/release-decisions/owner-decision-record.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3254,
-      "sha256": "0fd82b3fb5e0783924c1ddfc4950a257a24938dfd077d538a432270b492c57e4"
+      "bytes": 3354,
+      "sha256": "0f887753d430878d571be3a0de3acf645e1f74f36957c94a4927ffde0f3348ac"
     },
     {
       "path": ".mimesis/release-evidence/publication-evidence-packet.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3599,
-      "sha256": "df3eba2378d27bfc132c18ed0fecbffbe192114fa2384c5c940510962c6cae01"
+      "bytes": 3680,
+      "sha256": "3056108d946f0ac139bd7127646bba5cba2d55c5377b4dd9520b523d951ac605"
     },
     {
       "path": ".mimesis/release-evidence/v0.1-report.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 4843,
-      "sha256": "33717c728f5c6e696c7df9da034c1cfd99d98504ddbd76d6c1896d91dbe4076a"
+      "bytes": 4845,
+      "sha256": "1ca35dc0cdd35af6bf8bdeed98fd6038a94bb8a4ee0827570fe59d5dca5e3bcf"
     },
     {
       "path": ".mimesis/release-execution/v0.1-owner-handoff.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 3842,
-      "sha256": "ae3e4b1da35aaa3a8f6bd5edafe8cf4fa6242d918094b6d2d8963cb0d4cd9180"
+      "bytes": 3931,
+      "sha256": "3b56482acb3cab89c98b91ee0bc6728b27d8fc3c7be4d1f431c8726d91261f01"
     },
     {
       "path": ".mimesis/release-review/v0.1-bundle.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 6651,
-      "sha256": "735ed88a9b3ababccbe68b4d4857012f149de4502b701d57072f8db68ba209ae"
+      "bytes": 4692,
+      "sha256": "4f27004f2f3b7fcd866ddaccdaf3cc6da5e8262131f5aeaff210655a13537739"
     },
     {
       "path": ".mimesis/run_ledger.md",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 347766,
-      "sha256": "1ea9c0345eca223ad884700c67428515590fdf8f2395260900b787676f182ec6"
+      "bytes": 349123,
+      "sha256": "9efa0bbc7e0f8428e15db23ca6773bf474f00337f0379366046f52174ba1b564"
     },
     {
       "path": ".mimesis/security/secret-safety-report.md",
@@ -609,22 +602,8 @@
       "path": ".mimesis/state/current-state.json",
       "category": "generated-protocol",
       "sourceType": "generated-local-artifact",
-      "bytes": 10089,
-      "sha256": "e5dd76b5a9122373cdb01aee00e0e70c9de514fb2a13221e3140ebcb477e0c76"
-    },
-    {
-      "path": ".mimesis/sync-status.md",
-      "category": "generated-protocol",
-      "sourceType": "generated-local-artifact",
-      "bytes": 2030,
-      "sha256": "a44507e1c0f73e080c1d6200f80bfd0627703e7f48d0fa1ac475a46b6326cc50"
-    },
-    {
-      "path": ".mimesis/worktree/review-packet.json",
-      "category": "generated-protocol",
-      "sourceType": "generated-local-artifact",
-      "bytes": 8639,
-      "sha256": "9a2df732cc317047d87f3be92ac379946f1bf57a2446111fe208f796c70251b7"
+      "bytes": 10333,
+      "sha256": "2dc8ff585b39bd555c02c045d0970a408cb9752d8b4f284251e968c9e79d7c17"
     },
     {
       "path": "action.yml",
@@ -637,22 +616,22 @@
       "path": "adapters/README.md",
       "category": "adapter",
       "sourceType": "framework-source",
-      "bytes": 1233,
-      "sha256": "5e16a3cd1025a03de7ae76bd5c24d338fed783ed7d793c5a59654bd41908312b"
+      "bytes": 1238,
+      "sha256": "cacaec06ff9ea29831403a0923719580f98dee669849fb31496db98aee611b12"
     },
     {
       "path": "adapters/superpowers.md",
       "category": "adapter",
       "sourceType": "framework-source",
-      "bytes": 1704,
-      "sha256": "38b11bf3ed3f4a556be700e1478a32c785429f3f0bb0c44683cddc62bad8148b"
+      "bytes": 1742,
+      "sha256": "4521d7257f1ad9b7cbe22e15c14910b94806a4ecb8ab51477fbc78be986dbcd4"
     },
     {
       "path": "bin/mimesis.mjs",
       "category": "root",
       "sourceType": "local-tooling",
-      "bytes": 35128,
-      "sha256": "803154d7a4522b8c481b09b2aa12a93f9a53742e71169362cb2292c1ef0eb148"
+      "bytes": 35212,
+      "sha256": "d10d5f882bf4bc92de38b4fabaf13da30a53b82ef560b71195e8f41092ecd08b"
     },
     {
       "path": "cases/001-mimesis-on-mimesis.md",
@@ -756,15 +735,15 @@
       "path": "docs/COMPLETION-AUDIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 67797,
-      "sha256": "8a50b4d7e60ee0a3328cb09126ad8908ee1b2b4807b9c29e1c57f91e765b3efe"
+      "bytes": 67844,
+      "sha256": "c2200b69b5614431a3261d2e1d4e046812500639bb9fa5613b3615708312e6ea"
     },
     {
       "path": "docs/CURRENT-STATE-SUMMARY.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2013,
-      "sha256": "57dda0b92934014abec2b2a801268b760b6aae4ac947137a1f59fe12c9cad069"
+      "bytes": 2028,
+      "sha256": "dc29862800a6ab13983f7be3e23a0b22ae61e7fef4fcc3e37a1599a21feda41f"
     },
     {
       "path": "docs/FIRST-LOOP-DEMO.md",
@@ -791,8 +770,8 @@
       "path": "docs/FRAMEWORK-MANIFEST.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 4874,
-      "sha256": "2f1d46bc562d20cf59036f762044383cfff223ba61ea1aab44b0c077e5d56aa4"
+      "bytes": 4876,
+      "sha256": "12940101fe85a6d8e0831e152cf1c5b5f63370a319a0d5fda36d19e9241ddf55"
     },
     {
       "path": "docs/GAP-CLOSURE-PLAN.md",
@@ -805,36 +784,36 @@
       "path": "docs/GAP-REGISTER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2425,
-      "sha256": "e37988c332b3e82b2427abc1aab1b530054449746de6e799f7648f008db57edd"
+      "bytes": 2434,
+      "sha256": "fc741ef3cfb20df065185e8c067d136d369096aae47f17923b2502909cb3dd13"
     },
     {
       "path": "docs/GATE-CLOSURE-READINESS.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2645,
-      "sha256": "7cffce16dc5a4145550ad4a5c4965407d3b0f949b5249e017b2c7a61b6188baf"
+      "bytes": 2682,
+      "sha256": "f762c80b48d6ccabcd901f78842b7ab2804136331501c811611ff663d35088fe"
     },
     {
       "path": "docs/GATE-CLOSURE-REVIEW.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2455,
-      "sha256": "caaf66c13605424c1540870ca1ade3e9576232260ed96aaf875e00d60b94db0a"
+      "bytes": 2491,
+      "sha256": "9e403e6e440590089aac46aef6ce66d270dc2ba72063df5813a64173f8c16daf"
     },
     {
       "path": "docs/GATE-EVIDENCE-ISSUE-CONVERT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1584,
-      "sha256": "45f6533f7659ac024fa23ea8f590b143915d8898bbb628d7955eebd1f8a1e8eb"
+      "bytes": 1641,
+      "sha256": "858ebb760a855f66fbcc43bf594360aeef51324d994fdee482b6798fe0830171"
     },
     {
       "path": "docs/GATE-EVIDENCE-ISSUE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1909,
-      "sha256": "e1b400b431b01c1842157b99cac8819a6f961f7372ce9235540688972fda8095"
+      "bytes": 1955,
+      "sha256": "849f0ec34c190408fd86100898bcf630ffe3e79925291b91e8893c90787292c4"
     },
     {
       "path": "docs/GATE-EVIDENCE-PACKET.md",
@@ -854,15 +833,15 @@
       "path": "docs/LICENSE-DECISION-FROM-OWNER-ANSWER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 3010,
-      "sha256": "0ddf0d0ee1d54e5e904a3caf5e5744fc122a156e48564e3a5e1bf129d04d096e"
+      "bytes": 3108,
+      "sha256": "3366973151a0d1c63b3a1aa0332f6c392302ae3cb1da7d5b489a95dcad70904d"
     },
     {
       "path": "docs/OWNER-ACTION-QUEUE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1874,
-      "sha256": "dad7753853fb2a88b30eb10f19c755b2038a420826408193935ba334a10a3f44"
+      "bytes": 1881,
+      "sha256": "d64bac11fb8a89cf5b09caf4dd7b31c66e58df81391aefcc3ede1a2ef50e3718"
     },
     {
       "path": "docs/OWNER-ANSWER-REVIEW.md",
@@ -875,15 +854,15 @@
       "path": "docs/OWNER-DECISION-ANSWER-RECORD.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2506,
-      "sha256": "60623c8411d699cc5f2a6116fe2b14438894e8564e526cacfd45e462c1c61f24"
+      "bytes": 2515,
+      "sha256": "28b09f764c7003799e03e8e6bfae009f0cf14e5def6b630ec6f20a96a2f8f467"
     },
     {
       "path": "docs/OWNER-DECISION-INTAKE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1663,
-      "sha256": "18cde3a71b16166b684b7d832d237b0be16b4ab4eae976a6f58ebfb39ae69ce6"
+      "bytes": 1671,
+      "sha256": "d98c4a0fa55f2be03f8757d0837d58d828e3b5de4374792d38a539b07500d677"
     },
     {
       "path": "docs/OWNER-EVIDENCE-ATTACHMENT-FORM.md",
@@ -917,120 +896,120 @@
       "path": "docs/OWNER-EVIDENCE-SUBMISSION-CHECK.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2479,
-      "sha256": "a4c20f5a8eb23f17a702492a2e15ae9ba43ab72988afad417acde65ad0c7956d"
+      "bytes": 2502,
+      "sha256": "7f1628af76da1b0d9ee38b6a3bc5f95333ff1e8034d36a17817f2e2699a68e98"
     },
     {
       "path": "docs/OWNER-EVIDENCE-SUBMISSION-ISSUE-CONVERT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2280,
-      "sha256": "ccb584fb2d571447c5a3c6c5dcdc91eb945d0aab0062d9cf60ca49f149b229c2"
+      "bytes": 2352,
+      "sha256": "3d29fb93aa6ca162888dbdfac9cf1268a0fa0cb88b90183981d6435677c8bb98"
     },
     {
       "path": "docs/OWNER-EVIDENCE-SUBMISSION-RECORD.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 3703,
-      "sha256": "6dbb2a090eda6a8b3b4f84b23ff31832e3e52cd438ebdb5dcda815b42bbde7e4"
+      "bytes": 3719,
+      "sha256": "dcd1801205bd6e9514279773c37fc558b8095c3896d3ff61d912afffa6bfc756"
     },
     {
       "path": "docs/OWNER-ISSUE-QUEUE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1578,
-      "sha256": "c439706846e35c9f09eccec6049c3142416513a1fe3080e507f2d7d41b3d0be4"
+      "bytes": 1638,
+      "sha256": "fea11c7272a0d1e9197ea2e2d74061cb9c9882567ecec8c8e3c8b43f02c2bf39"
     },
     {
       "path": "docs/OWNER-ISSUE-REMOTE-CREATE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1535,
-      "sha256": "f90f16ffb3e38043c6a3e486df7bb88365734bf3a45dc27b6eadd8263432ab89"
+      "bytes": 1590,
+      "sha256": "1ad2b98658ab95319cd8729f62108f8b6dfc73b90e2379a61c351e9f55b74ae1"
     },
     {
       "path": "docs/OWNER-ISSUE-REMOTE-SYNC.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1551,
-      "sha256": "7d931baee7b074e48a3d9538a3cd04e9192d1b0a011275dc6028152ee2d8aea4"
+      "bytes": 1601,
+      "sha256": "f724670f4aae912d43880d137643aa8f559d9b3842ee75950860355e30ac2d15"
     },
     {
       "path": "docs/OWNER-PROOF-HANDOFF.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1643,
-      "sha256": "47fbddadb9b56c7052758a7c29974ca946349e7ca611e09a0016b315bd207505"
+      "bytes": 1705,
+      "sha256": "8d25f9b6810e4b8431a324e9825786098aaafcf9b4c630d9b4c7203c52041ebd"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-ISSUE-CONVERT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2227,
-      "sha256": "dfd77bd8a0d9c3bf6497f791116de22fdc64641cbd905cbb1b67ae0f58ee7919"
+      "bytes": 2293,
+      "sha256": "1360f17c048a0645034510e9eb0db807b7f2d6cbff743990cea66090a152f485"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-ISSUE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1304,
-      "sha256": "4803b2356ee56618bf2293a7e77cf78e37ec3f3354c81fcb3534bc8e9d67c511"
+      "bytes": 1352,
+      "sha256": "c1e75ce60c078828f4a82b3aabd9aedf215c8732818efcf075b5d4a586106d46"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1499,
-      "sha256": "6d31bc47cf00e722d1420fa3ca4341b8ec56821d3f08ed3f29aa283f94adad87"
+      "bytes": 1546,
+      "sha256": "ad8171691580bfcd4cb553af24b2e946d2d3bc7dee29b65730dfffed651a0740"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-EXPORT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 3445,
-      "sha256": "c1b1fa2e6fe6f85747605639f40e392e1c3c0041d255e9cc960a71ac964ad258"
+      "bytes": 3520,
+      "sha256": "2c3728a67641cfc34f22499f00a56ce85cf1685904f6e92ff7d17f5d5c404d8e"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE-SNAPSHOT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1947,
-      "sha256": "10083323204a1d24d39f31abc221da460b12ad699e5843dc4c4ae87b2b1b6a64"
+      "bytes": 2002,
+      "sha256": "be592ecfd5bd2b0b3bd11a7b6694e64583c4318385a1aff235537424469b0d72"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-REMOTE-ISSUE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1502,
-      "sha256": "e71da97211dd15928ce7c8570a8b1cc84b53e3f5f5c3c3fe747d716a68791765"
+      "bytes": 1561,
+      "sha256": "f8915e2bb406fb71287b6e6f76246c54ccdc94c6fb38b1ba92f244404d393f26"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-REQUEST.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1185,
-      "sha256": "a7ee132c046512886e3fda7630e71dd2d358f39a9fd2950e1c226ca69568d852"
+      "bytes": 1231,
+      "sha256": "aaeae26bce506328210c41ec9add337d63b2c3d665ef47983f9d245e1d043257"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-REVIEW.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1368,
-      "sha256": "c585cfb3fddcbc6fb61fb8ca425a8d016bf9e943d141aba7a887bc270dc225b2"
+      "bytes": 1420,
+      "sha256": "fd17e7526af8ec4dfa220166016729481c6ec2b3fc00e9e3a59d7f330c9b9484"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT-SPLIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1472,
-      "sha256": "7baf09112e42e8c036a0d045fe93a65592a8673a25769e8ba5c8cb6edc4f94e2"
+      "bytes": 1521,
+      "sha256": "96a8560d58f9a13d8b6b714ba034cfdcdc305848018237f8bf704d7108f39095"
     },
     {
       "path": "docs/OWNER-PROOF-INPUT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1773,
-      "sha256": "05f402806ebe2d845be4254c29d6c4ba4e7012d47856381fc5417a423033d596"
+      "bytes": 1840,
+      "sha256": "32367cfbaf7c3a985af73d20aed82339895aa6c9e1e9fe9e7e06992dc405aa1d"
     },
     {
       "path": "docs/PACKAGE-RELEASE-CANDIDATE.md",
@@ -1064,8 +1043,8 @@
       "path": "docs/PROOF-EXECUTION-REPORT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2602,
-      "sha256": "ffa5a8cef9e4f15a3a375290538ea100700422892116ed31c95d34a1a54c2a8f"
+      "bytes": 2635,
+      "sha256": "4aabdf176fb2ebbab4dd84d886cb777fa43fc2ce190d158cf512c342dc19e236"
     },
     {
       "path": "docs/PROOF-INTAKE-CHECK.md",
@@ -1078,8 +1057,8 @@
       "path": "docs/PROOF-INTAKE-FROM-OWNER-EVIDENCE.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2750,
-      "sha256": "15434a57d36544cb80bfcc65ac7f599d0f1918f6457090b844fb4d566d42da59"
+      "bytes": 2825,
+      "sha256": "f244fd86c9e40a76c10f17535a752b2f750f9287fb1293362ff166563b9703e2"
     },
     {
       "path": "docs/PROOF-INTAKE-KIT.md",
@@ -1120,15 +1099,15 @@
       "path": "docs/PROOF-RUN-DRY-AUDIT.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1940,
-      "sha256": "3c6d8a18e5a9c65b1ae9c26a1eb39fbcd60cba90d8d28e9e9c02d42c62270210"
+      "bytes": 1966,
+      "sha256": "4f080ce8b75a54810944b7ecc80ebaa0af39babf73f61c181bdd7e449f2d0f58"
     },
     {
       "path": "docs/PROOF-RUN-PACKET.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1779,
-      "sha256": "43e7df0f53089e87fa5988ed26ade1f96e8baf08b8a8ce629e00a8845fb0fb6a"
+      "bytes": 1791,
+      "sha256": "80393cffe6693851c39785b873f05ff8bfad20e566bfabf8a61657ab60da86f6"
     },
     {
       "path": "docs/PROOF-SUBMISSION-PACKET.md",
@@ -1141,8 +1120,8 @@
       "path": "docs/PUBLIC-CLAIM-PACK.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1892,
-      "sha256": "1e49a5a8c8e11b65388c774c76157ec4717ba6f6cc8663184241bacc3fd26dd5"
+      "bytes": 2225,
+      "sha256": "493f4d0ed1011169320fd321b4956032da5335755ce0b9e1244eb26e23d474e7"
     },
     {
       "path": "docs/PUBLICATION-EVIDENCE-PACKET.md",
@@ -1183,15 +1162,15 @@
       "path": "docs/RELEASE-CHECK-ORDER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 24466,
-      "sha256": "fa98ed7cc7d951bc65f19f176fcd0a863dd959d24adb76f51fee277af967b5b0"
+      "bytes": 24483,
+      "sha256": "f1f7930b23a8eacad54d90fbecc83159ab2a5fcad9c19dcccf3e2ce5e7bf087b"
     },
     {
       "path": "docs/RELEASE-DECISION-RECORD.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 2425,
-      "sha256": "573399c3a7ad021dd6ac51787efb5341985e6e1504691774a16c220bb9547759"
+      "bytes": 2441,
+      "sha256": "268b5c57d5c8ac93d9ebfa324feb62e56edba5ef303d20fef7af0d554abc1739"
     },
     {
       "path": "docs/RELEASE-EVIDENCE-REPORT.md",
@@ -1204,8 +1183,8 @@
       "path": "docs/RELEASE-EXECUTION-PACKET.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1515,
-      "sha256": "0e8a48f5ecfad19f38fa7736ab19dfa89bce3e280df08bf5827b390552c353e3"
+      "bytes": 1529,
+      "sha256": "e4c3e6a75a2a8606963df3905e1c4f0da728865c4768ec98b348237614826e07"
     },
     {
       "path": "docs/RELEASE-REVIEW-BUNDLE.md",
@@ -1225,22 +1204,22 @@
       "path": "docs/STATUS-ROADMAP-SYNC.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 4255,
-      "sha256": "660604d4ccbb3f5dcb6ee396598334b64eff583166aa9e250ea50a3209c0ba38"
+      "bytes": 4313,
+      "sha256": "93c94085806ff78f3b002581a4de361445e0f036e9fc5dcfcedaecea53f3c072"
     },
     {
       "path": "docs/SUPERPOWERS-ADAPTER.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 1048,
-      "sha256": "a96d2f5b60bd02bb254af9d360125d608a470ad61bd5cd63c46a50b6a5eb57d4"
+      "bytes": 1096,
+      "sha256": "6d582495e1739da5219b2ee197b0a9105b88f85d089dc8880ab963b9d0934b96"
     },
     {
       "path": "docs/V0.1-RELEASE-PACKET.md",
       "category": "documentation",
       "sourceType": "framework-source",
-      "bytes": 73879,
-      "sha256": "37ae33f78f26e46f8c5ef47f0e479f28c4b89a776f74b1c1d01b0b87cec96740"
+      "bytes": 74215,
+      "sha256": "d58d22a57bc17a63a731d972cfe527abc81eac5bf3912513412c741c836b34df"
     },
     {
       "path": "docs/V0.2-PROOF-QUEUE.md",
@@ -1302,8 +1281,8 @@
       "path": "package.json",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 23555,
-      "sha256": "e83196de50650a52805d0fc3cfd4bc0e084df59d5735456b05f6a04aec944953"
+      "bytes": 23933,
+      "sha256": "1ec2021a90e4f6ec84dfd845c25c446c649f6cfee4f2907cd5049106cc5928e7"
     },
     {
       "path": "plugins/mimesis-codex/.codex-plugin/plugin.json",
@@ -1351,15 +1330,15 @@
       "path": "prompts/README.md",
       "category": "prompt",
       "sourceType": "framework-source",
-      "bytes": 734,
-      "sha256": "0d137020238cde9d14758886f46f41199ac1d950b395969ab6c98431f0cd108f"
+      "bytes": 738,
+      "sha256": "c37800e479ae552fbb05aabdf3e9c2328df39547f9f62c978f6159d66aada89d"
     },
     {
       "path": "prompts/superpowers-mimesis.md",
       "category": "prompt",
       "sourceType": "framework-source",
-      "bytes": 992,
-      "sha256": "7e003cbf2d4e3a9347d975b6cf08fea9e8901dba12d6526b5ef2ba93fa2b5488"
+      "bytes": 1020,
+      "sha256": "e8b9673ac7ec1afd4ff8953221db587b1d2cbeacda16b32268bd70d702a3471f"
     },
     {
       "path": "PROOF-BOUNDARY.md",
@@ -1372,8 +1351,8 @@
       "path": "README.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 80543,
-      "sha256": "c2d4ffd76bf8ed650fdf2bb72c8960b07e866c57f6a51d3ac5eb5dabb4f99b6c"
+      "bytes": 82010,
+      "sha256": "5576bcf94e7e3289f8ff903ac518be50c32caf2afd2ca02dc2587353874affd9"
     },
     {
       "path": "reference-packs/ai-workflow.md",
@@ -1435,8 +1414,8 @@
       "path": "ROADMAP.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 13708,
-      "sha256": "43da9477bf8e966f48d22339fcdbb4f3a4e53a9e1b8886b7fa69e2792e86ccd6"
+      "bytes": 13785,
+      "sha256": "065d144d8e20cdd1a6371adcb021534b6b527a4a0251bf00fc216ed5d4cf71b0"
     },
     {
       "path": "SECURITY.md",
@@ -1456,8 +1435,8 @@
       "path": "spec/current-state-summary.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 6439,
-      "sha256": "6d3629994960f24a0343f32a0b658a56134d743bc3a3f1da36f74e20be4f8318"
+      "bytes": 6482,
+      "sha256": "9afe047517cc9719aedbe27e7d3f338ffa380a9cbc5f67f79337c492b17dbb84"
     },
     {
       "path": "spec/file-protocol.md",
@@ -1477,15 +1456,15 @@
       "path": "spec/gate-closure-readiness.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 4354,
-      "sha256": "a1a176997b9440f678de8a84b8c717bf174a2915e48d245290af97225d8ed69b"
+      "bytes": 4400,
+      "sha256": "4b5b3a41a3dcdc2fb6682bbc8c77fdc6c77ddc95f8a012e38eb0200f3c23056f"
     },
     {
       "path": "spec/gate-closure-review.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 4438,
-      "sha256": "57616ca3301511f50e69178d8f567596684fc971fbfb259dc8ab8017e3b80775"
+      "bytes": 4496,
+      "sha256": "7932e425ab8245a96caf46ecacc90b527b0d5d8f097f1b5d6ddbed54a296d3f7"
     },
     {
       "path": "spec/mimesis-v0.1.md",
@@ -1498,8 +1477,8 @@
       "path": "spec/owner-decision-answer.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 4078,
-      "sha256": "ec9cff6dc17933bbe7573d1f849ab6c91fc2c64778fe1b6c54cfc6cf0e99693e"
+      "bytes": 4081,
+      "sha256": "74c349726c78d0dde55f7a59859a7e7613ad40d102f11a6a4f52d4df68741291"
     },
     {
       "path": "spec/owner-evidence-intake.schema.json",
@@ -1512,22 +1491,22 @@
       "path": "spec/owner-evidence-submission.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 6076,
-      "sha256": "6524346f4fd4ccca1943b5a0bb441149ab19eee91d808a808e2960e350061c6a"
+      "bytes": 6137,
+      "sha256": "88e066560c676f76fca4574c5f4fff86fd5536e5c42a4317b90ce5e9bc408a9c"
     },
     {
       "path": "spec/owner-proof-input.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 4586,
-      "sha256": "bc9febf61a409fef0261b36266ec3cc0a004a4837e495f838cf2a1615df61fd4"
+      "bytes": 4782,
+      "sha256": "d5795f142fc321ec6ce04c41a2f152736fe4159cfe0ace7546c587422e62781e"
     },
     {
       "path": "spec/proof-execution-record.schema.json",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 2886,
-      "sha256": "33d6aadd0bb6d6919ab04dc89844a95bc47464cdf41bc054d9bdbfb8464feee2"
+      "bytes": 3005,
+      "sha256": "ed529dd440c828428a038a224414c66f2683ff557a41f2e389b5a674b2c8de15"
     },
     {
       "path": "spec/proof-intake.schema.json",
@@ -1547,8 +1526,8 @@
       "path": "spec/README.md",
       "category": "specification",
       "sourceType": "framework-source",
-      "bytes": 4737,
-      "sha256": "664b4aa907a875fbab8928e0f499c7a2898b46944a0ffc0ac8a797a6bcaaa87e"
+      "bytes": 4749,
+      "sha256": "11edc26ad9df715de7b467406ffbe367b7fcbafc62d10e89085d5da98a6ab69c"
     },
     {
       "path": "spec/release-review-bundle.schema.json",
@@ -1568,8 +1547,8 @@
       "path": "STATUS.md",
       "category": "root",
       "sourceType": "framework-source",
-      "bytes": 25917,
-      "sha256": "aea0e0fa2359c7f18d245cd3825bf2b0400fa446448991d577f2742bae223e62"
+      "bytes": 26500,
+      "sha256": "3f759f7ecbb69e014da025f4de6ee2222720bb3a914543cd8e763e24b24dc592"
     },
     {
       "path": "templates/artifact-brief.md",
@@ -1638,15 +1617,15 @@
       "path": "tools/audit-current-state-summary.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5648,
-      "sha256": "9a50703e69aa0ae7abac0cdf9af50042c226a3f1707efb58c2c504fa016e4bd3"
+      "bytes": 5680,
+      "sha256": "bd3e5a40e92f1eada0423105ddc66e8167e8d8a03fb9bdc05d493f28dac906f8"
     },
     {
       "path": "tools/audit-framework-manifest.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 9766,
-      "sha256": "0b872c7ea3edc5f170a498dce19f91cc11ce2bd0d5ba95f41d81904d61f611e7"
+      "bytes": 9857,
+      "sha256": "d4a7801dbcc30d8a253f17c2a139fa33ddaefc37654d644a57215014f53c225b"
     },
     {
       "path": "tools/audit-gap-closure-plan.mjs",
@@ -1659,43 +1638,43 @@
       "path": "tools/audit-gap-register-sync-closure.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5288,
-      "sha256": "fbf426148283cf9045c8010ded26e5250b25b225af66f48bde190721eb6e833f"
+      "bytes": 5340,
+      "sha256": "9527a23b86943652dd886c71ca1457efa7ddba724c83343241a1c0ab5a046165"
     },
     {
       "path": "tools/audit-gap-register.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6382,
-      "sha256": "34cd002581dcdac6f02449e6de0e735d52fe590f356d24cf40a14f474f0a0113"
+      "bytes": 6413,
+      "sha256": "081e406a9f6c11613c5f7b966a992adecaecbb1de6ca892036e86a021b855bfe"
     },
     {
       "path": "tools/audit-gate-closure-readiness.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 15052,
-      "sha256": "fa5028faa7c2cc7d05f337247e4a2ed0ca197cc1219fd1e8bf53c68d5325d3ce"
+      "bytes": 15181,
+      "sha256": "335ca52dcb7cecf7aa43e1e194376cb3e8501b17adcaccbe3bdf4efd28eef570"
     },
     {
       "path": "tools/audit-gate-closure-review.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 16798,
-      "sha256": "3b739c77d0e9796a7f0c091a364f211fcb99dced68a779302c33f2265325fbcc"
+      "bytes": 16984,
+      "sha256": "99a6b0a193b4303e0d205ba1a5bce89a2706c80c76f9d6f8c7458e95e3631350"
     },
     {
       "path": "tools/audit-gate-evidence-issue-convert.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 9910,
-      "sha256": "4c76facb85ea609c252bd6b9a819f4aed08776fc47375f898051b8869b81c273"
+      "bytes": 10190,
+      "sha256": "365a7b064fc12dd23d899bfbbcaf806aab382808c90587c421fe9d2d8cd70d6b"
     },
     {
       "path": "tools/audit-gate-evidence-issue-form.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5461,
-      "sha256": "7ee00428d054ce309ae788b25e44b90d5c3a24d77c1061bd541e1e128fbb4a15"
+      "bytes": 5637,
+      "sha256": "76382a339a0355f438c07865df272358b7a2964ceeb15fdea61a3ddc88722e21"
     },
     {
       "path": "tools/audit-gate-evidence-packet.mjs",
@@ -1708,22 +1687,22 @@
       "path": "tools/audit-goal-completion-audit.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8694,
-      "sha256": "0436890f29f64f1aaa1f16f58c4bd2998663d50cfd1bf0254a283457871d2d39"
+      "bytes": 8707,
+      "sha256": "5c525b5b0e3859ed2b9c7ba16036bd65c0c6962e91bacf2f4bf740f91f2d1c0c"
     },
     {
       "path": "tools/audit-license-decision-from-owner-answer.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 11011,
-      "sha256": "c9a124bcce11088cf6a6392c3e505f9ee5b17e09963c81ae43a5a9d39820dadd"
+      "bytes": 11318,
+      "sha256": "6c5d32dfd2b0cfb51ba2ff2a92ff104a7948f9a0351d601fe8d471e88da87121"
     },
     {
       "path": "tools/audit-owner-action-queue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8135,
-      "sha256": "885be6dada39be3e23ab701a99d33e631c586e945b68996c50eec072651d0c2d"
+      "bytes": 8173,
+      "sha256": "1943e20ae2bb2e9d1cc2525110148171d296fffbc38643b4ca3f34ddea646758"
     },
     {
       "path": "tools/audit-owner-answer-review.mjs",
@@ -1743,8 +1722,8 @@
       "path": "tools/audit-owner-decision-intake.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 7184,
-      "sha256": "7316f44bdd0ae4b4f9325131533ca503dbecf14c9f61de256581091a8f04062f"
+      "bytes": 7219,
+      "sha256": "3d6bbd4c8d4c36f11b4c8099a11418e3421342abe7463454fa4bd38e3f21dfdc"
     },
     {
       "path": "tools/audit-owner-evidence-attachment-form.mjs",
@@ -1778,134 +1757,134 @@
       "path": "tools/audit-owner-evidence-submission-check.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 12498,
-      "sha256": "7570b2950951b415d3433b7187d6a8fd66eec550d455cef74b7680428fcb747e"
+      "bytes": 12587,
+      "sha256": "2509663832fc8af9702e01ffe8ad285ae86f8d4c930fe99e40c5f3f5f52756ae"
     },
     {
       "path": "tools/audit-owner-evidence-submission-issue-convert.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 10730,
-      "sha256": "97d9a7b8fcd34d3ffac2f85214fc671eaaf2eb1dbaca64204373c91115cc5b54"
+      "bytes": 11006,
+      "sha256": "496355c718b73ff824464217a5470257d57ee50f11bffb2301ffb5c2f49c3ceb"
     },
     {
       "path": "tools/audit-owner-evidence-submission-record.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 14481,
-      "sha256": "01c8789f4911abfd4862a3b8f1cb210862fd18f286848390ec590e6f1210db20"
+      "bytes": 14524,
+      "sha256": "1b143d0d4006cf8e58223dd23993678125efa0b65f0b27a215b60139867327d4"
     },
     {
       "path": "tools/audit-owner-issue-queue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 7024,
-      "sha256": "85506f78b48570467ee03e5c50ff29b337e226e316933a02084c817eef6348c2"
+      "bytes": 7253,
+      "sha256": "040674d24414351da5024fcfd7669b97d8982365e3ae9b73cb07c572b3376a9e"
     },
     {
       "path": "tools/audit-owner-issue-remote-create.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 10308,
-      "sha256": "04e403628fda0a60f3f0681a0736f03e5def663a5eff29e20f49f9505be36afc"
+      "bytes": 10622,
+      "sha256": "2e32e4a05ac2a128df2d8c8f31fadb309abb0c8f103e8aa2e83c482ba4b4e3dd"
     },
     {
       "path": "tools/audit-owner-issue-remote-sync.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 10092,
-      "sha256": "92bc309d1578454620ef69bf5270e26e0b2ec9c6f0f28dee147b2e3cd58b3bc9"
+      "bytes": 10402,
+      "sha256": "c750535a5f951ab94ea7cddfa059786c28a05151044c6042c362a7ddf03361c3"
     },
     {
       "path": "tools/audit-owner-proof-handoff.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 7569,
-      "sha256": "1632418acdf3224afa20ce4747ba51afb72b2dfb46b3cf13b7378854baa3a700"
+      "bytes": 7787,
+      "sha256": "963cd7ed0f86bde64616e918fdbd3f84a63d0aa5162043f73ec9e771823059f1"
     },
     {
       "path": "tools/audit-owner-proof-input-issue-convert.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 12694,
-      "sha256": "0f0585bc0a482425283a5e8ea0d0f24e260f8a19297263711301c35a503af85a"
+      "bytes": 13043,
+      "sha256": "c00b9250e70f04422e182ce03b1859e46cf22e7e5bb212c685b8814a0393a7f9"
     },
     {
       "path": "tools/audit-owner-proof-input-issue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6949,
-      "sha256": "6c59028e927cb9f5fd98cf3510a3e33f73534d447b065496deb5d1a015253fce"
+      "bytes": 7153,
+      "sha256": "b346dd1de7062546f44e25e821bdf5420f3b568dd3783520c1144f0ab8484f94"
     },
     {
       "path": "tools/audit-owner-proof-input-private-pipeline.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 13338,
-      "sha256": "14962742397a588b6d8b7bb98f8c14d8b50bab31f356b186c7e635a7099eabcd"
+      "bytes": 13741,
+      "sha256": "70a2ef82e3d26cb28e34a5bbda5309379c95999dfde4385559993289d96ff828"
     },
     {
       "path": "tools/audit-owner-proof-input-remote-issue-export-candidate.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8717,
-      "sha256": "51da9e5a623d553a66d4f54563888ba4dc10ac0e189748cc4a1074d78f01a346"
+      "bytes": 8974,
+      "sha256": "77854abbc01988add555212a101be32085a24dc2f7195efb3b7c2470d4da3eb7"
     },
     {
       "path": "tools/audit-owner-proof-input-remote-issue-export.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6031,
-      "sha256": "e56cda80f799f9ad1ff49bff32c9e0001641a42b941c62fd4c589af02249291d"
+      "bytes": 6222,
+      "sha256": "2a2fd3f735a75173eb16de89a33664fa4127905b9daa2076dc8d022b4c306caf"
     },
     {
       "path": "tools/audit-owner-proof-input-remote-issue-snapshot.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 12286,
-      "sha256": "a5abb7efe2694a7c96376a5158e98d4dbb90321cbb9b99cdda2b6f4193194b0b"
+      "bytes": 12654,
+      "sha256": "dff20a33e032bac1d557ecf1fa7dd2e3a44dc63952c9bf08966a87c090378c5d"
     },
     {
       "path": "tools/audit-owner-proof-input-remote-issue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6754,
-      "sha256": "cdecda4a5d835e5545fad26409b0429086e2ea00c731a958bc79108619b170e9"
+      "bytes": 6948,
+      "sha256": "70f4d4a9cb5986aff4333e8a321a8e93f352933cbef1cd2feeccc3f9213f6b17"
     },
     {
       "path": "tools/audit-owner-proof-input-request.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6494,
-      "sha256": "d171ed3def244aa417cc840c022ff7dafcf001002f2b850a39ddad2c93508fc0"
+      "bytes": 6687,
+      "sha256": "aacbbcf408af1717108febf929648d187512c61560f8df966421e5d547d41446"
     },
     {
       "path": "tools/audit-owner-proof-input-review.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 7715,
-      "sha256": "5a0ade8fc62386260eec42011cf7743ec08145a8177fdd34db03163d2bf51293"
+      "bytes": 7938,
+      "sha256": "0e13fd0bf3a43607ad30a4f5b3a13bab016de7c07715901aa26cb325fb62b694"
     },
     {
       "path": "tools/audit-owner-proof-input-split.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 12437,
-      "sha256": "feca546f68f376ce3e49713de25412d8bb8a903904cd7d7026cc4ab270ef5f99"
+      "bytes": 12777,
+      "sha256": "a5ce9957402d12ea4fc04988593a4a80279d1eda2efc50c287f408cb723589e4"
     },
     {
       "path": "tools/audit-owner-proof-input.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8804,
-      "sha256": "8f58a04a77ecb11e2d33d06bab10ff02686bb57cd233f9f2e0b377540c78f122"
+      "bytes": 9081,
+      "sha256": "236eca51b4177a949acdda4823950bf9be7a1382a1c21c3492ef36593540de13"
     },
     {
       "path": "tools/audit-package-surface.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 21425,
-      "sha256": "74ae1de0c2e98bcf63f019fb36e2c31fceda5746536ca651f44eb3757b6b0755"
+      "bytes": 21468,
+      "sha256": "6d0f6b5e8fc839a0c7bf46e17caea7eaa1d6792225a626cb0ecfb955eec9cecd"
     },
     {
       "path": "tools/audit-proof-acceptance-packet.mjs",
@@ -1925,8 +1904,8 @@
       "path": "tools/audit-proof-execution-report.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 12899,
-      "sha256": "c3bfabb232ae5c1dcc09b34aad6b25b27d92d8e3bfe9972e02f691b298748f7d"
+      "bytes": 13115,
+      "sha256": "4b061a09c287af632f87461087c30403917458f69b1b5cd7b8a19557dffd6100"
     },
     {
       "path": "tools/audit-proof-intake-check.mjs",
@@ -1939,8 +1918,8 @@
       "path": "tools/audit-proof-intake-from-owner-evidence.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 9232,
-      "sha256": "d41c90d12c379e4216629ec4fcde44e4355be8f63d3ea525c54baa9cd958fc77"
+      "bytes": 9498,
+      "sha256": "3a15af45e7834c4e290329e2991570e18b36c6e6b8b0a852e45ec8ee96de72d9"
     },
     {
       "path": "tools/audit-proof-redaction-packet.mjs",
@@ -1974,71 +1953,71 @@
       "path": "tools/audit-release-artifact-manifest.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 15552,
-      "sha256": "343669fb5408b8a33a01998d7668cfddbc64002e319d9647fb97eabfddb06b3c"
+      "bytes": 15648,
+      "sha256": "29a473f5671cc56ed3f61a2540fea0a2634a9d59dfc860cdd7459e2b45414630"
     },
     {
       "path": "tools/audit-release-check-order.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 31688,
-      "sha256": "e8796bee84a714a4e83570819651fa4fd34ceaad1d986f9fba1257cc71b46416"
+      "bytes": 31946,
+      "sha256": "834e19fb370fb5aea8f40d70858c15418cb6fadd5f9c9475fcf809da24142322"
     },
     {
       "path": "tools/audit-release-decision-record.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5543,
-      "sha256": "f4a2f61b0fdf623d79f3f754bf090236e9283bdafe4c007727ae2d197a53e007"
+      "bytes": 5590,
+      "sha256": "c0e52fdae9612010a3057234cec7be6670a4a93b628854ac66b13f3d9eb40865"
     },
     {
       "path": "tools/audit-release-evidence-report.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6273,
-      "sha256": "0cbd6feed2c0ff94d26042816ca23444842a76ba676aead8e731ae1a2c3b0950"
+      "bytes": 6298,
+      "sha256": "3384563719ef96f68029ad2ff885c2fe25d3f7b4a81e8270c7e05c68c3a33aa6"
     },
     {
       "path": "tools/audit-release-readiness.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 76079,
-      "sha256": "a8f1386d9428910b5f57bd2d74bc8aa81038529d3677dbcd2b331d67b40a2db9"
+      "bytes": 76242,
+      "sha256": "02dbe6c97013d0801acf02cfe22a93aa75da1558c39e0fc6f61f4b2077285769"
     },
     {
       "path": "tools/audit-release-review-bundle.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 7841,
-      "sha256": "8e78fed860b13a22cb4e0f4edc903eed8851329dfee9197e0e33756d6f98faf9"
+      "bytes": 7524,
+      "sha256": "cb5d2d04b067143daf8a1d0efb12853307070d7dd6235ba86c9a7be0baba1f85"
     },
     {
       "path": "tools/audit-spec-index.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 3898,
-      "sha256": "6c5923bc4b203f74fd243588dfa72eb5adca98b31adc40b714e52cd3f194de16"
+      "bytes": 3913,
+      "sha256": "55f99a66eadc31bc766ae49bfc1cab0ab62e9b70f1d2738dff7fb3f782044cd5"
     },
     {
       "path": "tools/audit-state-snapshot-boundary.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6763,
-      "sha256": "702d0f94fe022c03e1364b4975c444122a77974a2855ae701e0724c045c39a4b"
+      "bytes": 6954,
+      "sha256": "6692f2e678286f793ab293fec20f42d5327fa47b5bf3e692cfb078d5841c8ada"
     },
     {
       "path": "tools/audit-status-roadmap-sync.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8311,
-      "sha256": "956f07a137151628e2052793464c5420af2b8160eadded75f4fbbf4f640fa3e9"
+      "bytes": 8403,
+      "sha256": "a52dbbd1fe65ed6ca19c93f7290672477ffd3242f746b4122cd7a410bc9845c9"
     },
     {
       "path": "tools/audit-superpowers-adapter.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 3929,
-      "sha256": "d79030f7111ab6ba0c4994d2fe5a1a3403225e619bd9b0c252cdf571605339ca"
+      "bytes": 4072,
+      "sha256": "f21f5d277f1b1d3ec1680308a65748ca35726508c34b05c50583c6c9b79e850e"
     },
     {
       "path": "tools/audit-sync-strict-nonwriting.mjs",
@@ -2051,22 +2030,22 @@
       "path": "tools/audit-worktree-review-packet.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8216,
-      "sha256": "d4e5c27a1d662ef7aff15363da2bd284b9b4135a6db7d9fd0722c5a5480ec933"
+      "bytes": 8225,
+      "sha256": "5744b74a2edb8047566a1cb2c67aaa328d36034ddaafce90f035926dbe90fcf2"
     },
     {
       "path": "tools/check-owner-evidence-submission-record.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 14143,
-      "sha256": "3f99df941fc0c1dc3eeb9475a306342c53f44df48aa7f8c99a436597e307f0c1"
+      "bytes": 14242,
+      "sha256": "866b0313e6ac6c9f43d91a5a1d618939f383e19fb6bd394c6fc1051935a56b58"
     },
     {
       "path": "tools/check-owner-proof-input-record.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 9442,
-      "sha256": "5a4bb1a5ff8aebc4074651dfb19d937f91d9b7ce19cc6a0208a6c4dc5eaf115e"
+      "bytes": 9713,
+      "sha256": "eb1cac507eb51691c6fb4149d68bb2db86d1879ca912bd38617c628f84ef9e83"
     },
     {
       "path": "tools/check-proof-intake-record.mjs",
@@ -2079,22 +2058,22 @@
       "path": "tools/convert-gate-evidence-issue.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 12847,
-      "sha256": "eb8f6ce22d4818f826adcb4c452fcb6b2f2f9cb64a8a79e39aeff5cc96643c6c"
+      "bytes": 13240,
+      "sha256": "4a23fb9cdb9882ae40aecb75f30b15ded81d860a304a4e9b4e945a7f5f0bcc40"
     },
     {
       "path": "tools/convert-owner-evidence-submission-issue.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 13643,
-      "sha256": "1a92151b738633273dd68c5c8b66421b3161aaf95fd1eb3b53c2879dd15dfdd7"
+      "bytes": 14028,
+      "sha256": "4e3dcd922f2e8064f45284d148a7134f6119fd5a800496b3c68c67a6e50b5c49"
     },
     {
       "path": "tools/convert-owner-proof-input-issue.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 13996,
-      "sha256": "93dcb7c0f437602d2efc3450645540dcb7a5c67c066b6a36342738a3e2184618"
+      "bytes": 14369,
+      "sha256": "f84661f7123439f0d0c280e0af0fa68b36a3a364fe5d4a7360ddcbb960c035ea"
     },
     {
       "path": "tools/create-adoption-packet.mjs",
@@ -2107,15 +2086,15 @@
       "path": "tools/create-current-state-summary.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 4842,
-      "sha256": "4701e160d7f70d2bb64fc1d8b265d1ac8885ae2a55f4aa2f104d6a7deb95c678"
+      "bytes": 4863,
+      "sha256": "caa187590b0b644f2bd5a7ca381878daa39ea6180a0fde9430b2f407f3b67a2e"
     },
     {
       "path": "tools/create-framework-manifest.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 41696,
-      "sha256": "74191a5447988f4f77b3d69eb64d96eb546a368800fe0d2552b0767256b01b88"
+      "bytes": 42143,
+      "sha256": "83723d8266e876bd8266406a985591e6c8fd0622f6ab5a40c0408c6a4534ee4f"
     },
     {
       "path": "tools/create-gap-closure-plan.mjs",
@@ -2128,22 +2107,22 @@
       "path": "tools/create-gap-register.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6712,
-      "sha256": "7cab3a696b6e321225f0742ccf93a2ec94ca3a76769a661c2417b3cdc482be37"
+      "bytes": 6730,
+      "sha256": "167ee7c2a51d78da1ee04f926d67c231b354f1576af0f98f0e207abfd3afa3e0"
     },
     {
       "path": "tools/create-gate-closure-readiness.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8218,
-      "sha256": "7f513bc0a06f24494f034818016d460a7228a56a1793bbb02025b52fecf9a897"
+      "bytes": 8330,
+      "sha256": "1719ce3b5ea1259126f54067cfa220694a14e03f29c01f3e0720dcf62a125ef1"
     },
     {
       "path": "tools/create-gate-closure-review.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8174,
-      "sha256": "0785a175aa6527dfed581cb3871a923862eea34bcfbc93bcb0b078058f79ac18"
+      "bytes": 8309,
+      "sha256": "ecc7748a7dfe180934d391aa7da7a5a73f513e96af5fd864aaeb9a5259027d94"
     },
     {
       "path": "tools/create-gate-evidence-packet.mjs",
@@ -2156,15 +2135,15 @@
       "path": "tools/create-goal-completion-audit.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6201,
-      "sha256": "96f6f489a5291138d451e9c9d09cb6967edfde4bfd5c6925424f75c16b52f261"
+      "bytes": 6207,
+      "sha256": "f6d2dc6d10158a2c36e3f427baa5b364f902a007e549e61e09f88b6b1b28a8e7"
     },
     {
       "path": "tools/create-owner-action-queue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6810,
-      "sha256": "f6ce57ec8140645e58ebf4188048a2e27ef1b467cfbd7b3dd62f9beff3e7e62f"
+      "bytes": 6846,
+      "sha256": "d64d63a7ff95a1b865f93223fc593734ab9179b1e2f3dee80b5712ea906e4df4"
     },
     {
       "path": "tools/create-owner-decision-answer-record.mjs",
@@ -2177,8 +2156,8 @@
       "path": "tools/create-owner-decision-intake.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 9319,
-      "sha256": "7f1dfa944fb8d135b1a47416b0a498ebd453d6178d55ba6bb562e6c35da3c88e"
+      "bytes": 9333,
+      "sha256": "11cdcee6b330816892919c7d6eab8e51f18aad3c8094b2d361c87898ccc13119"
     },
     {
       "path": "tools/create-owner-evidence-attachment-form.mjs",
@@ -2205,71 +2184,71 @@
       "path": "tools/create-owner-evidence-submission-record.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5165,
-      "sha256": "928a436f30aa9ef42436c77a58c5b77d0438581e95f88df029a9eb091b5ba671"
+      "bytes": 5194,
+      "sha256": "270901660a3fcf9c34abafa1218de95fd59d8d80c6730ebc20b507bea711cf32"
     },
     {
       "path": "tools/create-owner-issue-queue.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6092,
-      "sha256": "136b0f8b57727610807bb9f974c108df94d563cc3f35c3165a78faecf105bb87"
+      "bytes": 6293,
+      "sha256": "b14d32c7d0c7bdeb195bbbfb3f2fdccc85c7dc7c1cb4f36b1dcba16d13d9dd9c"
     },
     {
       "path": "tools/create-owner-issue-remote-create.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 11886,
-      "sha256": "b953c08aa8cdef699426df264de87d234ba923475473027cdd740760f1d052d5"
+      "bytes": 12320,
+      "sha256": "b7aef32cd0dd1905339edc46802d8525ae25371e7f96a40233c80a531a498651"
     },
     {
       "path": "tools/create-owner-issue-remote-sync.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 8847,
-      "sha256": "65b66059a9b9347bf1f11caaf1bef677d7138306241a2924a63da37eea17750f"
+      "bytes": 9148,
+      "sha256": "397d5b625ec689c345563890fc1605be18c0d1d4cc08a762a14974e09e3bd752"
     },
     {
       "path": "tools/create-owner-proof-handoff.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 9432,
-      "sha256": "a40205a21893bb382611fc660983c9d18761b2e4413489c00180955fa6138edb"
+      "bytes": 9610,
+      "sha256": "8df713f39332c7c488372ed7969d5073b66a8ed2ab2b21224800e7ee22166cf5"
     },
     {
       "path": "tools/create-owner-proof-input-issue-packet.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 5317,
-      "sha256": "4d76b73c18b77eaf689b22e9e79d6e3892bdef0d8d1a83051eb34ef065810908"
+      "bytes": 5431,
+      "sha256": "17ee947ddff25f0bd898099aa0b171384e2abfb5d25dbd3f08bf5f7c54d699e0"
     },
     {
       "path": "tools/create-owner-proof-input-remote-issue-anchor.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6056,
-      "sha256": "602e223c69532e51c3ef7b8d1851b61d32f8be6423834b3494debfa61adeb263"
+      "bytes": 6168,
+      "sha256": "f28e92a20e68a1009d41dd90072343d9ad10953570535673abec383bdb7de24a"
     },
     {
       "path": "tools/create-owner-proof-input-remote-issue-snapshot.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 11307,
-      "sha256": "9ce546885a0f9d324d3208488c3012d823612afda7a4bbd835410cd82fe719d8"
+      "bytes": 11631,
+      "sha256": "64997cdc62e1907778c23bb1ffb21a1ddcdf62c6a4ec6dcbcbaff62740d6d16f"
     },
     {
       "path": "tools/create-owner-proof-input-request.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6040,
-      "sha256": "772a225a760401baaf836a65582ab33156d3c7e0dad071f6e332f7870bb32499"
+      "bytes": 6165,
+      "sha256": "7e458e8f10b7144d8b2dc8f8a9cf929dc07d631aa09aadf7910eb47d2398c409"
     },
     {
       "path": "tools/create-owner-proof-input-template.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 4356,
-      "sha256": "9c7ba6c790257ed20a6c91d0d08652822b24d6e1c79b9e64ab49b2af8bd75aed"
+      "bytes": 4469,
+      "sha256": "5a2798d0b47b2fecf50f1f05e0b8728fae246ed17592367ebeb516099170f353"
     },
     {
       "path": "tools/create-proof-acceptance-packet.mjs",
@@ -2289,8 +2268,8 @@
       "path": "tools/create-proof-execution-report.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 18277,
-      "sha256": "889c550195777750cf3c9bb1c3fae66cd720a0b2e0db4164e19bd81271fe2fb0"
+      "bytes": 18773,
+      "sha256": "1a4ee7aeea8fc74abd24ed4988373e8f20fe54dd85bf6fb1773c455a1e5dcb65"
     },
     {
       "path": "tools/create-proof-redaction-packet.mjs",
@@ -2324,57 +2303,57 @@
       "path": "tools/create-release-artifact-manifest.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 19970,
-      "sha256": "5f62d70889749687f9a38307a08ad5842e446e7145d0dff0d5f859124015a042"
+      "bytes": 20018,
+      "sha256": "2ee07c1cd1acc2cc340fa487e2bf677df779203012bd4efda7c65591de77add1"
     },
     {
       "path": "tools/create-release-decision-record.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 4231,
-      "sha256": "3a3e77fcb3f3fa50fc1498cd3854585a9a78234dc3b462e99a28d07fb0d5dfa1"
+      "bytes": 4258,
+      "sha256": "f499405aae26c08a25fbf2dd8840ab0ccb75da8ff97c997d173ff9b6d5411f82"
     },
     {
       "path": "tools/create-release-evidence-report.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6913,
-      "sha256": "bc9d4a908924079d1e83bdf4ab16ce4c9f3e78a4454cf3fd64d4524b80e084c2"
+      "bytes": 6776,
+      "sha256": "cda6c8bac1476589321916c29e00027e8992d5c894cd361c3c28165f508fad65"
     },
     {
       "path": "tools/create-release-review-bundle.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 6794,
-      "sha256": "077c24a0ff9897041e674a8e0b133fbf4688f9c925eb704b0abfbdb31bff884d"
+      "bytes": 6752,
+      "sha256": "78e0f61984c5d0081928834af19a6d5baf242db29eb088d8b580bac33f52cc1f"
     },
     {
       "path": "tools/create-worktree-review-packet.mjs",
       "category": "tooling",
       "sourceType": "local-tooling",
-      "bytes": 4451,
-      "sha256": "f2258c82c97079c3c3e834d64038e9d5d3b305c735309e66d147671a54ea8cc0"
+      "bytes": 4461,
+      "sha256": "4c304a882783e1c2737449d8d4b79b9c888095661e1778f83cdfce2ac4838875"
     },
     {
       "path": "tools/export-owner-proof-input-remote-issue.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 11801,
-      "sha256": "9ea0aafadc4a4fab9f411fb268f2b34016ec979a03600c23436e1e8ef409fa62"
+      "bytes": 12113,
+      "sha256": "d6d8f7762e91cff8a166acf717b99fb15bb36f5416028a16d343bf19764a3545"
     },
     {
       "path": "tools/license-decision-from-owner-answer.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 14262,
-      "sha256": "7e561bc07b269aaa506cd750937ae6cd0c32e548087af9b00a9b6f95f7bf1ab3"
+      "bytes": 14650,
+      "sha256": "274657f35cdf496afc5b535f3ea07c156e8d67a0b059d5b1253e193abba45e41"
     },
     {
       "path": "tools/proof-intake-from-owner-evidence.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 11751,
-      "sha256": "ebf17e53f7b4d981da0e52056cef7986ef342cecbb2f561dc4e452ddbb951a5c"
+      "bytes": 12079,
+      "sha256": "83cf0170d5397b190c4f8272d8fda8324fbf86eb341b291ebd2d69e8bb0a4090"
     },
     {
       "path": "tools/review-owner-decision-answer-record.mjs",
@@ -2394,22 +2373,22 @@
       "path": "tools/review-owner-proof-input-record.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 9692,
-      "sha256": "3959358f54ababb557e57b7781f90f2a6d4b70b4391ed64390079b1d22d96a06"
+      "bytes": 9984,
+      "sha256": "b6442e8ef0ed0993a5a5887900caf888a613368960786c2918cff418fe236c14"
     },
     {
       "path": "tools/split-owner-proof-input-record.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 18068,
-      "sha256": "4daf76987ee07e4f9142534578ef46cb1bd1cc342265ec3ca0fa4cf765cb2622"
+      "bytes": 18555,
+      "sha256": "71dc307f59814e4bc8d5aba979bcc1fb40da0618eae51c3af0873cd51bb23659"
     },
     {
       "path": "tools/validate-mimesis.mjs",
       "category": "tooling",
       "sourceType": "framework-source",
-      "bytes": 28091,
-      "sha256": "bafb7df48d3e7a3748bbc027474f1e8faa3cf9154a1bd2e65eb8b0badced7c7a"
+      "bytes": 28751,
+      "sha256": "d724df64706568425d1328cfa58395f05c9434147da9b3c9abd6aa47e70ae422"
     }
   ],
   "missingArtifacts": [],

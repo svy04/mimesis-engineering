@@ -389,7 +389,6 @@ const artifactPaths = [
   ".mimesis/claim-packs/public-v0.1.md",
   ".mimesis/case-publication-packets/current-casebook-candidate.md",
   ".mimesis/evidence-packets/local-case-draft.md",
-  ".mimesis/publish-packets/local-sync-handoff.md",
   ".mimesis/gates/current-gateboard.md",
   ".mimesis/gates/evidence-packet.md",
   ".mimesis/gates/fixture-gate-evidence-issue.md",
@@ -433,7 +432,6 @@ const artifactPaths = [
   ".mimesis/owner-actions/fixture-evidence-record.json",
   ".mimesis/owner-actions/evidence-review.md",
   ".mimesis/state/current-state.json",
-  ".mimesis/worktree/review-packet.json",
   ".mimesis/release-review/v0.1-bundle.json",
   ".mimesis/completion/goal-completion-audit.json",
   ".mimesis/ecosystem-resources/current-resource-packet.md",
@@ -446,7 +444,6 @@ const artifactPaths = [
   ".mimesis/release-execution/v0.1-owner-handoff.md",
   ".mimesis/security/secret-safety-report.md",
   ".mimesis/mcp/resource-index.json",
-  ".mimesis/sync-status.md",
   ".mimesis/run_ledger.md",
 ];
 

@@ -19,6 +19,12 @@ const requiredIgnoreEntries = [
   ".mimesis/worktree/",
 ];
 
+const publicEvidenceSurfaces = [
+  ".mimesis/release-artifacts/v0.1-manifest.json",
+  ".mimesis/release-evidence/v0.1-report.md",
+  ".mimesis/release-review/v0.1-bundle.json",
+];
+
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
@@ -48,6 +54,15 @@ const gitignore = read(".gitignore");
 for (const entry of requiredIgnoreEntries) {
   if (!gitignore.split(/\r?\n/).includes(entry)) {
     failures.push(`.gitignore missing runtime-state entry: ${entry}`);
+  }
+}
+
+for (const evidenceSurface of publicEvidenceSurfaces) {
+  const evidenceText = read(evidenceSurface);
+  for (const relativePath of forbiddenRuntimeStatePaths) {
+    if (evidenceText.includes(relativePath)) {
+      failures.push(`public evidence surface must not list ignored runtime-state path: ${evidenceSurface} -> ${relativePath}`);
+    }
   }
 }
 
