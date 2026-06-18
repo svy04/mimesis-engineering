@@ -192,7 +192,6 @@ if (!fs.existsSync(manifestPath)) {
     ".mimesis/gates/fixture-gate-evidence-issue-conversion-report.md",
     ".mimesis/gates/closure-readiness.json",
     ".mimesis/gates/closure-review.json",
-    ".mimesis/worktree/review-packet.json",
     ".mimesis/release-review/v0.1-bundle.json",
     ".mimesis/completion/goal-completion-audit.json",
     ".mimesis/gates/evidence-packet.md",

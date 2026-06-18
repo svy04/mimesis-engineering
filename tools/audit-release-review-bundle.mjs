@@ -50,7 +50,6 @@ function parseStatusPath(line) {
 
 const packageJson = readJson("package.json");
 const bundle = readJson(".mimesis/release-review/v0.1-bundle.json");
-const worktreePacket = readJson(".mimesis/worktree/review-packet.json");
 const schema = readJson("spec/release-review-bundle.schema.json");
 const cli = read("bin/mimesis.mjs");
 const doc = read("docs/RELEASE-REVIEW-BUNDLE.md");
@@ -140,7 +139,6 @@ if (bundle.completionAllowed !== false) {
 }
 
 for (const sourceFile of [
-  ".mimesis/worktree/review-packet.json",
   ".mimesis/state/current-state.json",
   ".mimesis/gaps/current-gap-register.json",
   ".mimesis/release-evidence/v0.1-report.md",
@@ -163,12 +161,8 @@ if (bundle.git?.untrackedCount !== untracked.length) {
   failures.push("release review bundle untrackedCount must match git status --short");
 }
 
-if (bundle.git?.trackedChangedCount !== worktreePacket.git?.trackedChangedCount) {
-  failures.push("release review bundle trackedChangedCount must match worktree packet");
-}
-
-if (bundle.git?.untrackedCount !== worktreePacket.git?.untrackedCount) {
-  failures.push("release review bundle untrackedCount must match worktree packet");
+if (/fatal:/i.test(bundle.git?.upstream ?? "")) {
+  failures.push("release review bundle upstream must use a bounded value, not raw git fatal output");
 }
 
 const trackedPaths = new Set(bundle.trackedChangedPaths ?? []);

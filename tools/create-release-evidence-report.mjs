@@ -22,7 +22,6 @@ function has(content, text) {
 const packageJson = readJson("package.json");
 const releaseExecution = read(".mimesis/release-execution/v0.1-owner-handoff.md");
 const decisionRecord = readJson(".mimesis/release-decisions/owner-decision-record.json");
-const publishHandoff = read(".mimesis/publish-packets/local-sync-handoff.md");
 const packageCandidate = read("docs/PACKAGE-RELEASE-CANDIDATE.md");
 const actionCandidate = read("docs/ACTION-RELEASE-CANDIDATE.md");
 const pluginPacket = read("docs/PLUGIN-RELEASE-PACKET.md");
@@ -47,7 +46,7 @@ const generated = `# Mimesis Release Evidence Report
 
 Status: release evidence report packet, not publication.
 
-Generated for Mimesis Engineering v${packageJson.version} from the owner release execution handoff, release decision record, publish handoff, package candidate, action candidate, plugin packet, and gate board.
+Generated for Mimesis Engineering v${packageJson.version} from the owner release execution handoff, release decision record, package candidate, action candidate, plugin packet, and gate board.
 
 ## Report Inputs
 
@@ -58,7 +57,6 @@ Required local inputs:
 - docs/RELEASE-DECISION-RECORD.md
 - .mimesis/release-decisions/owner-decision-record.json
 - docs/PUBLISH-HANDOFF-PACKET.md
-- .mimesis/publish-packets/local-sync-handoff.md
 - docs/PACKAGE-RELEASE-CANDIDATE.md
 - docs/ACTION-RELEASE-CANDIDATE.md
 - docs/PLUGIN-RELEASE-PACKET.md
@@ -68,7 +66,7 @@ Source checks:
 
 - release execution handoff says not release execution: ${has(releaseExecution, "not release execution")}
 - release decision status: ${decisionRecord.status ?? "missing"}
-- publish handoff says not publication: ${has(publishHandoff, "not publication")}
+- generated local sync/worktree packets are intentionally ignored and excluded from this public evidence report
 - package candidate says not an npm package release: ${has(packageCandidate, "not an npm package release")}
 - action candidate says not a marketplace action: ${has(actionCandidate, "not a marketplace action")}
 - plugin packet says not a shipped plugin: ${has(pluginPacket, "not a shipped plugin")}

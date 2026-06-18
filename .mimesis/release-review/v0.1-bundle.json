@@ -1,7 +1,7 @@
 {
   "schema": "mimesis.release-review-bundle.v0.1",
   "status": "local_release_review_bundle_not_commit",
-  "generatedAt": "2026-06-11T14:32:11.478Z",
+  "generatedAt": "2026-06-18T13:49:05.041Z",
   "completionAllowed": false,
   "package": {
     "name": "mimesis-engineering",
@@ -10,114 +10,64 @@
     "license": "UNLICENSED"
   },
   "git": {
-    "branch": "codex/mimesis-framework-v0.1",
-    "upstream": "origin/codex/mimesis-framework-v0.1",
-    "head": "487b4767e56a67f46ea21c98245ca36ce1820781",
+    "branch": "codex/public-runtime-state-reference-gate",
+    "upstream": "none",
+    "head": "4db711eea9c231be3551092f2dd7869be8c74341",
     "dirty": true,
-    "trackedChangedCount": 32,
-    "untrackedCount": 2
+    "trackedChangedCount": 10,
+    "untrackedCount": 0
   },
   "sourceFiles": [
-    ".mimesis/worktree/review-packet.json",
     ".mimesis/state/current-state.json",
     ".mimesis/gaps/current-gap-register.json",
     ".mimesis/release-evidence/v0.1-report.md"
   ],
   "trackedChangedPaths": [
-    ".mimesis/claim-packs/public-v0.1.md",
-    ".mimesis/completion/goal-completion-audit.json",
-    ".mimesis/framework-manifest.json",
-    ".mimesis/gaps/closure-plan.json",
-    ".mimesis/gaps/current-gap-register.json",
-    ".mimesis/gates/closure-readiness.json",
-    ".mimesis/gates/closure-review.json",
-    ".mimesis/operator-runbooks/current-runbook.md",
-    ".mimesis/publication-packets/v0.1.md",
-    ".mimesis/publish-packets/local-sync-handoff.md",
     ".mimesis/release-artifacts/v0.1-manifest.json",
-    ".mimesis/release-decisions/owner-decision-record.json",
+    ".mimesis/release-evidence/v0.1-report.md",
     ".mimesis/release-review/v0.1-bundle.json",
-    ".mimesis/run_ledger.md",
-    ".mimesis/state/current-state.json",
-    ".mimesis/sync-status.md",
-    ".mimesis/worktree/review-packet.json",
-    "README.md",
-    "ROADMAP.md",
-    "STATUS.md",
-    "bin/mimesis.mjs",
-    "docs/COMPLETION-AUDIT.md",
-    "docs/RELEASE-CHECK-ORDER.md",
-    "docs/V0.1-RELEASE-PACKET.md",
-    "package.json",
-    "tools/README.md",
-    "tools/audit-framework-manifest.mjs",
+    "tools/audit-public-runtime-state.mjs",
     "tools/audit-release-artifact-manifest.mjs",
-    "tools/audit-release-check-order.mjs",
-    "tools/create-framework-manifest.mjs",
+    "tools/audit-release-evidence-report.mjs",
+    "tools/audit-release-review-bundle.mjs",
     "tools/create-release-artifact-manifest.mjs",
-    "tools/validate-mimesis.mjs"
+    "tools/create-release-evidence-report.mjs",
+    "tools/create-release-review-bundle.mjs"
   ],
   "reviewGroups": [
     {
       "name": "tracked core edits",
-      "count": 1,
-      "sample": [
-        "README.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Tracked root-framework files that need human review."
     },
     {
       "name": "generated protocol artifacts",
-      "count": 17,
+      "count": 3,
       "sample": [
-        ".mimesis/claim-packs/public-v0.1.md",
-        ".mimesis/completion/goal-completion-audit.json",
-        ".mimesis/framework-manifest.json",
-        ".mimesis/gaps/closure-plan.json",
-        ".mimesis/gaps/current-gap-register.json",
-        ".mimesis/gates/closure-readiness.json",
-        ".mimesis/gates/closure-review.json",
-        ".mimesis/operator-runbooks/current-runbook.md",
-        ".mimesis/publication-packets/v0.1.md",
-        ".mimesis/publish-packets/local-sync-handoff.md",
         ".mimesis/release-artifacts/v0.1-manifest.json",
-        ".mimesis/release-decisions/owner-decision-record.json",
-        ".mimesis/release-review/v0.1-bundle.json",
-        ".mimesis/run_ledger.md",
-        ".mimesis/state/current-state.json",
-        ".mimesis/sync-status.md",
-        ".mimesis/worktree/review-packet.json"
+        ".mimesis/release-evidence/v0.1-report.md",
+        ".mimesis/release-review/v0.1-bundle.json"
       ],
       "note": "Generated .mimesis packets and reports."
     },
     {
       "name": "public documentation",
-      "count": 7,
-      "sample": [
-        "docs/COMPLETION-AUDIT.md",
-        "docs/OWNER-PROOF-INPUT-PRIVATE-PIPELINE.md",
-        "docs/RELEASE-CHECK-ORDER.md",
-        "docs/V0.1-RELEASE-PACKET.md",
-        "README.md",
-        "ROADMAP.md",
-        "STATUS.md"
-      ],
+      "count": 0,
+      "sample": [],
       "note": "Public-facing docs, examples, cases, and status pages."
     },
     {
       "name": "tooling and cli",
-      "count": 10,
+      "count": 7,
       "sample": [
-        "bin/mimesis.mjs",
-        "package.json",
-        "tools/audit-framework-manifest.mjs",
-        "tools/audit-owner-proof-input-private-pipeline.mjs",
+        "tools/audit-public-runtime-state.mjs",
         "tools/audit-release-artifact-manifest.mjs",
-        "tools/audit-release-check-order.mjs",
-        "tools/create-framework-manifest.mjs",
+        "tools/audit-release-evidence-report.mjs",
+        "tools/audit-release-review-bundle.mjs",
         "tools/create-release-artifact-manifest.mjs",
-        "tools/README.md",
-        "tools/validate-mimesis.mjs"
+        "tools/create-release-evidence-report.mjs",
+        "tools/create-release-review-bundle.mjs"
       ],
       "note": "Scripts, CLI, actions, adapters, and plugin scaffolds."
     },
@@ -129,7 +79,7 @@
     }
   ],
   "requiredReviewSequence": [
-    "Read .mimesis/worktree/review-packet.json for dirty worktree scope.",
+    "Review git status and public documentation claims before staging anything.",
     "Review public documentation claims before staging anything.",
     "Run npm run audit:secrets and inspect .mimesis/security/secret-safety-report.md.",
     "Run npm run release:check and keep all proof boundaries green.",
@@ -167,6 +117,6 @@
     "does_not_create_external_proof",
     "does_not_prove_adoption"
   ],
-  "allowedClaim": "Mimesis has a local release review bundle that classifies dirty worktree review scope; it is not commit, push, tag, release, or publication.",
+  "allowedClaim": "Mimesis has a local release review bundle that classifies current review scope; it is not commit, push, tag, release, or publication.",
   "disallowedClaim": "The release review bundle does not close strict sync, prove remote freshness, stage files, commit, push, tag, release, publish, choose a license, create external proof, or prove adoption."
 }

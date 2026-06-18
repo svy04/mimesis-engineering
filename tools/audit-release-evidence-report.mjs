@@ -126,7 +126,7 @@ for (const text of [
   "docs/RELEASE-EXECUTION-PACKET.md",
   ".mimesis/release-execution/v0.1-owner-handoff.md",
   ".mimesis/release-decisions/owner-decision-record.json",
-  ".mimesis/publish-packets/local-sync-handoff.md",
+  "generated local sync/worktree packets are intentionally ignored and excluded",
   "git commit",
   "git tag",
   "GitHub release URL",
