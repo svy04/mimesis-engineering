@@ -8,3 +8,8 @@ node_modules/
 # Private owner/proof working files.
 # These may contain raw GitHub issue bodies or owner-provided artifacts.
 .mimesis/private/
+
+# Generated local sync/worktree state. These are operator receipts, not public artifacts.
+.mimesis/sync-status.md
+.mimesis/publish-packets/local-sync-handoff.md
+.mimesis/worktree/
