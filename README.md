@@ -32,8 +32,8 @@ visually noisy, or overclaimed.
 Current public ecosystem surface:
 
 - [mimesis-engineering](https://github.com/svy04/mimesis-engineering) - framework and validators
-- [mimesis-canvas](https://github.com/svy04/mimesis-canvas) - worksheet surface
-- [mimesis-casebook](https://github.com/svy04/mimesis-casebook) - case surface
+- [canvas/](canvas/) - worksheet surface (구 mimesis-canvas, 통합됨)
+- [cases/casebook/](cases/casebook/) - case surface (구 mimesis-casebook, 통합됨)
 
 Allowed claim:
 Mimesis Engineering has public framework files, local validators, public
@@ -1557,7 +1557,7 @@ Read:
 - [Case 004: When Mimesis Becomes Shallow Copying](cases/004-when-mimesis-becomes-shallow-copying.md)
 - [Case 005: Public Source Specimen - AI App Builder Landing Page](cases/005-lovable-ai-app-builder-public-source-specimen.md)
 - [External Casebook Index](cases/EXTERNAL-CASEBOOK.md)
-- [Mimesis Casebook](https://github.com/svy04/mimesis-casebook)
+- [Casebook](cases/casebook/)
 
 ## Reference Packs
 
@@ -1612,8 +1612,8 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Related
 
-- [Mimesis Canvas](https://github.com/svy04/mimesis-canvas)
-- [Mimesis Casebook](https://github.com/svy04/mimesis-casebook)
+- [Canvas](canvas/)
+- [Casebook](cases/casebook/)
 - [Concept hub](https://svy04.github.io/mimesis-engineering/)
 - [Prompt pack](https://svy04.github.io/posts/024-mimesis-prompts/)
 - [Proof boundary](https://svy04.github.io/proof/)
